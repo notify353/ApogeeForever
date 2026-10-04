@@ -2,8 +2,6 @@
 
 ## [Unreleased]
 
-- Pin Auction DEV to context-aware upgrade roles, independent visit-only auction role filtering, and role-labeled tooltips. Validate partial-result recovery against the generated DEV package.
-
 ## [1.13.0] - 2026-10-03
 
 - Make non-mana enemy threat backgrounds transparent while retaining blue mana backgrounds.
