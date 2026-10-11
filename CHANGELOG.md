@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Remove the unnecessary scrollbar from the compact Keybinds settings page.
+
 - Group installed addon settings beneath Apogee (production) or Apogee DEV, with Auction, Dungeons, Essentials, Heals and Keybinds subcategories when available.
 
 - Remove built-in Priest and Paladin Keybinds spell defaults while preserving Warrior defaults and saved assignments.

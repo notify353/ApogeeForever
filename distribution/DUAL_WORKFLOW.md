@@ -506,3 +506,24 @@ Apogee DEV. Verify the expected loaded child pages, their controls and direct-op
 paths. Native appearance, defaults behavior and taint acceptance remain pending;
 the prior native-acceptance record is unchanged. No push or merge is authorized
 for this new candidate.
+
+## October 10 compact Keybinds settings correction
+
+Keybinds advances to reviewed pin `9b6ca9f47a0b79c4ae22807e7692b1b947891fa2`.
+The compact settings controls now attach directly to the canvas, removing the
+unnecessary far-right scrollbar while preserving the shared parent, settings,
+layout and Defaults button. All six sibling pins are unchanged.
+
+Full central validation passed, including the updated settings regression on
+both generated families and the existing shared-parent/load-order suite. Evidence
+is under `C:/Temp/apogee-keybinds-settings-scrollbar-validation-20261010`.
+The DEV-only receipt is
+`C:/Dev/WoW/local-install-backups/apogee-keybinds-settings-scrollbar-9b6ca9f-20261010/transaction.json`,
+chained from the preceding shared-settings installation.
+
+Only ApogeeKeybindsDev/UI/Settings.lua changed. All 188 installed package files,
+155 DEV Lua files and 219 backups were independently verified; all 111 canonical
+PROD files remain unchanged. Private saves, enable preferences and 31 differing
+local documentation files are preserved. There are no discovery changes. Reload
+and verify the Keybinds settings page in game; native acceptance remains pending.
+No game operation, PROD installation, push, merge or publication was performed.

@@ -47,7 +47,7 @@
       "version": "0.1.0-dev"
     },
     {
-      "commit": "fab87a527b1408732dae386475651871badd94f6",
+      "commit": "9b6ca9f47a0b79c4ae22807e7692b1b947891fa2",
       "files": {
         "Actions/Compile.lua": "dc67196249f649b41ee91ba9600a45a088bf428054595c1aa76a32926b480dcc",
         "Actions/Defaults.lua": "8e7e35b53a57ce397e35a906f92cec0e91b7d2371581b73cedff386f07d8927b",
@@ -57,7 +57,7 @@
         "Actions/Secure.lua": "305835dca1a6b450b9cead8f31348adc04c20338cd47372f3fa0281cd3059dd1",
         "ApogeeKeybinds.lua": "106fef874c00d9b6e5cee70c5d4374c6da401f34ef3a00b20093a7ad0206d281",
         "ApogeeKeybinds.toc": "7ef71a666614adbb0494e3f14613e636549d9c86c19774d29572665b78e2f29f",
-        "CHANGELOG.md": "f3c6131bc806c8ada600e5166503a60a329d7797b9e23f3ecff3d22ca16cbd56",
+        "CHANGELOG.md": "da1768b2832d6438ed6acf5f5fb3dbae33b98850067d25cbd81b417341529ce0",
         "Core/Client.lua": "24fc30f304ea85ec4a0bbb42734d098b57a5145b4530131986ab6c7ad56bdee1",
         "Core/Inputs.lua": "f586157517136b1f23c14968c21101209ab7e316f032a0ab17074060b47ff55e",
         "Core/States.lua": "d50bce1c35422a810247b51f6303806366d89b63da3d7afdcc12217ca4cb2ad8",
@@ -74,7 +74,7 @@
         "UI/Cooldowns.lua": "6eac5a46a87a3fe24f41b8dc140c24ef50ee796a81f850b033dde8c75bc9d462",
         "UI/Hud.lua": "71f8e478529498f2c9e39c7b97fe7a60b63d992a2b81853e9ab672937c6d151c",
         "UI/Minimap.lua": "24e1b0935baa26963d7dc01e3ec61a80141ae4650fb42aa84b42d33a85c5be41",
-        "UI/Settings.lua": "0770e7fd83ad3a7c0c3344ce22e9260ebc509eeb4993243173e13f638f4aa70d",
+        "UI/Settings.lua": "402120258c08eb4a9a0a98060b047f90c6a3bb16a460f5419dd2b63fc0a09d09",
         "UI/WeaponPanel.lua": "a201f71d398aa318d4569fd0bb385b047ac98b32c6fa3d6a435cf09e31b3c2de",
         "UI/Widgets.lua": "ddc8bba84d7f8a1f3120cc2a183e0e83533009f7d3a672816e441759680d098f",
         "Weapons/Loadouts.lua": "e4cf1a5a9fbf8aa814a89b18026a7a3ff935ba0ffdc8a849e790229186c85ad4",
