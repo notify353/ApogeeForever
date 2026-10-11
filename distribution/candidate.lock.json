@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "6c0b712a602f699c5e0e96a493cda7e19dd7d7c7",
+      "commit": "b056ef85cedd1ed64b80a606ea4e31eadf1bb70f",
       "files": {
         "ApogeeHeals.lua": "1bbede96d06448c3812a2911a644e05ea3c62fa932a676b905096202f04329b8",
         "ApogeeHeals.toc": "fe56908966c0ea442d416a38af9f5f9fa0ee30e48c2ae87e479dd0a786fea56d",
@@ -47,7 +47,7 @@
       "version": "0.1.0-dev"
     },
     {
-      "commit": "4cfbea4775ae25d7dc583e3a0efeaf6a7fa9b4b7",
+      "commit": "570e20ff7f0500d4aa24eee381ec8e0c5760b7a8",
       "files": {
         "Actions/Compile.lua": "dc67196249f649b41ee91ba9600a45a088bf428054595c1aa76a32926b480dcc",
         "Actions/Defaults.lua": "0a06a2ae437d66f12f39c6ba0c3503e3c2a652a77c0c6d7e085fc7189c4445fc",
@@ -94,7 +94,7 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "afc55343c2931f70f9f86a2d2831ec6e8070409a",
+      "commit": "5733858a67f33f3b511d90693f74c5a1f6028111",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "26814f678d1ec19f184e0b78f891d4fc67fec6bee3d0018fdb9e1b200d8e5c11",
@@ -128,7 +128,7 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "8fd1d9a196003f5981692bc392e069ec53388c2b",
+      "commit": "3fa4467e3b83db1e0322d0e06c93fa589be11078",
       "files": {
         "ApogeeEssentials.lua": "237334dae0d45962ff6d85a6f77a08e3c4a14acb5a6779cdc36679c963100aa9",
         "ApogeeEssentials.toc": "8ad741d2a06c9418e348f353f6eb6f2effc21601a978c41e46fcd7f73c20da2e",
@@ -209,7 +209,7 @@
       "version": "0.1.0-dev"
     },
     {
-      "commit": "040b608b51bacb4f50653ee01de9bd4bc562a117",
+      "commit": "da7c30acfc6f621f8b535ecd1e8d1a4f3192384e",
       "files": {
         "ApogeeAuction.lua": "0fe52d75363c2f77b257dd96c7fd9d0a81f58906b3a099d5101b2605c3a245f3",
         "ApogeeAuction.toc": "3955f946225726282e8743a132f8a1e26319a1d3202f7d0d2a9529dd91a67397",
