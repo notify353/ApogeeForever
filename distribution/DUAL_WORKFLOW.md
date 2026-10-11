@@ -585,3 +585,27 @@ Reload with the complete DEV family enabled and verify combat carry and readable
 successful-cast dismissal in game. Restricted cast data cannot acknowledge the
 reminder; native behavior remains pending and acceptance was not advanced.
 No game operation, PROD installation, push, merge or publication was performed.
+
+## October 11 ignore GCD in Keybinds visuals
+
+Keybinds pins `0917183c620b8eb5ee1a6aec88f81678aa564d16`. Spell dimming, hiding,
+countdowns and readiness/self-buff cues ignore the global cooldown while retaining
+individual cooldown and charge behavior. Public event-only isOnGCD classification
+is captured for learned/base spell IDs; native duration objects request ignoreGCD.
+Unknown and restricted observations retain conservative handling. No new loader or
+identity is introduced; all six sibling pins and transforms remain unchanged.
+
+Full central validation passed, including new gcd_spec.lua and updated
+cooldowns_spec.lua against both generated families. Coverage includes restricted
+timing, real cooldowns, charges, hiding, readiness/self buffs and cache resets.
+Artifacts are under `C:/Temp/apogee-keybinds-gcd-validation-20261011`.
+DEV-only installation chains from the combat self-buff receipt and is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-keybinds-gcd-0917183-20261011/transaction.json`.
+
+All 188 installed package files, 155 DEV Lua files and 219 backups were independently
+verified; all 111 canonical PROD files remain unchanged. Private saves, enable
+preferences and 31 differing local documentation files are preserved. Only Keybinds
+DEV bootstrap and UI/Cooldowns.lua changed; there are no discovery changes.
+Reload and verify ordinary GCDs no longer dim/hide/count down or suppress readiness,
+while real spell cooldowns remain visible. Native acceptance is pending.
+No game operation, PROD installation, push, merge or publication was performed.
