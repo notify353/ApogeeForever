@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Align Heals and Keybinds minimap tooltips, open settings on right-click and move either button with right-button dragging.
+
 - Show Heals target-buff suggestions only for friendly player targets; keep party buffs, target health and cleansing behavior unchanged.
 
 - Add learned-spell Defensive Warrior defaults for Intimidating Shout, Disarm, Victory Rush, Last Stand, Shield Wall and Concussion Blow, preserving saved assignments.

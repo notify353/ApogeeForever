@@ -83,8 +83,9 @@ class DualTests(unittest.TestCase):
                                     '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
             start = runner.index('for _, path in ipairs({')
             end = runner.index('}) do', start) + len('}) do')
-            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua"}) do' + runner[end:]
-            runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target-player buff and class integration regressions: " .. name)')
+            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua"}) do' + runner[end:]
+            runner = runner.replace('    assert(loadstring(fixtureTest,', '    if name == "ApogeeHealsDev" then fixtureTest = fixtureTest:gsub("Apogee Heals", "Apogee Heals DEV") end\n    assert(loadstring(fixtureTest,')
+            runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target buffs, class integration and minimap regressions: " .. name)')
             (harness / 'target-generated.lua').write_text(runner)
             subprocess.run(['lua', 'target-generated.lua', str(OPTIONS.artifacts / family / name), name],
                            cwd=harness, check=True)
@@ -100,9 +101,12 @@ class DualTests(unittest.TestCase):
                 (harness / 'tests' / support).write_bytes(source['tests/' + support])
             env = dict(os.environ, APOGEE_KEYBINDS_RUNTIME_ROOT=str((OPTIONS.artifacts / family / name).resolve()),
                        APOGEE_KEYBINDS_RUNTIME_NAME=name)
-            for spec in ('spell_override_spec.lua', 'spell_rank_replacement_spec.lua', 'shift_keyboard_spec.lua', 'ready_highlight_spec.lua', 'self_buff_reminder_spec.lua', 'paladin_defaults_spec.lua', 'settings_spec.lua', 'gcd_spec.lua', 'cooldowns_spec.lua', 'defensive_extra_defaults_spec.lua'):
+            for spec in ('spell_override_spec.lua', 'spell_rank_replacement_spec.lua', 'shift_keyboard_spec.lua', 'ready_highlight_spec.lua', 'self_buff_reminder_spec.lua', 'paladin_defaults_spec.lua', 'settings_spec.lua', 'gcd_spec.lua', 'cooldowns_spec.lua', 'defensive_extra_defaults_spec.lua', 'minimap_spec.lua', 'minimap_geometry_spec.lua'):
                 data = source['tests/' + spec]
                 if family == 'DEV':
+                    if spec == 'minimap_geometry_spec.lua':
+                        # This fixture defaults its runtime name explicitly; production runtime maps stay unchanged.
+                        data = data.replace(b'"ApogeeKeybinds"', b'"ApogeeKeybindsDev"')
                     data, _ = dual.transform_lua(data, child['name'])
                 (harness / 'tests' / spec).write_bytes(data)
                 subprocess.run(['lua', 'tests/' + spec], cwd=harness, env=env, check=True)

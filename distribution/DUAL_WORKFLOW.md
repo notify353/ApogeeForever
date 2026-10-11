@@ -653,3 +653,27 @@ unchanged. Private saves, enable preferences and 31 differing local documentatio
 files are preserved. There are no discovery changes. Start/reload and verify target
 buff suggestions on friendly players versus NPCs/pets in game. Native acceptance
 remains pending. No game operation, PROD install, push, merge or publication occurred.
+
+## October 11 Heals and Keybinds minimap consistency
+
+Keybinds pins `4cfbea4775ae25d7dc583e3a0efeaf6a7fa9b4b7` and Heals pins
+`6c0b712a602f699c5e0e96a493cda7e19dd7d7c7`. Their minimap tooltips share anchor,
+colors and three action lines. Right-click opens each child's settings; right-button
+drag moves either minimap button with click suppression after dragging. Keybinds
+mouse-up cleanup preserves the session-only movement contract and combat lock.
+Other five child pins, family transforms and public selection are unchanged.
+
+Full central validation passed, including both pinned minimap specs and Keybinds
+geometry against PROD and DEV. The geometry fixture's explicit default addon name
+is adapted only inside the DEV test harness; runtime identity maps are unchanged.
+Heals tooltip assertions use the generated family display label. Evidence is at
+`C:/Temp/apogee-minimap-consistency-validation-20261011-r2`.
+
+DEV-only installation chains from the target-player buff receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-minimap-consistency-20261011/transaction.json`.
+Only Heals DEV UI/Minimap.lua and Keybinds DEV UI/Minimap.lua changed. All 188 package
+files, 155 DEV Lua files and 219 backups were independently verified; all 111 PROD
+files remain unchanged. Private saves, enable preferences and 31 differing local
+documentation files are preserved. No discovery changes occurred. Reload and verify
+both tooltips, right-click settings and right-button drag in game. Native acceptance
+is pending. No game operation, PROD install, push, merge or publication occurred.
