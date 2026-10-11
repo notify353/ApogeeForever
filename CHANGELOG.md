@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Keep a confirmed missing self-buff reminder through combat until a successful player cast of its spell family, without reading combat auras.
+
 - Align addon settings typography, help text, shared-parent background and Dungeons tab styling; label the dungeon settings header Apogee Dungeons.
 
 - Remove the unnecessary scrollbar from the compact Keybinds settings page.

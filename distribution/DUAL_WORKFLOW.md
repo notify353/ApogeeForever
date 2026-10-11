@@ -560,3 +560,28 @@ and 31 differing local documentation files are preserved. Seven existing Lua fil
 changed, with no new files or TOC discovery changes. Reload and inspect settings
 appearance, tab switching and unavailable controls in game. Native acceptance is
 pending. No game operation, PROD install, push, merge or publication was performed.
+
+## October 11 self-buff reminder combat carry
+
+Keybinds pins `c7b30575d3c6bc83e95032b18bd7e5d314f1ebc4`. A confirmed missing
+out-of-combat self buff can retain its reminder through combat, subject to
+readiness and visibility. A readable successful player cast of the matching known
+spell family acknowledges that reminder until combat ends. Failed, interrupted,
+unrelated, pet and restricted observations do not acknowledge it. Unknown or
+present pre-combat state stays quiet. No combat aura queries are introduced.
+All six sibling source pins, loader identities and transforms remain unchanged.
+
+Full local central validation passed, including the updated pinned self-buff
+regression in both generated families and prior settings/gameplay checks.
+Evidence is under `C:/Temp/apogee-self-buff-combat-validation-20261011`.
+DEV-only installation chains from the typography receipt and is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-self-buff-combat-c7b3057-20261011/transaction.json`.
+All 188 installed package files, 155 DEV Lua files and 219 backup files were
+independently verified. All 111 PROD files remain unchanged; private saves,
+enable preferences and 31 differing local documentation files are preserved.
+Only the Keybinds DEV bootstrap and UI/Hud.lua changed, with no discovery changes.
+
+Reload with the complete DEV family enabled and verify combat carry and readable
+successful-cast dismissal in game. Restricted cast data cannot acknowledge the
+reminder; native behavior remains pending and acceptance was not advanced.
+No game operation, PROD installation, push, merge or publication was performed.
