@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Heals: click a player's class-color strip outside combat to inspect current buffs and choose a learned buff to recast or replace. The picker closes in combat and on recipient changes.
+
 ## [1.14.4] - 2026-10-11
 
 - Group settings under Apogee with Dungeons, Essentials, Heals and Keybinds pages. Align text and tab styling and remove the unnecessary Keybinds scrollbar.

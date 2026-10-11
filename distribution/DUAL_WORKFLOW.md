@@ -1,5 +1,30 @@
 # One source, two distributions
 
+## October 11 class-strip buff picker DEV candidate
+
+Heals pins `87f3a6142c97ed883c87bc977e5a4c76364c5c10`. Clicking the class-color
+strip opens a recipient picker with current buffs and learned buff choices,
+including already active blessings for recasting/replacement. It is available
+only outside combat, closes on combat entry and target/group changes, and does
+not reopen when combat ends. Current unknown/restricted aura data closes it.
+Native secure buttons retain fixed recipients. No saved data, loader inventory
+or identity transforms change; all six sibling pins remain unchanged.
+
+The child regression is included in both generated family checks. Child checks
+use the matching Forever export. Full distribution validation artifacts are at
+`C:/Temp/apogee-buff-strip-validation-20261011`. Native appearance, casting and
+taint acceptance require owner testing; prior native acceptance is not advanced.
+
+Full child and central checks passed. DEV-only installation is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-buff-strip-87f3a61-20261011/transaction.json`,
+chained from the minimap-consistency receipt. All 188 package files, 155 DEV Lua
+files and 219 backups were independently verified; all 111 PROD files are unchanged.
+Private saves, enable preferences and 31 differing documentation files are preserved.
+Four Heals Lua files changed. The existing DEV marker TOC also advances to the
+current distribution version; it is the only discovery change. Reload with DEV
+enabled; if the updated TOC is not discovered, a user restart may be needed.
+No game operation, PROD installation, push, merge or publication occurred.
+
 The active local workflow is side-by-side PROD and DEV. Earlier prototype and
 migration fixtures remain historical evidence. PROD 1.0.0 is published on
 CurseForge and GitHub; DEV remains local. APHB is a zero-Lua distribution identity with no gameplay or saved
