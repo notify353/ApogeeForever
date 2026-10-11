@@ -2,24 +2,15 @@
 
 ## [Unreleased]
 
-- Align Heals and Keybinds minimap tooltips, open settings on right-click and move either button with right-button dragging.
-
-- Show Heals target-buff suggestions only for friendly player targets; keep party buffs, target health and cleansing behavior unchanged.
-
-- Add learned-spell Defensive Warrior defaults for Intimidating Shout, Disarm, Victory Rush, Last Stand, Shield Wall and Concussion Blow, preserving saved assignments.
-
-- Ignore the global cooldown for Keybinds spell dimming, hiding, countdowns and readiness reminders while respecting individual cooldowns.
-
-- Keep a confirmed missing self-buff reminder through combat until a successful player cast of its spell family, without reading combat auras.
-
-- Align addon settings typography, help text, shared-parent background and Dungeons tab styling; label the dungeon settings header Apogee Dungeons.
-
-- Remove the unnecessary scrollbar from the compact Keybinds settings page.
-
-- Group installed addon settings beneath Apogee (production) or Apogee DEV, with Auction, Dungeons, Essentials, Heals and Keybinds subcategories when available.
-
-- Remove built-in Priest and Paladin Keybinds spell defaults while preserving Warrior defaults and saved assignments.
-- Refresh current DEV installation provenance for the reviewed Forever 1.60.1.70338 export.
+- Group settings under Apogee with Dungeons, Essentials, Heals and Keybinds pages. Align text and tab styling and remove the unnecessary Keybinds scrollbar.
+- Give Heals and Keybinds minimap buttons matching tooltips. Right-click opens settings; right-button dragging moves the button without triggering a click.
+- Remove automatic Priest and Paladin spell defaults. Saved assignments and existing Warrior defaults remain.
+- Add learned-spell Defensive Warrior defaults: 5 Intimidating Shout, R Disarm, T Victory Rush, X Last Stand, C Shield Wall and Ctrl+Mouse4 Concussion Blow. Saved assignments retain priority.
+- Ignore the global cooldown for Keybinds dimming, hiding, countdowns and readiness reminders while respecting individual spell cooldowns.
+- Carry confirmed missing self-buff reminders into combat until a readable successful player cast of the matching spell family. No combat aura queries are used.
+- Show Heals target-buff suggestions only for friendly players. Party buffs, target health and cleansing remain unchanged.
+- Refresh startup warning baselines for the reviewed Forever 1.60.1.70338 client.
+- Reload after updating. Existing settings are preserved.
 
 ## [1.14.3] - 2026-10-05
 

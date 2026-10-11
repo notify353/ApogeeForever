@@ -677,3 +677,18 @@ files remain unchanged. Private saves, enable preferences and 31 differing local
 documentation files are preserved. No discovery changes occurred. Reload and verify
 both tooltips, right-click settings and right-button drag in game. Native acceptance
 is pending. No game operation, PROD install, push, merge or publication occurred.
+
+## October 11 owner acceptance and release request
+
+The owner explicitly confirms "Yes, tested and working" for the latest installed
+DEV changes, including settings pages, combat reminders/GCD behavior, defaults,
+target buffs and both minimap buttons, and requests all work merged and deployed
+to CurseForge. All 155 current DEV Lua files were reverified against the latest
+minimap receipt and candidate. Native acceptance now records these exact runtime
+hashes and the generated PROD counterpart. Separate PROD and CurseForge-client
+testing are not claimed. Historical follow-up evidence remains intact.
+
+Release 1.14.4 is the next patch after the published 1.14.3. Child and central
+integration, final-main hosted test/aggregate/version checks, exact package review
+and immediate production-tag approval precede publication. No additional local
+installation is implied by version preparation.
