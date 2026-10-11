@@ -2,13 +2,9 @@
 
 ## [Unreleased]
 
-- Heals: fit timer labels inside buff icons using smaller outlined text and compact minute/hour labels for longer durations.
-
-- Heals: make the full class-color strip clickable, including its lower section over the power bar.
-
-- Heals: show buff icons below two minutes remaining with an m:ss timer. Refreshing a buff hides its reminder again; all reminders remain outside combat only.
-
-- Heals: click a player's class-color strip outside combat to show buff options in the existing icon row on the left, including active buffs for recasting or replacement. Click again to restore missing-buff reminders. No extra panel.
+- Heals: click anywhere on a player's class-color strip to show buff options on the left, including active buffs for recasting or replacement. Click again to restore reminders. Available outside combat only.
+- Show buff reminders below two minutes remaining, with compact outlined timers inside the icons. Refreshing a buff hides its reminder again.
+- Reload after updating. Existing settings are preserved.
 
 ## [1.14.4] - 2026-10-11
 

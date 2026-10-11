@@ -1,5 +1,32 @@
 # One source, two distributions
 
+## October 11 quality review and release handoff
+
+Reviewed the complete Heals buff-strip/timer diff against the released baseline:
+restricted-value guards, fixed recipient actions, combat and lifecycle handling,
+timer boundaries, duplicate coverage, input geometry, polling and distribution
+isolation. No blocking runtime defect was found. Added recipient-isolation and
+no-catch-up/preview polling regressions in child commit
+`940b6fb66ff16c753dbb59235b5c4c6d80a6721d`. This changes tests only; both generated
+family file maps and archive hashes are identical to the accepted installed
+timer-polish candidate. No reinstall is necessary.
+
+The owner reports "perfect" for the installed result and requests review and
+deployment preparation. Native acceptance now records that report and the exact
+verified DEV runtime and generated PROD counterpart; unchanged sibling acceptance
+is retained. It does not claim a comprehensive native test matrix or separate
+PROD/CurseForge-client testing. Release notes are consolidated.
+
+Full child checks with the matching export and full central checks passed.
+Evidence: `C:/Temp/apogee-buff-quality-validation-20261011`. Offline publisher
+payload acceptance passes for planned patch 1.14.5. No release version/tag has
+been created. Both repositories are committed locally on their task branches;
+push/main integration require explicit approval under the owner instructions.
+After integration, use prepare-release.ps1 from synchronized main, integrate its
+release PR and pass exact-final-main hosted checks before requesting production-tag
+approval. Existing worktrees/backups are retained; no cleanup, game operation,
+PROD installation, external message or publication occurred.
+
 ## October 11 buff timer presentation correction
 
 Heals pins `d4ad2103e43619b59e32e1f78346a31756b4317d`. Buff timers use smaller
