@@ -33,6 +33,30 @@
     {
       "path": "Blizzard_ProjectConstants/Blizzard_ProjectConstants.toc",
       "sha256": "bc34bd720c77bdfc4e0bfc92b2424111a4e919d0fd2a86e0c9d7afce70e349e4"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_Settings.lua",
+      "sha256": "76ab19d14675e4e3dcf4fb1b02af35898e253e254da3cfce0ef655eab475e293"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_SettingsInbound.lua",
+      "sha256": "149fc361ccd160db63933394549f87a9de4029132ebc96d5ef36d681922ae8d0"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_SettingsPanel.lua",
+      "sha256": "27f6db7d502104ad26d2893519fd810b4769616398a0ebb3fb08632f7745f4a7"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_CategoryList.lua",
+      "sha256": "9c19a9a6627d9e2cf7730384c278ff24ec26a99494809c4a1f64532c9da70b90"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_Category.lua",
+      "sha256": "f831db6bf0285e65d14cd3bed4f4d2dd7cfc7d4aef1b77f40f7cc9f9d1936869"
+    },
+    {
+      "path": "Blizzard_Fonts_Shared/Shared/FontStyles.xml",
+      "sha256": "8212c902708e656f8291182cce616323339b5e39d0f2f68143e0fa7b0c461b9b"
     }
   ],
   "interface": 16001,

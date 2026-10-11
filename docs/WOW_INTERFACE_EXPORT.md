@@ -77,3 +77,23 @@ fresh exported file postdates the installed executable. Interface remains 16001.
 Only current installation provenance advances; historical locks and sibling pins
 are retained. Generated adapter tests distinguish each pinned warning baseline
 from current-build capability acceptance. Native acceptance remains pending.
+
+## October 10 shared Settings category review
+
+The matching 70338 Settings wrapper, inbound adapter, SettingsPanel, CategoryList
+and Category mixin were reviewed and added to the authority hashes. Categories
+receive numeric IDs. Despite its parameter name, Settings.GetCategory uses ID
+comparison, not display-name lookup. RegisterCanvasLayoutSubcategory creates a
+native child attached to its parent; registering the child refreshes the category
+list without another top-level entry. A session-only, family-local registry shares
+the parent between independent loaded addons. The DEV lexical map explicitly
+isolates ApogeeSettingsRegistry as ApogeeDevSettingsRegistry in the five Settings
+owners. This is not a saved-variable or marker runtime identity.
+
+## October 10 settings typography review
+
+The matching Shared/FontStyles.xml confirms the native normal large/small title
+and heading templates, and white highlight-small labels. It is recorded in the
+authority hashes. Settings-only help/disabled colors are explicit overrides;
+no shared HUD font objects are changed. Apogee Dungeons is an exact audited
+Group Alert settings label with an isolated DEV display spelling.

@@ -41,8 +41,8 @@ class DualTests(unittest.TestCase):
         return client, base / 'backup'
 
     def test_native_forever_identity_and_revision_tolerance(self):
-        # Sibling pins retain their reviewed warning baseline when install provenance advances.
-        reviewed_children = {'ApogeeHeals': '70205', 'ApogeeGroupAlert': '70205'}
+        # Warning baselines follow the reviewed source pins, independently of install provenance.
+        reviewed_children = {'ApogeeHeals': '70338', 'ApogeeGroupAlert': '70338'}
         reviewed_build = self.lock['client']['reviewedBuild'].rsplit('.', 1)[-1]
         for child in self.lock['children']:
             if child['name'] == 'ApogeeStats':
@@ -55,6 +55,41 @@ class DualTests(unittest.TestCase):
                                 str(OPTIONS.artifacts / family / name), name] +
                                [warning_build or '', reviewed_build], check=True)
 
+    def test_shared_settings_parent_in_generated_families(self):
+        subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
+                        str(OPTIONS.artifacts)], check=True)
+        for name in ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials', 'ApogeeAuction'):
+            output, edits = dual.transform_lua(b'-- ApogeeSettingsRegistry\nApogeeSettingsRegistry = {}\n', name)
+            self.assertEqual(output, b'-- ApogeeSettingsRegistry\nApogeeDevSettingsRegistry = {}\n')
+            self.assertEqual(len(edits), 1)
+        for name in ('ApogeeTank', 'ApogeeStats'):
+            self.assertNotIn('ApogeeSettingsRegistry', dual.identity_map(name))
+
+    def test_heals_target_buffs_require_friendly_players_in_both_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeHeals')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('heals-target-tests-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            for path, data in source.items():
+                if path.startswith('tests/') and path.endswith('.lua'):
+                    target = harness / path
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(data)
+            runner = source['tests/generated_dev.lua'].decode()
+            runner = runner.replace('local name = "ApogeeHealsDev"', 'local name = assert(arg[2])')
+            runner = runner.replace('"APOGEE_HEALS_DEV_RESET_CHARACTER"',
+                                    '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
+            start = runner.index('for _, path in ipairs({')
+            end = runner.index('}) do', start) + len('}) do')
+            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua"}) do' + runner[end:]
+            runner = runner.replace('    assert(loadstring(fixtureTest,', '    if name == "ApogeeHealsDev" then fixtureTest = fixtureTest:gsub("Apogee Heals", "Apogee Heals DEV") end\n    assert(loadstring(fixtureTest,')
+            runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target buffs, class integration and minimap regressions: " .. name)')
+            (harness / 'target-generated.lua').write_text(runner)
+            subprocess.run(['lua', 'target-generated.lua', str(OPTIONS.artifacts / family / name), name],
+                           cwd=harness, check=True)
+
     def test_keybinds_spell_shift_and_ready_highlight_in_both_families(self):
         child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeKeybinds')
         source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
@@ -66,9 +101,12 @@ class DualTests(unittest.TestCase):
                 (harness / 'tests' / support).write_bytes(source['tests/' + support])
             env = dict(os.environ, APOGEE_KEYBINDS_RUNTIME_ROOT=str((OPTIONS.artifacts / family / name).resolve()),
                        APOGEE_KEYBINDS_RUNTIME_NAME=name)
-            for spec in ('spell_override_spec.lua', 'spell_rank_replacement_spec.lua', 'shift_keyboard_spec.lua', 'ready_highlight_spec.lua', 'self_buff_reminder_spec.lua', 'paladin_defaults_spec.lua'):
+            for spec in ('spell_override_spec.lua', 'spell_rank_replacement_spec.lua', 'shift_keyboard_spec.lua', 'ready_highlight_spec.lua', 'self_buff_reminder_spec.lua', 'paladin_defaults_spec.lua', 'settings_spec.lua', 'gcd_spec.lua', 'cooldowns_spec.lua', 'defensive_extra_defaults_spec.lua', 'minimap_spec.lua', 'minimap_geometry_spec.lua'):
                 data = source['tests/' + spec]
                 if family == 'DEV':
+                    if spec == 'minimap_geometry_spec.lua':
+                        # This fixture defaults its runtime name explicitly; production runtime maps stay unchanged.
+                        data = data.replace(b'"ApogeeKeybinds"', b'"ApogeeKeybindsDev"')
                     data, _ = dual.transform_lua(data, child['name'])
                 (harness / 'tests' / spec).write_bytes(data)
                 subprocess.run(['lua', 'tests/' + spec], cwd=harness, env=env, check=True)
@@ -212,7 +250,8 @@ class DualTests(unittest.TestCase):
         expected_settings = source['RoleSettings.lua'].replace(
             b'ApogeeAuctionDB', b'ApogeeAuctionDevDB').replace(
             b'Apogee Auction', b'Apogee Auction DEV').replace(
-            b'APOGEE_AUCTION_DEFAULTS', b'APOGEE_AUCTION_DEV_DEFAULTS')
+            b'APOGEE_AUCTION_DEFAULTS', b'APOGEE_AUCTION_DEV_DEFAULTS').replace(
+            b'ApogeeSettingsRegistry', b'ApogeeDevSettingsRegistry')
         self.assertEqual(settings_body, dual.prefix(name, 'DEV') + expected_settings)
         for path in gameplay + ['Auction/Filter.lua', 'Auction/Browse.lua']:
             self.assertEqual(self.dev[name + '/' + path], dual.prefix(name, 'DEV') + source[path])
@@ -499,6 +538,17 @@ end
         self.assertIn(b'ApogeeTankDevUIDB={}', output)
         self.assertIn(b'local x="1"', output)
         with self.assertRaises(ValueError): dual.transform_lua(b'ApogeeTankUnknown={}', 'ApogeeTank')
+
+    def test_dungeons_settings_label_has_exact_dev_mapping(self):
+        source = b'-- Apogee Dungeons\nlocal title="Apogee Dungeons"; local text="Keep Apogee Dungeons unchanged"\n'
+        output, edits = dual.transform_lua(source, 'ApogeeGroupAlert')
+        self.assertEqual(output, b'-- Apogee Dungeons\nlocal title="Apogee Dungeons DEV"; local text="Keep Apogee Dungeons unchanged"\n')
+        self.assertEqual(len(edits), 1)
+        for family, files in (('PROD', self.prod), ('DEV', self.dev)):
+            name = 'ApogeeGroupAlert' + ('Dev' if family == 'DEV' else '')
+            label = 'Apogee Dungeons' + (' DEV' if family == 'DEV' else '')
+            settings = files[name + '/Settings/View.lua'].decode()
+            self.assertIn('"' + label + '"', settings)
 
     def test_heals_default_is_independent_and_reset_dialog_is_family_local(self):
         canonical = 'APOGEE_HEALS_RESET_CHARACTER'

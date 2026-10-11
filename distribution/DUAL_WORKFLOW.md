@@ -466,3 +466,229 @@ Reload with the complete DEV family enabled and verify Priest/Paladin empty slot
 manual saved assignments and unchanged Warrior defaults. The marker TOC is a
 discovery change; if reload does not discover it, a user restart may be needed.
 Native acceptance remains pending and its record is unchanged.
+
+## October 10 shared Settings parent DEV candidate
+
+Five independent settings owners share a native parent: Apogee in PROD and
+Apogee DEV in DEV. Loaded settings pages appear as Auction, Dungeons (Group Alert),
+Essentials, Heals and Keybinds. Auction remains DEV-only under the existing public
+selection. Tank and Stats have no settings page and their pins are unchanged.
+The marker remains zero-runtime. There are no new loader chunks or saved variables.
+
+Reviewed immutable pins are Heals `5ba1d9716e9ba92e344670cee36313de2b01ea66`,
+Keybinds `fab87a527b1408732dae386475651871badd94f6`, Group Alert
+`eb306ea6a3c4c5c9c82d0975e47d8cff9ff69d51`, Essentials
+`5f9393c4b3120001dde5c1f7d12c5845d1af49e3`, and Auction
+`64aaa9cb7c706cbb4d2eb8ec82df77bd3494e4ed`. Each uses the existing settings module
+and the session-only schema-1 ApogeeSettingsRegistry. The exact lexical mapping
+isolates it as ApogeeDevSettingsRegistry in those five owners only. Native category
+IDs stay on each child's existing open/settings path. Malformed shared state is
+preserved and rejected; absent subcategory APIs retain standalone compatibility.
+
+Full central validation passed, including generated settings regressions covering
+120 load orders per family, sole loaded owners, repeated creation, malformed
+registries, child IDs, Auction setting ownership, compatibility fallback, denied
+chunks and family isolation. The same regression fails against the prior packages.
+Matching 70338 Settings sources are recorded in the central export authority.
+Heals, Group Alert and Essentials also advance their reviewed warning baselines.
+
+Artifacts are at `C:/Temp/apogee-shared-settings-validation-20261010`. The DEV-only
+installation chains from the preceding Keybinds defaults receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-shared-settings-20261010/transaction.json`.
+All 188 installed package files, 155 DEV Lua files and 219 backup files were
+independently byte-verified; all 111 PROD files remain unchanged. Private saves,
+enable preferences and 31 differing local documentation files are preserved.
+Eight existing Lua files and Heals' export record changed. There are no new files
+or TOC discovery changes. No game operation, PROD installation or publication occurred.
+
+Start or reload with the complete DEV family enabled and inspect Settings > AddOns >
+Apogee DEV. Verify the expected loaded child pages, their controls and direct-open
+paths. Native appearance, defaults behavior and taint acceptance remain pending;
+the prior native-acceptance record is unchanged. No push or merge is authorized
+for this new candidate.
+
+## October 10 compact Keybinds settings correction
+
+Keybinds advances to reviewed pin `9b6ca9f47a0b79c4ae22807e7692b1b947891fa2`.
+The compact settings controls now attach directly to the canvas, removing the
+unnecessary far-right scrollbar while preserving the shared parent, settings,
+layout and Defaults button. All six sibling pins are unchanged.
+
+Full central validation passed, including the updated settings regression on
+both generated families and the existing shared-parent/load-order suite. Evidence
+is under `C:/Temp/apogee-keybinds-settings-scrollbar-validation-20261010`.
+The DEV-only receipt is
+`C:/Dev/WoW/local-install-backups/apogee-keybinds-settings-scrollbar-9b6ca9f-20261010/transaction.json`,
+chained from the preceding shared-settings installation.
+
+Only ApogeeKeybindsDev/UI/Settings.lua changed. All 188 installed package files,
+155 DEV Lua files and 219 backups were independently verified; all 111 canonical
+PROD files remain unchanged. Private saves, enable preferences and 31 differing
+local documentation files are preserved. There are no discovery changes. Reload
+and verify the Keybinds settings page in game; native acceptance remains pending.
+No game operation, PROD installation, push, merge or publication was performed.
+
+## October 10 settings typography consistency
+
+The five settings owners use native large gold titles, small white labels,
+muted small help text and gray unavailable labels. The shared parent has the
+same dark backdrop as its children. Dungeons uses matching native tabs with a
+gold selected underline and gold section/list selection text. Its displayed
+header is Apogee Dungeons; the exact DEV string mapping appends DEV. Technical
+Group Alert addon, saved-variable and slash identities remain unchanged.
+The changed Core/UI ListButton helper is settings-only; HUD helpers retain their
+existing styling. Essentials' learned-list help/status text is muted consistently.
+
+Reviewed pins are Keybinds `12790011110c0b95737366d0f683daaa83948e47`, Heals
+`b14f4afbd361a25198a9142dabcf764d51879fc1`, Group Alert
+`afc55343c2931f70f9f86a2d2831ec6e8070409a`, Essentials
+`8fd1d9a196003f5981692bc392e069ec53388c2b`, and Auction
+`040b608b51bacb4f50653ee01de9bd4bc562a117`. Tank, Stats and public selection
+are unchanged. The fresh native FontStyles.xml is included in API authority.
+
+Full central validation passed. Generated tests verify parent/title/help styles,
+disabled label colors, native Dungeons tabs and list colors across 120 load orders
+per family, together with existing isolation, settings and gameplay regressions.
+The exact Dungeons label transform preserves comments and unrelated prose.
+Evidence is at `C:/Temp/apogee-settings-typography-validation-20261010`.
+
+DEV-only installation chains from the scrollbar correction receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-settings-typography-20261010/transaction.json`.
+All 188 installed package files, 155 DEV Lua files and 219 backups were independently
+verified; all 111 PROD files remain unchanged. Private saves, enable preferences
+and 31 differing local documentation files are preserved. Seven existing Lua files
+changed, with no new files or TOC discovery changes. Reload and inspect settings
+appearance, tab switching and unavailable controls in game. Native acceptance is
+pending. No game operation, PROD install, push, merge or publication was performed.
+
+## October 11 self-buff reminder combat carry
+
+Keybinds pins `c7b30575d3c6bc83e95032b18bd7e5d314f1ebc4`. A confirmed missing
+out-of-combat self buff can retain its reminder through combat, subject to
+readiness and visibility. A readable successful player cast of the matching known
+spell family acknowledges that reminder until combat ends. Failed, interrupted,
+unrelated, pet and restricted observations do not acknowledge it. Unknown or
+present pre-combat state stays quiet. No combat aura queries are introduced.
+All six sibling source pins, loader identities and transforms remain unchanged.
+
+Full local central validation passed, including the updated pinned self-buff
+regression in both generated families and prior settings/gameplay checks.
+Evidence is under `C:/Temp/apogee-self-buff-combat-validation-20261011`.
+DEV-only installation chains from the typography receipt and is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-self-buff-combat-c7b3057-20261011/transaction.json`.
+All 188 installed package files, 155 DEV Lua files and 219 backup files were
+independently verified. All 111 PROD files remain unchanged; private saves,
+enable preferences and 31 differing local documentation files are preserved.
+Only the Keybinds DEV bootstrap and UI/Hud.lua changed, with no discovery changes.
+
+Reload with the complete DEV family enabled and verify combat carry and readable
+successful-cast dismissal in game. Restricted cast data cannot acknowledge the
+reminder; native behavior remains pending and acceptance was not advanced.
+No game operation, PROD installation, push, merge or publication was performed.
+
+## October 11 ignore GCD in Keybinds visuals
+
+Keybinds pins `0917183c620b8eb5ee1a6aec88f81678aa564d16`. Spell dimming, hiding,
+countdowns and readiness/self-buff cues ignore the global cooldown while retaining
+individual cooldown and charge behavior. Public event-only isOnGCD classification
+is captured for learned/base spell IDs; native duration objects request ignoreGCD.
+Unknown and restricted observations retain conservative handling. No new loader or
+identity is introduced; all six sibling pins and transforms remain unchanged.
+
+Full central validation passed, including new gcd_spec.lua and updated
+cooldowns_spec.lua against both generated families. Coverage includes restricted
+timing, real cooldowns, charges, hiding, readiness/self buffs and cache resets.
+Artifacts are under `C:/Temp/apogee-keybinds-gcd-validation-20261011`.
+DEV-only installation chains from the combat self-buff receipt and is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-keybinds-gcd-0917183-20261011/transaction.json`.
+
+All 188 installed package files, 155 DEV Lua files and 219 backups were independently
+verified; all 111 canonical PROD files remain unchanged. Private saves, enable
+preferences and 31 differing local documentation files are preserved. Only Keybinds
+DEV bootstrap and UI/Cooldowns.lua changed; there are no discovery changes.
+Reload and verify ordinary GCDs no longer dim/hide/count down or suppress readiness,
+while real spell cooldowns remain visible. Native acceptance is pending.
+No game operation, PROD installation, push, merge or publication was performed.
+
+## October 11 additional Defensive Warrior defaults
+
+Keybinds pins `0e81416cadc693a8963f0e087dcb1b85c003746a`. Defensive Warrior
+empty slots gain learned-spell defaults: 5 Intimidating Shout (5246), R Disarm
+(676), T Forever Victory Rush (402927), X Last Stand (12975), C Shield Wall (871),
+and Ctrl+Mouse4 Concussion Blow (12809). Saved assignments retain priority.
+Z, other stances/classes, six sibling pins and runtime transforms are unchanged.
+
+Full central validation passed, including defensive_extra_defaults_spec.lua
+against both generated families: learned-only gating, saved macro priority,
+combat stance transitions and class isolation. Evidence is under
+`C:/Temp/apogee-defensive-defaults-validation-20261011`.
+The DEV-only install chains from the GCD receipt and is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-defensive-defaults-0e81416-20261011/transaction.json`.
+
+Only Keybinds DEV Actions/Defaults.lua changed. All 188 package files, 155 DEV Lua
+files and 219 backups were independently verified; 111 PROD files remain unchanged.
+Private saves, enable preferences and 31 differing local documentation files are
+preserved. No discovery changes occurred. Reload and test learned spells on empty
+Defensive slots in game; native acceptance remains pending. No game operation,
+PROD installation, push, merge or publication was performed.
+
+## October 11 friendly-player target buff suggestions
+
+Heals pins `74f238c7fa902c6155ef2b1514807fdfa9642433`. Target-buff scanning now
+requires public UnitIsPlayer true alongside the existing friendly/assist predicate.
+NPCs, pets, hostile/dead and unknown/restricted player status produce no target-buff
+suggestions. Party/self buffs, target health and cleansing retain their behavior.
+All six sibling pins, identity transforms and loader inventories are unchanged.
+
+Full central validation passed, including the pinned target_support_spec.lua and
+class_integration_spec.lua against both generated families. The existing child
+runtime loader is adapted to the selected family for these regressions. Artifacts
+are under `C:/Temp/apogee-heals-target-players-validation-20261011`.
+DEV-only installation chains from the Defensive defaults receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-heals-target-players-74f238c-20261011/transaction.json`.
+
+Only ApogeeHealsDev/Buffs/Runtime.lua changed. All 188 package files, 155 DEV Lua
+files and 219 backups were independently verified; all 111 PROD files remain
+unchanged. Private saves, enable preferences and 31 differing local documentation
+files are preserved. There are no discovery changes. Start/reload and verify target
+buff suggestions on friendly players versus NPCs/pets in game. Native acceptance
+remains pending. No game operation, PROD install, push, merge or publication occurred.
+
+## October 11 Heals and Keybinds minimap consistency
+
+Keybinds pins `4cfbea4775ae25d7dc583e3a0efeaf6a7fa9b4b7` and Heals pins
+`6c0b712a602f699c5e0e96a493cda7e19dd7d7c7`. Their minimap tooltips share anchor,
+colors and three action lines. Right-click opens each child's settings; right-button
+drag moves either minimap button with click suppression after dragging. Keybinds
+mouse-up cleanup preserves the session-only movement contract and combat lock.
+Other five child pins, family transforms and public selection are unchanged.
+
+Full central validation passed, including both pinned minimap specs and Keybinds
+geometry against PROD and DEV. The geometry fixture's explicit default addon name
+is adapted only inside the DEV test harness; runtime identity maps are unchanged.
+Heals tooltip assertions use the generated family display label. Evidence is at
+`C:/Temp/apogee-minimap-consistency-validation-20261011-r2`.
+
+DEV-only installation chains from the target-player buff receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-minimap-consistency-20261011/transaction.json`.
+Only Heals DEV UI/Minimap.lua and Keybinds DEV UI/Minimap.lua changed. All 188 package
+files, 155 DEV Lua files and 219 backups were independently verified; all 111 PROD
+files remain unchanged. Private saves, enable preferences and 31 differing local
+documentation files are preserved. No discovery changes occurred. Reload and verify
+both tooltips, right-click settings and right-button drag in game. Native acceptance
+is pending. No game operation, PROD install, push, merge or publication occurred.
+
+## October 11 owner acceptance and release request
+
+The owner explicitly confirms "Yes, tested and working" for the latest installed
+DEV changes, including settings pages, combat reminders/GCD behavior, defaults,
+target buffs and both minimap buttons, and requests all work merged and deployed
+to CurseForge. All 155 current DEV Lua files were reverified against the latest
+minimap receipt and candidate. Native acceptance now records these exact runtime
+hashes and the generated PROD counterpart. Separate PROD and CurseForge-client
+testing are not claimed. Historical follow-up evidence remains intact.
+
+Release 1.14.4 is the next patch after the published 1.14.3. Child and central
+integration, final-main hosted test/aggregate/version checks, exact package review
+and immediate production-tag approval precede publication. No additional local
+installation is implied by version preparation.
