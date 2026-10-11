@@ -65,6 +65,30 @@ class DualTests(unittest.TestCase):
         for name in ('ApogeeTank', 'ApogeeStats'):
             self.assertNotIn('ApogeeSettingsRegistry', dual.identity_map(name))
 
+    def test_heals_target_buffs_require_friendly_players_in_both_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeHeals')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('heals-target-tests-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            for path, data in source.items():
+                if path.startswith('tests/') and path.endswith('.lua'):
+                    target = harness / path
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(data)
+            runner = source['tests/generated_dev.lua'].decode()
+            runner = runner.replace('local name = "ApogeeHealsDev"', 'local name = assert(arg[2])')
+            runner = runner.replace('"APOGEE_HEALS_DEV_RESET_CHARACTER"',
+                                    '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
+            start = runner.index('for _, path in ipairs({')
+            end = runner.index('}) do', start) + len('}) do')
+            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua"}) do' + runner[end:]
+            runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target-player buff and class integration regressions: " .. name)')
+            (harness / 'target-generated.lua').write_text(runner)
+            subprocess.run(['lua', 'target-generated.lua', str(OPTIONS.artifacts / family / name), name],
+                           cwd=harness, check=True)
+
     def test_keybinds_spell_shift_and_ready_highlight_in_both_families(self):
         child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeKeybinds')
         source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])

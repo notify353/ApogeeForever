@@ -631,3 +631,25 @@ Private saves, enable preferences and 31 differing local documentation files are
 preserved. No discovery changes occurred. Reload and test learned spells on empty
 Defensive slots in game; native acceptance remains pending. No game operation,
 PROD installation, push, merge or publication was performed.
+
+## October 11 friendly-player target buff suggestions
+
+Heals pins `74f238c7fa902c6155ef2b1514807fdfa9642433`. Target-buff scanning now
+requires public UnitIsPlayer true alongside the existing friendly/assist predicate.
+NPCs, pets, hostile/dead and unknown/restricted player status produce no target-buff
+suggestions. Party/self buffs, target health and cleansing retain their behavior.
+All six sibling pins, identity transforms and loader inventories are unchanged.
+
+Full central validation passed, including the pinned target_support_spec.lua and
+class_integration_spec.lua against both generated families. The existing child
+runtime loader is adapted to the selected family for these regressions. Artifacts
+are under `C:/Temp/apogee-heals-target-players-validation-20261011`.
+DEV-only installation chains from the Defensive defaults receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-heals-target-players-74f238c-20261011/transaction.json`.
+
+Only ApogeeHealsDev/Buffs/Runtime.lua changed. All 188 package files, 155 DEV Lua
+files and 219 backups were independently verified; all 111 PROD files remain
+unchanged. Private saves, enable preferences and 31 differing local documentation
+files are preserved. There are no discovery changes. Start/reload and verify target
+buff suggestions on friendly players versus NPCs/pets in game. Native acceptance
+remains pending. No game operation, PROD install, push, merge or publication occurred.
