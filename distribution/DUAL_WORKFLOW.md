@@ -1,5 +1,29 @@
 # One source, two distributions
 
+## October 11 early buff reminders and timers
+
+Heals pins `217ff5eea83147b0b39b261ad7cdeb9fb0ddb0e9`. Existing buff icons appear
+for missing buffs or known remaining durations below 120 seconds. An m:ss label
+shows remaining time on matching icons, including manually expanded choices.
+Unknown/permanent timing retains coverage without a guessed timer. One shared
+one-second update handles countdowns and threshold crossings outside combat;
+preview/world suspension also disables its aura work. No panel or settings added.
+Sibling pins, identities and loader inventories are unchanged. The new regression
+runs against both generated families. Artifacts:
+`C:/Temp/apogee-buff-expiry-strip-validation-20261011`. Native acceptance is pending.
+The owner's lower-strip click report is also addressed: the toggle now belongs
+to the full row, with explicit full-height geometry above the strip artwork,
+instead of inheriting the health-only name layer's bounds. Every supported row
+is covered by the revised strip regression in both generated families.
+
+Child checks and full central validation passed. DEV installation receipt:
+`C:/Dev/WoW/local-install-backups/apogee-buff-expiry-strip-217ff5e-20261011/transaction.json`,
+chained from the inline-strip correction. All 188 package files, 155 Lua files
+and 219 backup files were independently verified; all 111 PROD files are unchanged.
+Only Heals Buffs/Catalog.lua, Runtime.lua and View.lua changed. No discovery
+changes; user reload activates the update. Settings, private saves and differing
+documentation are preserved. No game operation, PROD install or publication.
+
 ## October 11 inline buff-strip correction
 
 The owner requested the existing left-side buff icons, without the additional
