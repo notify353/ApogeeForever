@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Group installed addon settings beneath Apogee (production) or Apogee DEV, with Auction, Dungeons, Essentials, Heals and Keybinds subcategories when available.
+
 - Remove built-in Priest and Paladin Keybinds spell defaults while preserving Warrior defaults and saved assignments.
 - Refresh current DEV installation provenance for the reviewed Forever 1.60.1.70338 export.
 

@@ -466,3 +466,43 @@ Reload with the complete DEV family enabled and verify Priest/Paladin empty slot
 manual saved assignments and unchanged Warrior defaults. The marker TOC is a
 discovery change; if reload does not discover it, a user restart may be needed.
 Native acceptance remains pending and its record is unchanged.
+
+## October 10 shared Settings parent DEV candidate
+
+Five independent settings owners share a native parent: Apogee in PROD and
+Apogee DEV in DEV. Loaded settings pages appear as Auction, Dungeons (Group Alert),
+Essentials, Heals and Keybinds. Auction remains DEV-only under the existing public
+selection. Tank and Stats have no settings page and their pins are unchanged.
+The marker remains zero-runtime. There are no new loader chunks or saved variables.
+
+Reviewed immutable pins are Heals `5ba1d9716e9ba92e344670cee36313de2b01ea66`,
+Keybinds `fab87a527b1408732dae386475651871badd94f6`, Group Alert
+`eb306ea6a3c4c5c9c82d0975e47d8cff9ff69d51`, Essentials
+`5f9393c4b3120001dde5c1f7d12c5845d1af49e3`, and Auction
+`64aaa9cb7c706cbb4d2eb8ec82df77bd3494e4ed`. Each uses the existing settings module
+and the session-only schema-1 ApogeeSettingsRegistry. The exact lexical mapping
+isolates it as ApogeeDevSettingsRegistry in those five owners only. Native category
+IDs stay on each child's existing open/settings path. Malformed shared state is
+preserved and rejected; absent subcategory APIs retain standalone compatibility.
+
+Full central validation passed, including generated settings regressions covering
+120 load orders per family, sole loaded owners, repeated creation, malformed
+registries, child IDs, Auction setting ownership, compatibility fallback, denied
+chunks and family isolation. The same regression fails against the prior packages.
+Matching 70338 Settings sources are recorded in the central export authority.
+Heals, Group Alert and Essentials also advance their reviewed warning baselines.
+
+Artifacts are at `C:/Temp/apogee-shared-settings-validation-20261010`. The DEV-only
+installation chains from the preceding Keybinds defaults receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-shared-settings-20261010/transaction.json`.
+All 188 installed package files, 155 DEV Lua files and 219 backup files were
+independently byte-verified; all 111 PROD files remain unchanged. Private saves,
+enable preferences and 31 differing local documentation files are preserved.
+Eight existing Lua files and Heals' export record changed. There are no new files
+or TOC discovery changes. No game operation, PROD installation or publication occurred.
+
+Start or reload with the complete DEV family enabled and inspect Settings > AddOns >
+Apogee DEV. Verify the expected loaded child pages, their controls and direct-open
+paths. Native appearance, defaults behavior and taint acceptance remain pending;
+the prior native-acceptance record is unchanged. No push or merge is authorized
+for this new candidate.

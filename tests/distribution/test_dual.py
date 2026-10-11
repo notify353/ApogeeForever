@@ -41,8 +41,8 @@ class DualTests(unittest.TestCase):
         return client, base / 'backup'
 
     def test_native_forever_identity_and_revision_tolerance(self):
-        # Sibling pins retain their reviewed warning baseline when install provenance advances.
-        reviewed_children = {'ApogeeHeals': '70205', 'ApogeeGroupAlert': '70205'}
+        # Warning baselines follow the reviewed source pins, independently of install provenance.
+        reviewed_children = {'ApogeeHeals': '70338', 'ApogeeGroupAlert': '70338'}
         reviewed_build = self.lock['client']['reviewedBuild'].rsplit('.', 1)[-1]
         for child in self.lock['children']:
             if child['name'] == 'ApogeeStats':
@@ -54,6 +54,16 @@ class DualTests(unittest.TestCase):
                 subprocess.run(['lua', str(ROOT / 'tests/distribution/client_identity.lua'),
                                 str(OPTIONS.artifacts / family / name), name] +
                                [warning_build or '', reviewed_build], check=True)
+
+    def test_shared_settings_parent_in_generated_families(self):
+        subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
+                        str(OPTIONS.artifacts)], check=True)
+        for name in ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials', 'ApogeeAuction'):
+            output, edits = dual.transform_lua(b'-- ApogeeSettingsRegistry\nApogeeSettingsRegistry = {}\n', name)
+            self.assertEqual(output, b'-- ApogeeSettingsRegistry\nApogeeDevSettingsRegistry = {}\n')
+            self.assertEqual(len(edits), 1)
+        for name in ('ApogeeTank', 'ApogeeStats'):
+            self.assertNotIn('ApogeeSettingsRegistry', dual.identity_map(name))
 
     def test_keybinds_spell_shift_and_ready_highlight_in_both_families(self):
         child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeKeybinds')
@@ -212,7 +222,8 @@ class DualTests(unittest.TestCase):
         expected_settings = source['RoleSettings.lua'].replace(
             b'ApogeeAuctionDB', b'ApogeeAuctionDevDB').replace(
             b'Apogee Auction', b'Apogee Auction DEV').replace(
-            b'APOGEE_AUCTION_DEFAULTS', b'APOGEE_AUCTION_DEV_DEFAULTS')
+            b'APOGEE_AUCTION_DEFAULTS', b'APOGEE_AUCTION_DEV_DEFAULTS').replace(
+            b'ApogeeSettingsRegistry', b'ApogeeDevSettingsRegistry')
         self.assertEqual(settings_body, dual.prefix(name, 'DEV') + expected_settings)
         for path in gameplay + ['Auction/Filter.lua', 'Auction/Browse.lua']:
             self.assertEqual(self.dev[name + '/' + path], dual.prefix(name, 'DEV') + source[path])

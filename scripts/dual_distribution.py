@@ -35,6 +35,9 @@ IDENTITIES = {
 
 def identity_map(name):
     result = {s: name + 'Dev' + s[len(name):] for s in IDENTITIES[name]}
+    if name in ('ApogeeAuction', 'ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials'):
+        # Shared session-only Settings parent; never share the registry across families.
+        result['ApogeeSettingsRegistry'] = 'ApogeeDevSettingsRegistry'
     if name == 'ApogeeAuction':
         result['APOGEE_AUCTION_DEFAULTS'] = 'APOGEE_AUCTION_DEV_DEFAULTS'
     if name == 'ApogeeEssentials':
