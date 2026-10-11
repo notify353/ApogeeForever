@@ -9,21 +9,42 @@ local owners = {
 }
 local function noop() end
 local frames, categories, roots, serial
-local function widget()
-    local object = {scripts={}}
+local function widget(parent, kind, font)
+    local object = {scripts={},children={},parent=parent,kind=kind,font=font}
+    if parent then parent.children[#parent.children+1]=object end
     return setmetatable(object, {__index=function(self, key)
         if key == "SetScript" then return function(_, event, callback) self.scripts[event]=callback end end
-        if key == "CreateTexture" or key == "CreateFontString" then return widget end
+        if key == "CreateTexture" then return function() return widget(self,"Texture") end end
+        if key == "CreateFontString" then return function(_,_,_,template) return widget(self,"FontString",template) end end
+        if key == "SetText" then return function(_,text) self.text=text end end
+        if key == "SetTextColor" or key == "SetColorTexture" then return function(_,...) self.color={...} end end
+        if key == "SetNormalFontObject" then return function(_,font) self.normalFont=font end end
+        if key == "SetHighlightFontObject" then return function(_,font) self.highlightFont=font end end
+        if key == "SetSize" then return function(_,w,h) self.width=w;self.height=h end end
+        if key == "SetShown" then return function(_,shown) self.shown=shown end end
         if key == "GetWidth" or key == "GetHeight" then return function() return 600 end end
         return noop
     end})
+end
+local function find(frame, predicate)
+    for _,child in ipairs(frame.children) do
+        if predicate(child) then return child end
+        local nested=find(child,predicate); if nested then return nested end
+    end
+end
+local function color(object,r,g,b)
+    assert(type(object.color)=="table" and object.color[1]==r and object.color[2]==g and object.color[3]==b)
+end
+local function typography(frame,title)
+    local heading=assert(find(frame,function(c) return c.kind=="FontString" and c.text==title end),"Missing title: "..title)
+    assert(heading.font=="GameFontNormalLarge",title.." must use native large title")
 end
 local function reset()
     ApogeeSettingsRegistry=nil; ApogeeDevSettingsRegistry=nil
     ApogeeAuctionDB=nil; ApogeeAuctionDevDB=nil
     frames, categories, roots, serial = {}, {}, {}, 0
     StaticPopupDialogs={}; GameTooltip=widget()
-    CreateFrame=function() local frame=widget(); frames[#frames+1]=frame; return frame end
+    CreateFrame=function(kind,_,parent,template) local frame=widget(parent,kind);frame.template=template; frames[#frames+1]=frame; return frame end
     InCombatLockdown=function() return false end
     issecretvalue=function() return false end
     canaccessvalue=function() return true end
@@ -63,14 +84,23 @@ local function reset()
 end
 local function load(owner, family, denied)
     local name=owner[1]..(family=="DEV" and "Dev" or "")
-    local ui={Text=widget, Button=widget, Label=widget, ListButton=widget,
-        Scroll=function() return widget(),widget() end}
+    local function text(parent,value,font)
+        local label=parent:CreateFontString(nil,"OVERLAY",font or "GameFontHighlightSmall")
+        label:SetText(value); return label
+    end
+    local ui={Text=text, Button=function(parent,value) local b=widget(parent,"Button"); b:SetText(value); return b end,
+        Label=function(parent,value,_,_,_,font) return text(parent,value,font) end,
+        ListButton=function(parent) return widget(parent,"Button") end,
+        Scroll=function(parent) return widget(parent,"ScrollFrame"),widget(parent,"Frame") end}
     local A={ready=true,active=true,db={rules={}},UI=ui,Text={},Rules={list={}},
         API={Combat=function() return false end},Hud={HideTooltip=noop},
-        Style={Text=widget},Minimap={Refresh=noop},Cleansing={},Threat={},ThreatDiagnostics={},
+        Style={Text=function(parent) local label=text(parent,"","GameFontNormal"); label:SetTextColor(1,1,1); return label end},Minimap={Refresh=noop},Cleansing={},Threat={},ThreatDiagnostics={},
         Errors={BuildErrorSettings=noop,RefreshErrors=noop},IsFeatureAvailable=function() return true end,
         __ApogeeFamilyAdmission=function(caller) assert(caller==name); return not denied end}
     local start=#frames
+    if owner[1]=="ApogeeGroupAlert" then
+        assert(loadfile(root.."/"..family.."/"..name.."/Core/UI.lua"))(name,A)
+    end
     assert(loadfile(root.."/"..family.."/"..name.."/"..owner[2]))(name,A)
     if denied then assert(#frames==start); return end
     if owner[1]=="ApogeeHeals" then A.Settings.Create()
@@ -86,6 +116,44 @@ local function load(owner, family, denied)
         local child=registry.children[owner[3]]
         if child then
             assert(child.registered and child.parent==registry.category)
+            local title="Apogee "..owner[3]..(family=="DEV" and " DEV" or "")
+            typography(child.frame,title)
+            if owner[1]=="ApogeeHeals" then
+                assert(A.Settings.threat.label.font=="GameFontHighlightSmall")
+                color(A.Settings.cleanseStatus,0.8,0.8,0.8)
+                InCombatLockdown=function() return true end; A.Settings.Refresh()
+                color(A.Settings.threat.label,0.5,0.5,0.5)
+                InCombatLockdown=function() return false end; A.Settings.Refresh()
+                color(A.Settings.threat.label,1,1,1)
+            elseif owner[1]=="ApogeeKeybinds" then
+                A.active=false; A.Settings.Refresh(); color(A.Settings.hideUnusable.label,0.5,0.5,0.5)
+                A.active=true; A.Settings.Refresh(); color(A.Settings.hideUnusable.label,1,1,1)
+            elseif owner[1]=="ApogeeAuction" then
+                local label=assert(find(child.frame,function(c) return c.kind=="FontString" and c.text=="Evaluate gear for" end))
+                assert(label.font=="GameFontHighlightSmall")
+            elseif owner[1]=="ApogeeGroupAlert" then
+                local tabs=0
+                for _,button in ipairs(child.frame.children) do
+                    if button.kind=="Button" and rawget(button,"Present") then
+                        tabs=tabs+1; assert(button.template=="UIPanelButtonTemplate")
+                        local marker=assert(find(button,function(c) return c.kind=="Texture" and c.height==2 end))
+                        color(marker,1,0.82,0)
+                        button:Present("Tab",true); assert(button.normalFont=="GameFontNormalSmall" and marker.shown)
+                        button:Present("Tab",false); assert(button.normalFont=="GameFontHighlightSmall" and not marker.shown)
+                    end
+                end
+                assert(tabs==3,"Dungeons owns three native settings tabs")
+                local headings=0
+                for _,label in ipairs(child.frame.children) do if label.kind=="FontString" and label.font=="GameFontNormal" then headings=headings+1 end end
+                assert(headings==2,"Dungeons column headings use native gold font")
+                local row=A.UI.ListButton(widget(),0,0,200)
+                row:Present("Example",true,false,"Shared")
+                local selected=assert(find(row,function(c) return c.kind=="FontString" and c.text=="Example" end))
+                color(selected,1,0.82,0)
+                color(assert(find(row,function(c) return c.kind=="FontString" and c.text=="Shared" end)),0.8,0.8,0.8)
+                color(assert(find(row,function(c) return c.kind=="Texture" and c.width==3 end)),1,0.82,0)
+                row:Present("Example",false,false);color(selected,1,1,1)
+            end
             if A.Settings then assert(A.Settings.category==child) end
             if A.testView then assert(A.testView.category==child) end
             if owner[1]=="ApogeeAuction" then assert(child.settingCount>0) end
@@ -99,6 +167,11 @@ local function verify(family, count)
     assert(type(registry)=="table" and registry.schema==1)
     local parent=assert(registry.category)
     assert(parent.name==label and not parent.parent)
+    typography(parent.frame,label)
+    local help=assert(find(parent.frame,function(c) return c.kind=="FontString" and c.text=="Select an enabled addon's settings from the list on the left." end))
+    assert(help.font=="GameFontHighlightSmall");color(help,0.8,0.8,0.8)
+    local background=assert(find(parent.frame,function(c) return c.kind=="Texture" end))
+    color(background,0.035,0.035,0.045);assert(background.color[4]==0.96)
     assert(#parent.children==count, "Only loaded Settings owners appear")
     local seen={}
     for _,child in ipairs(parent.children) do
@@ -155,4 +228,4 @@ for index,owner in ipairs(owners) do
 end
 assert(#roots==2 and ApogeeSettingsRegistry.category~=ApogeeDevSettingsRegistry.category)
 verify("PROD",4); verify("DEV",5)
-print("PASS shared Settings: "..permutations.." load orders, sole owners, denied chunks and isolated family parents")
+print("PASS shared Settings: "..permutations.." load orders, typography, tabs/list colors, sole owners, denied chunks and isolated family parents")

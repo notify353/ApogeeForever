@@ -511,6 +511,17 @@ end
         self.assertIn(b'local x="1"', output)
         with self.assertRaises(ValueError): dual.transform_lua(b'ApogeeTankUnknown={}', 'ApogeeTank')
 
+    def test_dungeons_settings_label_has_exact_dev_mapping(self):
+        source = b'-- Apogee Dungeons\nlocal title="Apogee Dungeons"; local text="Keep Apogee Dungeons unchanged"\n'
+        output, edits = dual.transform_lua(source, 'ApogeeGroupAlert')
+        self.assertEqual(output, b'-- Apogee Dungeons\nlocal title="Apogee Dungeons DEV"; local text="Keep Apogee Dungeons unchanged"\n')
+        self.assertEqual(len(edits), 1)
+        for family, files in (('PROD', self.prod), ('DEV', self.dev)):
+            name = 'ApogeeGroupAlert' + ('Dev' if family == 'DEV' else '')
+            label = 'Apogee Dungeons' + (' DEV' if family == 'DEV' else '')
+            settings = files[name + '/Settings/View.lua'].decode()
+            self.assertIn('"' + label + '"', settings)
+
     def test_heals_default_is_independent_and_reset_dialog_is_family_local(self):
         canonical = 'APOGEE_HEALS_RESET_CHARACTER'
         development = 'APOGEE_HEALS_DEV_RESET_CHARACTER'

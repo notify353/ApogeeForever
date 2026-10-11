@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Align addon settings typography, help text, shared-parent background and Dungeons tab styling; label the dungeon settings header Apogee Dungeons.
+
 - Remove the unnecessary scrollbar from the compact Keybinds settings page.
 
 - Group installed addon settings beneath Apogee (production) or Apogee DEV, with Auction, Dungeons, Essentials, Heals and Keybinds subcategories when available.

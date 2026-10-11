@@ -89,3 +89,11 @@ list without another top-level entry. A session-only, family-local registry shar
 the parent between independent loaded addons. The DEV lexical map explicitly
 isolates ApogeeSettingsRegistry as ApogeeDevSettingsRegistry in the five Settings
 owners. This is not a saved-variable or marker runtime identity.
+
+## October 10 settings typography review
+
+The matching Shared/FontStyles.xml confirms the native normal large/small title
+and heading templates, and white highlight-small labels. It is recorded in the
+authority hashes. Settings-only help/disabled colors are explicit overrides;
+no shared HUD font objects are changed. Apogee Dungeons is an exact audited
+Group Alert settings label with an isolated DEV display spelling.

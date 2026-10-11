@@ -47,6 +47,8 @@ def identity_map(name):
     if name == 'ApogeeKeybinds':
         result['APOGEE_KEYBINDS_RESET_CHARACTER'] = 'APOGEE_KEYBINDS_DEV_RESET_CHARACTER'
     if name == 'ApogeeGroupAlert':
+        # Settings-only product label; technical addon/database identities remain unchanged.
+        result['Apogee Dungeons'] = 'Apogee Dungeons DEV'
         result['APOGEE_GROUP_ALERT_DEFAULTS'] = 'APOGEE_GROUP_ALERT_DEV_DEFAULTS'
         result.update(SLASH_APOGEEGROUPALERT1='SLASH_APOGEEGROUPALERTDEV1',
                       APOGEEGROUPALERT='APOGEEGROUPALERTDEV')

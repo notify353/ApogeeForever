@@ -53,6 +53,10 @@
     {
       "path": "Blizzard_Settings_Shared/Blizzard_Category.lua",
       "sha256": "f831db6bf0285e65d14cd3bed4f4d2dd7cfc7d4aef1b77f40f7cc9f9d1936869"
+    },
+    {
+      "path": "Blizzard_Fonts_Shared/Shared/FontStyles.xml",
+      "sha256": "8212c902708e656f8291182cce616323339b5e39d0f2f68143e0fa7b0c461b9b"
     }
   ],
   "interface": 16001,

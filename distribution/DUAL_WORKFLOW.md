@@ -527,3 +527,36 @@ PROD files remain unchanged. Private saves, enable preferences and 31 differing
 local documentation files are preserved. There are no discovery changes. Reload
 and verify the Keybinds settings page in game; native acceptance remains pending.
 No game operation, PROD installation, push, merge or publication was performed.
+
+## October 10 settings typography consistency
+
+The five settings owners use native large gold titles, small white labels,
+muted small help text and gray unavailable labels. The shared parent has the
+same dark backdrop as its children. Dungeons uses matching native tabs with a
+gold selected underline and gold section/list selection text. Its displayed
+header is Apogee Dungeons; the exact DEV string mapping appends DEV. Technical
+Group Alert addon, saved-variable and slash identities remain unchanged.
+The changed Core/UI ListButton helper is settings-only; HUD helpers retain their
+existing styling. Essentials' learned-list help/status text is muted consistently.
+
+Reviewed pins are Keybinds `12790011110c0b95737366d0f683daaa83948e47`, Heals
+`b14f4afbd361a25198a9142dabcf764d51879fc1`, Group Alert
+`afc55343c2931f70f9f86a2d2831ec6e8070409a`, Essentials
+`8fd1d9a196003f5981692bc392e069ec53388c2b`, and Auction
+`040b608b51bacb4f50653ee01de9bd4bc562a117`. Tank, Stats and public selection
+are unchanged. The fresh native FontStyles.xml is included in API authority.
+
+Full central validation passed. Generated tests verify parent/title/help styles,
+disabled label colors, native Dungeons tabs and list colors across 120 load orders
+per family, together with existing isolation, settings and gameplay regressions.
+The exact Dungeons label transform preserves comments and unrelated prose.
+Evidence is at `C:/Temp/apogee-settings-typography-validation-20261010`.
+
+DEV-only installation chains from the scrollbar correction receipt and is recorded
+at `C:/Dev/WoW/local-install-backups/apogee-settings-typography-20261010/transaction.json`.
+All 188 installed package files, 155 DEV Lua files and 219 backups were independently
+verified; all 111 PROD files remain unchanged. Private saves, enable preferences
+and 31 differing local documentation files are preserved. Seven existing Lua files
+changed, with no new files or TOC discovery changes. Reload and inspect settings
+appearance, tab switching and unavailable controls in game. Native acceptance is
+pending. No game operation, PROD install, push, merge or publication was performed.
