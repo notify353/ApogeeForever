@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add learned-spell Defensive Warrior defaults for Intimidating Shout, Disarm, Victory Rush, Last Stand, Shield Wall and Concussion Blow, preserving saved assignments.
+
 - Ignore the global cooldown for Keybinds spell dimming, hiding, countdowns and readiness reminders while respecting individual cooldowns.
 
 - Keep a confirmed missing self-buff reminder through combat until a successful player cast of its spell family, without reading combat auras.

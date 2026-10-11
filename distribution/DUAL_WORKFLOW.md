@@ -609,3 +609,25 @@ DEV bootstrap and UI/Cooldowns.lua changed; there are no discovery changes.
 Reload and verify ordinary GCDs no longer dim/hide/count down or suppress readiness,
 while real spell cooldowns remain visible. Native acceptance is pending.
 No game operation, PROD installation, push, merge or publication was performed.
+
+## October 11 additional Defensive Warrior defaults
+
+Keybinds pins `0e81416cadc693a8963f0e087dcb1b85c003746a`. Defensive Warrior
+empty slots gain learned-spell defaults: 5 Intimidating Shout (5246), R Disarm
+(676), T Forever Victory Rush (402927), X Last Stand (12975), C Shield Wall (871),
+and Ctrl+Mouse4 Concussion Blow (12809). Saved assignments retain priority.
+Z, other stances/classes, six sibling pins and runtime transforms are unchanged.
+
+Full central validation passed, including defensive_extra_defaults_spec.lua
+against both generated families: learned-only gating, saved macro priority,
+combat stance transitions and class isolation. Evidence is under
+`C:/Temp/apogee-defensive-defaults-validation-20261011`.
+The DEV-only install chains from the GCD receipt and is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-defensive-defaults-0e81416-20261011/transaction.json`.
+
+Only Keybinds DEV Actions/Defaults.lua changed. All 188 package files, 155 DEV Lua
+files and 219 backups were independently verified; 111 PROD files remain unchanged.
+Private saves, enable preferences and 31 differing local documentation files are
+preserved. No discovery changes occurred. Reload and test learned spells on empty
+Defensive slots in game; native acceptance remains pending. No game operation,
+PROD installation, push, merge or publication was performed.
