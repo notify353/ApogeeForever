@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.14.4] - 2026-10-11
+
 - Group settings under Apogee with Dungeons, Essentials, Heals and Keybinds pages. Align text and tab styling and remove the unnecessary Keybinds scrollbar.
 - Give Heals and Keybinds minimap buttons matching tooltips. Right-click opens settings; right-button dragging moves the button without triggering a click.
 - Remove automatic Priest and Paladin spell defaults. Saved assignments and existing Warrior defaults remain.
