@@ -1,5 +1,22 @@
 # One source, two distributions
 
+## October 11 buff timer presentation correction
+
+Heals pins `d4ad2103e43619b59e32e1f78346a31756b4317d`. Buff timers use smaller
+outlined numeric text, centered and inset inside the icon. Long durations use
+compact minute/hour labels (56m, 2h); the final two minutes retain m:ss. This
+addresses the owner's screenshot of a wide 56:18 label crossing the icon edge.
+Reminder thresholds, strip controls and combat behavior are unchanged. Existing
+generated expiry regressions cover compact formatting and text bounds. Artifacts:
+`C:/Temp/apogee-buff-timer-polish-validation-20261011`. Native appearance requires
+owner review after reload. Sibling pins and identity transforms are unchanged.
+
+Child/full central checks passed. DEV receipt:
+`C:/Dev/WoW/local-install-backups/apogee-buff-timer-polish-d4ad210-20261011/transaction.json`.
+All 188 package files and 219 backups independently verified; 111 PROD files
+unchanged. Only Heals Buffs/View.lua changed, with no discovery changes. Reload
+to inspect the presentation. No game operation, PROD installation or publication.
+
 ## October 11 early buff reminders and timers
 
 Heals pins `217ff5eea83147b0b39b261ad7cdeb9fb0ddb0e9`. Existing buff icons appear

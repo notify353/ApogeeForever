@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Heals: fit timer labels inside buff icons using smaller outlined text and compact minute/hour labels for longer durations.
+
 - Heals: make the full class-color strip clickable, including its lower section over the power bar.
 
 - Heals: show buff icons below two minutes remaining with an m:ss timer. Refreshing a buff hides its reminder again; all reminders remain outside combat only.
