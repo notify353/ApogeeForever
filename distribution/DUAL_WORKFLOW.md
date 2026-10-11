@@ -1,5 +1,24 @@
 # One source, two distributions
 
+## October 11 inline buff-strip correction
+
+The owner requested the existing left-side buff icons, without the additional
+panel. Heals now pins `6bdc011` (full immutable commit in candidate.lock.json).
+Clicking the strip toggles the existing blessing/upkeep/aura choices, including
+already active buffs. Clicking again restores ordinary missing-buff reminders.
+The panel and current-buff text list are removed. Combat and recipient changes
+clear expansion; the existing secure icon controls and visibility remain in use.
+All sibling pins and transforms are unchanged. This supersedes the panel below.
+Validation artifacts: `C:/Temp/apogee-buff-strip-inline-validation-20261011`.
+
+Child and full central checks passed, including the revised regression in both
+generated families. DEV-only receipt:
+`C:/Dev/WoW/local-install-backups/apogee-buff-strip-inline-6bdc011-20261011/transaction.json`.
+All 188 package files, 155 Lua files and 219 backups were independently verified;
+111 PROD files are unchanged. Only Heals Buffs/Runtime.lua and Buffs/View.lua
+changed on disk; no discovery changes. Reload to activate. Native acceptance is
+pending. No game operation, PROD installation, push, merge or publication occurred.
+
 ## October 11 class-strip buff picker DEV candidate
 
 Heals pins `87f3a6142c97ed883c87bc977e5a4c76364c5c10`. Clicking the class-color

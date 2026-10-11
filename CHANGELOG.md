@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Heals: click a player's class-color strip outside combat to inspect current buffs and choose a learned buff to recast or replace. The picker closes in combat and on recipient changes.
+- Heals: click a player's class-color strip outside combat to show buff options in the existing icon row on the left, including active buffs for recasting or replacement. Click again to restore missing-buff reminders. No extra panel.
 
 ## [1.14.4] - 2026-10-11
 

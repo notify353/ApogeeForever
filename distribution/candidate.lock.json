@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "87f3a6142c97ed883c87bc977e5a4c76364c5c10",
+      "commit": "6bdc01191c29b973957aca14c41a142e4695a50e",
       "files": {
         "ApogeeHeals.lua": "1bbede96d06448c3812a2911a644e05ea3c62fa932a676b905096202f04329b8",
         "ApogeeHeals.toc": "fe56908966c0ea442d416a38af9f5f9fa0ee30e48c2ae87e479dd0a786fea56d",
@@ -9,9 +9,9 @@
         "Bindings/Runtime.lua": "fd7bcd0039a3290b923168578e7f7d13821207e1ef84909d22e64f953a0a1cbb",
         "Buffs/Catalog.lua": "7cffa3edf0b13e8aa6684a171d771e20c30563f6a89a69662111663b1ff68e57",
         "Buffs/Defaults.lua": "88118e8147534df41c6e695475557aafe8c86d610bc4b52b55656935ca006073",
-        "Buffs/Runtime.lua": "9214a85886a4ac4c432f09e23f771ab78f2b4b42f4a9b7db5c4f9d649c540e17",
-        "Buffs/View.lua": "383f6a21eeabe93c4f56be13c591c257f28ce12dd888a0e0e22d53f0ee81087d",
-        "CHANGELOG.md": "ce2186111abda0f197a229548a62fe176ee6d594e88d0e2ce48d19d7cd3a2dda",
+        "Buffs/Runtime.lua": "901130699b85260763b4a3b1d3ee6fefa7fb1dbe5d1151744bb0e6384113b643",
+        "Buffs/View.lua": "fd7beaa3ee50c14766a8b8b5984e6ab4a375316bb4efb35ad583f75e251d1755",
+        "CHANGELOG.md": "6446067e784e7e9069950ad948422772335c43e5e1665b2e32b0e74e60c9f46f",
         "Cleansing/Runtime.lua": "78ec7cd14a77a81b0bfebc12dfa1056c0456dfeaa61b0c0e83f12cf339a51f16",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "9e9cebb382c867912d7ec51f62ee031332697bdbfe2846ac7580d5ebd94d7d88",
@@ -24,7 +24,7 @@
         "PartyFrames/Preview.lua": "44d56bf0dd11d64e6657108ba24ab676210b11a4fc20cf7251c8d270c284bea9",
         "PartyFrames/Runtime.lua": "cc152eba01c3b367f4d4393a4940d464bdcf5c29ea77301ed134a49dcd3d473e",
         "PartyFrames/View.lua": "0375d22453de33558c3a89f90d48131ed6fe38e8735f2626474d0a098b751fc4",
-        "README.md": "cac7400f3263e5328c8aa84c7d74e212ef14048ba298fcbef05cbf5a371a8c99",
+        "README.md": "84d1f2c4450bff8d818591f2f7bf2a3770238c7ba3f6d66107a76f94b5c69cba",
         "Threat/Diagnostics.lua": "7c71432508520517e684c604f6eefd3c932ba47f264d4aa83c4171d0c2a0923e",
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
@@ -34,7 +34,7 @@
         "UI/Settings.lua": "d5858e139ee339306e6d9167b1acd117c8f24c79a8094862180b348f28d55b0c",
         "UI/Style.lua": "b0ddedfed6dd41f1b33df9d9a2b1416161fd7af558d7b277a4111db1ecc45f15",
         "WeaponUpkeep/Runtime.lua": "d043c7fd40e0d47ae1079b0a0069243355016b126ecf0f72ff3ebca6087978e3",
-        "docs/API_REFERENCE.md": "aa560feca3c32b706f51323b665b71370aa1d7a92fc5d5edfc2bb7b9252358a4",
+        "docs/API_REFERENCE.md": "a6a5d271d1d454fbfc7cc09e6f52cb8473b0c92eaf32bf4f78d2ea379dc06a56",
         "docs/CLASS_SUPPORT.md": "984121f6dda5f64cf84196cf1e619279ac09d13c543e84e7ebfeacd72509a20a",
         "docs/wow-api-export.json": "ceba65cf022415ab651bf9b8228a2d66ad3856a3c484d6b11954970cf19db5b6"
       },
