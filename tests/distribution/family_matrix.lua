@@ -1,6 +1,6 @@
 -- Actual generated chunks must stop before side effects when their family is denied.
 local root = arg[1]
-local children = {"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "ApogeeEssentials", "ApogeeTank", "ApogeeAuction", "ApogeeStats"}
+local children = {"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "ApogeeEssentials", "ApogeeStats"}
 local savedPrint = print
 local secret = {}
 local logs, scenarios = {}, 0

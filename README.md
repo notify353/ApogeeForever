@@ -8,7 +8,7 @@ Five focused addons for **World of Warcraft Forever 1.60.1**:
 - **Essentials:** chat conveniences, UI fading and error controls.
 - **Stats:** role-aware gear guidance with NEED during loot rolls and UPGRADE on other item tooltips.
 
-Auction and Tank remain DEV-only in the next package candidate.
+Tank and the standalone Auction addon are retired from both package families.
 
 Enable the modules you want under **Apogee Forever** in WoW's AddOns list.
 Gameplay modules retain their own settings. Stats evaluates all supported roles outdoors and uses your assigned role or instance fallback in dungeons. Its character-window Gear filter applies only while that window is open. This edition supports Forever only.

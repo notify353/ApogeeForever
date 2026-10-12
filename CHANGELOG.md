@@ -2,6 +2,24 @@
 
 ## [Unreleased]
 
+- Remove the retired Tank and standalone Auction addons from DEV as well as
+  PROD packages. Keep the five active addons and their settings unchanged.
+
+- Exclude the class-color strip from healing clicks and reserve its full height
+  for buff controls on every class, absorbing other mouse buttons safely.
+
+- Hide recipient buff options outside the buff spell's range and restore them
+  after movement, including manually expanded options.
+
+- Recognize unlisted buff ranks by their client-localized names across supported
+  class reminders, including group variants, to protect existing foreign buffs.
+
+- Preserve buffs from other players until they expire, preventing refresh suggestions that would replace a more powerful version. Other blessing types remain selectable.
+
+- Heals: click anywhere on a player's class-color strip to show buff options on the left, including active buffs for recasting or replacement. Click again to restore reminders. Available outside combat only.
+- Show buff reminders below two minutes remaining, with compact outlined timers inside the icons. Refreshing a buff hides its reminder again.
+- Reload after updating. Existing settings are preserved.
+
 ## [1.14.4] - 2026-10-11
 
 - Group settings under Apogee with Dungeons, Essentials, Heals and Keybinds pages. Align text and tab styling and remove the unnecessary Keybinds scrollbar.

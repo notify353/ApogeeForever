@@ -160,7 +160,8 @@ def put_atomic(root, files):
 
 def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomic_dev=False, retired=None):
     if atomic_dev:
-        d.require(set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
+        current_dev = {d.MARKER + 'Dev', *(n + 'Dev' for n in d.ACTIVE_CHILDREN)}
+        d.require(set(names) == current_dev or set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
                   'Atomic live install is DEV-only')
     client = ordinary(client)
     backup = ordinary(backup)

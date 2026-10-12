@@ -5,7 +5,6 @@ local owners = {
     {"ApogeeKeybinds", "UI/Settings.lua", "Keybinds"},
     {"ApogeeGroupAlert", "Settings/View.lua", "Dungeons"},
     {"ApogeeEssentials", "Core/Settings.lua", "Essentials"},
-    {"ApogeeAuction", "RoleSettings.lua", "Auction"},
 }
 local function noop() end
 local frames, categories, roots, serial
@@ -186,22 +185,21 @@ local function order(list, depth)
         for _,family in ipairs({"PROD","DEV"}) do
             reset()
             for _,index in ipairs(list) do
-                -- Auction is intentionally absent from the selected PROD family.
-                if family=="DEV" or index~=5 then load(owners[index],family) end
+                load(owners[index],family)
             end
-            local seen=verify(family,family=="DEV" and 5 or 4)
+            local seen=verify(family,4)
             assert(#roots==1 and seen.Dungeons and seen.Keybinds and seen.Heals and seen.Essentials)
-            if family=="DEV" then assert(seen.Auction and ApogeeSettingsRegistry==nil)
+            if family=="DEV" then assert(not seen.Auction and ApogeeSettingsRegistry==nil)
             else assert(not seen.Auction and ApogeeDevSettingsRegistry==nil) end
         end
         permutations=permutations+1; return
     end
     for i=depth,#owners do list[depth],list[i]=list[i],list[depth]; order(list,depth+1); list[depth],list[i]=list[i],list[depth] end
 end
-order({1,2,3,4,5},1)
+order({1,2,3,4},1)
 for _,family in ipairs({"PROD","DEV"}) do
     for index,owner in ipairs(owners) do
-        if family=="DEV" or index~=5 then
+        do
             reset(); load(owner,family); assert(verify(family,1)[owner[3]] and #roots==1)
             load(owner,family); assert(verify(family,1)[owner[3]] and #roots==1)
             if owner[1]=="ApogeeKeybinds" then
@@ -223,9 +221,9 @@ for _,family in ipairs({"PROD","DEV"}) do
 end
 reset()
 for index,owner in ipairs(owners) do
-    if index~=5 then load(owner,"PROD") end
+    load(owner,"PROD")
     load(owner,"DEV")
 end
 assert(#roots==2 and ApogeeSettingsRegistry.category~=ApogeeDevSettingsRegistry.category)
-verify("PROD",4); verify("DEV",5)
+verify("PROD",4); verify("DEV",4)
 print("PASS shared Settings: "..permutations.." load orders, typography, tabs/list colors, sole owners, denied chunks and isolated family parents")

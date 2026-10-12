@@ -1,5 +1,224 @@
 # One source, two distributions
 
+## October 12 Tank and standalone Auction retirement
+
+The owner explicitly requested removal of Tank and Auction from this system
+and Apogee. The current lock now contains five active children: Heals, Keybinds,
+Group Alert, Essentials and Stats. Both PROD and DEV contain those five plus
+their marker. Tank/Auction pins and release checkouts are removed. Historical
+locks, migration safety recognition, source repositories and backups are retained;
+the validation workflow still fetches the historical Tank pin solely to test old
+migrations. Historical seven-child descriptions below are superseded by this scope.
+
+The installer accepts the exact current six-root DEV inventory and preserves
+omitted legacy folders rather than deleting them implicitly. Explicit owner
+uninstallation uses `scripts/retire-unused-dev-addons.ps1` with the client root,
+previous verified install receipt and a new backup directory outside the game.
+It accepts only the two retired DEV roots, refuses unexpected runtime edits and
+reparse points, checks every source/destination path, and moves whole folders to
+a byte-verified recovery backup. Unknown documentation stays with that backup.
+No saved variables, enabled-state preferences or source repositories are read,
+changed or deleted. The owner restarts the game to refresh discovery and unload
+already-loaded code; never operate the client from this task.
+
+Full central validation passed at `C:/Temp/apogee-retire-validation-20261012`.
+Retirement journal: `C:/Dev/WoW/local-install-backups/apogee-tank-auction-retired-20261012/retirement.json`.
+Current DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-five-addon-update-20261012/transaction.json`.
+All 84 removed files are verified in the recovery backup, all 246 remaining
+PROD/DEV files are byte-identical, and all 114 non-preserved package files match
+the new DEV ZIP. None of the four canonical/DEV Tank/Auction roots remains in
+AddOns. The installer performed no writes to the remaining addons. No game
+operation, saved-data access, remote mutation or publication occurred.
+
+## October 12 exclusive class-strip input
+
+Heals pins `1a67fd51c864cba25959cf2d338d8e1165de1fc6`. The owner reports
+the strip still healing on other classes and clarifies the strip location,
+regardless of its class color, is exclusively for buff input. The secure row's
+hit rectangle now excludes the rail and seam. The full-height overlay covers
+that same width, disables click propagation, absorbs all button presses/releases,
+and toggles only on left release through the existing combat guard. All nine
+class fixtures cover input ownership independently of whether buff options exist.
+No sibling, identity transform or buff catalog changes. Native physical-click
+acceptance remains pending; mocks verify configuration rather than hit testing.
+
+Full child and central checks passed at `C:/Temp/apogee-strip-input-validation-20261012`.
+DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-strip-input-1a67fd5-20261012/transaction.json`.
+Independently verified 188 package files, 219 backups and 111 unchanged PROD
+files. Heals Buffs/View.lua, PartyFrames/View.lua and UI/Style.lua changed;
+no discovery changes. User reload and physical-click verification remain.
+
+## October 11 buff recipient range
+
+Heals pins `f27aff25008eeb6292a012074074ad4c32019ba3`. The owner clarified
+that the remaining confusing icons were on out-of-range recipients. All buff
+choices now use their own native spell-range check against the fixed recipient;
+confirmed out-of-range choices disappear from automatic and expanded lists.
+The existing one-second refresh restores them after movement. Self buffs remain
+available; unknown/restricted range is not classified as out of range. Generated
+class integration and dedicated range tests cover movement, recipient isolation,
+manual expansion and combat. Sibling pins and transforms are unchanged.
+
+Child and full central validation passed at `C:/Temp/apogee-buff-range-validation-20261011`.
+DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-buff-range-f27aff2-20261011/transaction.json`.
+Independently verified 188 package files, 219 backups and 111 unchanged PROD
+files. Only Heals Buffs/Runtime.lua changed; no discovery changes. User reload
+and native movement verification remain. No game operation or publication.
+
+## October 11 buff family name fallback
+
+Heals pins `126d0b549e56321e4d66043904ed3bbea9dbbc96`. The owner reports that
+the prior protection still fails and requests class-wide behavior. Fixed the
+reproducible unlisted-rank gap: client-localized ordinary/group buff names now
+provide family coverage as well as manual replacement protection. No hardcoded
+English matching, guessed strength comparison, identity transforms or sibling
+changes. Generated class and blessing regressions include unlisted aura IDs.
+Native acceptance remains false; the actual reported case needs owner testing.
+
+Full child and central checks passed at `C:/Temp/apogee-buff-names-validation-20261011`.
+The new cross-class regression fails against the previous implementation. DEV
+receipt: `C:/Dev/WoW/local-install-backups/apogee-buff-names-126d0b5-20261011/transaction.json`.
+Independently verified 188 package files, 219 backups and 111 unchanged PROD
+files. Four Heals runtime files changed; no discovery changes. User reload is
+required. No game operation, PROD install or publication occurred.
+
+## October 11 foreign-buff coverage correction
+
+Heals pins `5781d06a3f014d7675a67969076b4483e2d253ff`. The owner reported a
+"more powerful" blessing error. The early-refresh rule now applies only to
+confirmed player-owned applications. Foreign or unknown-source buffs remain
+coverage until removed and suppress matching recast choices during strip expansion.
+Other blessing types remain available. This conservatively protects equal/weaker
+foreign buffs too, since rank/ID does not prove strength after talent improvements.
+Native own aura/aspect choices retain their separate stance authority.
+
+The new regression covers self/party/target, higher and Greater blessings,
+same-rank foreign applications, unknown source, removal recovery, own refresh
+and gap-free icon layout in both generated families. Artifacts:
+`C:/Temp/apogee-buff-foreign-coverage-validation-20261011-r2`. Existing runtime
+acceptance is invalidated; historical accepted hashes and reports are preserved.
+Publication remains blocked pending owner acceptance of this correction and
+write-capable GitHub authentication. No sibling or identity transform changes.
+
+Full child/central validation passed. The release-gate regression now separately
+handles explicitly unaccepted candidates as well as changed accepted runtime.
+DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-buff-foreign-coverage-5781d06-20261011/transaction.json`.
+All 188 package files and 219 backups independently verified; 111 PROD files
+unchanged. Only Heals Buffs/Runtime.lua changed; no discovery changes. Reload and
+verify the previously rejected blessing situation. No game operation or publication.
+
+## October 11 quality review and release handoff
+
+Reviewed the complete Heals buff-strip/timer diff against the released baseline:
+restricted-value guards, fixed recipient actions, combat and lifecycle handling,
+timer boundaries, duplicate coverage, input geometry, polling and distribution
+isolation. No blocking runtime defect was found. Added recipient-isolation and
+no-catch-up/preview polling regressions in child commit
+`940b6fb66ff16c753dbb59235b5c4c6d80a6721d`. This changes tests only; both generated
+family file maps and archive hashes are identical to the accepted installed
+timer-polish candidate. No reinstall is necessary.
+
+The owner reports "perfect" for the installed result and requests review and
+deployment preparation. Native acceptance now records that report and the exact
+verified DEV runtime and generated PROD counterpart; unchanged sibling acceptance
+is retained. It does not claim a comprehensive native test matrix or separate
+PROD/CurseForge-client testing. Release notes are consolidated.
+
+Full child checks with the matching export and full central checks passed.
+Evidence: `C:/Temp/apogee-buff-quality-validation-20261011`. Offline publisher
+payload acceptance passes for planned patch 1.14.5. No release version/tag has
+been created. Both repositories are committed locally on their task branches;
+push/main integration require explicit approval under the owner instructions.
+After integration, use prepare-release.ps1 from synchronized main, integrate its
+release PR and pass exact-final-main hosted checks before requesting production-tag
+approval. Existing worktrees/backups are retained; no cleanup, game operation,
+PROD installation, external message or publication occurred.
+
+## October 11 buff timer presentation correction
+
+Heals pins `d4ad2103e43619b59e32e1f78346a31756b4317d`. Buff timers use smaller
+outlined numeric text, centered and inset inside the icon. Long durations use
+compact minute/hour labels (56m, 2h); the final two minutes retain m:ss. This
+addresses the owner's screenshot of a wide 56:18 label crossing the icon edge.
+Reminder thresholds, strip controls and combat behavior are unchanged. Existing
+generated expiry regressions cover compact formatting and text bounds. Artifacts:
+`C:/Temp/apogee-buff-timer-polish-validation-20261011`. Native appearance requires
+owner review after reload. Sibling pins and identity transforms are unchanged.
+
+Child/full central checks passed. DEV receipt:
+`C:/Dev/WoW/local-install-backups/apogee-buff-timer-polish-d4ad210-20261011/transaction.json`.
+All 188 package files and 219 backups independently verified; 111 PROD files
+unchanged. Only Heals Buffs/View.lua changed, with no discovery changes. Reload
+to inspect the presentation. No game operation, PROD installation or publication.
+
+## October 11 early buff reminders and timers
+
+Heals pins `217ff5eea83147b0b39b261ad7cdeb9fb0ddb0e9`. Existing buff icons appear
+for missing buffs or known remaining durations below 120 seconds. An m:ss label
+shows remaining time on matching icons, including manually expanded choices.
+Unknown/permanent timing retains coverage without a guessed timer. One shared
+one-second update handles countdowns and threshold crossings outside combat;
+preview/world suspension also disables its aura work. No panel or settings added.
+Sibling pins, identities and loader inventories are unchanged. The new regression
+runs against both generated families. Artifacts:
+`C:/Temp/apogee-buff-expiry-strip-validation-20261011`. Native acceptance is pending.
+The owner's lower-strip click report is also addressed: the toggle now belongs
+to the full row, with explicit full-height geometry above the strip artwork,
+instead of inheriting the health-only name layer's bounds. Every supported row
+is covered by the revised strip regression in both generated families.
+
+Child checks and full central validation passed. DEV installation receipt:
+`C:/Dev/WoW/local-install-backups/apogee-buff-expiry-strip-217ff5e-20261011/transaction.json`,
+chained from the inline-strip correction. All 188 package files, 155 Lua files
+and 219 backup files were independently verified; all 111 PROD files are unchanged.
+Only Heals Buffs/Catalog.lua, Runtime.lua and View.lua changed. No discovery
+changes; user reload activates the update. Settings, private saves and differing
+documentation are preserved. No game operation, PROD install or publication.
+
+## October 11 inline buff-strip correction
+
+The owner requested the existing left-side buff icons, without the additional
+panel. Heals now pins `6bdc011` (full immutable commit in candidate.lock.json).
+Clicking the strip toggles the existing blessing/upkeep/aura choices, including
+already active buffs. Clicking again restores ordinary missing-buff reminders.
+The panel and current-buff text list are removed. Combat and recipient changes
+clear expansion; the existing secure icon controls and visibility remain in use.
+All sibling pins and transforms are unchanged. This supersedes the panel below.
+Validation artifacts: `C:/Temp/apogee-buff-strip-inline-validation-20261011`.
+
+Child and full central checks passed, including the revised regression in both
+generated families. DEV-only receipt:
+`C:/Dev/WoW/local-install-backups/apogee-buff-strip-inline-6bdc011-20261011/transaction.json`.
+All 188 package files, 155 Lua files and 219 backups were independently verified;
+111 PROD files are unchanged. Only Heals Buffs/Runtime.lua and Buffs/View.lua
+changed on disk; no discovery changes. Reload to activate. Native acceptance is
+pending. No game operation, PROD installation, push, merge or publication occurred.
+
+## October 11 class-strip buff picker DEV candidate
+
+Heals pins `87f3a6142c97ed883c87bc977e5a4c76364c5c10`. Clicking the class-color
+strip opens a recipient picker with current buffs and learned buff choices,
+including already active blessings for recasting/replacement. It is available
+only outside combat, closes on combat entry and target/group changes, and does
+not reopen when combat ends. Current unknown/restricted aura data closes it.
+Native secure buttons retain fixed recipients. No saved data, loader inventory
+or identity transforms change; all six sibling pins remain unchanged.
+
+The child regression is included in both generated family checks. Child checks
+use the matching Forever export. Full distribution validation artifacts are at
+`C:/Temp/apogee-buff-strip-validation-20261011`. Native appearance, casting and
+taint acceptance require owner testing; prior native acceptance is not advanced.
+
+Full child and central checks passed. DEV-only installation is recorded at
+`C:/Dev/WoW/local-install-backups/apogee-buff-strip-87f3a61-20261011/transaction.json`,
+chained from the minimap-consistency receipt. All 188 package files, 155 DEV Lua
+files and 219 backups were independently verified; all 111 PROD files are unchanged.
+Private saves, enable preferences and 31 differing documentation files are preserved.
+Four Heals Lua files changed. The existing DEV marker TOC also advances to the
+current distribution version; it is the only discovery change. Reload with DEV
+enabled; if the updated TOC is not discovered, a user restart may be needed.
+No game operation, PROD installation, push, merge or publication occurred.
+
 The active local workflow is side-by-side PROD and DEV. Earlier prototype and
 migration fixtures remain historical evidence. PROD 1.0.0 is published on
 CurseForge and GitHub; DEV remains local. APHB is a zero-Lua distribution identity with no gameplay or saved

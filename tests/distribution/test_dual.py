@@ -83,7 +83,7 @@ class DualTests(unittest.TestCase):
                                     '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
             start = runner.index('for _, path in ipairs({')
             end = runner.index('}) do', start) + len('}) do')
-            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua"}) do' + runner[end:]
+            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua", "tests/buff_foreign_coverage_spec.lua", "tests/buff_range_spec.lua"}) do' + runner[end:]
             runner = runner.replace('    assert(loadstring(fixtureTest,', '    if name == "ApogeeHealsDev" then fixtureTest = fixtureTest:gsub("Apogee Heals", "Apogee Heals DEV") end\n    assert(loadstring(fixtureTest,')
             runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target buffs, class integration and minimap regressions: " .. name)')
             (harness / 'target-generated.lua').write_text(runner)
@@ -162,10 +162,10 @@ class DualTests(unittest.TestCase):
         with self.assertRaises(ValueError): m.rollback(backup)
         self.assertEqual(target.read_bytes(), b'-- new user file')
 
-    def test_public_selection_omits_tank_but_retains_complete_dev(self):
+    def test_public_and_dev_selection_omit_retired_children(self):
         self.assertNotIn('ApogeeTank', d.public_children(self.lock))
         self.assertFalse(any(p.startswith('ApogeeTank/') for p in self.prod))
-        self.assertIn('ApogeeTankDev/ApogeeTankDev.toc', self.dev)
+        self.assertNotIn('ApogeeTankDev/ApogeeTankDev.toc', self.dev)
         for family, files in (('PROD', self.prod), ('DEV', self.dev)):
             for p, b in files.items():
                 if p.endswith('.toc'):
@@ -223,139 +223,51 @@ class DualTests(unittest.TestCase):
         m.rollback(backup)
         self.assertEqual(m.managed(client / 'Interface/AddOns', m.DEV_NAMES + m.LOCAL_DEV_NAMES), old)
 
-    def test_auction_is_hosted_but_dev_only(self):
-        self.assertNotIn('ApogeeAuction', d.public_children(self.lock))
-        self.assertFalse(any(p.startswith('ApogeeAuction/') for p in self.prod))
-        name = 'ApogeeAuctionDev'
-        meta, runtime = d.toc_info(self.dev[name + '/' + name + '.toc'])
-        gameplay = ['Core/Compare.lua', 'Core/Combat.lua', 'Core/Profiles.lua', 'Rules/Paladin.lua', 'Rules/Paladin/Healing.lua',
-                    'Rules/Paladin/Damage.lua', 'Rules/Paladin/Tank.lua',
-                    'Rules/Warrior.lua', 'Rules/Warrior/Damage.lua', 'Rules/Warrior/Tank.lua',
-                    'Rules/Priest.lua', 'Rules/Priest/Healing.lua', 'Rules/Priest/Damage.lua',
-                    'Rules/Mage.lua', 'Rules/Mage/Damage.lua', 'Rules/Warlock.lua', 'Rules/Warlock/Damage.lua',
-                    'Rules/Rogue.lua', 'Rules/Rogue/Damage.lua', 'Rules/Hunter.lua', 'Rules/Hunter/Damage.lua',
-                    'Rules/Shaman.lua', 'Rules/Shaman/Healing.lua', 'Rules/Shaman/Damage.lua',
-                    'Rules/Druid.lua', 'Rules/Druid/Healing.lua', 'Rules/Druid/Tank.lua', 'Rules/Druid/Damage.lua',
-                    'Core/Items.lua', 'Core/Group.lua', 'Core/Evaluate.lua']
-        self.assertEqual(runtime, [dual.GATE_PATH, name + '.lua'] + gameplay + ['RoleSettings.lua', 'Auction/Filter.lua', 'Auction/Browse.lua'])
-        self.assertEqual(meta.get('SavedVariablesPerCharacter'), 'ApogeeAuctionDevDB')
-        self.assertNotIn('SavedVariables', meta)
-        body = self.dev[name + '/' + name + '.lua']
-        self.assertTrue(body.startswith(dual.prefix(name, 'DEV')))
-        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeAuction')
-        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
-        expected_body = source['ApogeeAuction.lua']
-        self.assertEqual(body, dual.prefix(name, 'DEV') + expected_body)
-        settings_body = self.dev[name + '/RoleSettings.lua']
-        expected_settings = source['RoleSettings.lua'].replace(
-            b'ApogeeAuctionDB', b'ApogeeAuctionDevDB').replace(
-            b'Apogee Auction', b'Apogee Auction DEV').replace(
-            b'APOGEE_AUCTION_DEFAULTS', b'APOGEE_AUCTION_DEV_DEFAULTS').replace(
-            b'ApogeeSettingsRegistry', b'ApogeeDevSettingsRegistry')
-        self.assertEqual(settings_body, dual.prefix(name, 'DEV') + expected_settings)
-        for path in gameplay + ['Auction/Filter.lua', 'Auction/Browse.lua']:
-            self.assertEqual(self.dev[name + '/' + path], dual.prefix(name, 'DEV') + source[path])
-        # Retain old installed paths as inert, unloaded stubs. The owning
-        # evaluation suite also executes them and checks for registrations.
-        for path in ('Rules/Other.lua', 'Rules/Paladin/Combat.lua', 'Rules/Warrior/Combat.lua'):
-            self.assertNotIn(path, runtime)
-            self.assertEqual(self.dev[name + '/' + path], source[path])
-            self.assertNotIn('ApogeeAuction/' + path, self.prod)
-        pinned_files = {p: source[p] for p in child['files']}
-        d.child_contract(child, pinned_files)
-        for path in ('Rules/Other.lua', 'Rules/Paladin/Combat.lua', 'Rules/Warrior/Combat.lua'):
-            changed = dict(pinned_files)
-            changed[path] += b'CreateFrame("Frame")\n'
-            with self.assertRaises(ValueError): d.child_contract(child, changed)
-        changed = dict(pinned_files)
-        changed['Rules/Unexpected.lua'] = source['Rules/Other.lua']
-        with self.assertRaises(ValueError): d.child_contract(child, changed)
-        foreign_child = dict(child, name='ApogeeHeals')
-        with self.assertRaises(ValueError): d.child_contract(foreign_child, pinned_files)
-        changed = dict(pinned_files)
-        changed[child['toc']] += b'README.md\n'
-        with self.assertRaises(ValueError): d.child_contract(child, changed)
-        (OPTIONS.artifacts / 'loot-scenarios.lua').write_bytes(source['tests/loot-scenarios.lua'])
-        evaluation_check = OPTIONS.artifacts / 'auction-evaluation.lua'
-        evaluation_check.write_bytes(source['tests/evaluation.lua'])
-        subprocess.run(['lua', str(evaluation_check), str(OPTIONS.artifacts / 'DEV' / name), name], check=True)
-        # Execute real loot/group regressions against transformed package bytes.
-        for script in ('loot-scenarios.lua', 'group-fixtures.lua', 'group-scenarios.lua', 'group-browse.lua', 'core-stats.lua'):
-            (OPTIONS.artifacts / script).write_bytes(source['tests/' + script])
-        for script in ('loot-scenarios.lua', 'group-scenarios.lua', 'group-browse.lua', 'core-stats.lua'):
-            subprocess.run(['lua', str(OPTIONS.artifacts / script),
-                            str(OPTIONS.artifacts / 'DEV' / name), name], check=True)
-        settings_check = OPTIONS.artifacts / 'auction-settings.lua'
-        settings_check.write_bytes(source['tests/role-settings.lua'])
-        subprocess.run(['lua', str(settings_check),
-                        str(OPTIONS.artifacts / 'DEV' / name / 'RoleSettings.lua'), name], check=True)
-        for script in ('auction-filter.lua', 'auction-browse.lua'):
-            check_path = OPTIONS.artifacts / script
-            check_path.write_bytes(source['tests/' + script])
-            subprocess.run(['lua', str(check_path), str(OPTIONS.artifacts / 'DEV' / name), name], check=True)
-        # Execute the generated body in a strict sandbox: admission must precede
-        # even client inspection and tooltip registration.
-        check = OPTIONS.artifacts / 'auction-bootstrap.lua'
-        check.write_text('''
-local path = arg[1]
-for _, admitted in ipairs({false, true}) do
-    local namespace = {__ApogeeFamilyAdmission=function(name)
-        assert(name == "ApogeeAuctionDev"); return admitted end}
-    local calls, registrations = 0, 0
-    local env = {type=type,
-        Enum={TooltipDataType={Item=0}},
-        TooltipDataProcessor={AddTooltipPostCall=function(kind, callback)
-            assert(kind == 0 and type(callback) == "function")
-            registrations=registrations+1
-        end},
-        GetBuildInfo=function()
-        calls=calls+1; return "1.60.1", "70009", "", 16001 end}
-    setmetatable(env, {__index=function(_, k) error("Unexpected API: "..k) end,
-                      __newindex=function(_, k) error("Unexpected global: "..k) end})
-    local chunk=assert(loadfile(path)); setfenv(chunk, env)
-    chunk("ApogeeAuctionDev", namespace)
-    assert(calls == (admitted and 1 or 0))
-    assert(registrations == (admitted and 1 or 0))
-    assert(namespace.ready == (admitted and true or nil))
-end
-''')
-        subprocess.run(['lua', str(check), str(OPTIONS.artifacts / 'DEV' / name / (name + '.lua'))], check=True)
+    def test_retired_children_are_absent_from_current_sources_and_packages(self):
+        self.assertEqual(d.hosted_children(self.lock), d.ACTIVE_CHILDREN)
+        for name in ('ApogeeTank', 'ApogeeAuction'):
+            for files in (self.prod, self.dev):
+                self.assertFalse(any(p.split('/')[0] in (name, name + 'Dev') for p in files))
+        # Exclusion does not silently delete an installed old addon or its unknown files.
+        retired = {'ApogeeTankDev/keep.txt': b'owner file', 'ApogeeAuctionDev/keep.txt': b'owner file'}
+        client, backup = self.fixture(dict(self.dev, **retired))
+        installer.install(client, self.dev, self.known, backup)
+        for p, data in retired.items():
+            self.assertEqual((client / 'Interface/AddOns' / p).read_bytes(), data)
+        for name in ('ApogeeTank', 'ApogeeAuction'):
+            bad = copy.deepcopy(self.lock); bad['publicChildren'].append(name)
+            with self.assertRaises(ValueError): d.public_children(bad)
 
-    def test_local_only_history_remains_private_and_pins_are_verified(self):
-        baseline = copy.deepcopy(self.lock)
-        baseline['children'] = [c for c in baseline['children'] if c['name'] != 'ApogeeStats']
-        baseline['publicChildren'].remove('ApogeeStats')
-        child = baseline['children'].pop()
-        child.pop('repository'); child['localOnly'] = True
-        baseline['localDevChildren'] = [child]
-        self.assertEqual(d.local_dev_children(baseline), [child])
-        self.assertFalse(any(p.startswith('ApogeeAuction/') for p in
-                             dual.family_files(baseline, OPTIONS.sources_root, 'PROD')[0]))
-        bad = copy.deepcopy(baseline); bad['publicChildren'].append('ApogeeAuction')
-        with self.assertRaises(ValueError): d.public_children(bad)
-        bad = copy.deepcopy(baseline)
-        bad['localDevChildren'][0]['repository'] = 'https://example.com/unreviewed.git'
-        with self.assertRaises(ValueError): d.local_dev_children(bad)
-        bad = copy.deepcopy(self.lock); bad['localDevChildren'] = [child]
-        with self.assertRaises(ValueError): d.local_dev_children(bad)
-        for family in ('PROD', 'DEV'):
-            bad = copy.deepcopy(self.lock)
-            next(c for c in bad['children'] if c['name'] == 'ApogeeAuction')['files']['ApogeeAuction.lua'] = '0' * 64
-            with self.assertRaisesRegex(ValueError, 'pinned file mismatch'):
-                dual.family_files(bad, OPTIONS.sources_root, family)
-
-    def test_auction_install_and_rollback_preserve_existing_family(self):
-        old = {p: b for p, b in self.dev.items() if not p.startswith('ApogeeAuctionDev/')}
-        client, backup = self.fixture(old)
-        result = installer.install(client, self.dev, self.known, backup)
-        self.assertIn('ApogeeAuctionDev', result['names'])
-        self.assertEqual(m.tree(client / 'Interface/AddOns/ApogeeAuctionDev'),
-                         {p.split('/', 1)[1]: b for p, b in self.dev.items() if p.startswith('ApogeeAuctionDev/')})
-        m.rollback(backup)
-        self.assertEqual(m.managed(client / 'Interface/AddOns', m.DEV_NAMES + m.LOCAL_DEV_NAMES), old)
-        for names in ([], ['Unknown'], ['ApogeeTank', 'ApogeeHeals'], ['ApogeeHeals', 'ApogeeHeals']):
-            invalid = copy.deepcopy(self.lock); invalid['publicChildren'] = names
-            with self.assertRaises(ValueError): d.public_children(invalid)
+    def test_explicit_retirement_moves_only_reviewed_dev_roots(self):
+        files = {name + '/' + path: data
+                 for name in ('ApogeeTankDev', 'ApogeeAuctionDev')
+                 for path, data in (('Core.lua', b'-- reviewed runtime'), ('notes.txt', b'owner notes'))}
+        for altered in (False, True):
+            client, backup = self.fixture(files)
+            receipt = backup.parent / 'previous.json'
+            receipt.write_bytes(d.canonical({'schema': 1, 'status': 'installed',
+                                            'client': str(client), 'after': m.hashes(files)}))
+            if altered:
+                (client / 'Interface/AddOns/ApogeeTankDev/Core.lua').write_bytes(b'-- owner edit')
+            before = m.tree(client)
+            result = subprocess.run(['pwsh', '-NoProfile', '-File',
+                                     str(ROOT / 'scripts/retire-unused-dev-addons.ps1'),
+                                     '-ClientRoot', str(client), '-PreviousInstall', str(receipt),
+                                     '-Backup', str(backup)], capture_output=True, text=True)
+            if altered:
+                self.assertNotEqual(result.returncode, 0)
+                self.assertFalse(backup.exists())
+                self.assertEqual(m.tree(client), before)
+            else:
+                self.assertEqual(result.returncode, 0, result.stderr)
+                for path, data in files.items():
+                    self.assertFalse((client / 'Interface/AddOns' / path).exists())
+                    self.assertEqual((backup / path).read_bytes(), data)
+                remaining = {p: b for p, b in before.items()
+                             if not any(p.startswith('Interface/AddOns/' + n + '/')
+                                        for n in ('ApogeeTankDev', 'ApogeeAuctionDev'))}
+                self.assertEqual(m.tree(client), remaining)
+                self.assertEqual(json.loads((backup / 'retirement.json').read_text())['status'], 'retired')
 
     def test_production_gameplay_bodies_are_identical_to_pins(self):
         source = d.collect(self.lock, OPTIONS.sources_root, 'local-candidate')
@@ -405,7 +317,10 @@ end
         accepted = json.loads(publisher.ACCEPTANCE.read_text())
         actual = {family: {p: d.sha(b) for p, b in files.items() if p.endswith('.lua')}
                   for family, files in (('PROD', self.prod), ('DEV', self.dev))}
-        if actual == accepted['runtimeFiles']:
+        if accepted.get('accepted') is not True:
+            with self.assertRaisesRegex(ValueError, 'Native owner acceptance required'):
+                publisher.payload(OPTIONS.sources_root, '1.0.0')
+        elif actual == accepted['runtimeFiles']:
             self.assertTrue(publisher.payload(OPTIONS.sources_root, '1.0.0').startswith(b'PK'))
         else:
             with self.assertRaisesRegex(ValueError, 'Runtime changed since native acceptance'):
@@ -486,7 +401,8 @@ end
         baseline['ApogeeKeybinds/README.md'] = b'user edited documentation'
         baseline['ApogeeTank/unknown.lua'] = b'user source unreferenced'
         client, backup = self.fixture(baseline)
-        protected = m.protected(client, m.NAMES + tuple(n + 'Dev' for n in m.NAMES))
+        active_names = tuple(sorted({p.split('/')[0] for p in dict(self.prod, **self.dev)}))
+        protected = m.protected(client, active_names)
         legacy_lock = copy.deepcopy(self.lock); legacy_lock.pop('publicChildren', None)
         retrofit_prod, _ = dual.family_files(legacy_lock, OPTIONS.sources_root, 'PROD')
         result = installer.install(client, dict(retrofit_prod, **self.dev), self.known, backup, True)
@@ -496,7 +412,7 @@ end
             if p not in result['preservedDocumentation']:
                 self.assertEqual((client / 'Interface/AddOns' / p).read_bytes(), b)
         m.rollback(backup)
-        self.assertEqual(m.managed(client / 'Interface/AddOns', tuple(result['names'])), baseline)
+        self.assertEqual(m.managed(client / 'Interface/AddOns'), baseline)
 
     def test_dev_update_never_touches_production_and_rolls_back(self):
         baseline = dict(self.prod, **self.dev)
