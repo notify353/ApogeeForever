@@ -107,11 +107,9 @@ class RepositoryTests(unittest.TestCase):
             self.assertIn('steps.pins.outputs.' + name, ci)
             self.assertIn('repository: notify353/' + name, workflow)
             self.assertIn('steps.pins.outputs.' + name, workflow)
-        # Both workflows run historical migration tests as well as current builds.
-        historical = next(c for c in d.read_lock()['children'] if c['name'] == 'ApogeeTank')
         for text in (ci, workflow):
-            self.assertIn('Historical Tank source for migration regressions only', text)
-            self.assertIn('ref: ' + historical['commit'], text)
+            self.assertNotIn('repository: notify353/ApogeeTank', text)
+            self.assertNotIn('repository: notify353/ApogeeAuction', text)
         preflight = (ROOT / '.github/workflows/curseforge-preflight.yml').read_text()
         self.assertIn('environment: distribution-validation', preflight)
         self.assertNotIn('publish_distribution', preflight)

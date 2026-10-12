@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Remove the retired Tank repository requirement from setup and CI validation;
+  exercise packaging regressions with the current five-addon candidate.
+
 - Rename the development repository and checkout to ApogeeForever; update release
   tooling and workspace paths while preserving installed addon identities and bytes.
 

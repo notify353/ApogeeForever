@@ -47,7 +47,7 @@ def overlay_fixture(root, incoming, baseline):
 class DistributionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.lock = d.read_lock()
+        cls.lock = d.read_lock(ROOT / 'distribution/candidate.lock.json')
         cls.files = d.collect(cls.lock, OPTIONS.sources_root, 'children-only')
         cls.marker = d.collect(cls.lock, OPTIONS.sources_root, 'marker-fixture')
         cls.zip = d.zip_bytes(cls.files)
@@ -75,8 +75,8 @@ class DistributionTests(unittest.TestCase):
         return files
 
     def test_exact_canonical_folders_and_child_bytes(self):
-        self.assertEqual(set(p.split('/')[0] for p in self.files), set(d.CHILDREN))
-        self.assertEqual(len(d.validate(self.zip, self.lock, 'children-only')), 134)
+        self.assertEqual(set(p.split('/')[0] for p in self.files), set(d.ACTIVE_CHILDREN))
+        self.assertEqual(set(d.validate(self.zip, self.lock, 'children-only')), set(self.files))
         self.assertFalse(any('.git' in p.split('/') for p in self.files))
 
     def test_keybinds_retired_policy_requires_both_copies_absent(self):
@@ -144,7 +144,7 @@ class DistributionTests(unittest.TestCase):
         self.assertEqual(runtime, [])
         self.assertEqual(meta['X-Apogee-Distribution-Only'], '1')
         self.assertFalse(any(k.startswith('SavedVariables') for k in meta))
-        self.assertEqual(len(d.validate(d.zip_bytes(self.marker), self.lock, 'marker-fixture')), 136)
+        self.assertEqual(set(d.validate(d.zip_bytes(self.marker), self.lock, 'marker-fixture')), set(self.marker))
         self.assertFalse(any(p.startswith(d.MARKER + '/') and p.endswith(('.lua', '.xml')) for p in self.marker))
 
     def test_children_are_structurally_independent_if_missing_or_disabled(self):
@@ -177,7 +177,9 @@ class DistributionTests(unittest.TestCase):
         lua.write_text('''local root = arg[1]
 local K = {active=true, Inputs={all={{id="one", key="1"}}}, Message=function() end}
 local loaded=false
+local marker=false
 C_AddOns={IsAddOnLoaded=function(name) assert(name=="ApogeePartyHealthBars"); return loaded end}
+C_AddOns.GetAddOnMetadata=function() return marker and "1" or nil end
 InCombatLockdown=function() return false end
 assert(loadfile(root.."/Core/Client.lua"))("ApogeeKeybinds", K)
 assert(loadfile(root.."/Actions/Secure.lua"))("ApogeeKeybinds", K)
@@ -188,12 +190,14 @@ ClearOverrideBindings=function() end
 SetOverrideBindingClick=function() claims=claims+1 end
 for _,scenario in ipairs({"absent", "disabled", "legacy-loaded", "marker-loaded"}) do
     loaded=scenario=="legacy-loaded" or scenario=="marker-loaded"
+    marker=scenario=="marker-loaded"
+    local conflict=loaded and not marker
     local before=claims
-    assert(K.API.Conflict()==loaded)
-    assert(K.Secure.Claim()==not loaded)
-    assert(claims==before+(loaded and 0 or 1))
+    assert(K.API.Conflict()==conflict)
+    assert(K.Secure.Claim()==not conflict)
+    assert(claims==before+(conflict and 0 or 1))
 end
-print("Actual Keybinds conflict/claim: absent and disabled pass; legacy and marker loaded block")
+print("Actual Keybinds conflict/claim: absent, disabled and verified marker pass; legacy loaded blocks")
 ''', encoding='utf-8')
         result = subprocess.run(['lua', str(lua), str(OPTIONS.artifacts / 'children/ApogeeKeybinds')],
                                 capture_output=True, text=True)
