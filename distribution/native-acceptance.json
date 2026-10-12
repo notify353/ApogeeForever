@@ -1,5 +1,5 @@
 {
-  "accepted": true,
+  "accepted": false,
   "basis": "Owner reports \"perfect\" after the installed DEV buff-strip, early reminder, full-height click-area and compact timer iterations, then requests quality review and preparation for deployment. All installed DEV Lua files were reverified against the exact candidate and latest installation receipt. Review added regression coverage only; generated PROD/DEV package bytes are identical to the accepted installation candidate. Unchanged siblings retain prior acceptance. No separate PROD, comprehensive native test matrix or CurseForge-client testing is claimed. Publication still requires integration, hosted validation and explicit production-tag approval.",
   "curseforgeClientTested": false,
   "followUpChecks": [
@@ -341,6 +341,7 @@
   "gateSha256": "ba988f34520cfcfdb5a340138659431d3eed30d42577ee30e326f199851a278d",
   "installedArchiveSha256": "1f09419919c5f291ec0d3a455d0fda1ad6ff6c8461153e477632077b5a58df97",
   "installedReceipt": "C:/Dev/WoW/local-install-backups/apogee-buff-timer-polish-d4ad210-20261011/transaction.json",
+  "pendingReason": "Owner reported stronger blessing replacement errors. Foreign/unknown-caster coverage correction changes runtime; prior accepted runtime evidence is preserved, and renewed owner acceptance of the correction is required.",
   "productionClientTested": false,
   "reportedDate": "2026-10-11",
   "runtimeFiles": {

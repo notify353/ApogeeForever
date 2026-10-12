@@ -83,7 +83,7 @@ class DualTests(unittest.TestCase):
                                     '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
             start = runner.index('for _, path in ipairs({')
             end = runner.index('}) do', start) + len('}) do')
-            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua"}) do' + runner[end:]
+            runner = runner[:start] + 'for _, path in ipairs({"tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua", "tests/buff_foreign_coverage_spec.lua"}) do' + runner[end:]
             runner = runner.replace('    assert(loadstring(fixtureTest,', '    if name == "ApogeeHealsDev" then fixtureTest = fixtureTest:gsub("Apogee Heals", "Apogee Heals DEV") end\n    assert(loadstring(fixtureTest,')
             runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target buffs, class integration and minimap regressions: " .. name)')
             (harness / 'target-generated.lua').write_text(runner)
@@ -405,7 +405,10 @@ end
         accepted = json.loads(publisher.ACCEPTANCE.read_text())
         actual = {family: {p: d.sha(b) for p, b in files.items() if p.endswith('.lua')}
                   for family, files in (('PROD', self.prod), ('DEV', self.dev))}
-        if actual == accepted['runtimeFiles']:
+        if accepted.get('accepted') is not True:
+            with self.assertRaisesRegex(ValueError, 'Native owner acceptance required'):
+                publisher.payload(OPTIONS.sources_root, '1.0.0')
+        elif actual == accepted['runtimeFiles']:
             self.assertTrue(publisher.payload(OPTIONS.sources_root, '1.0.0').startswith(b'PK'))
         else:
             with self.assertRaisesRegex(ValueError, 'Runtime changed since native acceptance'):

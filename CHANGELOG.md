@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Preserve buffs from other players until they expire, preventing refresh suggestions that would replace a more powerful version. Other blessing types remain selectable.
+
 - Heals: click anywhere on a player's class-color strip to show buff options on the left, including active buffs for recasting or replacement. Click again to restore reminders. Available outside combat only.
 - Show buff reminders below two minutes remaining, with compact outlined timers inside the icons. Refreshing a buff hides its reminder again.
 - Reload after updating. Existing settings are preserved.

@@ -1,5 +1,30 @@
 # One source, two distributions
 
+## October 11 foreign-buff coverage correction
+
+Heals pins `5781d06a3f014d7675a67969076b4483e2d253ff`. The owner reported a
+"more powerful" blessing error. The early-refresh rule now applies only to
+confirmed player-owned applications. Foreign or unknown-source buffs remain
+coverage until removed and suppress matching recast choices during strip expansion.
+Other blessing types remain available. This conservatively protects equal/weaker
+foreign buffs too, since rank/ID does not prove strength after talent improvements.
+Native own aura/aspect choices retain their separate stance authority.
+
+The new regression covers self/party/target, higher and Greater blessings,
+same-rank foreign applications, unknown source, removal recovery, own refresh
+and gap-free icon layout in both generated families. Artifacts:
+`C:/Temp/apogee-buff-foreign-coverage-validation-20261011-r2`. Existing runtime
+acceptance is invalidated; historical accepted hashes and reports are preserved.
+Publication remains blocked pending owner acceptance of this correction and
+write-capable GitHub authentication. No sibling or identity transform changes.
+
+Full child/central validation passed. The release-gate regression now separately
+handles explicitly unaccepted candidates as well as changed accepted runtime.
+DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-buff-foreign-coverage-5781d06-20261011/transaction.json`.
+All 188 package files and 219 backups independently verified; 111 PROD files
+unchanged. Only Heals Buffs/Runtime.lua changed; no discovery changes. Reload and
+verify the previously rejected blessing situation. No game operation or publication.
+
 ## October 11 quality review and release handoff
 
 Reviewed the complete Heals buff-strip/timer diff against the released baseline:
