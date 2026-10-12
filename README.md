@@ -16,7 +16,7 @@ Gameplay modules retain their own settings. Stats evaluates all supported roles 
 Legacy profiles are not imported, and Dungeon Guide is not included.
 
 Install using the [CurseForge listing](https://www.curseforge.com/wow/addons/apogee-party-health-bars)
-or a packaged [GitHub release](https://github.com/notify353/ApogeePartyHealthBars/releases).
+or a packaged [GitHub release](https://github.com/notify353/ApogeeForever/releases).
 For a manual installation, extract all six addon folders into Interface/AddOns.
 GitHub source archives are not installable packages.
 

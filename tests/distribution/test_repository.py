@@ -14,6 +14,24 @@ import distribution as d
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_repository_rename_preserves_installed_identity(self):
+        import publish_distribution as publisher
+        self.assertEqual(publisher.REPOSITORY, 'notify353/ApogeeForever')
+        self.assertEqual(publisher.PROJECT, 1608100)
+        self.assertEqual(d.MARKER, 'ApogeePartyHealthBars')
+        for path in ('scripts/prepare-release.ps1', 'scripts/publish-release.ps1',
+                     'distribution/prepare-release.ps1.example', 'distribution/publish-release.ps1.example',
+                     '.github/workflows/verify-release.yml', 'distribution/verify-release-workflow.yml.example'):
+            text = (ROOT / path).read_text()
+            self.assertIn('notify353/ApogeeForever', text, path)
+            self.assertNotIn('notify353/ApogeePartyHealthBars', text, path)
+        for path in ('scripts/prepare-release.ps1', 'scripts/publish-release.ps1'):
+            line = next(line for line in (ROOT / path).read_text().splitlines() if 'git remote get-url origin' in line)
+            pattern = re.search(r"-notmatch '([^']+)'", line).group(1)
+            self.assertRegex('https://github.com/notify353/ApogeeForever.git', pattern)
+            self.assertNotRegex('https://github.com/other/ApogeeForever.git', pattern)
+            self.assertNotRegex('https://github.com/notify353/ApogeePartyHealthBars.git', pattern)
+
     def test_featureless_marker_and_no_legacy_runtime(self):
         meta, runtime = d.toc_info((ROOT / 'ApogeePartyHealthBars.toc').read_bytes())
         self.assertEqual(runtime, [])

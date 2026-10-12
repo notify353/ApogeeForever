@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Rename the development repository and checkout to ApogeeForever; update release
+  tooling and workspace paths while preserving installed addon identities and bytes.
+
 - Document the portable Apogee coordination workspace for the distribution and
   five active addon repositories. Packaging and gameplay are unchanged.
 

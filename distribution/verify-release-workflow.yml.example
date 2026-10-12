@@ -32,7 +32,7 @@ jobs:
           import json, os, subprocess
           run = os.environ['UPLOAD_RUN']
           assert run.isdigit(), 'Numeric upload run required'
-          info = json.loads(subprocess.check_output(['gh','api','repos/notify353/ApogeePartyHealthBars/actions/runs/'+run]))
+          info = json.loads(subprocess.check_output(['gh','api','repos/notify353/ApogeeForever/actions/runs/'+run]))
           assert info['head_sha'] == os.environ['GITHUB_SHA'], 'Wrong source commit'
           assert info['path'] == '.github/workflows/release.yml' and info['event'] == 'push', 'Wrong publisher workflow'
           assert info['status'] == 'completed' and info['conclusion'] == 'success', 'Publisher did not succeed'
