@@ -1,5 +1,35 @@
 # One source, two distributions
 
+## October 12 Tank and standalone Auction retirement
+
+The owner explicitly requested removal of Tank and Auction from this system
+and Apogee. The current lock now contains five active children: Heals, Keybinds,
+Group Alert, Essentials and Stats. Both PROD and DEV contain those five plus
+their marker. Tank/Auction pins and release checkouts are removed. Historical
+locks, migration safety recognition, source repositories and backups are retained;
+the validation workflow still fetches the historical Tank pin solely to test old
+migrations. Historical seven-child descriptions below are superseded by this scope.
+
+The installer accepts the exact current six-root DEV inventory and preserves
+omitted legacy folders rather than deleting them implicitly. Explicit owner
+uninstallation uses `scripts/retire-unused-dev-addons.ps1` with the client root,
+previous verified install receipt and a new backup directory outside the game.
+It accepts only the two retired DEV roots, refuses unexpected runtime edits and
+reparse points, checks every source/destination path, and moves whole folders to
+a byte-verified recovery backup. Unknown documentation stays with that backup.
+No saved variables, enabled-state preferences or source repositories are read,
+changed or deleted. The owner restarts the game to refresh discovery and unload
+already-loaded code; never operate the client from this task.
+
+Full central validation passed at `C:/Temp/apogee-retire-validation-20261012`.
+Retirement journal: `C:/Dev/WoW/local-install-backups/apogee-tank-auction-retired-20261012/retirement.json`.
+Current DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-five-addon-update-20261012/transaction.json`.
+All 84 removed files are verified in the recovery backup, all 246 remaining
+PROD/DEV files are byte-identical, and all 114 non-preserved package files match
+the new DEV ZIP. None of the four canonical/DEV Tank/Auction roots remains in
+AddOns. The installer performed no writes to the remaining addons. No game
+operation, saved-data access, remote mutation or publication occurred.
+
 ## October 12 exclusive class-strip input
 
 Heals pins `1a67fd51c864cba25959cf2d338d8e1165de1fc6`. The owner reports

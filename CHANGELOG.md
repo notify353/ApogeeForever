@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Remove the retired Tank and standalone Auction addons from DEV as well as
+  PROD packages. Keep the five active addons and their settings unchanged.
+
 - Exclude the class-color strip from healing clicks and reserve its full height
   for buff controls on every class, absorbing other mouse buttons safely.
 

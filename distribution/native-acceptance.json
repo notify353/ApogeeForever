@@ -341,7 +341,7 @@
   "gateSha256": "ba988f34520cfcfdb5a340138659431d3eed30d42577ee30e326f199851a278d",
   "installedArchiveSha256": "1f09419919c5f291ec0d3a455d0fda1ad6ff6c8461153e477632077b5a58df97",
   "installedReceipt": "C:/Dev/WoW/local-install-backups/apogee-buff-timer-polish-d4ad210-20261011/transaction.json",
-  "pendingReason": "Owner reported stronger blessing replacement errors. Foreign/unknown-caster coverage correction changes runtime; prior accepted runtime evidence is preserved, and renewed owner acceptance of the correction is required.",
+  "pendingReason": "Owner later attributed the confusing buff reminders to recipient range. Subsequent range and class-strip input changes still need native acceptance. Owner explicitly requested Tank/Auction retirement on October 12; the current DEV inventory removes those packages. Historical accepted runtime evidence is preserved; this is not release acceptance for the new candidate.",
   "productionClientTested": false,
   "reportedDate": "2026-10-11",
   "runtimeFiles": {

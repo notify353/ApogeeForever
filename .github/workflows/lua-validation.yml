@@ -62,22 +62,15 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
           token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Historical Tank source for migration regressions only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: notify353/ApogeeTank
-          ref: ${{ steps.pins.outputs.ApogeeTank }}
+          ref: ccc69e5b56bccd72fde620cdf20e3fd422b175a2
           path: sources/ApogeeTank
           fetch-depth: 0
           persist-credentials: false
           token: ${{ github.token }}
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          repository: notify353/ApogeeAuction
-          ref: ${{ steps.pins.outputs.ApogeeAuction }}
-          path: sources/ApogeeAuction
-          fetch-depth: 0
-          persist-credentials: false
-          token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: notify353/ApogeeStats

@@ -23,9 +23,14 @@ def payloads(lock, sources_root, artifacts, initial=False):
 
 def prepare(client, payload, known, initial=False, previous=None, retire_files=()):
     roots = {p.split('/')[0] for p in payload}
-    names = m.DEV_NAMES + tuple(n for n in m.LOCAL_DEV_NAMES if n in roots)
+    current = {d.MARKER + 'Dev', *(n + 'Dev' for n in d.ACTIVE_CHILDREN)}
+    historical = set(m.DEV_NAMES)
     if initial:
-        names = m.NAMES + names
+        current |= {d.MARKER, *d.ACTIVE_CHILDREN}
+        historical |= set(m.NAMES)
+    d.require(roots in (current, historical), 'Exact family roots required')
+    # Omitted retired roots stay untouched; uninstall is a separate explicit action.
+    names = tuple(sorted(roots))
     d.require(set(p.split('/')[0] for p in payload) == set(names), 'Exact family roots required')
     before = m.managed(Path(client) / 'Interface/AddOns', names)
     known = copy.deepcopy(known)
