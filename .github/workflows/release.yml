@@ -67,6 +67,15 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
           token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
+      - name: Historical Tank source for migration regressions only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: notify353/ApogeeTank
+          ref: ccc69e5b56bccd72fde620cdf20e3fd422b175a2
+          path: sources/ApogeeTank
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ github.token }}
       - name: Install Lua 5.1
         run: sudo apt-get update && sudo apt-get install -y lua5.1
       - name: Validate and build both families
