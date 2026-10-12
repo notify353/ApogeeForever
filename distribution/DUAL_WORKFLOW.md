@@ -1,5 +1,14 @@
 # One source, two distributions
 
+## Development repository rename
+
+The development repository and canonical checkout are named ApogeeForever:
+`C:/Dev/WoW/ApogeeForever`, `notify353/ApogeeForever`. The installed
+ApogeePartyHealthBars marker/TOC and historical migration identities remain
+unchanged. Old path mentions in historical evidence describe their original
+locations. No source repinning, gameplay change, addon installation or release
+is implied by this development-only rename.
+
 ## October 12 Tank and standalone Auction retirement
 
 The owner explicitly requested removal of Tank and Auction from this system
@@ -250,7 +259,7 @@ repositories in DISTRIBUTION_READ_TOKEN. Adding the repository does not establis
 that access. Runtime changes require renewed owner-reported native acceptance;
 local validation does not authorize a release or claim in-game acceptance.
 
-Run from the canonical checkout `C:/Dev/WoW/ApogeePartyHealthBars`.
+Run from the canonical checkout `C:/Dev/WoW/ApogeeForever`.
 This document and its central scripts are the stable authority for all seven
 child projects. Historical prototype worktrees are retained evidence, not an
 installation dependency. Run `pwsh ./scripts/test-local.ps1` for full validation.

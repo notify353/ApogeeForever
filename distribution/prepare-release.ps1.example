@@ -9,7 +9,7 @@ Push-Location $repo
 try {
     if ((git branch --show-current) -ne 'main') { throw 'Prepare only from main.' }
     if (git status --porcelain) { throw 'Working tree must be clean; preserve existing changes.' }
-    if ((git remote get-url origin).TrimEnd('/') -notmatch '^https://github.com/notify353/ApogeePartyHealthBars(\.git)?$') { throw 'Unexpected remote.' }
+    if ((git remote get-url origin).TrimEnd('/') -notmatch '^https://github.com/notify353/ApogeeForever(\.git)?$') { throw 'Unexpected remote.' }
     git fetch origin main
     if ($LASTEXITCODE -ne 0) { throw 'Fetch failed.' }
     if ((git rev-parse HEAD) -ne (git rev-parse origin/main)) { throw 'Main is not synchronized.' }

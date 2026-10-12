@@ -17,7 +17,7 @@ import distribution as d
 import dual_distribution as dual
 from curseforge_preflight import NoRedirect, URL, select_version
 
-REPOSITORY = 'notify353/ApogeePartyHealthBars'
+REPOSITORY = 'notify353/ApogeeForever'
 PROJECT = 1608100
 ACCEPTANCE = d.ROOT / 'distribution/native-acceptance.json'
 

@@ -8,7 +8,7 @@ $repo = Split-Path -Parent $PSScriptRoot
 Push-Location $repo
 try {
     if ((git branch --show-current) -ne 'main' -or (git status --porcelain)) { throw 'Clean main required.' }
-    if ((git remote get-url origin).TrimEnd('/') -notmatch '^https://github.com/notify353/ApogeePartyHealthBars(\.git)?$') { throw 'Unexpected remote.' }
+    if ((git remote get-url origin).TrimEnd('/') -notmatch '^https://github.com/notify353/ApogeeForever(\.git)?$') { throw 'Unexpected remote.' }
     git fetch origin main
     if ($LASTEXITCODE -ne 0) { throw 'Fetch failed.' }
     $head = git rev-parse HEAD
@@ -17,7 +17,7 @@ try {
     if ($lock.version -ne $Version) { throw 'Version does not match the preparation commit.' }
     $workflow = Get-Content .github/workflows/release.yml -Raw
     if ($workflow -notmatch 'publish_distribution.py upload') { throw 'Production workflow is inactive.' }
-    $checks = gh api "repos/notify353/ApogeePartyHealthBars/commits/$head/check-runs?per_page=100" | ConvertFrom-Json
+    $checks = gh api "repos/notify353/ApogeeForever/commits/$head/check-runs?per_page=100" | ConvertFrom-Json
     if ($LASTEXITCODE -ne 0) { throw 'Cannot verify hosted checks.' }
     foreach ($name in @('test','aggregate','version')) {
         $check = @($checks.check_runs | Where-Object name -EQ $name | Sort-Object started_at -Descending | Select-Object -First 1)
