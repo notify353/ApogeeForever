@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Exclude the class-color strip from healing clicks and reserve its full height
+  for buff controls on every class, absorbing other mouse buttons safely.
+
 - Hide recipient buff options outside the buff spell's range and restore them
   after movement, including manually expanded options.
 

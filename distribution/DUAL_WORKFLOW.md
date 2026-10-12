@@ -1,5 +1,23 @@
 # One source, two distributions
 
+## October 12 exclusive class-strip input
+
+Heals pins `1a67fd51c864cba25959cf2d338d8e1165de1fc6`. The owner reports
+the strip still healing on other classes and clarifies the strip location,
+regardless of its class color, is exclusively for buff input. The secure row's
+hit rectangle now excludes the rail and seam. The full-height overlay covers
+that same width, disables click propagation, absorbs all button presses/releases,
+and toggles only on left release through the existing combat guard. All nine
+class fixtures cover input ownership independently of whether buff options exist.
+No sibling, identity transform or buff catalog changes. Native physical-click
+acceptance remains pending; mocks verify configuration rather than hit testing.
+
+Full child and central checks passed at `C:/Temp/apogee-strip-input-validation-20261012`.
+DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-strip-input-1a67fd5-20261012/transaction.json`.
+Independently verified 188 package files, 219 backups and 111 unchanged PROD
+files. Heals Buffs/View.lua, PartyFrames/View.lua and UI/Style.lua changed;
+no discovery changes. User reload and physical-click verification remain.
+
 ## October 11 buff recipient range
 
 Heals pins `f27aff25008eeb6292a012074074ad4c32019ba3`. The owner clarified
