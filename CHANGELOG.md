@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.14.5] - 2026-10-12
+
 - Remove the retired Tank and standalone Auction addons from DEV as well as
   PROD packages. Keep the five active addons and their settings unchanged.
 
