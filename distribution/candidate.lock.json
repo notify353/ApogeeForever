@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "126d0b549e56321e4d66043904ed3bbea9dbbc96",
+      "commit": "f27aff25008eeb6292a012074074ad4c32019ba3",
       "files": {
         "ApogeeHeals.lua": "1bbede96d06448c3812a2911a644e05ea3c62fa932a676b905096202f04329b8",
         "ApogeeHeals.toc": "fe56908966c0ea442d416a38af9f5f9fa0ee30e48c2ae87e479dd0a786fea56d",
@@ -9,9 +9,9 @@
         "Bindings/Runtime.lua": "fd7bcd0039a3290b923168578e7f7d13821207e1ef84909d22e64f953a0a1cbb",
         "Buffs/Catalog.lua": "fce5341bbc5dfbe4a79236c425dd0fb2eb44533c16ac5e9e3f98fd769302b2c3",
         "Buffs/Defaults.lua": "6cea97ff59484c6f894211c1ed10e546e19724cbbeb61fea68abaa9b148f7dc6",
-        "Buffs/Runtime.lua": "55609cb88969f5ecabaa849df875bddd52b8824e09a952cee2c120a5cfac850d",
+        "Buffs/Runtime.lua": "a79d27c3d100f49bec0e69e1a05961ff755440e8f103e1034b153fbc8e1faf01",
         "Buffs/View.lua": "c0f3b36de6c68e9869a63bb9baf9cc9f5c84bf4250c1488dab2ddf9ca8722075",
-        "CHANGELOG.md": "d4df05a01b40818c75cc68664dd8bfa27bfa9a8de0fe91e64df6b6083a7aab73",
+        "CHANGELOG.md": "7ff0f8b87cbba334b6622a48188e823c1ecd5f26bf5640c9a5abebb204a38b1f",
         "Cleansing/Runtime.lua": "78ec7cd14a77a81b0bfebc12dfa1056c0456dfeaa61b0c0e83f12cf339a51f16",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "9e9cebb382c867912d7ec51f62ee031332697bdbfe2846ac7580d5ebd94d7d88",
@@ -34,7 +34,7 @@
         "UI/Settings.lua": "d5858e139ee339306e6d9167b1acd117c8f24c79a8094862180b348f28d55b0c",
         "UI/Style.lua": "b0ddedfed6dd41f1b33df9d9a2b1416161fd7af558d7b277a4111db1ecc45f15",
         "WeaponUpkeep/Runtime.lua": "d043c7fd40e0d47ae1079b0a0069243355016b126ecf0f72ff3ebca6087978e3",
-        "docs/API_REFERENCE.md": "c9bc7a50c67ddf274eaae948a0f81a3a36a9c778dec1ccfc54117d4f86ecfe09",
+        "docs/API_REFERENCE.md": "b50e1a9657376252e0419435ebebc5a86f578abf5162995698048694db39b376",
         "docs/CLASS_SUPPORT.md": "984121f6dda5f64cf84196cf1e619279ac09d13c543e84e7ebfeacd72509a20a",
         "docs/wow-api-export.json": "ceba65cf022415ab651bf9b8228a2d66ad3856a3c484d6b11954970cf19db5b6"
       },

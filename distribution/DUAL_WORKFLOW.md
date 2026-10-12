@@ -1,5 +1,22 @@
 # One source, two distributions
 
+## October 11 buff recipient range
+
+Heals pins `f27aff25008eeb6292a012074074ad4c32019ba3`. The owner clarified
+that the remaining confusing icons were on out-of-range recipients. All buff
+choices now use their own native spell-range check against the fixed recipient;
+confirmed out-of-range choices disappear from automatic and expanded lists.
+The existing one-second refresh restores them after movement. Self buffs remain
+available; unknown/restricted range is not classified as out of range. Generated
+class integration and dedicated range tests cover movement, recipient isolation,
+manual expansion and combat. Sibling pins and transforms are unchanged.
+
+Child and full central validation passed at `C:/Temp/apogee-buff-range-validation-20261011`.
+DEV receipt: `C:/Dev/WoW/local-install-backups/apogee-buff-range-f27aff2-20261011/transaction.json`.
+Independently verified 188 package files, 219 backups and 111 unchanged PROD
+files. Only Heals Buffs/Runtime.lua changed; no discovery changes. User reload
+and native movement verification remain. No game operation or publication.
+
 ## October 11 buff family name fallback
 
 Heals pins `126d0b549e56321e4d66043904ed3bbea9dbbc96`. The owner reports that

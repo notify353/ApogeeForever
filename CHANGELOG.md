@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Hide recipient buff options outside the buff spell's range and restore them
+  after movement, including manually expanded options.
+
 - Recognize unlisted buff ranks by their client-localized names across supported
   class reminders, including group variants, to protect existing foreign buffs.
 
