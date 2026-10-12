@@ -1,5 +1,22 @@
 # One source, two distributions
 
+## October 11 buff family name fallback
+
+Heals pins `126d0b549e56321e4d66043904ed3bbea9dbbc96`. The owner reports that
+the prior protection still fails and requests class-wide behavior. Fixed the
+reproducible unlisted-rank gap: client-localized ordinary/group buff names now
+provide family coverage as well as manual replacement protection. No hardcoded
+English matching, guessed strength comparison, identity transforms or sibling
+changes. Generated class and blessing regressions include unlisted aura IDs.
+Native acceptance remains false; the actual reported case needs owner testing.
+
+Full child and central checks passed at `C:/Temp/apogee-buff-names-validation-20261011`.
+The new cross-class regression fails against the previous implementation. DEV
+receipt: `C:/Dev/WoW/local-install-backups/apogee-buff-names-126d0b5-20261011/transaction.json`.
+Independently verified 188 package files, 219 backups and 111 unchanged PROD
+files. Four Heals runtime files changed; no discovery changes. User reload is
+required. No game operation, PROD install or publication occurred.
+
 ## October 11 foreign-buff coverage correction
 
 Heals pins `5781d06a3f014d7675a67969076b4483e2d253ff`. The owner reported a

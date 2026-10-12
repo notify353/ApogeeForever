@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Recognize unlisted buff ranks by their client-localized names across supported
+  class reminders, including group variants, to protect existing foreign buffs.
+
 - Preserve buffs from other players until they expire, preventing refresh suggestions that would replace a more powerful version. Other blessing types remain selectable.
 
 - Heals: click anywhere on a player's class-color strip to show buff options on the left, including active buffs for recasting or replacement. Click again to restore reminders. Available outside combat only.
