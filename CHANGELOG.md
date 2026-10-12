@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Document the portable Apogee coordination workspace for the distribution and
+  five active addon repositories. Packaging and gameplay are unchanged.
+
 ## [1.14.5] - 2026-10-12
 
 - Remove the retired Tank and standalone Auction addons from DEV as well as

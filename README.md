@@ -23,6 +23,12 @@ GitHub source archives are not installable packages.
 Contributor documentation: [build workflow](distribution/DUAL_WORKFLOW.md),
 [release checklist](RELEASING.md), [client API reference](docs/WOW_INTERFACE_EXPORT.md).
 
+For work across the five addons, use the sibling
+[Apogee workspace](../workspace-apogee/README.md) and its
+[current handoff](../workspace-apogee/memory/CURRENT.md). These are local sibling
+links; the workspace has separate publication status. Distribution authority
+remains in this repository.
+
 Stats auction browsing: click the dice to show upgrades. It stays steadily lit
 while progress text reports loading. Each visit starts with All roles; the auction
 role filter is independent of character guidance. Tooltips show every qualifying
