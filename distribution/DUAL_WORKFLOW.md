@@ -15,9 +15,9 @@ The owner explicitly requested removal of Tank and Auction from this system
 and Apogee. The current lock now contains five active children: Heals, Keybinds,
 Group Alert, Essentials and Stats. Both PROD and DEV contain those five plus
 their marker. Tank/Auction pins and active source requirements are removed. Historical
-locks, migration safety recognition, source repositories and backups are retained;
-validation and publication workflows still fetch the historical Tank pin solely
-to test old migrations. Historical seven-child descriptions below are superseded by this scope.
+locks, migration safety recognition, source repositories and backups are retained.
+Validation uses the current five-addon candidate and historical distribution
+revisions; it no longer fetches or requires a retired sibling repository. Historical seven-child descriptions below are superseded by this scope.
 
 The installer accepts the exact current six-root DEV inventory and preserves
 omitted legacy folders rather than deleting them implicitly. Explicit owner

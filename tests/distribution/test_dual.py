@@ -397,7 +397,10 @@ class DualTests(unittest.TestCase):
             with self.assertRaises(ValueError): dual.validate(d.zip_bytes(altered), files)
 
     def test_one_time_retrofit_and_dev_coexistence_preserve_saves_and_unknown_docs(self):
-        baseline = d.collect(d.read_lock(), OPTIONS.sources_root, 'children-only')
+        historical = d.read_lock()
+        # Exercise unguarded historical active children without retired source clones.
+        historical['children'] = [c for c in historical['children'] if c['name'] in d.ACTIVE_CHILDREN]
+        baseline = d.collect(historical, OPTIONS.sources_root, 'children-only')
         baseline['ApogeeKeybinds/README.md'] = b'user edited documentation'
         baseline['ApogeeTank/unknown.lua'] = b'user source unreferenced'
         client, backup = self.fixture(baseline)
