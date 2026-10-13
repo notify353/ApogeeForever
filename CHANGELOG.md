@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Enable Battle Shout self-buff reminders by default; retain explicit off and ready-highlight choices.
+
 - Default Warrior F to learned Battle Shout in every stance, preserving custom assignments.
 
 - Remove the retired Tank repository requirement from setup and CI validation;

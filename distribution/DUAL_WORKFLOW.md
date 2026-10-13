@@ -938,3 +938,21 @@ documentation and private saves remain preserved. User reload is required;
 marker TOC discovery may require a restart if reload does not discover it.
 Native acceptance is pending and historical evidence is retained. No game
 operation, push, main integration, release or PROD installation occurred.
+
+## October 13 Battle Shout reminder default
+
+Keybinds pins child commit `68d418d` (full immutable revision in candidate.lock.json).
+Battle Shout defaults to self-buff reminder for automatic and manual assignments,
+all stances and learned ranks. Explicit false and ordinary ready-highlight modes
+win; historical absent choices adopt the new default because old off choices
+were stored as nil. Spell classification occurs during action compilation, not
+HUD refresh. Child test-all and full central test-local passed with matching
+Forever 1.60.1.70338 / 16001 export, including generated PROD/DEV reminder tests.
+Evidence: C:/Temp/apogee-battle-shout-20261013/reminder-validation.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-shout-reminder-20261013/transaction.json,
+chained from apogee-battle-shout-20261013. Independently verified 114 package files,
+135 backups and 111 unchanged PROD files. Three Keybinds DEV Lua files changed:
+Actions/Defaults.lua, Actions/Identity.lua and UI/Hud.lua. No discovery changes.
+User reload and native acceptance remain pending. No private-save access, game
+operation, push, main integration or release occurred.
