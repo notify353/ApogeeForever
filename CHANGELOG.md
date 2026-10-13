@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Default Warrior F to learned Battle Shout in every stance, preserving custom assignments.
+
 - Remove the retired Tank repository requirement from setup and CI validation;
   exercise packaging regressions with the current five-addon candidate.
 

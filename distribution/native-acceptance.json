@@ -1,6 +1,6 @@
 {
-  "accepted": true,
-  "basis": "Owner confirmed on October 12: Yes, tested and working, after being asked to verify the latest DEV class strip opens buffs without healing, out-of-range choices hide, and Tank/Auction are gone. Installed runtime bytes and retirement backups were independently verified. Unchanged active siblings retain earlier acceptance. PROD is the generated counterpart; no separate PROD or CurseForge-client acceptance is claimed.",
+  "accepted": false,
+  "basis": "Owner confirmed on October 12: Yes, tested and working, after being asked to verify the latest DEV class strip opens buffs without healing, out-of-range choices hide, and Tank/Auction are gone. Installed runtime bytes and retirement backups were independently verified. Unchanged active siblings retain earlier acceptance. PROD is the generated counterpart; no separate PROD or CurseForge-client acceptance is claimed. October 13: Battle Shout F default expanded to all Warrior stances; renewed native acceptance pending. Historical evidence retained.",
   "curseforgeClientTested": false,
   "followUpChecks": [
     {

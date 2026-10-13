@@ -920,3 +920,21 @@ Release 1.14.4 is the next patch after the published 1.14.3. Child and central
 integration, final-main hosted test/aggregate/version checks, exact package review
 and immediate production-tag approval precede publication. No additional local
 installation is implied by version preparation.
+
+## October 13 Battle Shout in all stances
+
+Keybinds pins `bfff13ae530417da0f5a85bf82ca131e3dfbfc6b`. Empty Warrior F
+slots default to the highest learned Battle Shout in every stance. Saved
+assignments and per-stance weapon attachments retain priority and isolation.
+Child test-all and full central test-local passed against Forever 1.60.1.70338 /
+16001, including the stance regression against generated PROD and DEV families.
+Evidence: `C:/Temp/apogee-battle-shout-20261013/validation`.
+
+DEV-only receipt: `C:/Dev/WoW/local-install-backups/apogee-battle-shout-20261013/transaction.json`,
+chained from the five-addon-update October 12 receipt. Independently verified
+114 installed package files, 135 backup files and 111 unchanged PROD files.
+Only Keybinds DEV Actions/Defaults.lua and the DEV marker TOC changed. Differing
+documentation and private saves remain preserved. User reload is required;
+marker TOC discovery may require a restart if reload does not discover it.
+Native acceptance is pending and historical evidence is retained. No game
+operation, push, main integration, release or PROD installation occurred.
