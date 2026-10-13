@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Bind Up Arrow to native Auto Run at login/reload through Essentials.
+
 - Enable Battle Shout self-buff reminders by default; retain explicit off and ready-highlight choices.
 
 - Default Warrior F to learned Battle Shout in every stance, preserving custom assignments.

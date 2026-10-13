@@ -956,3 +956,20 @@ chained from apogee-battle-shout-20261013. Independently verified 114 package fi
 Actions/Defaults.lua, Actions/Identity.lua and UI/Hud.lua. No discovery changes.
 User reload and native acceptance remain pending. No private-save access, game
 operation, push, main integration or release occurred.
+
+## October 13 Up Arrow Auto Run
+
+Essentials pins `304448a` (full immutable revision in candidate.lock.json).
+Login/reload assigns UP to native TOGGLEAUTORUN with existing context checks,
+combat deferral and conditional rollback. Other Auto Run shortcuts and later
+session edits remain. The read-only defaults reference includes the shortcut.
+Verified Bindings_Camelot.xml in the matching Forever 1.60.1.70338 / 16001 export.
+Full child test-local and central test-local passed. Evidence:
+C:/Temp/apogee-autorun-20261013/validation and child-checks.log.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-autorun-20261013/transaction.json,
+chained from apogee-shout-reminder-20261013. Independently verified 114 package
+files, 135 backups and 111 unchanged PROD files. Only Essentials DEV
+Core/LoginDefaults.lua and Core/Settings.lua changed; no discovery changes.
+User reload and native input acceptance remain pending. No game operation,
+private-save access, push, main integration or release occurred.
