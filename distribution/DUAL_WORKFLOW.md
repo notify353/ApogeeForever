@@ -1,5 +1,48 @@
 # One source, two distributions
 
+## October 17 default-spell control placement correction
+
+Owner requested moving the single checkbox into the Keybinds feature settings
+group. Heals ba8cb53 and Keybinds 21922bf place it above the Keybinds rule toggles;
+the parent overview and Heals page contain no duplicate control. Shared behavior,
+off-initially preference and custom assignment locations remain unchanged.
+Both child suites and full central validation pass (74 Python tests and generated
+Lua checks, including 24 load orders in both families). Evidence:
+C:/Temp/apogee-default-spells-20261017/move-validation and move-central-checks.log.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-default-spells-keybinds-20261017/transaction.json.
+Only Heals/Keybinds UI/Settings.lua changed. Independently verified 114 installed
+files, 135 backups and 111 unchanged PROD files. No discovery changes; user reload
+required, then open Apogee DEV > Keybinds. Native acceptance remains pending.
+No private-save access, game operation, push, integration or publication occurred.
+
+## October 17 optional default spells
+
+Heals 77b8b41 and Keybinds d211ef4 add one per-character **Enable default spells**
+checkbox on the Apogee parent Settings page. New and existing characters without
+an explicit choice start off. Only automatic spell fallbacks are gated; custom
+spell/item/macro assignments and their locations, weapon attachments and highlights
+are preserved across repeated toggles. The shared registry mirrors only this
+timestamped preference into the two independent per-character stores. Either
+addon can supply the control, including when another child created the parent.
+PROD/DEV settings remain isolated. Combat locks the control. No new TOC entries,
+saved globals, dependencies or identity transforms are introduced.
+
+Both child suites and full central validation passed against matching Forever
+1.60.1.70450 / 16001: 74 Python tests and generated Lua checks, including all 24
+settings-owner load orders in both families, default-off, repeated on/off clicks,
+custom locations, reload/character isolation and disabled-addon rejoin.
+Evidence: C:/Temp/apogee-default-spells-20261017/validation and sibling check logs.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-default-spells-20261017/transaction.json,
+chained from apogee-70450-20261017-r2. Independently verified 114 installed files,
+135 backups and 111 unchanged PROD files. Seven gameplay Lua files and the existing
+DEV marker version TOC changed. Differing documentation and private saved data
+remain preserved. User reload required; the marker metadata may require discovery
+on restart if the client does not refresh it. Native toggle acceptance is pending;
+prior accepted evidence remains historical. No game operation, push, integration,
+release or publication occurred. Task record: C:/Temp/apogee-default-spells-20261017/task-record.md.
+
 ## Development repository rename
 
 The development repository and canonical checkout are named ApogeeForever:
