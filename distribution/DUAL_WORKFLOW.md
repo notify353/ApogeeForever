@@ -973,3 +973,39 @@ files, 135 backups and 111 unchanged PROD files. Only Essentials DEV
 Core/LoginDefaults.lua and Core/Settings.lua changed; no discovery changes.
 User reload and native input acceptance remain pending. No game operation,
 private-save access, push, main integration or release occurred.
+
+## October 17 Forever 70450 review and release preparation
+
+The owner exported the updated client and confirmed the previously installed
+Battle Shout all-stance/reminder and Up Arrow Auto Run behavior works. Matching
+Forever 1.60.1.70450 / 16001 exports were reviewed before updating provenance.
+Current-contract review found no required gameplay adapter changes. Only four
+Core/Client.lua reviewed-build warnings change at runtime relative to the last
+installed candidate. Reviewed source pins: Heals de4c53f, Keybinds 644fefb,
+Group Alert f289b6a, Essentials 6901e39; Stats stays at its existing immutable pin.
+Full revisions/hashes live only in candidate.lock.json.
+
+All five child suites passed, including Heals actual exported-source contracts,
+plus 18 workspace tests and full central validation (74 Python tests and generated
+Lua checks). Evidence: C:/Temp/apogee-api-20261017/validation and sibling check logs.
+The central exact build allowlist now includes 70450 and rejects neighboring
+unreviewed builds. Generated warning checks cover both families for all four
+warning-bearing children. Export review hashes are recorded in the owning repos;
+additional local inventory is C:/Temp/apogee-api-20261017/export-review.json.
+
+DEV install receipt: C:/Dev/WoW/local-install-backups/apogee-70450-20261017-r2/transaction.json.
+The first attempt stopped at prepared status because protected metadata changed
+during backup; addon bytes were independently confirmed unchanged before retry.
+Both backups are retained. Successful retry independently verified 114 installed
+package files, 135 backups and 111 unchanged PROD files. Four client modules and
+Heals export metadata changed, with no discovery changes. Private save contents
+and enabled preferences were never opened or modified. User reload/startup
+acceptance for these exact updated bytes is pending separately from earlier
+feature acceptance.
+
+Latest remote release is v1.14.5; proposed next patch is 1.14.6. Native acceptance,
+approved child/central integration, prepare-release.ps1 from synchronized main,
+exact-final-main hosted test/aggregate/version checks, and explicit production-tag
+approval still gate publication. Required secret entries exist (source-read
+entries updated October 2); their current expiry/access are not established by
+metadata. No push, main integration, tag, release or publication was performed.

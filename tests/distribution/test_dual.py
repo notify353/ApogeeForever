@@ -42,7 +42,7 @@ class DualTests(unittest.TestCase):
 
     def test_native_forever_identity_and_revision_tolerance(self):
         # Warning baselines follow the reviewed source pins, independently of install provenance.
-        reviewed_children = {'ApogeeHeals': '70338', 'ApogeeGroupAlert': '70338'}
+        reviewed_children = {'ApogeeHeals': '70450', 'ApogeeGroupAlert': '70450', 'ApogeeEssentials': '70450'}
         reviewed_build = self.lock['client']['reviewedBuild'].rsplit('.', 1)[-1]
         for child in self.lock['children']:
             if child['name'] == 'ApogeeStats':

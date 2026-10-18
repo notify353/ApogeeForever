@@ -97,3 +97,19 @@ and heading templates, and white highlight-small labels. It is recorded in the
 authority hashes. Settings-only help/disabled colors are explicit overrides;
 no shared HUD font objects are changed. Apogee Dungeons is an exact audited
 Group Alert settings label with an isolated DEV display spelling.
+
+## Forever 70450 review - 2026-10-17
+
+Reviewed the fresh installed Forever 1.60.1.70450 export; interface remains 16001.
+Recorded sources postdate WowB.exe. Changed Unit/aura contracts retain nullable
+and restricted returns; existing guarded adapters and native display sinks remain
+required. UNIT_SPELLCAST_SUCCEEDED keeps unit/cast/spell payloads and adds an
+optional trailing castBarID, which existing handlers do not consume. Settings
+canvas registration still delegates to SettingsInbound. Native UP/TOGGLEAUTORUN,
+OPENALLBAGS and sound binding actions retain their reviewed behavior. Mouse focus,
+frame alpha/hit rectangles, minimap roots and native CVar names remain compatible.
+No gameplay adapter change was identified in the reviewed contracts. Warning and
+export baselines advance; native acceptance on the new client is separate.
+Historical source bodies are not retained, so changed hashes establish a need for
+current-contract review, not a complete old/new source diff. Detailed local hash
+inventory: C:/Temp/apogee-api-20261017/export-review.json.

@@ -2,20 +2,10 @@
 
 ## [Unreleased]
 
+- Support the reviewed Forever 1.60.1.70450 client build.
+- Default Warrior F to Battle Shout in every stance, preserving custom assignments.
+- Enable Battle Shout self-buff reminders by default; remember explicit off and ready-highlight choices.
 - Bind Up Arrow to native Auto Run at login/reload through Essentials.
-
-- Enable Battle Shout self-buff reminders by default; retain explicit off and ready-highlight choices.
-
-- Default Warrior F to learned Battle Shout in every stance, preserving custom assignments.
-
-- Remove the retired Tank repository requirement from setup and CI validation;
-  exercise packaging regressions with the current five-addon candidate.
-
-- Rename the development repository and checkout to ApogeeForever; update release
-  tooling and workspace paths while preserving installed addon identities and bytes.
-
-- Document the portable Apogee coordination workspace for the distribution and
-  five active addon repositories. Packaging and gameplay are unchanged.
 
 ## [1.14.5] - 2026-10-12
 
