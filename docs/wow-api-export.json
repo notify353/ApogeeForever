@@ -57,6 +57,14 @@
     {
       "path": "Blizzard_Fonts_Shared/Shared/FontStyles.xml",
       "sha256": "8212c902708e656f8291182cce616323339b5e39d0f2f68143e0fa7b0c461b9b"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_SettingsLayouts.lua",
+      "sha256": "2c724bca6fd6295a62c9cfa9935feaf410467f0c9c14e09093759e001face14d"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SystemTimeDocumentation.lua",
+      "sha256": "034f4b9b15c1c8eb661e6c0a4772995a20b6d3c4a729e9a0c6640cefa3f52ac0"
     }
   ],
   "interface": 16001,

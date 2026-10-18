@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add one per-character Enable default spells toggle in Apogee Settings, off initially for existing and new characters.
+- Enable or disable automatic Keybinds and Heals spells without moving or replacing custom assignments.
+
 ## [1.14.6] - 2026-10-17
 
 - Support the reviewed Forever 1.60.1.70450 client build.

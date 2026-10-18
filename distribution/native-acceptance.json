@@ -1,5 +1,5 @@
 {
-  "accepted": true,
+  "accepted": false,
   "basis": "Owner confirmed October 17 that Battle Shout in all stances, its default self-buff reminder and opt-out, and Up Arrow Auto Run were tested and working. After installation of the refreshed Forever 1.60.1.70450 candidate, owner confirmed: Reloaded; everything works. Exact installed DEV Lua bytes reverified against the current source lock and successful receipt. PROD is the generated counterpart; separate PROD and CurseForge-client testing are not claimed.",
   "curseforgeClientTested": false,
   "followUpChecks": [
@@ -538,6 +538,7 @@
   "gateSha256": "ba988f34520cfcfdb5a340138659431d3eed30d42577ee30e326f199851a278d",
   "installedArchiveSha256": "e7f940ad202176c36ba5aaac0c297c8e0399859ad0786d1f1432252a7ea80296",
   "installedReceipt": "C:/Dev/WoW/local-install-backups/apogee-70450-20261017-r2/transaction.json",
+  "pendingReason": "Opt-in default-spell toggle changes runtime. Prior accepted evidence retained; user reload and repeated toggle/custom-location acceptance required.",
   "productionClientTested": false,
   "reportedDate": "2026-10-17",
   "runtimeFiles": {

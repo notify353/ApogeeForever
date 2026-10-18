@@ -113,3 +113,12 @@ export baselines advance; native acceptance on the new client is separate.
 Historical source bodies are not retained, so changed hashes establish a need for
 current-contract review, not a complete old/new source diff. Detailed local hash
 inventory: C:/Temp/apogee-api-20261017/export-review.json.
+
+## Optional default spells (2026-10-17)
+
+Reviewed current 70450 SettingsPanel:GetLayout and SettingsCanvasLayoutMixin:GetFrame
+to add the control to a parent created by any loaded settings owner. Reviewed
+SystemTime GetServerTime, a non-null numeric timestamp, for reconciling explicit
+per-character choices when an independently disabled consumer returns. Layout
+and SystemTime source hashes are now recorded. Existing registry identity mapping
+is sufficient; no new global, SavedVariables name, TOC or gameplay transform.

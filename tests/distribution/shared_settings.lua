@@ -21,6 +21,9 @@ local function widget(parent, kind, font)
         if key == "SetHighlightFontObject" then return function(_,font) self.highlightFont=font end end
         if key == "SetSize" then return function(_,w,h) self.width=w;self.height=h end end
         if key == "SetShown" then return function(_,shown) self.shown=shown end end
+        if key == "SetChecked" then return function(_,checked) self.checked=checked end end
+        if key == "GetChecked" then return function() return self.checked end end
+        if key == "SetEnabled" then return function(_,enabled) self.enabled=enabled end end
         if key == "GetWidth" or key == "GetHeight" then return function() return 600 end end
         return noop
     end})
@@ -45,6 +48,8 @@ local function reset()
     StaticPopupDialogs={}; GameTooltip=widget()
     CreateFrame=function(kind,_,parent,template) local frame=widget(parent,kind);frame.template=template; frames[#frames+1]=frame; return frame end
     InCombatLockdown=function() return false end
+    GetServerTime=function() return 100 end
+    SettingsPanel={GetLayout=function(_,c) return {GetFrame=function() return c.frame end} end}
     issecretvalue=function() return false end
     canaccessvalue=function() return true end
     canaccesstable=function() return true end
@@ -81,7 +86,7 @@ local function reset()
         end,
     }
 end
-local function load(owner, family, denied)
+local function load(owner, family, denied, saved)
     local name=owner[1]..(family=="DEV" and "Dev" or "")
     local function text(parent,value,font)
         local label=parent:CreateFontString(nil,"OVERLAY",font or "GameFontHighlightSmall")
@@ -96,6 +101,10 @@ local function load(owner, family, denied)
         Style={Text=function(parent) local label=text(parent,"","GameFontNormal"); label:SetTextColor(1,1,1); return label end},Minimap={Refresh=noop},Cleansing={},Threat={},ThreatDiagnostics={},
         Errors={BuildErrorSettings=noop,RefreshErrors=noop},IsFeatureAvailable=function() return true end,
         __ApogeeFamilyAdmission=function(caller) assert(caller==name); return not denied end}
+    if saved then A.db=saved; A.db.rules=A.db.rules or {} end
+    A.refreshes=0
+    A.Rebuild=function() A.refreshes=A.refreshes+1 end
+    A.Bindings={Apply=A.Rebuild}
     local start=#frames
     if owner[1]=="ApogeeGroupAlert" then
         assert(loadfile(root.."/"..family.."/"..name.."/Core/UI.lua"))(name,A)
@@ -172,6 +181,15 @@ local function verify(family, count)
     local background=assert(find(parent.frame,function(c) return c.kind=="Texture" end))
     color(background,0.035,0.035,0.045);assert(background.color[4]==0.96)
     assert(#parent.children==count, "Only loaded Settings owners appear")
+    if registry.children.Heals or registry.children.Keybinds then
+        local check=assert(registry.defaultSpells.check,"Parent control must exist in every load order")
+        assert(check.parent==parent.frame and check.label.text=="Enable default spells")
+        local toggles=0
+        for _,c in ipairs(parent.frame.children) do
+            if c.kind=="CheckButton" then toggles=toggles+1 end
+        end
+        assert(toggles==1,"Exactly one shared default-spells toggle")
+    end
     local seen={}
     for _,child in ipairs(parent.children) do
         assert(not seen[child.name],"Duplicate subcategory"); seen[child.name]=true
@@ -227,3 +245,56 @@ end
 assert(#roots==2 and ApogeeSettingsRegistry.category~=ApogeeDevSettingsRegistry.category)
 verify("PROD",4); verify("DEV",4)
 print("PASS shared Settings: "..permutations.." load orders, typography, tabs/list colors, sole owners, denied chunks and isolated family parents")
+
+for _,family in ipairs({"PROD","DEV"}) do
+    for _,first in ipairs({1,2}) do
+        reset()
+        local other=first==1 and 2 or 1
+        local custom={spell="custom",slot="shift-2"}
+        local a=load(owners[first],family,false,{bindings=custom,layouts=custom})
+        local b=load(owners[other],family,false,{bindings=custom,layouts=custom})
+        local registry=family=="DEV" and ApogeeDevSettingsRegistry or ApogeeSettingsRegistry
+        local policy=registry.defaultSpells
+        assert(not policy.check:GetChecked() and not a.db.defaultSpells.enabled and not b.db.defaultSpells.enabled)
+        for i=1,3 do
+            for _,enabled in ipairs({true,false}) do
+                policy.check:SetChecked(enabled); policy.check.scripts.OnClick(policy.check)
+                assert(a.db.defaultSpells.enabled==enabled and b.db.defaultSpells.enabled==enabled)
+                assert(a.db.bindings==custom and b.db.layouts==custom and custom.slot=="shift-2")
+            end
+        end
+        assert(a.refreshes==6 and b.refreshes==6)
+        InCombatLockdown=function() return true end
+        policy.check.scripts.OnEvent(); assert(not policy.check.enabled)
+        policy.check:SetChecked(true); policy.check.scripts.OnClick(policy.check)
+        assert(not policy.check:GetChecked() and a.refreshes==6 and b.refreshes==6)
+        InCombatLockdown=function() return false end
+        policy.check.scripts.OnEvent(); assert(policy.check.enabled)
+        assert(policy:Set(true))
+        local stale=a.db.defaultSpells
+        -- Toggle the remaining addon while the other is disabled, then rejoin it.
+        reset(); local solo=load(owners[other],family,false,b.db)
+        registry=family=="DEV" and ApogeeDevSettingsRegistry or ApogeeSettingsRegistry
+        GetServerTime=function() return 200 end
+        assert(registry.defaultSpells:Set(false))
+        local newer=solo.db
+        for _,newFirst in ipairs({true,false}) do
+            reset()
+            local fresh,old
+            if newFirst then
+                fresh=load(owners[other],family,false,newer)
+                old=load(owners[first],family,false,{defaultSpells=stale})
+            else
+                old=load(owners[first],family,false,{defaultSpells=stale})
+                fresh=load(owners[other],family,false,newer)
+            end
+            assert(not fresh.db.defaultSpells.enabled and not old.db.defaultSpells.enabled,"Latest explicit choice wins in either order")
+        end
+    end
+end
+reset()
+local prod=load(owners[1],"PROD")
+local dev=load(owners[2],"DEV")
+ApogeeSettingsRegistry.defaultSpells:Set(true)
+assert(prod.db.defaultSpells.enabled and not dev.db.defaultSpells.enabled,"Families never share the preference")
+print("PASS shared defaults: off initially, single control, both consumers, combat lock, reload/disabled rejoin and family isolation")
