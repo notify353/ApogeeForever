@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.14.6] - 2026-10-17
+
 - Support the reviewed Forever 1.60.1.70450 client build.
 - Default Warrior F to Battle Shout in every stance, preserving custom assignments.
 - Enable Battle Shout self-buff reminders by default; remember explicit off and ready-highlight choices.
