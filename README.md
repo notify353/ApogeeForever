@@ -29,9 +29,9 @@ For work across the five addons, use the sibling
 links; the workspace has separate publication status. Distribution authority
 remains in this repository.
 
-Stats auction browsing: choose a role/playstyle to see its upgrades in native
-search results. Optionally enter Max gold to narrow the list; clearing it shows
-all upgrades again. Click **Select best** after checks finish to open the best
-qualifying buyout. Nothing opens automatically, and buying remains manual.
-The compact row has Role, Max gold (Any when blank), and Select best; no dice.
-Native filters own slot selection. Role and cap reset each visit.
+Stats auction browsing: click the left-side dice to enable upgrade filtering.
+Then optionally narrow by Max gold and role (All roles by default). Dice off
+restores normal native results. Select best requires a specific native equipment
+slot, one role/playstyle, and complete checks; the status explains missing choices.
+Click it to select a freshly verified buyout. Buying remains manual. Each visit
+starts off with no gold cap and All roles; native filter preferences are preserved.

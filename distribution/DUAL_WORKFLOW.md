@@ -1,5 +1,25 @@
 # One source, two distributions
 
+## October 17 dice / gold / role / best controls
+
+Owner explicitly requested a left-side dice enable/disable switch, followed by
+Max gold, default All roles with optional role narrowing, and disabled best until
+a specific native slot is selected. Stats a4903f5 implements this, superseding
+prior interaction decisions below. Best also requires one role/playstyle and
+complete checks. Explicit inventory slot filters are required; broad or class/
+subclass-only categories remain browseable. Purchases remain manual.
+
+Child checks: 602 tooltip, 104 policy, 89 auction assertions. All 74 central tests
+and generated PROD/DEV checks pass. Evidence in
+C:/Temp/apogee-auction-budget-20261017: dice-validation, dice-checks.log,
+dice-api-review.json, dice-install-preview.json, dice-install-verification.json,
+dice-pins.log. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-dice-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua changed; no discovery changes. Owner /reload and native
+layout/server timing acceptance remain pending. No game operation, private-save
+access, enable preference changes, push, integration or publication occurred.
+
 ## October 17 browse-first auction correction
 
 Owner approved all selected-role upgrades first, optional Max gold narrowing,

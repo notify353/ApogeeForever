@@ -162,3 +162,14 @@ role filtering processes its results without calling SearchBar:StartSearch.
 Optional cap changes restart listing checks, never navigation. The reviewed
 SelectBrowseResult path is reachable only from the Select best click handler.
 No new API dependency or transaction call. Native acceptance remains pending.
+
+### Explicit toggle, all-role scope and native slot gate
+
+Reverified installed Forever 70450 / 16001. Reviewed CategoriesList
+GetCategoryFilterData/GetCategoryData, shared AuctionCategoryMixin:AddFilter,
+Camelot armor category construction and AuctionHouseFilter inventoryType.
+Only an explicit single inventory slot enables best; Chest/Robe normalize to
+one slot. Missing/restricted/multiple slot filters fail closed. Categories with
+only class/subclass filters remain browseable without best selection. All roles
+uses existing Stats contexts; ranking requires one role/playstyle. No native
+filter mutation, transaction API or new identity transform is introduced.

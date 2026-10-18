@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Stats auctions: dice on/off, optional gold cap, All roles with role narrowing,
+  and explicit Select best gated on a specific native slot and role.
+
 - Stats auctions: browse all selected-role upgrades first, optionally narrow by
   Max gold, then click Select best. Compact controls; no automatic opening or dice.
 
