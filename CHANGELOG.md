@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Show only actual stat gains in Stats upgrade explanations; equal or lower stats
+  are omitted without changing upgrade ranking.
+
 - Prioritize Weapon DPS for Warrior tank weapons within the currently equipped
   shield, two-handed or trained dual-wield layout, then Stamina and existing
   tie-breakers. Preserve hand restrictions and reject cross-layout suggestions.

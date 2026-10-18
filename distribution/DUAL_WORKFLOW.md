@@ -1,5 +1,22 @@
 # One source, two distributions
 
+## October 18 actual stat-gain explanations
+
+Coordinated tooltip fix 0a6ebbb was reviewed and cherry-picked as Stats 5050906
+onto the latest auction/Warrior layout branch. Upgrade reasons include only
+positive relevant stat changes; equal Stamina with higher Armor shows Armor only.
+Ranking is unchanged. Equipment-only auction availability remains included.
+
+Child checks pass: 624 tooltip, 134 policy and 111 auction assertions. All 74
+central tests and generated PROD/DEV validation pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: reasons-validation, reasons-checks.log,
+reasons-install-preview.json and reasons-install-verification.json. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-stats-reasons-20261018/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Core/Rules.lua changed; no discovery changes. User /reload and native
+acceptance remain pending. No game operation, private-save access, preference
+changes, push, main integration or publication. Retained worktrees are preserved.
+
 ## October 17 coordinated Warrior tank weapon layouts
 
 Shield/weapon chat handed over 1c8ff48 (Weapon DPS first) and 96e86a4 (current
