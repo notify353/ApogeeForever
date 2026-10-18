@@ -153,3 +153,12 @@ native entry point retains search text, level range, checked filters and categor
 BrowseSearchStarted is synchronous; a declined native search cannot reuse old
 results. Item selection remains the previously reviewed native selection path.
 No transaction call is added. Owner layout/timing acceptance remains pending.
+
+### Browse-first explicit selection
+
+Reverified installed Forever 70450 / 16001 and reviewed BrowseResultsFrame
+OnBrowseSearchStarted/OnCategorySelected. Native Search owns the browse query;
+role filtering processes its results without calling SearchBar:StartSearch.
+Optional cap changes restart listing checks, never navigation. The reviewed
+SelectBrowseResult path is reachable only from the Select best click handler.
+No new API dependency or transaction call. Native acceptance remains pending.

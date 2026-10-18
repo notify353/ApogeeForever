@@ -1,5 +1,23 @@
 # One source, two distributions
 
+## October 17 browse-first auction correction
+
+Owner approved all selected-role upgrades first, optional Max gold narrowing,
+and Select best only on explicit click. Stats 9686772 supersedes the one-action
+flow below. Compact Role / Max gold (Any) / Select best row; no dice. Native
+Search owns candidates. Clearing the cap restores all role upgrades immediately.
+Completed checks never open a winner. Purchases remain manual.
+
+Child checks pass: 602 tooltip, 104 policy, 73 auction assertions. All 74 central
+tests and generated PROD/DEV checks pass. Evidence in
+C:/Temp/apogee-auction-budget-20261017: browse-validation, browse-checks.log,
+browse-install-preview.json, browse-install-verification.json, browse-pins.log.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-auction-browse-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Two Stats
+Auction Lua files changed; no discovery changes. Owner /reload and native layout,
+server timing and manual-Buyout acceptance remain pending. No game operation,
+private-save access, enable changes, push, integration or publication occurred.
+
 ## October 17 one-action auction upgrade search
 
 Owner rejected the dice/Select best interaction. Stats e7fee67 removes the dice

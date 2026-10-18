@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Stats auctions: browse all selected-role upgrades first, optionally narrow by
+  Max gold, then click Select best. Compact controls; no automatic opening or dice.
+
 - Simplify Stats auctions to Find best upgrade: start the native filtered search,
   check the budget and select the winner in one action, with Cancel and progress.
   Remove the auction dice mode. Purchases remain manual.
