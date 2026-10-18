@@ -1,6 +1,6 @@
 {
-  "accepted": false,
-  "basis": "Auction per-item gold cap and best selection change Stats runtime. Owner native layout, timing and manual-buyout acceptance is pending. Previous accepted runtime is retained in history.",
+  "accepted": true,
+  "basis": "Owner confirmed on 2026-10-18: reloaded and tested the latest DEV update, including auction category filtering and gear upgrade explanations; tested and working. Installed DEV runtime independently verified against the checked candidate. PROD is generated from the same sources; separate PROD and CurseForge-client testing are not claimed.",
   "curseforgeClientTested": false,
   "followUpChecks": [
     {
@@ -1464,10 +1464,10 @@
       "testedFamily": "DEV"
     }
   ],
-  "installedArchiveSha256": "966969dd391510e0bf9b7c7b95ac9fa6240b5fe72ba08eb5d8d3a15f0943b8b3",
-  "installedReceipt": "C:/Dev/WoW/local-install-backups/apogee-default-spells-keybinds-20261017/transaction.json",
+  "installedArchiveSha256": "cabf85fc8078d6295c2e162cc76b3412f035219d487c4d4915ada17c55c191d4",
+  "installedReceipt": "C:/Dev/WoW/local-install-backups/apogee-stats-reasons-20261018/transaction.json",
   "productionClientTested": false,
-  "reportedDate": "2026-10-17",
+  "reportedDate": "2026-10-18",
   "runtimeFiles": {
     "DEV": {
       "ApogeeEssentialsDev/ApogeeEssentialsDev.lua": "ac82950419588c30f31485dc3dd4ef1738846c886dcd0f7239474b54d4f2a294",
@@ -1554,10 +1554,10 @@
       "ApogeeKeybindsDev/Weapons/Loadouts.lua": "c1007c615abb3f5ed628593b485fc599442cc75dd6a201ab0501274d7529a35d",
       "ApogeeKeybindsDev/__Distribution/FamilyGate.lua": "2fbfab2ab9a7ce51466890aca1bcd8ff9ea15ee2c9d73c8d9dc49486d1d5d529",
       "ApogeeStatsDev/ApogeeStatsDev.lua": "4b5cb2ac530485b020532cb5466b65f6c89d6d97897af5a46bd848e7782a7a0d",
-      "ApogeeStatsDev/Auction/Browse.lua": "c049254e2cc22026bd7de395ce9cb38e3c24f3b6ca52d6f08f64bc71c4585abb",
-      "ApogeeStatsDev/Auction/Queue.lua": "692016b98c5c27e69ca0b517568063cb85a37553ce2e4f2f3ffb02e80e33f6bb",
-      "ApogeeStatsDev/Core/Items.lua": "63f308e8970e15a4c2f8ea42d8b71d5f67d0c817f3c22f270081bd4cdf93a449",
-      "ApogeeStatsDev/Core/Rules.lua": "6dec562c6577d097383e1e502100e583a84d0955d74e7112efe40898477a92a6",
+      "ApogeeStatsDev/Auction/Browse.lua": "3bc84fae4c3f3431e9419a7873264ac14a8efd5657b40589c40b994f9b13761f",
+      "ApogeeStatsDev/Auction/Queue.lua": "1984c1492e9879e0bb05834b94c7326ac7c2053852cd5116a0edef5f89e56119",
+      "ApogeeStatsDev/Core/Items.lua": "f5ad29a51d415fb90d48d9752cb59fd8f248346777170a60fafe9aeeff86c6fe",
+      "ApogeeStatsDev/Core/Rules.lua": "6c23f03aafdd24b8fe270397e1f986e658e0e3c2a8529e3399169d18bd7b2acf",
       "ApogeeStatsDev/__Distribution/FamilyGate.lua": "ba988f34520cfcfdb5a340138659431d3eed30d42577ee30e326f199851a278d"
     },
     "PROD": {
@@ -1645,10 +1645,10 @@
       "ApogeeKeybinds/Weapons/Loadouts.lua": "8b9696a485e692fb8a0f7c4e5935e0c861b0c47bbfa7336a476489ba1c97803c",
       "ApogeeKeybinds/__Distribution/FamilyGate.lua": "acf75a18371af14ad21fae1ac0c0b57c53ae69568f34066cc4e81f155bea91e1",
       "ApogeeStats/ApogeeStats.lua": "7f5980f325142913948ced2766d77d9fe0395746915c35c1f8489497e481c723",
-      "ApogeeStats/Auction/Browse.lua": "7a58ec6134421c5f5a4759fbde6d90742fd1b5038ec4ed15e17a0f759b3454db",
-      "ApogeeStats/Auction/Queue.lua": "58f4930c2e98b93b7ee06604e7897dc943a9f3f6ccbcd54848a9a812704b1ee7",
-      "ApogeeStats/Core/Items.lua": "e2eef2b51e9bdda84796720193f4f475821a6fba17127fc9071c2951b7b277e2",
-      "ApogeeStats/Core/Rules.lua": "8a8acf47e2cef382a0a33dff87aad0ac19fcc31cc56ce198d7552c8f20058e84",
+      "ApogeeStats/Auction/Browse.lua": "093f43de46dd4e7836cc21e64bcfe35361b9bb312b26b85168558a5159673ed0",
+      "ApogeeStats/Auction/Queue.lua": "238919e0fa97e82efc9ce26e38fcf1454aeb207a05c712008fc0029d8c8733f5",
+      "ApogeeStats/Core/Items.lua": "a373c0d4f17062ed71b1a59482c2d703cfeee7857d1d307a26cd60bedd5d3bf8",
+      "ApogeeStats/Core/Rules.lua": "af6320e552d3b9f9c6af08fd6c610888b066896afa84eaa30c95d9baf8376c34",
       "ApogeeStats/__Distribution/FamilyGate.lua": "15e7d9da7f466e38ec9114df7c64855f49e76611dc1f269e028028bb0d509891"
     }
   },

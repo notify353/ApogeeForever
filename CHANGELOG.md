@@ -2,37 +2,14 @@
 
 ## [Unreleased]
 
-- Show only actual stat gains in Stats upgrade explanations; equal or lower stats
-  are omitted without changing upgrade ranking.
-
-- Prioritize Weapon DPS for Warrior tank weapons within the currently equipped
-  shield, two-handed or trained dual-wield layout, then Stamina and existing
-  tie-breakers. Preserve hand restrictions and reject cross-layout suggestions.
-
-- Restrict Stats auction filtering to Armor and Weapons; suspend it elsewhere
-  with clear disabled controls while preserving dice, gold and role choices.
-
-- Rank Warrior and Paladin tank shields by Armor first, then Stamina and existing
-  defensive tie-breakers. Other roles and equipment retain their priorities.
-
-- Preserve enabled Stats filtering across native auction category changes; keep
-  results empty with a Search prompt until the new search, then resume filtering.
-
-- Stats auctions: dice on/off, optional gold cap, All roles with role narrowing,
-  and explicit Select best gated on a specific native slot and role.
-
-- Stats auctions: browse all selected-role upgrades first, optionally narrow by
-  Max gold, then click Select best. Compact controls; no automatic opening or dice.
-
-- Simplify Stats auctions to Find best upgrade: start the native filtered search,
-  check the budget and select the winner in one action, with Cancel and progress.
-  Remove the auction dice mode. Purchases remain manual.
-
-- Require auction role selection first and use native auction slot filters; remove
-  the duplicate Stats slot selector.
-
-- Stats: add a per-item auction buyout cap, equipment-slot filter and best-upgrade
-  selection for one role/playstyle. Check actual listings; purchases remain manual.
+- Filter auction upgrades with a dice on/off switch, optional gold cap, and optional role selection. All roles are included by default.
+- Use native Armor and Weapons categories to narrow results. Other categories clearly disable upgrade filtering while remembering your choices.
+- Preserve filtering settings when switching categories and prompt for a new Search before showing results.
+- Click Select best after choosing a specific native equipment slot and role. Purchases remain manual.
+- Rank Warrior and Paladin tank shields by Armor, then Stamina and defensive tie-breakers.
+- Rank Warrior tank melee weapons by Weapon DPS within the current shield, two-handed or trained dual-wield setup, preserving hand restrictions.
+- Show only stats that actually increase in upgrade explanations.
+- Reload after updating. Existing settings are preserved.
 
 ## [1.14.7] - 2026-10-17
 
