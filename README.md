@@ -42,4 +42,7 @@ Returning restores the dice preference, gold and role; the filtered list waits
 for a matching native Search.
 
 Stats ranks Warrior and Paladin tank shields by Armor, then Stamina, followed by
-existing defensive tie-breakers. Other equipment and role priorities are unchanged.
+existing defensive tie-breakers. Warrior tank weapons prioritize Weapon DPS, then
+Stamina and existing tie-breakers within the current shield, two-handed or trained
+dual-wield setup. Hand restrictions are preserved; cross-layout switches are not
+recommended. Other equipment and role priorities are unchanged.

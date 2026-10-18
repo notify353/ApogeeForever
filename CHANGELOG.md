@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+- Prioritize Weapon DPS for Warrior tank weapons within the currently equipped
+  shield, two-handed or trained dual-wield layout, then Stamina and existing
+  tie-breakers. Preserve hand restrictions and reject cross-layout suggestions.
+
 - Restrict Stats auction filtering to Armor and Weapons; suspend it elsewhere
   with clear disabled controls while preserving dice, gold and role choices.
 

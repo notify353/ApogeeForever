@@ -1,5 +1,30 @@
 # One source, two distributions
 
+## October 17 coordinated Warrior tank weapon layouts
+
+Shield/weapon chat handed over 1c8ff48 (Weapon DPS first) and 96e86a4 (current
+layout-aware comparison) for the same next candidate. Cherry-picked onto latest
+auction work as ac1fd39 and 982f912; documentation conflicts retain both tasks'
+changes. Stats 982f912 is the combined immutable pin. The intermediate weapon
+candidate passed checks but was not installed while the layout follow-up finished.
+
+Warrior tank melee weapons rank DPS, then Stamina and existing tie-breakers
+within the currently equipped shield, two-handed or trained dual-wield layout.
+Hand restrictions and no inferred empty off-hand/cross-layout recommendations
+are preserved. Other classes and shield Armor-first priorities are unchanged.
+Latest equipment-only auction filtering/category continuity remain included.
+
+Combined child checks: 619 tooltip, 134 policy, 111 auction assertions. All 74
+central tests and generated PROD/DEV checks pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: layout-validation, layout-checks.log,
+layout-pins.log, layout-install-preview.json, layout-install-verification.json.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-warrior-layout-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Core/Rules.lua changed; no discovery changes. Owner /reload and native
+layout comparisons remain pending. No game operation, private-save access,
+enable changes, push, main integration or publication occurred. Source worktree
+C:/Temp/apogee-tank-shield-20261017/ApogeeStats and prior backups are retained.
+
 ## October 17 Armor/Weapons filtering availability
 
 Stats e5202f3 limits filtering to native Armor/Weapons roots and descendants.
