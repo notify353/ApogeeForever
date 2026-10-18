@@ -1,5 +1,30 @@
 # One source, two distributions
 
+## October 17 Stats auction budget
+
+Stats adds a visit-only per-item buyout cap, slot filter and Select best for one
+role/playstyle. Actual item searches are throttled and bounded; incomplete work
+never selects. The winning listing is refreshed before exact price/ID selection;
+buying remains manual. No loader, saved-data or identity-transform changes.
+The immutable revision and file hashes are in candidate.lock.json. Native
+acceptance is invalidated; prior evidence is retained in history.
+
+Child checks and all 74 central tests passed, including generated PROD/DEV
+auction selection regressions. Final evidence:
+C:/Temp/apogee-auction-budget-20261017/final-validation and final-central-checks.log.
+The initial package notice-label mismatch was corrected before final validation.
+
+Checked DEV receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-budget-20261017/transaction.json.
+Independently verified 114 installed files, 135 backup files and 111 unchanged
+PROD files. Three Stats Lua files and the existing DEV version marker changed.
+Differing documentation and private data remain preserved. Owner reload and
+auction layout/timing/manual-Buyout acceptance are pending; the marker version
+may need discovery on restart if reload does not refresh it. No push, main
+integration, publication or game operation occurred. Task record:
+C:/Temp/apogee-auction-budget-20261017/task-record.md.
+
+
 ## October 17 default-spell control placement correction
 
 Owner requested moving the single checkbox into the Keybinds feature settings

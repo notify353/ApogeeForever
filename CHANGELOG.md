@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Stats: add a per-item auction buyout cap, equipment-slot filter and best-upgrade
+  selection for one role/playstyle. Check actual listings; purchases remain manual.
+
 ## [1.14.7] - 2026-10-17
 
 - Add one per-character Enable default spells toggle in the Keybinds settings group, off initially for existing and new characters.

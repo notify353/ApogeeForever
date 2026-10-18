@@ -122,3 +122,16 @@ SystemTime GetServerTime, a non-null numeric timestamp, for reconciling explicit
 per-character choices when an independently disabled consumer returns. Layout
 and SystemTime source hashes are now recorded. Existing registry identity mapping
 is sufficient; no new global, SavedVariables name, TOC or gameplay transform.
+
+## October 17 Stats auction budget review
+
+Verified the installed Forever 1.60.1.70450 / 16001 export with the required
+checker. Reviewed AuctionHouseDocumentation item-key/detail-result contracts,
+SendSearchQuery, full-result/pagination APIs and item-result event payloads.
+Reviewed native BrowseResultsFrame, Frame SelectBrowseResult/QueryItem,
+SearchBar GetLevelFilterRange, ItemBuyFrame and ItemList selection methods.
+Browse minPrice is not treated as a buyout; item-search buyoutAmount is nullable.
+Separate owned results and native level bounds are preserved. Selecting an item
+opens its view; SetSelectedEntryByCondition invokes native selection, not purchase.
+Runtime carries no transaction calls. Source review does not establish native
+layout, server timing or taint acceptance.
