@@ -145,3 +145,11 @@ immediately and require that new search before selection. Stats never sets a
 native category or duplicates its slot selector. Reviewed EditBox SetEnabled
 for locking Max gold until the explicit role choice. Native acceptance remains
 pending; all prior evidence stays historical.
+
+### One-action upgrade search
+
+Reviewed Forever 70450 SearchBar:StartSearch and Frame:SendBrowseQuery. The
+native entry point retains search text, level range, checked filters and category.
+BrowseSearchStarted is synchronous; a declined native search cannot reuse old
+results. Item selection remains the previously reviewed native selection path.
+No transaction call is added. Owner layout/timing acceptance remains pending.

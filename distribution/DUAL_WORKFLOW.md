@@ -1,5 +1,22 @@
 # One source, two distributions
 
+## October 17 one-action auction upgrade search
+
+Owner rejected the dice/Select best interaction. Stats e7fee67 removes the dice
+and offers Find best upgrade after role and budget input. It starts a native
+filtered search, checks listings and selects a fresh winner; Cancel stops work.
+Native filters own slot selection and purchases remain manual. Supersedes the
+role-first interaction below. No loader or identity-transform changes.
+
+Child checks: 602 tooltip, 104 policy, 66 auction assertions. All 74 central tests
+and generated-family checks pass. Evidence: C:/Temp/apogee-auction-budget-20261017/
+find-validation, find-checks.log, find-api-review.json, find-install-verification.json.
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-auction-find-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua and Auction/Queue.lua changed; no discovery changes.
+Owner /reload and native UI/server-timing acceptance remain pending. No game
+operation, private-save access, enable changes, push, integration or publication.
+
 ## October 17 Stats role-first correction
 
 Owner rejected the duplicate slot selector and requested role selection first.

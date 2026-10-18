@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+- Simplify Stats auctions to Find best upgrade: start the native filtered search,
+  check the budget and select the winner in one action, with Cancel and progress.
+  Remove the auction dice mode. Purchases remain manual.
+
 - Require auction role selection first and use native auction slot filters; remove
   the duplicate Stats slot selector.
 
