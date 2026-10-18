@@ -920,3 +920,98 @@ Release 1.14.4 is the next patch after the published 1.14.3. Child and central
 integration, final-main hosted test/aggregate/version checks, exact package review
 and immediate production-tag approval precede publication. No additional local
 installation is implied by version preparation.
+
+## October 13 Battle Shout in all stances
+
+Keybinds pins `bfff13ae530417da0f5a85bf82ca131e3dfbfc6b`. Empty Warrior F
+slots default to the highest learned Battle Shout in every stance. Saved
+assignments and per-stance weapon attachments retain priority and isolation.
+Child test-all and full central test-local passed against Forever 1.60.1.70338 /
+16001, including the stance regression against generated PROD and DEV families.
+Evidence: `C:/Temp/apogee-battle-shout-20261013/validation`.
+
+DEV-only receipt: `C:/Dev/WoW/local-install-backups/apogee-battle-shout-20261013/transaction.json`,
+chained from the five-addon-update October 12 receipt. Independently verified
+114 installed package files, 135 backup files and 111 unchanged PROD files.
+Only Keybinds DEV Actions/Defaults.lua and the DEV marker TOC changed. Differing
+documentation and private saves remain preserved. User reload is required;
+marker TOC discovery may require a restart if reload does not discover it.
+Native acceptance is pending and historical evidence is retained. No game
+operation, push, main integration, release or PROD installation occurred.
+
+## October 13 Battle Shout reminder default
+
+Keybinds pins child commit `68d418d` (full immutable revision in candidate.lock.json).
+Battle Shout defaults to self-buff reminder for automatic and manual assignments,
+all stances and learned ranks. Explicit false and ordinary ready-highlight modes
+win; historical absent choices adopt the new default because old off choices
+were stored as nil. Spell classification occurs during action compilation, not
+HUD refresh. Child test-all and full central test-local passed with matching
+Forever 1.60.1.70338 / 16001 export, including generated PROD/DEV reminder tests.
+Evidence: C:/Temp/apogee-battle-shout-20261013/reminder-validation.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-shout-reminder-20261013/transaction.json,
+chained from apogee-battle-shout-20261013. Independently verified 114 package files,
+135 backups and 111 unchanged PROD files. Three Keybinds DEV Lua files changed:
+Actions/Defaults.lua, Actions/Identity.lua and UI/Hud.lua. No discovery changes.
+User reload and native acceptance remain pending. No private-save access, game
+operation, push, main integration or release occurred.
+
+## October 13 Up Arrow Auto Run
+
+Essentials pins `304448a` (full immutable revision in candidate.lock.json).
+Login/reload assigns UP to native TOGGLEAUTORUN with existing context checks,
+combat deferral and conditional rollback. Other Auto Run shortcuts and later
+session edits remain. The read-only defaults reference includes the shortcut.
+Verified Bindings_Camelot.xml in the matching Forever 1.60.1.70338 / 16001 export.
+Full child test-local and central test-local passed. Evidence:
+C:/Temp/apogee-autorun-20261013/validation and child-checks.log.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-autorun-20261013/transaction.json,
+chained from apogee-shout-reminder-20261013. Independently verified 114 package
+files, 135 backups and 111 unchanged PROD files. Only Essentials DEV
+Core/LoginDefaults.lua and Core/Settings.lua changed; no discovery changes.
+User reload and native input acceptance remain pending. No game operation,
+private-save access, push, main integration or release occurred.
+
+## October 17 Forever 70450 review and release preparation
+
+The owner exported the updated client and confirmed the previously installed
+Battle Shout all-stance/reminder and Up Arrow Auto Run behavior works. Matching
+Forever 1.60.1.70450 / 16001 exports were reviewed before updating provenance.
+Current-contract review found no required gameplay adapter changes. Only four
+Core/Client.lua reviewed-build warnings change at runtime relative to the last
+installed candidate. Reviewed source pins: Heals de4c53f, Keybinds 644fefb,
+Group Alert f289b6a, Essentials 6901e39; Stats stays at its existing immutable pin.
+Full revisions/hashes live only in candidate.lock.json.
+
+All five child suites passed, including Heals actual exported-source contracts,
+plus 18 workspace tests and full central validation (74 Python tests and generated
+Lua checks). Evidence: C:/Temp/apogee-api-20261017/validation and sibling check logs.
+The central exact build allowlist now includes 70450 and rejects neighboring
+unreviewed builds. Generated warning checks cover both families for all four
+warning-bearing children. Export review hashes are recorded in the owning repos;
+additional local inventory is C:/Temp/apogee-api-20261017/export-review.json.
+
+DEV install receipt: C:/Dev/WoW/local-install-backups/apogee-70450-20261017-r2/transaction.json.
+The first attempt stopped at prepared status because protected metadata changed
+during backup; addon bytes were independently confirmed unchanged before retry.
+Both backups are retained. Successful retry independently verified 114 installed
+package files, 135 backups and 111 unchanged PROD files. Four client modules and
+Heals export metadata changed, with no discovery changes. Private save contents
+and enabled preferences were never opened or modified. User reload/startup
+acceptance for these exact updated bytes is pending separately from earlier
+feature acceptance.
+
+Latest remote release is v1.14.5; proposed next patch is 1.14.6. Native acceptance,
+approved child/central integration, prepare-release.ps1 from synchronized main,
+exact-final-main hosted test/aggregate/version checks, and explicit production-tag
+approval still gate publication. Required secret entries exist (source-read
+entries updated October 2); their current expiry/access are not established by
+metadata. No push, main integration, tag, release or publication was performed.
+
+October 17 acceptance follow-up: owner reloaded the refreshed DEV candidate and
+confirmed everything works. Exact installed Lua bytes were independently reverified;
+native-acceptance.json now records current DEV and generated PROD runtime hashes.
+Offline publisher payload validation passes for proposed 1.14.6. Historical evidence
+is retained. Push/integration, final-main hosted checks and tag approval remain pending.

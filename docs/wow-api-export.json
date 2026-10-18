@@ -1,6 +1,6 @@
 {
   "clientDirectory": "_classic_beta_",
-  "clientVersion": "1.60.1.70338",
+  "clientVersion": "1.60.1.70450",
   "files": [
     {
       "path": "Blizzard_APIDocumentationGenerated/AddOnsDocumentation.lua",
@@ -16,7 +16,7 @@
     },
     {
       "path": "Blizzard_APIDocumentationGenerated/UnitDocumentation.lua",
-      "sha256": "e62816d9f8edc63ac3b80c5a50540a62caba77586fcc4827f684fd74e0257c1e"
+      "sha256": "a823e84f90fabe58d9ffe547ea17eae83708d451e593b4052bce002cc02ce5c1"
     },
     {
       "path": "Blizzard_AddOnList/AddonList.lua",
@@ -36,7 +36,7 @@
     },
     {
       "path": "Blizzard_Settings_Shared/Blizzard_Settings.lua",
-      "sha256": "76ab19d14675e4e3dcf4fb1b02af35898e253e254da3cfce0ef655eab475e293"
+      "sha256": "daa9b9b36519ad4dfe28bfde040544ed84cc717faedfa80f1e17e3e73a31b4a0"
     },
     {
       "path": "Blizzard_Settings_Shared/Blizzard_SettingsInbound.lua",

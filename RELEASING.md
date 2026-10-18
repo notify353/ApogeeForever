@@ -13,9 +13,12 @@ requests run self-contained tests without these environment credentials.
 Production retains its v*.*.* tag-only policy and holds the same scoped source
 read token plus its existing CF upload credential. Never log secret values.
 
-The current source-read token expires October 1, 2026. Before the next build after
-expiry, renew equivalent read-only access for the reviewed private repositories, including Stats
-and securely update both environments. Stats access must be granted explicitly before hosted validation; do not change token permissions or print credentials automatically.
+On October 17, 2026, read-only GitHub inspection confirmed source-read secret
+entries in both environments were updated October 2, superseding the historical
+October 1 expiry note. Secret metadata does not reveal current expiry or prove
+access. Require successful aggregate/version checks on the exact final main
+commit. If renewal is needed, obtain owner approval and retain the reviewed
+read-only private-repository scope, including Stats. Never print credentials.
 
 Enable APOGEE_DISTRIBUTION_SOURCES_READY only after the required secrets exist.
 Run Distribution validation and CurseForge version preflight on main. Both must
@@ -23,7 +26,7 @@ pass for the exact release-preparation commit before tagging. The preflight
 requires one exact 1.60.1 result with Forever version type88568; the type is not
 an upload-version ID and there is no fallback.
 
-Native acceptance is owner-reported complete for the installed DEV package.
+Native acceptance is tracked separately for each installed DEV candidate.
 `distribution/native-acceptance.json` pins its tested Lua bytes and the generated
 PROD counterpart from the same reviewed sources; this does not claim separate
 PROD or CurseForge-client testing.
