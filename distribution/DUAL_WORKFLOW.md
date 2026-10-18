@@ -1009,3 +1009,9 @@ exact-final-main hosted test/aggregate/version checks, and explicit production-t
 approval still gate publication. Required secret entries exist (source-read
 entries updated October 2); their current expiry/access are not established by
 metadata. No push, main integration, tag, release or publication was performed.
+
+October 17 acceptance follow-up: owner reloaded the refreshed DEV candidate and
+confirmed everything works. Exact installed Lua bytes were independently reverified;
+native-acceptance.json now records current DEV and generated PROD runtime hashes.
+Offline publisher payload validation passes for proposed 1.14.6. Historical evidence
+is retained. Push/integration, final-main hosted checks and tag approval remain pending.
