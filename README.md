@@ -29,8 +29,10 @@ For work across the five addons, use the sibling
 links; the workspace has separate publication status. Distribution authority
 remains in this repository.
 
-Stats auction browsing: click the dice to show upgrades. It stays steadily lit
-while progress text reports loading. Each visit starts with All roles; the auction
-role filter is independent of character guidance. Tooltips show every qualifying
-role. Click the dice again to restore all results. Disable any retained legacy
+Stats auction browsing: choose your role/playstyle first, then use the native
+auction filters to choose the equipment slot. Enable the dice for upgrades and
+enter Max gold for a per-item buyout cap. After complete checks, Select best
+opens and selects the strongest affordable upgrade; you click Buyout yourself.
+Stats has no separate slot selector. Each visit requires a new role choice;
+auction tooltips still show every qualifying role. Disable any retained legacy
 Apogee Auction copy to use this filter.

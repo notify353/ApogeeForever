@@ -135,3 +135,13 @@ Separate owned results and native level bounds are preserved. Selecting an item
 opens its view; SetSelectedEntryByCondition invokes native selection, not purchase.
 Runtime carries no transaction calls. Source review does not establish native
 layout, server timing or taint acceptance.
+
+### Role-first/native slot correction
+
+Reviewed matching CategoriesList SetSelectedCategory/GetCategoryFilterData and
+BrowseResultsFrame OnCategorySelected/OnBrowseSearchStarted. Native category
+selection changes UI/filter state before a new browse search; cancel old checks
+immediately and require that new search before selection. Stats never sets a
+native category or duplicates its slot selector. Reviewed EditBox SetEnabled
+for locking Max gold until the explicit role choice. Native acceptance remains
+pending; all prior evidence stays historical.

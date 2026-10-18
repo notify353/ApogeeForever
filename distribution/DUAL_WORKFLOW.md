@@ -1,5 +1,25 @@
 # One source, two distributions
 
+## October 17 Stats role-first correction
+
+Owner rejected the duplicate slot selector and requested role selection first.
+Stats now requires an explicit role/playstyle before enabling dice or Max gold;
+slot/category filtering belongs to the native auction UI. Mixed-slot results
+cannot produce a best ranking, and native category changes cancel old checks
+until a new native search runs. This supersedes the initial slot UI below.
+Runtime acceptance remains pending. Stats source is 9474ea0 (full revision and
+hashes in the lock). Child tests pass: 602 tooltip, 104 policy and 120 auction
+assertions; all 74 central tests plus generated PROD/DEV checks pass. Evidence:
+C:/Temp/apogee-auction-budget-20261017/role-first-final-validation and
+role-first-final-checks.log.
+
+Installed through the central checked DEV path. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-role-first-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua and Auction/Queue.lua changed; no discovery changes.
+Owner reload and native verification are pending. No game operation, enable
+changes, private-save access, push, main integration or publication occurred.
+
 ## October 17 Stats auction budget
 
 Stats adds a visit-only per-item buyout cap, slot filter and Select best for one

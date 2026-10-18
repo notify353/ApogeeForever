@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Require auction role selection first and use native auction slot filters; remove
+  the duplicate Stats slot selector.
+
 - Stats: add a per-item auction buyout cap, equipment-slot filter and best-upgrade
   selection for one role/playstyle. Check actual listings; purchases remain manual.
 
