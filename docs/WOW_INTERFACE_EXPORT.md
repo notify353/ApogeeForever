@@ -173,3 +173,11 @@ one slot. Missing/restricted/multiple slot filters fail closed. Categories with
 only class/subclass filters remain browseable without best selection. All roles
 uses existing Stats contexts; ranking requires one role/playstyle. No native
 filter mutation, transaction API or new identity transform is introduced.
+
+### Category-change filtering continuity
+
+Reverified Forever 70450 / 16001. Reviewed CategoriesList:SetSelectedCategory
+and BrowseResultsFrame OnCategorySelected/OnBrowseSearchStarted/UpdateBrowseResults.
+A category change modifies native filter/header state without guaranteeing a new
+search. Keep the filtered provider installed with empty rows until native Search;
+ignore old result snapshots while waiting. No new API or native filter mutation.

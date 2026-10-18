@@ -1,5 +1,30 @@
 # One source, two distributions
 
+## October 17 category continuity and coordinated shield priorities
+
+Stats f1a1958 keeps the filtered provider empty after category changes instead
+of restoring native unfiltered rows under a lit dice. Gold/role remain set;
+status/list prompt for Search. Old responses and edits cannot repopulate the
+list until a new native search starts. Best stays disabled while waiting.
+
+The shield-priority chat requested inclusion in this same DEV update. Reviewed
+00a6dd0 from its retained codex/tank-shield-armor worktree and cherry-picked as
+8a7b61a onto the auction branch. Resolved the changelog conflict by preserving
+both entries; README changes merged. Warrior/Paladin tank shields rank Armor,
+then Stamina, then existing defensive tie-breakers. Other roles/slots unchanged.
+The combined immutable Stats pin is 8a7b61a; no main integration occurred.
+
+Combined child checks pass: 602 tooltip, 123 policy, 100 auction assertions.
+All 74 central tests plus generated PROD/DEV checks pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: category-shield-validation,
+category-shield-checks.log, category-shield-install-preview.json,
+category-shield-install-verification.json, category-shield-pins.log.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-auction-category-shield-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua and Core/Rules.lua changed; no discovery changes.
+Owner /reload and native category/shield acceptance remain pending. No game
+operation, private-save access, enable changes, push or publication occurred.
+
 ## October 17 dice / gold / role / best controls
 
 Owner explicitly requested a left-side dice enable/disable switch, followed by

@@ -35,3 +35,9 @@ restores normal native results. Select best requires a specific native equipment
 slot, one role/playstyle, and complete checks; the status explains missing choices.
 Click it to select a freshly verified buyout. Buying remains manual. Each visit
 starts off with no gold cap and All roles; native filter preferences are preserved.
+
+Changing categories keeps enabled filtering and gold/role choices. The list waits
+for a new native Search, then filters the new results automatically.
+
+Stats ranks Warrior and Paladin tank shields by Armor, then Stamina, followed by
+existing defensive tie-breakers. Other equipment and role priorities are unchanged.

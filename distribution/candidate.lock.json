@@ -164,20 +164,20 @@
       "version": "0.1.0"
     },
     {
-      "commit": "a4903f552da8b5ad70346471f590a52345691a29",
+      "commit": "8a7b61ab54c0c67a3fa7c80ca2d7a54c4360dbc4",
       "files": {
         "ApogeeStats.lua": "29f5b3412cd18fae12f4b75c62d6a9e4a045baf59a1f9d24fd73cda9441f555b",
         "ApogeeStats.toc": "ff843e04e6685e3c5912e92b483d961ded701c9ab5ca9e2540a5c80193cfb832",
-        "Auction/Browse.lua": "43dfcfcd906336a7f3dcb1f383c8233b256920a11b1d5be1488e9c12a7779f7a",
+        "Auction/Browse.lua": "88f9dbd49c3c10802f87050c515aa8733374469f3ae1b559a571a4f2b2c79600",
         "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
-        "CHANGELOG.md": "88f246d66dd8865842c709c8a9e14fc63b93e7895ec566fd5af86e22c2a9bb99",
+        "CHANGELOG.md": "2818e969426334adfb9d49681fd1374d406a8c1dea46335d12bf7d67e68d05b9",
         "Core/Items.lua": "3fc1a5c6d0dde8c0e7743273b037a8766b9ab27435ce57b26f055f4303319a04",
-        "Core/Rules.lua": "4ff33f5a7e1006d72ecc1c158f711f715482000a5a91bb2a722a5a602e6c1814",
+        "Core/Rules.lua": "d2cee9d9f78e4750a3affc31188ca116b1ffdb91a52aa7b2f5e26665adb642a7",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
-        "README.md": "230948aef3760561c10e0d84bb2895019193813ddfe5858539591e5117272a15",
-        "docs/CLASS_ROLE_REFERENCE.md": "988ad9a55008bc4a980167e8e706a5605e3f4158966cd63a3a8c22239dcf5c5c",
-        "docs/NATIVE_ACCEPTANCE.md": "3fab113863a4cae8361bf6d15c7ec14b2520539139ef64b921e49185ad84d42a"
+        "README.md": "7a451adaf3b1905d0de2b7d34a4e92ad03eb0354d15bb4302cbd90e9c144fdc0",
+        "docs/CLASS_ROLE_REFERENCE.md": "151497a179d0d986f839cc05eafa0e663ab4c0fed2a94638c2ce7e028960b9a2",
+        "docs/NATIVE_ACCEPTANCE.md": "2bf51c6790d8357bada162e7ea140d85fd4abe037e0dbde32f787fdac8582fd3"
       },
       "name": "ApogeeStats",
       "repository": "https://github.com/notify353/ApogeeStats.git",

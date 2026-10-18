@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+- Rank Warrior and Paladin tank shields by Armor first, then Stamina and existing
+  defensive tie-breakers. Other roles and equipment retain their priorities.
+
+- Preserve enabled Stats filtering across native auction category changes; keep
+  results empty with a Search prompt until the new search, then resume filtering.
+
 - Stats auctions: dice on/off, optional gold cap, All roles with role narrowing,
   and explicit Select best gated on a specific native slot and role.
 
