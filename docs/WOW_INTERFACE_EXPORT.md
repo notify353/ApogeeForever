@@ -181,3 +181,13 @@ and BrowseResultsFrame OnCategorySelected/OnBrowseSearchStarted/UpdateBrowseResu
 A category change modifies native filter/header state without guaranteeing a new
 search. Keep the filtered provider installed with empty rows until native Search;
 ignore old result snapshots while waiting. No new API or native filter mutation.
+
+### Armor/Weapons availability
+
+Reverified Forever 70450 / 16001. Reviewed CategoriesList:GetSelectedCategory,
+shared AuctionFrame_CreateCategory and Camelot category roots. Resolve the root
+through AuctionCategories and compare its native localized name with the Armor/
+Weapons constants; descendants inherit root availability. No fixed indexes or
+English-label matching. Missing/restricted root data disables custom filtering.
+Remember the dice preference separately from category availability. No new native
+mutation or transaction API. Shield Armor-first policy remains included.

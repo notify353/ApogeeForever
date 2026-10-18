@@ -1,5 +1,25 @@
 # One source, two distributions
 
+## October 17 Armor/Weapons filtering availability
+
+Stats e5202f3 limits filtering to native Armor/Weapons roots and descendants.
+Other categories and All categories restore native results, dim/disable custom
+controls and show category guidance. Remember dice preference, cap and role;
+returning restores them and waits for a matching Search when enabled. Native
+localized root names are used, not fixed indexes or English labels. Previous
+category-continuity and tank-shield priority changes remain included.
+
+Child checks: 602 tooltip, 123 policy, 111 auction assertions. All 74 central tests
+and generated PROD/DEV checks pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: equipment-validation, equipment-checks.log,
+equipment-api-review.json, equipment-install-preview.json,
+equipment-install-verification.json, equipment-pins.log. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-equipment-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua changed; no discovery changes. Owner /reload and native
+layout/timing acceptance remain pending. No game operation, private-save access,
+enable preference changes, push, main integration or publication occurred.
+
 ## October 17 category continuity and coordinated shield priorities
 
 Stats f1a1958 keeps the filtered provider empty after category changes instead

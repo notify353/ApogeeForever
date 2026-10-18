@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Restrict Stats auction filtering to Armor and Weapons; suspend it elsewhere
+  with clear disabled controls while preserving dice, gold and role choices.
+
 - Rank Warrior and Paladin tank shields by Armor first, then Stamina and existing
   defensive tie-breakers. Other roles and equipment retain their priorities.
 
