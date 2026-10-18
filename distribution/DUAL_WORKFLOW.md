@@ -1,5 +1,21 @@
 # One source, two distributions
 
+## October 17 default-spell control placement correction
+
+Owner requested moving the single checkbox into the Keybinds feature settings
+group. Heals ba8cb53 and Keybinds 21922bf place it above the Keybinds rule toggles;
+the parent overview and Heals page contain no duplicate control. Shared behavior,
+off-initially preference and custom assignment locations remain unchanged.
+Both child suites and full central validation pass (74 Python tests and generated
+Lua checks, including 24 load orders in both families). Evidence:
+C:/Temp/apogee-default-spells-20261017/move-validation and move-central-checks.log.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-default-spells-keybinds-20261017/transaction.json.
+Only Heals/Keybinds UI/Settings.lua changed. Independently verified 114 installed
+files, 135 backups and 111 unchanged PROD files. No discovery changes; user reload
+required, then open Apogee DEV > Keybinds. Native acceptance remains pending.
+No private-save access, game operation, push, integration or publication occurred.
+
 ## October 17 optional default spells
 
 Heals 77b8b41 and Keybinds d211ef4 add one per-character **Enable default spells**

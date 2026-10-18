@@ -181,14 +181,19 @@ local function verify(family, count)
     local background=assert(find(parent.frame,function(c) return c.kind=="Texture" end))
     color(background,0.035,0.035,0.045);assert(background.color[4]==0.96)
     assert(#parent.children==count, "Only loaded Settings owners appear")
-    if registry.children.Heals or registry.children.Keybinds then
-        local check=assert(registry.defaultSpells.check,"Parent control must exist in every load order")
-        assert(check.parent==parent.frame and check.label.text=="Enable default spells")
+    if registry.children.Keybinds then
+        local check=assert(registry.defaultSpells.check,"Keybinds control must exist in every load order")
+        assert(check.parent.parent==registry.children.Keybinds.frame and check.label.text=="Enable default spells")
         local toggles=0
         for _,c in ipairs(parent.frame.children) do
-            if c.kind=="CheckButton" then toggles=toggles+1 end
+            assert(c.kind~="CheckButton","Parent page must not contain the toggle")
+        end
+        for _,c in ipairs(check.parent.children) do
+            if c==check then toggles=toggles+1 end
         end
         assert(toggles==1,"Exactly one shared default-spells toggle")
+    elseif registry.defaultSpells then
+        assert(not registry.defaultSpells.check,"Heals alone must not add a misplaced checkbox")
     end
     local seen={}
     for _,child in ipairs(parent.children) do

@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Add one per-character Enable default spells toggle in Apogee Settings, off initially for existing and new characters.
+- Add one per-character Enable default spells toggle in the Keybinds settings group, off initially for existing and new characters.
 - Enable or disable automatic Keybinds and Heals spells without moving or replacing custom assignments.
 
 ## [1.14.6] - 2026-10-17
