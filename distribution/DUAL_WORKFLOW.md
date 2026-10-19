@@ -1,5 +1,192 @@
 # One source, two distributions
 
+## October 18 actual stat-gain explanations
+
+Coordinated tooltip fix 0a6ebbb was reviewed and cherry-picked as Stats 5050906
+onto the latest auction/Warrior layout branch. Upgrade reasons include only
+positive relevant stat changes; equal Stamina with higher Armor shows Armor only.
+Ranking is unchanged. Equipment-only auction availability remains included.
+
+Child checks pass: 624 tooltip, 134 policy and 111 auction assertions. All 74
+central tests and generated PROD/DEV validation pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: reasons-validation, reasons-checks.log,
+reasons-install-preview.json and reasons-install-verification.json. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-stats-reasons-20261018/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Core/Rules.lua changed; no discovery changes. User /reload and native
+acceptance remain pending. No game operation, private-save access, preference
+changes, push, main integration or publication. Retained worktrees are preserved.
+
+## October 17 coordinated Warrior tank weapon layouts
+
+Shield/weapon chat handed over 1c8ff48 (Weapon DPS first) and 96e86a4 (current
+layout-aware comparison) for the same next candidate. Cherry-picked onto latest
+auction work as ac1fd39 and 982f912; documentation conflicts retain both tasks'
+changes. Stats 982f912 is the combined immutable pin. The intermediate weapon
+candidate passed checks but was not installed while the layout follow-up finished.
+
+Warrior tank melee weapons rank DPS, then Stamina and existing tie-breakers
+within the currently equipped shield, two-handed or trained dual-wield layout.
+Hand restrictions and no inferred empty off-hand/cross-layout recommendations
+are preserved. Other classes and shield Armor-first priorities are unchanged.
+Latest equipment-only auction filtering/category continuity remain included.
+
+Combined child checks: 619 tooltip, 134 policy, 111 auction assertions. All 74
+central tests and generated PROD/DEV checks pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: layout-validation, layout-checks.log,
+layout-pins.log, layout-install-preview.json, layout-install-verification.json.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-warrior-layout-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Core/Rules.lua changed; no discovery changes. Owner /reload and native
+layout comparisons remain pending. No game operation, private-save access,
+enable changes, push, main integration or publication occurred. Source worktree
+C:/Temp/apogee-tank-shield-20261017/ApogeeStats and prior backups are retained.
+
+## October 17 Armor/Weapons filtering availability
+
+Stats e5202f3 limits filtering to native Armor/Weapons roots and descendants.
+Other categories and All categories restore native results, dim/disable custom
+controls and show category guidance. Remember dice preference, cap and role;
+returning restores them and waits for a matching Search when enabled. Native
+localized root names are used, not fixed indexes or English labels. Previous
+category-continuity and tank-shield priority changes remain included.
+
+Child checks: 602 tooltip, 123 policy, 111 auction assertions. All 74 central tests
+and generated PROD/DEV checks pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: equipment-validation, equipment-checks.log,
+equipment-api-review.json, equipment-install-preview.json,
+equipment-install-verification.json, equipment-pins.log. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-equipment-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua changed; no discovery changes. Owner /reload and native
+layout/timing acceptance remain pending. No game operation, private-save access,
+enable preference changes, push, main integration or publication occurred.
+
+## October 17 category continuity and coordinated shield priorities
+
+Stats f1a1958 keeps the filtered provider empty after category changes instead
+of restoring native unfiltered rows under a lit dice. Gold/role remain set;
+status/list prompt for Search. Old responses and edits cannot repopulate the
+list until a new native search starts. Best stays disabled while waiting.
+
+The shield-priority chat requested inclusion in this same DEV update. Reviewed
+00a6dd0 from its retained codex/tank-shield-armor worktree and cherry-picked as
+8a7b61a onto the auction branch. Resolved the changelog conflict by preserving
+both entries; README changes merged. Warrior/Paladin tank shields rank Armor,
+then Stamina, then existing defensive tie-breakers. Other roles/slots unchanged.
+The combined immutable Stats pin is 8a7b61a; no main integration occurred.
+
+Combined child checks pass: 602 tooltip, 123 policy, 100 auction assertions.
+All 74 central tests plus generated PROD/DEV checks pass. Evidence under
+C:/Temp/apogee-auction-budget-20261017: category-shield-validation,
+category-shield-checks.log, category-shield-install-preview.json,
+category-shield-install-verification.json, category-shield-pins.log.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-auction-category-shield-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua and Core/Rules.lua changed; no discovery changes.
+Owner /reload and native category/shield acceptance remain pending. No game
+operation, private-save access, enable changes, push or publication occurred.
+
+## October 17 dice / gold / role / best controls
+
+Owner explicitly requested a left-side dice enable/disable switch, followed by
+Max gold, default All roles with optional role narrowing, and disabled best until
+a specific native slot is selected. Stats a4903f5 implements this, superseding
+prior interaction decisions below. Best also requires one role/playstyle and
+complete checks. Explicit inventory slot filters are required; broad or class/
+subclass-only categories remain browseable. Purchases remain manual.
+
+Child checks: 602 tooltip, 104 policy, 89 auction assertions. All 74 central tests
+and generated PROD/DEV checks pass. Evidence in
+C:/Temp/apogee-auction-budget-20261017: dice-validation, dice-checks.log,
+dice-api-review.json, dice-install-preview.json, dice-install-verification.json,
+dice-pins.log. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-dice-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua changed; no discovery changes. Owner /reload and native
+layout/server timing acceptance remain pending. No game operation, private-save
+access, enable preference changes, push, integration or publication occurred.
+
+## October 17 browse-first auction correction
+
+Owner approved all selected-role upgrades first, optional Max gold narrowing,
+and Select best only on explicit click. Stats 9686772 supersedes the one-action
+flow below. Compact Role / Max gold (Any) / Select best row; no dice. Native
+Search owns candidates. Clearing the cap restores all role upgrades immediately.
+Completed checks never open a winner. Purchases remain manual.
+
+Child checks pass: 602 tooltip, 104 policy, 73 auction assertions. All 74 central
+tests and generated PROD/DEV checks pass. Evidence in
+C:/Temp/apogee-auction-budget-20261017: browse-validation, browse-checks.log,
+browse-install-preview.json, browse-install-verification.json, browse-pins.log.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-auction-browse-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Two Stats
+Auction Lua files changed; no discovery changes. Owner /reload and native layout,
+server timing and manual-Buyout acceptance remain pending. No game operation,
+private-save access, enable changes, push, integration or publication occurred.
+
+## October 17 one-action auction upgrade search
+
+Owner rejected the dice/Select best interaction. Stats e7fee67 removes the dice
+and offers Find best upgrade after role and budget input. It starts a native
+filtered search, checks listings and selects a fresh winner; Cancel stops work.
+Native filters own slot selection and purchases remain manual. Supersedes the
+role-first interaction below. No loader or identity-transform changes.
+
+Child checks: 602 tooltip, 104 policy, 66 auction assertions. All 74 central tests
+and generated-family checks pass. Evidence: C:/Temp/apogee-auction-budget-20261017/
+find-validation, find-checks.log, find-api-review.json, find-install-verification.json.
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-auction-find-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua and Auction/Queue.lua changed; no discovery changes.
+Owner /reload and native UI/server-timing acceptance remain pending. No game
+operation, private-save access, enable changes, push, integration or publication.
+
+## October 17 Stats role-first correction
+
+Owner rejected the duplicate slot selector and requested role selection first.
+Stats now requires an explicit role/playstyle before enabling dice or Max gold;
+slot/category filtering belongs to the native auction UI. Mixed-slot results
+cannot produce a best ranking, and native category changes cancel old checks
+until a new native search runs. This supersedes the initial slot UI below.
+Runtime acceptance remains pending. Stats source is 9474ea0 (full revision and
+hashes in the lock). Child tests pass: 602 tooltip, 104 policy and 120 auction
+assertions; all 74 central tests plus generated PROD/DEV checks pass. Evidence:
+C:/Temp/apogee-auction-budget-20261017/role-first-final-validation and
+role-first-final-checks.log.
+
+Installed through the central checked DEV path. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-role-first-20261017/transaction.json.
+Verified 114 installed files, 135 backups and 111 unchanged PROD files. Only
+Stats Auction/Browse.lua and Auction/Queue.lua changed; no discovery changes.
+Owner reload and native verification are pending. No game operation, enable
+changes, private-save access, push, main integration or publication occurred.
+
+## October 17 Stats auction budget
+
+Stats adds a visit-only per-item buyout cap, slot filter and Select best for one
+role/playstyle. Actual item searches are throttled and bounded; incomplete work
+never selects. The winning listing is refreshed before exact price/ID selection;
+buying remains manual. No loader, saved-data or identity-transform changes.
+The immutable revision and file hashes are in candidate.lock.json. Native
+acceptance is invalidated; prior evidence is retained in history.
+
+Child checks and all 74 central tests passed, including generated PROD/DEV
+auction selection regressions. Final evidence:
+C:/Temp/apogee-auction-budget-20261017/final-validation and final-central-checks.log.
+The initial package notice-label mismatch was corrected before final validation.
+
+Checked DEV receipt:
+C:/Dev/WoW/local-install-backups/apogee-auction-budget-20261017/transaction.json.
+Independently verified 114 installed files, 135 backup files and 111 unchanged
+PROD files. Three Stats Lua files and the existing DEV version marker changed.
+Differing documentation and private data remain preserved. Owner reload and
+auction layout/timing/manual-Buyout acceptance are pending; the marker version
+may need discovery on restart if reload does not refresh it. No push, main
+integration, publication or game operation occurred. Task record:
+C:/Temp/apogee-auction-budget-20261017/task-record.md.
+
+
 ## October 17 default-spell control placement correction
 
 Owner requested moving the single checkbox into the Keybinds feature settings

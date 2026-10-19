@@ -29,8 +29,20 @@ For work across the five addons, use the sibling
 links; the workspace has separate publication status. Distribution authority
 remains in this repository.
 
-Stats auction browsing: click the dice to show upgrades. It stays steadily lit
-while progress text reports loading. Each visit starts with All roles; the auction
-role filter is independent of character guidance. Tooltips show every qualifying
-role. Click the dice again to restore all results. Disable any retained legacy
-Apogee Auction copy to use this filter.
+Stats auction browsing: click the left-side dice to enable upgrade filtering.
+Then optionally narrow by Max gold and role (All roles by default). Dice off
+restores normal native results. Select best requires a specific native equipment
+slot, one role/playstyle, and complete checks; the status explains missing choices.
+Click it to select a freshly verified buyout. Buying remains manual. Each visit
+starts off with no gold cap and All roles; native filter preferences are preserved.
+
+Filtering is available only in Armor and Weapons and their subcategories.
+Elsewhere, normal results appear with dimmed/disabled controls and guidance.
+Returning restores the dice preference, gold and role; the filtered list waits
+for a matching native Search.
+
+Stats ranks Warrior and Paladin tank shields by Armor, then Stamina, followed by
+existing defensive tie-breakers. Warrior tank weapons prioritize Weapon DPS, then
+Stamina and existing tie-breakers within the current shield, two-handed or trained
+dual-wield setup. Hand restrictions are preserved; cross-layout switches are not
+recommended. Other equipment and role priorities are unchanged.

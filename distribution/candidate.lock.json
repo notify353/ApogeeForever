@@ -164,20 +164,20 @@
       "version": "0.1.0"
     },
     {
-      "commit": "aecb5fbf9f08b857ffec5fbabe059c5703f3413b",
+      "commit": "5050906862b906c408e8d8829c6b6071a1c50390",
       "files": {
         "ApogeeStats.lua": "29f5b3412cd18fae12f4b75c62d6a9e4a045baf59a1f9d24fd73cda9441f555b",
         "ApogeeStats.toc": "ff843e04e6685e3c5912e92b483d961ded701c9ab5ca9e2540a5c80193cfb832",
-        "Auction/Browse.lua": "ae7cae9edee2b1585bbbbadde8ba0f4080b80a301c474943fa3349009d0553e1",
-        "Auction/Queue.lua": "318659d21405332ab6590fcbe2b0756765fb5f037323ce5202a98849fe695a68",
-        "CHANGELOG.md": "ccfb8cef48e01741c2683303d38ed195b23776a32464cc89c1c3471a6a634db4",
-        "Core/Items.lua": "d21529d4830b00b00c0d2c431f1c28f082d1d381624ca862ddae9d52cb8f8273",
-        "Core/Rules.lua": "4ff33f5a7e1006d72ecc1c158f711f715482000a5a91bb2a722a5a602e6c1814",
+        "Auction/Browse.lua": "970cbbd27fe3912428ad0df1cfc651730a501b427a8b2997c0b284449c9d871e",
+        "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
+        "CHANGELOG.md": "261a8f16aa772993b6de0e8c866e8b7f2b0229f51d0492bc7eb0f3ff15690258",
+        "Core/Items.lua": "3fc1a5c6d0dde8c0e7743273b037a8766b9ab27435ce57b26f055f4303319a04",
+        "Core/Rules.lua": "32fb25f0d9a42348fdecd98058aba63d82c3b3e6548a7f4eafec7e09be9c48ba",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
-        "README.md": "c767c69b37d4e4efe2e3958cdff24f13ed555f674694b58ed83184a2364f8c7e",
-        "docs/CLASS_ROLE_REFERENCE.md": "c71219c2ce28a23b2548248db98d8c9bb690585b4b8ce69c3f73c16f52267961",
-        "docs/NATIVE_ACCEPTANCE.md": "73fa15217947f9bae6e776388bf3c27efc28c9dc39185da753bb2dc29f878974"
+        "README.md": "a71f8762c988f4298881d5a59959ebac9d5735c472f1598dee022834bc710ecc",
+        "docs/CLASS_ROLE_REFERENCE.md": "846ee1f55e40cbdf0484dae03012a8f78623025f9b9498d7f4647664404ee684",
+        "docs/NATIVE_ACCEPTANCE.md": "b0f0fb7f34a662238c86752ef303cf7d5276f64ac58f535b34d521ec4a0b7112"
       },
       "name": "ApogeeStats",
       "repository": "https://github.com/notify353/ApogeeStats.git",

@@ -122,3 +122,72 @@ SystemTime GetServerTime, a non-null numeric timestamp, for reconciling explicit
 per-character choices when an independently disabled consumer returns. Layout
 and SystemTime source hashes are now recorded. Existing registry identity mapping
 is sufficient; no new global, SavedVariables name, TOC or gameplay transform.
+
+## October 17 Stats auction budget review
+
+Verified the installed Forever 1.60.1.70450 / 16001 export with the required
+checker. Reviewed AuctionHouseDocumentation item-key/detail-result contracts,
+SendSearchQuery, full-result/pagination APIs and item-result event payloads.
+Reviewed native BrowseResultsFrame, Frame SelectBrowseResult/QueryItem,
+SearchBar GetLevelFilterRange, ItemBuyFrame and ItemList selection methods.
+Browse minPrice is not treated as a buyout; item-search buyoutAmount is nullable.
+Separate owned results and native level bounds are preserved. Selecting an item
+opens its view; SetSelectedEntryByCondition invokes native selection, not purchase.
+Runtime carries no transaction calls. Source review does not establish native
+layout, server timing or taint acceptance.
+
+### Role-first/native slot correction
+
+Reviewed matching CategoriesList SetSelectedCategory/GetCategoryFilterData and
+BrowseResultsFrame OnCategorySelected/OnBrowseSearchStarted. Native category
+selection changes UI/filter state before a new browse search; cancel old checks
+immediately and require that new search before selection. Stats never sets a
+native category or duplicates its slot selector. Reviewed EditBox SetEnabled
+for locking Max gold until the explicit role choice. Native acceptance remains
+pending; all prior evidence stays historical.
+
+### One-action upgrade search
+
+Reviewed Forever 70450 SearchBar:StartSearch and Frame:SendBrowseQuery. The
+native entry point retains search text, level range, checked filters and category.
+BrowseSearchStarted is synchronous; a declined native search cannot reuse old
+results. Item selection remains the previously reviewed native selection path.
+No transaction call is added. Owner layout/timing acceptance remains pending.
+
+### Browse-first explicit selection
+
+Reverified installed Forever 70450 / 16001 and reviewed BrowseResultsFrame
+OnBrowseSearchStarted/OnCategorySelected. Native Search owns the browse query;
+role filtering processes its results without calling SearchBar:StartSearch.
+Optional cap changes restart listing checks, never navigation. The reviewed
+SelectBrowseResult path is reachable only from the Select best click handler.
+No new API dependency or transaction call. Native acceptance remains pending.
+
+### Explicit toggle, all-role scope and native slot gate
+
+Reverified installed Forever 70450 / 16001. Reviewed CategoriesList
+GetCategoryFilterData/GetCategoryData, shared AuctionCategoryMixin:AddFilter,
+Camelot armor category construction and AuctionHouseFilter inventoryType.
+Only an explicit single inventory slot enables best; Chest/Robe normalize to
+one slot. Missing/restricted/multiple slot filters fail closed. Categories with
+only class/subclass filters remain browseable without best selection. All roles
+uses existing Stats contexts; ranking requires one role/playstyle. No native
+filter mutation, transaction API or new identity transform is introduced.
+
+### Category-change filtering continuity
+
+Reverified Forever 70450 / 16001. Reviewed CategoriesList:SetSelectedCategory
+and BrowseResultsFrame OnCategorySelected/OnBrowseSearchStarted/UpdateBrowseResults.
+A category change modifies native filter/header state without guaranteeing a new
+search. Keep the filtered provider installed with empty rows until native Search;
+ignore old result snapshots while waiting. No new API or native filter mutation.
+
+### Armor/Weapons availability
+
+Reverified Forever 70450 / 16001. Reviewed CategoriesList:GetSelectedCategory,
+shared AuctionFrame_CreateCategory and Camelot category roots. Resolve the root
+through AuctionCategories and compare its native localized name with the Armor/
+Weapons constants; descendants inherit root availability. No fixed indexes or
+English-label matching. Missing/restricted root data disables custom filtering.
+Remember the dice preference separately from category availability. No new native
+mutation or transaction API. Shield Armor-first policy remains included.

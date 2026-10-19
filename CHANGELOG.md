@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+- Filter auction upgrades with a dice on/off switch, optional gold cap, and optional role selection. All roles are included by default.
+- Use native Armor and Weapons categories to narrow results. Other categories clearly disable upgrade filtering while remembering your choices.
+- Preserve filtering settings when switching categories and prompt for a new Search before showing results.
+- Click Select best after choosing a specific native equipment slot and role. Purchases remain manual.
+- Rank Warrior and Paladin tank shields by Armor, then Stamina and defensive tie-breakers.
+- Rank Warrior tank melee weapons by Weapon DPS within the current shield, two-handed or trained dual-wield setup, preserving hand restrictions.
+- Show only stats that actually increase in upgrade explanations.
+- Reload after updating. Existing settings are preserved.
+
 ## [1.14.7] - 2026-10-17
 
 - Add one per-character Enable default spells toggle in the Keybinds settings group, off initially for existing and new characters.
