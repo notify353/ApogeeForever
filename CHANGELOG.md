@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.14.8] - 2026-10-18
+
 - Filter auction upgrades with a dice on/off switch, optional gold cap, and optional role selection. All roles are included by default.
 - Use native Armor and Weapons categories to narrow results. Other categories clearly disable upgrade filtering while remembering your choices.
 - Preserve filtering settings when switching categories and prompt for a new Search before showing results.
