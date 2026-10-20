@@ -1,3 +1,16 @@
+## Incoming damage DEV installed - 2026-10-20
+
+Owner explicitly approved DEV installation. Checked candidate fb1aada was
+installed atomically via the central installer, chained from the roster-font
+receipt. New receipt:
+C:/Dev/WoW/local-install-backups/apogee-incoming-damage-20261020/transaction.json.
+Independently verified 116 installed files, 136 backup files and all 111 PROD
+files unchanged. Only Essentials DEV bootstrap, TOC and new Damage/Runtime.lua
+changed. Evidence: C:/Temp/apogee-incoming-damage-20261020/install-verification.json.
+Reload required; if the new module is not discovered, user restart may be needed.
+No game operation, private-save access, enable changes, push or publication.
+HUD appearance and full magic/periodic/environmental coverage await owner testing.
+
 ## Incoming damage candidate - 2026-10-20
 
 Essentials ba80077 adds the combat-only Physical/Magic incoming damage row,
