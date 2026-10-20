@@ -1,3 +1,18 @@
+## Reviewed dungeon mappings installed - 2026-10-20
+
+Owner approved installation. Combined current ce7876b with the reviewed Group
+Alert 6f2d5f8 pin, preserving Heals level typography, Focus diagnostic and crown.
+All 75 central tests and generated checks pass. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/install-validation and install-checks.log.
+The checked atomic DEV install changed only Group Alert Discovery/Dictionary.lua
+and Matching/Dungeons.lua. Verified 115 installed files, 136 backups and 111
+unchanged PROD files. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-dungeon-mappings-20261020/transaction.json.
+Previous receipt: apogee-party-leader-20261020. No discovery changes; user reload
+required. Native acceptance pending. Use this combined candidate and newest
+receipt for subsequent DEV changes. No publication, push or main integration.
+Historical validation-only artifacts below were not installed.
+
 ## Focus health feasibility DEV diagnostic - 2026-10-20
 
 Heals c4957bd combines the silent Focus health diagnostic (33a29ca) with the
@@ -24,6 +39,31 @@ Focus asset provenance is incomplete in the legacy attribution; no license claim
 or asset redistribution is made by this diagnostic.
 
 # One source, two distributions
+
+## October 20 reviewed dungeon vocabulary candidate
+
+Group Alert candidate pins 6f2d5f8fdaeb31f54d7a80ff73768de4b9563728.
+Reviewed 200 saved DEV discovery phrases with explicit owner permission limited
+to those records. No raw examples or private data are included in the changes.
+Exact reviewed aliases resolve against known full dungeon names, preserving
+native IDs, level data and personal exclusions. Ambiguous shorthand remains
+unconfirmed. Gnomergon is a reviewed Gnomeregan spelling.
+
+Child test-local passes (22 specs); central validation passes all 75 Python
+tests and generated PROD/DEV gameplay checks, including the pinned vocabulary
+regression. Matching export: Forever 1.60.1.70450 / 16001.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/validation and central-checks.log.
+Install preview changes two Group Alert DEV Lua files and the DEV marker TOC.
+Quality follow-up: new aliases now defer to valid personal associations even
+without prior removals. All 22 child specs and 75 central tests pass again,
+including the expanded regression against both generated families. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/quality-validation and quality-checks.log.
+The earlier install preview is superseded: concurrent Heals work was installed
+under apogee-level-truncation-20261020. This isolated candidate retains its older
+Heals baseline and is validation-only until reconciled with the latest checked
+central candidate. Do not install either task artifact set directly.
+Installation also awaits immediate owner approval under workspace instructions.
+No PROD installation, saved-data edits, push, integration or publication.
 
 ## October 18 actual stat-gain explanations
 
