@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "07595436b75bb640704ec196b13476af5f98b874",
+      "commit": "b4b6bd236d59ae616ab2cd3c105bc32b641915a6",
       "files": {
         "ApogeeHeals.lua": "b0da430ed14be0279ba43e1b043c6ab51cf310354a8be62ced90ea3aa88bde1d",
         "ApogeeHeals.toc": "60ae61059a3ed380d3a7a2b8bfc390fd710b86cc6c7bc2f13a18c5cbb9f1095a",
@@ -11,7 +11,7 @@
         "Buffs/Defaults.lua": "6cea97ff59484c6f894211c1ed10e546e19724cbbeb61fea68abaa9b148f7dc6",
         "Buffs/Runtime.lua": "a79d27c3d100f49bec0e69e1a05961ff755440e8f103e1034b153fbc8e1faf01",
         "Buffs/View.lua": "48a71c007bf7066a43f7377c277dfc3ac42c42e2546d72e22800a8919cbcd033",
-        "CHANGELOG.md": "4052dc85c3308da2c791ce1ac1703301a9e6a048efb32b6ae154b56daa2b2074",
+        "CHANGELOG.md": "5b4b02f49a5e341f87ee4cc23ccde0e080dbed638ac04e415157bc0c407140c2",
         "Cleansing/Runtime.lua": "78ec7cd14a77a81b0bfebc12dfa1056c0456dfeaa61b0c0e83f12cf339a51f16",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "442416f78c3d5e1a5fa37df299155cadecb9f81f82490a7d4b42779a8701b914",
@@ -24,8 +24,8 @@
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
         "PartyFrames/Preview.lua": "2fec3c66bd1599d92f8c3b2012956606f6b897e39f267278718fc42acadf6920",
         "PartyFrames/Runtime.lua": "5818050fdd9a15ad3b801dea149d4380a731257402d362ac49e1038261be70d7",
-        "PartyFrames/View.lua": "c47496c704126eb6c4d2c8b8b80bee8a827591aafc18b101a157cc612ac0baa1",
-        "README.md": "091832906a6c9e68e7d668708030d1d0bbbd709283ba69795d8a2a1fea0a3610",
+        "PartyFrames/View.lua": "96424aa2dcfd46a1d053bbc494515928390772b372118537add0431d636c5eb1",
+        "README.md": "6020a2fa3f51fa9cea86bcedb9b23a728c4b1a544a1dab2e0a8dea6111edf9f9",
         "Threat/Diagnostics.lua": "7c71432508520517e684c604f6eefd3c932ba47f264d4aa83c4171d0c2a0923e",
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
