@@ -1,3 +1,29 @@
+## Incoming damage placement installed - 2026-10-20
+
+Owner explicitly approved the placement fix. Combined candidate 1530154 retains
+the concurrently installed dungeon-settings update from 86889e7; all 76 central
+tests and generated checks passed again. Essentials 4ee0e2f places the row above
+threat, at center Y=45. Atomic DEV install changed only Damage/Runtime.lua.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-damage-placement-20261020/transaction.json,
+chained from apogee-dungeon-settings-20261020. Independently verified 116 installed
+files, 137 backups and 111 unchanged PROD files. Evidence:
+C:/Temp/apogee-incoming-damage-20261020/placement-install-verification.json.
+Owner reload and visual placement acceptance pending; no discovery changes.
+No private-save access, game operation, enable changes, push or publication.
+
+## Incoming damage DEV installed - 2026-10-20
+
+Owner explicitly approved DEV installation. Checked candidate fb1aada was
+installed atomically via the central installer, chained from the roster-font
+receipt. New receipt:
+C:/Dev/WoW/local-install-backups/apogee-incoming-damage-20261020/transaction.json.
+Independently verified 116 installed files, 136 backup files and all 111 PROD
+files unchanged. Only Essentials DEV bootstrap, TOC and new Damage/Runtime.lua
+changed. Evidence: C:/Temp/apogee-incoming-damage-20261020/install-verification.json.
+Reload required; if the new module is not discovered, user restart may be needed.
+No game operation, private-save access, enable changes, push or publication.
+HUD appearance and full magic/periodic/environmental coverage await owner testing.
+
 ## Restricted Dungeons settings installed - 2026-10-20
 
 Owner explicitly approved installation. Rechecked canonical d08c0eb and newest
