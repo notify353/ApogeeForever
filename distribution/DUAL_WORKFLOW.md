@@ -1,3 +1,23 @@
+## Restricted Dungeons settings installed - 2026-10-20
+
+Owner explicitly approved installation. Rechecked canonical d08c0eb and newest
+indicator-order receipt; no concurrent change since final validation. Installed
+checked candidate 330c8ab (handoff 802eae2), Group Alert 6e3085e, via the central
+atomic DEV installer. Exactly four Group Alert DEV files changed: bootstrap,
+TOC notes, Discovery/Dictionary.lua and Settings/View.lua. Verified all 116
+installed files, 137 backup files and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-dungeon-settings-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/settings-install-preview.json,
+settings-install-log.json and settings-install-verification.json. This supersedes
+the prior pending-install status below. All 23 child suites and 76 central checks
+were passed for these bytes. Concurrent Heals/Essentials changes are retained.
+
+Next: owner /reload and visual acceptance of Dungeons wording toggles, including
+shared per-dungeon choices and combat browsing. Restart only if reload does not
+discover the TOC update. No game operation, private-save access, preference edits,
+PROD install, push, main integration or publication. Retained backups/worktrees
+remain available. Future installs must chain from this new receipt.
+
 ## Restricted Dungeons settings prepared - 2026-10-20
 
 Implemented the approved toggle-only plan. Group Alert 6e3085e retains a complete
