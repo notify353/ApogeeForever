@@ -129,11 +129,11 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "ba80077cc5385fac1f1475e8588657c658c37e31",
+      "commit": "4ee0e2f35cc76bf7c2d267eb32e927a9fde46315",
       "files": {
         "ApogeeEssentials.lua": "863e32f8db8e169a8778655fbdcb4cc2d36a2033f31eb5c5dd85077f9937a197",
         "ApogeeEssentials.toc": "1e8e001ec6d9f9b9662c3c614cda0307058f4a57a6b5489f1c80eb61478b8b2f",
-        "CHANGELOG.md": "978a3bb90fe9429bfbbed67f0167b911ab9f5911e55fba44c4d029f68132b614",
+        "CHANGELOG.md": "722d750353f0324a56a35f12303e5e9176bdcbf489134c68a06a80d1af7954da",
         "Camera/Runtime.lua": "4b0d1fa5779ee0de6919b81789e1967b8ba818ae9111824b69e450b2fc2e7e9b",
         "Camera/Zoom.lua": "dbc434649beb411cc3471bd5a05db8750fcd866eac5ed40a065893def9ab89ba",
         "Core/CVarDefault.lua": "bad301a75b6de2ade57fe0d1a732c11d7c8538f897df446093b83cc130b45a2e",
@@ -141,7 +141,7 @@
         "Core/LearnedList.lua": "587f067a88d533ac2af765bfb3853b5ef78af8bdd6cb8d5054960b5420059d7e",
         "Core/LoginDefaults.lua": "94a209463a3d639290ad086a26ed8c7a604460bd672bae0ede71d5eda8e22f5f",
         "Core/Settings.lua": "52fa063dda4ecc0dfbb7d111074c60eb7f3739b4a8f5d29d6dcc4273dad2d20f",
-        "Damage/Runtime.lua": "0ceb4cdde30f119573379ce814803bac1837a46ea24f9783c6cfa1dcb12e7b04",
+        "Damage/Runtime.lua": "e390068ee6ddd6f65376d125053ed75f1b79347beb39056cf4728cb7eb255217",
         "Errors/Runtime.lua": "f2613629174131a512721a31059297477e9197069a41b68c5f729de22e9e033a",
         "Errors/Settings.lua": "16470d46471ac992720e500cc5d3de25d981db5db9ccda3c8a1a01eae46abb73",
         "Fade/Runtime.lua": "e8f15b8524fd5f66afe448cbf1540f4a61ecbf0b6623c40c45ac27bd79ff1851",
@@ -152,7 +152,7 @@
         "Mentions/Runtime.lua": "a8b256b7748e959d090628ff404b5dbbb153eb9c1c094569b7cc44d7466979d8",
         "NOTICE.md": "60dda1459fe759974deebcab4ab89704e3ea4b63358d980315c384895441fe33",
         "Nameplates/Runtime.lua": "c9737b0fc256ef365c78dc71a9b01622a66627001c6a8a3da88e45e12b24c589",
-        "README.md": "4f4397a91101a315fd0a907287cacbd566a264b1a57305f144c56cc7c8d74670",
+        "README.md": "6866731129e3833d267db9ea77ca29d13d4752fb1461fe10465bcdedb9c9ae68",
         "docs/ACCEPTANCE.md": "7659878fc3045a05c97b38a78ee523d1e599e8c9bea94893a9ae86217cce1a2f",
         "docs/API_REFERENCE.md": "96d558ed9b7f6c49616893d3c56cad8abb9fed4328b9cce810695ba2ffe1fdfb",
         "docs/DEEP_REVIEW_2026-09-24.md": "28ecd785cdf54930cb95f4364c142d78133ce71baeb647d34d270467545ea5b8"

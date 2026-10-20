@@ -871,3 +871,6 @@ Supports World of Warcraft Forever 1.60.1. Reload the UI after updating.
 - Missing party-buff and self-buff reminders.
 - Spell tracking, tabbed configuration, minimap controls, and a class-aware macro library.
 - Initial CurseForge and GitHub distribution materials.
+## Unreleased - incoming damage placement
+
+- Place the Physical/Magic row above the fixed threat panel, with a clear gap.
