@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Show assigned tank, healer and damage roles beside the Heals party leader crown.
+
 - Show a small gold crown on the party leader's Heals row.
 
 - Add silent, opt-in Heals Focus health checks for solo/party health readability and 50% crossings. Actual sound support awaits live testing.
