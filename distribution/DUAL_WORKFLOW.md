@@ -1,3 +1,16 @@
+## Damage row above player health installed - 2026-10-20
+
+Owner explicitly approved DEV install. Checked combined candidate 2779c79,
+Essentials 37e164b, installed atomically against latest Dungeon Defaults receipt.
+Only ApogeeEssentialsDev/Damage/Runtime.lua changed; no discovery changes.
+Verified 115 installed files, 136 backups and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-damage-player-anchor-20261020/transaction.json.
+Previous receipt: apogee-dungeon-defaults-20261020. Evidence:
+C:/Temp/apogee-incoming-damage-20261020/player-anchor-install-verification.json.
+Row follows the matching Heals player-bar root, centered with an 8px gap.
+Owner reload and visual acceptance pending. No game operation, private-save
+access, enable changes, push, main integration or publication.
+
 ## Focus diagnostic removed - 2026-10-20
 
 Owner chose native health alerts and requested removal of this task's tests.
