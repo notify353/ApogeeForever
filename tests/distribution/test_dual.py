@@ -76,6 +76,21 @@ class DualTests(unittest.TestCase):
             font_spec = font_spec.replace("'test'", repr(name))
             (harness / 'tests/roster_font_spec.lua').write_text(font_spec, encoding='utf-8')
             subprocess.run(['lua', 'tests/roster_font_spec.lua'], cwd=harness, check=True)
+            # Exercise the real generated UI with the owning startup mock, bypassing
+            # only the family lease (covered separately by loading-safety tests).
+            toc_lines = source['ApogeeGroupAlert.toc'].decode().splitlines()
+            fixture_toc = '\n'.join(root + '/' + (name + '.lua' if line == 'ApogeeGroupAlert.lua' else line)
+                                    for line in toc_lines if line.endswith('.lua')) + '\n'
+            (harness / 'ApogeeGroupAlert.toc').write_text(fixture_toc)
+            ui_spec = source['tests/settings_background_spec.lua'].decode().replace(
+                'local A={}', 'local A={__ApogeeFamilyAdmission=function() return true end}')
+            ui_spec = ui_spec.replace(')("ApogeeGroupAlert",A)', ')(' + json.dumps(name) + ',A)')
+            (harness / 'tests/settings_background_spec.lua').write_text(ui_spec)
+            subprocess.run(['lua', 'tests/settings_background_spec.lua'], cwd=harness, check=True)
+            for spec in ('discovery_spec.lua', 'reversible_phrases_spec.lua'):
+                (harness / 'tests' / spec).write_bytes(source['tests/' + spec])
+                subprocess.run(['lua', 'tests/' + spec], cwd=harness, check=True)
+
 
     def test_incoming_damage_in_generated_families(self):
         child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeEssentials')
