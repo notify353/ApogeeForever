@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add silent, opt-in Heals Focus health checks for solo/party health readability and 50% crossings. Actual sound support awaits live testing.
+
 - Match Heals level labels to the compact name font to prevent two-digit truncation.
 
 ## [1.14.8] - 2026-10-18

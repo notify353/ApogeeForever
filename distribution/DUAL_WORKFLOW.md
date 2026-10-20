@@ -1,3 +1,28 @@
+## Focus health feasibility DEV diagnostic - 2026-10-20
+
+Heals c4957bd combines the silent Focus health diagnostic (33a29ca) with the
+concurrently installed level-font fix af69c4e, retained as cherry-pick c4957bd.
+No sound is implemented or bundled. Settings > Heals > Focus health checks opens
+session-only Start/Stop/Reset controls. Separate combat/outside counters show
+readability and observed 50% crossings. Restricted data never enters comparisons.
+
+Full Heals checks with matching Forever 1.60.1.70450 export pass. All 74 central
+checks and generated PROD/DEV regressions pass, including health diagnostics.
+Evidence: C:/Temp/apogee-focus-health-20261020/validation and child-checks.log,
+central-checks.log, install-preview.json, install-verification.json.
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-focus-health-20261020/transaction.json,
+chained from the level-truncation receipt. Independently verified 115 installed
+files, 135 backups and 111 unchanged PROD files. Four Heals DEV files changed:
+bootstrap, TOC, UI/Settings.lua and new Health/Diagnostics.lua. Private saves,
+local documentation and enable preferences preserved by the central installer.
+
+Reload required; if the new diagnostic is not discovered, owner may need to
+restart. Owner solo/party combat readability and UI acceptance remain pending;
+previous native acceptance does not cover these new runtime bytes. No game
+operation, PROD install, push, main integration, publication or cleanup occurred.
+Focus asset provenance is incomplete in the legacy attribution; no license claim
+or asset redistribution is made by this diagnostic.
+
 # One source, two distributions
 
 ## October 18 actual stat-gain explanations
