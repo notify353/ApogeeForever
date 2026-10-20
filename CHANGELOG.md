@@ -6,6 +6,9 @@
 
 ## Unreleased
 
+- Move party Follow/Inspect/Talents to a muted left-side group that shifts
+  outward around buff suggestions and expanded choices.
+
 - Add Inspect Talents beside party Follow/Inspect, opening the native talent
   tree after matching inspection data arrives. Keep muted styling/combat hiding.
 

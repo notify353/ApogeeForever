@@ -1,3 +1,20 @@
+## Left-side party actions prepared - 2026-10-20
+
+Heals 899d1c7 places Follow, Inspect and Talents in an evenly spaced, muted
+left-side group. Suggested buffs, overflow and expanded choices shift the group
+farther left; collapse restores the position. Native combat hiding is retained.
+Includes previously prepared talent inspection and installed strict-heal fix.
+Full matching-export child suite and central validation pass (77 central tests
+plus generated family checks). Evidence under C:/Temp/apogee-party-actions-20261020:
+left-actions-child-checks.log, left-actions-central-checks.log,
+left-actions-validation/packages and left-actions-install-preview.json.
+Canonical inspect-only preview: three DEV writes, no discovery changes, reload.
+NOT INSTALLED: immediate owner approval required. Chain from
+apogee-strict-heals-20261020/transaction.json; planned backup
+C:/Dev/WoW/local-install-backups/apogee-left-actions-20261020.
+In-game appearance, dynamic spacing and talent display acceptance pending.
+No PROD writes, private saves, game operation, push or main integration.
+
 ## Inspect Talents prepared - 2026-10-20
 
 Matching Camelot menu supports native Inspect Talents. Heals 293cdb4 adds the
