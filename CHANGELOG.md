@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Add Follow and Inspect beside party-member cleanse controls outside combat.
+  Existing role/cleanse art remains unchanged; drinking and debuffs shift right.
+
 - Essentials now suppresses checked errors only in combat, with actionable errors
   visible by default. Defaults restores all convenience and learned-error choices.
 
