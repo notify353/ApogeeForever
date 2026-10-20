@@ -1,3 +1,16 @@
+## Combat error defaults accepted — 2026-10-20
+
+Owner confirms: "I reloaded and clicked Defaults. Everything looks good and is working."
+Recorded scoped native DEV acceptance for Essentials 808dc95 in the central
+native-acceptance follow-up checks. All three changed installed Lua files still
+match the verified apogee-error-defaults-20261020 receipt. This accepts the error
+default/reset change only; no claim that every error ID or unrelated features
+were individually tested. Full-package and PROD/CurseForge acceptance are separate.
+No runtime changes, reinstall, game operation, private-save access, push or main
+integration. Next action: none for local use; integration/publication awaits approval.
+Task/evidence: C:/Temp/apogee-error-defaults-20261020. Concurrent workspace memory
+changes and retained worktrees/backups preserved.
+
 ## Combat error defaults installed — 2026-10-20
 
 Owner explicitly approved DEV installation. Essentials 808dc95 / central candidate
