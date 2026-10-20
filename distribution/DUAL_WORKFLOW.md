@@ -1,3 +1,16 @@
+## Multilingual roster font installed - 2026-10-20
+
+Owner approved fix, checks and installation. Group Alert aef5998 preserves the
+native multilingual font family with SetFontHeight. All 23 child suites and 75
+central tests/generated checks pass, including synthetic Unicode roster tests.
+Current Heals assigned-role changes are retained alongside prior features.
+Only Group Alert DEV Core/UI.lua changed. Verified 115 installed files, 136
+backup files and 111 unchanged PROD files. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-roster-font-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/font-final-validation,
+font-final-checks.log and font-install-verification.json. User reload and visual
+glyph acceptance pending. No discovery changes or publication.
+
 ## Reviewed dungeon mappings installed - 2026-10-20
 
 Owner approved installation. Combined current ce7876b with the reviewed Group
