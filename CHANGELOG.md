@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Hide Heals role and party leader indicators during combat and refresh them afterward.
+
 - Preserve Blizzard's multilingual font family when sizing dungeon roster names.
 
 - Show assigned tank, healer and damage roles beside the Heals party leader crown.
