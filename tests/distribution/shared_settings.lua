@@ -141,12 +141,13 @@ local function load(owner, family, denied, saved)
                 assert(label.font=="GameFontHighlightSmall")
             elseif owner[1]=="ApogeeGroupAlert" then
                 assert(rawget(child.frame,"OnDefault")==nil, "Dungeons intentionally has no native reset")
-                for _,label in ipairs({"Defaults","Unmapped","Ignored","Associate","Unassociate","Ignore","Unignore"}) do
+                for _,label in ipairs({"Unmapped","Ignored","Associate","Unassociate","Ignore","Unignore"}) do
                     assert(not find(child.frame,function(c) return c.text==label end), "Removed editor control: "..label)
                 end
                 for _,button in ipairs(child.frame.children) do
-                    assert(button.kind~="Button", "Dungeons has no top-level actions or editing tabs")
+                    if button.kind=="Button" then assert(button.text=="Defaults", "Only dungeon Defaults is allowed") end
                 end
+                assert(find(child.frame,function(c) return c.kind=="Button" and c.text=="Defaults" end))
                 local headings=0
                 for _,label in ipairs(child.frame.children) do if label.kind=="FontString" and label.font=="GameFontNormal" then headings=headings+1 end end
                 assert(headings==2,"Dungeons column headings use native gold font")

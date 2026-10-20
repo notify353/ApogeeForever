@@ -1,4 +1,13 @@
+## Unreleased - Smart buffs
+
+- Replace Heals Buff reminders with learned-spell Smart, Manual and Off controls across classes. Keep Paladin suggestions and tune them for five-player dungeon roles.
+
 ## Unreleased
+
+- Essentials now suppresses checked errors only in combat, with actionable errors
+  visible by default. Defaults restores all convenience and learned-error choices.
+
+- Restore confirmed dungeon wording Defaults without resetting alert preferences or discovery history.
 
 - Simplify Dungeons settings to predefined wording checkboxes per dungeon. Keep background discovery and saved history; archive personal additions without applying them. Remove editing tabs and reset actions. - incoming damage comparison
 
@@ -875,4 +884,5 @@ Supports World of Warcraft Forever 1.60.1. Reload the UI after updating.
 - Initial CurseForge and GitHub distribution materials.
 ## Unreleased - incoming damage placement
 
-- Place the Physical/Magic row above the fixed threat panel, with a clear gap.
+- Center the Physical/Magic row above the Apogee player health bar and follow
+  party-stack movement, using the matching PROD or DEV anchor.
