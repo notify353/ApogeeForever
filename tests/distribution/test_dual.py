@@ -70,6 +70,29 @@ class DualTests(unittest.TestCase):
             (harness / 'tests/helpers.lua').write_text(helper)
             (harness / 'tests/reviewed_vocabulary_spec.lua').write_bytes(source['tests/reviewed_vocabulary_spec.lua'])
             subprocess.run(['lua', 'tests/reviewed_vocabulary_spec.lua'], cwd=harness, check=True)
+            (harness / 'tests/mock.lua').write_bytes(source['tests/mock.lua'])
+            font_spec = source['tests/roster_font_spec.lua'].decode()
+            font_spec = font_spec.replace("loadfile('", "loadfile('" + root + "/")
+            font_spec = font_spec.replace("'test'", repr(name))
+            (harness / 'tests/roster_font_spec.lua').write_text(font_spec, encoding='utf-8')
+            subprocess.run(['lua', 'tests/roster_font_spec.lua'], cwd=harness, check=True)
+
+    def test_incoming_damage_in_generated_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeEssentials')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('incoming-damage-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            for path in ('tests/mock.lua', 'tests/incoming_damage_spec.lua'):
+                data = source[path]
+                if path.endswith('incoming_damage_spec.lua'):
+                    data = data.replace(b'"ApogeeEssentials", addon',
+                                        ('"' + name + '", addon').encode())
+                (harness / path).write_bytes(data)
+            subprocess.run(['lua', 'tests/incoming_damage_spec.lua',
+                            str((OPTIONS.artifacts / family / name).resolve())],
+                           cwd=harness, check=True)
 
     def test_shared_settings_parent_in_generated_families(self):
         subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),

@@ -95,16 +95,16 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "6f2d5f8fdaeb31f54d7a80ff73768de4b9563728",
+      "commit": "aef5998b064649ed0813f31b0cebf55d0063c68c",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "26814f678d1ec19f184e0b78f891d4fc67fec6bee3d0018fdb9e1b200d8e5c11",
         "ApogeeGroupAlert.lua": "ac889983a92d11b23637cf082152cd78c89b6659c245338071c3dc8b9282d6b7",
         "ApogeeGroupAlert.toc": "bd97bc1fa22291fac8885d26052fd7fa166d77161752c86cc46d2441f5c888e5",
-        "CHANGELOG.md": "01574515adcc5bf69ea0a3cb343024584210504f7cfae4701302a3d915e31c5b",
+        "CHANGELOG.md": "ee6dc8b8be7099d591d87ff575ca21ee2e90c845f219f6f7a6a298dce0e032e4",
         "Core/Client.lua": "dfdf6f660ee8c90598674c24e73d717b6c00d55888d57f8f7dc18db0a8fb4a05",
         "Core/Text.lua": "acc322a7745f82d37ba71aadc1fb488b7fcaedd0410841d9b70146c6dc0b5e0a",
-        "Core/UI.lua": "f9507bae9d8dd5033543d0e89e96c8bbd6e4c0ba1a9f7a5b8d9657746d90f9c4",
+        "Core/UI.lua": "03b823c7c58081623076d51de3ee013b7c173d261c9b38553b8a616c600749f3",
         "Discovery/Dictionary.lua": "c1019db5804102d8a0bdab86f4f86abaf67b80e053551e4396296188386d1878",
         "Discovery/Model.lua": "77d373fdb4c94805ee99d767db2d4c52376b4f06cc5dc34ded6ed2e6a27aea23",
         "Groups/InlineRoster.lua": "c300b29b68712b143f8465837f7ac605289faa568ade026e00f5954cefc3d1e4",
@@ -129,11 +129,11 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "6901e39a15dd7fe2cc7c42a68071fd1fe9cfa372",
+      "commit": "ba80077cc5385fac1f1475e8588657c658c37e31",
       "files": {
-        "ApogeeEssentials.lua": "237334dae0d45962ff6d85a6f77a08e3c4a14acb5a6779cdc36679c963100aa9",
-        "ApogeeEssentials.toc": "8ad741d2a06c9418e348f353f6eb6f2effc21601a978c41e46fcd7f73c20da2e",
-        "CHANGELOG.md": "39f14696419bd2835134eb2609dec2a2fcc8c4dd1531a0942cb480209f4a2f05",
+        "ApogeeEssentials.lua": "863e32f8db8e169a8778655fbdcb4cc2d36a2033f31eb5c5dd85077f9937a197",
+        "ApogeeEssentials.toc": "1e8e001ec6d9f9b9662c3c614cda0307058f4a57a6b5489f1c80eb61478b8b2f",
+        "CHANGELOG.md": "978a3bb90fe9429bfbbed67f0167b911ab9f5911e55fba44c4d029f68132b614",
         "Camera/Runtime.lua": "4b0d1fa5779ee0de6919b81789e1967b8ba818ae9111824b69e450b2fc2e7e9b",
         "Camera/Zoom.lua": "dbc434649beb411cc3471bd5a05db8750fcd866eac5ed40a065893def9ab89ba",
         "Core/CVarDefault.lua": "bad301a75b6de2ade57fe0d1a732c11d7c8538f897df446093b83cc130b45a2e",
@@ -141,6 +141,7 @@
         "Core/LearnedList.lua": "587f067a88d533ac2af765bfb3853b5ef78af8bdd6cb8d5054960b5420059d7e",
         "Core/LoginDefaults.lua": "94a209463a3d639290ad086a26ed8c7a604460bd672bae0ede71d5eda8e22f5f",
         "Core/Settings.lua": "52fa063dda4ecc0dfbb7d111074c60eb7f3739b4a8f5d29d6dcc4273dad2d20f",
+        "Damage/Runtime.lua": "0ceb4cdde30f119573379ce814803bac1837a46ea24f9783c6cfa1dcb12e7b04",
         "Errors/Runtime.lua": "f2613629174131a512721a31059297477e9197069a41b68c5f729de22e9e033a",
         "Errors/Settings.lua": "16470d46471ac992720e500cc5d3de25d981db5db9ccda3c8a1a01eae46abb73",
         "Fade/Runtime.lua": "e8f15b8524fd5f66afe448cbf1540f4a61ecbf0b6623c40c45ac27bd79ff1851",
@@ -151,9 +152,9 @@
         "Mentions/Runtime.lua": "a8b256b7748e959d090628ff404b5dbbb153eb9c1c094569b7cc44d7466979d8",
         "NOTICE.md": "60dda1459fe759974deebcab4ab89704e3ea4b63358d980315c384895441fe33",
         "Nameplates/Runtime.lua": "c9737b0fc256ef365c78dc71a9b01622a66627001c6a8a3da88e45e12b24c589",
-        "README.md": "d9befbd788bd829a8b34c72908e72e6fd305e038bb62f301e7110f005df2ceba",
+        "README.md": "4f4397a91101a315fd0a907287cacbd566a264b1a57305f144c56cc7c8d74670",
         "docs/ACCEPTANCE.md": "7659878fc3045a05c97b38a78ee523d1e599e8c9bea94893a9ae86217cce1a2f",
-        "docs/API_REFERENCE.md": "766cb0cb24b11d43a876cc853daa1d9f2cfd27c2bde24b73b56fb42d1484d4e6",
+        "docs/API_REFERENCE.md": "96d558ed9b7f6c49616893d3c56cad8abb9fed4328b9cce810695ba2ffe1fdfb",
         "docs/DEEP_REVIEW_2026-09-24.md": "28ecd785cdf54930cb95f4364c142d78133ce71baeb647d34d270467545ea5b8"
       },
       "name": "ApogeeEssentials",
