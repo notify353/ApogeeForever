@@ -1,3 +1,36 @@
+## Restricted Dungeons settings prepared - 2026-10-20
+
+Implemented the approved toggle-only plan. Group Alert 6e3085e retains a complete
+predefined catalog separately from enabled mappings, archives personal additions
+without applying/deleting them, and confirms official names through native activity
+discovery. Exclusions, native level data and collected/ignored history survive.
+Settings show alphabetical dungeon/wording lists, per-dungeon shared checkboxes,
+combat browsing with disabled changes, and native fonts. Editing tabs/actions,
+Defaults and the native reset callback are removed.
+
+Child test-local passes all 23 suites on matching Forever 1.60.1.70450 / 16001.
+Central 330c8ab combines this change with latest canonical d08c0eb; all 76 tests
+and generated PROD/DEV regressions pass. Concurrent incoming damage, combat-hidden
+indicators and leader-left/role-right layout are retained. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/settings-child-checks.log,
+settings-final-checks.log and settings-final-validation/packages.
+
+Preview against newest installed receipt
+C:/Dev/WoW/local-install-backups/apogee-indicator-order-20261020/transaction.json
+changes exactly four ApogeeGroupAlertDev files: bootstrap, TOC notes,
+Discovery/Dictionary.lua and Settings/View.lua. Preview/baseline and verification
+helper: settings-install-preview.json, settings-prod-before.json,
+verify-settings-install.py in the task folder. Planned backup:
+C:/Dev/WoW/local-install-backups/apogee-dungeon-settings-20261020.
+
+NOT INSTALLED. Immediate deployment approval is required by the owner's explicit
+plan/workspace rules; earlier installation approvals do not cover this candidate.
+Recheck newest candidate/receipt before installing with the central installer, then
+verify installed bytes/backups and unchanged PROD via the helper's after mode.
+User reload and visual acceptance are required; TOC notes changed, so restart only
+if reload fails to discover the update. No private-save access, game operation,
+push, main integration, publication or cleanup. Worktrees/backups preserved.
+
 ## Incoming damage candidate - 2026-10-20
 
 Essentials ba80077 adds the combat-only Physical/Magic incoming damage row,
