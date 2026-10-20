@@ -1,3 +1,20 @@
+## Combat error defaults installed — 2026-10-20
+
+Owner explicitly approved DEV installation. Essentials 808dc95 / central candidate
+3d31b02 installed through this task's checked central installer, chained from the
+damage-player-anchor receipt. Exactly three Essentials DEV Lua files changed:
+Core/Settings.lua, Errors/Runtime.lua and Errors/Settings.lua. Independently verified
+115 installed files, 136 backups and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-error-defaults-20261020/transaction.json.
+Evidence: C:/Temp/apogee-error-defaults-20261020/install-result.json and
+install-verification.json. Prior child and all 77 central checks passed.
+
+Next: owner /reload, then Settings > Apogee DEV > Essentials > Defaults and confirm
+outside combat to adopt the new choices. History stays; all seven switches reset.
+No discovery changes; native UI/audio acceptance remains pending. No game operation,
+private-save access, enable changes, PROD writes, push or main integration.
+Retained worktrees/backups and concurrent workspace handoffs preserved.
+
 ## Combat error defaults prepared — 2026-10-20
 
 Essentials 808dc95 on codex/combat-error-defaults keeps 27 of the 53 observed
