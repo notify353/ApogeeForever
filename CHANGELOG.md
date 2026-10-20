@@ -2,12 +2,9 @@
 
 ## [Unreleased]
 
-<<<<<<< HEAD
 - Show assigned tank, healer and damage roles beside the Heals party leader crown.
-=======
 - Recognize reviewed dungeon phrases while preserving native dungeon identities,
   personal mappings and exclusions. Ambiguous shorthand remains unconfirmed.
->>>>>>> 4585702
 
 - Show a small gold crown on the party leader's Heals row.
 
