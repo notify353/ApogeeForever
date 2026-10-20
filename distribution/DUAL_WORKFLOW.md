@@ -2,7 +2,7 @@
 
 ## October 20 reviewed dungeon vocabulary candidate
 
-Group Alert candidate pins 044448ef0a1e756afd98307a9d18dfe44799c8b7.
+Group Alert candidate pins 6f2d5f8fdaeb31f54d7a80ff73768de4b9563728.
 Reviewed 200 saved DEV discovery phrases with explicit owner permission limited
 to those records. No raw examples or private data are included in the changes.
 Exact reviewed aliases resolve against known full dungeon names, preserving
@@ -14,7 +14,15 @@ tests and generated PROD/DEV gameplay checks, including the pinned vocabulary
 regression. Matching export: Forever 1.60.1.70450 / 16001.
 Evidence: C:/Temp/apogee-dungeon-mappings-20261020/validation and central-checks.log.
 Install preview changes two Group Alert DEV Lua files and the DEV marker TOC.
-Installation awaits immediate owner approval under workspace instructions.
+Quality follow-up: new aliases now defer to valid personal associations even
+without prior removals. All 22 child specs and 75 central tests pass again,
+including the expanded regression against both generated families. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/quality-validation and quality-checks.log.
+The earlier install preview is superseded: concurrent Heals work was installed
+under apogee-level-truncation-20261020. This isolated candidate retains its older
+Heals baseline and is validation-only until reconciled with the latest checked
+central candidate. Do not install either task artifact set directly.
+Installation also awaits immediate owner approval under workspace instructions.
 No PROD installation, saved-data edits, push, integration or publication.
 
 ## October 18 actual stat-gain explanations
