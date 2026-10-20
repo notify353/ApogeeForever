@@ -1,3 +1,31 @@
+## Combat error defaults prepared — 2026-10-20
+
+Essentials 808dc95 on codex/combat-error-defaults keeps 27 of the 53 observed
+errors visible by default and suppresses the other 26 only during combat.
+Explicit saved choices survive until Defaults, which restores all seven switches
+and learned-error choices while preserving history. New/unknown types remain
+checked for combat-only suppression. Settings text explains this behavior.
+Full child runner (27 specs) and current Forever 70450 export pass. Central
+810163a passes all 77 tests, including reset and all 53 errors in generated
+PROD/DEV. Latest installed dungeon Defaults and damage player anchor are retained.
+
+Task root: C:/Temp/apogee-error-defaults-20261020; child and central worktrees
+are its ApogeeEssentials and ApogeeForever folders. Evidence: child-final-checks.log,
+central-final-checks.log, final-validation/packages, install-preview.json and
+changed-files.json. Read-only installer preview succeeds: three DEV Lua changes
+(Core/Settings.lua, Errors/Runtime.lua, Errors/Settings.lua), no discovery changes.
+Latest receipt: C:/Dev/WoW/local-install-backups/apogee-damage-player-anchor-20261020/transaction.json.
+Planned backup: C:/Dev/WoW/local-install-backups/apogee-error-defaults-20261020.
+
+NOT INSTALLED: current owner instructions require immediate deployment approval.
+Use this task's central worktree installer after approval and rechecking latest
+receipt/candidate. Canonical central scripts lack the newer dungeon popup identity
+mapping and correctly refused the combined payload in an initial read-only preview;
+no writes occurred. User /reload, then Essentials Defaults and confirm outside
+combat to adopt the new defaults. Native UI/audio acceptance remains pending.
+No private-save access, game operation, PROD writes, push, main integration or
+publication. Existing worktrees/backups and concurrent workspace handoffs preserved.
+
 ## Damage row above player health installed - 2026-10-20
 
 Owner explicitly approved DEV install. Checked combined candidate 2779c79,
