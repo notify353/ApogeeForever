@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Preserve Blizzard's multilingual font family when sizing dungeon roster names.
+
 - Show assigned tank, healer and damage roles beside the Heals party leader crown.
 - Recognize reviewed dungeon phrases while preserving native dungeon identities,
   personal mappings and exclusions. Ambiguous shorthand remains unconfirmed.

@@ -70,6 +70,12 @@ class DualTests(unittest.TestCase):
             (harness / 'tests/helpers.lua').write_text(helper)
             (harness / 'tests/reviewed_vocabulary_spec.lua').write_bytes(source['tests/reviewed_vocabulary_spec.lua'])
             subprocess.run(['lua', 'tests/reviewed_vocabulary_spec.lua'], cwd=harness, check=True)
+            (harness / 'tests/mock.lua').write_bytes(source['tests/mock.lua'])
+            font_spec = source['tests/roster_font_spec.lua'].decode()
+            font_spec = font_spec.replace("loadfile('", "loadfile('" + root + "/")
+            font_spec = font_spec.replace("'test'", repr(name))
+            (harness / 'tests/roster_font_spec.lua').write_text(font_spec, encoding='utf-8')
+            subprocess.run(['lua', 'tests/roster_font_spec.lua'], cwd=harness, check=True)
 
     def test_shared_settings_parent_in_generated_families(self):
         subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
