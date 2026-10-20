@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Match Heals level labels to the compact name font to prevent two-digit truncation.
+
 ## [1.14.8] - 2026-10-18
 
 - Filter auction upgrades with a dice on/off switch, optional gold cap, and optional role selection. All roles are included by default.
