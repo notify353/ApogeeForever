@@ -106,7 +106,8 @@ class DualTests(unittest.TestCase):
                                         ('"' + name + '", addon').encode())
                 (harness / path).write_bytes(data)
             subprocess.run(['lua', 'tests/incoming_damage_spec.lua',
-                            str((OPTIONS.artifacts / family / name).resolve())],
+                            str((OPTIONS.artifacts / family / name).resolve()),
+                            'ApogeeHealsDevAnchor' if family == 'DEV' else 'ApogeeHealsAnchor'],
                            cwd=harness, check=True)
 
     def test_shared_settings_parent_in_generated_families(self):
