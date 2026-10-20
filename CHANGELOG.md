@@ -6,6 +6,9 @@
 
 ## Unreleased
 
+- Make party Follow/Inspect icons smaller and muted, and hide them completely
+  in combat while keeping adjacent controls in place.
+
 - Add Follow and Inspect beside party-member cleanse controls outside combat.
 
 - Essentials now suppresses checked errors only in combat, with actionable errors

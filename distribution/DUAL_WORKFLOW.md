@@ -1,3 +1,17 @@
+## Subtle party actions prepared - 2026-10-20
+
+Heals f3b3572 reduces artwork to 10x10, desaturates and dims idle icons, removes
+backgrounds and brightens on hover. Native combat visibility hides both buttons
+and hit regions while keeping surrounding slots fixed. Full child checks with
+matching export and all 77 central tests/generated-family checks pass.
+Evidence: C:/Temp/apogee-party-actions-20261020/subtle-child-checks.log,
+subtle-central-checks.log, subtle-validation/packages and subtle-install-preview.json.
+Inspect-only preview changes one DEV file, PartyFrames/View.lua.
+NOT INSTALLED: immediate deployment approval required for revised bytes.
+Previous receipt apogee-party-actions-20261020; planned backup
+C:/Dev/WoW/local-install-backups/apogee-party-actions-subtle-20261020.
+No discovery changes; user reload after approved install. Native acceptance pending.
+
 ## Party Follow and Inspect installed - 2026-10-20
 
 Owner explicitly approved installation. Combined Heals b46e5f8 preserves the
