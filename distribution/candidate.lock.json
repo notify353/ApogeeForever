@@ -95,17 +95,17 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "aef5998b064649ed0813f31b0cebf55d0063c68c",
+      "commit": "6e3085e14eed08626045f374c40de76f2758dae3",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "26814f678d1ec19f184e0b78f891d4fc67fec6bee3d0018fdb9e1b200d8e5c11",
-        "ApogeeGroupAlert.lua": "ac889983a92d11b23637cf082152cd78c89b6659c245338071c3dc8b9282d6b7",
-        "ApogeeGroupAlert.toc": "bd97bc1fa22291fac8885d26052fd7fa166d77161752c86cc46d2441f5c888e5",
-        "CHANGELOG.md": "ee6dc8b8be7099d591d87ff575ca21ee2e90c845f219f6f7a6a298dce0e032e4",
+        "ApogeeGroupAlert.lua": "f1b859baffc56f2d37de86a48610bc39da4965a31323ee1455156f64f0861919",
+        "ApogeeGroupAlert.toc": "56e6b1c71515fe4b4fef453019a60bc34584efc1b8b8206f2340c7bbaa18c0eb",
+        "CHANGELOG.md": "e61920fd97da2b693385a1c9e1ca80d37e7be4f81f3b6cf83acd75ab4e32e8f2",
         "Core/Client.lua": "dfdf6f660ee8c90598674c24e73d717b6c00d55888d57f8f7dc18db0a8fb4a05",
         "Core/Text.lua": "acc322a7745f82d37ba71aadc1fb488b7fcaedd0410841d9b70146c6dc0b5e0a",
         "Core/UI.lua": "03b823c7c58081623076d51de3ee013b7c173d261c9b38553b8a616c600749f3",
-        "Discovery/Dictionary.lua": "c1019db5804102d8a0bdab86f4f86abaf67b80e053551e4396296188386d1878",
+        "Discovery/Dictionary.lua": "4c0e98d883ece0eb1be48c970fbd9df54c1e903b436ea488a0697039cae5595c",
         "Discovery/Model.lua": "77d373fdb4c94805ee99d767db2d4c52376b4f06cc5dc34ded6ed2e6a27aea23",
         "Groups/InlineRoster.lua": "c300b29b68712b143f8465837f7ac605289faa568ade026e00f5954cefc3d1e4",
         "Groups/Model.lua": "8e6897b2e8db1acbaf036d3fd5b56250b78ce5800db897f934f3ca0fccbc707d",
@@ -115,8 +115,8 @@
         "Matching/Dungeons.lua": "4044085ffff1745cc7e8fe088568e54525f79cbfb3d61ec45d7b86905d5d1a34",
         "Matching/Levels.lua": "265a1158c3081587c484af970b14418721fed0bf4079fb22e852b008f03620a5",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
-        "README.md": "e38e0f77ffb95a368bd00b8204275858c3aab5ae74b77d25471702b142473866",
-        "Settings/View.lua": "762f78fbaaf0f3d228d6cea5bdc8f645e62a05c8a66b52076bd3bac63cb55102",
+        "README.md": "4f942bdea108c803c047e93eee2fa8ca60d957b546bd08508197b1e88e1ec25a",
+        "Settings/View.lua": "a9939867d83f8b3bd20c1d9d8b95e33ab06e9b3aa0075d58f61fbd5e5cd404d8",
         "THIRD_PARTY_NOTICES.md": "6c999d3ef098a2ee82642abce8e16d30e82f48495f58529fb56617f0a06486e6"
       },
       "name": "ApogeeGroupAlert",
