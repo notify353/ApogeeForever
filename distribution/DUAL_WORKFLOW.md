@@ -1,3 +1,22 @@
+## Party Follow and Inspect prepared - 2026-10-20
+
+Heals 854cf79 adds fixed party1-4 Follow and Inspect controls after cleansing,
+before drinking/debuffs. Existing roles/crown/spell art remain unchanged.
+Native actions run on left release outside combat with guarded range checks.
+Combined candidate preserves installed Smart buffs and Essentials migration.
+Matching 70450 child checks and all 77 central tests pass, including action
+checks in both generated families. Evidence:
+C:/Temp/apogee-party-actions-20261020/combined-child-checks.log,
+final-central-checks.log, final-validation/packages and reviewed-preview.json.
+
+Inspect-only preview chains from apogee-smart-buffs-20261020/transaction.json.
+Two DEV Lua writes (PartyFrames/Runtime.lua and View.lua) plus export metadata;
+no discovery changes. NOT INSTALLED: immediate owner deployment approval
+required by workspace instructions. Planned backup:
+C:/Dev/WoW/local-install-backups/apogee-party-actions-20261020.
+Recheck current receipt before installing. Owner reload and native acceptance
+pending. No game operation, private-save access, PROD writes, push or publication.
+
 ## Smart buffs installed; Paladin tanks Kings first - 2026-10-20
 
 Owner explicitly approved Kings first/Wisdom fallback for Paladin tanks, checks

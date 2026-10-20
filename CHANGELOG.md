@@ -6,6 +6,8 @@
 
 ## Unreleased
 
+- Add Follow and Inspect beside party-member cleanse controls outside combat.
+
 - Essentials now suppresses checked errors only in combat, with actionable errors
   visible by default. Defaults restores all convenience and learned-error choices.
 
