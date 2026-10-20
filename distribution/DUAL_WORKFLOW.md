@@ -1,3 +1,16 @@
+## Incoming damage candidate - 2026-10-20
+
+Essentials ba80077 adds the combat-only Physical/Magic incoming damage row,
+reset each fight. Unreadable or incomplete fights show dashes. The candidate
+preserves installed party roles and reviewed roster-font Group Alert aef5998.
+No installer has run for this candidate. Source tests pass; native magic,
+periodic/environmental coverage and HUD placement remain pending. Installation
+requires immediate owner approval under the current workspace agreement.
+Task/evidence: C:/Temp/apogee-incoming-damage-20261020.
+Use the latest installed receipt, currently
+C:/Dev/WoW/local-install-backups/apogee-roster-font-20261020/transaction.json,
+and recheck concurrent candidates before any installation.
+
 ## Multilingual roster font installed - 2026-10-20
 
 Owner approved fix, checks and installation. Group Alert aef5998 preserves the

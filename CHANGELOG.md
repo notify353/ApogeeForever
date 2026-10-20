@@ -1,3 +1,7 @@
+## Unreleased - incoming damage comparison
+
+- Add the Essentials compact combat-only Physical/Magic incoming-damage split, reset each fight.
+
 # Changelog
 
 ## [Unreleased]
