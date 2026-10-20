@@ -128,7 +128,7 @@ class DualTests(unittest.TestCase):
                     dest.write_bytes((generated / target).read_bytes())
             (harness / (name + '.toc')).write_bytes(
                 source['ApogeeEssentials.toc'].replace(b'ApogeeEssentials', name.encode()))
-            for path in ('tests/mock.lua', 'tests/combat_error_defaults_spec.lua', 'tests/defaults_spec.lua'):
+            for path in ('tests/mock.lua', 'tests/combat_error_defaults_spec.lua', 'tests/defaults_spec.lua', 'tests/error_defaults_migration_spec.lua'):
                 data = source[path].replace(b'ApogeeEssentials', name.encode())
                 if family == 'DEV':
                     data = data.replace(b'APOGEE_ESSENTIALS_DEFAULTS', b'APOGEE_ESSENTIALS_DEV_DEFAULTS')
@@ -136,7 +136,7 @@ class DualTests(unittest.TestCase):
                     data = data.replace(b'local addon={}',
                         b'local addon={__ApogeeFamilyAdmission=function() return true end}')
                 (harness / path).write_bytes(data)
-            for spec in ('combat_error_defaults_spec.lua', 'defaults_spec.lua'):
+            for spec in ('combat_error_defaults_spec.lua', 'defaults_spec.lua', 'error_defaults_migration_spec.lua'):
                 subprocess.run(['lua', 'tests/' + spec], cwd=harness, check=True)
 
     def test_shared_settings_parent_in_generated_families(self):
@@ -167,7 +167,7 @@ class DualTests(unittest.TestCase):
                                     '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
             start = runner.index('for _, path in ipairs({')
             end = runner.index('}) do', start) + len('}) do')
-            runner = runner[:start] + 'for _, path in ipairs({"tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua", "tests/buff_foreign_coverage_spec.lua", "tests/buff_range_spec.lua", "tests/leader_spec.lua", "tests/roles_spec.lua", "tests/names_spec.lua", "tests/party_actions_spec.lua"}) do' + runner[end:]
+            runner = runner[:start] + 'for _, path in ipairs({"tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/smart_buffs_spec.lua", "tests/blessing_guidance_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua", "tests/buff_foreign_coverage_spec.lua", "tests/buff_range_spec.lua", "tests/leader_spec.lua", "tests/roles_spec.lua", "tests/names_spec.lua"}) do' + runner[end:]
             runner = runner.replace('    assert(loadstring(fixtureTest,', '    if name == "ApogeeHealsDev" then fixtureTest = fixtureTest:gsub("Apogee Heals", "Apogee Heals DEV") end\n    assert(loadstring(fixtureTest,')
             runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target buffs, class integration and minimap regressions: " .. name)')
             (harness / 'target-generated.lua').write_text(runner)

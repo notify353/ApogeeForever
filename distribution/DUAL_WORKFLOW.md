@@ -1,3 +1,55 @@
+## Smart buffs installed; Paladin tanks Kings first - 2026-10-20
+
+Owner explicitly approved Kings first/Wisdom fallback for Paladin tanks, checks
+and DEV installation. Heals b1085b5 includes the full Smart buffs change and this
+correction. Matching 70450 export and full child suite pass; all 77 central checks
+and generated PROD/DEV Smart buffs/blessing tests pass. Combined candidate retains
+installed Essentials 405f5b2 automatic error-default migration and Group Alert
+d64d053. One earlier preview refused concurrent Essentials bytes before writes.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-smart-buffs-20261020/transaction.json.
+Chained from apogee-error-defaults-migration-20261020. Independent verification:
+116 installed files, 136 backup files and 111 unchanged PROD files. Exactly eight
+Heals DEV runtime/TOC files changed. Evidence under
+C:/Temp/apogee-smart-buffs-20261020: kings-child-checks.log,
+kings-combined-checks.log, kings-combined-validation/packages,
+kings-install-preview.json, kings-install-result.json and
+kings-install-verification.json. All backups/worktrees retained.
+
+Next: owner /reload, then check Smart buffs and Paladin tank yellow Kings indicator.
+Wisdom is the fallback when Kings is unavailable. New Preferences module and TOC
+may need owner restart only if reload fails to discover them. Native appearance/
+casting acceptance is pending. No game operation, private-save access, enable
+changes, PROD writes, push, main integration or publication.
+
+## Smart buffs ready for DEV approval - 2026-10-20
+
+Heals 5782207 replaces the legacy checklist with learned-spell Smart/Manual/Off
+preferences across classes. Paladin blessings retain suggestions, with reviewed
+five-player defaults: Warrior tank Might, Paladin tank Wisdom, Druid tank Kings,
+Hunter Wisdom, healer/caster Wisdom and melee Might. Ambiguous hybrid damage
+keeps Kings; role/class cannot establish spec. Evidence and limits are recorded
+in the child docs/BLESSING_GUIDANCE.md; no popularity measurement is claimed.
+
+Full Heals checks pass with matching Forever 1.60.1.70450 / 16001 export. All 77
+central tests plus generated PROD/DEV Smart buffs and blessing-guidance tests pass.
+Artifacts: C:/Temp/apogee-smart-buffs-20261020/ready-validation/packages.
+Logs: child-checks.log and ready-checks.log in that task directory.
+Candidate preserves installed Group Alert d64d053, Essentials 808dc95 and their
+reviewed transforms/tests/scoped acceptance from central 0be81cf. Earlier preview
+against an older receipt refused the concurrent Essentials edits before writes.
+
+Final inspect-only preview chains from apogee-error-defaults-20261020 receipt
+and changes exactly eight ApogeeHealsDev runtime/TOC files. Evidence:
+C:/Temp/apogee-smart-buffs-20261020/install-preview.json and runtime-preview.json.
+Planned backup: C:/Dev/WoW/local-install-backups/apogee-smart-buffs-20261020.
+NOT INSTALLED: user workspace instructions require immediate deployment approval.
+Recheck newest receipt/candidate before installing. Owner reload and native UI/
+casting acceptance remain pending; new Preferences module may require restart
+only if reload fails to discover it. No private saves, game operation, PROD writes,
+push, main integration, publication or cleanup. Retained worktrees/backups remain.
+Task record: C:/Temp/apogee-smart-buffs-20261020/task-record.md.
+
 ## Combat error defaults accepted — 2026-10-20
 
 Owner confirms: "I reloaded and clicked Defaults. Everything looks good and is working."

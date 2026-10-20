@@ -1,7 +1,10 @@
-## Unreleased
+## Unreleased - Smart buffs
 
-- Add Follow and Inspect beside party-member cleanse controls outside combat.
-  Existing role/cleanse art remains unchanged; drinking and debuffs shift right.
+- Prefer Kings for Paladin tanks, with Wisdom as the learned fallback.
+
+- Replace Heals Buff reminders with learned-spell Smart, Manual and Off controls across classes. Keep Paladin suggestions and tune them for five-player dungeon roles.
+
+## Unreleased
 
 - Essentials now suppresses checked errors only in combat, with actionable errors
   visible by default. Defaults restores all convenience and learned-error choices.
