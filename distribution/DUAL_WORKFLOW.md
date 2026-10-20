@@ -1,3 +1,20 @@
+## Inspect Talents prepared - 2026-10-20
+
+Matching Camelot menu supports native Inspect Talents. Heals 293cdb4 adds the
+third muted party button using NotifyInspect, matching INSPECT_READY GUID and
+PlayerSpellsUtil.OpenToClassTalentsTab. Combat/roster/zoning/gear inspection and
+five-second expiry cancel pending requests; current GUID/range is rechecked.
+Preserves installed strict-recipient fix 3a8a49d and subtle action controls.
+Full matching-export child suite and all 77 central/generated-family tests pass.
+Evidence under C:/Temp/apogee-party-actions-20261020:
+talents-combined-child-checks.log, talents-combined-central-checks.log,
+talents-combined-validation/packages and talents-install-preview.json.
+Preview changes two DEV files, with no discovery changes. NOT INSTALLED:
+immediate owner approval required. Chain from apogee-strict-heals-20261020;
+planned backup C:/Dev/WoW/local-install-backups/apogee-party-talents-20261020.
+Native talent-point display/appearance acceptance pending. No game operation,
+private saves, PROD writes, push, main integration or publication.
+
 ## Subtle party actions installed - 2026-10-20
 
 Owner explicitly approved installation. Heals f3b3572 / checked candidate 9880276

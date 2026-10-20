@@ -6,6 +6,9 @@
 
 ## Unreleased
 
+- Add Inspect Talents beside party Follow/Inspect, opening the native talent
+  tree after matching inspection data arrives. Keep muted styling/combat hiding.
+
 - Make party Follow/Inspect icons smaller and muted, and hide them completely
   in combat while keeping adjacent controls in place.
 
