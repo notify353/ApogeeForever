@@ -128,7 +128,7 @@ class DualTests(unittest.TestCase):
                     dest.write_bytes((generated / target).read_bytes())
             (harness / (name + '.toc')).write_bytes(
                 source['ApogeeEssentials.toc'].replace(b'ApogeeEssentials', name.encode()))
-            for path in ('tests/mock.lua', 'tests/combat_error_defaults_spec.lua', 'tests/defaults_spec.lua'):
+            for path in ('tests/mock.lua', 'tests/combat_error_defaults_spec.lua', 'tests/defaults_spec.lua', 'tests/error_defaults_migration_spec.lua'):
                 data = source[path].replace(b'ApogeeEssentials', name.encode())
                 if family == 'DEV':
                     data = data.replace(b'APOGEE_ESSENTIALS_DEFAULTS', b'APOGEE_ESSENTIALS_DEV_DEFAULTS')
@@ -136,7 +136,7 @@ class DualTests(unittest.TestCase):
                     data = data.replace(b'local addon={}',
                         b'local addon={__ApogeeFamilyAdmission=function() return true end}')
                 (harness / path).write_bytes(data)
-            for spec in ('combat_error_defaults_spec.lua', 'defaults_spec.lua'):
+            for spec in ('combat_error_defaults_spec.lua', 'defaults_spec.lua', 'error_defaults_migration_spec.lua'):
                 subprocess.run(['lua', 'tests/' + spec], cwd=harness, check=True)
 
     def test_shared_settings_parent_in_generated_families(self):

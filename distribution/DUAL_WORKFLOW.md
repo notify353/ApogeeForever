@@ -1,3 +1,27 @@
+## Smart buffs installed; Paladin tanks Kings first - 2026-10-20
+
+Owner explicitly approved Kings first/Wisdom fallback for Paladin tanks, checks
+and DEV installation. Heals b1085b5 includes the full Smart buffs change and this
+correction. Matching 70450 export and full child suite pass; all 77 central checks
+and generated PROD/DEV Smart buffs/blessing tests pass. Combined candidate retains
+installed Essentials 405f5b2 automatic error-default migration and Group Alert
+d64d053. One earlier preview refused concurrent Essentials bytes before writes.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-smart-buffs-20261020/transaction.json.
+Chained from apogee-error-defaults-migration-20261020. Independent verification:
+116 installed files, 136 backup files and 111 unchanged PROD files. Exactly eight
+Heals DEV runtime/TOC files changed. Evidence under
+C:/Temp/apogee-smart-buffs-20261020: kings-child-checks.log,
+kings-combined-checks.log, kings-combined-validation/packages,
+kings-install-preview.json, kings-install-result.json and
+kings-install-verification.json. All backups/worktrees retained.
+
+Next: owner /reload, then check Smart buffs and Paladin tank yellow Kings indicator.
+Wisdom is the fallback when Kings is unavailable. New Preferences module and TOC
+may need owner restart only if reload fails to discover them. Native appearance/
+casting acceptance is pending. No game operation, private-save access, enable
+changes, PROD writes, push, main integration or publication.
+
 ## Smart buffs ready for DEV approval - 2026-10-20
 
 Heals 5782207 replaces the legacy checklist with learned-spell Smart/Manual/Off
