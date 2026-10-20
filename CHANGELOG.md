@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Essentials now suppresses checked errors only in combat, with actionable errors
+  visible by default. Defaults restores all convenience and learned-error choices.
+
+
 - Simplify Dungeons settings to predefined wording checkboxes per dungeon. Keep background discovery and saved history; archive personal additions without applying them. Remove editing tabs and reset actions. - incoming damage comparison
 
 - Add the Essentials compact combat-only Physical/Magic incoming-damage split, reset each fight.

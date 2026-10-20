@@ -109,6 +109,35 @@ class DualTests(unittest.TestCase):
                             str((OPTIONS.artifacts / family / name).resolve())],
                            cwd=harness, check=True)
 
+    def test_essentials_error_defaults_in_generated_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeEssentials')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('error-defaults-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            generated = OPTIONS.artifacts / family / name
+            # Exercise unchanged generated chunks with admission supplied by the
+            # fixture; complete family gate behavior has separate coverage.
+            for path in source['ApogeeEssentials.toc'].decode().splitlines():
+                if path.endswith('.lua'):
+                    target = name + '.lua' if path == 'ApogeeEssentials.lua' else path
+                    dest = harness / target
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    dest.write_bytes((generated / target).read_bytes())
+            (harness / (name + '.toc')).write_bytes(
+                source['ApogeeEssentials.toc'].replace(b'ApogeeEssentials', name.encode()))
+            for path in ('tests/mock.lua', 'tests/combat_error_defaults_spec.lua', 'tests/defaults_spec.lua'):
+                data = source[path].replace(b'ApogeeEssentials', name.encode())
+                if family == 'DEV':
+                    data = data.replace(b'APOGEE_ESSENTIALS_DEFAULTS', b'APOGEE_ESSENTIALS_DEV_DEFAULTS')
+                if path.endswith('mock.lua'):
+                    data = data.replace(b'local addon={}',
+                        b'local addon={__ApogeeFamilyAdmission=function() return true end}')
+                (harness / path).write_bytes(data)
+            for spec in ('combat_error_defaults_spec.lua', 'defaults_spec.lua'):
+                subprocess.run(['lua', 'tests/' + spec], cwd=harness, check=True)
+
     def test_shared_settings_parent_in_generated_families(self):
         subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
                         str(OPTIONS.artifacts)], check=True)
