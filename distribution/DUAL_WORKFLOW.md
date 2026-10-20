@@ -11,6 +11,59 @@ Reload required; if the new module is not discovered, user restart may be needed
 No game operation, private-save access, enable changes, push or publication.
 HUD appearance and full magic/periodic/environmental coverage await owner testing.
 
+## Restricted Dungeons settings installed - 2026-10-20
+
+Owner explicitly approved installation. Rechecked canonical d08c0eb and newest
+indicator-order receipt; no concurrent change since final validation. Installed
+checked candidate 330c8ab (handoff 802eae2), Group Alert 6e3085e, via the central
+atomic DEV installer. Exactly four Group Alert DEV files changed: bootstrap,
+TOC notes, Discovery/Dictionary.lua and Settings/View.lua. Verified all 116
+installed files, 137 backup files and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-dungeon-settings-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/settings-install-preview.json,
+settings-install-log.json and settings-install-verification.json. This supersedes
+the prior pending-install status below. All 23 child suites and 76 central checks
+were passed for these bytes. Concurrent Heals/Essentials changes are retained.
+
+Next: owner /reload and visual acceptance of Dungeons wording toggles, including
+shared per-dungeon choices and combat browsing. Restart only if reload does not
+discover the TOC update. No game operation, private-save access, preference edits,
+PROD install, push, main integration or publication. Retained backups/worktrees
+remain available. Future installs must chain from this new receipt.
+
+## Restricted Dungeons settings prepared - 2026-10-20
+
+Implemented the approved toggle-only plan. Group Alert 6e3085e retains a complete
+predefined catalog separately from enabled mappings, archives personal additions
+without applying/deleting them, and confirms official names through native activity
+discovery. Exclusions, native level data and collected/ignored history survive.
+Settings show alphabetical dungeon/wording lists, per-dungeon shared checkboxes,
+combat browsing with disabled changes, and native fonts. Editing tabs/actions,
+Defaults and the native reset callback are removed.
+
+Child test-local passes all 23 suites on matching Forever 1.60.1.70450 / 16001.
+Central 330c8ab combines this change with latest canonical d08c0eb; all 76 tests
+and generated PROD/DEV regressions pass. Concurrent incoming damage, combat-hidden
+indicators and leader-left/role-right layout are retained. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/settings-child-checks.log,
+settings-final-checks.log and settings-final-validation/packages.
+
+Preview against newest installed receipt
+C:/Dev/WoW/local-install-backups/apogee-indicator-order-20261020/transaction.json
+changes exactly four ApogeeGroupAlertDev files: bootstrap, TOC notes,
+Discovery/Dictionary.lua and Settings/View.lua. Preview/baseline and verification
+helper: settings-install-preview.json, settings-prod-before.json,
+verify-settings-install.py in the task folder. Planned backup:
+C:/Dev/WoW/local-install-backups/apogee-dungeon-settings-20261020.
+
+NOT INSTALLED. Immediate deployment approval is required by the owner's explicit
+plan/workspace rules; earlier installation approvals do not cover this candidate.
+Recheck newest candidate/receipt before installing with the central installer, then
+verify installed bytes/backups and unchanged PROD via the helper's after mode.
+User reload and visual acceptance are required; TOC notes changed, so restart only
+if reload fails to discover the update. No private-save access, game operation,
+push, main integration, publication or cleanup. Worktrees/backups preserved.
+
 ## Incoming damage candidate - 2026-10-20
 
 Essentials ba80077 adds the combat-only Physical/Magic incoming damage row,
