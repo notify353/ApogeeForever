@@ -18,7 +18,7 @@
 
 - Show a small gold crown on the party leader's Heals row.
 
-- Add silent, opt-in Heals Focus health checks for solo/party health readability and 50% crossings. Actual sound support awaits live testing.
+- Remove temporary Heals Focus health checks and their tests after choosing native Blizzard health alerts.
 
 - Match Heals level labels to the compact name font to prevent two-digit truncation.
 
