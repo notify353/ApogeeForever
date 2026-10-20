@@ -1,3 +1,20 @@
+## Party Follow and Inspect installed - 2026-10-20
+
+Owner explicitly approved installation. Combined Heals b46e5f8 preserves the
+concurrently installed Paladin leveling changes from 80c4740. Matching export,
+full child checks and all 77 central tests/generated-family regressions pass.
+Canonical central installer used this task's lock and approved-validation/packages,
+chained from apogee-paladin-leveling-20261020/transaction.json.
+
+Receipt: C:/Dev/WoW/local-install-backups/apogee-party-actions-20261020/transaction.json.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Only PartyFrames/Runtime.lua, PartyFrames/View.lua and export metadata changed
+under ApogeeHealsDev. No discovery changes; owner /reload and test Follow and
+Inspect on party members outside combat. In-game appearance/input/taint acceptance
+pending. Evidence: C:/Temp/apogee-party-actions-20261020/approved-child-checks.log,
+approved-central-checks.log, install-result.json and install-verification.json.
+No game operation, private saves, enabled-state edits, push or main integration.
+
 ## Party Follow and Inspect prepared - 2026-10-20
 
 Heals 854cf79 adds fixed party1-4 Follow and Inspect controls after cleansing,

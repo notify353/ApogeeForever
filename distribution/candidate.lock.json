@@ -1,18 +1,18 @@
 {
   "children": [
     {
-      "commit": "854cf79832ecbc80a67fe7b4702d7c44509c16ae",
+      "commit": "b46e5f894c7591de73646a1178c7837aae32f025",
       "files": {
         "ApogeeHeals.lua": "08d43d540d231e93a05014f67f1490dad05f2906cf59d98a60d840d985109d0b",
         "ApogeeHeals.toc": "a4a9762c5a52146c735c0448618c045e4bf5bfb56dcb348dd58f9d06999ce54f",
         "Bindings/Defaults.lua": "76be5e9566d7d23e46fb7daa6d8b887787d675927c70e11e43f26666324f5a2a",
         "Bindings/Runtime.lua": "fd7bcd0039a3290b923168578e7f7d13821207e1ef84909d22e64f953a0a1cbb",
         "Buffs/Catalog.lua": "aa886e2569ba5af7af80edaeea0ebf6fe0e0d6b8d47a81c0a2cf608eb5517fc8",
-        "Buffs/Defaults.lua": "df181a7e57e6c5a93118518a504d5f7d4ad20de4b89f0030b94fb53362089dce",
+        "Buffs/Defaults.lua": "d3627fedde6d40f3391e4367383ebbe8b9a14af23e2934f25bffd7a57467cf41",
         "Buffs/Preferences.lua": "d6f6a648c8782a76c8e1649d07a7bf60767381c64384944a231a9a1394d5f1c2",
         "Buffs/Runtime.lua": "23b9747add912ab7ee77e10361b1b8a44ab53e8107513f0b39fdb261e000f90e",
         "Buffs/View.lua": "21965a70d68674306d765ed5a5d410b8284c2c74c2076bfa184671d34e271d66",
-        "CHANGELOG.md": "e7c40b0206a9d29b5802a93f1f6c0d815f7e70a7786fa6b50dbf30a15823bb05",
+        "CHANGELOG.md": "1423e5fd9aa3d7e9a444ae1c348b8420d7bf8196fdc1314b6d88f4efd2372610",
         "Cleansing/Runtime.lua": "78ec7cd14a77a81b0bfebc12dfa1056c0456dfeaa61b0c0e83f12cf339a51f16",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "442416f78c3d5e1a5fa37df299155cadecb9f81f82490a7d4b42779a8701b914",
