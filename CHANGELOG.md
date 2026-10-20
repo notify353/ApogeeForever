@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Restore confirmed dungeon wording Defaults without resetting alert preferences or discovery history.
+
 - Simplify Dungeons settings to predefined wording checkboxes per dungeon. Keep background discovery and saved history; archive personal additions without applying them. Remove editing tabs and reset actions. - incoming damage comparison
 
 - Add the Essentials compact combat-only Physical/Magic incoming-damage split, reset each fight.
