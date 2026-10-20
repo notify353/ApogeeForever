@@ -1,3 +1,25 @@
+## Focus diagnostic removed - 2026-10-20
+
+Owner chose native health alerts and requested removal of this task's tests.
+Heals be8ee10 removes the Focus panel, runtime, TOC hooks and diagnostic spec;
+other Heals features and diagnostics are unchanged. Central combined candidate
+8f91a74 preserves concurrent dungeon settings 86889e7 and damage placement afae151.
+Full child checks with matching Forever 70450 export and all 76 central tests
+plus generated-family checks pass. Evidence under
+C:/Temp/apogee-focus-health-20261020/: removal-child-checks.log,
+removal-final-checks.log, removal-final-validation/, removal-verification.json.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-focus-removed-20261020/transaction.json.
+Chained from apogee-damage-placement-20261020. Verified 115 installed files,
+137 backups and 111 unchanged PROD files. Three Heals DEV writes (bootstrap,
+TOC, settings); explicitly retired ApogeeHealsDev/Health/Diagnostics.lua to
+verified retired-files backup. No private saves, native alert preferences,
+other diagnostics, retained worktrees or historical evidence were removed.
+First preview refused concurrent damage changes before any writes; final
+combined candidate passed full checks and installed successfully. Owner reload
+required; if stale UI persists after reload, restart manually. Native UI
+acceptance pending. No push, main integration or publication performed.
+
 ## Incoming damage placement installed - 2026-10-20
 
 Owner explicitly approved the placement fix. Combined candidate 1530154 retains
