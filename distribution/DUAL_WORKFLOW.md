@@ -1,3 +1,23 @@
+## Dungeon wording Defaults installed - 2026-10-20
+
+Owner explicitly approved installation. Rechecked latest Focus-removal receipt
+and canonical 0c08183; the preview still changed only Group Alert DEV
+Discovery/Dictionary.lua and Settings/View.lua. Installed checked central
+0f8e219 (handoff 53f902d), child d64d053, through the atomic central DEV installer.
+Verified 115 installed files, 136 backup files and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-dungeon-defaults-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/defaults-install-preview.json,
+defaults-install-log.json and defaults-install-verification.json. Previous receipt:
+apogee-focus-removed-20261020. This supersedes the pending-install status below.
+The checked bytes passed 23 child suites and 76 central tests/generated checks.
+
+Next: owner /reload and visual acceptance of the restored Defaults confirmation.
+Defaults restores all dungeon wording only; alert preferences and discovery history
+remain intact. No new-file/TOC discovery change or restart required. Concurrent
+Focus removal and incoming-damage placement preserved. No game operation,
+private-save access, PROD install, publication, push, main integration or cleanup.
+Future installs must use this newest receipt and preserve this Group Alert pin.
+
 ## Dungeon wording Defaults prepared - 2026-10-20
 
 Owner accepted the simplified settings visually ("looking good") and requested
