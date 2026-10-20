@@ -875,4 +875,5 @@ Supports World of Warcraft Forever 1.60.1. Reload the UI after updating.
 - Initial CurseForge and GitHub distribution materials.
 ## Unreleased - incoming damage placement
 
-- Place the Physical/Magic row above the fixed threat panel, with a clear gap.
+- Center the Physical/Magic row above the Apogee player health bar and follow
+  party-stack movement, using the matching PROD or DEV anchor.

@@ -1437,3 +1437,13 @@ confirmed everything works. Exact installed Lua bytes were independently reverif
 native-acceptance.json now records current DEV and generated PROD runtime hashes.
 Offline publisher payload validation passes for proposed 1.14.6. Historical evidence
 is retained. Push/integration, final-main hosted checks and tag approval remain pending.
+## Player health bar damage anchor prepared - 2026-10-20
+
+Essentials runtime pin 37e164b centers the damage row above ApogeeHealsAnchor
+with bottom-to-top +8 UI pixels. An exact reviewed DEV mapping points to
+ApogeeHealsDevAnchor; generated tests check family isolation, late load and motion.
+The row retains screen fallback without Heals, and damage/reset behavior is
+unchanged. This supersedes the previous screen-relative placement.
+Combined candidate includes dungeon settings and the installed Focus diagnostic
+removal. No placement install yet; owner approval is required immediately before
+installation. Recheck latest receipt, currently apogee-focus-removed-20261020.
