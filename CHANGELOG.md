@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Recognize reviewed dungeon phrases while preserving native dungeon identities,
+  personal mappings and exclusions. Ambiguous shorthand remains unconfirmed.
+
 ## [1.14.8] - 2026-10-18
 
 - Filter auction upgrades with a dice on/off switch, optional gold cap, and optional role selection. All roles are included by default.

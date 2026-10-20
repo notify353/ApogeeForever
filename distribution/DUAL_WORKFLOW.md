@@ -1,5 +1,22 @@
 # One source, two distributions
 
+## October 20 reviewed dungeon vocabulary candidate
+
+Group Alert candidate pins 044448ef0a1e756afd98307a9d18dfe44799c8b7.
+Reviewed 200 saved DEV discovery phrases with explicit owner permission limited
+to those records. No raw examples or private data are included in the changes.
+Exact reviewed aliases resolve against known full dungeon names, preserving
+native IDs, level data and personal exclusions. Ambiguous shorthand remains
+unconfirmed. Gnomergon is a reviewed Gnomeregan spelling.
+
+Child test-local passes (22 specs); central validation passes all 75 Python
+tests and generated PROD/DEV gameplay checks, including the pinned vocabulary
+regression. Matching export: Forever 1.60.1.70450 / 16001.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/validation and central-checks.log.
+Install preview changes two Group Alert DEV Lua files and the DEV marker TOC.
+Installation awaits immediate owner approval under workspace instructions.
+No PROD installation, saved-data edits, push, integration or publication.
+
 ## October 18 actual stat-gain explanations
 
 Coordinated tooltip fix 0a6ebbb was reviewed and cherry-picked as Stats 5050906

@@ -55,6 +55,22 @@ class DualTests(unittest.TestCase):
                                 str(OPTIONS.artifacts / family / name), name] +
                                [warning_build or '', reviewed_build], check=True)
 
+    def test_reviewed_dungeon_aliases_in_generated_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeGroupAlert')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('dungeon-vocabulary-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            root = (OPTIONS.artifacts / family / name).resolve().as_posix()
+            helper = source['tests/helpers.lua'].decode()
+            helper = helper.replace('local A = {}', 'local A = {__ApogeeFamilyAdmission=function() return true end}')
+            helper = helper.replace('loadfile(path)', 'loadfile(' + json.dumps(root + '/') + ' .. path)')
+            helper = helper.replace("'ApogeeGroupAlert'", repr(name))
+            (harness / 'tests/helpers.lua').write_text(helper)
+            (harness / 'tests/reviewed_vocabulary_spec.lua').write_bytes(source['tests/reviewed_vocabulary_spec.lua'])
+            subprocess.run(['lua', 'tests/reviewed_vocabulary_spec.lua'], cwd=harness, check=True)
+
     def test_shared_settings_parent_in_generated_families(self):
         subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
                         str(OPTIONS.artifacts)], check=True)
