@@ -1,3 +1,16 @@
+## Subtle party actions installed - 2026-10-20
+
+Owner explicitly approved installation. Heals f3b3572 / checked candidate 9880276
+installed through canonical DEV installer using task lock/artifacts after fresh
+export and receipt checks. Only ApogeeHealsDev/PartyFrames/View.lua changed.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-party-actions-subtle-20261020/transaction.json.
+Previous receipt: apogee-party-actions-20261020. Evidence in
+C:/Temp/apogee-party-actions-20261020/subtle-install-result.json and
+subtle-install-verification.json. User /reload; no discovery changes.
+Native mild appearance/combat hiding acceptance pending. No private saves,
+game operation, PROD writes, push, main integration or publication.
+
 ## Subtle party actions prepared - 2026-10-20
 
 Heals f3b3572 reduces artwork to 10x10, desaturates and dims idle icons, removes
