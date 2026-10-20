@@ -1,3 +1,18 @@
+## Reviewed dungeon mappings installed - 2026-10-20
+
+Owner approved installation. Combined current ce7876b with the reviewed Group
+Alert 6f2d5f8 pin, preserving Heals level typography, Focus diagnostic and crown.
+All 75 central tests and generated checks pass. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/install-validation and install-checks.log.
+The checked atomic DEV install changed only Group Alert Discovery/Dictionary.lua
+and Matching/Dungeons.lua. Verified 115 installed files, 136 backups and 111
+unchanged PROD files. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-dungeon-mappings-20261020/transaction.json.
+Previous receipt: apogee-party-leader-20261020. No discovery changes; user reload
+required. Native acceptance pending. Use this combined candidate and newest
+receipt for subsequent DEV changes. No publication, push or main integration.
+Historical validation-only artifacts below were not installed.
+
 ## Focus health feasibility DEV diagnostic - 2026-10-20
 
 Heals c4957bd combines the silent Focus health diagnostic (33a29ca) with the
