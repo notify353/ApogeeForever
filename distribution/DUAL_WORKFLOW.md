@@ -32,6 +32,52 @@ files, 137 backups and 111 unchanged PROD files. Evidence:
 C:/Temp/apogee-incoming-damage-20261020/placement-install-verification.json.
 Owner reload and visual placement acceptance pending; no discovery changes.
 No private-save access, game operation, enable changes, push or publication.
+## Dungeon wording Defaults installed - 2026-10-20
+
+Owner explicitly approved installation. Rechecked latest Focus-removal receipt
+and canonical 0c08183; the preview still changed only Group Alert DEV
+Discovery/Dictionary.lua and Settings/View.lua. Installed checked central
+0f8e219 (handoff 53f902d), child d64d053, through the atomic central DEV installer.
+Verified 115 installed files, 136 backup files and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-dungeon-defaults-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/defaults-install-preview.json,
+defaults-install-log.json and defaults-install-verification.json. Previous receipt:
+apogee-focus-removed-20261020. This supersedes the pending-install status below.
+The checked bytes passed 23 child suites and 76 central tests/generated checks.
+
+Next: owner /reload and visual acceptance of the restored Defaults confirmation.
+Defaults restores all dungeon wording only; alert preferences and discovery history
+remain intact. No new-file/TOC discovery change or restart required. Concurrent
+Focus removal and incoming-damage placement preserved. No game operation,
+private-save access, PROD install, publication, push, main integration or cleanup.
+Future installs must use this newest receipt and preserve this Group Alert pin.
+
+## Dungeon wording Defaults prepared - 2026-10-20
+
+Owner accepted the simplified settings visually ("looking good") and requested
+Defaults back for dungeon wording. Child d64d053 adds a confirmed, combat-guarded
+Defaults button that clears account-wide wording exclusions only, including those
+for official activities discovered later. It preserves alert preferences, archived
+custom/addition data, ignored state and all discovery history. Selection and scroll
+positions remain stable. There is still no native page reset callback.
+
+Central candidate 0f8e219 passed all 76 tests and generated PROD/DEV regressions;
+all 23 child suites passed on matching Forever 70450. Evidence under
+C:/Temp/apogee-dungeon-mappings-20261020: defaults-child-checks.log,
+defaults-central-checks.log, defaults-validation/packages. The alternate
+defaults-install-validation artifacts used an older Heals pin and are NOT the
+installation candidate. The original defaults-validation package matches the
+now-installed Focus removal and damage placement without reverting either.
+
+Verified preview against newest receipt
+C:/Dev/WoW/local-install-backups/apogee-focus-removed-20261020/transaction.json
+changes only ApogeeGroupAlertDev/Discovery/Dictionary.lua and Settings/View.lua.
+Evidence: defaults-install-preview.json, defaults-prod-before.json and
+verify-defaults-install.py. Planned backup: local-install-backups/apogee-dungeon-defaults-20261020.
+NOT INSTALLED: immediate deployment approval remains required by workspace rules.
+Recheck concurrent receipts/candidate before install, verify bytes/backups and PROD
+afterwards, then request user reload and native acceptance of the new Defaults
+confirmation. No private-save access, game operation, push, publication or cleanup.
 
 ## Incoming damage DEV installed - 2026-10-20
 
