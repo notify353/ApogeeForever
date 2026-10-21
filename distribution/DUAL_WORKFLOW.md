@@ -1,3 +1,18 @@
+## Raised target actions installed - 2026-10-20
+
+Owner reports shared-range actions working and requested icons nearer target.
+Heals e4f79a1 / central candidate c759768 raise strip by two UI units (four
+screen pixels at configured scale), aligning its top with target bottom.
+Preserves latest installed simplified health-range update 07c8cca.
+Full child matching-export and central checks passed. Canonical DEV installation
+under standing approval: C:/Dev/WoW/local-install-backups/apogee-raised-actions-20261020/transaction.json,
+chained from apogee-simple-range-20261020. One write: PartyFrames/View.lua.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Evidence under C:/Temp/apogee-party-actions-20261020: raise-child-checks.log,
+raise-central-checks.log, raise-validation/packages, raise-install-result.json,
+raise-install-verification.json. User reload; new spacing acceptance pending.
+No game operation, private saves, enabled-state changes, push or integration.
+
 ## Shared target-action range installed - 2026-10-20
 
 User requested all three action icons appear together only within usable range.
