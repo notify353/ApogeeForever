@@ -1,3 +1,22 @@
+## Target actions inside health bar installed - 2026-10-20
+
+Owner requested cohesive party-role styling for all three target actions.
+Heals 5ca9008 (implementation 10fba95) / central candidate 4eb28af place three
+8-unit icons in 10-unit-wide hit areas inside target health's right edge. The
+text layer keeps icons above incoming-heal fill; fixed 32-unit name/status
+reservation avoids overlap and combat relayout. Shared availability/range,
+combat hiding and tooltips retained. Preserves installed player-only mana cd34b30.
+Full matching-export child suite and central package checks passed. Installed
+under standing checked-DEV approval via canonical installer. Receipt/backup:
+C:/Dev/WoW/local-install-backups/apogee-inline-actions-20261020/transaction.json,
+chained from apogee-player-mana-20261020. Only PartyFrames/View.lua changed.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Evidence under C:/Temp/apogee-party-actions-20261020: inline-combined-child-checks.log,
+inline-central-checks.log, inline-validation/packages, inline-install-result.json,
+inline-install-verification.json. User reload; native appearance/hit targets
+acceptance pending. No game operation, private saves, enabled-state changes,
+push or main integration. Concurrent work and backups preserved.
+
 ## Raised target actions installed - 2026-10-20
 
 Owner reports shared-range actions working and requested icons nearer target.
