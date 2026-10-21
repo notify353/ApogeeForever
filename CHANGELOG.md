@@ -1,3 +1,7 @@
+## Unreleased - Target action spacing
+
+- Raise the target action icons four screen pixels closer to their target bar.
+
 ## Unreleased - Shared target action range
 
 - Show the three target actions together only when native Follow and inspection availability/range checks pass.
