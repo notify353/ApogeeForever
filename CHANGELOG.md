@@ -1,3 +1,7 @@
+## Unreleased - Generated regression coverage
+
+- Restore strict buff recipient and player-only druid power checks in both generated families; remove duplicate binding and range suite entries.
+
 ## Unreleased - Target action alignment
 
 - Place target action icons inside the right edge of target health, matching role icon size and spacing with reserved name space.
