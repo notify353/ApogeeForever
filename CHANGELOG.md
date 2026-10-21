@@ -1,72 +1,19 @@
-## Unreleased - Generated regression coverage
-
-- Restore strict buff recipient and player-only druid power checks in both generated families; remove duplicate binding and range suite entries.
-
-## Unreleased - Target action alignment
-
-- Place target action icons inside the right edge of target health, matching role icon size and spacing with reserved name space.
-
-## Unreleased - Target action spacing
-
-- Raise the target action icons four screen pixels closer to their target bar.
-
-## Unreleased - Shared target action range
-
-- Show the three target actions together only when native Follow and inspection availability/range checks pass.
-
-## Unreleased - Icon-only target actions
-
-- Remove labels and the wide strip background; center three evenly spaced action icons beneath the target bar.
-
-## Unreleased - Smart buffs
-
-- Consolidate Heals Follow, Inspect and Talents into a compact labeled target-only strip; remove party-row copies and buff-dependent positioning.
-
-- Prefer Kings for Paladin tanks, with Wisdom as the learned fallback.
-
-- Replace Heals Buff reminders with learned-spell Smart, Manual and Off controls across classes. Keep Paladin suggestions and tune them for five-player dungeon roles.
-
-## Unreleased
-
-- Move party Follow/Inspect/Talents to a muted left-side group that shifts
-  outward around buff suggestions and expanded choices.
-
-- Add Inspect Talents beside party Follow/Inspect, opening the native talent
-  tree after matching inspection data arrives. Keep muted styling/combat hiding.
-
-- Make party Follow/Inspect icons smaller and muted, and hide them completely
-  in combat while keeping adjacent controls in place.
-
-- Add Follow and Inspect beside party-member cleanse controls outside combat.
-
-- Essentials now suppresses checked errors only in combat, with actionable errors
-  visible by default. Defaults restores all convenience and learned-error choices.
-
-- Restore confirmed dungeon wording Defaults without resetting alert preferences or discovery history.
-
-- Simplify Dungeons settings to predefined wording checkboxes per dungeon. Keep background discovery and saved history; archive personal additions without applying them. Remove editing tabs and reset actions. - incoming damage comparison
-
-- Add the Essentials compact combat-only Physical/Magic incoming-damage split, reset each fight.
-
 # Changelog
 
 ## [Unreleased]
 
-- Place the Heals leader crown to the left of the role icon.
-
-- Hide Heals role and party leader indicators during combat and refresh them afterward.
-
-- Preserve Blizzard's multilingual font family when sizing dungeon roster names.
-
-- Show assigned tank, healer and damage roles beside the Heals party leader crown.
-- Recognize reviewed dungeon phrases while preserving native dungeon identities,
-  personal mappings and exclusions. Ambiguous shorthand remains unconfirmed.
-
-- Show a small gold crown on the party leader's Heals row.
-
-- Remove temporary Heals Focus health checks and their tests after choosing native Blizzard health alerts.
-
-- Match Heals level labels to the compact name font to prevent two-digit truncation.
+- Add Smart, Manual and Off buff controls across classes, with learned-spell suggestions and Paladin guidance for five-player dungeon roles. Prefer Kings for Paladin tanks, falling back to Wisdom when needed.
+- Keep healing and buff clicks on their selected recipient; unavailable or invalid recipients no longer fall back to casting on yourself.
+- Fade only health bars and their text for confirmed out-of-range unmodified left-click spells. Buffs keep their own range display; non-casting and bandage bindings use nearby-player range.
+- Add compact Follow, Inspect and Inspect Talents icons inside the target health bar. They appear together for eligible nearby players and hide during combat.
+- Show the party leader crown beside assigned role icons outside combat, and improve two-digit level labels.
+- Show mana above form power only on your own druid player bar. Party, target and target-of-target rows use their active power.
+- Add a per-fight Physical/Magic incoming-damage display above the Apogee player health bar, including damage from all sources.
+- Suppress selected gameplay errors only during combat and keep actionable errors visible by default. Apply the new error defaults once to existing accounts; later choices remain saved. Defaults restores convenience and error choices.
+- Simplify Dungeons settings to predefined wording checkboxes with confirmed wording Defaults. Preserve exclusions, discovery history, alert preferences and archived personal additions; personal additions remain inactive.
+- Improve reviewed dungeon phrases and preserve Blizzard's multilingual roster fonts.
+- Remove the temporary Focus health diagnostic.
+- Reload after updating. The one-time error-default update is intentional; review your error choices in Settings if you previously customized them.
 
 ## [1.14.8] - 2026-10-18
 
@@ -917,7 +864,3 @@ Supports World of Warcraft Forever 1.60.1. Reload the UI after updating.
 - Missing party-buff and self-buff reminders.
 - Spell tracking, tabbed configuration, minimap controls, and a class-aware macro library.
 - Initial CurseForge and GitHub distribution materials.
-## Unreleased - incoming damage placement
-
-- Center the Physical/Magic row above the Apogee player health bar and follow
-  party-stack movement, using the matching PROD or DEV anchor.
