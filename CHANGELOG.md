@@ -1,3 +1,7 @@
+## Unreleased - Icon-only target actions
+
+- Remove labels and the wide strip background; center three evenly spaced action icons beneath the target bar.
+
 ## Unreleased - Smart buffs
 
 - Consolidate Heals Follow, Inspect and Talents into a compact labeled target-only strip; remove party-row copies and buff-dependent positioning.
