@@ -1,3 +1,16 @@
+## Target action strip prepared - 2026-10-20
+
+Owner requested polished target-only actions and explicitly authorized installation
+once checks pass. Heals ae2071e combines the new labeled strip with the installed
+druid power update 4209cf4. Only current friendly non-self players qualify;
+combat hides the native parent, target changes cancel pending talent requests.
+Fixed placement beneath target reuses the gap above player without buff shifts.
+Evidence: C:/Temp/apogee-party-actions-20261020/target-combined-child-checks.log,
+target-combined-central-checks.log and target-combined-validation/packages.
+Install must chain from apogee-druid-power-20261020; planned backup
+C:/Dev/WoW/local-install-backups/apogee-target-actions-20261020.
+Native appearance, combat transition and inspection acceptance remain pending.
+
 ## Left-side party actions installed - 2026-10-20
 
 Owner explicitly approved revised DEV installation. Checked candidate f196ef0

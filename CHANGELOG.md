@@ -1,5 +1,7 @@
 ## Unreleased - Smart buffs
 
+- Consolidate Heals Follow, Inspect and Talents into a compact labeled target-only strip; remove party-row copies and buff-dependent positioning.
+
 - Prefer Kings for Paladin tanks, with Wisdom as the learned fallback.
 
 - Replace Heals Buff reminders with learned-spell Smart, Manual and Off controls across classes. Keep Paladin suggestions and tune them for five-player dungeon roles.
