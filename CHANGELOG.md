@@ -1,3 +1,7 @@
+## Unreleased - Target action alignment
+
+- Place target action icons inside the right edge of target health, matching role icon size and spacing with reserved name space.
+
 ## Unreleased - Target action spacing
 
 - Raise the target action icons four screen pixels closer to their target bar.
