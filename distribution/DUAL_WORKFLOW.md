@@ -1,3 +1,17 @@
+## Left-side party actions installed - 2026-10-20
+
+Owner explicitly approved revised DEV installation. Checked candidate f196ef0
+with Heals 899d1c7 installed through canonical central installer. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-left-actions-20261020/transaction.json.
+Chained from apogee-strict-heals-20261020. Verified 116 installed files, 137
+backup files and 111 unchanged PROD files. Three DEV writes: Buffs/View.lua,
+PartyFrames/View.lua and docs/wow-api-export.json. Evidence under
+C:/Temp/apogee-party-actions-20261020: left-actions-install-result.json and
+left-actions-install-verification.json. User reload; no restart/discovery changes.
+Left action placement, shifting around buffs, combat hiding and native talent
+inspection await user in-game acceptance. No game operation, private saves,
+enable preference changes, PROD writes, push or main integration.
+
 ## Left-side party actions prepared - 2026-10-20
 
 Heals 899d1c7 places Follow, Inspect and Talents in an evenly spaced, muted
