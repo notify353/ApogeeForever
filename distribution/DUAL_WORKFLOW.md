@@ -1,3 +1,21 @@
+## Icon-only target actions installed - 2026-10-20
+
+Owner requested removal of labels after in-game screenshot. Heals d97165c /
+central candidate 79e803d center three 16-unit hit areas with four-unit gaps,
+10-unit icons, no text and no persistent background beneath target. Hover tooltips
+and native combat hiding retained. Preserves installed strict-buff fix e58a12f.
+Standing checked-DEV approval verified directly in druid split-power chat human
+turn 01a15be1-348f-7e53-a1f0-8e4792d45bde, matching the workspace decision.
+Matching-export child checks and full central validation passed. Installed via
+canonical central installer; receipt/rollback backup:
+C:/Dev/WoW/local-install-backups/apogee-target-icons-20261020/transaction.json,
+chained from apogee-strict-buffs-20261020. Only PartyFrames/View.lua changed.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Evidence under C:/Temp/apogee-party-actions-20261020: icons-child-checks.log,
+icons-central-checks.log, icons-validation/packages, icons-install-result.json,
+icons-install-verification.json. User reload; appearance acceptance pending.
+No game operation, private saves, enabled-state changes, push or integration.
+
 ## Target-only action strip installed - 2026-10-20
 
 Owner approved installation after checks. Heals ae2071e / central candidate
