@@ -1,3 +1,23 @@
+## Shared target-action range installed - 2026-10-20
+
+User requested all three action icons appear together only within usable range.
+Heals 68cc7cb / central candidate d878cb9 require Follow range 4 and Inspect range
+1 plus CanInspect and existing recipient/capability guards. Unknown results hide
+all icons. Existing 0.2-second range polling updates visibility while moving;
+click-time checks and native combat hiding retained. Preserves installed range
+cues and larger colored talent icon from c23e4f7. Full matching-export child
+suite and central validation passed. Installed under verified standing DEV
+approval via canonical checked installer. Receipt/rollback backup:
+C:/Dev/WoW/local-install-backups/apogee-action-range-20261020/transaction.json,
+chained from apogee-talents-icon-20261020. Only PartyFrames/Runtime.lua and
+PartyFrames/View.lua changed. Verified 116 installed, 137 backup and 111
+unchanged PROD files. Evidence under C:/Temp/apogee-party-actions-20261020:
+action-range-child-checks.log, action-range-central-checks.log,
+action-range-validation/packages, action-range-install-result.json,
+action-range-install-verification.json. User reload; native movement/range
+acceptance pending. Range cannot guarantee server action success. No game
+operation, private saves, enabled-state changes, push or integration.
+
 ## Icon-only target actions installed - 2026-10-20
 
 Owner requested removal of labels after in-game screenshot. Heals d97165c /
