@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.14.9] - 2026-10-20
+
 - Add Smart, Manual and Off buff controls across classes, with learned-spell suggestions and Paladin guidance for five-player dungeon roles. Prefer Kings for Paladin tanks, falling back to Wisdom when needed.
 - Keep healing and buff clicks on their selected recipient; unavailable or invalid recipients no longer fall back to casting on yourself.
 - Fade only health bars and their text for confirmed out-of-range unmodified left-click spells. Buffs keep their own range display; non-casting and bandage bindings use nearby-player range.
