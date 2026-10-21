@@ -1,4 +1,579 @@
+## Target actions inside health bar installed - 2026-10-20
+
+Owner requested cohesive party-role styling for all three target actions.
+Heals 5ca9008 (implementation 10fba95) / central candidate 4eb28af place three
+8-unit icons in 10-unit-wide hit areas inside target health's right edge. The
+text layer keeps icons above incoming-heal fill; fixed 32-unit name/status
+reservation avoids overlap and combat relayout. Shared availability/range,
+combat hiding and tooltips retained. Preserves installed player-only mana cd34b30.
+Full matching-export child suite and central package checks passed. Installed
+under standing checked-DEV approval via canonical installer. Receipt/backup:
+C:/Dev/WoW/local-install-backups/apogee-inline-actions-20261020/transaction.json,
+chained from apogee-player-mana-20261020. Only PartyFrames/View.lua changed.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Evidence under C:/Temp/apogee-party-actions-20261020: inline-combined-child-checks.log,
+inline-central-checks.log, inline-validation/packages, inline-install-result.json,
+inline-install-verification.json. User reload; native appearance/hit targets
+acceptance pending. No game operation, private saves, enabled-state changes,
+push or main integration. Concurrent work and backups preserved.
+
+## Raised target actions installed - 2026-10-20
+
+Owner reports shared-range actions working and requested icons nearer target.
+Heals e4f79a1 / central candidate c759768 raise strip by two UI units (four
+screen pixels at configured scale), aligning its top with target bottom.
+Preserves latest installed simplified health-range update 07c8cca.
+Full child matching-export and central checks passed. Canonical DEV installation
+under standing approval: C:/Dev/WoW/local-install-backups/apogee-raised-actions-20261020/transaction.json,
+chained from apogee-simple-range-20261020. One write: PartyFrames/View.lua.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Evidence under C:/Temp/apogee-party-actions-20261020: raise-child-checks.log,
+raise-central-checks.log, raise-validation/packages, raise-install-result.json,
+raise-install-verification.json. User reload; new spacing acceptance pending.
+No game operation, private saves, enabled-state changes, push or integration.
+
+## Shared target-action range installed - 2026-10-20
+
+User requested all three action icons appear together only within usable range.
+Heals 68cc7cb / central candidate d878cb9 require Follow range 4 and Inspect range
+1 plus CanInspect and existing recipient/capability guards. Unknown results hide
+all icons. Existing 0.2-second range polling updates visibility while moving;
+click-time checks and native combat hiding retained. Preserves installed range
+cues and larger colored talent icon from c23e4f7. Full matching-export child
+suite and central validation passed. Installed under verified standing DEV
+approval via canonical checked installer. Receipt/rollback backup:
+C:/Dev/WoW/local-install-backups/apogee-action-range-20261020/transaction.json,
+chained from apogee-talents-icon-20261020. Only PartyFrames/Runtime.lua and
+PartyFrames/View.lua changed. Verified 116 installed, 137 backup and 111
+unchanged PROD files. Evidence under C:/Temp/apogee-party-actions-20261020:
+action-range-child-checks.log, action-range-central-checks.log,
+action-range-validation/packages, action-range-install-result.json,
+action-range-install-verification.json. User reload; native movement/range
+acceptance pending. Range cannot guarantee server action success. No game
+operation, private saves, enabled-state changes, push or integration.
+
+## Icon-only target actions installed - 2026-10-20
+
+Owner requested removal of labels after in-game screenshot. Heals d97165c /
+central candidate 79e803d center three 16-unit hit areas with four-unit gaps,
+10-unit icons, no text and no persistent background beneath target. Hover tooltips
+and native combat hiding retained. Preserves installed strict-buff fix e58a12f.
+Standing checked-DEV approval verified directly in druid split-power chat human
+turn 01a15be1-348f-7e53-a1f0-8e4792d45bde, matching the workspace decision.
+Matching-export child checks and full central validation passed. Installed via
+canonical central installer; receipt/rollback backup:
+C:/Dev/WoW/local-install-backups/apogee-target-icons-20261020/transaction.json,
+chained from apogee-strict-buffs-20261020. Only PartyFrames/View.lua changed.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Evidence under C:/Temp/apogee-party-actions-20261020: icons-child-checks.log,
+icons-central-checks.log, icons-validation/packages, icons-install-result.json,
+icons-install-verification.json. User reload; appearance acceptance pending.
+No game operation, private saves, enabled-state changes, push or integration.
+
+## Target-only action strip installed - 2026-10-20
+
+Owner approved installation after checks. Heals ae2071e / central candidate
+f4c4e76 on codex/party-follow-inspect installed via canonical DEV installer.
+Preserves latest installed druid target power update 4209cf4. Initial preflight
+refused a stale druid-power receipt without writes; rechecked latest druid-targets
+receipt and chained from it successfully. Receipt and rollback backup:
+C:/Dev/WoW/local-install-backups/apogee-target-actions-20261020/transaction.json.
+Full matching-export child checks and central package validation passed.
+Verified 116 installed files, 137 backup files and 111 unchanged PROD files.
+Only Buffs/View.lua, PartyFrames/Runtime.lua and PartyFrames/View.lua changed.
+Evidence in C:/Temp/apogee-party-actions-20261020: target-combined-child-checks.log,
+target-combined-central-checks.log, target-combined-validation/packages,
+target-actions-install-result.json and target-actions-install-verification.json.
+User reload; no restart/discovery changes. Native strip readability, target changes,
+combat transitions and Follow/Inspect/Talents require user in-game acceptance.
+No game operation, private saves, enabled-state changes, push or main integration.
+
+## Target action strip prepared - 2026-10-20
+
+Owner requested polished target-only actions and explicitly authorized installation
+once checks pass. Heals ae2071e combines the new labeled strip with the installed
+druid power update 4209cf4. Only current friendly non-self players qualify;
+combat hides the native parent, target changes cancel pending talent requests.
+Fixed placement beneath target reuses the gap above player without buff shifts.
+Evidence: C:/Temp/apogee-party-actions-20261020/target-combined-child-checks.log,
+target-combined-central-checks.log and target-combined-validation/packages.
+Install must chain from apogee-druid-power-20261020; planned backup
+C:/Dev/WoW/local-install-backups/apogee-target-actions-20261020.
+Native appearance, combat transition and inspection acceptance remain pending.
+
+## Left-side party actions installed - 2026-10-20
+
+Owner explicitly approved revised DEV installation. Checked candidate f196ef0
+with Heals 899d1c7 installed through canonical central installer. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-left-actions-20261020/transaction.json.
+Chained from apogee-strict-heals-20261020. Verified 116 installed files, 137
+backup files and 111 unchanged PROD files. Three DEV writes: Buffs/View.lua,
+PartyFrames/View.lua and docs/wow-api-export.json. Evidence under
+C:/Temp/apogee-party-actions-20261020: left-actions-install-result.json and
+left-actions-install-verification.json. User reload; no restart/discovery changes.
+Left action placement, shifting around buffs, combat hiding and native talent
+inspection await user in-game acceptance. No game operation, private saves,
+enable preference changes, PROD writes, push or main integration.
+
+## Left-side party actions prepared - 2026-10-20
+
+Heals 899d1c7 places Follow, Inspect and Talents in an evenly spaced, muted
+left-side group. Suggested buffs, overflow and expanded choices shift the group
+farther left; collapse restores the position. Native combat hiding is retained.
+Includes previously prepared talent inspection and installed strict-heal fix.
+Full matching-export child suite and central validation pass (77 central tests
+plus generated family checks). Evidence under C:/Temp/apogee-party-actions-20261020:
+left-actions-child-checks.log, left-actions-central-checks.log,
+left-actions-validation/packages and left-actions-install-preview.json.
+Canonical inspect-only preview: three DEV writes, no discovery changes, reload.
+NOT INSTALLED: immediate owner approval required. Chain from
+apogee-strict-heals-20261020/transaction.json; planned backup
+C:/Dev/WoW/local-install-backups/apogee-left-actions-20261020.
+In-game appearance, dynamic spacing and talent display acceptance pending.
+No PROD writes, private saves, game operation, push or main integration.
+
+## Inspect Talents prepared - 2026-10-20
+
+Matching Camelot menu supports native Inspect Talents. Heals 293cdb4 adds the
+third muted party button using NotifyInspect, matching INSPECT_READY GUID and
+PlayerSpellsUtil.OpenToClassTalentsTab. Combat/roster/zoning/gear inspection and
+five-second expiry cancel pending requests; current GUID/range is rechecked.
+Preserves installed strict-recipient fix 3a8a49d and subtle action controls.
+Full matching-export child suite and all 77 central/generated-family tests pass.
+Evidence under C:/Temp/apogee-party-actions-20261020:
+talents-combined-child-checks.log, talents-combined-central-checks.log,
+talents-combined-validation/packages and talents-install-preview.json.
+Preview changes two DEV files, with no discovery changes. NOT INSTALLED:
+immediate owner approval required. Chain from apogee-strict-heals-20261020;
+planned backup C:/Dev/WoW/local-install-backups/apogee-party-talents-20261020.
+Native talent-point display/appearance acceptance pending. No game operation,
+private saves, PROD writes, push, main integration or publication.
+
+## Subtle party actions installed - 2026-10-20
+
+Owner explicitly approved installation. Heals f3b3572 / checked candidate 9880276
+installed through canonical DEV installer using task lock/artifacts after fresh
+export and receipt checks. Only ApogeeHealsDev/PartyFrames/View.lua changed.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-party-actions-subtle-20261020/transaction.json.
+Previous receipt: apogee-party-actions-20261020. Evidence in
+C:/Temp/apogee-party-actions-20261020/subtle-install-result.json and
+subtle-install-verification.json. User /reload; no discovery changes.
+Native mild appearance/combat hiding acceptance pending. No private saves,
+game operation, PROD writes, push, main integration or publication.
+
+## Subtle party actions prepared - 2026-10-20
+
+Heals f3b3572 reduces artwork to 10x10, desaturates and dims idle icons, removes
+backgrounds and brightens on hover. Native combat visibility hides both buttons
+and hit regions while keeping surrounding slots fixed. Full child checks with
+matching export and all 77 central tests/generated-family checks pass.
+Evidence: C:/Temp/apogee-party-actions-20261020/subtle-child-checks.log,
+subtle-central-checks.log, subtle-validation/packages and subtle-install-preview.json.
+Inspect-only preview changes one DEV file, PartyFrames/View.lua.
+NOT INSTALLED: immediate deployment approval required for revised bytes.
+Previous receipt apogee-party-actions-20261020; planned backup
+C:/Dev/WoW/local-install-backups/apogee-party-actions-subtle-20261020.
+No discovery changes; user reload after approved install. Native acceptance pending.
+
+## Party Follow and Inspect installed - 2026-10-20
+
+Owner explicitly approved installation. Combined Heals b46e5f8 preserves the
+concurrently installed Paladin leveling changes from 80c4740. Matching export,
+full child checks and all 77 central tests/generated-family regressions pass.
+Canonical central installer used this task's lock and approved-validation/packages,
+chained from apogee-paladin-leveling-20261020/transaction.json.
+
+Receipt: C:/Dev/WoW/local-install-backups/apogee-party-actions-20261020/transaction.json.
+Verified 116 installed files, 137 backups and 111 unchanged PROD files.
+Only PartyFrames/Runtime.lua, PartyFrames/View.lua and export metadata changed
+under ApogeeHealsDev. No discovery changes; owner /reload and test Follow and
+Inspect on party members outside combat. In-game appearance/input/taint acceptance
+pending. Evidence: C:/Temp/apogee-party-actions-20261020/approved-child-checks.log,
+approved-central-checks.log, install-result.json and install-verification.json.
+No game operation, private saves, enabled-state edits, push or main integration.
+
+## Party Follow and Inspect prepared - 2026-10-20
+
+Heals 854cf79 adds fixed party1-4 Follow and Inspect controls after cleansing,
+before drinking/debuffs. Existing roles/crown/spell art remain unchanged.
+Native actions run on left release outside combat with guarded range checks.
+Combined candidate preserves installed Smart buffs and Essentials migration.
+Matching 70450 child checks and all 77 central tests pass, including action
+checks in both generated families. Evidence:
+C:/Temp/apogee-party-actions-20261020/combined-child-checks.log,
+final-central-checks.log, final-validation/packages and reviewed-preview.json.
+
+Inspect-only preview chains from apogee-smart-buffs-20261020/transaction.json.
+Two DEV Lua writes (PartyFrames/Runtime.lua and View.lua) plus export metadata;
+no discovery changes. NOT INSTALLED: immediate owner deployment approval
+required by workspace instructions. Planned backup:
+C:/Dev/WoW/local-install-backups/apogee-party-actions-20261020.
+Recheck current receipt before installing. Owner reload and native acceptance
+pending. No game operation, private-save access, PROD writes, push or publication.
+
+## Smart buffs installed; Paladin tanks Kings first - 2026-10-20
+
+Owner explicitly approved Kings first/Wisdom fallback for Paladin tanks, checks
+and DEV installation. Heals b1085b5 includes the full Smart buffs change and this
+correction. Matching 70450 export and full child suite pass; all 77 central checks
+and generated PROD/DEV Smart buffs/blessing tests pass. Combined candidate retains
+installed Essentials 405f5b2 automatic error-default migration and Group Alert
+d64d053. One earlier preview refused concurrent Essentials bytes before writes.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-smart-buffs-20261020/transaction.json.
+Chained from apogee-error-defaults-migration-20261020. Independent verification:
+116 installed files, 136 backup files and 111 unchanged PROD files. Exactly eight
+Heals DEV runtime/TOC files changed. Evidence under
+C:/Temp/apogee-smart-buffs-20261020: kings-child-checks.log,
+kings-combined-checks.log, kings-combined-validation/packages,
+kings-install-preview.json, kings-install-result.json and
+kings-install-verification.json. All backups/worktrees retained.
+
+Next: owner /reload, then check Smart buffs and Paladin tank yellow Kings indicator.
+Wisdom is the fallback when Kings is unavailable. New Preferences module and TOC
+may need owner restart only if reload fails to discover them. Native appearance/
+casting acceptance is pending. No game operation, private-save access, enable
+changes, PROD writes, push, main integration or publication.
+
+## Smart buffs ready for DEV approval - 2026-10-20
+
+Heals 5782207 replaces the legacy checklist with learned-spell Smart/Manual/Off
+preferences across classes. Paladin blessings retain suggestions, with reviewed
+five-player defaults: Warrior tank Might, Paladin tank Wisdom, Druid tank Kings,
+Hunter Wisdom, healer/caster Wisdom and melee Might. Ambiguous hybrid damage
+keeps Kings; role/class cannot establish spec. Evidence and limits are recorded
+in the child docs/BLESSING_GUIDANCE.md; no popularity measurement is claimed.
+
+Full Heals checks pass with matching Forever 1.60.1.70450 / 16001 export. All 77
+central tests plus generated PROD/DEV Smart buffs and blessing-guidance tests pass.
+Artifacts: C:/Temp/apogee-smart-buffs-20261020/ready-validation/packages.
+Logs: child-checks.log and ready-checks.log in that task directory.
+Candidate preserves installed Group Alert d64d053, Essentials 808dc95 and their
+reviewed transforms/tests/scoped acceptance from central 0be81cf. Earlier preview
+against an older receipt refused the concurrent Essentials edits before writes.
+
+Final inspect-only preview chains from apogee-error-defaults-20261020 receipt
+and changes exactly eight ApogeeHealsDev runtime/TOC files. Evidence:
+C:/Temp/apogee-smart-buffs-20261020/install-preview.json and runtime-preview.json.
+Planned backup: C:/Dev/WoW/local-install-backups/apogee-smart-buffs-20261020.
+NOT INSTALLED: user workspace instructions require immediate deployment approval.
+Recheck newest receipt/candidate before installing. Owner reload and native UI/
+casting acceptance remain pending; new Preferences module may require restart
+only if reload fails to discover it. No private saves, game operation, PROD writes,
+push, main integration, publication or cleanup. Retained worktrees/backups remain.
+Task record: C:/Temp/apogee-smart-buffs-20261020/task-record.md.
+
+## Combat error defaults accepted — 2026-10-20
+
+Owner confirms: "I reloaded and clicked Defaults. Everything looks good and is working."
+Recorded scoped native DEV acceptance for Essentials 808dc95 in the central
+native-acceptance follow-up checks. All three changed installed Lua files still
+match the verified apogee-error-defaults-20261020 receipt. This accepts the error
+default/reset change only; no claim that every error ID or unrelated features
+were individually tested. Full-package and PROD/CurseForge acceptance are separate.
+No runtime changes, reinstall, game operation, private-save access, push or main
+integration. Next action: none for local use; integration/publication awaits approval.
+Task/evidence: C:/Temp/apogee-error-defaults-20261020. Concurrent workspace memory
+changes and retained worktrees/backups preserved.
+
+## Combat error defaults installed — 2026-10-20
+
+Owner explicitly approved DEV installation. Essentials 808dc95 / central candidate
+3d31b02 installed through this task's checked central installer, chained from the
+damage-player-anchor receipt. Exactly three Essentials DEV Lua files changed:
+Core/Settings.lua, Errors/Runtime.lua and Errors/Settings.lua. Independently verified
+115 installed files, 136 backups and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-error-defaults-20261020/transaction.json.
+Evidence: C:/Temp/apogee-error-defaults-20261020/install-result.json and
+install-verification.json. Prior child and all 77 central checks passed.
+
+Next: owner /reload, then Settings > Apogee DEV > Essentials > Defaults and confirm
+outside combat to adopt the new choices. History stays; all seven switches reset.
+No discovery changes; native UI/audio acceptance remains pending. No game operation,
+private-save access, enable changes, PROD writes, push or main integration.
+Retained worktrees/backups and concurrent workspace handoffs preserved.
+
+## Combat error defaults prepared — 2026-10-20
+
+Essentials 808dc95 on codex/combat-error-defaults keeps 27 of the 53 observed
+errors visible by default and suppresses the other 26 only during combat.
+Explicit saved choices survive until Defaults, which restores all seven switches
+and learned-error choices while preserving history. New/unknown types remain
+checked for combat-only suppression. Settings text explains this behavior.
+Full child runner (27 specs) and current Forever 70450 export pass. Central
+810163a passes all 77 tests, including reset and all 53 errors in generated
+PROD/DEV. Latest installed dungeon Defaults and damage player anchor are retained.
+
+Task root: C:/Temp/apogee-error-defaults-20261020; child and central worktrees
+are its ApogeeEssentials and ApogeeForever folders. Evidence: child-final-checks.log,
+central-final-checks.log, final-validation/packages, install-preview.json and
+changed-files.json. Read-only installer preview succeeds: three DEV Lua changes
+(Core/Settings.lua, Errors/Runtime.lua, Errors/Settings.lua), no discovery changes.
+Latest receipt: C:/Dev/WoW/local-install-backups/apogee-damage-player-anchor-20261020/transaction.json.
+Planned backup: C:/Dev/WoW/local-install-backups/apogee-error-defaults-20261020.
+
+NOT INSTALLED: current owner instructions require immediate deployment approval.
+Use this task's central worktree installer after approval and rechecking latest
+receipt/candidate. Canonical central scripts lack the newer dungeon popup identity
+mapping and correctly refused the combined payload in an initial read-only preview;
+no writes occurred. User /reload, then Essentials Defaults and confirm outside
+combat to adopt the new defaults. Native UI/audio acceptance remains pending.
+No private-save access, game operation, PROD writes, push, main integration or
+publication. Existing worktrees/backups and concurrent workspace handoffs preserved.
+
+## Damage row above player health installed - 2026-10-20
+
+Owner explicitly approved DEV install. Checked combined candidate 2779c79,
+Essentials 37e164b, installed atomically against latest Dungeon Defaults receipt.
+Only ApogeeEssentialsDev/Damage/Runtime.lua changed; no discovery changes.
+Verified 115 installed files, 136 backups and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-damage-player-anchor-20261020/transaction.json.
+Previous receipt: apogee-dungeon-defaults-20261020. Evidence:
+C:/Temp/apogee-incoming-damage-20261020/player-anchor-install-verification.json.
+Row follows the matching Heals player-bar root, centered with an 8px gap.
+Owner reload and visual acceptance pending. No game operation, private-save
+access, enable changes, push, main integration or publication.
+
+## Focus diagnostic removed - 2026-10-20
+
+Owner chose native health alerts and requested removal of this task's tests.
+Heals be8ee10 removes the Focus panel, runtime, TOC hooks and diagnostic spec;
+other Heals features and diagnostics are unchanged. Central combined candidate
+8f91a74 preserves concurrent dungeon settings 86889e7 and damage placement afae151.
+Full child checks with matching Forever 70450 export and all 76 central tests
+plus generated-family checks pass. Evidence under
+C:/Temp/apogee-focus-health-20261020/: removal-child-checks.log,
+removal-final-checks.log, removal-final-validation/, removal-verification.json.
+
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-focus-removed-20261020/transaction.json.
+Chained from apogee-damage-placement-20261020. Verified 115 installed files,
+137 backups and 111 unchanged PROD files. Three Heals DEV writes (bootstrap,
+TOC, settings); explicitly retired ApogeeHealsDev/Health/Diagnostics.lua to
+verified retired-files backup. No private saves, native alert preferences,
+other diagnostics, retained worktrees or historical evidence were removed.
+First preview refused concurrent damage changes before any writes; final
+combined candidate passed full checks and installed successfully. Owner reload
+required; if stale UI persists after reload, restart manually. Native UI
+acceptance pending. No push, main integration or publication performed.
+
+## Incoming damage placement installed - 2026-10-20
+
+Owner explicitly approved the placement fix. Combined candidate 1530154 retains
+the concurrently installed dungeon-settings update from 86889e7; all 76 central
+tests and generated checks passed again. Essentials 4ee0e2f places the row above
+threat, at center Y=45. Atomic DEV install changed only Damage/Runtime.lua.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-damage-placement-20261020/transaction.json,
+chained from apogee-dungeon-settings-20261020. Independently verified 116 installed
+files, 137 backups and 111 unchanged PROD files. Evidence:
+C:/Temp/apogee-incoming-damage-20261020/placement-install-verification.json.
+Owner reload and visual placement acceptance pending; no discovery changes.
+No private-save access, game operation, enable changes, push or publication.
+## Dungeon wording Defaults installed - 2026-10-20
+
+Owner explicitly approved installation. Rechecked latest Focus-removal receipt
+and canonical 0c08183; the preview still changed only Group Alert DEV
+Discovery/Dictionary.lua and Settings/View.lua. Installed checked central
+0f8e219 (handoff 53f902d), child d64d053, through the atomic central DEV installer.
+Verified 115 installed files, 136 backup files and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-dungeon-defaults-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/defaults-install-preview.json,
+defaults-install-log.json and defaults-install-verification.json. Previous receipt:
+apogee-focus-removed-20261020. This supersedes the pending-install status below.
+The checked bytes passed 23 child suites and 76 central tests/generated checks.
+
+Next: owner /reload and visual acceptance of the restored Defaults confirmation.
+Defaults restores all dungeon wording only; alert preferences and discovery history
+remain intact. No new-file/TOC discovery change or restart required. Concurrent
+Focus removal and incoming-damage placement preserved. No game operation,
+private-save access, PROD install, publication, push, main integration or cleanup.
+Future installs must use this newest receipt and preserve this Group Alert pin.
+
+## Dungeon wording Defaults prepared - 2026-10-20
+
+Owner accepted the simplified settings visually ("looking good") and requested
+Defaults back for dungeon wording. Child d64d053 adds a confirmed, combat-guarded
+Defaults button that clears account-wide wording exclusions only, including those
+for official activities discovered later. It preserves alert preferences, archived
+custom/addition data, ignored state and all discovery history. Selection and scroll
+positions remain stable. There is still no native page reset callback.
+
+Central candidate 0f8e219 passed all 76 tests and generated PROD/DEV regressions;
+all 23 child suites passed on matching Forever 70450. Evidence under
+C:/Temp/apogee-dungeon-mappings-20261020: defaults-child-checks.log,
+defaults-central-checks.log, defaults-validation/packages. The alternate
+defaults-install-validation artifacts used an older Heals pin and are NOT the
+installation candidate. The original defaults-validation package matches the
+now-installed Focus removal and damage placement without reverting either.
+
+Verified preview against newest receipt
+C:/Dev/WoW/local-install-backups/apogee-focus-removed-20261020/transaction.json
+changes only ApogeeGroupAlertDev/Discovery/Dictionary.lua and Settings/View.lua.
+Evidence: defaults-install-preview.json, defaults-prod-before.json and
+verify-defaults-install.py. Planned backup: local-install-backups/apogee-dungeon-defaults-20261020.
+NOT INSTALLED: immediate deployment approval remains required by workspace rules.
+Recheck concurrent receipts/candidate before install, verify bytes/backups and PROD
+afterwards, then request user reload and native acceptance of the new Defaults
+confirmation. No private-save access, game operation, push, publication or cleanup.
+
+## Incoming damage DEV installed - 2026-10-20
+
+Owner explicitly approved DEV installation. Checked candidate fb1aada was
+installed atomically via the central installer, chained from the roster-font
+receipt. New receipt:
+C:/Dev/WoW/local-install-backups/apogee-incoming-damage-20261020/transaction.json.
+Independently verified 116 installed files, 136 backup files and all 111 PROD
+files unchanged. Only Essentials DEV bootstrap, TOC and new Damage/Runtime.lua
+changed. Evidence: C:/Temp/apogee-incoming-damage-20261020/install-verification.json.
+Reload required; if the new module is not discovered, user restart may be needed.
+No game operation, private-save access, enable changes, push or publication.
+HUD appearance and full magic/periodic/environmental coverage await owner testing.
+
+## Restricted Dungeons settings installed - 2026-10-20
+
+Owner explicitly approved installation. Rechecked canonical d08c0eb and newest
+indicator-order receipt; no concurrent change since final validation. Installed
+checked candidate 330c8ab (handoff 802eae2), Group Alert 6e3085e, via the central
+atomic DEV installer. Exactly four Group Alert DEV files changed: bootstrap,
+TOC notes, Discovery/Dictionary.lua and Settings/View.lua. Verified all 116
+installed files, 137 backup files and 111 unchanged PROD files.
+Receipt: C:/Dev/WoW/local-install-backups/apogee-dungeon-settings-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/settings-install-preview.json,
+settings-install-log.json and settings-install-verification.json. This supersedes
+the prior pending-install status below. All 23 child suites and 76 central checks
+were passed for these bytes. Concurrent Heals/Essentials changes are retained.
+
+Next: owner /reload and visual acceptance of Dungeons wording toggles, including
+shared per-dungeon choices and combat browsing. Restart only if reload does not
+discover the TOC update. No game operation, private-save access, preference edits,
+PROD install, push, main integration or publication. Retained backups/worktrees
+remain available. Future installs must chain from this new receipt.
+
+## Restricted Dungeons settings prepared - 2026-10-20
+
+Implemented the approved toggle-only plan. Group Alert 6e3085e retains a complete
+predefined catalog separately from enabled mappings, archives personal additions
+without applying/deleting them, and confirms official names through native activity
+discovery. Exclusions, native level data and collected/ignored history survive.
+Settings show alphabetical dungeon/wording lists, per-dungeon shared checkboxes,
+combat browsing with disabled changes, and native fonts. Editing tabs/actions,
+Defaults and the native reset callback are removed.
+
+Child test-local passes all 23 suites on matching Forever 1.60.1.70450 / 16001.
+Central 330c8ab combines this change with latest canonical d08c0eb; all 76 tests
+and generated PROD/DEV regressions pass. Concurrent incoming damage, combat-hidden
+indicators and leader-left/role-right layout are retained. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/settings-child-checks.log,
+settings-final-checks.log and settings-final-validation/packages.
+
+Preview against newest installed receipt
+C:/Dev/WoW/local-install-backups/apogee-indicator-order-20261020/transaction.json
+changes exactly four ApogeeGroupAlertDev files: bootstrap, TOC notes,
+Discovery/Dictionary.lua and Settings/View.lua. Preview/baseline and verification
+helper: settings-install-preview.json, settings-prod-before.json,
+verify-settings-install.py in the task folder. Planned backup:
+C:/Dev/WoW/local-install-backups/apogee-dungeon-settings-20261020.
+
+NOT INSTALLED. Immediate deployment approval is required by the owner's explicit
+plan/workspace rules; earlier installation approvals do not cover this candidate.
+Recheck newest candidate/receipt before installing with the central installer, then
+verify installed bytes/backups and unchanged PROD via the helper's after mode.
+User reload and visual acceptance are required; TOC notes changed, so restart only
+if reload fails to discover the update. No private-save access, game operation,
+push, main integration, publication or cleanup. Worktrees/backups preserved.
+
+## Incoming damage candidate - 2026-10-20
+
+Essentials ba80077 adds the combat-only Physical/Magic incoming damage row,
+reset each fight. Unreadable or incomplete fights show dashes. The candidate
+preserves installed party roles and reviewed roster-font Group Alert aef5998.
+No installer has run for this candidate. Source tests pass; native magic,
+periodic/environmental coverage and HUD placement remain pending. Installation
+requires immediate owner approval under the current workspace agreement.
+Task/evidence: C:/Temp/apogee-incoming-damage-20261020.
+Use the latest installed receipt, currently
+C:/Dev/WoW/local-install-backups/apogee-roster-font-20261020/transaction.json,
+and recheck concurrent candidates before any installation.
+
+## Multilingual roster font installed - 2026-10-20
+
+Owner approved fix, checks and installation. Group Alert aef5998 preserves the
+native multilingual font family with SetFontHeight. All 23 child suites and 75
+central tests/generated checks pass, including synthetic Unicode roster tests.
+Current Heals assigned-role changes are retained alongside prior features.
+Only Group Alert DEV Core/UI.lua changed. Verified 115 installed files, 136
+backup files and 111 unchanged PROD files. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-roster-font-20261020/transaction.json.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/font-final-validation,
+font-final-checks.log and font-install-verification.json. User reload and visual
+glyph acceptance pending. No discovery changes or publication.
+
+## Reviewed dungeon mappings installed - 2026-10-20
+
+Owner approved installation. Combined current ce7876b with the reviewed Group
+Alert 6f2d5f8 pin, preserving Heals level typography, Focus diagnostic and crown.
+All 75 central tests and generated checks pass. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/install-validation and install-checks.log.
+The checked atomic DEV install changed only Group Alert Discovery/Dictionary.lua
+and Matching/Dungeons.lua. Verified 115 installed files, 136 backups and 111
+unchanged PROD files. Receipt:
+C:/Dev/WoW/local-install-backups/apogee-dungeon-mappings-20261020/transaction.json.
+Previous receipt: apogee-party-leader-20261020. No discovery changes; user reload
+required. Native acceptance pending. Use this combined candidate and newest
+receipt for subsequent DEV changes. No publication, push or main integration.
+Historical validation-only artifacts below were not installed.
+
+## Focus health feasibility DEV diagnostic - 2026-10-20
+
+Heals c4957bd combines the silent Focus health diagnostic (33a29ca) with the
+concurrently installed level-font fix af69c4e, retained as cherry-pick c4957bd.
+No sound is implemented or bundled. Settings > Heals > Focus health checks opens
+session-only Start/Stop/Reset controls. Separate combat/outside counters show
+readability and observed 50% crossings. Restricted data never enters comparisons.
+
+Full Heals checks with matching Forever 1.60.1.70450 export pass. All 74 central
+checks and generated PROD/DEV regressions pass, including health diagnostics.
+Evidence: C:/Temp/apogee-focus-health-20261020/validation and child-checks.log,
+central-checks.log, install-preview.json, install-verification.json.
+DEV receipt: C:/Dev/WoW/local-install-backups/apogee-focus-health-20261020/transaction.json,
+chained from the level-truncation receipt. Independently verified 115 installed
+files, 135 backups and 111 unchanged PROD files. Four Heals DEV files changed:
+bootstrap, TOC, UI/Settings.lua and new Health/Diagnostics.lua. Private saves,
+local documentation and enable preferences preserved by the central installer.
+
+Reload required; if the new diagnostic is not discovered, owner may need to
+restart. Owner solo/party combat readability and UI acceptance remain pending;
+previous native acceptance does not cover these new runtime bytes. No game
+operation, PROD install, push, main integration, publication or cleanup occurred.
+Focus asset provenance is incomplete in the legacy attribution; no license claim
+or asset redistribution is made by this diagnostic.
+
 # One source, two distributions
+
+## October 20 reviewed dungeon vocabulary candidate
+
+Group Alert candidate pins 6f2d5f8fdaeb31f54d7a80ff73768de4b9563728.
+Reviewed 200 saved DEV discovery phrases with explicit owner permission limited
+to those records. No raw examples or private data are included in the changes.
+Exact reviewed aliases resolve against known full dungeon names, preserving
+native IDs, level data and personal exclusions. Ambiguous shorthand remains
+unconfirmed. Gnomergon is a reviewed Gnomeregan spelling.
+
+Child test-local passes (22 specs); central validation passes all 75 Python
+tests and generated PROD/DEV gameplay checks, including the pinned vocabulary
+regression. Matching export: Forever 1.60.1.70450 / 16001.
+Evidence: C:/Temp/apogee-dungeon-mappings-20261020/validation and central-checks.log.
+Install preview changes two Group Alert DEV Lua files and the DEV marker TOC.
+Quality follow-up: new aliases now defer to valid personal associations even
+without prior removals. All 22 child specs and 75 central tests pass again,
+including the expanded regression against both generated families. Evidence:
+C:/Temp/apogee-dungeon-mappings-20261020/quality-validation and quality-checks.log.
+The earlier install preview is superseded: concurrent Heals work was installed
+under apogee-level-truncation-20261020. This isolated candidate retains its older
+Heals baseline and is validation-only until reconciled with the latest checked
+central candidate. Do not install either task artifact set directly.
+Installation also awaits immediate owner approval under workspace instructions.
+No PROD installation, saved-data edits, push, integration or publication.
 
 ## October 18 actual stat-gain explanations
 
@@ -1245,3 +1820,13 @@ confirmed everything works. Exact installed Lua bytes were independently reverif
 native-acceptance.json now records current DEV and generated PROD runtime hashes.
 Offline publisher payload validation passes for proposed 1.14.6. Historical evidence
 is retained. Push/integration, final-main hosted checks and tag approval remain pending.
+## Player health bar damage anchor prepared - 2026-10-20
+
+Essentials runtime pin 37e164b centers the damage row above ApogeeHealsAnchor
+with bottom-to-top +8 UI pixels. An exact reviewed DEV mapping points to
+ApogeeHealsDevAnchor; generated tests check family isolation, late load and motion.
+The row retains screen fallback without Heals, and damage/reset behavior is
+unchanged. This supersedes the previous screen-relative placement.
+Combined candidate includes dungeon settings and the installed Focus diagnostic
+removal. No placement install yet; owner approval is required immediately before
+installation. Recheck latest receipt, currently apogee-focus-removed-20261020.

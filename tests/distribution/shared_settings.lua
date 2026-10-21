@@ -140,17 +140,14 @@ local function load(owner, family, denied, saved)
                 local label=assert(find(child.frame,function(c) return c.kind=="FontString" and c.text=="Evaluate gear for" end))
                 assert(label.font=="GameFontHighlightSmall")
             elseif owner[1]=="ApogeeGroupAlert" then
-                local tabs=0
-                for _,button in ipairs(child.frame.children) do
-                    if button.kind=="Button" and rawget(button,"Present") then
-                        tabs=tabs+1; assert(button.template=="UIPanelButtonTemplate")
-                        local marker=assert(find(button,function(c) return c.kind=="Texture" and c.height==2 end))
-                        color(marker,1,0.82,0)
-                        button:Present("Tab",true); assert(button.normalFont=="GameFontNormalSmall" and marker.shown)
-                        button:Present("Tab",false); assert(button.normalFont=="GameFontHighlightSmall" and not marker.shown)
-                    end
+                assert(rawget(child.frame,"OnDefault")==nil, "Dungeons intentionally has no native reset")
+                for _,label in ipairs({"Unmapped","Ignored","Associate","Unassociate","Ignore","Unignore"}) do
+                    assert(not find(child.frame,function(c) return c.text==label end), "Removed editor control: "..label)
                 end
-                assert(tabs==3,"Dungeons owns three native settings tabs")
+                for _,button in ipairs(child.frame.children) do
+                    if button.kind=="Button" then assert(button.text=="Defaults", "Only dungeon Defaults is allowed") end
+                end
+                assert(find(child.frame,function(c) return c.kind=="Button" and c.text=="Defaults" end))
                 local headings=0
                 for _,label in ipairs(child.frame.children) do if label.kind=="FontString" and label.font=="GameFontNormal" then headings=headings+1 end end
                 assert(headings==2,"Dungeons column headings use native gold font")

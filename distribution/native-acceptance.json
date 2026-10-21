@@ -533,6 +533,27 @@
       "schema": 1,
       "scope": "Historical record superseded by October 17 exact installed-runtime acceptance.",
       "testedFamily": "DEV"
+    },
+    {
+      "check": "Essentials combat error defaults and confirmed Defaults reset",
+      "reportedDate": "2026-10-20",
+      "result": "Owner reports: I reloaded and clicked Defaults. Everything looks good and is working.",
+      "testedFamily": "DEV",
+      "sourceCommit": "808dc95f415a85f5f2619e5845f8cc40400fd6bf",
+      "installedReceipt": "C:\\Dev\\WoW\\local-install-backups\\apogee-error-defaults-20261020\\transaction.json",
+      "runtimeFiles": {
+        "DEV": {
+          "ApogeeEssentialsDev/Core/Settings.lua": "d73371c3f3117c00e31c372044489b11fd4bc9499e7a3bc7f572ff97109622da",
+          "ApogeeEssentialsDev/Errors/Runtime.lua": "61c05bf8ccf1a5cf939997ef1bc4be50e7b27d0a9e7b4d83b56bbd591870f877",
+          "ApogeeEssentialsDev/Errors/Settings.lua": "5967e73a5283f0c4133e864b46c4b017733aaef1350e3543c732175816582365"
+        },
+        "PROD": {
+          "ApogeeEssentials/Core/Settings.lua": "2eb1199f70887d9f3591f289c1a0604824e2f8bd80d1fdda0f735bd7d68e2150",
+          "ApogeeEssentials/Errors/Runtime.lua": "e6e9fa9228c5f909275929ca2a5033839c518d590b8701504459b0b133c2d993",
+          "ApogeeEssentials/Errors/Settings.lua": "d036dc489272d30d162626c55f44ad24e4c0125cd4124c3ab01edd6fef1725ca"
+        }
+      },
+      "scope": "Confirms the installed Essentials error-default and reset changes. The three changed DEV Lua files were independently reverified. Does not assert testing of every error ID or unrelated features, or separate PROD/CurseForge-client acceptance. Existing aggregate acceptance hashes remain unchanged."
     }
   ],
   "gateSha256": "ba988f34520cfcfdb5a340138659431d3eed30d42577ee30e326f199851a278d",

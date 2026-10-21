@@ -55,6 +55,90 @@ class DualTests(unittest.TestCase):
                                 str(OPTIONS.artifacts / family / name), name] +
                                [warning_build or '', reviewed_build], check=True)
 
+    def test_reviewed_dungeon_aliases_in_generated_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeGroupAlert')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('dungeon-vocabulary-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            root = (OPTIONS.artifacts / family / name).resolve().as_posix()
+            helper = source['tests/helpers.lua'].decode()
+            helper = helper.replace('local A = {}', 'local A = {__ApogeeFamilyAdmission=function() return true end}')
+            helper = helper.replace('loadfile(path)', 'loadfile(' + json.dumps(root + '/') + ' .. path)')
+            helper = helper.replace("'ApogeeGroupAlert'", repr(name))
+            (harness / 'tests/helpers.lua').write_text(helper)
+            (harness / 'tests/reviewed_vocabulary_spec.lua').write_bytes(source['tests/reviewed_vocabulary_spec.lua'])
+            subprocess.run(['lua', 'tests/reviewed_vocabulary_spec.lua'], cwd=harness, check=True)
+            (harness / 'tests/mock.lua').write_bytes(source['tests/mock.lua'])
+            font_spec = source['tests/roster_font_spec.lua'].decode()
+            font_spec = font_spec.replace("loadfile('", "loadfile('" + root + "/")
+            font_spec = font_spec.replace("'test'", repr(name))
+            (harness / 'tests/roster_font_spec.lua').write_text(font_spec, encoding='utf-8')
+            subprocess.run(['lua', 'tests/roster_font_spec.lua'], cwd=harness, check=True)
+            # Exercise the real generated UI with the owning startup mock, bypassing
+            # only the family lease (covered separately by loading-safety tests).
+            toc_lines = source['ApogeeGroupAlert.toc'].decode().splitlines()
+            fixture_toc = '\n'.join(root + '/' + (name + '.lua' if line == 'ApogeeGroupAlert.lua' else line)
+                                    for line in toc_lines if line.endswith('.lua')) + '\n'
+            (harness / 'ApogeeGroupAlert.toc').write_text(fixture_toc)
+            ui_spec = source['tests/settings_background_spec.lua'].decode().replace(
+                'local A={}', 'local A={__ApogeeFamilyAdmission=function() return true end}')
+            ui_spec = ui_spec.replace(')("ApogeeGroupAlert",A)', ')(' + json.dumps(name) + ',A)')
+            (harness / 'tests/settings_background_spec.lua').write_text(ui_spec)
+            subprocess.run(['lua', 'tests/settings_background_spec.lua'], cwd=harness, check=True)
+            for spec in ('discovery_spec.lua', 'reversible_phrases_spec.lua'):
+                (harness / 'tests' / spec).write_bytes(source['tests/' + spec])
+                subprocess.run(['lua', 'tests/' + spec], cwd=harness, check=True)
+
+
+    def test_incoming_damage_in_generated_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeEssentials')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('incoming-damage-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            for path in ('tests/mock.lua', 'tests/incoming_damage_spec.lua'):
+                data = source[path]
+                if path.endswith('incoming_damage_spec.lua'):
+                    data = data.replace(b'"ApogeeEssentials", addon',
+                                        ('"' + name + '", addon').encode())
+                (harness / path).write_bytes(data)
+            subprocess.run(['lua', 'tests/incoming_damage_spec.lua',
+                            str((OPTIONS.artifacts / family / name).resolve()),
+                            'ApogeeHealsDevAnchor' if family == 'DEV' else 'ApogeeHealsAnchor'],
+                           cwd=harness, check=True)
+
+    def test_essentials_error_defaults_in_generated_families(self):
+        child = next(c for c in self.lock['children'] if c['name'] == 'ApogeeEssentials')
+        source = d.source_tree(OPTIONS.sources_root / child['name'], child['commit'])
+        for family in ('PROD', 'DEV'):
+            name = child['name'] + ('Dev' if family == 'DEV' else '')
+            harness = OPTIONS.artifacts / ('error-defaults-' + family)
+            (harness / 'tests').mkdir(parents=True)
+            generated = OPTIONS.artifacts / family / name
+            # Exercise unchanged generated chunks with admission supplied by the
+            # fixture; complete family gate behavior has separate coverage.
+            for path in source['ApogeeEssentials.toc'].decode().splitlines():
+                if path.endswith('.lua'):
+                    target = name + '.lua' if path == 'ApogeeEssentials.lua' else path
+                    dest = harness / target
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    dest.write_bytes((generated / target).read_bytes())
+            (harness / (name + '.toc')).write_bytes(
+                source['ApogeeEssentials.toc'].replace(b'ApogeeEssentials', name.encode()))
+            for path in ('tests/mock.lua', 'tests/combat_error_defaults_spec.lua', 'tests/defaults_spec.lua', 'tests/error_defaults_migration_spec.lua'):
+                data = source[path].replace(b'ApogeeEssentials', name.encode())
+                if family == 'DEV':
+                    data = data.replace(b'APOGEE_ESSENTIALS_DEFAULTS', b'APOGEE_ESSENTIALS_DEV_DEFAULTS')
+                if path.endswith('mock.lua'):
+                    data = data.replace(b'local addon={}',
+                        b'local addon={__ApogeeFamilyAdmission=function() return true end}')
+                (harness / path).write_bytes(data)
+            for spec in ('combat_error_defaults_spec.lua', 'defaults_spec.lua', 'error_defaults_migration_spec.lua'):
+                subprocess.run(['lua', 'tests/' + spec], cwd=harness, check=True)
+
     def test_shared_settings_parent_in_generated_families(self):
         subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
                         str(OPTIONS.artifacts)], check=True)
@@ -83,7 +167,7 @@ class DualTests(unittest.TestCase):
                                     '(name == "ApogeeHealsDev" and "APOGEE_HEALS_DEV_RESET_CHARACTER" or "APOGEE_HEALS_RESET_CHARACTER")')
             start = runner.index('for _, path in ipairs({')
             end = runner.index('}) do', start) + len('}) do')
-            runner = runner[:start] + 'for _, path in ipairs({"tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua", "tests/buff_foreign_coverage_spec.lua", "tests/buff_range_spec.lua"}) do' + runner[end:]
+            runner = runner[:start] + 'for _, path in ipairs({"tests/bindings_spec.lua", "tests/target_bindings_spec.lua", "tests/range_spec.lua", "tests/target_support_spec.lua", "tests/class_integration_spec.lua", "tests/smart_buffs_spec.lua", "tests/blessing_guidance_spec.lua", "tests/minimap_spec.lua", "tests/buff_strip_spec.lua", "tests/buff_expiry_spec.lua", "tests/buff_foreign_coverage_spec.lua", "tests/buff_range_spec.lua", "tests/leader_spec.lua", "tests/roles_spec.lua", "tests/names_spec.lua", "tests/party_actions_spec.lua", "tests/strict_recipient_spec.lua", "tests/strict_buff_recipient_spec.lua", "tests/druid_power_spec.lua"}) do' + runner[end:]
             runner = runner.replace('    assert(loadstring(fixtureTest,', '    if name == "ApogeeHealsDev" then fixtureTest = fixtureTest:gsub("Apogee Heals", "Apogee Heals DEV") end\n    assert(loadstring(fixtureTest,')
             runner = runner.replace('print("PASS generated DEV buffs, tooltips, cleansing buttons, debuffs, drinking timers and spell-range scenarios")', 'print("PASS generated target buffs, class integration and minimap regressions: " .. name)')
             (harness / 'target-generated.lua').write_text(runner)

@@ -42,6 +42,8 @@ def identity_map(name):
         result['APOGEE_AUCTION_DEFAULTS'] = 'APOGEE_AUCTION_DEV_DEFAULTS'
     if name == 'ApogeeEssentials':
         result['APOGEE_ESSENTIALS_DEFAULTS'] = 'APOGEE_ESSENTIALS_DEV_DEFAULTS'
+        # Read-only UI anchor: Essentials follows the matching Heals player row.
+        result['ApogeeHealsAnchor'] = 'ApogeeHealsDevAnchor'
     if name == 'ApogeeHeals':
         result['APOGEE_HEALS_RESET_CHARACTER'] = 'APOGEE_HEALS_DEV_RESET_CHARACTER'
     if name == 'ApogeeKeybinds':

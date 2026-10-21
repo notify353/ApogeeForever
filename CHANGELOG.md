@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+- Add Smart, Manual and Off buff controls across classes, with learned-spell suggestions and Paladin guidance for five-player dungeon roles. Prefer Kings for Paladin tanks, falling back to Wisdom when needed.
+- Keep healing and buff clicks on their selected recipient; unavailable or invalid recipients no longer fall back to casting on yourself.
+- Fade only health bars and their text for confirmed out-of-range unmodified left-click spells. Buffs keep their own range display; non-casting and bandage bindings use nearby-player range.
+- Add compact Follow, Inspect and Inspect Talents icons inside the target health bar. They appear together for eligible nearby players and hide during combat.
+- Show the party leader crown beside assigned role icons outside combat, and improve two-digit level labels.
+- Show mana above form power only on your own druid player bar. Party, target and target-of-target rows use their active power.
+- Add a per-fight Physical/Magic incoming-damage display above the Apogee player health bar, including damage from all sources.
+- Suppress selected gameplay errors only during combat and keep actionable errors visible by default. Apply the new error defaults once to existing accounts; later choices remain saved. Defaults restores convenience and error choices.
+- Simplify Dungeons settings to predefined wording checkboxes with confirmed wording Defaults. Preserve exclusions, discovery history, alert preferences and archived personal additions; personal additions remain inactive.
+- Improve reviewed dungeon phrases and preserve Blizzard's multilingual roster fonts.
+- Remove the temporary Focus health diagnostic.
+- Reload after updating. The one-time error-default update is intentional; review your error choices in Settings if you previously customized them.
+
 ## [1.14.8] - 2026-10-18
 
 - Filter auction upgrades with a dice on/off switch, optional gold cap, and optional role selection. All roles are included by default.
