@@ -1,3 +1,21 @@
+## Target-only action strip installed - 2026-10-20
+
+Owner approved installation after checks. Heals ae2071e / central candidate
+f4c4e76 on codex/party-follow-inspect installed via canonical DEV installer.
+Preserves latest installed druid target power update 4209cf4. Initial preflight
+refused a stale druid-power receipt without writes; rechecked latest druid-targets
+receipt and chained from it successfully. Receipt and rollback backup:
+C:/Dev/WoW/local-install-backups/apogee-target-actions-20261020/transaction.json.
+Full matching-export child checks and central package validation passed.
+Verified 116 installed files, 137 backup files and 111 unchanged PROD files.
+Only Buffs/View.lua, PartyFrames/Runtime.lua and PartyFrames/View.lua changed.
+Evidence in C:/Temp/apogee-party-actions-20261020: target-combined-child-checks.log,
+target-combined-central-checks.log, target-combined-validation/packages,
+target-actions-install-result.json and target-actions-install-verification.json.
+User reload; no restart/discovery changes. Native strip readability, target changes,
+combat transitions and Follow/Inspect/Talents require user in-game acceptance.
+No game operation, private saves, enabled-state changes, push or main integration.
+
 ## Target action strip prepared - 2026-10-20
 
 Owner requested polished target-only actions and explicitly authorized installation
