@@ -1,3 +1,7 @@
+## Unreleased - Shared target action range
+
+- Show the three target actions together only when native Follow and inspection availability/range checks pass.
+
 ## Unreleased - Icon-only target actions
 
 - Remove labels and the wide strip background; center three evenly spaced action icons beneath the target bar.
