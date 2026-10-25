@@ -50,6 +50,12 @@ then explicitly authorized running-client installation. Use the Era-only
 `--allow-running-era-update` option with the latest installed receipt; it verifies
 unchanged runtime paths, TOC load order and metadata except Version. Initial
 installs, discovery changes and rollback remain closed-client operations.
+Era.7 installed October 25 while Era was running, under that explicit instruction.
+Latest Era receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-error-scope-20261025/transaction.json`.
+Nine writes, 114 installed/backed-up files verified (107 payload entries plus
+seven README files); Forever and archives unchanged. User `/reload` and native
+before-combat acceptance pending. No additional error-choice reset.
 
 ## Raised target actions installed - 2026-10-20
 

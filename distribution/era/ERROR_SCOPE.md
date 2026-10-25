@@ -85,3 +85,14 @@ specs, now 11 Era tests (including live-update/refusal and CLI isolation tests),
 76 admission scenarios, four generated adapters and 77 frozen Forever tests.
 Era.7 and both frozen Forever ZIPs are byte-identical to the preceding validation.
 Evidence: `validation-live.log` and `live-install-preview.json`.
+
+## Installed with Era running
+
+Under the owner's explicit live-install instruction, Era.7 installed successfully
+with `liveUpdate=true` and `clientRunningAtPreflight=true`. Latest receipt/backup:
+`C:/Dev/WoW/local-install-backups/apogee-era-error-scope-20261025/transaction.json`.
+Nine writes verified; all 114 previous files backed up and all 114 installed files
+verified (107 payload receipt entries plus seven preserved README files). All
+1,477 Forever addon files, eight frozen repository files and 275 archive files
+remain unchanged. See `install-verification.json`. The user must `/reload` to load
+the new code; the agent did not operate the game. Native acceptance is pending.
