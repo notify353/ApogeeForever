@@ -18,18 +18,25 @@ for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "Apo
         if option == "missing-secret" then issecretvalue = nil end
         UnitGUID = function() if option ~= "no-guid" then return "Player-Fixture" end end
         Enum = {AddOnEnableState={None=0, Some=1, All=option == "bad-enum" and 9 or 2}}
+        ApogeeUIDev={apiVersion=1,ready=true}
+        for _,method in ipairs({"RegisterComponent","RefreshComponent","UnregisterComponent","RegisterSettings","EnsureSettingsParent"}) do
+            ApogeeUIDev[method]=function() end
+        end
         local prod = option == "prod-enabled" or option == "prod-loaded" or option == "legacy-prod" or option == "bad-state"
         C_AddOns = {
             GetNumAddOns=function() return prod and 2 or 1 end,
             GetAddOnName=function(i) return i == 1 and name or "ApogeeHeals" end,
+            GetAddOnDependencies=function() return "ApogeeUIDev" end,
             GetAddOnMetadata=function(addon, key)
                 if option == "metadata-error" then error("private text") end
+                if key == "Version" then return "fixture" end
+                if key == "X-Apogee-UI-API" then return "1" end
                 if key == "X-Apogee-Client" then
                     return option == "secret-target" and secret or option == "wrong-target" and "forever" or "classic-era"
                 end
                 if addon == "ApogeeHeals" and option == "legacy-prod" then return nil end
                 if key == "X-Apogee-Family-Schema" then return "1" end
-                if key == "X-Apogee-Family" then return addon == name and "DEV" or "PROD" end
+                if key == "X-Apogee-Family" then return (addon == name or addon == "ApogeeUIDev") and "DEV" or "PROD" end
             end,
             GetAddOnEnableState=function(_, guid)
                 assert(guid == "Player-Fixture")

@@ -1,5 +1,19 @@
 # Shared launcher - Era.8 / future Forever
 
+## Era.9 audit follow-up
+
+Native Menu.lua releases pooled frames after AddMenuReleasedCallback. The service
+now clears its exact root reference there (not on unrelated submenu releases),
+preventing later combat/launcher cleanup from closing a reused menu frame.
+New generated admission checks enforce matching support API, version and family,
+the exact dependency, and a successfully initialized service before child chunks.
+Dependencies use C_AddOns.GetAddOnDependencies (the variadic string result in
+fresh AddOnsDocumentation.lua), not a guessed GetAddOnMetadata key. Future
+Forever must verify this contract again against its fresh export before use.
+Only support-enabled candidates receive this extra guard; frozen packages remain
+byte-identical. Tests reproduce both defects before the fixes and run against Era
+DEV and isolated future Forever PROD/DEV. Native acceptance remains user-owned.
+
 One Apogee UI support addon owns the green 32-unit minimap button, native context
 menu, Settings parent and per-character schema-1 angle (default 220 degrees).
 Source is pinned from Essentials Shared/ApogeeUI, separately packaged. Each

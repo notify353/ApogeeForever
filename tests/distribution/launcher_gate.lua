@@ -1,0 +1,77 @@
+-- Read actual generated metadata and exercise admission before any gameplay.
+local root,family,target=assert(arg[1]),assert(arg[2]),assert(arg[3])
+local suffix=family=='DEV' and 'Dev' or ''
+local support='ApogeeUI'..suffix
+local bases={'ApogeeUI','ApogeeHeals','ApogeeKeybinds','ApogeeGroupAlert','ApogeeEssentials'}
+if target~='era' then bases[#bases+1]='ApogeeStats' end
+local scenarios=0
+local originalPrint=print
+for _,base in ipairs(bases) do
+    local name=base..suffix
+    for _,scenario in ipairs({'allowed','api','version','family','missing','dependency',
+        'runtime-missing','runtime-api','runtime-not-ready','runtime-incomplete'}) do
+        if base~='ApogeeUI' or not scenario:match('^runtime') and scenario~='dependency' then
+            local metadata,paths={},{}
+            for _,b in ipairs(bases) do
+                local n=b..suffix; metadata[n]={}; paths[n]={}
+                for line in io.lines(root..'/'..n..'/'..n..'.toc') do
+                    local k,v=line:match('^## ([^:]+):%s*(.-)%s*$')
+                    if k then metadata[n][k]=v
+                    elseif line:match('%.lua$') then paths[n][#paths[n]+1]=line end
+                end
+            end
+            if scenario=='api' then metadata[support]['X-Apogee-UI-API']='2' end
+            if scenario=='version' then
+                if name==support then metadata[support].Version=nil
+                else metadata[support].Version='different-package' end
+            end
+            if scenario=='family' then metadata[support]['X-Apogee-Family']='OTHER' end
+            if scenario=='missing' then metadata[support]=nil end
+            if scenario=='dependency' then metadata[name].Dependencies='ApogeeUIOtherFamily' end
+            local service={apiVersion=1,ready=true}
+            for _,method in ipairs({'RegisterComponent','RefreshComponent','UnregisterComponent','RegisterSettings','EnsureSettingsParent'}) do
+                service[method]=function() end
+            end
+            if scenario=='runtime-api' then service.apiVersion=2 end
+            if scenario=='runtime-not-ready' then service.ready=false end
+            if scenario=='runtime-incomplete' then service.RegisterComponent=nil end
+            _G[support]=scenario~='runtime-missing' and service or nil
+            ApogeeDistributionFamilyLease=nil
+            issecretvalue=function() return false end
+            WOW_PROJECT_CLASSIC,WOW_PROJECT_ID=2,2
+            GetBuildInfo=function() return '1.15.9' end
+            UnitGUID=function() return 'Player-Fixture' end
+            Enum={AddOnEnableState={None=0,Some=1,All=2}}
+            C_AddOns={
+                GetNumAddOns=function() return #bases end,
+                GetAddOnName=function(i) return bases[i]..suffix end,
+                GetAddOnMetadata=function(n,k)
+                    assert(k~='Dependencies','Dependencies use their dedicated native API')
+                    return metadata[n] and metadata[n][k]
+                end,
+                GetAddOnDependencies=function(n) return metadata[n] and metadata[n].Dependencies end,
+                GetAddOnEnableState=function() return 2 end,
+                IsAddOnLoaded=function() return false end,
+            }
+            print=function() end
+            local ns={}
+            assert(loadfile(root..'/'..name..'/__Distribution/FamilyGate.lua'))(name,ns)
+            if scenario=='allowed' then
+                assert(ns.__ApogeeFamilyAdmission and ns.__ApogeeFamilyAdmission(name),name..' denied')
+                if name~=support then
+                    service.apiVersion=2
+                    assert(not ns.__ApogeeFamilyAdmission(name),'later chunks must revalidate support')
+                end
+            else
+                assert(not ns.__ApogeeFamilyAdmission or not ns.__ApogeeFamilyAdmission(name),name..' admitted '..scenario)
+                CreateFrame=function() error('Denied package created frame') end
+                for _,p in ipairs(paths[name]) do
+                    if not p:match('^__Distribution/') then assert(loadfile(root..'/'..name..'/'..p))(name,ns) end
+                end
+            end
+            scenarios=scenarios+1
+        end
+    end
+end
+print=originalPrint
+print('PASS generated launcher admission: '..scenarios..' '..target..' '..family..' scenarios')

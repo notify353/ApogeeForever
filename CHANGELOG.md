@@ -1,3 +1,11 @@
+## Unreleased - shared launcher bug sweep
+
+- Era.9 clears externally dismissed native menus before Blizzard reuses their
+  pooled frames. Launcher cleanup cannot close another addon's replacement menu.
+- Reject mismatched shared-support API/package/family metadata and incomplete
+  runtime service before component startup, and revalidate each runtime chunk.
+- Extend generated Era and future Forever tests; frozen Forever remains unchanged.
+
 ## Unreleased - shared launcher
 
 Era.8 adds required Apogee UI shared support and one green minimap launcher.

@@ -132,11 +132,11 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "1060262b3e0f0f05c835ab2b96b002a44acb2033",
+      "commit": "8d495ab5f5e06d5bf8814358a7a7cc0a6dab02f9",
       "files": {
         "ApogeeEssentials.lua": "7b81726fb48f4c23881438f6906c83d96376b2dde46f00058d7697c1e52a0dca",
         "ApogeeEssentials.toc": "b90d1db125e7c1650a75b84015ccc0efda91e2cfb5359615ee8e271acb204fb6",
-        "CHANGELOG.md": "d0bdaf75f99de1b95eb714671c6eba1aeb98c37a9fd507289669c4a2f14c184e",
+        "CHANGELOG.md": "5428a97376aebab06ce6a9d9073bbe9d64b5c9bd194f98e98ab5ea68f313062c",
         "Camera/Runtime.lua": "4b0d1fa5779ee0de6919b81789e1967b8ba818ae9111824b69e450b2fc2e7e9b",
         "Camera/Zoom.lua": "dbc434649beb411cc3471bd5a05db8750fcd866eac5ed40a065893def9ab89ba",
         "Core/CVarDefault.lua": "bad301a75b6de2ade57fe0d1a732c11d7c8538f897df446093b83cc130b45a2e",
@@ -157,7 +157,7 @@
         "Nameplates/Runtime.lua": "c9737b0fc256ef365c78dc71a9b01622a66627001c6a8a3da88e45e12b24c589",
         "README.md": "73df0c5c7767824103399f927d46ae05fde51ece03342f381e1a50ac7e2c7ea1",
         "docs/ACCEPTANCE.md": "7659878fc3045a05c97b38a78ee523d1e599e8c9bea94893a9ae86217cce1a2f",
-        "docs/API_REFERENCE.md": "e2ccbac75bb589c53e5fd8440848bbd623fe3638b758e268f6405d4b4114dee7",
+        "docs/API_REFERENCE.md": "9d2c3ecc47689703356b80a3024a30f02fcc01e5f3b2d94386a45d8a7ff2db7e",
         "docs/DEEP_REVIEW_2026-09-24.md": "28ecd785cdf54930cb95f4364c142d78133ce71baeb647d34d270467545ea5b8"
       },
       "name": "ApogeeEssentials",
@@ -223,9 +223,9 @@
   "supportModules": [
     {
       "apiVersion": 1,
-      "commit": "1060262b3e0f0f05c835ab2b96b002a44acb2033",
+      "commit": "8d495ab5f5e06d5bf8814358a7a7cc0a6dab02f9",
       "files": {
-        "ApogeeUI.lua": "17720e8d9f90ebf910d82b92a49bb9bc850178262a61b24ca6dec7fbeaf23af7",
+        "ApogeeUI.lua": "9ad41985f98d7b13c050a35721f0c1b578e9ae4ace9d586b4643468c97588b20",
         "ApogeeUI.toc": "2f6d36c2e6e0522e671b1c35b2bfa5fd06b7f60073041afe7278a61a07caa488",
         "Client.lua": "633eca8cee662a9136902baa6fd9ad981641935b9284504c1ea0d661368156f8",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
@@ -239,5 +239,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.8-launcher.1"
+  "version": "1.14.8-launcher.2"
 }

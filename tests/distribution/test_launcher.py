@@ -36,6 +36,7 @@ class LauncherTests(unittest.TestCase):
                 name='ApogeeUI'+('Dev' if family=='DEV' else '')
                 env=os.environ.copy(); env.update(APOGEE_UI_ROOT=str(Path(folder)/name),APOGEE_UI_NAME=name,APOGEE_COMPONENTS_ROOT=folder)
                 subprocess.run(['lua','tests/launcher_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
+                subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target],check=True)
                 if target=='forever-offline':
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=CHILDREN/'ApogeeStats',check=True)

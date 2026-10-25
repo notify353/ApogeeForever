@@ -163,6 +163,7 @@ def family_files(lock, sources_root, family):
                     for k, v in meta.items()}
         if child.get('uiApi') == 1:
             meta['Dependencies'] = 'ApogeeUIDev' if family == 'DEV' else 'ApogeeUI'
+            meta['Version'] = lock['version']
         renamed = {p: name + '.lua' if p == old + '.lua' else p for p in runtime}
         toc = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()) + '\n'
         toc += GATE_PATH + '\n' + ''.join(renamed[p] + '\n' for p in runtime)

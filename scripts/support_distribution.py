@@ -30,7 +30,8 @@ def gate_bytes(lock, base):
     if not descriptor(lock): return base
     old = b'"ApogeeAuction", "ApogeeStats"}'
     d.require(base.count(old) == 1, 'Unexpected gate member list')
-    return base.replace(old,b'"ApogeeAuction", "ApogeeStats", "ApogeeUI"}')
+    return (base.replace(old,b'"ApogeeAuction", "ApogeeStats", "ApogeeUI"}')
+            + b'\n' + (d.ROOT / 'distribution/LauncherGate.lua').read_bytes())
 
 def add_files(lock, sources_root, family, output, changes, gate, dual):
     module, files = source(lock,sources_root)
