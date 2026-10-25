@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "1d038f4882ac04f7a3bb8ac35d2788be7c1d02b5",
+      "commit": "c184a9661d231a8f13a6d3e979b468b78b007406",
       "files": {
         "ApogeeHeals.lua": "dfca550a7aeb5d0b34c8e2476e7b4eda09e1dc4d623a564255f9ca10bf11c627",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
@@ -12,7 +12,7 @@
         "Buffs/Preferences.lua": "d6f6a648c8782a76c8e1649d07a7bf60767381c64384944a231a9a1394d5f1c2",
         "Buffs/Runtime.lua": "56b9d9bf418c0a7621e980aa5430d2b5b954a8367e995086cfdd17fba0bf1cf5",
         "Buffs/View.lua": "45a1dd4a32892dd095107ed06c442efffd714ee876d931e6fd0d92c5abc93fbf",
-        "CHANGELOG.md": "6e71a3a7c6b0dc7dfc8d047b5c672b4b89ad13cfd3926f4f6148f3193b5fc812",
+        "CHANGELOG.md": "0c5ed8b80baf71f36cbb38f357c6ba1aeb0e41f0faab9b4984fa0d93273dd5c3",
         "Cleansing/Runtime.lua": "78ec7cd14a77a81b0bfebc12dfa1056c0456dfeaa61b0c0e83f12cf339a51f16",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "442416f78c3d5e1a5fa37df299155cadecb9f81f82490a7d4b42779a8701b914",
@@ -30,7 +30,7 @@
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
         "Threat/View.lua": "8e268742ebe52800c0df414e3760860e6ac95744a3868e3f701eb54b17c6dec0",
-        "UI/BindingEditor.lua": "974d048a8bdb059722991674f2a6153637ff0330778e6ed1c446d9bacead436a",
+        "UI/BindingEditor.lua": "9c60604463bbdeae77c2ed870deb058424cf8523e0fee6fd7723f5c9100ed8ca",
         "UI/Minimap.lua": "ebf7850bcfce5080a27271c20b46da1dc84975540bb79f07a61bf51f01286b30",
         "UI/Settings.lua": "8d9e997190c7081b91e43123bc575ee43813952935f180e78346794977ea3e5e",
         "UI/Style.lua": "4827ccb8a8c3fb3eb7faa20868650e0101997213d3a90acbe7519e2437b9c6cc",
@@ -240,5 +240,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.8-launcher.9"
+  "version": "1.14.8-launcher.10"
 }

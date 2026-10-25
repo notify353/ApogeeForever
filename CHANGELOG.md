@@ -1,3 +1,8 @@
+## Unreleased - concise healing tooltip
+
+- Era.17 and future Forever use a two-line healing editor tooltip explaining
+  default and manually assigned spell ranks.
+
 ## Unreleased - Classic bandage drop correction
 
 - Era.16 recognizes standard bandages reported as generic consumables, fixing

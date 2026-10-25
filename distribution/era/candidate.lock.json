@@ -2,7 +2,7 @@
   "apiEvidenceSha256": "b15c7db60a402ebe76254e6d8bd17b7cb0267d285ac9b463e4e13a7cac3f7e4d",
   "children": [
     {
-      "commit": "1d038f4882ac04f7a3bb8ac35d2788be7c1d02b5",
+      "commit": "c184a9661d231a8f13a6d3e979b468b78b007406",
       "files": {
         "ApogeeHeals.lua": "dfca550a7aeb5d0b34c8e2476e7b4eda09e1dc4d623a564255f9ca10bf11c627",
         "ApogeeHeals_Era.toc": "d8c91cb2ec9dc6f31f8da513ae285f3aaac1eded2bf1698666671452f89be5a1",
@@ -32,7 +32,7 @@
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
         "Threat/View.lua": "8e268742ebe52800c0df414e3760860e6ac95744a3868e3f701eb54b17c6dec0",
-        "UI/BindingEditor.lua": "974d048a8bdb059722991674f2a6153637ff0330778e6ed1c446d9bacead436a",
+        "UI/BindingEditor.lua": "9c60604463bbdeae77c2ed870deb058424cf8523e0fee6fd7723f5c9100ed8ca",
         "UI/Minimap.lua": "ebf7850bcfce5080a27271c20b46da1dc84975540bb79f07a61bf51f01286b30",
         "UI/Settings.lua": "8d9e997190c7081b91e43123bc575ee43813952935f180e78346794977ea3e5e",
         "UI/Style.lua": "4827ccb8a8c3fb3eb7faa20868650e0101997213d3a90acbe7519e2437b9c6cc",
@@ -172,5 +172,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.16"
+  "version": "1.14.8-era.17"
 }
