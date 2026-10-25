@@ -34,6 +34,17 @@ try {
     }
     python -B tests/distribution/test_era.py --sources-root $SourcesRoot --child-worktrees $ChildWorktrees --client-root $ClientRoot -v
     if ($LASTEXITCODE -ne 0) { throw 'Generated Era package checks failed.' }
+    $priorChildren = $env:APOGEE_CHILD_WORKTREES
+    $priorSources = $env:APOGEE_SOURCES_ROOT
+    try {
+        $env:APOGEE_CHILD_WORKTREES = $ChildWorktrees
+        $env:APOGEE_SOURCES_ROOT = $SourcesRoot
+        python -B tests/distribution/test_launcher.py -v
+        if ($LASTEXITCODE -ne 0) { throw 'Generated shared launcher checks failed.' }
+    } finally {
+        $env:APOGEE_CHILD_WORKTREES = $priorChildren
+        $env:APOGEE_SOURCES_ROOT = $priorSources
+    }
     if (-not $SkipFrozenRegression) {
         Write-Host 'Frozen Forever OFFLINE regression checks only; no live Forever validation.'
         foreach ($test in @('test_repository', 'test_curseforge', 'test_publisher')) {

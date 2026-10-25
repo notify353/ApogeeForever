@@ -1,3 +1,11 @@
+## Unreleased - shared launcher
+
+Era.8 adds required Apogee UI shared support and one green minimap launcher.
+Source/API/persistence/installation details and native checklist: distribution/era/LAUNCHER.md.
+New support requires closed-client installation and full restart. The separate
+future-launcher.lock.json prepares Forever source without changing frozen pins
+or its installed beta. No publication or native acceptance is implied.
+
 ## Unreleased - Era pre-combat error suppression
 
 - Pin Era.7 checked-error suppression in and out of combat with accurate settings labels and full clean-account startup tests. Keep saved choices, visible useful-error defaults and Forever's combat-only behavior unchanged.

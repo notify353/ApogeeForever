@@ -313,6 +313,26 @@
     {
       "path": "Blizzard_BuffFrame/Classic/BuffFrame.lua",
       "sha256": "f559dcfe6b07d6370d35d6eb91f46a6182b03b0f905a75e11147a18940f585da"
+    },
+    {
+      "path": "Blizzard_Menu/Blizzard_Menu.toc",
+      "sha256": "2706fdb58b00b607bfaf3a83ec140c2a2071856d76d4f6f7d9f671cfa2fd674e"
+    },
+    {
+      "path": "Blizzard_Menu/Menu.lua",
+      "sha256": "c21111d817ce0a984ea3d38a722869c5db244a7f2f2687d93553ab82bfb33a6d"
+    },
+    {
+      "path": "Blizzard_Menu/MenuUtil.lua",
+      "sha256": "ca1e31c9ad155ab5e87946115c27f850afb36e25e05f2013eef62b4fa4e11c34"
+    },
+    {
+      "path": "Blizzard_Menu/MenuTemplates.lua",
+      "sha256": "bfe3c83169e496a2724b6d4bd1f3331ae16cdaca3b7ba451d8f0c76afe1a9fc7"
+    },
+    {
+      "path": "Blizzard_Menu/Vanilla/MenuVariants.lua",
+      "sha256": "516d341f9dbcd52f7b14eff4fd55c08cdee9ed2ce4267aea7cea125e0846cfaa"
     }
   ],
   "interface": 11509,

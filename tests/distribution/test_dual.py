@@ -142,11 +142,11 @@ class DualTests(unittest.TestCase):
     def test_shared_settings_parent_in_generated_families(self):
         subprocess.run(['lua', str(ROOT / 'tests/distribution/shared_settings.lua'),
                         str(OPTIONS.artifacts)], check=True)
-        for name in ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials', 'ApogeeAuction'):
+        for name in ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials', 'ApogeeAuction', 'ApogeeUI', 'ApogeeStats'):
             output, edits = dual.transform_lua(b'-- ApogeeSettingsRegistry\nApogeeSettingsRegistry = {}\n', name)
             self.assertEqual(output, b'-- ApogeeSettingsRegistry\nApogeeDevSettingsRegistry = {}\n')
             self.assertEqual(len(edits), 1)
-        for name in ('ApogeeTank', 'ApogeeStats'):
+        for name in ('ApogeeTank',):
             self.assertNotIn('ApogeeSettingsRegistry', dual.identity_map(name))
 
     def test_heals_target_buffs_require_friendly_players_in_both_families(self):

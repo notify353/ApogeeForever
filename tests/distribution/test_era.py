@@ -39,7 +39,11 @@ class EraTests(unittest.TestCase):
                 self.assertFalse(any(k.startswith('SavedVariables') for k in meta))
             else:
                 self.assertEqual(runtime[0], dual.GATE_PATH)
-                self.assertEqual(runtime[-2:], ['Era/Adapter.lua', name + '.lua'])
+                if name == 'ApogeeUIDev':
+                    self.assertEqual(runtime[1:], ['Client.lua', 'Settings.lua', name + '.lua'])
+                else:
+                    self.assertEqual(runtime[-2:], ['Era/Adapter.lua', name + '.lua'])
+                    self.assertEqual(meta['Dependencies'], 'ApogeeUIDev')
                 for key, value in meta.items():
                     if key.startswith('SavedVariables'):
                         self.assertIn(name, value)

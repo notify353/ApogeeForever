@@ -161,7 +161,7 @@ def put_atomic(root, files):
 def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomic_dev=False, retired=None, atomic_files=False):
     if atomic_dev:
         current_dev = {d.MARKER + 'Dev', *(n + 'Dev' for n in d.ACTIVE_CHILDREN)}
-        d.require(set(names) == current_dev or set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
+        d.require(set(names) in (current_dev, current_dev | {'ApogeeUIDev'}) or set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
                   'Atomic live install is DEV-only')
     client = ordinary(client)
     backup = ordinary(backup)
@@ -226,7 +226,7 @@ def rollback(backup):
     d.require(not backup.is_relative_to(client) and not client.is_relative_to(backup), 'Unsafe backup location')
     addons = under(client, 'Interface/AddOns')
     names = tuple(journal.get('names', NAMES))
-    d.require(names and all(n in NAMES + DEV_NAMES + LOCAL_DEV_NAMES for n in names), 'Unknown journal family')
+    d.require(names and all(n in NAMES + DEV_NAMES + LOCAL_DEV_NAMES + ('ApogeeUI', 'ApogeeUIDev') for n in names), 'Unknown journal family')
     original = tree(backup / 'addons-before')
     d.require(hashes(original) == journal['before'], 'Backup corrupted; no rollback writes')
     current = managed(addons, names)

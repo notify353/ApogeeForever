@@ -9,12 +9,14 @@ import sys
 sys.dont_write_bytecode = True
 import distribution as d
 import dual_distribution as dual
+import support_distribution as support
 import migrate_distribution as m
 
 CONFIG = d.ROOT / 'distribution/era'
 LOCK = CONFIG / 'candidate.lock.json'
 MEMBERS = ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials')
-NAMES = tuple(n + 'Dev' for n in (d.MARKER, *MEMBERS))
+LEGACY_NAMES = tuple(n + 'Dev' for n in (d.MARKER, *MEMBERS))
+NAMES = LEGACY_NAMES + ('ApogeeUIDev',)
 CLIENT = {'flavor': 'classic-era', 'product': 'wow_classic_era',
           'directory': '_classic_era_', 'reviewedBuild': '1.15.9.70003', 'interface': 11509}
 
@@ -36,6 +38,7 @@ def read_lock(path=LOCK):
             d.safe_path(path)
             d.require(re.fullmatch('[0-9a-f]{64}', digest), 'Invalid source hash')
         d.require(child['toc'] in child['files'] and 'Era/Adapter.lua' in child['files'], 'Era adapter missing')
+    d.require(support.descriptor(lock) is not None, 'Era launcher support required')
     return lock
 
 
@@ -63,7 +66,7 @@ def verify_api(client, lock):
 
 def family_files(lock, sources_root):
     output, changes = {}, {}
-    gate = (CONFIG / 'ClientGate.lua').read_bytes() + b'\n' + dual.GATE.read_bytes()
+    gate = (CONFIG / 'ClientGate.lua').read_bytes() + b'\n' + support.gate_bytes(lock, dual.GATE.read_bytes())
     gate += b'\nif namespace.__ApogeeFamilyAdmission and namespace.__ApogeeFamilyAdmission(name) then\n namespace.__ApogeeClient = "classic-era"\nend\n'
     marker = d.MARKER + 'Dev'
     for child in lock['children']:
@@ -85,6 +88,8 @@ def family_files(lock, sources_root):
         meta.update({'Title': dual.LABELS[old] + ' Era DEV', 'Version': lock['version'],
                      'Group': marker, 'Category': 'Apogee Era DEV', 'X-Apogee-Client': 'classic-era',
                      'X-Apogee-Family': 'DEV', 'X-Apogee-Family-Schema': '1'})
+        d.require(meta.get('Dependencies') == 'ApogeeUI' and meta.get('X-Apogee-UI-API') == '1', 'Missing matching UI dependency')
+        meta['Dependencies'] = 'ApogeeUIDev'
         renamed = {p: name + '.lua' if p == old + '.lua' else p for p in runtime}
         toc = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()) + '\n'
         toc += dual.GATE_PATH + '\n' + ''.join(renamed[p] + '\n' for p in runtime)
@@ -102,6 +107,7 @@ def family_files(lock, sources_root):
             else:
                 output[target] = data
         output[name + '/README.md'] = source['Era/README.md']
+    support.add_files(lock, sources_root, 'DEV', output, changes, gate, dual)
     for p in ('LICENSE', 'Media/Textures/ApogeeLogo.png'):
         output[marker + '/' + p] = output['ApogeeKeybindsDev/' + p]
     meta = {'Interface': '11509', 'Title': 'Apogee Era DEV', 'Version': lock['version'],
@@ -127,7 +133,8 @@ def build(lock, sources_root, output, evidence):
                 'lockSha256': d.sha(d.canonical(lock)), 'apiEvidence': evidence,
                 'archive': archive, 'archiveSha256': d.sha(data),
                 'files': m.hashes(files), 'runtimeChanges': changes,
-                'children': [{'name': c['name'], 'commit': c['commit']} for c in lock['children']]}
+                'children': [{'name': c['name'], 'commit': c['commit']} for c in lock['children']],
+                'supportModules': lock['supportModules']}
     (output / 'ERA-DEV-manifest.json').write_bytes(d.canonical(manifest))
     return manifest
 
@@ -141,7 +148,7 @@ def prepare(client, payload, previous=None):
     if previous is not None:
         d.require(previous['schema'] == 1 and previous['status'] == 'installed'
                   and previous.get('target') == 'classic-era' and previous.get('family') == 'DEV'
-                  and set(previous['names']) == set(NAMES), 'Prior Era DEV receipt required')
+                  and set(previous['names']) in (set(NAMES), set(LEGACY_NAMES)), 'Prior Era DEV receipt required')
         d.require(Path(previous['client']).absolute() == client, 'Receipt belongs to another client')
         for p, h in previous['after'].items():
             d.safe_path(p)
@@ -205,7 +212,7 @@ def install_target(args):
                   lockSha256=d.sha(d.canonical(lock)), apiEvidence=evidence,
                   archiveSha256=d.sha(archive.read_bytes()), preservedDocumentation=docs,
                   liveUpdate=live_update, clientRunningAtPreflight=client_running,
-                  activation='User /reload after installation; no settings imported' if previous
+                  activation='Full game restart required for shared UI support; no settings imported' if any(p.startswith('ApogeeUIDev/') and p not in preview['before'] for p in preview['writes']) else 'User /reload after installation; no settings imported' if previous
                   else 'User opens Era and selects Apogee Era DEV; no settings imported')
     (args.backup / 'transaction.json').write_bytes(d.canonical(result))
     return {'status': result['status'], 'target': 'classic-era', 'writeCount': len(result['writes']),

@@ -1,24 +1,28 @@
-# Apogee Era DEV — experimental
+# Apogee Era DEV - experimental
 
-For Classic Era only. Includes Heals, Keybinds, Group Alert and
-Essentials. Native game testing is required; this is not a published release.
+For Classic Era only. Includes Heals, Keybinds, Group Alert, Essentials and the
+required Apogee UI shared support addon. Stats/tooltip and auction functionality
+and the Heals Follow/Inspect/Talents strip remain excluded.
 
-Group Alert supports chat recruitment and native Group Finder listings. Select
-Tank or Healer, then click View to search. Tank/Heal buttons open editable whisper
-drafts; they do not send. Native availability checks still apply.
+One green Apogee minimap button replaces the healing and keybind buttons.
+Left-click for editor actions and component settings; right-click for the shared
+Apogee settings page. Right-drag to move; position is saved per character.
+Healing bindings and keybind editing are independent and can both stay open.
+The launcher is unavailable during combat. Reset its position from its own menu;
+component Defaults buttons do not move it.
 
-The live tank threat stack shows your Sunder Armor, Thunder Clap and Demoralizing
-Shout debuffs, including Sunder stacks. Other players' effects do not count.
-Threat demo is scripted. Unreadable aura data stays unconfirmed.
+Enable the gameplay components you want, with Apogee UI shared support enabled.
+Do not enable another Apogee family alongside Era DEV. Adding shared support
+requires closing and fully restarting the client after installation. Reload is
+not sufficient to guarantee new-addon discovery. The marker has no runtime or saves.
 
-Choose the complete Apogee Era DEV family in AddOns yourself. Settings start
-separately; archived addons and their settings are not imported. Never enable
-another Apogee family alongside this one. Restart the client if new addons are
-not discovered. The distribution marker contains no runtime or saved data.
+Group Alert supports chat recruitment and native Group Finder listings. Tank/Heal
+buttons open editable whisper drafts; they do not send. Native availability applies.
+The tank threat stack displays your Sunder Armor stacks, Thunder Clap and
+Demoralizing Shout; other players' effects do not count. Demo data is scripted.
 
-Not included: Stats/tooltips, auctions, or the Heals
-Follow/Inspect/Talents action strip. Era.4 suppresses routine combat errors by
-default while keeping useful and unknown feedback visible. Learned error choices
-reset once; history and the main switch remain, and later choices persist.
-Outside combat errors remain visible. Unavailable optional client settings
-are disabled. Forever installations and release pins are separate.
+Checked gameplay errors are suppressed before and during combat. Useful and
+unknown errors retain visible defaults; existing choices and main switch survive.
+No new settings reset or import occurs in this update. Unsupported optional
+settings remain disabled. Native user testing is still required.
+Forever installations and release pins remain separate and unchanged.

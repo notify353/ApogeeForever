@@ -1,3 +1,11 @@
+## Shared launcher candidate - 2026-10-25
+
+Era.8 adds required Apogee UI shared support and one green minimap launcher.
+Source/API/persistence/installation details and native checklist: era/LAUNCHER.md.
+New support requires closed-client installation and full restart. The separate
+future-launcher.lock.json prepares Forever source without changing frozen pins
+or its installed beta. No publication or native acceptance is implied.
+
 ## Isolated Classic Era development - 2026-10-24
 
 Owner approved isolated Era work while preserving the last verified Forever
