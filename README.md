@@ -1,5 +1,9 @@
 # Apogee Forever
 
+An isolated, unpublished [Classic Era DEV candidate](distribution/era/README.md)
+is available on the Era development branch. Its pins, API evidence and installer
+target are separate; the Forever beta baseline below remains frozen.
+
 Five focused addons for **World of Warcraft Forever 1.60.1**:
 
 - **Heals:** party frames, click healing and buff reminders.

@@ -1,3 +1,12 @@
+## Isolated Classic Era development - 2026-10-24
+
+Owner approved isolated Era work while preserving the last verified Forever
+beta. See [Era target workflow](era/README.md) for its separate pins, API evidence,
+checks and explicit `--target classic-era` installer. The default target and
+Forever locks remain unchanged. Live Forever validation awaits its future
+release; frozen offline checks do not claim live acceptance. Initial Era
+installation is pending explicit approval and requires the user to close Era.
+
 ## Raised target actions installed - 2026-10-20
 
 Owner reports shared-range actions working and requested icons nearer target.

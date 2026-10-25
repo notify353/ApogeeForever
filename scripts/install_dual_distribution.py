@@ -91,14 +91,19 @@ def main():
     parser.add_argument('--sources-root', type=Path, required=True)
     parser.add_argument('--artifacts', type=Path, required=True)
     parser.add_argument('--backup', type=Path, required=True)
-    parser.add_argument('--lock', type=Path, default=dual.LOCK)
+    parser.add_argument('--target', choices=('forever', 'classic-era'), default='forever')
+    parser.add_argument('--lock', type=Path)
     parser.add_argument('--previous-install', type=Path)
     parser.add_argument('--retire-file', action='append', default=[], help='Exact obsolete DEV Lua path; requires unchanged prior receipt')
     parser.add_argument('--initial-retrofit', action='store_true', help='One-time explicitly authorized PROD safety migration')
     parser.add_argument('--inspect-only', action='store_true')
     args = parser.parse_args()
     try:
-        lock = d.read_lock(args.lock)
+        if args.target == 'classic-era':
+            import era_distribution
+            print(json.dumps(era_distribution.install_target(args)))
+            return
+        lock = d.read_lock(args.lock or dual.LOCK)
         running = m.real_client_preflight(args.client_root, lock, allow_running_dev=not args.initial_retrofit)
         files = payloads(lock, args.sources_root, args.artifacts, args.initial_retrofit)
         known = m.catalog(d.ROOT / 'distribution/migration-known.json')

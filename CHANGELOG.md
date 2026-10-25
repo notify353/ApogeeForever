@@ -1,3 +1,8 @@
+# Unreleased - isolated Classic Era candidate
+
+- Add separate four-module Era DEV pins, fresh API evidence, private-adapter packaging, client admission, checked installer target and reversible recovery. Preserve all Forever pins and default package bytes.
+- Add generated Era regressions and a reproducible test runner; native user acceptance remains pending.
+
 ## Unreleased - Target action alignment
 
 - Place target action icons inside the right edge of target health, matching role icon size and spacing with reserved name space.

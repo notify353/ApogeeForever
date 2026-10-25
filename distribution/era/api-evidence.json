@@ -1,0 +1,193 @@
+{
+  "clientVersion": "1.15.9.70003",
+  "executableSha256": "d8ac9f021a099cde4f2f891b9fc82a3fd67c7c875e8e1a6c4cde1dfd3a6119be",
+  "files": [
+    {
+      "path": "Blizzard_SharedXML/ProjectConstants.lua",
+      "sha256": "6167412ff1bf3c3ab439590e87bafce10f35f9efbbe68c56ee7e3c39a031a57a"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/FrameScriptDocumentation.lua",
+      "sha256": "eebb27581046d43a3f9adc84f04e44d7e422c620954e4c28b79ca914b2cd30b3"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/AddOnsDocumentation.lua",
+      "sha256": "890061cbd367742667e4370980003a2336625fa34df0875447a9807f80c8afa9"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/UnitDocumentation.lua",
+      "sha256": "b9e8124179606c58b5b701fafd28f5f968afe0dc893a915ccc52c57e57c287b5"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SpellBookDocumentation.lua",
+      "sha256": "e0266b68ab72e6681a28bfcc26c82074f90589e6dd4eeea2e767281cac4f8827"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SpellBookConstantsDocumentation.lua",
+      "sha256": "d15143020d7e4723c42a39c9deca6370f38e4d32d84486b301543c556460198c"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SpellDocumentation.lua",
+      "sha256": "ea113d235a7950b358765739c5b3670412232cb44a70cdb3f9ed73fae9251350"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/UnitAuraDocumentation.lua",
+      "sha256": "bcad1e458c058eeb7c52400e71c8668998d828a70648c1b7436125b4eca9fa32"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/ItemDocumentation.lua",
+      "sha256": "56a6938bd9ac19b252e751eac3e621f5bd89c391a2d1d56656e1ce558b5aacc3"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/TooltipInfoDocumentation.lua",
+      "sha256": "0da127daabf1158d305bc0a852d6bd14ff57f3e6c52dde942d094533139857a1"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/KeyBindingsDocumentation.lua",
+      "sha256": "a63a387786d0ddc248d08c1ca0648bf536ad1d4a3f7cde3f19903a0f5487d733"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/ChatInfoDocumentation.lua",
+      "sha256": "c76c0f6569ff29c487b23ff6090f0f161ea82361d9a74bb55c2710973830aaac"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SimpleStatusBarAPIDocumentation.lua",
+      "sha256": "1048fdcdc3018992cf2a004f1faeacdb30d1b0eaf3aa0d62ef23f3ec6964cab7"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/FrameAPICooldownDocumentation.lua",
+      "sha256": "b8ff4e092308862adc758c5f42d449461af30d067bf60a24dc4ff46d6ed42178"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SpecializationInfoDocumentation.lua",
+      "sha256": "e6d76405d793878da512532f935c3602ad23c046c80a609a6879c34b9b6210ad"
+    },
+    {
+      "path": "Blizzard_FrameXML/Blizzard_FrameXML_Vanilla.toc",
+      "sha256": "7e8a9d0dbde3c81aa9fe4faccb94fe660f98a89a953fc05e09cad1aa7f716b5a"
+    },
+    {
+      "path": "Blizzard_FrameXML/SecureTemplates.lua",
+      "sha256": "45a0e3164c63070f265e22028a829717c262cabecad21a4d090d2b663c22addf"
+    },
+    {
+      "path": "Blizzard_RestrictedAddOnEnvironment/Blizzard_RestrictedAddOnEnvironment.toc",
+      "sha256": "b92c4730806fea1761b934b0643677a1189ce48dc43b4b07aa643e48431aff02"
+    },
+    {
+      "path": "Blizzard_RestrictedAddOnEnvironment/SecureStateDriver.lua",
+      "sha256": "e7eb9ea10a65127d92fef048305f02a60f56ed58ee30f9a8ce16a8e0209543db"
+    },
+    {
+      "path": "Blizzard_FrameXML/Bindings_Vanilla.xml",
+      "sha256": "dc0b1eab1e324134eac7431eb0138e8ab4777c50c814678a6b6687953cd58c49"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Vanilla/SpellBookFrame.lua",
+      "sha256": "5465ed498ffeb6048efc1a0e74edcbfb44fbbd8bafa37374f5636038ee92d409"
+    },
+    {
+      "path": "Blizzard_AddOnList/Blizzard_AddOnList.toc",
+      "sha256": "d4077e5c3201035fd77c8b3531cbf83579771923d4a5be9ba5604b2e841eca94"
+    },
+    {
+      "path": "Blizzard_AddOnList/AddonList.lua",
+      "sha256": "19b04e8af2f87102dcb2d213463d4bf8776a44203c6db334e22a4c2a86e867a1"
+    },
+    {
+      "path": "Blizzard_GameTooltip/Blizzard_GameTooltip_Classic.toc",
+      "sha256": "829cf2f39411ad75f470b4ec442d494eff570d56921f62922aa057f957e2face"
+    },
+    {
+      "path": "Blizzard_GameTooltip/Classic/GameTooltip.xml",
+      "sha256": "6bd480cfc90e66744346626d06be8a6e2b7a75437ca735bf87c8650da487d613"
+    },
+    {
+      "path": "Blizzard_GroupFinder/Blizzard_GroupFinder_Vanilla.toc",
+      "sha256": "a3ccbd997bc4308277870ac92596f4035c59204be77ac746ff615cb1bc562743"
+    },
+    {
+      "path": "Blizzard_AuctionUI/Blizzard_AuctionUI_Classic.toc",
+      "sha256": "655acbd01f123dbcc86970c2a79491f52fdf7082388f638b53ac9f8b05571497"
+    },
+    {
+      "path": "Blizzard_AuctionHouseUI/Blizzard_AuctionHouseUI_Classic.toc",
+      "sha256": "a61bdffe8feaf19e0053c4d92a39e3d5436a3e629f28509a129745d33fe3e150"
+    },
+    {
+      "path": "Blizzard_InspectUI/Blizzard_InspectUI_Classic.toc",
+      "sha256": "be9dc8f04a91b61349a4fb529e1225e0da52b9602c7e16e2cf69068b660d6d56"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_Settings.lua",
+      "sha256": "d2bad557d834e3904eb57bcc85d64fdab1a010207292957a208c159ff5338b53"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_SettingsInbound.lua",
+      "sha256": "149fc361ccd160db63933394549f87a9de4029132ebc96d5ef36d681922ae8d0"
+    },
+    {
+      "path": "Blizzard_Settings_Shared/Blizzard_Keybindings.lua",
+      "sha256": "4600958e0f4a58e65eaed78b9545d12fd890f6b512b7ac0d7d8ab2798a26ad6d"
+    },
+    {
+      "path": "Blizzard_ChatFrameBase/Blizzard_ChatFrameBase_Classic.toc",
+      "sha256": "58871fdb9004ecfe49d2f976c3c3a5bb0232235e2e608b6803933c3d03ce48c9"
+    },
+    {
+      "path": "Blizzard_ChatFrameBase/Shared/ChatFrameUtil.lua",
+      "sha256": "afc6cdc6e028d53b9270857ac5463a23d367542e5bacfe70bf826bd51312f961"
+    },
+    {
+      "path": "Blizzard_ChatFrameBase/Shared/ChatFrameFilters.lua",
+      "sha256": "78e827e7835f1a641cddc6a936935801addda3fad9846b9749dd3c183d643b1a"
+    },
+    {
+      "path": "Blizzard_UIErrorsFrame/Blizzard_UIErrorsFrame_Classic.toc",
+      "sha256": "0cebad1dd3e376195c8791155d99646649251c9912fedfa70a79def6c0632600"
+    },
+    {
+      "path": "Blizzard_UIErrorsFrame/Classic/UIErrorsFrame.lua",
+      "sha256": "2cd37b7f2fe67c0f37c411f9d612425f404c966cdca5b52e70da5aeadea48f04"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Frame/Blizzard_SettingsDefinitions_Frame_Classic.toc",
+      "sha256": "e161a8e829503f3fd26953d7f34528e3b878d12934e91d4fb3b9c969f2ed02e1"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Frame/Controls.xml",
+      "sha256": "64f0356e2eee57d0084c94447ed59c29bb3d4bbe3e94207daf8ed577fa071403"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Frame/Controls.lua",
+      "sha256": "f093dacaa6bcd7a75cf8158a49e179f232642caca10ead166e4b63c9f25fa81e"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Frame/Combat.lua",
+      "sha256": "a885b66a23213661855d470d38edd3271f2443743c89dd0d4a6c8dae1ae90c8a"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Frame/Nameplates.lua",
+      "sha256": "6a3ccabd4821b4436fff3c61a944b445211ef3010fb903522e1b4d84b0a5f1c3"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Shared/Blizzard_SettingsDefinitions_Shared.toc",
+      "sha256": "16d3d68515cd9a7befde924de5575387deb328523ac1844d8ceed4462cdd91f9"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Shared/Audio.xml",
+      "sha256": "84ccf0c9d02c85b480982616512ce73aa354e2360a1126ff5a6c7dd28aca2758"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Shared/Audio.lua",
+      "sha256": "b5f6b92e31b26dc5324e8c5e1cec1974a68381cc7574e6cc8c4376cc26235624"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/CVarDocumentation.lua",
+      "sha256": "4077bf22c83086f458ee5fd2701d4a971b5f458c837a960674c8c637c450dec8"
+    }
+  ],
+  "interface": 11509,
+  "product": "wow_classic_era",
+  "schema": 1
+}
