@@ -107,7 +107,7 @@
       "toc": "ApogeeGroupAlert_Era.toc"
     },
     {
-      "commit": "24eb82ccb120f4c01000438e23c6a12b606cbdd1",
+      "commit": "bae7a1c159bbe12154fc90d7b5e72d7426142729",
       "files": {
         "ApogeeEssentials.lua": "863e32f8db8e169a8778655fbdcb4cc2d36a2033f31eb5c5dd85077f9937a197",
         "ApogeeEssentials_Era.toc": "7d0c9528034e496131e58fbee51e1e11e7a23b61bd49354adec347e8dcf3b928",
@@ -117,12 +117,12 @@
         "Core/Client.lua": "9e2af2568c8d44128a105aed80e11f724dc664a477a64a7b47023e524095dbc9",
         "Core/LearnedList.lua": "587f067a88d533ac2af765bfb3853b5ef78af8bdd6cb8d5054960b5420059d7e",
         "Core/LoginDefaults.lua": "94a209463a3d639290ad086a26ed8c7a604460bd672bae0ede71d5eda8e22f5f",
-        "Core/Settings.lua": "fb5a52a6a9683d074029b877166420d7519d37609708ba3460db76c9e40cd378",
+        "Core/Settings.lua": "b276b6d0aa439d872767286eca45d7a6523c35f879804b0b359b4cfec4b93b9f",
         "Damage/Runtime.lua": "c103739fcb0939725f214dcc5073f58d48160c93f8635549f1e2622fedd52bb6",
-        "Era/Adapter.lua": "e5a15c3b965856e0529ea7659c90327dc316855fd14b736e57f6afd31e1a7c02",
-        "Era/README.md": "dea22d13a12e66f926f9466e1b97369031251a38eb7449b68fbf39ad8e8659eb",
-        "Errors/Runtime.lua": "b656cff0da6cb0463acafee58355c4a9d7ebbfd0fa7f504893b09d70fad04116",
-        "Errors/Settings.lua": "78a1dd20854dc7438f23c8c06e1c94784db1d917bb49a2a465fff22bbde808f1",
+        "Era/Adapter.lua": "e3966305e787bf27258d08ece4f22d769700c0e9f7c424191c08c67100a17089",
+        "Era/README.md": "4da234a12bdb73c5bb4f0ee8379dc13a0ce07f7c182f74ce86869799ed7b773d",
+        "Errors/Runtime.lua": "4408c3f79208fd42323dff1d134ea60fff9e3c11fd2beefbd3478be8feef1b13",
+        "Errors/Settings.lua": "6674aec32a865d6b9dae9e754da1c58d8c73abe8a3ca943a1db27f9b0e0fec6e",
         "Fade/Runtime.lua": "17705e328b262d2514edb86505786d547f84a9b2f3112440ca452e75013506b0",
         "GroupChat/Runtime.lua": "661b41c630f0b889616042300a21ec9cd4e92470218506f01b8f0b49c289f976",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
@@ -148,5 +148,5 @@
   "publicationAllowed": false,
   "schema": 1,
   "target": "classic-era",
-  "version": "1.14.8-era.6"
+  "version": "1.14.8-era.7"
 }

@@ -1,3 +1,7 @@
+## Unreleased - Era pre-combat error suppression
+
+- Pin Era.7 checked-error suppression in and out of combat with accurate settings labels and full clean-account startup tests. Keep saved choices, visible useful-error defaults and Forever's combat-only behavior unchanged.
+
 ## Unreleased - Era archive comparison sweep
 
 - Pin Era.6 party debuff/cleansing artwork and Classic main-menu/quest-tracker fading fixes. Record archive comparisons, current API evidence, generated regressions and frozen Forever preservation.

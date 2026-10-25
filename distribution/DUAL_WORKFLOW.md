@@ -43,6 +43,11 @@ Eight writes, 114 installed files (107 payload entries plus seven README files)
 and 113 backup files verified. Forever's 1,477 files, eight frozen repository
 files and all 275 archived files unchanged. Native user acceptance pending.
 
+The [error scope correction](era/ERROR_SCOPE.md) prepares Era.7: checked Era
+errors are suppressed before combat as well as during it, as clarified by the
+owner. Existing choices/defaults remain intact; no additional reset. Installation
+requires the client closed and the latest installed Era.6 receipt above.
+
 ## Raised target actions installed - 2026-10-20
 
 Owner reports shared-range actions working and requested icons nearer target.
