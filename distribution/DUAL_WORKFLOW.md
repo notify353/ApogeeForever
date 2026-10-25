@@ -1,3 +1,10 @@
+## Classic Era Stats - 2026-10-25
+
+The Era.20 candidate adds Stats using a versioned five-child inventory; earlier
+four-child packages and receipts retain their exact contracts. See era/STATS.md.
+New addon discovery requires a closed-client central installation and full restart.
+Future Forever source preparation remains offline; installed beta/frozen pins stay.
+
 ## Internal UI and master switch - 2026-10-25
 
 Era.11 and the isolated future Forever candidate embed shared UI in the existing

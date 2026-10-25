@@ -51,6 +51,7 @@ def validate(args):
         specs = sorted((root/'tests').glob('*_spec.lua'))
         if name == 'ApogeeStats': specs += sorted((root/'tests').glob('test_*.lua'))
         for spec in specs: run(['lua', spec], root)
+        if name == 'ApogeeStats': run([sys.executable, '-B', 'tests/check_baseline.py'], root)
         if any((root/'tests').rglob('test_*.py')):
             run([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-v'], root)
         # Standalone child builders are explicitly non-installable source checks.

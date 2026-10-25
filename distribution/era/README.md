@@ -1,3 +1,11 @@
+## Era.20 Stats candidate
+
+Stats now joins the five-component Era package. English tooltip reading and a
+separate paged auction backend retain shared evaluation and Forever behavior.
+See [Stats design and acceptance](STATS.md). Installing the added folder requires
+Era closed and a full restart; settings and enabled preferences are preserved.
+The historical assessment below records why earlier candidates excluded Stats.
+
 ## Era.8 shared launcher candidate
 
 Era.8 adds required Apogee UI shared support and one green minimap launcher.

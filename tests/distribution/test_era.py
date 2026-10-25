@@ -250,10 +250,41 @@ class EraTests(unittest.TestCase):
             m.put(folder, self.payload)
             subprocess.run([LUA, str(ROOT / 'tests/distribution/era_gate.lua'), folder], check=True)
             for name in era.MEMBERS:
+                if name == 'ApogeeStats':
+                    for spec in ('test_era.lua', 'test_era_ui.lua', 'test_era_startup.lua'):
+                        subprocess.run([LUA, 'tests/' + spec, str(Path(folder)/(name+'Dev')), name+'Dev'],
+                                       cwd=CHILD_WORKTREES/name, check=True)
+                    continue
                 env = os.environ.copy(); env['APOGEE_ERA_RUNTIME_ROOT'] = str(Path(folder) / (name + 'Dev'))
                 if CLIENT_ROOT:
                     env['APOGEE_ERA_EXPORT'] = str(CLIENT_ROOT / 'BlizzardInterfaceCode/Interface/AddOns')
                 subprocess.run([LUA, 'tests/era_spec.lua'], cwd=CHILD_WORKTREES / name, env=env, check=True)
+
+    def test_historical_four_module_upgrade_and_rollback(self):
+        old = json.loads(subprocess.check_output(['git', 'show',
+            '7220693bacd5850004493bcd7a7990559554d1f4:distribution/era/candidate.lock.json'], cwd=ROOT))
+        with tempfile.TemporaryDirectory() as folder:
+            base = Path(folder)
+            lock_path = base/'historical.json'; lock_path.write_bytes(d.canonical(old))
+            reviewed = era.read_lock(lock_path)
+            self.assertNotIn('ApogeeStats', [c['name'] for c in reviewed['children']])
+            prior = era.family_files(reviewed, SOURCES)[0]
+            self.assertEqual({p.split('/')[0] for p in prior}, set(era.HISTORICAL_NAMES))
+            client = self.client_fixture(folder); m.put(client/'Interface/AddOns', prior)
+            previous = {'schema':1, 'status':'installed', 'target':'classic-era', 'family':'DEV',
+                'client':str(client), 'names':list(era.HISTORICAL_NAMES)+['ApogeeUIDev'], 'after':m.hashes(prior)}
+            desired, known, preview, _ = era.prepare(client, self.payload, previous)
+            self.assertIn('ApogeeStatsDev/ApogeeStatsDev.toc', preview['writes'])
+            with self.assertRaisesRegex(ValueError, 'add or remove runtime'):
+                era.verify_live_update(self.payload, preview, previous)
+            backup = base/'upgrade-backup'
+            m.apply(client, desired, known, backup, preview, era.NAMES)
+            m.rollback(backup)
+            self.assertEqual(m.managed(client/'Interface/AddOns', era.NAMES), prior)
+            # A five-module lock cannot masquerade as the old inventory.
+            invalid = copy.deepcopy(self.lock); invalid.pop('moduleInventoryVersion')
+            lock_path.write_bytes(d.canonical(invalid))
+            with self.assertRaisesRegex(ValueError, 'versioned Era modules'): era.read_lock(lock_path)
 
 
 if __name__ == '__main__':

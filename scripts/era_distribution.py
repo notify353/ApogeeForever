@@ -14,9 +14,12 @@ import migrate_distribution as m
 
 CONFIG = d.ROOT / 'distribution/era'
 LOCK = CONFIG / 'candidate.lock.json'
-MEMBERS = ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials')
+HISTORICAL_MEMBERS = ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials')
+MEMBERS = HISTORICAL_MEMBERS + ('ApogeeStats',)
 LEGACY_NAMES = tuple(n + 'Dev' for n in (d.MARKER, *MEMBERS))
 NAMES = LEGACY_NAMES + ('ApogeeUIDev',)
+HISTORICAL_NAMES = tuple(n + 'Dev' for n in (d.MARKER, *HISTORICAL_MEMBERS))
+RECEIPT_ROOTS = (set(NAMES), set(LEGACY_NAMES), set(HISTORICAL_NAMES), set(HISTORICAL_NAMES + ('ApogeeUIDev',)))
 CLIENT = {'flavor': 'classic-era', 'product': 'wow_classic_era',
           'directory': '_classic_era_', 'reviewedBuild': '1.15.9.70003', 'interface': 11509}
 
@@ -28,7 +31,10 @@ def read_lock(path=LOCK):
               'Unpublished Era DEV lock required')
     d.require(lock['client'] == CLIENT, 'Unexpected Era client/build')
     d.require(re.fullmatch(r'\d+\.\d+\.\d+-era\.\d+', lock['version']), 'Invalid Era version')
-    d.require(tuple(c['name'] for c in lock['children']) == MEMBERS, 'Exact four Era modules required')
+    inventory = lock.get('moduleInventoryVersion', 1)
+    d.require(inventory in (1, 2), 'Unknown Era module inventory')
+    d.require(tuple(c['name'] for c in lock['children']) == (MEMBERS if inventory == 2 else HISTORICAL_MEMBERS),
+              'Exact versioned Era modules required')
     for child in lock['children']:
         name = child['name']
         d.require(re.fullmatch('[0-9a-f]{40}', child['commit']), 'Immutable source required')
@@ -120,7 +126,9 @@ def family_files(lock, sources_root):
     output[marker + '/README.md'] = (CONFIG / 'PLAYER_README.md').read_bytes()
     if support.embedded(lock):
         output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
-    d.require({p.split('/')[0] for p in output} == set(LEGACY_NAMES if support.embedded(lock) else NAMES), 'Era roots differ')
+    roots = {d.MARKER + 'Dev', *(c['name'] + 'Dev' for c in lock['children'])}
+    if not support.embedded(lock): roots.add('ApogeeUIDev')
+    d.require({p.split('/')[0] for p in output} == roots, 'Era roots differ')
     return output, changes
 
 
@@ -146,16 +154,18 @@ def prepare(client, payload, previous=None):
     """Only Era DEV roots. Receipts from other clients/targets cannot authorize overwrites."""
     client = m.ordinary(client)
     d.require(client.name == CLIENT['directory'], 'Era client required')
-    d.require({p.split('/')[0] for p in payload} == set(LEGACY_NAMES if support.master_payload(payload) else NAMES), 'Exact Era roots required')
+    roots = {p.split('/')[0] for p in payload}
+    allowed = (set(LEGACY_NAMES), set(HISTORICAL_NAMES)) if support.master_payload(payload) else (set(NAMES), set(HISTORICAL_NAMES + ('ApogeeUIDev',)))
+    d.require(roots in allowed, 'Exact Era roots required')
     known = {'schema': 1, 'files': {}, 'legacyTocHashes': []}
     if previous is not None:
         d.require(previous['schema'] == 1 and previous['status'] == 'installed'
                   and previous.get('target') == 'classic-era' and previous.get('family') == 'DEV'
-                  and set(previous['names']) in (set(NAMES), set(LEGACY_NAMES)), 'Prior Era DEV receipt required')
+                  and set(previous['names']) in RECEIPT_ROOTS, 'Prior Era DEV receipt required')
         d.require(Path(previous['client']).absolute() == client, 'Receipt belongs to another client')
         for p, h in previous['after'].items():
             d.safe_path(p)
-            d.require(p.split('/')[0] in NAMES and re.fullmatch('[0-9a-f]{64}', h), 'Receipt escapes Era roots')
+            d.require(p.split('/')[0] in previous['names'] and re.fullmatch('[0-9a-f]{64}', h), 'Receipt escapes Era roots')
             known['files'].setdefault(p, []).append(h)
     for p, body in payload.items():
         d.safe_path(p)
@@ -221,7 +231,7 @@ def install_target(args):
                   lockSha256=d.sha(d.canonical(lock)), apiEvidence=evidence,
                   archiveSha256=d.sha(archive.read_bytes()), preservedDocumentation=docs,
                   liveUpdate=live_update, clientRunningAtPreflight=client_running,
-                  activation='Full game restart required for Apogee master/loading changes; no settings imported' if preview['retired'] or any((p.startswith('ApogeeUIDev/') or '/SharedUI/' in p) and p not in preview['before'] for p in preview['writes']) else 'User /reload after installation; no settings imported' if previous
+                  activation='Full game restart required for Apogee addon/loading changes; no settings imported' if preview['retired'] or any(p.endswith('.toc') and p not in preview['before'] for p in preview['writes']) or any((p.startswith('ApogeeUIDev/') or '/SharedUI/' in p) and p not in preview['before'] for p in preview['writes']) else 'User /reload after installation; no settings imported' if previous
                   else 'User opens Era and selects Apogee Era DEV; no settings imported')
     (args.backup / 'transaction.json').write_bytes(d.canonical(result))
     return {'status': result['status'], 'target': 'classic-era', 'writeCount': len(result['writes']),
@@ -233,7 +243,7 @@ def rollback_target(backup):
     backup = m.ordinary(backup)
     receipt = json.loads(m.under(backup, 'transaction.json').read_bytes())
     client = m.ordinary(receipt['client'])
-    d.require(client.name == CLIENT['directory'] and set(receipt['names']) == set(NAMES),
+    d.require(client.name == CLIENT['directory'] and set(receipt['names']) in RECEIPT_ROOTS,
               'Only exact Era DEV receipts can be rolled back here')
     # A failed transaction may not yet have the post-install target annotation.
     d.require(receipt.get('target') in (None, 'classic-era'), 'Foreign target receipt refused')

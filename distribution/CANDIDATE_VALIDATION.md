@@ -13,6 +13,10 @@ python -B scripts/validate_candidates.py `
   --artifact-root C:/Temp/apogee-launcher-20261025/validation-NEW
 ```
 
+Stats' explicit loader-contract script and generated Era parser/startup/auction
+tests are included, alongside future Forever Stats regressions. Historical
+four-module Era upgrades and rollback remain covered after adding Stats.
+
 This verifies fresh Era authority first, then parses child Lua, runs child Lua
 and Python suites, independently validates Essentials' Forever/Era/support
 inventories, checks explicitly source-only child archives, and tests generated

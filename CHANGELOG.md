@@ -1,3 +1,10 @@
+## Unreleased - Era Stats candidate
+
+- Add a versioned five-component Era inventory with historical four-component
+  package/receipt support. Stats depends on the same internal master UI.
+- Run Stats loader contracts and generated Era/Forever gameplay suites; extend
+  the matching Era tooltip/auction API evidence. No frozen Forever pin changes.
+
 ## Unreleased - hardening regression sweep
 
 - Add 60 generated Era DEV and future Forever PROD/DEV startup edge cases:

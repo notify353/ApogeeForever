@@ -333,6 +333,50 @@
     {
       "path": "Blizzard_Menu/Vanilla/MenuVariants.lua",
       "sha256": "516d341f9dbcd52f7b14eff4fd55c08cdee9ed2ce4267aea7cea125e0846cfaa"
+    },
+    {
+      "path": "Blizzard_AuctionUI/Classic/Blizzard_AuctionData.lua",
+      "sha256": "e203333ed2e08d6fe57199c6e3d4bb1c4822f3b64b9da1f535dc845fdfabf40b"
+    },
+    {
+      "path": "Blizzard_AuctionUI/Classic/Blizzard_AuctionUI.lua",
+      "sha256": "ba3e41f600fb411ca69093bfa0048303ef319c6e8fc0b3ecb3e0e1bad69b262c"
+    },
+    {
+      "path": "Blizzard_AuctionUI/Classic/Blizzard_AuctionUI.xml",
+      "sha256": "546024122d701a622e3fbbdd2bf840e82b658c8de5f23ccbbe7ab5f19e86cc38"
+    },
+    {
+      "path": "Blizzard_AuctionUI/Classic/Blizzard_AuctionUITemplates.xml",
+      "sha256": "e08dcbd12b889c35da75e0037f9a8701df652e52a47c94ffb49fa397cf25eb24"
+    },
+    {
+      "path": "Blizzard_GameTooltip/Classic/GameTooltip.lua",
+      "sha256": "092419cc2167da97bc967f1875a5ac061e63ca17172ab3e70f44beb147a894c9"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Classic/ItemRef.xml",
+      "sha256": "8b9f03d3de2f0761170ebed23f9763b55ca09684a42d9334128e6ed74412889e"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Classic/LootFrame.xml",
+      "sha256": "551503d8208ad3bb8399d13c31f60351393afc861a2682164656d3a8b3740233"
+    },
+    {
+      "path": "Blizzard_TalentUI/Blizzard_TalentUI_Vanilla.toc",
+      "sha256": "bd8848fa7fdb7fc262aa790a05d557796ce3b1deebe3883bdaaee5125f73557c"
+    },
+    {
+      "path": "Blizzard_TalentUI/Classic/Blizzard_TalentUI.lua",
+      "sha256": "760a51ad8901971f7952d3ac53c5ade8cba5a379f4bf7638c9b69fa28f4b75da"
+    },
+    {
+      "path": "Blizzard_TalentUI/Classic/Blizzard_TalentUI_Shared.lua",
+      "sha256": "094d6be6fe9d38d0d5c042e80bf42c88d20d869283ab26b03115845535d1f61a"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/TooltipInfoSharedDocumentation.lua",
+      "sha256": "1d2081a3c6dddd6b5a957be26582e582b52ac5ea0415700ae0d14c368b5f05c5"
     }
   ],
   "interface": 11509,

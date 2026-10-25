@@ -170,18 +170,19 @@
       "version": "0.1.0"
     },
     {
-      "commit": "d63eaec1ee073dd88e041b1f9b8fb8910d192be2",
+      "commit": "ded3afe1b29cb1e99e1bc3e2cccac548961ea8b4",
       "files": {
-        "ApogeeStats.lua": "2b72e22eff63d61467c1f74fde260e51d33ca5f0a069abd5c7d44e98e3dd0709",
+        "ApogeeStats.lua": "3d156200bbf1d96380f95f165edbf802d37cdc32524d5aa26e97ef0caa89d254",
         "ApogeeStats.toc": "ce5667e28b13225e8d2a0b3674e2708fb5fb34e6a68a75f056e10cc121de5262",
         "Auction/Browse.lua": "970cbbd27fe3912428ad0df1cfc651730a501b427a8b2997c0b284449c9d871e",
         "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
-        "CHANGELOG.md": "710b95acab2b52e7e2c33ad074f4a6f6a21d7ce9ee00f2a8274837bf319a5fa4",
-        "Core/Items.lua": "3fc1a5c6d0dde8c0e7743273b037a8766b9ab27435ce57b26f055f4303319a04",
-        "Core/Rules.lua": "32fb25f0d9a42348fdecd98058aba63d82c3b3e6548a7f4eafec7e09be9c48ba",
+        "CHANGELOG.md": "38d9d8215d3d98efbb0c267aba05060de44aad146433091fb8fb5354d44a6def",
+        "Core/Items.lua": "23ff497959ba6cc2a788b93fbdd3d17b1a5cba69872d97adaa7a34eae2f0474f",
+        "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
+        "Era/README.md": "a6f14f97546cd2778581192fb01d3488d7bd1354c4c73095a468878ec26c718b",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
-        "README.md": "b9741ef5cee120d2aee0ba8a4db86e939f628d30f010853dfc39191545597af2",
+        "README.md": "27468f3d99ae858471f30f70aaa0778caaf3825aff5fc9e86a40c663bec4f9ab",
         "docs/CLASS_ROLE_REFERENCE.md": "846ee1f55e40cbdf0484dae03012a8f78623025f9b9498d7f4647664404ee684",
         "docs/NATIVE_ACCEPTANCE.md": "b0f0fb7f34a662238c86752ef303cf7d5276f64ac58f535b34d521ec4a0b7112"
       },
@@ -240,5 +241,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.8-launcher.12"
+  "version": "1.14.8-launcher.13"
 }

@@ -5,15 +5,16 @@ gameplay components you want. Disabling it prevents every child from loading
 after reload. The shared UI is internal; it has no separate addon checkbox.
 
 Left-click the green minimap button to toggle available healing and keybind
-editors together. Right-click for direct component settings and Reset minimap
-position. Right-drag to move it. Position is saved per character; launcher
+editors together. Right-click for direct component settings and Reset UI
+positions. Right-drag to move it. Positions are saved per character; launcher
 controls are unavailable during combat.
 
-This structural upgrade requires a closed client during installation and a full
-restart afterward. Only the minimap position returns to 220 degrees. Gameplay
-settings are preserved, and no addon selections or private saved files are edited.
-The old support loader is backed up and retired; retained artwork and notes are inert.
+Adding a component requires a closed client during installation and a full
+restart afterward. This update does not reset positions, settings or bindings.
+No addon selections or private saved files are edited.
 
-Classic Era excludes Stats and the Heals Follow/Inspect/Talents strip. Future
-Forever packages include Stats, with character-window role and auction controls.
+Classic Era and future Forever include Stats, with character-window role and
+auction controls. Era Stats currently reads English tooltips; auction scans check
+every search page and re-verify a listing before selecting it. Buying is manual.
+The Heals Follow/Inspect/Talents strip remains excluded from Era.
 Native user testing is required. Forever's installed beta remains unchanged.

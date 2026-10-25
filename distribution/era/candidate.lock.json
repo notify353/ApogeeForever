@@ -1,5 +1,5 @@
 {
-  "apiEvidenceSha256": "b15c7db60a402ebe76254e6d8bd17b7cb0267d285ac9b463e4e13a7cac3f7e4d",
+  "apiEvidenceSha256": "19fcb456e5f0c1590f877234eeaa40796432282d0d97b01aa7b645d3e8086e12",
   "children": [
     {
       "commit": "7a1a98ebcdd66ce92a5fd66fb544b681e5dedab4",
@@ -138,6 +138,30 @@
       "repository": "https://github.com/notify353/ApogeeEssentials.git",
       "toc": "ApogeeEssentials_Era.toc",
       "uiApi": 1
+    },
+    {
+      "commit": "ded3afe1b29cb1e99e1bc3e2cccac548961ea8b4",
+      "files": {
+        "ApogeeStats.lua": "3d156200bbf1d96380f95f165edbf802d37cdc32524d5aa26e97ef0caa89d254",
+        "ApogeeStats_Era.toc": "44bc254eb8030da7f96c409d3bb4212afa5b83118baa9077fa3a766ce8186657",
+        "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
+        "Core/Items.lua": "23ff497959ba6cc2a788b93fbdd3d17b1a5cba69872d97adaa7a34eae2f0474f",
+        "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
+        "Era/Adapter.lua": "ac16f0e86a4b584075501aecaad4341536eed28b3cb60884f1375d3be71739de",
+        "Era/Auction.lua": "b03e98e5ace87c2f97c017b4a731af4d0a46744182c66ef2467b85e9c7930a95",
+        "Era/AuctionScan.lua": "7cc653880393cced8435e2682268c63f936b792e638c47c4083d15bdff109ba6",
+        "Era/README.md": "a6f14f97546cd2778581192fb01d3488d7bd1354c4c73095a468878ec26c718b",
+        "Era/Tooltip.lua": "4997efb8de9be899c12e239577b940500d4f320435f18235573f9f21c0334326",
+        "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
+        "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
+        "README.md": "27468f3d99ae858471f30f70aaa0778caaf3825aff5fc9e86a40c663bec4f9ab"
+      },
+      "name": "ApogeeStats",
+      "repository": "https://github.com/notify353/ApogeeStats.git",
+      "savedVariables": {},
+      "toc": "ApogeeStats_Era.toc",
+      "uiApi": 1,
+      "version": "0.1.0-dev"
     }
   ],
   "client": {
@@ -149,6 +173,7 @@
   },
   "family": "DEV",
   "frozenForeverDistributionCommit": "4eb28af7af71703c32435fa1a8f0dabd6f1a10f2",
+  "moduleInventoryVersion": 2,
   "publicationAllowed": false,
   "schema": 1,
   "supportModules": [
@@ -172,5 +197,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.19"
+  "version": "1.14.8-era.20"
 }

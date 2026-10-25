@@ -2,7 +2,7 @@
 local root = assert(arg[1])
 local savedPrint, secret = print, {}
 local scenarios = 0
-for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "ApogeeEssentials", "ApogeePartyHealthBars"}) do
+for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "ApogeeEssentials", "ApogeeStats", "ApogeePartyHealthBars"}) do
     local name = base .. "Dev"
     for _, option in ipairs({"allowed", "forever", "retail", "wrong-version", "missing-build", "secret-build",
         "missing-secret", "secret-project", "wrong-target", "secret-target", "metadata-error", "no-guid",

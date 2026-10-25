@@ -4,7 +4,7 @@ local suffix=family=='DEV' and 'Dev' or ''
 local support='ApogeePartyHealthBars'..suffix
 local serviceName='ApogeeUI'..suffix
 local bases={'ApogeePartyHealthBars','ApogeeHeals','ApogeeKeybinds','ApogeeGroupAlert','ApogeeEssentials'}
-if target~='era' then bases[#bases+1]='ApogeeStats' end
+bases[#bases+1]='ApogeeStats'
 local scenarios=0
 local originalPrint=print
 for _,base in ipairs(bases) do
