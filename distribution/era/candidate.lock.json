@@ -2,12 +2,12 @@
   "apiEvidenceSha256": "b15c7db60a402ebe76254e6d8bd17b7cb0267d285ac9b463e4e13a7cac3f7e4d",
   "children": [
     {
-      "commit": "3fcae4de1fe61d7a9ee0e4c801168816e45f9ac0",
+      "commit": "1d038f4882ac04f7a3bb8ac35d2788be7c1d02b5",
       "files": {
         "ApogeeHeals.lua": "dfca550a7aeb5d0b34c8e2476e7b4eda09e1dc4d623a564255f9ca10bf11c627",
         "ApogeeHeals_Era.toc": "d8c91cb2ec9dc6f31f8da513ae285f3aaac1eded2bf1698666671452f89be5a1",
         "Bindings/Defaults.lua": "2106fdd20fde827b04a5a7ef3f9b53f381b492fb2f927fd1f5a671289d477ac1",
-        "Bindings/Runtime.lua": "75027acbb5e510f3fe97a39544804c97e277096152ce7df90d322b3f0607c533",
+        "Bindings/Runtime.lua": "a53f96aa8f2ce9a052b19cd68b57bedbd6398ad65bf8d0627c3478d82e1552bb",
         "Buffs/Catalog.lua": "aa886e2569ba5af7af80edaeea0ebf6fe0e0d6b8d47a81c0a2cf608eb5517fc8",
         "Buffs/Defaults.lua": "d3627fedde6d40f3391e4367383ebbe8b9a14af23e2934f25bffd7a57467cf41",
         "Buffs/Preferences.lua": "d6f6a648c8782a76c8e1649d07a7bf60767381c64384944a231a9a1394d5f1c2",
@@ -172,5 +172,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.15"
+  "version": "1.14.8-era.16"
 }

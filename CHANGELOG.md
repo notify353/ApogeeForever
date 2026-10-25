@@ -1,3 +1,9 @@
+## Unreleased - Classic bandage drop correction
+
+- Era.16 recognizes standard bandages reported as generic consumables, fixing
+  bag drops and the automatic Linen Bandage icon/action. Other generic items
+  remain rejected. Carry the same guarded fix in the future Forever candidate.
+
 ## Unreleased - Linen Bandage healing default
 
 - Isolated Era and future Forever candidates give Warrior, Rogue, Hunter, Mage
