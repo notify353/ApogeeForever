@@ -39,6 +39,10 @@ class LauncherTests(unittest.TestCase):
                 subprocess.run(['lua','tests/launcher_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
                 subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target,
                                 str(CHILDREN/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
+                heals='ApogeeHeals'+('Dev' if family=='DEV' else '')
+                env.update(APOGEE_HEALS_RUNTIME_ROOT=str(Path(folder)/heals),
+                           APOGEE_HEALS_RUNTIME_NAME=heals, APOGEE_HEALS_TEST_ERA='1' if target=='era' else '0')
+                subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=CHILDREN/'ApogeeHeals',env=env,check=True)
                 if target=='forever-offline':
                     keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),

@@ -1,3 +1,10 @@
+## Unreleased - left-click healing defaults
+
+- Era.14 adds starting-heal defaults for Druid and Shaman alongside Priest and
+  Paladin, using the highest learned rank only in an empty left-click slot.
+  Remove automatic right-click shields; preserve all manual assignments.
+- Prepare the same future Forever policy without changing the installed beta.
+
 ## Unreleased - combat-only explosive bindings
 
 - Era.13 requires combat for supported Keybinds explosive item assignments,

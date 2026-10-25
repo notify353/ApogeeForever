@@ -2,11 +2,11 @@
   "apiEvidenceSha256": "b15c7db60a402ebe76254e6d8bd17b7cb0267d285ac9b463e4e13a7cac3f7e4d",
   "children": [
     {
-      "commit": "274f59a6999acac06546f06c11305751725ce94d",
+      "commit": "026f0ded371d00aba9a98a8d19527ade44c00962",
       "files": {
         "ApogeeHeals.lua": "dfca550a7aeb5d0b34c8e2476e7b4eda09e1dc4d623a564255f9ca10bf11c627",
         "ApogeeHeals_Era.toc": "d8c91cb2ec9dc6f31f8da513ae285f3aaac1eded2bf1698666671452f89be5a1",
-        "Bindings/Defaults.lua": "76be5e9566d7d23e46fb7daa6d8b887787d675927c70e11e43f26666324f5a2a",
+        "Bindings/Defaults.lua": "94fa8009de7d1a2e83cb22d38a50b5831b3f03d8a957cb00b126891308078ee6",
         "Bindings/Runtime.lua": "7d73dfc1d82265a42020a92d68fad8967b9ef466790c4c48b2eaef6b3bd8be79",
         "Buffs/Catalog.lua": "aa886e2569ba5af7af80edaeea0ebf6fe0e0d6b8d47a81c0a2cf608eb5517fc8",
         "Buffs/Defaults.lua": "d3627fedde6d40f3391e4367383ebbe8b9a14af23e2934f25bffd7a57467cf41",
@@ -32,7 +32,7 @@
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
         "Threat/View.lua": "8e268742ebe52800c0df414e3760860e6ac95744a3868e3f701eb54b17c6dec0",
-        "UI/BindingEditor.lua": "af8cf5f60a274fcc04da7eed3a7f308d5ab211b6a6ad363a6dc82d32d86bf258",
+        "UI/BindingEditor.lua": "b5dbe4458a17fc5d5b1557c768b8c66fde61b0681d376cec2f3a0af4407ff33a",
         "UI/Minimap.lua": "ebf7850bcfce5080a27271c20b46da1dc84975540bb79f07a61bf51f01286b30",
         "UI/Settings.lua": "8d9e997190c7081b91e43123bc575ee43813952935f180e78346794977ea3e5e",
         "UI/Style.lua": "4827ccb8a8c3fb3eb7faa20868650e0101997213d3a90acbe7519e2437b9c6cc",
@@ -172,5 +172,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.13"
+  "version": "1.14.8-era.14"
 }
