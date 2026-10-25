@@ -1,8 +1,8 @@
 {
-  "apiEvidenceSha256": "28ad5423cad52d4dbcbcc16a924110a67b453eba14a3f4ab4586f76772d06155",
+  "apiEvidenceSha256": "7bd8eca3044309034e8288d78942f9adba8b89f238e40cf156f40398b7dd6ecb",
   "children": [
     {
-      "commit": "0858cb7e0a226c6a9426d16580a114b85de0dc98",
+      "commit": "9a1fe7de6f2e6f3360f3b3fac0bc9500f02c5d1e",
       "files": {
         "ApogeeHeals.lua": "08d43d540d231e93a05014f67f1490dad05f2906cf59d98a60d840d985109d0b",
         "ApogeeHeals_Era.toc": "7224108bc932b5829bbbe882774fee6da988aea4b5c38440abc3e2c27009c662",
@@ -19,8 +19,8 @@
         "Core/Storage.lua": "83c48d2ed9293164a497c75b8b8f7b6a4d73c884396b731d9171f80ec8153e33",
         "Core/UnitAPI.lua": "0566e79b4393aefd3d235423f2c28349d07307b956808c4599a402e841c7c73c",
         "Drinking/Runtime.lua": "fcc10557de5b6d838ffba27c03c2b38bdb763b30dbbdc28a41c845c325345713",
-        "Era/Adapter.lua": "f7cb48d3de09eef79886861114439fbadb3a2726f0bf9c8e3f6e299d9945274d",
-        "Era/README.md": "70e12229e63bffba733fdcd856bedd4136ed40c99a7b7b7d78f7bf292d7fdc37",
+        "Era/Adapter.lua": "bc22c576ce4350f2ab84d100a5cebb8cb09a407b957f23f00bfc142faf313465",
+        "Era/README.md": "f9a80fe6d95149bf28c8439136b07d6934bcd3f423624404562fc297589bf91e",
         "IncomingHeals/View.lua": "7cc175ce25329c382e08595cad723ca6b01c156ea124e9cb859ccec6c8dc03d1",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
@@ -147,5 +147,5 @@
   "publicationAllowed": false,
   "schema": 1,
   "target": "classic-era",
-  "version": "1.14.8-era.4"
+  "version": "1.14.8-era.5"
 }

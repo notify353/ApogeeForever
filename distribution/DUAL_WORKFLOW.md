@@ -25,6 +25,11 @@ plus five preserved README files). Forever's 1,477 addon files and eight frozen
 repository files unchanged. The once-only Era choice reset runs at next login;
 native acceptance remains pending. See the error-default report for evidence.
 
+The [live threat-debuff correction](era/THREAT_DEBUFFS.md) prepares Era.5 with a
+private Era aura renderer for player-owned Sunder Armor stacks, Thunder Clap and
+Demoralizing Shout. Existing Era fixes and all Forever pins remain unchanged.
+Use the installed Era.4 receipt above until the Era.5 installation is verified.
+
 ## Raised target actions installed - 2026-10-20
 
 Owner reports shared-range actions working and requested icons nearer target.

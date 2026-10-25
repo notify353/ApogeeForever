@@ -249,6 +249,26 @@
     {
       "path": "Blizzard_APIDocumentationGenerated/GameErrorDocumentation.lua",
       "sha256": "cd3dc6677738900d89f07dbabb6de85e18334624d5e9de22c3ade563cce17de6"
+    },
+    {
+      "path": "Blizzard_FrameXMLUtil/Blizzard_FrameXMLUtil.toc",
+      "sha256": "0e391de1480597e03137ec856b6097cfc8cfc2ebc996b82d5485835171155f7e"
+    },
+    {
+      "path": "Blizzard_FrameXMLUtil/AuraUtil.lua",
+      "sha256": "564e621fd045f0a4857a9124ef25ea356f6f7c3b9ad53bee7f7e141143e807de"
+    },
+    {
+      "path": "Blizzard_FrameXMLUtil/Classic/AuraUtil.lua",
+      "sha256": "0882e45277e59919f6afe3b21deaee8abf20cf69d0964f4e8bd86803622c805e"
+    },
+    {
+      "path": "Blizzard_UnitFrame/Blizzard_UnitFrame_Classic.toc",
+      "sha256": "3071e223feac22985d84519219c483b00ca1d82014370a0f127c6da5b613180b"
+    },
+    {
+      "path": "Blizzard_UnitFrame/Classic/TargetFrame.lua",
+      "sha256": "22c21da0ca70e0cfe87e3b401dfe5184421cff42aa05e013cae788d202f1e225"
     }
   ],
   "interface": 11509,

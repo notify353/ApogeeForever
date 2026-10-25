@@ -7,6 +7,10 @@ Group Alert supports chat recruitment and native Group Finder listings. Select
 Tank or Healer, then click View to search. Tank/Heal buttons open editable whisper
 drafts; they do not send. Native availability checks still apply.
 
+The live tank threat stack shows your Sunder Armor, Thunder Clap and Demoralizing
+Shout debuffs, including Sunder stacks. Other players' effects do not count.
+Threat demo is scripted. Unreadable aura data stays unconfirmed.
+
 Choose the complete Apogee Era DEV family in AddOns yourself. Settings start
 separately; archived addons and their settings are not imported. Never enable
 another Apogee family alongside this one. Restart the client if new addons are

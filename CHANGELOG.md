@@ -935,3 +935,6 @@ Supports World of Warcraft Forever 1.60.1. Reload the UI after updating.
 
 - Center the Physical/Magic row above the Apogee player health bar and follow
   party-stack movement, using the matching PROD or DEV anchor.
+# Unreleased - Era threat debuffs
+
+- Pin an Era-only live threat-stack aura reader for player-owned warrior debuffs and Sunder stacks, replacing the unavailable Forever aura-container path. Preserve shared gameplay, existing Era fixes and frozen Forever pins.
