@@ -37,6 +37,10 @@ class LauncherTests(unittest.TestCase):
                 master=d.MARKER+('Dev' if family=='DEV' else '')
                 env=os.environ.copy(); env.update(APOGEE_UI_ROOT=str(Path(folder)/master/'SharedUI'),APOGEE_UI_NAME=name,APOGEE_UI_ADDON=master,APOGEE_COMPONENTS_ROOT=folder)
                 subprocess.run(['lua','tests/launcher_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
+                essentials='ApogeeEssentials'+('Dev' if family=='DEV' else '')
+                env.update(APOGEE_ESSENTIALS_RUNTIME_ROOT=str(Path(folder)/essentials),
+                           APOGEE_ESSENTIALS_RUNTIME_NAME=essentials, APOGEE_ESSENTIALS_TEST_ERA='1' if target=='era' else '0')
+                subprocess.run(['lua','tests/startup_refresh_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
                                    cwd=CHILDREN/component,env=env,check=True)
@@ -46,6 +50,12 @@ class LauncherTests(unittest.TestCase):
                 env.update(APOGEE_HEALS_RUNTIME_ROOT=str(Path(folder)/heals),
                            APOGEE_HEALS_RUNTIME_NAME=heals, APOGEE_HEALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=CHILDREN/'ApogeeHeals',env=env,check=True)
+                subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=CHILDREN/'ApogeeHeals',env=env,check=True)
+                keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
+                env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
+                           APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1',
+                           APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')
+                subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=CHILDREN/'ApogeeKeybinds',env=env,check=True)
                 if target=='forever-offline':
                     keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),

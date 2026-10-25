@@ -8,6 +8,10 @@ for checked closed-client migration, rollback and native acceptance requirements
 
 ## Shared launcher candidate - 2026-10-25
 
+Coordinated candidate validation uses [CANDIDATE_VALIDATION.md](CANDIDATE_VALIDATION.md).
+It checks Era and future Forever test-source pins together; the frozen release
+workflow is not evidence for the new candidates.
+
 Era.8 adds required Apogee UI shared support and one green minimap launcher.
 Source/API/persistence/installation details and native checklist: era/LAUNCHER.md.
 New support requires closed-client installation and full restart. The separate

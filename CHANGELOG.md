@@ -1,3 +1,8 @@
+## Unreleased - targeted startup hardening
+
+- Harden shared startup and cleanup in Era.19 and future Forever launcher.12; preserve frozen release pins and installed beta.
+- Add one candidate validator with exact test-source pin checks, generated startup fault injection and explicit offline/native boundaries.
+
 ## Unreleased - position-reset preservation audit
 
 - Test the generated menu through real Heals/Keybinds reset callbacks in Era DEV

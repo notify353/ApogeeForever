@@ -82,6 +82,25 @@ for _,base in ipairs(bases) do
                     assert(loadfile(root..'/'..child..'/__Distribution/FamilyGate.lua'))(child,after)
                     assert(after.__ApogeeFamilyAdmission and after.__ApogeeFamilyAdmission(child),
                         'Initialized generated support must admit its child')
+                    -- A real late Settings exception must also deny every child chunk.
+                    W=mock.New(); if target=='era' then WOW_PROJECT_ID=2 end
+                    _G[serviceName]=nil
+                    _G[family=='DEV' and 'ApogeeDevSettingsRegistry' or 'ApogeeSettingsRegistry']=nil
+                    local broken={}
+                    assert(loadfile(root..'/'..name..'/__Distribution/FamilyGate.lua'))(name,broken)
+                    for _,p in ipairs(paths[name]) do
+                        if not p:match('^__Distribution/') then assert(loadfile(root..'/'..name..'/'..p))(name,broken) end
+                    end
+                    Settings.RegisterAddOnCategory=function() error('injected Settings failure') end
+                    W.Event('ADDON_LOADED',name)
+                    assert(broken.failed and not broken.ready)
+                    local denied={}
+                    assert(loadfile(root..'/'..child..'/__Distribution/FamilyGate.lua'))(child,denied)
+                    assert(not denied.__ApogeeFamilyAdmission,'Failed master admitted its child')
+                    CreateFrame=function() error('Failed master allowed child side effects') end
+                    for _,p in ipairs(paths[child]) do
+                        if not p:match('^__Distribution/') then assert(loadfile(root..'/'..child..'/'..p))(child,denied) end
+                    end
                 else
                     local state=C_AddOns.GetAddOnEnableState
                     C_AddOns.GetAddOnEnableState=function(n) return n==support and 0 or 2 end

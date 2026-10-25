@@ -92,7 +92,7 @@ local function reset()
         end,
     }
 end
-local function load(owner, family, denied, saved)
+local function load(owner, family, denied, saved, unavailable)
     local name=owner[1]..(family=="DEV" and "Dev" or "")
     local supportName="ApogeeUI"..(family=="DEV" and "Dev" or "")
     if sharedSupport and not denied and not _G[supportName] then
@@ -105,7 +105,9 @@ local function load(owner, family, denied, saved)
         if _G[supportName] then
             local events=frames[#frames]
             events.scripts.OnEvent(events,"ADDON_LOADED",addonName)
-            assert(support.ready and not support.button,"Support alone has no launcher")
+            if unavailable then assert(support.failed and not support.ready,"Invalid Settings must fail startup")
+            else assert(support.ready,"Valid shared Settings must initialize") end
+            assert(not support.button,"Support alone has no launcher")
         end
     end
     local function text(parent,value,font)
@@ -252,7 +254,7 @@ for _,family in ipairs(families) do
             for _,bad in ipairs({true, {schema=2}, {schema=1,category={},children={}}}) do
                 reset()
                 local key=family=="DEV" and "ApogeeDevSettingsRegistry" or "ApogeeSettingsRegistry"
-                _G[key]=bad; load(owner,family)
+                _G[key]=bad; load(owner,family,false,nil,sharedSupport)
                 assert(_G[key]==bad and #categories==0 and #roots==0,"Malformed registry must stay untouched")
             end
             reset(); Settings.RegisterCanvasLayoutSubcategory=nil
