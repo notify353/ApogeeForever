@@ -18,6 +18,13 @@ fix with native-name combat defaults and an owner-approved once-only Era choice
 reset in Era.4. This supersedes the uninstalled Era.3 candidate; use the latest
 installed Era receipt, never an uninstalled candidate as the previous receipt.
 
+Era.4 installed October 25 after the owner confirmed the client closed. Latest
+Era receipt: `C:/Dev/WoW/local-install-backups/apogee-era-errors-and-groups-20261025/transaction.json`.
+Eight writes, 113 installed/backed-up files verified (108 payload receipt entries
+plus five preserved README files). Forever's 1,477 addon files and eight frozen
+repository files unchanged. The once-only Era choice reset runs at next login;
+native acceptance remains pending. See the error-default report for evidence.
+
 ## Raised target actions installed - 2026-10-20
 
 Owner reports shared-range actions working and requested icons nearer target.

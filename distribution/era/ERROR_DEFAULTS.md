@@ -70,3 +70,17 @@ Native user testing must confirm combat error text/audio, outside-combat and
 useful error feedback, later checkbox choices across reload, and Group Finder
 manual search/results/drafts. Offline tests do not establish native timing,
 taint, server availability or complete coverage of every possible error name.
+
+## Installed October 25
+
+After the owner confirmed Classic Era was closed, central preflight rechecked
+closed-client state, exact artifact and fresh API evidence, then installed eight
+files. New verified backup/latest receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-errors-and-groups-20261025/transaction.json`.
+All 113 prior files were backed up. All 113 installed files verified: 108 payload
+receipt entries plus five intentionally preserved README files. All 1,477
+Forever addon files and eight frozen repository files match the before-snapshot.
+See `closed-install-preview.json`, `install.stdout.json`, `install.stderr.txt`
+and `install-verification.json` in the evidence directory. The earlier Era.1/2
+backups and uninstalled Era.3 package are retained. Native acceptance and the
+once-only settings reset await the user's next login; no game was operated.
