@@ -1,3 +1,10 @@
+## Unreleased - hardening regression sweep
+
+- Add 60 generated Era DEV and future Forever PROD/DEV startup edge cases:
+  healthy/early/partial/queued/cleanup failures, immediate and combat-deferred
+  startup, complete saved-state preservation, and shared-consumer isolation.
+- No runtime or source-pin changes; Era.19 and future launcher.12 remain selected.
+
 ## Unreleased - targeted startup hardening
 
 - Harden shared startup and cleanup in Era.19 and future Forever launcher.12; preserve frozen release pins and installed beta.

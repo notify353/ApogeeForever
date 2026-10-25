@@ -44,6 +44,8 @@ class LauncherTests(unittest.TestCase):
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
                                    cwd=CHILDREN/component,env=env,check=True)
+                    subprocess.run(['lua',str(ROOT/'tests/distribution/startup_edges.lua'),folder,family,target,component],
+                                   cwd=CHILDREN/component,env=dict(env,APOGEE_KEYBINDS_TEST_SIMULATED='1'),check=True)
                 subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target,
                                 str(CHILDREN/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
                 heals='ApogeeHeals'+('Dev' if family=='DEV' else '')
