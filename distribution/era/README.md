@@ -22,6 +22,7 @@ files from other versions. Do not treat those as authority.
 | Feature | Candidate treatment | Evidence / change |
 | --- | --- | --- |
 | Healing, buffs, fixed party recipients, protected clicks | Shared gameplay retained | Fresh Unit, UnitAura, Spell and secure sources; private name adapter uses Era's first UnitName return, never realm as surname |
+| Party debuffs and cleansing artwork | Era.6 private reader | Eight fixed debuff icons and learned player-spell highlights from public aura records; shared secure actions unchanged. See [archive sweep](ARCHIVE_SWEEP.md). |
 | Spell drops and bindings | Small private adapters | Vanilla SpellBookFrame classic slots/tabs; preserve spell IDs and rank labels; no invented Forever override aliases; passive and pet spells excluded |
 | Secure action execution | Retained and guarded | Fresh SecureTemplates and RestrictedAddOnEnvironment/SecureStateDriver execute in generated Keybinds tests; combat rebuilding deferred |
 | Follow/Inspect/Talents strip | Entire strip omitted | Era InspectUI selection lacks native talent inspection; no shared behavior split |
@@ -29,6 +30,7 @@ files from other versions. Do not treat those as authority.
 | Tank threat-stack warrior debuffs | Era.5 private renderer | Fresh public aura records; player-owned Sunder/Thunder Clap/Demoralizing Shout, bounded scans and fixed preallocated icons. Forever native containers unchanged. |
 | Official listings and activity discovery | Enabled from Era.3 through the shared guarded adapter | Fresh Vanilla UIParent loads VanillaStyle on demand; seven-argument search, activity/player records and remaining-role counts match shared contracts. Initial TOC-only assessment was incomplete. |
 | Settings and conveniences | Shared with capability checks | Fresh Settings/Keybindings, Bindings_Vanilla and CVar settings sources; unsupported named CVars disable their own feature |
+| Combat UI fading | Era.6 private frame selection | Includes fresh MainMenuBar artwork and selects QuestWatchFrame; shared hover/restore behavior retained. |
 | Error suppression | Era.4 native-name defaults and approved once-only reset | Fresh UIErrorsFrame and GetGameMessageInfo; routine combat errors suppressed, useful/unknown types visible. Separate Era reset marker, later choices preserved; no Forever numeric-ID migration |
 | Stats and item/loot tooltip evaluation | Excluded; redesign review needed | Era tooltip selection uses OnTooltipSetItem; modern hyperlink/item-key readers absent from fresh generated contracts |
 | Auction filtering/buyout selection | Excluded; redesign review needed | Modern AuctionHouseUI TOC permits cata/mists; Era uses separate AuctionUI |

@@ -1,3 +1,7 @@
+## Unreleased - Era archive comparison sweep
+
+- Pin Era.6 party debuff/cleansing artwork and Classic main-menu/quest-tracker fading fixes. Record archive comparisons, current API evidence, generated regressions and frozen Forever preservation.
+
 # Unreleased - Era combat error defaults
 
 - Pin native-name combat error defaults and the owner-approved once-only Era choice reset. Preserve useful/unknown feedback, history, global switches, later choices and frozen Forever pins; retain the pending Group Finder fix.

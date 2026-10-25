@@ -269,6 +269,50 @@
     {
       "path": "Blizzard_UnitFrame/Classic/TargetFrame.lua",
       "sha256": "22c21da0ca70e0cfe87e3b401dfe5184421cff42aa05e013cae788d202f1e225"
+    },
+    {
+      "path": "Blizzard_ActionBar/Blizzard_ActionBar_Classic.toc",
+      "sha256": "ee6fe97a398f9083b2fa2782e69e57d7cdfdb69ae1d28c46e51c7e09a996ce5e"
+    },
+    {
+      "path": "Blizzard_ActionBar/Classic/MainMenuBar.xml",
+      "sha256": "3394e02ddbb8c5875bb95dce9bb7147c8900f568bae7ce588cc018ca2d71c2b8"
+    },
+    {
+      "path": "Blizzard_ActionBar/Classic/MainMenuBar.lua",
+      "sha256": "7d56abe4d4a971f9714760342f1d4d835fc43873f53214aaa0b655a21167c9ea"
+    },
+    {
+      "path": "Blizzard_ActionBar/Classic/MainActionBar.xml",
+      "sha256": "b7e112fdad49f11be2c6e9d40947685aa65912bd0e4f26b54927439994b88ae8"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Blizzard_UIPanels_Game_Classic.toc",
+      "sha256": "1b37ebb91cfd3689a89b4f6569886b236c3e33717fc38e2918859ef94d71dbc8"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Vanilla/QuestLogFrame.xml",
+      "sha256": "22506fe77800be192c91b58eeb4cbd8008a75a08e35a0d2731446fabb0261864"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Vanilla/QuestLogFrame.lua",
+      "sha256": "44110b438251af43b77dedc94e7b53541c699988aef6ff06020cf352bbeb41a5"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/SimpleScriptRegionAPIDocumentation.lua",
+      "sha256": "9cf580688388b332d87e8126703892a1e1e4c0ea04173abb36bbebced26555b8"
+    },
+    {
+      "path": "Blizzard_BuffFrame/Blizzard_BuffFrame.toc",
+      "sha256": "ec984f6746712f421e39c99e0d7bfabf1cacecafe934e71a170e0f6ea2d0739c"
+    },
+    {
+      "path": "Blizzard_BuffFrame/BuffFrame.lua",
+      "sha256": "ef895ed6052b987e168e7806e3b74dd53736b0aca8ff0793d15c180db321dcac"
+    },
+    {
+      "path": "Blizzard_BuffFrame/Classic/BuffFrame.lua",
+      "sha256": "f559dcfe6b07d6370d35d6eb91f46a6182b03b0f905a75e11147a18940f585da"
     }
   ],
   "interface": 11509,
