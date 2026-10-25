@@ -1,5 +1,5 @@
 {
-  "apiEvidenceSha256": "8d96bca0f4b2f13d3a1c4ab60333cd1b9196a3dc7792b602d94a7fe11988d464",
+  "apiEvidenceSha256": "c257a27b59386113045bac4f9e5763b0f09ed7abc9a31ddd8ac110c06252158d",
   "children": [
     {
       "commit": "0858cb7e0a226c6a9426d16580a114b85de0dc98",
@@ -78,7 +78,7 @@
       "toc": "ApogeeKeybinds_Era.toc"
     },
     {
-      "commit": "400326b4baf3549a47d88d2ca640e12251d8563a",
+      "commit": "35abae5885c8e442ed1df76867dc8caa20e1f953",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "26814f678d1ec19f184e0b78f891d4fc67fec6bee3d0018fdb9e1b200d8e5c11",
@@ -89,8 +89,8 @@
         "Core/UI.lua": "03b823c7c58081623076d51de3ee013b7c173d261c9b38553b8a616c600749f3",
         "Discovery/Dictionary.lua": "91945d83e51f417869d53cc45d118a5b1f5876b914aeb10018d905611236f28b",
         "Discovery/Model.lua": "77d373fdb4c94805ee99d767db2d4c52376b4f06cc5dc34ded6ed2e6a27aea23",
-        "Era/Adapter.lua": "88cf207d5de4ddf7f789e2bef048e75d04a63cb2d1d4753f39b3b497003a6aa7",
-        "Era/README.md": "fcd6d4fbaeaa03c272f9e3503107f427c6ee3720e5ea48a7464f5ccf1695c12a",
+        "Era/Adapter.lua": "5565c0c0ab866be0b1de341d7199d0b1f88596698fa5e7b4b1b0978c9ca5e671",
+        "Era/README.md": "8e82502373f485c5dbf6e365fd5758d8c35655cbc66816c36bfe06aebe706d6f",
         "Groups/InlineRoster.lua": "c300b29b68712b143f8465837f7ac605289faa568ade026e00f5954cefc3d1e4",
         "Groups/Model.lua": "8e6897b2e8db1acbaf036d3fd5b56250b78ce5800db897f934f3ca0fccbc707d",
         "Groups/View.lua": "5a563fc79cbd926f30045c214d3857c97c9825f0abb089126e82fca68726dd0c",
@@ -147,5 +147,5 @@
   "publicationAllowed": false,
   "schema": 1,
   "target": "classic-era",
-  "version": "1.14.8-era.2"
+  "version": "1.14.8-era.3"
 }

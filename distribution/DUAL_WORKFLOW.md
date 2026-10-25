@@ -7,8 +7,11 @@ Forever locks remain unchanged. Live Forever validation awaits its future
 release; frozen offline checks do not claim live acceptance. Era.1 was installed
 with explicit approval; its receipt is in
 `C:/Dev/WoW/local-install-backups/apogee-era-20261024/transaction.json`.
-The [Era bug sweep](era/BUG_SWEEP.md) prepares Era.2 fixes locally. Era updates
-still require a closed client and the prior Era receipt.
+Era.2 was subsequently installed with explicit approval; its latest receipt is
+`C:/Dev/WoW/local-install-backups/apogee-era-bugfix-20261024/transaction.json`.
+The [Group Finder correction](era/GROUP_FINDER.md) prepares Era.3 with official
+listings restored using fresh Era authority. Era updates still require a closed
+client and the prior Era receipt.
 
 ## Raised target actions installed - 2026-10-20
 

@@ -1,3 +1,7 @@
+# Unreleased - Era Group Finder
+
+- Correct the initial Era Group Finder assessment with fresh native load-on-demand and API evidence. Pin the Era-only removal of forced unavailable behavior; retain shared gameplay, loading safeguards and frozen Forever pins.
+
 # Unreleased - Era bug sweep
 
 - Use atomic file replacement for closed-client Era installs so interrupted writes retain a recoverable old/new file. Preserve existing Forever transaction defaults and guards.

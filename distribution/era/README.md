@@ -14,7 +14,7 @@ replacement, archived addon or settings import is involved.
 
 ## Scope and authority
 
-`api-evidence.json` fingerprints the reviewed executable and 47 freshly exported
+`api-evidence.json` fingerprints the reviewed executable and selected freshly exported
 files. Build and install verify product, executable hash, reference hashes and
 export timestamps. Fresh selecting TOCs matter: the export also contains stale
 files from other versions. Do not treat those as authority.
@@ -26,7 +26,7 @@ files from other versions. Do not treat those as authority.
 | Secure action execution | Retained and guarded | Fresh SecureTemplates and RestrictedAddOnEnvironment/SecureStateDriver execute in generated Keybinds tests; combat rebuilding deferred |
 | Follow/Inspect/Talents strip | Entire strip omitted | Era InspectUI selection lacks native talent inspection; no shared behavior split |
 | Chat recruitment / dungeon wording | Shared classifier and UI | ChatFrameUtil/filters and ChatInfo; separate activity namespace, explicit phrases retained |
-| Official listings and activity discovery | Disabled | Era GroupFinder selection omits reviewed official-listing UI; no LFG_LIST registration or official API calls |
+| Official listings and activity discovery | Enabled from Era.3 through the shared guarded adapter | Fresh Vanilla UIParent loads VanillaStyle on demand; seven-argument search, activity/player records and remaining-role counts match shared contracts. Initial TOC-only assessment was incomplete. |
 | Settings and conveniences | Shared with capability checks | Fresh Settings/Keybindings, Bindings_Vanilla and CVar settings sources; unsupported named CVars disable their own feature |
 | Error suppression | Small Era policy | Fresh UIErrorsFrame; new types visible, explicit choices preserved; no Forever numeric-ID migration |
 | Stats and item/loot tooltip evaluation | Excluded; redesign review needed | Era tooltip selection uses OnTooltipSetItem; modern hyperlink/item-key readers absent from fresh generated contracts |
@@ -97,7 +97,8 @@ User testing must cover first login/reload with only the Era DEV family chosen;
 separate settings persistence/defaults; party changes and combat; friendly click
 healing and buff reminders on fixed recipients; learned ranks, keyboard/mouse/
 stance actions and combat edit deferral; chat matching and editable whisper
-drafts; error visibility and explicit suppression; optional settings; tooltip
+drafts; manual official search, completed/failed/empty results, role and level
+filters, combat hiding, listing updates and whisper drafts; error visibility and explicit suppression; optional settings; tooltip
 errors; and absence of taint/blocked-action messages. Verify excluded features
 stay unavailable. Never operate the game from Codex.
 

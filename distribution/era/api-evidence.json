@@ -189,6 +189,62 @@
     {
       "path": "Blizzard_APIDocumentationGenerated/GameCursorDocumentation.lua",
       "sha256": "4a92d4558567c2cb7f74df43ba6d44733c5b01afd7d8ce06c549deddff19f9ad"
+    },
+    {
+      "path": "Blizzard_UIParent/Blizzard_UIParent_Vanilla.toc",
+      "sha256": "c7f53e3d04813d4578c45c9fc678a44903d366812b6d2bfd6e2bbb28417cec24"
+    },
+    {
+      "path": "Blizzard_UIParent/Vanilla/UIParent.lua",
+      "sha256": "73bda7488bc1aab757b5a5ad5aa72133f555135b0b567b482da33b36b3c63a18"
+    },
+    {
+      "path": "Blizzard_GroupFinder/Classic/LFGFrame_Minimap_Vanilla.lua",
+      "sha256": "03448dd46683533d6a33eb5c93aad583ab529256ebb267b511576ed137cbdddb"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_GroupFinder_VanillaStyle.toc",
+      "sha256": "9f18667df6750452e20f40b832062e3b9b92d2f1c68cfe527e89022e6741225b"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_ParentFrame.lua",
+      "sha256": "2bd1aebbf89132fb471adc09fd7c91a3b6710e9636a88adb8ecf29c4e9717870"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_ParentFrame.xml",
+      "sha256": "a7039e3fea0c73df01dd72a8c4a1530081fa7a43317796145bc9d6f073e0a68c"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_Browse.lua",
+      "sha256": "41b340145d6beee3df6295aef7d0cc693fc24d9a555a0ac343dfe829d7aa14f8"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_Browse.xml",
+      "sha256": "8d3cbadb1b9e7f9a4da04b9c31cd1d431d515a403ad38ba0765436b680cb1b48"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_Listing.lua",
+      "sha256": "fee18ef087bfbb1700beca22285f21ddc81710133d7d4395534c3087ed82c836"
+    },
+    {
+      "path": "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_Listing.xml",
+      "sha256": "5b901abb85c098967ede1aeccc7492eb03941eb84a7b7255f3e1ebaa5c8e1d8c"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/LFGListInfoDocumentation.lua",
+      "sha256": "2b6b1b46fabb3d96b6e50fb73257649bea053719ac324108693b88714632f22a"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/LFGInfoDocumentation.lua",
+      "sha256": "64ca6b9c3941cbc4950312f8358f8af32ef90f11e4cb23f6e33dbe120c481c58"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/LFGListRolesDocumentation.lua",
+      "sha256": "5353b13948e8f5c204f31d83c09e6164a8030d3f13a4a0c5079fec3e6a6de27c"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/LFGConstantsDocumentation.lua",
+      "sha256": "87f81bfaf35d40da6e673fb85ed2ba0ae623cbdc3d53e1db24eb7714c84ce61a"
     }
   ],
   "interface": 11509,
