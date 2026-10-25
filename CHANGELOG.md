@@ -1,3 +1,9 @@
+## Unreleased - combat-only explosive bindings
+
+- Era.13 requires combat for supported Keybinds explosive item assignments,
+  including Solid Dynamite, with manual or at-player aiming. Ordinary items
+  and authored macros remain unchanged. Prepare the same future Forever policy.
+
 ## Unreleased - minimap tooltip removed
 
 - Era.12 removes the shared minimap hover tooltip; retain click controls, drag,

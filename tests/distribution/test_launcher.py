@@ -40,6 +40,10 @@ class LauncherTests(unittest.TestCase):
                 subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target,
                                 str(CHILDREN/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
                 if target=='forever-offline':
+                    keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
+                    env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
+                               APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1')
+                    subprocess.run(['lua','tests/explosives_spec.lua'],cwd=CHILDREN/'ApogeeKeybinds',env=env,check=True)
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=CHILDREN/'ApogeeStats',check=True)
                 for child in self.era['children'] if target=='era' else self.future['children']:
