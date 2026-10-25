@@ -1,3 +1,7 @@
+# Unreleased - Era combat error defaults
+
+- Pin native-name combat error defaults and the owner-approved once-only Era choice reset. Preserve useful/unknown feedback, history, global switches, later choices and frozen Forever pins; retain the pending Group Finder fix.
+
 # Unreleased - Era Group Finder
 
 - Correct the initial Era Group Finder assessment with fresh native load-on-demand and API evidence. Pin the Era-only removal of forced unavailable behavior; retain shared gameplay, loading safeguards and frozen Forever pins.

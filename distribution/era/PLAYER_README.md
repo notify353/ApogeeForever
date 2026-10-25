@@ -13,6 +13,8 @@ another Apogee family alongside this one. Restart the client if new addons are
 not discovered. The distribution marker contains no runtime or saved data.
 
 Not included: Stats/tooltips, auctions, or the Heals
-Follow/Inspect/Talents action strip. Era error messages are visible by default;
-explicit suppression choices remain yours. Unavailable optional client settings
+Follow/Inspect/Talents action strip. Era.4 suppresses routine combat errors by
+default while keeping useful and unknown feedback visible. Learned error choices
+reset once; history and the main switch remain, and later choices persist.
+Outside combat errors remain visible. Unavailable optional client settings
 are disabled. Forever installations and release pins are separate.

@@ -245,6 +245,10 @@
     {
       "path": "Blizzard_APIDocumentationGenerated/LFGConstantsDocumentation.lua",
       "sha256": "87f81bfaf35d40da6e673fb85ed2ba0ae623cbdc3d53e1db24eb7714c84ce61a"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/GameErrorDocumentation.lua",
+      "sha256": "cd3dc6677738900d89f07dbabb6de85e18334624d5e9de22c3ade563cce17de6"
     }
   ],
   "interface": 11509,

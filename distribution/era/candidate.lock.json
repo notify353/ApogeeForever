@@ -1,5 +1,5 @@
 {
-  "apiEvidenceSha256": "c257a27b59386113045bac4f9e5763b0f09ed7abc9a31ddd8ac110c06252158d",
+  "apiEvidenceSha256": "28ad5423cad52d4dbcbcc16a924110a67b453eba14a3f4ab4586f76772d06155",
   "children": [
     {
       "commit": "0858cb7e0a226c6a9426d16580a114b85de0dc98",
@@ -106,7 +106,7 @@
       "toc": "ApogeeGroupAlert_Era.toc"
     },
     {
-      "commit": "dd852eb49b0216934c517f97f764b2dfa3bcbb76",
+      "commit": "4f0402a598b047174ee74b532b6e29729fda07f2",
       "files": {
         "ApogeeEssentials.lua": "863e32f8db8e169a8778655fbdcb4cc2d36a2033f31eb5c5dd85077f9937a197",
         "ApogeeEssentials_Era.toc": "7d0c9528034e496131e58fbee51e1e11e7a23b61bd49354adec347e8dcf3b928",
@@ -118,9 +118,9 @@
         "Core/LoginDefaults.lua": "94a209463a3d639290ad086a26ed8c7a604460bd672bae0ede71d5eda8e22f5f",
         "Core/Settings.lua": "fb5a52a6a9683d074029b877166420d7519d37609708ba3460db76c9e40cd378",
         "Damage/Runtime.lua": "c103739fcb0939725f214dcc5073f58d48160c93f8635549f1e2622fedd52bb6",
-        "Era/Adapter.lua": "4d42f42fe1a63f40777a1001e8dd8befd11e4c453f803278a66afe1a62daf7c6",
-        "Era/README.md": "557ef77b73ab7af35adcb394469e87d8a57764a5c5de2887c153d6b76b6d9e91",
-        "Errors/Runtime.lua": "bf2660008b5ef69e370a032aa648ba9396f2bbc09bf26dc16e5cff9ad31560bf",
+        "Era/Adapter.lua": "9903b679186834ac15a4319a39fa5a2b57902fcefb551606a70d68f291efadf8",
+        "Era/README.md": "6b063dc3d3643b86278190b0e6c4d15dc4aa808db743b82b1806a2e2bbc3cfeb",
+        "Errors/Runtime.lua": "b656cff0da6cb0463acafee58355c4a9d7ebbfd0fa7f504893b09d70fad04116",
         "Errors/Settings.lua": "78a1dd20854dc7438f23c8c06e1c94784db1d917bb49a2a465fff22bbde808f1",
         "Fade/Runtime.lua": "e8f15b8524fd5f66afe448cbf1540f4a61ecbf0b6623c40c45ac27bd79ff1851",
         "GroupChat/Runtime.lua": "661b41c630f0b889616042300a21ec9cd4e92470218506f01b8f0b49c289f976",
@@ -147,5 +147,5 @@
   "publicationAllowed": false,
   "schema": 1,
   "target": "classic-era",
-  "version": "1.14.8-era.3"
+  "version": "1.14.8-era.4"
 }

@@ -13,6 +13,11 @@ The [Group Finder correction](era/GROUP_FINDER.md) prepares Era.3 with official
 listings restored using fresh Era authority. Era updates still require a closed
 client and the prior Era receipt.
 
+The [error-default correction](era/ERROR_DEFAULTS.md) combines that Group Finder
+fix with native-name combat defaults and an owner-approved once-only Era choice
+reset in Era.4. This supersedes the uninstalled Era.3 candidate; use the latest
+installed Era receipt, never an uninstalled candidate as the previous receipt.
+
 ## Raised target actions installed - 2026-10-20
 
 Owner reports shared-range actions working and requested icons nearer target.
