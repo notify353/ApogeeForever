@@ -37,6 +37,9 @@ class LauncherTests(unittest.TestCase):
                 master=d.MARKER+('Dev' if family=='DEV' else '')
                 env=os.environ.copy(); env.update(APOGEE_UI_ROOT=str(Path(folder)/master/'SharedUI'),APOGEE_UI_NAME=name,APOGEE_UI_ADDON=master,APOGEE_COMPONENTS_ROOT=folder)
                 subprocess.run(['lua','tests/launcher_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
+                for component in ('ApogeeHeals','ApogeeKeybinds'):
+                    subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
+                                   cwd=CHILDREN/component,env=env,check=True)
                 subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target,
                                 str(CHILDREN/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
                 heals='ApogeeHeals'+('Dev' if family=='DEV' else '')

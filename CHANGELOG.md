@@ -1,3 +1,11 @@
+## Unreleased - position-reset preservation audit
+
+- Test the generated menu through real Heals/Keybinds reset callbacks in Era DEV
+  and future Forever PROD/DEV. Compare all non-position saved fields and healing/key
+  action attributes; cover open/closed editors, repeated resets, drag release,
+  combat/world guards, minimap-only isolation and separate family data.
+- No runtime, package pin or installed-file changes required by this audit.
+
 ## Unreleased - position-only UI reset
 
 - Pin shared Reset UI positions for Era.18 and future Forever launcher.11. Preserve all gameplay settings and the frozen Forever beta.
