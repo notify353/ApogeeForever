@@ -57,6 +57,14 @@ for _,deferred in ipairs({false,true}) do
         _G[name..'DB'].auditSentinel={text='keep',value=false,nested={1,2,3}}
         local snapshot,registry,neighbor
         local function fail()
+            if scenario=='queued' then
+                if heals then a.Runtime.Request()
+                else
+                    a.API.pendingItems[999]=true
+                    fire('GET_ITEM_INFO_RECEIVED',999)
+                end
+                assert(#m.timers>0,'fixture failed to queue deferred work')
+            end
             snapshot=copy(a.db)
             registry=ApogeeUI.EnsureSettingsParent()
             if registry and registry.defaultSpells then
