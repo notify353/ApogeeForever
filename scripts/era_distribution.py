@@ -89,7 +89,8 @@ def family_files(lock, sources_root):
                      'Group': marker, 'Category': 'Apogee Era DEV', 'X-Apogee-Client': 'classic-era',
                      'X-Apogee-Family': 'DEV', 'X-Apogee-Family-Schema': '1'})
         d.require(meta.get('Dependencies') == 'ApogeeUI' and meta.get('X-Apogee-UI-API') == '1', 'Missing matching UI dependency')
-        meta['Dependencies'] = 'ApogeeUIDev'
+        meta['Dependencies'] = support.owner(lock, 'DEV')
+        if support.embedded(lock): meta['X-Apogee-Requires-Master'] = '1'
         renamed = {p: name + '.lua' if p == old + '.lua' else p for p in runtime}
         toc = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()) + '\n'
         toc += dual.GATE_PATH + '\n' + ''.join(renamed[p] + '\n' for p in runtime)
@@ -107,7 +108,6 @@ def family_files(lock, sources_root):
             else:
                 output[target] = data
         output[name + '/README.md'] = source['Era/README.md']
-    support.add_files(lock, sources_root, 'DEV', output, changes, gate, dual)
     for p in ('LICENSE', 'Media/Textures/ApogeeLogo.png'):
         output[marker + '/' + p] = output['ApogeeKeybindsDev/' + p]
     meta = {'Interface': '11509', 'Title': 'Apogee Era DEV', 'Version': lock['version'],
@@ -116,8 +116,11 @@ def family_files(lock, sources_root):
             'X-Apogee-Distribution-Only': '1', 'X-Apogee-Distribution-Schema': '1',
             'IconTexture': 'Interface/AddOns/' + marker + '/Media/Textures/ApogeeLogo.png'}
     output[marker + '/' + marker + '.toc'] = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()).encode()
+    support.add_files(lock, sources_root, 'DEV', output, changes, gate, dual)
     output[marker + '/README.md'] = (CONFIG / 'PLAYER_README.md').read_bytes()
-    d.require({p.split('/')[0] for p in output} == set(NAMES), 'Era roots differ')
+    if support.embedded(lock):
+        output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
+    d.require({p.split('/')[0] for p in output} == set(LEGACY_NAMES if support.embedded(lock) else NAMES), 'Era roots differ')
     return output, changes
 
 
@@ -143,7 +146,7 @@ def prepare(client, payload, previous=None):
     """Only Era DEV roots. Receipts from other clients/targets cannot authorize overwrites."""
     client = m.ordinary(client)
     d.require(client.name == CLIENT['directory'], 'Era client required')
-    d.require({p.split('/')[0] for p in payload} == set(NAMES), 'Exact Era roots required')
+    d.require({p.split('/')[0] for p in payload} == set(LEGACY_NAMES if support.master_payload(payload) else NAMES), 'Exact Era roots required')
     known = {'schema': 1, 'files': {}, 'legacyTocHashes': []}
     if previous is not None:
         d.require(previous['schema'] == 1 and previous['status'] == 'installed'
@@ -162,7 +165,10 @@ def prepare(client, payload, previous=None):
         if p in desired and body != desired[p] and p.lower().endswith(('.md', '.txt')):
             del desired[p]
             docs.append(p)
-    return desired, known, m.plan(client, desired, known, NAMES), docs
+    retired = support.retire_support(payload, m.managed(client / 'Interface/AddOns', NAMES), previous)
+    preview = m.plan(client, desired, known, NAMES, retired)
+    preview['retired'] = retired
+    return desired, known, preview, docs
 
 
 def verify_live_update(payload, preview, previous):
@@ -202,17 +208,20 @@ def install_target(args):
                              capture_output=True, text=True, check=True)
     client_running = 'wowclassic.exe' in running.stdout.lower()
     if args.inspect_only:
-        return {'target': 'classic-era', 'writeCount': len(preview['writes']), 'roots': list(NAMES),
-                'preservedDocumentation': docs, 'clientRunning': client_running,
+        return {'target': 'classic-era', 'writeCount': len(preview['writes']),
+                'roots': sorted({p.split('/')[0] for p in payload}), 'managedRoots': list(NAMES),
+                'preservedDocumentation': docs, 'clientRunning': client_running, 'retired': preview['retired'],
                 'requiresClosedClientForInstall': not live_update, 'apiEvidence': evidence,
                 'archiveSha256': d.sha(archive.read_bytes()), 'installed': False}
     d.require(not client_running or live_update, 'Close Classic Era or explicitly opt into a verified live update')
-    result = m.apply(args.client_root, desired, known, args.backup, preview, NAMES, atomic_files=True)
+    result = m.apply(args.client_root, desired, known, args.backup, preview, NAMES, atomic_files=True, retired=preview['retired'])
     result.update(target='classic-era', family='DEV', publicationAllowed=False,
+                  packageRoots=sorted({p.split('/')[0] for p in payload}),
+                  supportLayout='embedded-master' if support.master_payload(payload) else 'standalone',
                   lockSha256=d.sha(d.canonical(lock)), apiEvidence=evidence,
                   archiveSha256=d.sha(archive.read_bytes()), preservedDocumentation=docs,
                   liveUpdate=live_update, clientRunningAtPreflight=client_running,
-                  activation='Full game restart required for shared UI support; no settings imported' if any(p.startswith('ApogeeUIDev/') and p not in preview['before'] for p in preview['writes']) else 'User /reload after installation; no settings imported' if previous
+                  activation='Full game restart required for Apogee master/loading changes; no settings imported' if preview['retired'] or any((p.startswith('ApogeeUIDev/') or '/SharedUI/' in p) and p not in preview['before'] for p in preview['writes']) else 'User /reload after installation; no settings imported' if previous
                   else 'User opens Era and selects Apogee Era DEV; no settings imported')
     (args.backup / 'transaction.json').write_bytes(d.canonical(result))
     return {'status': result['status'], 'target': 'classic-era', 'writeCount': len(result['writes']),

@@ -97,13 +97,14 @@ local function load(owner, family, denied, saved)
     local supportName="ApogeeUI"..(family=="DEV" and "Dev" or "")
     if sharedSupport and not denied and not _G[supportName] then
         local support={__ApogeeFamilyAdmission=function() return true end}
-        local folder=root.."/"..family.."/"..supportName.."/"
+        local addonName="ApogeePartyHealthBars"..(family=="DEV" and "Dev" or "")
+        local folder=root.."/"..family.."/"..addonName.."/SharedUI/"
         for _,file in ipairs({"Client.lua","Settings.lua",supportName..".lua"}) do
-            assert(loadfile(folder..file))(supportName,support)
+            assert(loadfile(folder..file))(addonName,support)
         end
         if _G[supportName] then
             local events=frames[#frames]
-            events.scripts.OnEvent(events,"ADDON_LOADED",supportName)
+            events.scripts.OnEvent(events,"ADDON_LOADED",addonName)
             assert(support.ready and not support.button,"Support alone has no launcher")
         end
     end

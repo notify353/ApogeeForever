@@ -28,27 +28,26 @@ class EraTests(unittest.TestCase):
         cls.payload, cls.changes = era.family_files(cls.lock, SOURCES)
 
     def test_exact_isolated_payload_and_dev_storage(self):
-        self.assertEqual({p.split('/')[0] for p in self.payload}, set(era.NAMES))
-        for name in era.NAMES:
+        self.assertEqual({p.split('/')[0] for p in self.payload}, set(era.LEGACY_NAMES))
+        for name in era.LEGACY_NAMES:
             meta, runtime = d.toc_info(self.payload[name + '/' + name + '.toc'])
             self.assertEqual(meta['Interface'], '11509')
             self.assertEqual(meta['X-Apogee-Client'], 'classic-era')
             self.assertFalse(any(k.startswith('X-Curse') for k in meta))
+            self.assertEqual(runtime[0], dual.GATE_PATH)
             if name == d.MARKER + 'Dev':
-                self.assertEqual(runtime, [])
-                self.assertFalse(any(k.startswith('SavedVariables') for k in meta))
+                self.assertEqual(meta['X-Apogee-Master'], '1')
+                self.assertEqual(meta['SavedVariablesPerCharacter'], 'ApogeeUIDevDB')
+                self.assertEqual(runtime[1:], ['SharedUI/Client.lua','SharedUI/Settings.lua','SharedUI/ApogeeUIDev.lua'])
             else:
-                self.assertEqual(runtime[0], dual.GATE_PATH)
-                if name == 'ApogeeUIDev':
-                    self.assertEqual(runtime[1:], ['Client.lua', 'Settings.lua', name + '.lua'])
-                else:
-                    self.assertEqual(runtime[-2:], ['Era/Adapter.lua', name + '.lua'])
-                    self.assertEqual(meta['Dependencies'], 'ApogeeUIDev')
+                self.assertEqual(runtime[-2:], ['Era/Adapter.lua', name + '.lua'])
+                self.assertEqual(meta['Dependencies'], d.MARKER+'Dev')
+                self.assertEqual(meta['X-Apogee-Requires-Master'], '1')
                 for key, value in meta.items():
                     if key.startswith('SavedVariables'):
                         self.assertIn(name, value)
-                for path in runtime[1:]:
-                    self.assertTrue(self.payload[name + '/' + path].startswith(dual.prefix(name, 'DEV')))
+            for path in runtime[1:]:
+                self.assertTrue(self.payload[name + '/' + path].startswith(dual.prefix(name, 'DEV')))
         self.assertEqual(dual.validate(d.zip_bytes(self.payload), self.payload), self.payload)
 
     def test_changed_source_or_unloaded_lua_rejected(self):

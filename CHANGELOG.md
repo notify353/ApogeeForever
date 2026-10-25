@@ -1,3 +1,11 @@
+## Unreleased - internal UI and master switch
+
+- Era.11 embeds shared UI in the top-level Apogee addon, removes its separate
+  checkbox, and makes that top-level checkbox a required master for all children.
+- Preserve gameplay settings and selections; reset only minimap position.
+  Require closed-client migration with verified backup and full restart.
+- Prepare the same future Forever behavior offline; frozen beta/pins unchanged.
+
 ## Unreleased - combined minimap controls
 
 - Era.10: left-click toggles available editors together; right-click opens a flat

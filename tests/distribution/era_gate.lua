@@ -2,7 +2,7 @@
 local root = assert(arg[1])
 local savedPrint, secret = print, {}
 local scenarios = 0
-for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "ApogeeEssentials", "ApogeeUI"}) do
+for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "ApogeeEssentials", "ApogeePartyHealthBars"}) do
     local name = base .. "Dev"
     for _, option in ipairs({"allowed", "forever", "retail", "wrong-version", "missing-build", "secret-build",
         "missing-secret", "secret-project", "wrong-target", "secret-target", "metadata-error", "no-guid",
@@ -24,11 +24,12 @@ for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "Apo
         end
         local prod = option == "prod-enabled" or option == "prod-loaded" or option == "legacy-prod" or option == "bad-state"
         C_AddOns = {
-            GetNumAddOns=function() return prod and 2 or 1 end,
-            GetAddOnName=function(i) return i == 1 and name or "ApogeeHeals" end,
-            GetAddOnDependencies=function() return "ApogeeUIDev" end,
+            GetNumAddOns=function() return prod and 3 or 2 end,
+            GetAddOnName=function(i) return i == 1 and name or i == 2 and "ApogeePartyHealthBarsDev" or "ApogeeHeals" end,
+            GetAddOnDependencies=function() return "ApogeePartyHealthBarsDev" end,
             GetAddOnMetadata=function(addon, key)
                 if option == "metadata-error" then error("private text") end
+                if key == "X-Apogee-Master" or key == "X-Apogee-Requires-Master" and addon ~= "ApogeeHeals" then return "1" end
                 if key == "Version" then return "fixture" end
                 if key == "X-Apogee-UI-API" then return "1" end
                 if key == "X-Apogee-Client" then
@@ -36,13 +37,14 @@ for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "Apo
                 end
                 if addon == "ApogeeHeals" and option == "legacy-prod" then return nil end
                 if key == "X-Apogee-Family-Schema" then return "1" end
-                if key == "X-Apogee-Family" then return (addon == name or addon == "ApogeeUIDev") and "DEV" or "PROD" end
+                if key == "X-Apogee-Family" then return (addon == name or addon == "ApogeePartyHealthBarsDev") and "DEV" or "PROD" end
             end,
-            GetAddOnEnableState=function(_, guid)
+            GetAddOnEnableState=function(addon, guid)
                 assert(guid == "Player-Fixture")
+                if addon == "ApogeePartyHealthBarsDev" then return 2 end
                 return option == "bad-state" and secret or option == "prod-enabled" and 2 or 0
             end,
-            IsAddOnLoaded=function() return option == "prod-loaded" end,
+            IsAddOnLoaded=function(addon) return addon == "ApogeePartyHealthBarsDev" or option == "prod-loaded" end,
         }
         if option == "bad-lease" then ApogeeDistributionFamilyLease = {schema=2,family="DEV"} end
         if option == "other-lease" then ApogeeDistributionFamilyLease = {schema=1,family="PROD"} end

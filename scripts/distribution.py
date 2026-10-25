@@ -89,6 +89,7 @@ def support_descriptor(lock):
         require(not any(c.get('uiApi') for c in lock['children']), 'UI dependency lacks support module')
         return None
     module = modules[0]
+    require(module.get('placement', 'standalone') in ('standalone', 'master'), 'Unreviewed support placement')
     owner = next(c for c in lock['children'] if c['name'] == 'ApogeeEssentials')
     era = lock.get('target') == 'classic-era'
     require(module['name'] == 'ApogeeUI' and module['sourceChild'] == 'ApogeeEssentials'

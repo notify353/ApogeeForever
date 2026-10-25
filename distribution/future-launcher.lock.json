@@ -132,11 +132,11 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "b2219ebb596b9c5891032ea2d9a8972bac84dc40",
+      "commit": "322837410879a256d56514aadb5b85b60ea53740",
       "files": {
         "ApogeeEssentials.lua": "7b81726fb48f4c23881438f6906c83d96376b2dde46f00058d7697c1e52a0dca",
         "ApogeeEssentials.toc": "b90d1db125e7c1650a75b84015ccc0efda91e2cfb5359615ee8e271acb204fb6",
-        "CHANGELOG.md": "0729e94203ed2582424bb99fb170e420ffb1fbe57eb54f4146795d1cc3b1c0c2",
+        "CHANGELOG.md": "79af57c33944438810ca97911c3a266dbb282444af7d079da4e334bd4469cb6a",
         "Camera/Runtime.lua": "4b0d1fa5779ee0de6919b81789e1967b8ba818ae9111824b69e450b2fc2e7e9b",
         "Camera/Zoom.lua": "dbc434649beb411cc3471bd5a05db8750fcd866eac5ed40a065893def9ab89ba",
         "Core/CVarDefault.lua": "bad301a75b6de2ade57fe0d1a732c11d7c8538f897df446093b83cc130b45a2e",
@@ -223,21 +223,22 @@
   "supportModules": [
     {
       "apiVersion": 1,
-      "commit": "b2219ebb596b9c5891032ea2d9a8972bac84dc40",
+      "commit": "322837410879a256d56514aadb5b85b60ea53740",
       "files": {
-        "ApogeeUI.lua": "4b1fb952bca2e7fd55a0dc6aaf5c84f2f4b2c492782de0b3f1bc43553c2c8a17",
+        "ApogeeUI.lua": "3d03cc2375bed71f1fb8d20dad05ce9f2b1f15fb6154a026b1fe16af926553c9",
         "ApogeeUI.toc": "2f6d36c2e6e0522e671b1c35b2bfa5fd06b7f60073041afe7278a61a07caa488",
-        "Client.lua": "633eca8cee662a9136902baa6fd9ad981641935b9284504c1ea0d661368156f8",
+        "Client.lua": "9edab9fbb1f040befe3f9dadac68180b6a8305a93f461b19b6cf85b712a94c4e",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
-        "README.md": "f47efe4b2df81228a152346b699ef0ca61a0079899e17d88db490c0b1fb88f2b",
-        "Settings.lua": "457834a457d33657105ccd327769aa746260a15c65d0812138f9e2f09d7833a1"
+        "README.md": "21dd8dacb29fa12f669f53091c4f1cdf0a8350397ef30e132e22a87fbc978c66",
+        "Settings.lua": "e412454dcd25a4eaefcec84d74058606921e96438ed9bd8dd5f2cbe2816ccc91"
       },
       "name": "ApogeeUI",
+      "placement": "master",
       "sourceChild": "ApogeeEssentials",
       "subdirectory": "Shared/ApogeeUI",
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.8-launcher.3"
+  "version": "1.14.8-launcher.4"
 }

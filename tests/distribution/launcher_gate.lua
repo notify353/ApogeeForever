@@ -1,16 +1,17 @@
 -- Read actual generated metadata and exercise admission before any gameplay.
 local root,family,target=assert(arg[1]),assert(arg[2]),assert(arg[3])
 local suffix=family=='DEV' and 'Dev' or ''
-local support='ApogeeUI'..suffix
-local bases={'ApogeeUI','ApogeeHeals','ApogeeKeybinds','ApogeeGroupAlert','ApogeeEssentials'}
+local support='ApogeePartyHealthBars'..suffix
+local serviceName='ApogeeUI'..suffix
+local bases={'ApogeePartyHealthBars','ApogeeHeals','ApogeeKeybinds','ApogeeGroupAlert','ApogeeEssentials'}
 if target~='era' then bases[#bases+1]='ApogeeStats' end
 local scenarios=0
 local originalPrint=print
 for _,base in ipairs(bases) do
     local name=base..suffix
     for _,scenario in ipairs({'allowed','api','version','family','missing','dependency',
-        'runtime-missing','runtime-api','runtime-not-ready','runtime-incomplete'}) do
-        if base~='ApogeeUI' or not scenario:match('^runtime') and scenario~='dependency' then
+        'runtime-missing','runtime-api','runtime-not-ready','runtime-incomplete','disabled','master-metadata','not-loaded','child-contract'}) do
+        if base~='ApogeePartyHealthBars' or not scenario:match('^runtime') and scenario~='dependency' and scenario~='not-loaded' and scenario~='child-contract' then
             local metadata,paths={},{}
             for _,b in ipairs(bases) do
                 local n=b..suffix; metadata[n]={}; paths[n]={}
@@ -20,6 +21,7 @@ for _,base in ipairs(bases) do
                     elseif line:match('%.lua$') then paths[n][#paths[n]+1]=line end
                 end
             end
+            if scenario=='master-metadata' then metadata[support]['X-Apogee-Master']=nil end
             if scenario=='api' then metadata[support]['X-Apogee-UI-API']='2' end
             if scenario=='version' then
                 if name==support then metadata[support].Version=nil
@@ -28,6 +30,7 @@ for _,base in ipairs(bases) do
             if scenario=='family' then metadata[support]['X-Apogee-Family']='OTHER' end
             if scenario=='missing' then metadata[support]=nil end
             if scenario=='dependency' then metadata[name].Dependencies='ApogeeUIOtherFamily' end
+            if scenario=='child-contract' then metadata[name]['X-Apogee-Requires-Master']=nil end
             local service={apiVersion=1,ready=true}
             for _,method in ipairs({'RegisterComponent','RefreshComponent','UnregisterComponent','RegisterSettings','EnsureSettingsParent'}) do
                 service[method]=function() end
@@ -35,7 +38,7 @@ for _,base in ipairs(bases) do
             if scenario=='runtime-api' then service.apiVersion=2 end
             if scenario=='runtime-not-ready' then service.ready=false end
             if scenario=='runtime-incomplete' then service.RegisterComponent=nil end
-            _G[support]=scenario~='runtime-missing' and service or nil
+            _G[serviceName]=scenario~='runtime-missing' and service or nil
             ApogeeDistributionFamilyLease=nil
             issecretvalue=function() return false end
             WOW_PROJECT_CLASSIC,WOW_PROJECT_ID=2,2
@@ -50,8 +53,8 @@ for _,base in ipairs(bases) do
                     return metadata[n] and metadata[n][k]
                 end,
                 GetAddOnDependencies=function(n) return metadata[n] and metadata[n].Dependencies end,
-                GetAddOnEnableState=function() return 2 end,
-                IsAddOnLoaded=function() return false end,
+                GetAddOnEnableState=function(n) return n==support and scenario=='disabled' and 0 or 2 end,
+                IsAddOnLoaded=function(n) return n==support and scenario~='not-loaded' end,
             }
             print=function() end
             local ns={}
@@ -64,11 +67,11 @@ for _,base in ipairs(bases) do
                     local mock=dofile(assert(arg[4]))
                     local W=mock.New()
                     if target=='era' then WOW_PROJECT_ID=2 end
-                    _G[support]=nil
+                    _G[serviceName]=nil
                     for _,p in ipairs(paths[name]) do
                         if not p:match('^__Distribution/') then assert(loadfile(root..'/'..name..'/'..p))(name,ns) end
                     end
-                    assert(_G[support]==ns and not ns.ready)
+                    assert(_G[serviceName]==ns and not ns.ready)
                     local child='ApogeeHeals'..suffix
                     local early={}
                     assert(loadfile(root..'/'..child..'/__Distribution/FamilyGate.lua'))(child,early)
@@ -80,6 +83,10 @@ for _,base in ipairs(bases) do
                     assert(after.__ApogeeFamilyAdmission and after.__ApogeeFamilyAdmission(child),
                         'Initialized generated support must admit its child')
                 else
+                    local state=C_AddOns.GetAddOnEnableState
+                    C_AddOns.GetAddOnEnableState=function(n) return n==support and 0 or 2 end
+                    assert(not ns.__ApogeeFamilyAdmission(name),'disabled master admitted later chunk')
+                    C_AddOns.GetAddOnEnableState=state
                     service.apiVersion=2
                     assert(not ns.__ApogeeFamilyAdmission(name),'later chunks must revalidate support')
                 end

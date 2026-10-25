@@ -98,7 +98,7 @@ def catalog(path):
     return value
 
 
-def plan(client, payload, known, names=NAMES):
+def plan(client, payload, known, names=NAMES, retired=None):
     client = ordinary(client)
     addons = under(client, 'Interface/AddOns')
     d.require(addons.is_dir(), 'Existing AddOns destination required')
@@ -106,6 +106,7 @@ def plan(client, payload, known, names=NAMES):
     desired = dict(payload)
     marker = payload.get(d.MARKER + '/' + d.MARKER + '.toc')
     inventory = []
+    retired = retired or {}
     for p, body in before.items():
         accepted = d.sha(body) in known['files'].get(p, [])
         status = 'recognized' if accepted else 'unknown-preserved'
@@ -117,6 +118,9 @@ def plan(client, payload, known, names=NAMES):
                           'Unrecognized APHB loader; no changes made: ' + p)
                 desired[p] = marker
                 status = 'inert-marker' if body == marker else 'neutralize-known-loader'
+            elif p in retired:
+                d.require(accepted and d.sha(body) == retired[p], 'Modified retiring loader: ' + p)
+                status = 'retire-verified-support-loader'
             else:
                 d.require(p in payload, 'Unexpected child loader; no changes made: ' + p)
         if p in payload and body != payload[p]:
@@ -167,15 +171,17 @@ def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomi
     backup = ordinary(backup)
     d.require(not backup.is_relative_to(client) and not client.is_relative_to(backup),
               'Backup must be outside the client')
-    current = plan(client, payload, known, names)
+    retired = retired or {}
+    current = plan(client, payload, known, names, retired)
     if expected_plan is not None:
         d.require(hashes(current['before']) == hashes(expected_plan['before']), 'Destination changed after review')
-    retired = retired or {}
     for p, digest in retired.items():
         d.safe_path(p)
-        d.require(atomic_dev and p.split('/')[0] in names and p.endswith('.lua')
+        support_retirement = p.startswith('ApogeeUIDev/') and p.lower().endswith(('.lua','.xml','.toc'))
+        d.require(((atomic_dev and p.endswith('.lua')) or ((atomic_dev or atomic_files) and support_retirement))
+                  and p.split('/')[0] in names
                   and p not in payload and p in current['before']
-                  and d.sha(current['before'][p]) == digest, 'Invalid retirement: ' + p)
+                  and d.sha(current['before'][p]) == digest and digest in known['files'].get(p, []), 'Invalid retirement: ' + p)
     saved = protected(client, names)
     backup.mkdir(parents=True, exist_ok=False)
     # Complete byte-verified backup before the first destination write.

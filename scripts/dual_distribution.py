@@ -128,7 +128,7 @@ def prefix(name, family):
 def family_children(lock, family):
     d.require(family in ('PROD', 'DEV'), 'Unknown family')
     children = d.public_children(lock) if family == 'PROD' else d.hosted_children(lock) + tuple(c['name'] for c in d.local_dev_children(lock))
-    return children + (('ApogeeUI',) if support.descriptor(lock) else ())
+    return children + (('ApogeeUI',) if support.descriptor(lock) and not support.embedded(lock) else ())
 
 
 def family_files(lock, sources_root, family):
@@ -162,7 +162,8 @@ def family_files(lock, sources_root, family):
             meta = {k: v.replace(old, name) if k.startswith('SavedVariables') or k == 'IconTexture' else v
                     for k, v in meta.items()}
         if child.get('uiApi') == 1:
-            meta['Dependencies'] = 'ApogeeUIDev' if family == 'DEV' else 'ApogeeUI'
+            meta['Dependencies'] = support.owner(lock, family)
+            if support.embedded(lock): meta['X-Apogee-Requires-Master'] = '1'
             meta['Version'] = lock['version']
         renamed = {p: name + '.lua' if p == old + '.lua' else p for p in runtime}
         toc = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()) + '\n'
@@ -182,7 +183,6 @@ def family_files(lock, sources_root, family):
             elif not (family == 'PROD' and (p.endswith('.md') or p.startswith('docs/'))
                       and p not in ('NOTICE.md', 'THIRD_PARTY_NOTICES.md')):
                 output[target] = data
-    support.add_files(lock, sources_root, family, output, changes, gate, sys.modules[__name__])
     marker_meta, _ = d.toc_info(source[d.MARKER + '/' + d.MARKER + '.toc'])
     marker_meta.update(Title=FAMILY_TITLES[family], Group=marker, Category=FAMILY_TITLES[family])
     # The native group row is the marker addon. Keep its icon self-contained,
@@ -195,10 +195,13 @@ def family_files(lock, sources_root, family):
     if family == 'DEV':
         marker_meta.pop('X-Curse-Project-ID', None)
     output[marker + '/' + marker + '.toc'] = ''.join('## ' + k + ': ' + v + '\n' for k, v in marker_meta.items()).encode()
+    support.add_files(lock, sources_root, family, output, changes, gate, sys.modules[__name__])
     output[marker + '/README.md'] = ('# Apogee ' + family + '\n\nDistribution identity only; no runtime or saved data.\n'
                                       'Switch the complete family in AddOns and reload. DEV settings are separate.\n').encode()
     if family == 'PROD':
         output[marker + '/README.md'] = (d.ROOT / 'distribution/PLAYER_README.md').read_bytes()
+    if support.embedded(lock):
+        output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
     return output, changes
 
 

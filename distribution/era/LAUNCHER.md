@@ -1,4 +1,8 @@
-# Shared launcher - Era.10 / future Forever
+# Shared launcher - Era / future Forever
+
+Current Era.11 architecture: [internal UI and master switch](MASTER.md).
+It supersedes the standalone UI and runtime-free marker described in the
+historical sections below; current click/drag behavior remains unchanged.
 
 ## Combined controls
 

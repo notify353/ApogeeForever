@@ -1,3 +1,11 @@
+## Internal UI and master switch - 2026-10-25
+
+Era.11 and the isolated future Forever candidate embed shared UI in the existing
+top-level addon. Every child requires that master; only minimap position resets.
+This owner-requested architecture supersedes the metadata-only marker rule for
+these candidates, with historical/frozen packages unchanged. See era/MASTER.md
+for checked closed-client migration, rollback and native acceptance requirements.
+
 ## Shared launcher candidate - 2026-10-25
 
 Era.8 adds required Apogee UI shared support and one green minimap launcher.

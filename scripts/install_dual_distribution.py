@@ -10,6 +10,7 @@ sys.dont_write_bytecode = True
 import distribution as d
 import dual_distribution as dual
 import migrate_distribution as m
+import support_distribution as support
 
 
 def payloads(lock, sources_root, artifacts, initial=False):
@@ -33,6 +34,8 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
     # Omitted retired roots stay untouched; uninstall is a separate explicit action.
     names = tuple(sorted(roots))
     d.require(set(p.split('/')[0] for p in payload) == set(names), 'Exact family roots required')
+    if support.master_payload(payload) and not initial:
+        names = tuple(sorted(roots | {'ApogeeUIDev'}))
     before = m.managed(Path(client) / 'Interface/AddOns', names)
     known = copy.deepcopy(known)
     if previous is not None:
@@ -53,7 +56,7 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
         if p in desired and b != desired[p] and p.lower().endswith(('.md', '.txt')):
             preserved_docs.append(p)
             del desired[p]
-    retired = {}
+    retired = support.retire_support(payload, before, previous)
     for p in retire_files:
         d.safe_path(p)
         d.require(not initial and p.split('/')[0] in names and p.endswith('.lua'),
@@ -62,7 +65,7 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
         d.require(p not in payload and p in before and d.sha(before[p]) == previous['after'][p],
                   'Retired file missing, modified, or still packaged: ' + p)
         retired[p] = previous['after'][p]
-    preview = m.plan(client, desired, known, names)
+    preview = m.plan(client, desired, known, names, retired)
     preview['retired'] = retired
     return desired, known, names, preview, preserved_docs
 
@@ -70,7 +73,7 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
 def activation(preview):
     writes = preview['writes']
     discovery = sorted(p for p in writes if p not in preview['before'] or p.lower().endswith('.toc'))
-    support_added = any(p.startswith('ApogeeUIDev/') and p not in preview['before'] for p in writes)
+    support_added = any(p.startswith('ApogeeUIDev/') for p in preview.get('retired', {})) or any((p.startswith('ApogeeUIDev/') or '/SharedUI/' in p) and p not in preview['before'] for p in writes)
     return {'action': 'user-full-restart-after-install' if support_added else 'user-reload-after-install' if writes else 'none',
             'discoveryChanges': discovery,
             'restartRequired': True if support_added else 'unverified-if-reload-does-not-discover-changes' if discovery else False}
@@ -83,6 +86,9 @@ def install(client, payload, known, backup, initial=False, previous=None, retire
     result['preservedDocumentation'] = docs
     result['mode'] = 'initial-production-retrofit-and-dev' if initial else 'dev-only'
     result['packageFilesVerified'] = len(desired)
+    if support.master_payload(payload):
+        result['packageRoots'] = sorted({p.split('/')[0] for p in payload})
+        result['supportLayout'] = 'embedded-master'
     (Path(backup) / 'transaction.json').write_bytes(d.canonical(result))
     return result
 
