@@ -1,3 +1,10 @@
+## Unreleased - Linen Bandage healing default
+
+- Isolated Era and future Forever candidates give Warrior, Rogue, Hunter, Mage
+  and Warlock Linen Bandage on empty healing Left-click when defaults are enabled.
+  Manual assignments win; item-information refresh includes automatic defaults.
+- Preserve other component pins, saved settings and the installed/frozen Forever beta.
+
 ## Unreleased - left-click healing defaults
 
 - Era.14 adds starting-heal defaults for Druid and Shaman alongside Priest and
