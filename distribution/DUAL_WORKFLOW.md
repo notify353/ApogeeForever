@@ -34,9 +34,14 @@ Six writes and 113 installed/backed-up files verified (106 payload receipt
 entries plus seven preserved README files). All 1,477 Forever files and eight
 frozen repository files unchanged. User live threat-stack acceptance is pending.
 
-The [archive comparison sweep](era/ARCHIVE_SWEEP.md) prepares Era.6 with party
+The [archive comparison sweep](era/ARCHIVE_SWEEP.md) supplies Era.6 with party
 debuff icons, cleansing highlights and Era main-menu/quest-tracker fading fixes.
 All current Era fixes are retained; frozen Forever pins remain unchanged.
+Era.6 installed October 25 with the client verified closed. Latest Era receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-archive-sweep-20261025/transaction.json`.
+Eight writes, 114 installed files (107 payload entries plus seven README files)
+and 113 backup files verified. Forever's 1,477 files, eight frozen repository
+files and all 275 archived files unchanged. Native user acceptance pending.
 
 ## Raised target actions installed - 2026-10-20
 

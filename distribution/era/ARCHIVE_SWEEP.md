@@ -93,3 +93,14 @@ death, target change and reload cleanup; main-menu fade/hover; quest tracker
 hiding/restoration. Also smoke-test healing/incoming heals, cast display, buffs,
 bindings, Sunder, Group Finder and suppression. Offline tests do not establish
 native timing, taint safety or complete feature parity with the archived addon.
+
+## Verified installation
+
+Era.6 installed October 25 after central preflight rechecked that the client was
+closed. Latest receipt and rollback backup:
+`C:/Dev/WoW/local-install-backups/apogee-era-archive-sweep-20261025/transaction.json`.
+All eight writes verified. All 113 previous files were backed up; all 114
+installed files match the new candidate plus preserved documentation (107 payload
+receipt entries and seven README files). All 1,477 Forever addon files, eight
+frozen repository files and 275 archived files remain unchanged. See the external
+`install-verification.json` and install stdout/stderr. User acceptance is pending.
