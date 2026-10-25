@@ -1,5 +1,7 @@
 ## Unreleased - shared launcher bug sweep
 
+- Extend generated-package coverage to the real shared Settings owner and
+  dependency startup lifecycle; no additional runtime changes from this pass.
 - Era.9 clears externally dismissed native menus before Blizzard reuses their
   pooled frames. Launcher cleanup cannot close another addon's replacement menu.
 - Reject mismatched shared-support API/package/family metadata and incomplete

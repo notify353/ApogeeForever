@@ -36,7 +36,8 @@ class LauncherTests(unittest.TestCase):
                 name='ApogeeUI'+('Dev' if family=='DEV' else '')
                 env=os.environ.copy(); env.update(APOGEE_UI_ROOT=str(Path(folder)/name),APOGEE_UI_NAME=name,APOGEE_COMPONENTS_ROOT=folder)
                 subprocess.run(['lua','tests/launcher_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
-                subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target],check=True)
+                subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target,
+                                str(CHILDREN/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
                 if target=='forever-offline':
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=CHILDREN/'ApogeeStats',check=True)
@@ -64,6 +65,18 @@ class LauncherTests(unittest.TestCase):
         files={p:tree[p] for p in child['files']}
         files[child['toc']]=files[child['toc']].replace(b'Dependencies: ApogeeUI',b'Dependencies: ApogeeUIDev')
         with self.assertRaises(ValueError): d.child_contract(child,files)
+
+    def test_generated_settings_with_real_shared_owner(self):
+        for target in ('era','forever-offline'):
+            with self.subTest(target=target),tempfile.TemporaryDirectory() as folder:
+                if target=='era':
+                    m.put(Path(folder)/'DEV',self.payload)
+                else:
+                    for family in ('PROD','DEV'):
+                        m.put(Path(folder)/family,dual.family_files(self.future,SOURCES,family)[0])
+                command=['lua',str(ROOT/'tests/distribution/shared_settings.lua'),folder,'launcher']
+                if target=='era': command.append('DEV')
+                subprocess.run(command,check=True)
 
     def test_upgrade_from_era7_receipt_requires_closed_install(self):
         with tempfile.TemporaryDirectory() as folder:

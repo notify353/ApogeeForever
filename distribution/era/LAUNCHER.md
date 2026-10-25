@@ -1,5 +1,20 @@
 # Shared launcher - Era.8 / future Forever
 
+## Second audit: Settings and dependency startup
+
+Generated Era DEV and future Forever PROD/DEV now run the complete component
+Settings fixture against the actual shared UI owner, including all 24 settings
+load orders, each owner alone, missing APIs, malformed registries, repeated
+registration, default-spell synchronization, combat lock and saved-choice reload.
+The existing frozen-package fixture remains covered in its original mode.
+Admission tests also load the generated service through its real gate and
+dispatch ADDON_LOADED, checking that dependent components are blocked before
+initialization and admitted afterward. Support alone creates no launcher.
+These tests pass without another gameplay or packaging change. Era.9 remains
+the installed runtime; its receipt is
+C:/Dev/WoW/local-install-backups/apogee-launcher-sweep-20261025/transaction.json.
+Native testing and fresh Forever validation remain pending.
+
 ## Era.9 audit follow-up
 
 Native Menu.lua releases pooled frames after AddMenuReleasedCallback. The service

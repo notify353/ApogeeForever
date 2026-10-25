@@ -58,7 +58,28 @@ for _,base in ipairs(bases) do
             assert(loadfile(root..'/'..name..'/__Distribution/FamilyGate.lua'))(name,ns)
             if scenario=='allowed' then
                 assert(ns.__ApogeeFamilyAdmission and ns.__ApogeeFamilyAdmission(name),name..' denied')
-                if name~=support then
+                if name==support then
+                    -- Boot the generated service through its real gate, then
+                    -- prove child admission follows dependency initialization.
+                    local mock=dofile(assert(arg[4]))
+                    local W=mock.New()
+                    if target=='era' then WOW_PROJECT_ID=2 end
+                    _G[support]=nil
+                    for _,p in ipairs(paths[name]) do
+                        if not p:match('^__Distribution/') then assert(loadfile(root..'/'..name..'/'..p))(name,ns) end
+                    end
+                    assert(_G[support]==ns and not ns.ready)
+                    local child='ApogeeHeals'..suffix
+                    local early={}
+                    assert(loadfile(root..'/'..child..'/__Distribution/FamilyGate.lua'))(child,early)
+                    assert(not early.__ApogeeFamilyAdmission,'Child admitted before support initialized')
+                    W.Event('ADDON_LOADED',name)
+                    assert(ns.ready and not ns.button,'Support startup must not create a launcher alone')
+                    local after={}
+                    assert(loadfile(root..'/'..child..'/__Distribution/FamilyGate.lua'))(child,after)
+                    assert(after.__ApogeeFamilyAdmission and after.__ApogeeFamilyAdmission(child),
+                        'Initialized generated support must admit its child')
+                else
                     service.apiVersion=2
                     assert(not ns.__ApogeeFamilyAdmission(name),'later chunks must revalidate support')
                 end

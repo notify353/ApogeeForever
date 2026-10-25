@@ -1,5 +1,7 @@
 -- Generated modules, mocked native UI. Does not establish live Settings/taint acceptance.
 local root = assert(arg[1])
+local sharedSupport = arg[2] == "launcher"
+local families = arg[3] and {arg[3]} or {"PROD", "DEV"}
 local owners = {
     {"ApogeeHeals", "UI/Settings.lua", "Heals"},
     {"ApogeeKeybinds", "UI/Settings.lua", "Keybinds"},
@@ -43,6 +45,7 @@ local function typography(frame,title)
 end
 local function reset()
     ApogeeSettingsRegistry=nil; ApogeeDevSettingsRegistry=nil
+    ApogeeUI=nil; ApogeeUIDev=nil; ApogeeUIDB=nil; ApogeeUIDevDB=nil
     ApogeeAuctionDB=nil; ApogeeAuctionDevDB=nil
     frames, categories, roots, serial = {}, {}, {}, 0
     StaticPopupDialogs={}; GameTooltip=widget()
@@ -53,6 +56,9 @@ local function reset()
     issecretvalue=function() return false end
     canaccessvalue=function() return true end
     canaccesstable=function() return true end
+    WOW_PROJECT_ID=18; WOW_PROJECT_CAMELOT=18
+    GetCursorPosition=function() return 0,0 end
+    Minimap=widget(); MenuUtil={CreateContextMenu=noop}
     UnitClass=function() return "Warrior", "WARRIOR" end
     local function category(frame, name, parent)
         serial=serial+1
@@ -88,6 +94,19 @@ local function reset()
 end
 local function load(owner, family, denied, saved)
     local name=owner[1]..(family=="DEV" and "Dev" or "")
+    local supportName="ApogeeUI"..(family=="DEV" and "Dev" or "")
+    if sharedSupport and not denied and not _G[supportName] then
+        local support={__ApogeeFamilyAdmission=function() return true end}
+        local folder=root.."/"..family.."/"..supportName.."/"
+        for _,file in ipairs({"Client.lua","Settings.lua",supportName..".lua"}) do
+            assert(loadfile(folder..file))(supportName,support)
+        end
+        if _G[supportName] then
+            local events=frames[#frames]
+            events.scripts.OnEvent(events,"ADDON_LOADED",supportName)
+            assert(support.ready and not support.button,"Support alone has no launcher")
+        end
+    end
     local function text(parent,value,font)
         local label=parent:CreateFontString(nil,"OVERLAY",font or "GameFontHighlightSmall")
         label:SetText(value); return label
@@ -99,7 +118,7 @@ local function load(owner, family, denied, saved)
     local A={ready=true,active=true,db={rules={}},UI=ui,Text={},Rules={list={}},
         API={Combat=function() return false end},Hud={HideTooltip=noop},
         Style={Text=function(parent) local label=text(parent,"","GameFontNormal"); label:SetTextColor(1,1,1); return label end},Minimap={Refresh=noop},Cleansing={},Threat={},ThreatDiagnostics={},
-        Errors={BuildErrorSettings=noop,RefreshErrors=noop},IsFeatureAvailable=function() return true end,
+        Errors={BuildErrorSettings=noop,RefreshErrors=noop,SuppressesOutsideCombat=function() return true end},IsFeatureAvailable=function() return true end,
         __ApogeeFamilyAdmission=function(caller) assert(caller==name); return not denied end}
     if saved then A.db=saved; A.db.rules=A.db.rules or {} end
     A.refreshes=0
@@ -173,7 +192,11 @@ local function verify(family, count)
     local parent=assert(registry.category)
     assert(parent.name==label and not parent.parent)
     typography(parent.frame,label)
-    local help=assert(find(parent.frame,function(c) return c.kind=="FontString" and c.text=="Select an enabled addon's settings from the list on the left." end))
+    local help=assert(find(parent.frame,function(c)
+        return c.kind=="FontString" and c.text==(sharedSupport
+            and "Select a component's settings from the list on the left.\n\nActive components:"
+            or "Select an enabled addon's settings from the list on the left.")
+    end))
     assert(help.font=="GameFontHighlightSmall");color(help,0.8,0.8,0.8)
     local background=assert(find(parent.frame,function(c) return c.kind=="Texture" end))
     color(background,0.035,0.035,0.045);assert(background.color[4]==0.96)
@@ -202,7 +225,7 @@ end
 local permutations=0
 local function order(list, depth)
     if depth>#owners then
-        for _,family in ipairs({"PROD","DEV"}) do
+        for _,family in ipairs(families) do
             reset()
             for _,index in ipairs(list) do
                 load(owners[index],family)
@@ -217,7 +240,7 @@ local function order(list, depth)
     for i=depth,#owners do list[depth],list[i]=list[i],list[depth]; order(list,depth+1); list[depth],list[i]=list[i],list[depth] end
 end
 order({1,2,3,4},1)
-for _,family in ipairs({"PROD","DEV"}) do
+for _,family in ipairs(families) do
     for index,owner in ipairs(owners) do
         do
             reset(); load(owner,family); assert(verify(family,1)[owner[3]] and #roots==1)
@@ -233,12 +256,14 @@ for _,family in ipairs({"PROD","DEV"}) do
             end
             reset(); Settings.RegisterCanvasLayoutSubcategory=nil
             load(owner,family)
-            assert(#roots==1 and #categories==1 and not categories[1].parent)
+            if sharedSupport then assert(#roots==0 and #categories==0)
+            else assert(#roots==1 and #categories==1 and not categories[1].parent) end
             assert(ApogeeSettingsRegistry==nil and ApogeeDevSettingsRegistry==nil)
             reset(); load(owner,family,true); assert(#categories==0 and #roots==0)
         end
     end
 end
+if #families==2 then
 reset()
 for index,owner in ipairs(owners) do
     load(owner,"PROD")
@@ -246,9 +271,10 @@ for index,owner in ipairs(owners) do
 end
 assert(#roots==2 and ApogeeSettingsRegistry.category~=ApogeeDevSettingsRegistry.category)
 verify("PROD",4); verify("DEV",4)
+end
 print("PASS shared Settings: "..permutations.." load orders, typography, tabs/list colors, sole owners, denied chunks and isolated family parents")
 
-for _,family in ipairs({"PROD","DEV"}) do
+for _,family in ipairs(families) do
     for _,first in ipairs({1,2}) do
         reset()
         local other=first==1 and 2 or 1
@@ -294,9 +320,11 @@ for _,family in ipairs({"PROD","DEV"}) do
         end
     end
 end
+if #families==2 then
 reset()
 local prod=load(owners[1],"PROD")
 local dev=load(owners[2],"DEV")
 ApogeeSettingsRegistry.defaultSpells:Set(true)
 assert(prod.db.defaultSpells.enabled and not dev.db.defaultSpells.enabled,"Families never share the preference")
+end
 print("PASS shared defaults: off initially, single control, both consumers, combat lock, reload/disabled rejoin and family isolation")
