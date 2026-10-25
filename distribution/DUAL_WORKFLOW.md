@@ -25,10 +25,14 @@ plus five preserved README files). Forever's 1,477 addon files and eight frozen
 repository files unchanged. The once-only Era choice reset runs at next login;
 native acceptance remains pending. See the error-default report for evidence.
 
-The [live threat-debuff correction](era/THREAT_DEBUFFS.md) prepares Era.5 with a
+The [live threat-debuff correction](era/THREAT_DEBUFFS.md) supplies Era.5 with a
 private Era aura renderer for player-owned Sunder Armor stacks, Thunder Clap and
 Demoralizing Shout. Existing Era fixes and all Forever pins remain unchanged.
-Use the installed Era.4 receipt above until the Era.5 installation is verified.
+Era.5 installed October 25 with the client verified closed. Latest Era receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-threat-debuffs-20261025/transaction.json`.
+Six writes and 113 installed/backed-up files verified (106 payload receipt
+entries plus seven preserved README files). All 1,477 Forever files and eight
+frozen repository files unchanged. User live threat-stack acceptance is pending.
 
 ## Raised target actions installed - 2026-10-20
 

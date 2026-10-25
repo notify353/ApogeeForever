@@ -64,3 +64,15 @@ Thunder Clap and Demoralizing Shout appear, switching/removing enemies clears
 old icons, and combat produces no Lua or blocked-action errors. Demo mode must
 be off for this live check. Mocks do not establish native timing or taint safety.
 No private saves, addon enable preferences or game controls are accessed.
+
+## Installed October 25
+
+The requested checked DEV update was installed after central preflight confirmed
+the Era client was closed. Receipt and rollback backup:
+`C:/Dev/WoW/local-install-backups/apogee-era-threat-debuffs-20261025/transaction.json`.
+All six writes verified. All 113 prior files are backed up, and all 113 installed
+files match the candidate plus preserved documentation (106 payload receipt
+entries and seven existing README files). All 1,477 Forever addon files and
+eight frozen repository files remain unchanged. See `install-verification.json`
+and install stdout/stderr in the evidence directory. Native acceptance remains
+pending; no game was operated. Previous backups and worktrees are retained.
