@@ -1,4 +1,19 @@
-# Shared launcher - Era.8 / future Forever
+# Shared launcher - Era.10 / future Forever
+
+## Combined controls
+
+Left-click toggles available editors together: open all if any is closed,
+otherwise close all. One available editor toggles alone; none is a no-op.
+Right-click lists available Heals, Keybinds, Dungeons and Essentials settings
+directly, followed by Reset minimap position. No editor menu entries, submenu
+or overview shortcut. Stats has no settings entry. Right-drag and saved position
+remain unchanged. Existing controls may still close either editor independently.
+
+API 1 adds optional boolean primary to actions, requiring a checked predicate.
+The service snapshots one target state, revalidates before each callback, and
+skips failed/unreadable predicates or unavailable actions. Callbacks remain
+component-owned; failures do not prevent the other editor from responding.
+Tooltip and border track changes from existing controls. No settings migration.
 
 ## Second audit: Settings and dependency startup
 
@@ -38,9 +53,8 @@ after successful supported startup. Editors remain independent and callbacks
 revalidate availability. Keybinds unregisters on deactivation; Essentials removes
 registration on rollback. Stats registers only on supported initialized Forever.
 
-Left-click: Healing bindings and Keybind editing checks (when available),
-component Settings submenu, Apogee settings and Reset minimap position.
-Right-click: common overview. Right-drag: move/save, suppress release click.
+Current controls are described above; Era.8 originally used a left-click action
+menu and right-click overview. Right-drag still saves position and suppresses release clicks.
 Combat/world suspension cancels owned menus and dragging; no protected gameplay
 mutations are added. Existing default-spell synchronization remains in components
 and joins the shared parent's schema-1 registry. No saved settings are imported.
@@ -70,8 +84,8 @@ remain required. Frozen Forever archives must match prior hashes exactly.
 
 Native acceptance (owner performs): restart Era, enable desired components plus
 Apogee UI shared support; verify exactly one green button with both components,
-each alone, and Essentials or Group Alert alone. Check menu order, both editors
-open simultaneously, external close reflected in checks, settings destinations,
+each alone, and Essentials or Group Alert alone. Check flat menu order, grouped
+editor toggling from every mixed state, external close reflected in tooltip/border, settings destinations,
 right-drag then reload persistence, reset, combat dismissal and no release click.
 Do not claim native acceptance from mocks. Do not operate WoW or read private saves.
 

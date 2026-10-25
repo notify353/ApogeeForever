@@ -1,3 +1,9 @@
+## Unreleased - combined minimap controls
+
+- Era.10: left-click toggles available editors together; right-click opens a flat
+  component-settings menu and position reset. Preserve drag, state and combat guards.
+- Prepare matching future Forever source; keep its frozen installation and pins.
+
 ## Unreleased - shared launcher bug sweep
 
 - Extend generated-package coverage to the real shared Settings owner and
