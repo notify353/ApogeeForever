@@ -97,12 +97,15 @@ def main():
     parser.add_argument('--retire-file', action='append', default=[], help='Exact obsolete DEV Lua path; requires unchanged prior receipt')
     parser.add_argument('--initial-retrofit', action='store_true', help='One-time explicitly authorized PROD safety migration')
     parser.add_argument('--inspect-only', action='store_true')
+    parser.add_argument('--allow-running-era-update', action='store_true',
+                        help='Explicit Era DEV update with prior receipt and unchanged runtime paths/loading metadata')
     args = parser.parse_args()
     try:
         if args.target == 'classic-era':
             import era_distribution
             print(json.dumps(era_distribution.install_target(args)))
             return
+        d.require(not args.allow_running_era_update, 'Live Era opt-in requires --target classic-era')
         lock = d.read_lock(args.lock or dual.LOCK)
         running = m.real_client_preflight(args.client_root, lock, allow_running_dev=not args.initial_retrofit)
         files = payloads(lock, args.sources_root, args.artifacts, args.initial_retrofit)

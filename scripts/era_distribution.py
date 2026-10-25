@@ -158,6 +158,25 @@ def prepare(client, payload, previous=None):
     return desired, known, m.plan(client, desired, known, NAMES), docs
 
 
+def verify_live_update(payload, preview, previous):
+    """Explicit live updates replace known bytes only; discovery still requires a closed client."""
+    d.require(previous is not None, 'Live updates require a prior installed Era receipt')
+    before = preview['before']
+    def runtime_paths(files):
+        return {p for p in files if p.lower().endswith(('.lua', '.xml', '.toc'))}
+    paths = runtime_paths(payload)
+    d.require(paths == runtime_paths(before) == runtime_paths(previous['after']),
+              'Live Era updates cannot add or remove runtime files; close the client')
+    for path in paths:
+        d.require(d.sha(before[path]) == previous['after'][path], 'Installed Era bytes differ from receipt: ' + path)
+        if path.lower().endswith('.toc'):
+            old_meta, old_runtime = d.toc_info(before[path])
+            new_meta, new_runtime = d.toc_info(payload[path])
+            old_meta.pop('Version', None); new_meta.pop('Version', None)
+            d.require(old_meta == new_meta and old_runtime == new_runtime,
+                      'Live Era updates cannot change loading metadata/order; close the client')
+
+
 def install_target(args):
     """Called only by the central install CLI's explicit --target classic-era branch."""
     d.require(not args.initial_retrofit and not args.retire_file, 'No Era PROD retrofit or retirement')
@@ -167,21 +186,27 @@ def install_target(args):
     archive = args.artifacts / ('Apogee-' + lock['version'] + '-DEV.zip')
     payload = dual.validate(archive.read_bytes(), expected)
     previous = json.loads(args.previous_install.read_bytes()) if args.previous_install else None
+    live_update = getattr(args, 'allow_running_era_update', False)
+    d.require(not live_update or previous is not None, 'Live updates require a prior installed Era receipt')
     desired, known, preview, docs = prepare(args.client_root, payload, previous)
+    if live_update:
+        verify_live_update(payload, preview, previous)
     running = subprocess.run(['tasklist', '/FI', 'IMAGENAME eq WowClassic.exe', '/FO', 'CSV', '/NH'],
                              capture_output=True, text=True, check=True)
     client_running = 'wowclassic.exe' in running.stdout.lower()
     if args.inspect_only:
         return {'target': 'classic-era', 'writeCount': len(preview['writes']), 'roots': list(NAMES),
                 'preservedDocumentation': docs, 'clientRunning': client_running,
-                'requiresClosedClientForInstall': True, 'apiEvidence': evidence,
+                'requiresClosedClientForInstall': not live_update, 'apiEvidence': evidence,
                 'archiveSha256': d.sha(archive.read_bytes()), 'installed': False}
-    d.require(not client_running, 'Close Classic Era before first isolated installation; game is never operated')
+    d.require(not client_running or live_update, 'Close Classic Era or explicitly opt into a verified live update')
     result = m.apply(args.client_root, desired, known, args.backup, preview, NAMES, atomic_files=True)
     result.update(target='classic-era', family='DEV', publicationAllowed=False,
                   lockSha256=d.sha(d.canonical(lock)), apiEvidence=evidence,
                   archiveSha256=d.sha(archive.read_bytes()), preservedDocumentation=docs,
-                  activation='User opens Era and selects Apogee Era DEV; no settings imported')
+                  liveUpdate=live_update, clientRunningAtPreflight=client_running,
+                  activation='User /reload after installation; no settings imported' if previous
+                  else 'User opens Era and selects Apogee Era DEV; no settings imported')
     (args.backup / 'transaction.json').write_bytes(d.canonical(result))
     return {'status': result['status'], 'target': 'classic-era', 'writeCount': len(result['writes']),
             'receipt': str(args.backup / 'transaction.json'), 'activation': result['activation']}

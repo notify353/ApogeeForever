@@ -1,6 +1,7 @@
 ## Unreleased - Era pre-combat error suppression
 
 - Pin Era.7 checked-error suppression in and out of combat with accurate settings labels and full clean-account startup tests. Keep saved choices, visible useful-error defaults and Forever's combat-only behavior unchanged.
+- Add the owner-authorized explicit Era live-update option for prior verified installations with unchanged runtime paths/loading contracts; retain atomic backups and reject the option for Forever.
 
 ## Unreleased - Era archive comparison sweep
 

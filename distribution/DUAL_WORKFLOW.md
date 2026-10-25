@@ -45,8 +45,11 @@ files and all 275 archived files unchanged. Native user acceptance pending.
 
 The [error scope correction](era/ERROR_SCOPE.md) prepares Era.7: checked Era
 errors are suppressed before combat as well as during it, as clarified by the
-owner. Existing choices/defaults remain intact; no additional reset. Installation
-requires the client closed and the latest installed Era.6 receipt above.
+owner. Existing choices/defaults remain intact; no additional reset. The owner
+then explicitly authorized running-client installation. Use the Era-only
+`--allow-running-era-update` option with the latest installed receipt; it verifies
+unchanged runtime paths, TOC load order and metadata except Version. Initial
+installs, discovery changes and rollback remain closed-client operations.
 
 ## Raised target actions installed - 2026-10-20
 

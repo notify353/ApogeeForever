@@ -71,7 +71,7 @@ python -B scripts/install_dual_distribution.py --target classic-era `
   --backup <NEW-external-backup-directory> --inspect-only
 ```
 
-After approval and closing Era, omit `--inspect-only`. Updates require the last
+After approval, omit `--inspect-only`. Updates require the last
 Era `--previous-install <backup>/transaction.json` to recognize replaced bytes.
 The installer admits four DEV children plus the inert marker, rebuilds expected
 bytes from immutable pins, preserves edited documentation and unknown files,
@@ -79,9 +79,17 @@ refuses conflicting runtime edits or alternate loaders, backs up and verifies
 writes, and stores an Era receipt. It never enables addons or reads/copies private
 saves. Old archives are not recognized install sources.
 
-Era writes use complete-file replacement even while the client is closed, so
-an interrupted write leaves either the old or new bytes for verified rollback.
-The closed-client requirement still applies; this does not permit live updates.
+Owner override (October 25): routine reviewed updates may run while Era is open
+with explicit `--allow-running-era-update`. This requires a valid previous Era
+receipt, exact installed runtime bytes, identical runtime file paths and unchanged
+TOC metadata/load order (except Version). Initial installs, discovery changes and
+rollback still require a closed client. The default remains closed-client unless
+the explicit live-update option is supplied; the option cannot target Forever.
+
+Era writes use atomic complete-file replacement, so an interrupted write leaves
+either the old or new file bytes for verified rollback. A running client retains
+its loaded code until the user reloads. After a completed live update use `/reload`;
+the installer never operates the game, changes enable preferences or copies saves.
 
 For explicitly approved recovery, close Era, then run:
 

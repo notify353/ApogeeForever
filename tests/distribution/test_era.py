@@ -162,6 +162,63 @@ class EraTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unexpected child loader'):
                 era.prepare(client, self.payload, previous)
 
+    def test_explicit_live_update_requires_prior_unchanged_loading_contract(self):
+        with tempfile.TemporaryDirectory() as folder:
+            client = self.client_fixture(folder)
+            artifacts = Path(folder) / 'packages'; artifacts.mkdir()
+            (artifacts / ('Apogee-' + self.lock['version'] + '-DEV.zip')).write_bytes(d.zip_bytes(self.payload))
+            args = SimpleNamespace(initial_retrofit=False, retire_file=[], lock=era.LOCK,
+                client_root=client, sources_root=SOURCES, artifacts=artifacts,
+                previous_install=None, inspect_only=False, backup=Path(folder) / 'backup',
+                allow_running_era_update=True)
+            prior = dict(self.payload)
+            path = 'ApogeeEssentialsDev/Errors/Runtime.lua'
+            prior[path] += b'\n-- previous reviewed implementation\n'
+            toc = 'ApogeeEssentialsDev/ApogeeEssentialsDev.toc'
+            prior[toc] = prior[toc].replace(self.lock['version'].encode(), b'1.14.8-era.6')
+            m.put(client / 'Interface/AddOns', prior)
+            previous = {'schema': 1, 'status': 'installed', 'target': 'classic-era', 'family': 'DEV',
+                        'client': str(client), 'names': list(era.NAMES), 'after': m.hashes(prior)}
+            with patch.object(era, 'verify_api', return_value={}), patch.object(era, 'family_files', return_value=(self.payload, {})), \
+                 patch.object(era.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, stdout='WowClassic.exe')):
+                with self.assertRaisesRegex(ValueError, 'prior installed Era receipt'):
+                    era.install_target(args)
+                args.previous_install = Path(folder) / 'previous.json'
+                args.previous_install.write_bytes(d.canonical(previous))
+                args.allow_running_era_update = False
+                with self.assertRaisesRegex(ValueError, 'Close Classic Era'):
+                    era.install_target(args)
+                args.allow_running_era_update = True
+                args.inspect_only = True
+                self.assertFalse(era.install_target(args)['requiresClosedClientForInstall'])
+                args.inspect_only = False
+                result = era.install_target(args)
+                self.assertEqual(result['status'], 'installed')
+            self.assertEqual(m.managed(client / 'Interface/AddOns', era.NAMES), self.payload)
+            receipt = json.loads((args.backup / 'transaction.json').read_bytes())
+            self.assertTrue(receipt['liveUpdate'] and receipt['clientRunningAtPreflight'])
+            self.assertIn('/reload', receipt['activation'])
+            self.assertEqual(m.tree(args.backup / 'addons-before'), prior)
+            # The opt-in never admits new/removed loaders or altered discovery metadata.
+            for change in ('new-file', 'removed-file', 'saved-variable', 'load-order', 'edited-byte'):
+                changed = dict(prior)
+                if change == 'new-file': del changed[path]
+                elif change == 'removed-file': changed['ApogeeEssentialsDev/obsolete.xml'] = b'<Ui/>'
+                elif change == 'saved-variable': changed[toc] = changed[toc].replace(b'ApogeeEssentialsDevDB', b'ForeignDB')
+                elif change == 'load-order': changed[toc] += b'Extra.lua\n'
+                else: changed[path] += b'-- user change'
+                old_receipt = dict(previous)
+                if change != 'edited-byte': old_receipt['after'] = m.hashes(changed)
+                with self.subTest(change=change), self.assertRaises(ValueError):
+                    era.verify_live_update(self.payload, {'before': changed}, old_receipt)
+
+    def test_live_era_cli_flag_cannot_change_default_forever_target(self):
+        result = subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/install_dual_distribution.py'),
+            '--client-root', 'unused', '--sources-root', 'unused', '--artifacts', 'unused',
+            '--backup', 'unused', '--allow-running-era-update', '--inspect-only'], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('requires --target classic-era', result.stderr)
+
     def test_api_wrong_product_stale_export_changed_executable(self):
         with tempfile.TemporaryDirectory() as folder:
             client = self.client_fixture(folder)

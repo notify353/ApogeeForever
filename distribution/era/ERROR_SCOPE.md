@@ -63,7 +63,7 @@ preservation results. No push, main integration or publication is authorized.
 
 Initial preflight found Era running and proposed nine writes (four Essentials
 runtime files and five version TOCs), preserving seven README files. A closed
-client is required by the explicit Era installer. Chain from the installed Era.6
+client was required by the original Era installer. Chain from the installed Era.6
 receipt at
 `C:/Dev/WoW/local-install-backups/apogee-era-archive-sweep-20261025/transaction.json`.
 
@@ -71,3 +71,17 @@ User acceptance: with the main switch on, a checked cooldown/range error should
 stay hidden before combat as well as during combat; inventory and unchecked
 messages should remain visible. Toggling the main switch off must restore them.
 No game controls or addon enable preferences are operated by the agent.
+
+The owner subsequently explicitly rejected the closed-client requirement and
+authorized installation while Era runs. The central CLI now supports
+`--allow-running-era-update` for a verified existing Era DEV receipt only, with
+unchanged runtime paths and TOC metadata/order except Version. Normal defaults,
+first installations, discovery changes and rollback still require closure.
+Atomic replacement and all source/API/artifact/backup checks are retained. The
+opt-in is rejected for the default Forever target. No running process is operated.
+
+After this installer change the complete central runner passed again: 171 child
+specs, now 11 Era tests (including live-update/refusal and CLI isolation tests),
+76 admission scenarios, four generated adapters and 77 frozen Forever tests.
+Era.7 and both frozen Forever ZIPs are byte-identical to the preceding validation.
+Evidence: `validation-live.log` and `live-install-preview.json`.
