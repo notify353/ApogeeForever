@@ -185,6 +185,10 @@
     {
       "path": "Blizzard_APIDocumentationGenerated/CVarDocumentation.lua",
       "sha256": "4077bf22c83086f458ee5fd2701d4a971b5f458c837a960674c8c637c450dec8"
+    },
+    {
+      "path": "Blizzard_APIDocumentationGenerated/GameCursorDocumentation.lua",
+      "sha256": "4a92d4558567c2cb7f74df43ba6d44733c5b01afd7d8ce06c549deddff19f9ad"
     }
   ],
   "interface": 11509,

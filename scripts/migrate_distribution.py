@@ -158,7 +158,7 @@ def put_atomic(root, files):
         d.require(target.read_bytes() == body, 'Write verification failed')
 
 
-def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomic_dev=False, retired=None):
+def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomic_dev=False, retired=None, atomic_files=False):
     if atomic_dev:
         current_dev = {d.MARKER + 'Dev', *(n + 'Dev' for n in d.ACTIVE_CHILDREN)}
         d.require(set(names) == current_dev or set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
@@ -191,7 +191,9 @@ def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomi
     d.require(protected(client, names) == saved, 'Preferences changed during backup')
     try:
         journal['status'] = 'applying'; journal_path.write_bytes(d.canonical(journal))
-        (put_atomic if atomic_dev else put)(client / 'Interface/AddOns', current['writes'])
+        # Closed-client Era transactions also need complete-file replacement for recovery.
+        # atomic_files does not grant live-install permission or relax the DEV family gate.
+        (put_atomic if atomic_dev or atomic_files else put)(client / 'Interface/AddOns', current['writes'])
         for p, digest in retired.items():
             source = under(client / 'Interface/AddOns', p)
             d.require(d.sha(source.read_bytes()) == digest, 'Retired file changed during installation')

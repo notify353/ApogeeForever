@@ -1,3 +1,8 @@
+# Unreleased - Era bug sweep
+
+- Use atomic file replacement for closed-client Era installs so interrupted writes retain a recoverable old/new file. Preserve existing Forever transaction defaults and guards.
+- Pin the Era-only Keybinds cursor guard fix and add failure-injection coverage.
+
 # Unreleased - isolated Classic Era candidate
 
 - Add separate four-module Era DEV pins, fresh API evidence, private-adapter packaging, client admission, checked installer target and reversible recovery. Preserve all Forever pins and default package bytes.

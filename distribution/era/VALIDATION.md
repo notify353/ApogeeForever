@@ -1,5 +1,8 @@
 # Era candidate validation - October 24, 2026
 
+Historical Era.1 build record, preceding its approved installation. See
+[bug sweep](BUG_SWEEP.md) for the subsequent Era.2 local fixes and verification.
+
 Status: offline candidate ready for review. No installation, publication, push or main integration. Native acceptance pending.
 
 ## Immutable sources

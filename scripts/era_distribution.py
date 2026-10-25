@@ -177,7 +177,7 @@ def install_target(args):
                 'requiresClosedClientForInstall': True, 'apiEvidence': evidence,
                 'archiveSha256': d.sha(archive.read_bytes()), 'installed': False}
     d.require(not client_running, 'Close Classic Era before first isolated installation; game is never operated')
-    result = m.apply(args.client_root, desired, known, args.backup, preview, NAMES)
+    result = m.apply(args.client_root, desired, known, args.backup, preview, NAMES, atomic_files=True)
     result.update(target='classic-era', family='DEV', publicationAllowed=False,
                   lockSha256=d.sha(d.canonical(lock)), apiEvidence=evidence,
                   archiveSha256=d.sha(archive.read_bytes()), preservedDocumentation=docs,

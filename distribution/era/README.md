@@ -14,7 +14,7 @@ replacement, archived addon or settings import is involved.
 
 ## Scope and authority
 
-`api-evidence.json` fingerprints the reviewed executable and 46 freshly exported
+`api-evidence.json` fingerprints the reviewed executable and 47 freshly exported
 files. Build and install verify product, executable hash, reference hashes and
 export timestamps. Fresh selecting TOCs matter: the export also contains stale
 files from other versions. Do not treat those as authority.
@@ -75,6 +75,10 @@ bytes from immutable pins, preserves edited documentation and unknown files,
 refuses conflicting runtime edits or alternate loaders, backs up and verifies
 writes, and stores an Era receipt. It never enables addons or reads/copies private
 saves. Old archives are not recognized install sources.
+
+Era writes use complete-file replacement even while the client is closed, so
+an interrupted write leaves either the old or new bytes for verified rollback.
+The closed-client requirement still applies; this does not permit live updates.
 
 For explicitly approved recovery, close Era, then run:
 

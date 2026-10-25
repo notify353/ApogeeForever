@@ -4,8 +4,11 @@ Owner approved isolated Era work while preserving the last verified Forever
 beta. See [Era target workflow](era/README.md) for its separate pins, API evidence,
 checks and explicit `--target classic-era` installer. The default target and
 Forever locks remain unchanged. Live Forever validation awaits its future
-release; frozen offline checks do not claim live acceptance. Initial Era
-installation is pending explicit approval and requires the user to close Era.
+release; frozen offline checks do not claim live acceptance. Era.1 was installed
+with explicit approval; its receipt is in
+`C:/Dev/WoW/local-install-backups/apogee-era-20261024/transaction.json`.
+The [Era bug sweep](era/BUG_SWEEP.md) prepares Era.2 fixes locally. Era updates
+still require a closed client and the prior Era receipt.
 
 ## Raised target actions installed - 2026-10-20
 

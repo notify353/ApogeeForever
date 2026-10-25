@@ -9,6 +9,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -102,6 +103,44 @@ class EraTests(unittest.TestCase):
             receipt['client'] = str(Path(folder) / '_classic_beta_')
             (backup / 'transaction.json').write_bytes(d.canonical(receipt))
             with self.assertRaisesRegex(ValueError, 'Only exact Era'): era.rollback_target(backup)
+
+    def test_era_install_never_truncates_destination_and_failed_replace_is_recoverable(self):
+        with tempfile.TemporaryDirectory() as folder:
+            client = self.client_fixture(folder)
+            artifacts = Path(folder) / 'packages'; artifacts.mkdir()
+            (artifacts / ('Apogee-' + self.lock['version'] + '-DEV.zip')).write_bytes(d.zip_bytes(self.payload))
+            args = SimpleNamespace(initial_retrofit=False, retire_file=[], lock=era.LOCK,
+                client_root=client, sources_root=SOURCES, artifacts=artifacts,
+                previous_install=None, inspect_only=False, backup=Path(folder) / 'backup')
+            prior = dict(self.payload)
+            for p in list(prior)[:3]:
+                prior[p] = b'previous reviewed bytes'
+            m.put(client / 'Interface/AddOns', prior)
+            previous = {'schema': 1, 'status': 'installed', 'target': 'classic-era', 'family': 'DEV',
+                        'client': str(client), 'names': list(era.NAMES), 'after': m.hashes(prior)}
+            args.previous_install = Path(folder) / 'previous.json'
+            args.previous_install.write_bytes(d.canonical(previous))
+            ordinary_put = m.put
+            ordinary_replace, replacements = m.os.replace, []
+            def fail_third_replace(source, target):
+                replacements.append(target)
+                if len(replacements) == 3:
+                    raise OSError('injected replacement failure')
+                return ordinary_replace(source, target)
+            def reject_truncation(root, files):
+                if files and Path(root) == client / 'Interface/AddOns':
+                    raise AssertionError('Era destination uses truncating writes; partial I/O cannot roll back')
+                return ordinary_put(root, files)
+            with patch.object(era, 'verify_api', return_value={}), patch.object(era, 'family_files', return_value=(self.payload, {})), \
+                 patch.object(era.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, stdout='INFO: none')):
+                with patch.object(m, 'put', side_effect=reject_truncation), patch.object(m.os, 'replace', side_effect=fail_third_replace):
+                    with self.assertRaisesRegex(OSError, 'injected replacement'):
+                        era.install_target(args)
+                result = era.rollback_target(args.backup)
+                self.assertEqual(result['status'], 'rolled-back')
+            self.assertEqual(len(replacements), 3)
+            for p, body in prior.items():
+                self.assertEqual((client / 'Interface/AddOns' / p).read_bytes(), body)
 
     def test_unexpected_runtime_loader_and_foreign_receipt_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
