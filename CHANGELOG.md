@@ -1,3 +1,7 @@
+## Unreleased - position-only UI reset
+
+- Pin shared Reset UI positions for Era.18 and future Forever launcher.11. Preserve all gameplay settings and the frozen Forever beta.
+
 ## Unreleased - concise healing tooltip
 
 - Era.17 and future Forever use a two-line healing editor tooltip explaining
