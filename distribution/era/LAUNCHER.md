@@ -3,6 +3,8 @@
 Current Era.11 architecture: [internal UI and master switch](MASTER.md).
 It supersedes the standalone UI and runtime-free marker described in the
 historical sections below; current click/drag behavior remains unchanged.
+Era.12 removes the minimap hover tooltip at the owner's request. The editor
+border, click menu, dragging and saved position remain unchanged.
 
 ## Combined controls
 

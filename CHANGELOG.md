@@ -1,3 +1,8 @@
+## Unreleased - minimap tooltip removed
+
+- Era.12 removes the shared minimap hover tooltip; retain click controls, drag,
+  saved position and editor border. Prepare the same future Forever behavior.
+
 ## Unreleased - internal UI and master switch
 
 - Era.11 embeds shared UI in the top-level Apogee addon, removes its separate
