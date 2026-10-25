@@ -45,3 +45,30 @@ each alone, and Essentials or Group Alert alone. Check menu order, both editors
 open simultaneously, external close reflected in checks, settings destinations,
 right-drag then reload persistence, reset, combat dismissal and no release click.
 Do not claim native acceptance from mocks. Do not operate WoW or read private saves.
+
+
+## Verified Era.8 installation - 2026-10-25
+
+Full final runner passed: 172 child specs, 11 Era distribution tests, 95 generated
+admission scenarios, four generated Era adapter tests, five launcher/package
+checks (325 subsets/load orders in each of three generated targets), and all 77
+frozen Forever offline tests. Stats passes 628 tooltip/134 stat-policy/111 auction
+checks; future generated PROD/DEV also check Stats registration. Frozen rebuilt
+Forever ZIPs remain byte-identical. No live acceptance is claimed.
+
+User's implementation instruction includes the agreed closed-client installation.
+Preflight first saw Era running, later independently confirmed it closed. Central
+installer rechecked closure and installed without operating the game or changing
+addon enable preferences. Receipt/rollback:
+C:/Dev/WoW/local-install-backups/apogee-shared-launcher-20261025/transaction.json
+28 writes, 114 files backed up, all 122 installed files independently verified
+(115 receipt payload and seven preserved README files). All 1477 Forever addon
+files and eight frozen repository files unchanged. No private-save contents read.
+Artifact: C:/Temp/apogee-launcher-20261025/validation-final/packages/Apogee-1.14.8-era.8-DEV.zip
+SHA256 fa2f03d6cdefb99804af0e8f4676b93ec8e3d7f5d0d52c6af94ebe6043296387.
+
+Source pins and offline future candidate are retained on codex/shared-launcher in
+six independent worktrees under C:/Temp/apogee-launcher-20261025. No push, main
+integration, release or publication. Earlier Era and Forever worktrees preserved.
+Next: owner full restart of Era and native checklist above. Future Forever needs
+fresh authority and normal validation before pin integration/installation.
