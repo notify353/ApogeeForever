@@ -140,14 +140,14 @@
       "uiApi": 1
     },
     {
-      "commit": "46e6310d563bbe10929b2057b8ccbd144a26660f",
+      "commit": "58aef90d0186672647c74399eb488ce4a90a7d2f",
       "files": {
         "ApogeeStats.lua": "3d156200bbf1d96380f95f165edbf802d37cdc32524d5aa26e97ef0caa89d254",
         "ApogeeStats_Era.toc": "44bc254eb8030da7f96c409d3bb4212afa5b83118baa9077fa3a766ce8186657",
         "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
         "Core/Items.lua": "23ff497959ba6cc2a788b93fbdd3d17b1a5cba69872d97adaa7a34eae2f0474f",
         "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
-        "Era/Adapter.lua": "ac16f0e86a4b584075501aecaad4341536eed28b3cb60884f1375d3be71739de",
+        "Era/Adapter.lua": "f00127947bbe6243559e3302664caad5d1a3bd6bbbb36a7be4d656c19f4e7940",
         "Era/Auction.lua": "779e4fc6f6b6c8cfd992f9b13cb550ea2fc3c6e021980a995979b53d87bcbba3",
         "Era/AuctionScan.lua": "7cc653880393cced8435e2682268c63f936b792e638c47c4083d15bdff109ba6",
         "Era/README.md": "a6f14f97546cd2778581192fb01d3488d7bd1354c4c73095a468878ec26c718b",
@@ -197,5 +197,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.21"
+  "version": "1.14.8-era.22"
 }

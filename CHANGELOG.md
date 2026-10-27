@@ -1,3 +1,11 @@
+## Unreleased - Era.22 tooltip refresh correction
+
+- Render Stats recommendations after the tooltip's own native update and resize
+  its bounds, fixing out-of-box text and a separate-frame refresh race in Era.
+- Test repeated native rebuilds, item references, nested loot setters, hidden
+  and cleared tooltips, repeated attachment and shutdown cancellation.
+- Preserve all scoring, saved settings and frozen Forever runtime/pins.
+
 ## Unreleased - Era.21 auction startup correction
 
 - Fix the missing Stats auction controls: the Era adapter now uses the public

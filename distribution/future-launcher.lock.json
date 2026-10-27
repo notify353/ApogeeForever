@@ -170,13 +170,13 @@
       "version": "0.1.0"
     },
     {
-      "commit": "46e6310d563bbe10929b2057b8ccbd144a26660f",
+      "commit": "58aef90d0186672647c74399eb488ce4a90a7d2f",
       "files": {
         "ApogeeStats.lua": "3d156200bbf1d96380f95f165edbf802d37cdc32524d5aa26e97ef0caa89d254",
         "ApogeeStats.toc": "ce5667e28b13225e8d2a0b3674e2708fb5fb34e6a68a75f056e10cc121de5262",
         "Auction/Browse.lua": "970cbbd27fe3912428ad0df1cfc651730a501b427a8b2997c0b284449c9d871e",
         "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
-        "CHANGELOG.md": "ce18ba0e33adc114bc0ab92bbde04275fa7c68975dbca6d16dc660b4c6529f3c",
+        "CHANGELOG.md": "1b10f8fe9485f9984351728f107da620641a4b2bc34c77b36e191b7cd29096cf",
         "Core/Items.lua": "23ff497959ba6cc2a788b93fbdd3d17b1a5cba69872d97adaa7a34eae2f0474f",
         "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
         "Era/README.md": "a6f14f97546cd2778581192fb01d3488d7bd1354c4c73095a468878ec26c718b",
@@ -241,5 +241,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.8-launcher.14"
+  "version": "1.14.8-launcher.15"
 }

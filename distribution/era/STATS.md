@@ -1,5 +1,19 @@
 # Era Stats candidate
 
+## Era.22 tooltip correction — 2026-10-27
+
+The owner reported flicker and showed recommendation lines outside the tooltip
+border. The Era adapter queued rendering on a separate frame after native tooltip
+sizing, without recalculating bounds. Depending on frame update order, native
+periodic rebuilds could also erase the recommendation for one drawn frame.
+The adapter now flushes pending work in the tooltip's OnUpdate hook, after its
+native script, and calls Show to recalculate bounds when lines were appended.
+Nested setters still settle before rendering; clearing/hiding cancels pending
+work. The matching Classic GameTooltip XML and Lua in the 94-file authority
+confirm its native OnUpdate rebuild sequence. Forever runtime is unchanged.
+Generated regressions cover native rebuild timing and sizing; native visual
+acceptance still requires the owner to hover real inventory and loot items.
+
 ## Era.21 correction — 2026-10-27
 
 The missing auction dice was reproduced: Era.20 required GetAuctionSortColumn,
