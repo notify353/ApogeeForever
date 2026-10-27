@@ -2,7 +2,7 @@
   "apiEvidenceSha256": "de1e447439610287c822649ce7990cb9cd118cc22beace58f5fac14efd8c518d",
   "children": [
     {
-      "commit": "7a1a98ebcdd66ce92a5fd66fb544b681e5dedab4",
+      "commit": "f6f6e21f659fc57c0bdaaa92b20ce9cc15e04993",
       "files": {
         "ApogeeHeals.lua": "f6bd753d3bd600121a124321b197df930dbf6c87abe35504f7f44cbffc079d5b",
         "ApogeeHeals_Era.toc": "d8c91cb2ec9dc6f31f8da513ae285f3aaac1eded2bf1698666671452f89be5a1",
@@ -44,7 +44,7 @@
       "uiApi": 1
     },
     {
-      "commit": "0369c41efb38f7b211d217866c06cce211d10b9c",
+      "commit": "774c635b5c92d7bb2db731b2ce13011d64178456",
       "files": {
         "Actions/Compile.lua": "05aabf00c1fb701eac6945129703fb882fbc268a15e193355a68fbcae5466966",
         "Actions/Defaults.lua": "16700e4742055ffc4cae024c26e6548e481a6b45ca68fbe57f9e0f9ee8f06434",
@@ -81,7 +81,7 @@
       "uiApi": 1
     },
     {
-      "commit": "17928b927cb6c43f3252d86a241ff1245375c559",
+      "commit": "fe88b39c95f2aaa4498308c7e5fa853be52ae670",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "26814f678d1ec19f184e0b78f891d4fc67fec6bee3d0018fdb9e1b200d8e5c11",
@@ -110,7 +110,7 @@
       "uiApi": 1
     },
     {
-      "commit": "b7282e0d19321699431ff036ddcbecf09064cdac",
+      "commit": "3181180047f82e3ffd97469d05a22730bcfb3cb5",
       "files": {
         "ApogeeEssentials.lua": "2c5d654bc973b7142a3fb269b3abc73ac7b88a79fea15660cc84662e21decc6e",
         "ApogeeEssentials_Era.toc": "e49787fe832990ca8713c980da760e14fddcca5481f5fb3a143f6a1d16b451c9",
@@ -140,7 +140,7 @@
       "uiApi": 1
     },
     {
-      "commit": "71a808063e8feeb20b6432b17146eb5dba8e2837",
+      "commit": "f95c70ec8758d593e73714c8a07792c2c82201a6",
       "files": {
         "ApogeeStats.lua": "d0d170db84f447086d3ae326591fafdf9b5432d69c763ca0685d70210249f0da",
         "ApogeeStats_Era.toc": "44bc254eb8030da7f96c409d3bb4212afa5b83118baa9077fa3a766ce8186657",
@@ -179,7 +179,7 @@
   "supportModules": [
     {
       "apiVersion": 1,
-      "commit": "b7282e0d19321699431ff036ddcbecf09064cdac",
+      "commit": "3181180047f82e3ffd97469d05a22730bcfb3cb5",
       "files": {
         "ApogeeUI.lua": "573b6e25b56b19a445ae5a458cf49a63f0c5553e3a8113a0869411c760067677",
         "ApogeeUI_Era.toc": "a59f956a424c089f5ee6ec068c683110e50c23f092e792b740df30c4b015ad1e",

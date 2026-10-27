@@ -1,3 +1,11 @@
+## Unreleased - merged-source release preparation
+
+- Pin both isolated candidates and embedded shared UI to the merged child
+  revisions. Era.26 package bytes stay identical; future Forever launcher.16
+  includes the reviewed optional Stats tooltip hooks with its own inventory.
+- Preserve the selected v1.14.9 release and native acceptance. No installation
+  or publication; fresh matching Forever validation remains required.
+
 ## Unreleased - Era.26 auction tooltip lifecycle fixes
 
 - Isolate the private item scanner from native equipped-comparison panels so

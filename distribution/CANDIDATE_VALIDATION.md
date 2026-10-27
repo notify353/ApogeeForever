@@ -1,5 +1,9 @@
 # Candidate validation
 
+The merged-source candidate and unchanged release boundaries are recorded in
+[release preparation](RELEASE_PREPARATION.md). Its two locks currently share
+the five merged child revisions; use clean checkouts at those exact commits.
+
 Run from the distribution worktree. This entry point checks **both** isolated
 locks (`era/candidate.lock.json` and `future-launcher.lock.json`), not the frozen
 release candidate. All five child test checkouts must be clean and exactly match
@@ -11,11 +15,14 @@ the default shared checkout path still rejects mismatched pins. The validation
 receipt records both target maps separately. Do not advance Forever merely to
 make Era's test-source check pass.
 
+For example, after creating one exact child checkout per subdirectory under
+`C:/Temp/apogee-merged-child-checkouts`:
+
 ```powershell
 python -B scripts/validate_candidates.py `
-  --child-worktrees C:/Temp/apogee-launcher-20261025 `
+  --child-worktrees C:/Temp/apogee-merged-child-checkouts `
   --sources-root C:/Dev/WoW `
-  --artifact-root C:/Temp/apogee-launcher-20261025/validation-NEW
+  --artifact-root C:/Temp/apogee-merged-validation-NEW
 ```
 
 Stats' explicit loader-contract script and generated Era parser/startup/auction
