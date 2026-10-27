@@ -377,6 +377,14 @@
     {
       "path": "Blizzard_APIDocumentationGenerated/TooltipInfoSharedDocumentation.lua",
       "sha256": "1d2081a3c6dddd6b5a957be26582e582b52ac5ea0415700ae0d14c368b5f05c5"
+    },
+    {
+      "path": "Blizzard_SharedXML/Classic/GameTooltipTemplate.lua",
+      "sha256": "1da97bbcc0517da074d9cab64ba0c00e523f281423b883641ef6497fef365224"
+    },
+    {
+      "path": "Blizzard_SharedXML/Classic/GameTooltipTemplate.xml",
+      "sha256": "58aecf3bd670660d6db4a3daa114cfd74ba221be5b3690f78c1e907d3a7de838"
     }
   ],
   "interface": 11509,

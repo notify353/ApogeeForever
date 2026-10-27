@@ -1,3 +1,10 @@
+## Unreleased - Era.26 auction tooltip lifecycle fixes
+
+- Isolate the private item scanner from native equipped-comparison panels so
+  scanning gear cannot hide the user's visible comparisons.
+- Append guidance after normal auction rows' native per-frame refresh; support
+  both normal browsing and dice view. Preserve Forever and saved settings.
+
 ## Unreleased - Era.25 auction equipped comparison
 
 - Show native equipped-item comparisons while hovering filtered auction rows,

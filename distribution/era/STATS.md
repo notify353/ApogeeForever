@@ -1,5 +1,26 @@
 # Era Stats candidate
 
+## Era.26 native tooltip lifecycle correction — 2026-10-27
+
+Owner reloaded Era.25 and reported missing equipped comparisons and guidance
+outside dice view. Two omitted native interactions were reproduced. The private
+scanner inherits GameTooltipMixin's shared ShoppingTooltip1/2 table; its OnHide
+therefore hides the user's comparison panels during evaluation. Give only the
+private scanner an empty comparison table, preserving native lifecycle handlers.
+The native auction icon's own OnUpdate rebuilds the main tooltip after its update
+may already have rendered guidance. Securely post-hook AuctionFrameItem_OnEnter
+to flush pending guidance after that full native rebuild. Hook registration is
+idempotent and handles the auction addon loading after Stats; failed/stopped
+tooltip renderers remain inert. No global function replacement or CVar change.
+
+Fresh GameTooltipTemplate.lua/XML now join the evidence inventory (96 references).
+Existing AuctionUITemplates.xml supplies the per-frame refresh contract. New
+regressions failed before each fix and cover inherited scanner cleanup, pending
+data, visible comparisons, and normal-row update ordering. Earlier mocks did not
+model template inheritance or the auction icon's independent refresh. Native
+visual acceptance is still required; Era.25's failed acceptance is not superseded
+by passing mocks. Forever pins/installation and saved data remain unchanged.
+
 ## Era.24 reliability audit — 2026-10-27
 
 The owner's Kang tooltip showed two anonymous Weapon DPS lines. The old shared
