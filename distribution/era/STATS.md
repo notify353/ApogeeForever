@@ -13,6 +13,9 @@ late item data did not recover pending rows; recycled rows retained old hover
 content; scrolling between mouse press/release could select a different row;
 model cleanup could abort event cleanup. Fixes keep the current-page-only design,
 bound data-driven retries, make startup idempotent, and protect independent cleanup.
+Final fault injection also reproduced partial UPGRADE text after a rendering
+exception. The Era renderer now restores native content and becomes inert until
+reload, reporting once while leaving the rest of Stats active.
 
 The test harness now admits only explicit native methods rather than inventing
 no-op APIs. Tests retain/reuse tooltip font strings, deliver native refreshes on
