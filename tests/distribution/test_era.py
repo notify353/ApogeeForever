@@ -226,7 +226,7 @@ class EraTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             client = self.client_fixture(folder)
             config = Path(folder) / 'config'; config.mkdir()
-            (client.parent / '.build.info').write_text('Product!STRING:0|Version!STRING:0\nwow_classic_era|1.15.9.70003\n')
+            (client.parent / '.build.info').write_text('Product!STRING:0|Version!STRING:0\nwow_classic_era|' + self.lock['client']['reviewedBuild'] + '\n')
             exe = client / 'WowClassic.exe'; exe.write_bytes(b'reviewed executable')
             path = client / 'BlizzardInterfaceCode/Interface/AddOns/API.lua'
             path.parent.mkdir(parents=True); path.write_bytes(b'reviewed API')
@@ -254,6 +254,8 @@ class EraTests(unittest.TestCase):
                     for spec in ('test_era.lua', 'test_era_ui.lua', 'test_era_startup.lua'):
                         subprocess.run([LUA, 'tests/' + spec, str(Path(folder)/(name+'Dev')), name+'Dev'],
                                        cwd=CHILD_WORKTREES/name, check=True)
+                    subprocess.run([LUA, 'tests/test_era_ui.lua', str(Path(folder)/(name+'Dev')), name+'Dev', 'preloaded'],
+                                   cwd=CHILD_WORKTREES/name, check=True)
                     continue
                 env = os.environ.copy(); env['APOGEE_ERA_RUNTIME_ROOT'] = str(Path(folder) / (name + 'Dev'))
                 if CLIENT_ROOT:

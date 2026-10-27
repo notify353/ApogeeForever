@@ -21,7 +21,8 @@ NAMES = LEGACY_NAMES + ('ApogeeUIDev',)
 HISTORICAL_NAMES = tuple(n + 'Dev' for n in (d.MARKER, *HISTORICAL_MEMBERS))
 RECEIPT_ROOTS = (set(NAMES), set(LEGACY_NAMES), set(HISTORICAL_NAMES), set(HISTORICAL_NAMES + ('ApogeeUIDev',)))
 CLIENT = {'flavor': 'classic-era', 'product': 'wow_classic_era',
-          'directory': '_classic_era_', 'reviewedBuild': '1.15.9.70003', 'interface': 11509}
+          'directory': '_classic_era_', 'reviewedBuild': '1.15.9.70576', 'interface': 11509}
+HISTORICAL_CLIENT = dict(CLIENT, reviewedBuild='1.15.9.70003')
 
 
 def read_lock(path=LOCK):
@@ -29,7 +30,7 @@ def read_lock(path=LOCK):
     d.require(lock['schema'] == 1 and lock['target'] == 'classic-era'
               and lock['family'] == 'DEV' and lock['publicationAllowed'] is False,
               'Unpublished Era DEV lock required')
-    d.require(lock['client'] == CLIENT, 'Unexpected Era client/build')
+    d.require(lock['client'] in (CLIENT, HISTORICAL_CLIENT), 'Unexpected Era client/build')
     d.require(re.fullmatch(r'\d+\.\d+\.\d+-era\.\d+', lock['version']), 'Invalid Era version')
     inventory = lock.get('moduleInventoryVersion', 1)
     d.require(inventory in (1, 2), 'Unknown Era module inventory')
@@ -56,7 +57,7 @@ def verify_api(client, lock):
     keys = [k.split('!')[0] for k in lines[0].split('|')]
     rows = [dict(zip(keys, line.split('|'))) for line in lines[1:]]
     d.require([r.get('Version') for r in rows if r.get('Product') == CLIENT['product']]
-              == [CLIENT['reviewedBuild']], 'Era product build changed; fresh review required')
+              == [lock['client']['reviewedBuild']], 'Era product build changed; fresh review required')
     record = json.loads((CONFIG / 'api-evidence.json').read_bytes())
     d.require(d.sha(d.canonical(record)) == lock['apiEvidenceSha256'], 'Era evidence differs from lock')
     exe = m.under(client, 'WowClassic.exe')
@@ -66,7 +67,7 @@ def verify_api(client, lock):
         path = m.under(root, item['path'])
         d.require(path.stat().st_mtime_ns >= exe.stat().st_mtime_ns, 'Stale Era export: ' + item['path'])
         d.require(d.sha(path.read_bytes()) == item['sha256'], 'Era API reference changed: ' + item['path'])
-    return {'build': CLIENT['reviewedBuild'], 'referencesVerified': len(record['files']),
+    return {'build': lock['client']['reviewedBuild'], 'referencesVerified': len(record['files']),
             'evidenceSha256': lock['apiEvidenceSha256']}
 
 

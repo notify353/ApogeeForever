@@ -1,5 +1,5 @@
 {
-  "apiEvidenceSha256": "19fcb456e5f0c1590f877234eeaa40796432282d0d97b01aa7b645d3e8086e12",
+  "apiEvidenceSha256": "4bf7943cb4924da3a03019f947ab872a7f662d1957a058d843b950e0d6806936",
   "children": [
     {
       "commit": "7a1a98ebcdd66ce92a5fd66fb544b681e5dedab4",
@@ -140,7 +140,7 @@
       "uiApi": 1
     },
     {
-      "commit": "ded3afe1b29cb1e99e1bc3e2cccac548961ea8b4",
+      "commit": "46e6310d563bbe10929b2057b8ccbd144a26660f",
       "files": {
         "ApogeeStats.lua": "3d156200bbf1d96380f95f165edbf802d37cdc32524d5aa26e97ef0caa89d254",
         "ApogeeStats_Era.toc": "44bc254eb8030da7f96c409d3bb4212afa5b83118baa9077fa3a766ce8186657",
@@ -148,7 +148,7 @@
         "Core/Items.lua": "23ff497959ba6cc2a788b93fbdd3d17b1a5cba69872d97adaa7a34eae2f0474f",
         "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
         "Era/Adapter.lua": "ac16f0e86a4b584075501aecaad4341536eed28b3cb60884f1375d3be71739de",
-        "Era/Auction.lua": "b03e98e5ace87c2f97c017b4a731af4d0a46744182c66ef2467b85e9c7930a95",
+        "Era/Auction.lua": "779e4fc6f6b6c8cfd992f9b13cb550ea2fc3c6e021980a995979b53d87bcbba3",
         "Era/AuctionScan.lua": "7cc653880393cced8435e2682268c63f936b792e638c47c4083d15bdff109ba6",
         "Era/README.md": "a6f14f97546cd2778581192fb01d3488d7bd1354c4c73095a468878ec26c718b",
         "Era/Tooltip.lua": "4997efb8de9be899c12e239577b940500d4f320435f18235573f9f21c0334326",
@@ -169,7 +169,7 @@
     "flavor": "classic-era",
     "interface": 11509,
     "product": "wow_classic_era",
-    "reviewedBuild": "1.15.9.70003"
+    "reviewedBuild": "1.15.9.70576"
   },
   "family": "DEV",
   "frozenForeverDistributionCommit": "4eb28af7af71703c32435fa1a8f0dabd6f1a10f2",
@@ -197,5 +197,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.20"
+  "version": "1.14.8-era.21"
 }

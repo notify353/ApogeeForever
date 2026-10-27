@@ -1,5 +1,21 @@
 # Era Stats candidate
 
+## Era.21 correction — 2026-10-27
+
+The missing auction dice was reproduced: Era.20 required GetAuctionSortColumn,
+which is local to Blizzard's auction source and unavailable to addons. Era.21
+uses public GetAuctionSort("list", 1). Tests no longer invent the private global;
+both already-loaded and load-on-demand auction startup are exercised. Search
+click ownership now survives mouse-down/release across frames and clears when
+the press is abandoned. No tooltip/scoring or Forever runtime behavior changes.
+
+Owner refreshed the 1.15.9.70576 export. All 94 selected API files are identical
+to the reviewed 70003 sources and postdate the new executable. The Era package
+authority advances to the new exact build/hash; historical locks remain readable
+but cannot install against a different client. Frozen Forever pins stay unchanged.
+
+## Initial Era.20 implementation
+
 Era.20 adds ApogeeStatsDev to the embedded-master package. Inventory version 2
 requires exactly the five existing gameplay children; absent/version-1 inventory
 retains the exact historical four. Old receipts and rollback archives remain

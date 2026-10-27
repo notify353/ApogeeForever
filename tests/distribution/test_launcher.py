@@ -70,6 +70,7 @@ class LauncherTests(unittest.TestCase):
                 else:
                     for spec in ('test_era.lua', 'test_era_ui.lua', 'test_era_startup.lua'):
                         subprocess.run(['lua','tests/'+spec,str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev'],cwd=CHILDREN/'ApogeeStats',check=True)
+                    subprocess.run(['lua','tests/test_era_ui.lua',str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev','preloaded'],cwd=CHILDREN/'ApogeeStats',check=True)
                 for child in self.era['children'] if target=='era' else self.future['children']:
                     n=child['name']+('Dev' if family=='DEV' else '')
                     meta,runtime=d.toc_info(files[n+'/'+n+'.toc'])

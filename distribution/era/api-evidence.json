@@ -1,6 +1,6 @@
 {
-  "clientVersion": "1.15.9.70003",
-  "executableSha256": "d8ac9f021a099cde4f2f891b9fc82a3fd67c7c875e8e1a6c4cde1dfd3a6119be",
+  "clientVersion": "1.15.9.70576",
+  "executableSha256": "5b71b9da6a9a6930a705ea2e768b1ec1df31601d2cab9fb57b743266a27b8f53",
   "files": [
     {
       "path": "Blizzard_SharedXML/ProjectConstants.lua",

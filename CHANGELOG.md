@@ -1,3 +1,13 @@
+## Unreleased - Era.21 auction startup correction
+
+- Fix the missing Stats auction controls: the Era adapter now uses the public
+  GetAuctionSort API rather than a Blizzard file-local helper.
+- Verify refreshed 1.15.9.70576 authority: all 94 selected source files unchanged.
+  Preserve historical 70003 locks/rollback and all frozen Forever pins.
+- Generated regressions cover auction UI loading before and after Stats startup.
+- Preserve native Search ownership across mouse frames; abandoned presses do
+  not claim competing queries. No Forever runtime changes.
+
 ## Unreleased - Era Stats candidate
 
 - Add a versioned five-component Era inventory with historical four-component
