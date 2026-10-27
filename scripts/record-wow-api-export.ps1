@@ -10,6 +10,6 @@ foreach ($entry in $record.files) { $entry.sha256 = (Get-FileHash -LiteralPath (
 $original = [IO.File]::ReadAllText($path)
 try {
     [IO.File]::WriteAllText($path, ($record | ConvertTo-Json -Depth 10) + "`n", [Text.UTF8Encoding]::new($false))
-    & (Join-Path $PSScriptRoot 'check-wow-api-export.ps1') -WowRoot $WowRoot -RequireInstalled
+    & (Join-Path $PSScriptRoot 'check-wow-api-export.ps1') -Client Beta -WowRoot $WowRoot -RequireInstalled
 } catch { [IO.File]::WriteAllText($path, $original, [Text.UTF8Encoding]::new($false)); throw }
 Write-Host 'Reviewed API hashes recorded; inspect and commit the diff.'

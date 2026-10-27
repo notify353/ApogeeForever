@@ -51,8 +51,11 @@ def validate(args):
         subprocess.run([str(x) for x in command], cwd=cwd, env=env, check=True)
     def python(*command): run([sys.executable, '-B', *command])
     evidence = None if args.offline else era.verify_api(args.client_root, locks[0])
+    from forever_client import verify_live_export
+    forever_evidence = verify_live_export(args.forever_client_root, locks[1]) if args.forever_client_root else None
     print('Era: ' + ('OFFLINE ONLY; no export or installable Era artifact' if args.offline else 'matching export verified'), flush=True)
-    print('Future Forever: OFFLINE ONLY; fresh export and native acceptance still required', flush=True)
+    print('Future Forever: ' + ('matching live export verified; native acceptance still required' if forever_evidence
+                               else 'OFFLINE ONLY; fresh export and native acceptance still required'), flush=True)
     args.artifact_root.mkdir(parents=True)
     tested = set()
     sources = [(name, commit, parent/name) for target, parent in zip(pins, roots) for name, commit in target.items()]
@@ -70,6 +73,7 @@ def validate(args):
         builder = root/'scripts/build-package.ps1'
         if builder.exists(): run(['pwsh', '-NoProfile', '-File', builder, '-SourceOnly'], root)
     python('tests/distribution/test_candidates.py', '-v')
+    python('tests/distribution/test_live_forever.py', '-v')
     command = ['tests/distribution/test_era.py', '--sources-root', args.sources_root,
                '--child-worktrees', args.child_worktrees, '-v']
     if not args.offline: command += ['--client-root', args.client_root]
@@ -81,15 +85,19 @@ def validate(args):
         for test in ('test_distribution', 'test_migration', 'test_dual'):
             python('tests/distribution/' + test + '.py', '--sources-root', args.sources_root,
                    '--artifacts', args.artifact_root/test)
-    dual.build(locks[1], args.sources_root, args.artifact_root/'future-forever-offline')
+    dual.build(locks[1], args.sources_root, args.artifact_root/('future-forever-validated' if forever_evidence else 'future-forever-offline'))
     if evidence: era.build(locks[0], args.sources_root, args.artifact_root/'packages', evidence)
     # Detect a checkout changed while the tests were running.
     verify_candidate_sources(locks, args.child_worktrees, future_root)
     d.require(locks == [era.read_lock(), d.read_lock(d.ROOT/'distribution/future-launcher.lock.json')],
               'Candidate locks changed during validation')
+    if forever_evidence:
+        d.require(verify_live_export(args.forever_client_root, locks[1]) == forever_evidence,
+                  'Live Forever authority changed during validation')
     run(['git', 'diff', '--check'])
     receipt = {'testSources': dict(zip(('era', 'futureForever'), pins)), 'lockSha256': [d.sha(d.canonical(lock)) for lock in locks],
-               'eraApiEvidence': evidence, 'futureForeverOfflineOnly': True, 'nativeAccepted': False,
+               'eraApiEvidence': evidence, 'futureForeverApiEvidence': forever_evidence,
+               'futureForeverOfflineOnly': forever_evidence is None, 'nativeAccepted': False,
                'frozenRegressionRun': not args.skip_frozen_regression}
     (args.artifact_root/'candidate-validation.json').write_bytes(d.canonical(receipt))
     print(json.dumps(receipt, indent=2))
@@ -103,6 +111,8 @@ def main():
     parser.add_argument('--sources-root', type=Path, default=Path('C:/Dev/WoW'))
     parser.add_argument('--artifact-root', type=Path, required=True)
     parser.add_argument('--client-root', type=Path, default=Path('C:/Program Files (x86)/World of Warcraft/_classic_era_'))
+    parser.add_argument('--forever-client-root', type=Path,
+                        help='Verify current live Forever authority before and after candidate checks; no installation')
     parser.add_argument('--offline', action='store_true', help='No export check and no installable Era artifact')
     parser.add_argument('--skip-frozen-regression', action='store_true', help='Focused rerun only after unchanged frozen suites passed')
     try: validate(parser.parse_args())

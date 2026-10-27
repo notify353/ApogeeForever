@@ -48,6 +48,7 @@ class RepositoryTests(unittest.TestCase):
 
     def test_absent_installation_is_portable_and_require_installed_still_fails(self):
         command = ['pwsh', '-NoProfile', '-File', str(ROOT / 'scripts/check-wow-api-export.ps1'),
+                   '-Client', 'Beta',
                    '-WowRoot', 'ApogeeMissingDrive:/absent']
         optional = subprocess.run(command, capture_output=True, text=True)
         self.assertEqual(optional.returncode, 0, optional.stderr)

@@ -6,7 +6,8 @@ $repo = Split-Path -Parent $PSScriptRoot
 if (-not $ArtifactRoot) { $ArtifactRoot = Join-Path $repo ('.release/validation-' + [guid]::NewGuid().ToString('N')) }
 Push-Location $repo
 try {
-    & ./scripts/check-wow-api-export.ps1
+    # This runner validates the frozen release selection, not the live candidate.
+    & ./scripts/check-wow-api-export.ps1 -Client Beta
     python -B tests/distribution/test_repository.py
     if ($LASTEXITCODE -ne 0) { throw 'Distribution repository validation failed.' }
     python -B tests/distribution/test_curseforge.py

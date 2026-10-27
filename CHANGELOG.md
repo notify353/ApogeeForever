@@ -1,3 +1,11 @@
+## Unreleased - live Forever validation tooling
+
+- Validate the future candidate against live Forever 1.60.1.70634 (`wowf`,
+  `_forever_`, `Wow.exe`) with exact executable/export hashes and source pins.
+- Retain explicit historical beta checks and the frozen release. Add live-client
+  failure regressions and a combined validation command. Era, gameplay sources,
+  generated addon bytes and installations are unchanged; native testing remains.
+
 ## Unreleased - merged-source release preparation
 
 - Pin both isolated candidates and embedded shared UI to the merged child

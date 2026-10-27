@@ -1,8 +1,16 @@
 [CmdletBinding()]
-param([string]$WowRoot, [switch]$RequireInstalled)
+param([string]$WowRoot, [switch]$RequireInstalled,
+      [ValidateSet('Live','Beta')][string]$Client = 'Live')
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $repo = Split-Path -Parent $PSScriptRoot
+if ($Client -eq 'Live') {
+    if (-not $WowRoot) { $WowRoot = 'C:/Program Files (x86)/World of Warcraft' }
+    & python -B (Join-Path $PSScriptRoot 'forever_client.py') --client-root (Join-Path $WowRoot '_forever_')
+    if ($LASTEXITCODE -ne 0) { throw 'Live Forever authority check failed; no beta or offline fallback.' }
+    Write-Host 'Authoritative live Forever export verified; native acceptance is separate.'
+    return
+}
 $record = Get-Content -Raw (Join-Path $repo 'docs/wow-api-export.json') | ConvertFrom-Json
 $lock = Get-Content -Raw (Join-Path $repo 'distribution/candidate.lock.json') | ConvertFrom-Json
 if ($record.interface -ne 16001 -or $record.clientVersion -ne $lock.client.reviewedBuild -or $record.product -ne 'wow_classic_beta') { throw 'Forever baseline mismatch.' }
