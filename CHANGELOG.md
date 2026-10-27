@@ -1,3 +1,9 @@
+## Unreleased - Era.25 auction equipped comparison
+
+- Show native equipped-item comparisons while hovering filtered auction rows,
+  including scrolling and tooltip refresh. No tooltip CVar changes.
+- Preserve Forever pins, packages, installation, and existing Era settings.
+
 ## Unreleased - Era.24 Stats reliability audit
 
 - Replace invisible Era role atlases with readable grouped role names. Filtered
