@@ -1,3 +1,89 @@
+## Classic Era Stats - 2026-10-25
+
+The Era.20 candidate adds Stats using a versioned five-child inventory; earlier
+four-child packages and receipts retain their exact contracts. See era/STATS.md.
+New addon discovery requires a closed-client central installation and full restart.
+Future Forever source preparation remains offline; installed beta/frozen pins stay.
+
+## Internal UI and master switch - 2026-10-25
+
+Era.11 and the isolated future Forever candidate embed shared UI in the existing
+top-level addon. Every child requires that master; only minimap position resets.
+This owner-requested architecture supersedes the metadata-only marker rule for
+these candidates, with historical/frozen packages unchanged. See era/MASTER.md
+for checked closed-client migration, rollback and native acceptance requirements.
+
+## Shared launcher candidate - 2026-10-25
+
+Coordinated candidate validation uses [CANDIDATE_VALIDATION.md](CANDIDATE_VALIDATION.md).
+It checks Era and future Forever test-source pins together; the frozen release
+workflow is not evidence for the new candidates.
+
+Era.8 adds required Apogee UI shared support and one green minimap launcher.
+Source/API/persistence/installation details and native checklist: era/LAUNCHER.md.
+New support requires closed-client installation and full restart. The separate
+future-launcher.lock.json prepares Forever source without changing frozen pins
+or its installed beta. No publication or native acceptance is implied.
+
+## Isolated Classic Era development - 2026-10-24
+
+Owner approved isolated Era work while preserving the last verified Forever
+beta. See [Era target workflow](era/README.md) for its separate pins, API evidence,
+checks and explicit `--target classic-era` installer. The default target and
+Forever locks remain unchanged. Live Forever validation awaits its future
+release; frozen offline checks do not claim live acceptance. Era.1 was installed
+with explicit approval; its receipt is in
+`C:/Dev/WoW/local-install-backups/apogee-era-20261024/transaction.json`.
+Era.2 was subsequently installed with explicit approval; its latest receipt is
+`C:/Dev/WoW/local-install-backups/apogee-era-bugfix-20261024/transaction.json`.
+The [Group Finder correction](era/GROUP_FINDER.md) prepares Era.3 with official
+listings restored using fresh Era authority. Era updates still require a closed
+client and the prior Era receipt.
+
+The [error-default correction](era/ERROR_DEFAULTS.md) combines that Group Finder
+fix with native-name combat defaults and an owner-approved once-only Era choice
+reset in Era.4. This supersedes the uninstalled Era.3 candidate; use the latest
+installed Era receipt, never an uninstalled candidate as the previous receipt.
+
+Era.4 installed October 25 after the owner confirmed the client closed. Latest
+Era receipt: `C:/Dev/WoW/local-install-backups/apogee-era-errors-and-groups-20261025/transaction.json`.
+Eight writes, 113 installed/backed-up files verified (108 payload receipt entries
+plus five preserved README files). Forever's 1,477 addon files and eight frozen
+repository files unchanged. The once-only Era choice reset runs at next login;
+native acceptance remains pending. See the error-default report for evidence.
+
+The [live threat-debuff correction](era/THREAT_DEBUFFS.md) supplies Era.5 with a
+private Era aura renderer for player-owned Sunder Armor stacks, Thunder Clap and
+Demoralizing Shout. Existing Era fixes and all Forever pins remain unchanged.
+Era.5 installed October 25 with the client verified closed. Latest Era receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-threat-debuffs-20261025/transaction.json`.
+Six writes and 113 installed/backed-up files verified (106 payload receipt
+entries plus seven preserved README files). All 1,477 Forever files and eight
+frozen repository files unchanged. User live threat-stack acceptance is pending.
+
+The [archive comparison sweep](era/ARCHIVE_SWEEP.md) supplies Era.6 with party
+debuff icons, cleansing highlights and Era main-menu/quest-tracker fading fixes.
+All current Era fixes are retained; frozen Forever pins remain unchanged.
+Era.6 installed October 25 with the client verified closed. Latest Era receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-archive-sweep-20261025/transaction.json`.
+Eight writes, 114 installed files (107 payload entries plus seven README files)
+and 113 backup files verified. Forever's 1,477 files, eight frozen repository
+files and all 275 archived files unchanged. Native user acceptance pending.
+
+The [error scope correction](era/ERROR_SCOPE.md) prepares Era.7: checked Era
+errors are suppressed before combat as well as during it, as clarified by the
+owner. Existing choices/defaults remain intact; no additional reset. The owner
+then explicitly authorized running-client installation. Use the Era-only
+`--allow-running-era-update` option with the latest installed receipt; it verifies
+unchanged runtime paths, TOC load order and metadata except Version. Initial
+installs, discovery changes and rollback remain closed-client operations.
+Era.7 installed October 25 while Era was running, under that explicit instruction.
+Latest Era receipt:
+`C:/Dev/WoW/local-install-backups/apogee-era-error-scope-20261025/transaction.json`.
+Nine writes, 114 installed/backed-up files verified (107 payload entries plus
+seven README files); Forever and archives unchanged. User `/reload` and native
+before-combat acceptance pending. No additional error-choice reset.
+
 ## Target actions inside health bar installed - 2026-10-20
 
 Owner requested cohesive party-role styling for all three target actions.

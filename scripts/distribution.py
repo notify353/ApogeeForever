@@ -82,6 +82,24 @@ def public_children(lock):
     return tuple(names)
 
 
+def support_descriptor(lock):
+    modules = lock.get('supportModules', [])
+    require(isinstance(modules, list) and len(modules) <= 1, 'Unexpected support modules')
+    if not modules:
+        require(not any(c.get('uiApi') for c in lock['children']), 'UI dependency lacks support module')
+        return None
+    module = modules[0]
+    require(module.get('placement', 'standalone') in ('standalone', 'master'), 'Unreviewed support placement')
+    owner = next(c for c in lock['children'] if c['name'] == 'ApogeeEssentials')
+    era = lock.get('target') == 'classic-era'
+    require(module['name'] == 'ApogeeUI' and module['sourceChild'] == 'ApogeeEssentials'
+              and module['subdirectory'] == 'Shared/ApogeeUI' and module['apiVersion'] == 1
+              and module['commit'] == owner['commit'], 'Unreviewed support source/API')
+    require(module['toc'] == ('ApogeeUI_Era.toc' if era else 'ApogeeUI.toc'), 'Wrong support TOC')
+    require(all(c.get('uiApi') == 1 for c in lock['children']), 'Mixed launcher component APIs')
+    return module
+
+
 def read_lock(path=DEFAULT_LOCK):
     lock = json.loads(Path(path).read_text(encoding='utf-8'))
     require(lock['schema'] == 1 and lock['publicationAllowed'] is False, 'Prototype lock required')
@@ -108,6 +126,7 @@ def read_lock(path=DEFAULT_LOCK):
             require(path.casefold() not in seen, 'Case-colliding source path')
             seen.add(path.casefold())
             require(re.fullmatch('[0-9a-f]{64}', digest), 'Invalid source hash')
+    support_descriptor(lock)
     return lock
 
 
@@ -154,8 +173,12 @@ def child_contract(child, files):
     require(meta.get('Version') == child['version'], 'Child version drift')
     require({k: v for k, v in meta.items() if k.startswith('SavedVariables')} == child['savedVariables'],
             'Child SavedVariables identity changed')
-    require(not any(k in meta for k in ('Dependencies', 'RequiredDeps', 'OptionalDeps', 'LoadWith')),
-            'Children must remain independent')
+    dependency_keys = ('Dependencies', 'RequiredDeps', 'OptionalDeps', 'LoadWith')
+    if child.get('uiApi') == 1:
+        require({k: meta[k] for k in dependency_keys if k in meta} == {'Dependencies': 'ApogeeUI'}
+                and meta.get('X-Apogee-UI-API') == '1', 'Required matching UI support missing')
+    else:
+        require(not any(k in meta for k in dependency_keys), 'Children must remain independent')
     require(runtime and all(p in files for p in runtime), 'Missing runtime module')
     require({p for p in files if p.endswith('.toc')} == {child['toc']}, 'Unexpected alternate TOC')
     executable = {p for p in files if p.endswith(('.lua', '.xml'))}

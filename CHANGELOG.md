@@ -1,3 +1,227 @@
+## Unreleased - Era.26 auction tooltip lifecycle fixes
+
+- Isolate the private item scanner from native equipped-comparison panels so
+  scanning gear cannot hide the user's visible comparisons.
+- Append guidance after normal auction rows' native per-frame refresh; support
+  both normal browsing and dice view. Preserve Forever and saved settings.
+
+## Unreleased - Era.25 auction equipped comparison
+
+- Show native equipped-item comparisons while hovering filtered auction rows,
+  including scrolling and tooltip refresh. No tooltip CVar changes.
+- Preserve Forever pins, packages, installation, and existing Era settings.
+
+## Unreleased - Era.24 Stats reliability audit
+
+- Replace invisible Era role atlases with readable grouped role names. Filtered
+  row tooltips use the selected auction role and follow scrolling/row changes.
+- Ignore identical result refreshes, recover bounded pending comparisons after
+  item data arrives, and cancel changed-row clicks between press and release.
+- Contain cleanup failures, prevent duplicate startup, and clear stopped tooltip
+  guidance. Use stricter API mocks and native font/event/scroll behavior checks.
+- Keep the simple current-page filter, no automatic searches or purchases, no
+  saved-data changes, and byte-identical Forever packages/installation.
+
+## Unreleased - Era.23 simple auction filter
+
+- Era filters upgrades by role on the current native page only. Remove budget,
+  Select best and automatic page scanning; keep native Search and page controls.
+- Verify a clicked listing against the current page before returning to native
+  selection for manual bidding/buying. No addon-issued auction queries.
+- Validate independent exact Era/Forever test checkouts, preserving the entire
+  future Forever lock and package contents as well as frozen release pins.
+
+## Unreleased - Era.22 tooltip refresh correction
+
+- Render Stats recommendations after the tooltip's own native update and resize
+  its bounds, fixing out-of-box text and a separate-frame refresh race in Era.
+- Test repeated native rebuilds, item references, nested loot setters, hidden
+  and cleared tooltips, repeated attachment and shutdown cancellation.
+- Preserve all scoring, saved settings and frozen Forever runtime/pins.
+
+## Unreleased - Era.21 auction startup correction
+
+- Fix the missing Stats auction controls: the Era adapter now uses the public
+  GetAuctionSort API rather than a Blizzard file-local helper.
+- Verify refreshed 1.15.9.70576 authority: all 94 selected source files unchanged.
+  Preserve historical 70003 locks/rollback and all frozen Forever pins.
+- Generated regressions cover auction UI loading before and after Stats startup.
+- Preserve native Search ownership across mouse frames; abandoned presses do
+  not claim competing queries. No Forever runtime changes.
+
+## Unreleased - Era Stats candidate
+
+- Add a versioned five-component Era inventory with historical four-component
+  package/receipt support. Stats depends on the same internal master UI.
+- Run Stats loader contracts and generated Era/Forever gameplay suites; extend
+  the matching Era tooltip/auction API evidence. No frozen Forever pin changes.
+
+## Unreleased - hardening regression sweep
+
+- Add 60 generated Era DEV and future Forever PROD/DEV startup edge cases:
+  healthy/early/partial/queued/cleanup failures, immediate and combat-deferred
+  startup, complete saved-state preservation, and shared-consumer isolation.
+- No runtime or source-pin changes; Era.19 and future launcher.12 remain selected.
+
+## Unreleased - targeted startup hardening
+
+- Harden shared startup and cleanup in Era.19 and future Forever launcher.12; preserve frozen release pins and installed beta.
+- Add one candidate validator with exact test-source pin checks, generated startup fault injection and explicit offline/native boundaries.
+
+## Unreleased - position-reset preservation audit
+
+- Test the generated menu through real Heals/Keybinds reset callbacks in Era DEV
+  and future Forever PROD/DEV. Compare all non-position saved fields and healing/key
+  action attributes; cover open/closed editors, repeated resets, drag release,
+  combat/world guards, minimap-only isolation and separate family data.
+- No runtime, package pin or installed-file changes required by this audit.
+
+## Unreleased - position-only UI reset
+
+- Pin shared Reset UI positions for Era.18 and future Forever launcher.11. Preserve all gameplay settings and the frozen Forever beta.
+
+## Unreleased - concise healing tooltip
+
+- Era.17 and future Forever use a two-line healing editor tooltip explaining
+  default and manually assigned spell ranks.
+
+## Unreleased - Classic bandage drop correction
+
+- Era.16 recognizes standard bandages reported as generic consumables, fixing
+  bag drops and the automatic Linen Bandage icon/action. Other generic items
+  remain rejected. Carry the same guarded fix in the future Forever candidate.
+
+## Unreleased - Linen Bandage healing default
+
+- Isolated Era and future Forever candidates give Warrior, Rogue, Hunter, Mage
+  and Warlock Linen Bandage on empty healing Left-click when defaults are enabled.
+  Manual assignments win; item-information refresh includes automatic defaults.
+- Preserve other component pins, saved settings and the installed/frozen Forever beta.
+
+## Unreleased - left-click healing defaults
+
+- Era.14 adds starting-heal defaults for Druid and Shaman alongside Priest and
+  Paladin, using the highest learned rank only in an empty left-click slot.
+  Remove automatic right-click shields; preserve all manual assignments.
+- Prepare the same future Forever policy without changing the installed beta.
+
+## Unreleased - combat-only explosive bindings
+
+- Era.13 requires combat for supported Keybinds explosive item assignments,
+  including Solid Dynamite, with manual or at-player aiming. Ordinary items
+  and authored macros remain unchanged. Prepare the same future Forever policy.
+
+## Unreleased - minimap tooltip removed
+
+- Era.12 removes the shared minimap hover tooltip; retain click controls, drag,
+  saved position and editor border. Prepare the same future Forever behavior.
+
+## Unreleased - internal UI and master switch
+
+- Era.11 embeds shared UI in the top-level Apogee addon, removes its separate
+  checkbox, and makes that top-level checkbox a required master for all children.
+- Preserve gameplay settings and selections; reset only minimap position.
+  Require closed-client migration with verified backup and full restart.
+- Prepare the same future Forever behavior offline; frozen beta/pins unchanged.
+
+## Unreleased - combined minimap controls
+
+- Era.10: left-click toggles available editors together; right-click opens a flat
+  component-settings menu and position reset. Preserve drag, state and combat guards.
+- Prepare matching future Forever source; keep its frozen installation and pins.
+
+## Unreleased - shared launcher bug sweep
+
+- Extend generated-package coverage to the real shared Settings owner and
+  dependency startup lifecycle; no additional runtime changes from this pass.
+- Era.9 clears externally dismissed native menus before Blizzard reuses their
+  pooled frames. Launcher cleanup cannot close another addon's replacement menu.
+- Reject mismatched shared-support API/package/family metadata and incomplete
+  runtime service before component startup, and revalidate each runtime chunk.
+- Extend generated Era and future Forever tests; frozen Forever remains unchanged.
+
+## Unreleased - shared launcher
+
+Era.8 adds required Apogee UI shared support and one green minimap launcher.
+Source/API/persistence/installation details and native checklist: distribution/era/LAUNCHER.md.
+New support requires closed-client installation and full restart. The separate
+future-launcher.lock.json prepares Forever source without changing frozen pins
+or its installed beta. No publication or native acceptance is implied.
+
+## Unreleased - Era pre-combat error suppression
+
+- Pin Era.7 checked-error suppression in and out of combat with accurate settings labels and full clean-account startup tests. Keep saved choices, visible useful-error defaults and Forever's combat-only behavior unchanged.
+- Add the owner-authorized explicit Era live-update option for prior verified installations with unchanged runtime paths/loading contracts; retain atomic backups and reject the option for Forever.
+
+## Unreleased - Era archive comparison sweep
+
+- Pin Era.6 party debuff/cleansing artwork and Classic main-menu/quest-tracker fading fixes. Record archive comparisons, current API evidence, generated regressions and frozen Forever preservation.
+
+# Unreleased - Era combat error defaults
+
+- Pin native-name combat error defaults and the owner-approved once-only Era choice reset. Preserve useful/unknown feedback, history, global switches, later choices and frozen Forever pins; retain the pending Group Finder fix.
+
+# Unreleased - Era Group Finder
+
+- Correct the initial Era Group Finder assessment with fresh native load-on-demand and API evidence. Pin the Era-only removal of forced unavailable behavior; retain shared gameplay, loading safeguards and frozen Forever pins.
+
+# Unreleased - Era bug sweep
+
+- Use atomic file replacement for closed-client Era installs so interrupted writes retain a recoverable old/new file. Preserve existing Forever transaction defaults and guards.
+- Pin the Era-only Keybinds cursor guard fix and add failure-injection coverage.
+
+# Unreleased - isolated Classic Era candidate
+
+- Add separate four-module Era DEV pins, fresh API evidence, private-adapter packaging, client admission, checked installer target and reversible recovery. Preserve all Forever pins and default package bytes.
+- Add generated Era regressions and a reproducible test runner; native user acceptance remains pending.
+
+## Unreleased - Target action alignment
+
+- Place target action icons inside the right edge of target health, matching role icon size and spacing with reserved name space.
+
+## Unreleased - Target action spacing
+
+- Raise the target action icons four screen pixels closer to their target bar.
+
+## Unreleased - Shared target action range
+
+- Show the three target actions together only when native Follow and inspection availability/range checks pass.
+
+## Unreleased - Icon-only target actions
+
+- Remove labels and the wide strip background; center three evenly spaced action icons beneath the target bar.
+
+## Unreleased - Smart buffs
+
+- Consolidate Heals Follow, Inspect and Talents into a compact labeled target-only strip; remove party-row copies and buff-dependent positioning.
+
+- Prefer Kings for Paladin tanks, with Wisdom as the learned fallback.
+
+- Replace Heals Buff reminders with learned-spell Smart, Manual and Off controls across classes. Keep Paladin suggestions and tune them for five-player dungeon roles.
+
+## Unreleased
+
+- Move party Follow/Inspect/Talents to a muted left-side group that shifts
+  outward around buff suggestions and expanded choices.
+
+- Add Inspect Talents beside party Follow/Inspect, opening the native talent
+  tree after matching inspection data arrives. Keep muted styling/combat hiding.
+
+- Make party Follow/Inspect icons smaller and muted, and hide them completely
+  in combat while keeping adjacent controls in place.
+
+- Add Follow and Inspect beside party-member cleanse controls outside combat.
+
+- Essentials now suppresses checked errors only in combat, with actionable errors
+  visible by default. Defaults restores all convenience and learned-error choices.
+
+- Restore confirmed dungeon wording Defaults without resetting alert preferences or discovery history.
+
+- Simplify Dungeons settings to predefined wording checkboxes per dungeon. Keep background discovery and saved history; archive personal additions without applying them. Remove editing tabs and reset actions. - incoming damage comparison
+
+- Add the Essentials compact combat-only Physical/Magic incoming-damage split, reset each fight.
+
+
 # Changelog
 
 ## [Unreleased]
@@ -866,3 +1090,10 @@ Supports World of Warcraft Forever 1.60.1. Reload the UI after updating.
 - Missing party-buff and self-buff reminders.
 - Spell tracking, tabbed configuration, minimap controls, and a class-aware macro library.
 - Initial CurseForge and GitHub distribution materials.
+## Unreleased - incoming damage placement
+
+- Center the Physical/Magic row above the Apogee player health bar and follow
+  party-stack movement, using the matching PROD or DEV anchor.
+# Unreleased - Era threat debuffs
+
+- Pin an Era-only live threat-stack aura reader for player-owned warrior debuffs and Sunder stacks, replacing the unavailable Forever aura-container path. Preserve shared gameplay, existing Era fixes and frozen Forever pins.
