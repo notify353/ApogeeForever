@@ -1,3 +1,14 @@
+## Unreleased - Era.24 Stats reliability audit
+
+- Replace invisible Era role atlases with readable grouped role names. Filtered
+  row tooltips use the selected auction role and follow scrolling/row changes.
+- Ignore identical result refreshes, recover bounded pending comparisons after
+  item data arrives, and cancel changed-row clicks between press and release.
+- Contain cleanup failures, prevent duplicate startup, and clear stopped tooltip
+  guidance. Use stricter API mocks and native font/event/scroll behavior checks.
+- Keep the simple current-page filter, no automatic searches or purchases, no
+  saved-data changes, and byte-identical Forever packages/installation.
+
 ## Unreleased - Era.23 simple auction filter
 
 - Era filters upgrades by role on the current native page only. Remove budget,

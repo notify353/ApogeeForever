@@ -1,5 +1,27 @@
 # Era Stats candidate
 
+## Era.24 reliability audit — 2026-10-27
+
+The owner's Kang tooltip showed two anonymous Weapon DPS lines. The old shared
+renderer replaced role names with atlases that did not display in Era. Era now
+provides plain role/playstyle text and groups identical reasons. A screenshot
+fixture reproduces the exact visible Kang text; filtered-row tooltips explicitly
+use the selected role while ordinary item/loot scope remains unchanged.
+
+Additional reproduced failures: duplicate result events restarted evaluation;
+late item data did not recover pending rows; recycled rows retained old hover
+content; scrolling between mouse press/release could select a different row;
+model cleanup could abort event cleanup. Fixes keep the current-page-only design,
+bound data-driven retries, make startup idempotent, and protect independent cleanup.
+
+The test harness now admits only explicit native methods rather than inventing
+no-op APIs. Tests retain/reuse tooltip font strings, deliver native refreshes on
+both sides of addon events, clamp native scrolling and verify final-row selection.
+Future Forever remains pinned separately; full package/archive equality must be
+verified. Synthetic checks do not prove native visual acceptance or absence of
+all defects. Owner acceptance must cover the screenshot, hovered scrolling,
+role changes, current-page navigation, late data and native purchase handoff.
+
 ## Era.23 simplification — 2026-10-27
 
 Owner requested a simple Era-only role upgrade filter and explicitly selected

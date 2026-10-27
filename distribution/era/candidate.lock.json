@@ -140,17 +140,17 @@
       "uiApi": 1
     },
     {
-      "commit": "e684aeac92fdd951a141b6f9ac49b1f2b04a612f",
+      "commit": "2392d868a67cc2edf4869bbcb7a05ae622affbcc",
       "files": {
-        "ApogeeStats.lua": "3d156200bbf1d96380f95f165edbf802d37cdc32524d5aa26e97ef0caa89d254",
+        "ApogeeStats.lua": "d0d170db84f447086d3ae326591fafdf9b5432d69c763ca0685d70210249f0da",
         "ApogeeStats_Era.toc": "44bc254eb8030da7f96c409d3bb4212afa5b83118baa9077fa3a766ce8186657",
         "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
         "Core/Items.lua": "23ff497959ba6cc2a788b93fbdd3d17b1a5cba69872d97adaa7a34eae2f0474f",
         "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
-        "Era/Adapter.lua": "f00127947bbe6243559e3302664caad5d1a3bd6bbbb36a7be4d656c19f4e7940",
-        "Era/Auction.lua": "050b0cc675ff6347f47336817b5caaaf1f7273bd3bc59e4d07a2f6eb6430f3ab",
-        "Era/AuctionScan.lua": "8ae2783611fe2327f5539839a53466eed616e0541d7d9a5d3aed9c6353d51717",
-        "Era/README.md": "9ea8f47cf9bd124e65aa2eebfbc6086bcb496388457f99a4fae1a8d2b57166c8",
+        "Era/Adapter.lua": "b199c6129e8524c6b241c6aa27282ab387acf39d94d6ceb63516cd044a1581c6",
+        "Era/Auction.lua": "f2ebdb51148b22029939085fbc395413ac747785b23c97555ff83d3a960476dd",
+        "Era/AuctionScan.lua": "9e3660b7e3dc1454dbf6b7925816eb633fb0174ce73e992801147c98f0abdcee",
+        "Era/README.md": "9dceadff4307b9212a53e62fbd966c1c3c23bb4a8f570249fb25e6fedc07be37",
         "Era/Tooltip.lua": "4997efb8de9be899c12e239577b940500d4f320435f18235573f9f21c0334326",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
@@ -197,5 +197,5 @@
     }
   ],
   "target": "classic-era",
-  "version": "1.14.8-era.23"
+  "version": "1.14.8-era.24"
 }
