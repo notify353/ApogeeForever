@@ -272,17 +272,22 @@ def rollback(backup):
 
 
 def real_client_preflight(client, lock, allow_running_dev=False):
+    import forever_client
     client = ordinary(client)
-    d.require(client.name == '_classic_beta_', 'Only reviewed Forever client is supported')
+    live = lock['client'] == forever_client.LIVE_CLIENT
+    if live:
+        forever_client.verify_live_export(client, lock)
+    d.require(client.name == ('_forever_' if live else '_classic_beta_'), 'Only reviewed Forever client is supported')
     lines = (client.parent / '.build.info').read_text(encoding='utf-8-sig').splitlines()
     keys = [k.split('!')[0] for k in lines[0].split('|')]
     rows = [dict(zip(keys, line.split('|'))) for line in lines[1:]]
-    d.require([r.get('Version') for r in rows if r.get('Product') == 'wow_classic_beta']
+    d.require([r.get('Version') for r in rows if r.get('Product') == ('wowf' if live else 'wow_classic_beta')]
               == [lock['client']['reviewedBuild']], 'Forever build changed; review required')
     d.require(os.name == 'nt', 'Real installation is supported on reviewed Windows host only')
-    result = subprocess.run(['tasklist', '/FI', 'IMAGENAME eq WowB.exe', '/FO', 'CSV', '/NH'],
+    executable = 'Wow.exe' if live else 'WowB.exe'
+    result = subprocess.run(['tasklist', '/FI', 'IMAGENAME eq ' + executable, '/FO', 'CSV', '/NH'],
                             capture_output=True, text=True, check=True)
-    running = 'wowb.exe' in result.stdout.lower()
+    running = ('"' + executable.lower() + '"') in result.stdout.lower()
     d.require(allow_running_dev or not running, 'Forever client is running; close it before migration')
     return running
 

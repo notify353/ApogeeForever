@@ -1,8 +1,25 @@
 # Forever interface authority
 
+## Current live client: 1.60.1.70634 (2026-10-27)
+
+`pwsh scripts/check-wow-api-export.ps1` now checks live product `wowf` in
+`_forever_`, using `Wow.exe` and the isolated future candidate's exact source
+pins and [live evidence](../distribution/forever/README.md). All 239 unique
+references must match and postdate the reviewed executable. No missing-client
+or beta fallback is allowed. Run `scripts/test-live-forever.ps1` for full
+candidate validation. Native acceptance remains separate.
+
+The frozen release and historical notes below retain beta authority. Use
+`check-wow-api-export.ps1 -Client Beta` for that legacy baseline; `test-local.ps1`
+selects it explicitly. `record-wow-api-export.ps1` remains a beta-only recorder.
+Do not use it to refresh live evidence. Review live changes and update the
+separate evidence and future lock together, without rewriting frozen history.
+
+## Historical beta authority
+
 Loading safety targets Forever16001, reviewed client1.60.1.70170. Export root:
 `C:/Program Files (x86)/World of Warcraft/_classic_beta_/BlizzardInterfaceCode/Interface/AddOns`.
-Run `pwsh ./scripts/check-wow-api-export.ps1` before API work.
+Its historical checker is `pwsh ./scripts/check-wow-api-export.ps1 -Client Beta`.
 
 The October 1, 2026 owner export is newer than the installed 70170 executable.
 Four recorded references are byte-identical to the 70124 baseline. The Unit

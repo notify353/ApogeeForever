@@ -41,9 +41,12 @@ remain mandatory; matching pins do not imply matching runtime inventories.
 The suite covers child checks, generated Era DEV and future Forever PROD/DEV,
 component subsets, loading safety, settings/binding preservation, historical
 archives and rollback. Era authority must match its current evidence. Future
-Forever checks remain offline and cannot establish native acceptance.
+Forever now has a separate reviewed live 1.60.1.70634 authority and full candidate
+validation entry point; see [live authority](forever/README.md). This tooling
+update leaves every child pin and generated package byte unchanged. API checks
+and generated tests cannot establish native acceptance.
 
-Before a Forever release, obtain fresh matching API/client authority, complete
+Before a Forever release, reverify matching API/client authority, complete
 normal child/central validation and owner acceptance of the exact candidate.
 A test installation requires separate approval. Then review final source selection
 and release version, run the documented release-preparation workflow and require

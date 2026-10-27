@@ -38,11 +38,20 @@ position-only reset, combat, family loading, rollback and historical archive
 checks remain included. A receipt records tested commits, both lock hashes and
 the Era evidence. No installation, publication or game operation occurs.
 
+For the current live Forever client, use
+`pwsh scripts/test-live-forever.ps1 -ChildWorktrees <path> -ArtifactRoot <new-path>`.
+It supplies `--forever-client-root` to verify the live export before and after
+the full run. The receipt then includes `futureForeverApiEvidence` and sets
+`futureForeverOfflineOnly` to false; `nativeAccepted` remains false. The central
+evidence covers all exact child pins without changing their historical beta
+baselines. See [live Forever authority](forever/README.md).
+
 Use `--offline` on a host without matching Era authority. That mode still runs
 synthetic generated-package checks but creates **no installable Era artifact**.
-No offline result establishes API or native acceptance. Future Forever is always
-offline here: its frozen release pins and installed beta stay untouched until a
-fresh matching export and native acceptance are available. The existing hosted
+No offline result establishes API or native acceptance. Without
+`--forever-client-root`, future Forever remains offline. `--offline` skips only
+Era's export check; explicitly supplying a Forever root still requires its live
+authority. Frozen release pins and installed addons stay untouched. The existing hosted
 release workflow validates the frozen candidate; it is not evidence for these
 new candidate locks. A CI checkout may run this same offline command once all
 exact private source/test revisions are available there.

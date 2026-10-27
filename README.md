@@ -26,6 +26,7 @@ GitHub source archives are not installable packages.
 
 Contributor documentation: [build workflow](distribution/DUAL_WORKFLOW.md),
 [release checklist](RELEASING.md), [client API reference](docs/WOW_INTERFACE_EXPORT.md).
+Current unreleased Forever candidate: [live validation](distribution/forever/README.md).
 
 For work across the five addons, use the sibling
 [Apogee workspace](../workspace-apogee/README.md) and its
