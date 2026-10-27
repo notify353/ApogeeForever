@@ -98,7 +98,7 @@ def catalog(path):
     return value
 
 
-def plan(client, payload, known, names=NAMES):
+def plan(client, payload, known, names=NAMES, retired=None):
     client = ordinary(client)
     addons = under(client, 'Interface/AddOns')
     d.require(addons.is_dir(), 'Existing AddOns destination required')
@@ -106,6 +106,7 @@ def plan(client, payload, known, names=NAMES):
     desired = dict(payload)
     marker = payload.get(d.MARKER + '/' + d.MARKER + '.toc')
     inventory = []
+    retired = retired or {}
     for p, body in before.items():
         accepted = d.sha(body) in known['files'].get(p, [])
         status = 'recognized' if accepted else 'unknown-preserved'
@@ -117,6 +118,9 @@ def plan(client, payload, known, names=NAMES):
                           'Unrecognized APHB loader; no changes made: ' + p)
                 desired[p] = marker
                 status = 'inert-marker' if body == marker else 'neutralize-known-loader'
+            elif p in retired:
+                d.require(accepted and d.sha(body) == retired[p], 'Modified retiring loader: ' + p)
+                status = 'retire-verified-support-loader'
             else:
                 d.require(p in payload, 'Unexpected child loader; no changes made: ' + p)
         if p in payload and body != payload[p]:
@@ -158,24 +162,26 @@ def put_atomic(root, files):
         d.require(target.read_bytes() == body, 'Write verification failed')
 
 
-def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomic_dev=False, retired=None):
+def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomic_dev=False, retired=None, atomic_files=False):
     if atomic_dev:
         current_dev = {d.MARKER + 'Dev', *(n + 'Dev' for n in d.ACTIVE_CHILDREN)}
-        d.require(set(names) == current_dev or set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
+        d.require(set(names) in (current_dev, current_dev | {'ApogeeUIDev'}) or set(DEV_NAMES) <= set(names) <= set(DEV_NAMES + LOCAL_DEV_NAMES),
                   'Atomic live install is DEV-only')
     client = ordinary(client)
     backup = ordinary(backup)
     d.require(not backup.is_relative_to(client) and not client.is_relative_to(backup),
               'Backup must be outside the client')
-    current = plan(client, payload, known, names)
+    retired = retired or {}
+    current = plan(client, payload, known, names, retired)
     if expected_plan is not None:
         d.require(hashes(current['before']) == hashes(expected_plan['before']), 'Destination changed after review')
-    retired = retired or {}
     for p, digest in retired.items():
         d.safe_path(p)
-        d.require(atomic_dev and p.split('/')[0] in names and p.endswith('.lua')
+        support_retirement = p.startswith('ApogeeUIDev/') and p.lower().endswith(('.lua','.xml','.toc'))
+        d.require(((atomic_dev and p.endswith('.lua')) or ((atomic_dev or atomic_files) and support_retirement))
+                  and p.split('/')[0] in names
                   and p not in payload and p in current['before']
-                  and d.sha(current['before'][p]) == digest, 'Invalid retirement: ' + p)
+                  and d.sha(current['before'][p]) == digest and digest in known['files'].get(p, []), 'Invalid retirement: ' + p)
     saved = protected(client, names)
     backup.mkdir(parents=True, exist_ok=False)
     # Complete byte-verified backup before the first destination write.
@@ -191,7 +197,9 @@ def apply(client, payload, known, backup, expected_plan=None, names=NAMES, atomi
     d.require(protected(client, names) == saved, 'Preferences changed during backup')
     try:
         journal['status'] = 'applying'; journal_path.write_bytes(d.canonical(journal))
-        (put_atomic if atomic_dev else put)(client / 'Interface/AddOns', current['writes'])
+        # Closed-client Era transactions also need complete-file replacement for recovery.
+        # atomic_files does not grant live-install permission or relax the DEV family gate.
+        (put_atomic if atomic_dev or atomic_files else put)(client / 'Interface/AddOns', current['writes'])
         for p, digest in retired.items():
             source = under(client / 'Interface/AddOns', p)
             d.require(d.sha(source.read_bytes()) == digest, 'Retired file changed during installation')
@@ -224,7 +232,7 @@ def rollback(backup):
     d.require(not backup.is_relative_to(client) and not client.is_relative_to(backup), 'Unsafe backup location')
     addons = under(client, 'Interface/AddOns')
     names = tuple(journal.get('names', NAMES))
-    d.require(names and all(n in NAMES + DEV_NAMES + LOCAL_DEV_NAMES for n in names), 'Unknown journal family')
+    d.require(names and all(n in NAMES + DEV_NAMES + LOCAL_DEV_NAMES + ('ApogeeUI', 'ApogeeUIDev') for n in names), 'Unknown journal family')
     original = tree(backup / 'addons-before')
     d.require(hashes(original) == journal['before'], 'Backup corrupted; no rollback writes')
     current = managed(addons, names)

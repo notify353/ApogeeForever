@@ -9,17 +9,19 @@ import io
 
 sys.dont_write_bytecode = True
 import distribution as d
+import support_distribution as support
 
 LOCK = d.ROOT / 'distribution/candidate.lock.json'
 GATE = d.ROOT / 'distribution/FamilyGate.lua'
 GATE_PATH = '__Distribution/FamilyGate.lua'
 FAMILY_TITLES = {'PROD': 'Apogee Forever', 'DEV': 'Apogee Dev'}
-LABELS = {'ApogeeHeals': 'Apogee Heals', 'ApogeeKeybinds': 'Apogee Keybinds',
+LABELS = {'ApogeeUI': 'Apogee UI', 'ApogeeHeals': 'Apogee Heals', 'ApogeeKeybinds': 'Apogee Keybinds',
           'ApogeeGroupAlert': 'Apogee Group Alert', 'ApogeeEssentials': 'Apogee Essentials',
           'ApogeeTank': 'Apogee Tank', 'ApogeeAuction': 'Apogee Auction', 'ApogeeStats': 'Apogee Stats'}
 # Exact identity inventory reviewed with each owning addon task. No Blizzard names or gameplay keys.
 IDENTITIES = {
-    'ApogeeStats': [],  # Private namespace and unnamed frames; no owned global, saved or slash identities.
+    'ApogeeUI': ['ApogeeUI', 'ApogeeUIDB', 'ApogeeUIMinimapButton', 'ApogeeUIDev'],
+    'ApogeeStats': [],  # Private namespace; Era scanner name derives from the admitted addon name. No saved data.
     'ApogeeAuction': ['ApogeeAuctionDB'],  # Per-character evaluation role; DEV keeps a separate table.
     'ApogeeHeals': ['ApogeeHealsDB', 'ApogeeHealsAnchor', 'ApogeeHealsUnit',
                     'ApogeeHealsBindingEditor', 'ApogeeHealsBuffPicker', 'ApogeeHealsMinimapButton'],
@@ -35,7 +37,9 @@ IDENTITIES = {
 
 def identity_map(name):
     result = {s: name + 'Dev' + s[len(name):] for s in IDENTITIES[name]}
-    if name in ('ApogeeAuction', 'ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials'):
+    result['ApogeeUI'] = 'ApogeeUIDev'
+    if name == 'ApogeeUI': result['ApogeeUIDev'] = 'ApogeeUIDev'
+    if name in ('ApogeeUI', 'ApogeeStats', 'ApogeeAuction', 'ApogeeHeals', 'ApogeeKeybinds', 'ApogeeGroupAlert', 'ApogeeEssentials'):
         # Shared session-only Settings parent; never share the registry across families.
         result['ApogeeSettingsRegistry'] = 'ApogeeDevSettingsRegistry'
     if name == 'ApogeeAuction':
@@ -123,7 +127,8 @@ def prefix(name, family):
 
 def family_children(lock, family):
     d.require(family in ('PROD', 'DEV'), 'Unknown family')
-    return d.public_children(lock) if family == 'PROD' else d.hosted_children(lock) + tuple(c['name'] for c in d.local_dev_children(lock))
+    children = d.public_children(lock) if family == 'PROD' else d.hosted_children(lock) + tuple(c['name'] for c in d.local_dev_children(lock))
+    return children + (('ApogeeUI',) if support.descriptor(lock) and not support.embedded(lock) else ())
 
 
 def family_files(lock, sources_root, family):
@@ -141,6 +146,7 @@ def family_files(lock, sources_root, family):
             source.update({child['name'] + '/' + p: data for p, data in files.items()})
             children.append(child)
     output, changes = {}, {}
+    gate = support.gate_bytes(lock, GATE.read_bytes())
     marker = d.MARKER + ('Dev' if family == 'DEV' else '')
     for child in children:
         if child['name'] not in family_children(lock, family):
@@ -155,11 +161,15 @@ def family_files(lock, sources_root, family):
             meta = {k: v for k, v in meta.items() if not k.startswith(('X-Curse', 'X-Wago', 'X-WoWI'))}
             meta = {k: v.replace(old, name) if k.startswith('SavedVariables') or k == 'IconTexture' else v
                     for k, v in meta.items()}
+        if child.get('uiApi') == 1:
+            meta['Dependencies'] = support.owner(lock, family)
+            if support.embedded(lock): meta['X-Apogee-Requires-Master'] = '1'
+            meta['Version'] = lock['version']
         renamed = {p: name + '.lua' if p == old + '.lua' else p for p in runtime}
         toc = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()) + '\n'
         toc += GATE_PATH + '\n' + ''.join(renamed[p] + '\n' for p in runtime)
         output[name + '/' + name + '.toc'] = toc.encode()
-        output[name + '/' + GATE_PATH] = GATE.read_bytes().replace(b'@NAME@', name.encode()).replace(b'@FAMILY@', family.encode())
+        output[name + '/' + GATE_PATH] = gate.replace(b'@NAME@', name.encode()).replace(b'@FAMILY@', family.encode())
         for p in child['files']:
             if p == child['toc']:
                 continue
@@ -185,10 +195,13 @@ def family_files(lock, sources_root, family):
     if family == 'DEV':
         marker_meta.pop('X-Curse-Project-ID', None)
     output[marker + '/' + marker + '.toc'] = ''.join('## ' + k + ': ' + v + '\n' for k, v in marker_meta.items()).encode()
+    support.add_files(lock, sources_root, family, output, changes, gate, sys.modules[__name__])
     output[marker + '/README.md'] = ('# Apogee ' + family + '\n\nDistribution identity only; no runtime or saved data.\n'
                                       'Switch the complete family in AddOns and reload. DEV settings are separate.\n').encode()
     if family == 'PROD':
         output[marker + '/README.md'] = (d.ROOT / 'distribution/PLAYER_README.md').read_bytes()
+    if support.embedded(lock):
+        output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
     return output, changes
 
 
@@ -214,13 +227,15 @@ def build(lock, sources_root, output):
         validate(data, files)
         name = 'Apogee-' + lock['version'] + '-' + family + '.zip'
         manifest = {'schema': 1, 'family': family, 'publicationAllowed': False,
-                    'lockSha256': d.sha(d.canonical(lock)), 'gateSha256': d.sha(GATE.read_bytes()),
+                    'lockSha256': d.sha(d.canonical(lock)), 'gateSha256': d.sha(support.gate_bytes(lock, GATE.read_bytes())),
                     'archive': name, 'archiveSha256': d.sha(data),
                     'files': {p: d.sha(b) for p, b in files.items()}, 'runtimeChanges': changes,
                     'children': [{k: c[k] for k in ('name', 'commit', 'version')} for c in
                                  lock['children'] + (d.local_dev_children(lock) if family == 'DEV' else [])
                                  if c['name'] in family_children(lock, family)],
                     'nativeClientTested': False, 'curseforgeAppTested': False}
+        if lock.get('supportModules'):
+            manifest['supportModules'] = lock['supportModules']
         artifacts[family] = (name, data, manifest)
     output = Path(output); output.mkdir(parents=True, exist_ok=False)
     for family, (name, data, manifest) in artifacts.items():

@@ -10,6 +10,7 @@ sys.dont_write_bytecode = True
 import distribution as d
 import dual_distribution as dual
 import migrate_distribution as m
+import support_distribution as support
 
 
 def payloads(lock, sources_root, artifacts, initial=False):
@@ -28,10 +29,13 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
     if initial:
         current |= {d.MARKER, *d.ACTIVE_CHILDREN}
         historical |= set(m.NAMES)
-    d.require(roots in (current, historical), 'Exact family roots required')
+    support_roots = {'ApogeeUIDev', 'ApogeeUI'} if initial else {'ApogeeUIDev'}
+    d.require(roots in (current, historical, current | support_roots), 'Exact family roots required')
     # Omitted retired roots stay untouched; uninstall is a separate explicit action.
     names = tuple(sorted(roots))
     d.require(set(p.split('/')[0] for p in payload) == set(names), 'Exact family roots required')
+    if support.master_payload(payload) and not initial:
+        names = tuple(sorted(roots | {'ApogeeUIDev'}))
     before = m.managed(Path(client) / 'Interface/AddOns', names)
     known = copy.deepcopy(known)
     if previous is not None:
@@ -39,7 +43,7 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
         d.require(Path(previous['client']).absolute() == Path(client).absolute(), 'Receipt belongs to another client')
         for p, h in previous['after'].items():
             d.safe_path(p)
-            d.require(p.split('/')[0] in m.NAMES + m.DEV_NAMES + m.LOCAL_DEV_NAMES, 'Receipt escapes families')
+            d.require(p.split('/')[0] in m.NAMES + m.DEV_NAMES + m.LOCAL_DEV_NAMES + ('ApogeeUI', 'ApogeeUIDev'), 'Receipt escapes families')
             known['files'].setdefault(p, []).append(h)
             if p.startswith(d.MARKER + '/') and p.lower().endswith('.toc'):
                 known['legacyTocHashes'].append(h)
@@ -52,7 +56,7 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
         if p in desired and b != desired[p] and p.lower().endswith(('.md', '.txt')):
             preserved_docs.append(p)
             del desired[p]
-    retired = {}
+    retired = support.retire_support(payload, before, previous)
     for p in retire_files:
         d.safe_path(p)
         d.require(not initial and p.split('/')[0] in names and p.endswith('.lua'),
@@ -61,7 +65,7 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
         d.require(p not in payload and p in before and d.sha(before[p]) == previous['after'][p],
                   'Retired file missing, modified, or still packaged: ' + p)
         retired[p] = previous['after'][p]
-    preview = m.plan(client, desired, known, names)
+    preview = m.plan(client, desired, known, names, retired)
     preview['retired'] = retired
     return desired, known, names, preview, preserved_docs
 
@@ -69,9 +73,10 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
 def activation(preview):
     writes = preview['writes']
     discovery = sorted(p for p in writes if p not in preview['before'] or p.lower().endswith('.toc'))
-    return {'action': 'user-reload-after-install' if writes else 'none',
+    support_added = any(p.startswith('ApogeeUIDev/') for p in preview.get('retired', {})) or any((p.startswith('ApogeeUIDev/') or '/SharedUI/' in p) and p not in preview['before'] for p in writes)
+    return {'action': 'user-full-restart-after-install' if support_added else 'user-reload-after-install' if writes else 'none',
             'discoveryChanges': discovery,
-            'restartRequired': 'unverified-if-reload-does-not-discover-changes' if discovery else False}
+            'restartRequired': True if support_added else 'unverified-if-reload-does-not-discover-changes' if discovery else False}
 
 
 def install(client, payload, known, backup, initial=False, previous=None, retire_files=()):
@@ -81,6 +86,9 @@ def install(client, payload, known, backup, initial=False, previous=None, retire
     result['preservedDocumentation'] = docs
     result['mode'] = 'initial-production-retrofit-and-dev' if initial else 'dev-only'
     result['packageFilesVerified'] = len(desired)
+    if support.master_payload(payload):
+        result['packageRoots'] = sorted({p.split('/')[0] for p in payload})
+        result['supportLayout'] = 'embedded-master'
     (Path(backup) / 'transaction.json').write_bytes(d.canonical(result))
     return result
 
@@ -91,15 +99,23 @@ def main():
     parser.add_argument('--sources-root', type=Path, required=True)
     parser.add_argument('--artifacts', type=Path, required=True)
     parser.add_argument('--backup', type=Path, required=True)
-    parser.add_argument('--lock', type=Path, default=dual.LOCK)
+    parser.add_argument('--target', choices=('forever', 'classic-era'), default='forever')
+    parser.add_argument('--lock', type=Path)
     parser.add_argument('--previous-install', type=Path)
     parser.add_argument('--retire-file', action='append', default=[], help='Exact obsolete DEV Lua path; requires unchanged prior receipt')
     parser.add_argument('--initial-retrofit', action='store_true', help='One-time explicitly authorized PROD safety migration')
     parser.add_argument('--inspect-only', action='store_true')
+    parser.add_argument('--allow-running-era-update', action='store_true',
+                        help='Explicit Era DEV update with prior receipt and unchanged runtime paths/loading metadata')
     args = parser.parse_args()
     try:
-        lock = d.read_lock(args.lock)
-        running = m.real_client_preflight(args.client_root, lock, allow_running_dev=not args.initial_retrofit)
+        if args.target == 'classic-era':
+            import era_distribution
+            print(json.dumps(era_distribution.install_target(args)))
+            return
+        d.require(not args.allow_running_era_update, 'Live Era opt-in requires --target classic-era')
+        lock = d.read_lock(args.lock or dual.LOCK)
+        running = m.real_client_preflight(args.client_root, lock, allow_running_dev=not args.initial_retrofit and not lock.get('supportModules'))
         files = payloads(lock, args.sources_root, args.artifacts, args.initial_retrofit)
         known = m.catalog(d.ROOT / 'distribution/migration-known.json')
         previous = json.loads(args.previous_install.read_text()) if args.previous_install else None
