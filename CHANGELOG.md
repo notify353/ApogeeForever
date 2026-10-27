@@ -1,3 +1,12 @@
+## Unreleased - Era.23 simple auction filter
+
+- Era filters upgrades by role on the current native page only. Remove budget,
+  Select best and automatic page scanning; keep native Search and page controls.
+- Verify a clicked listing against the current page before returning to native
+  selection for manual bidding/buying. No addon-issued auction queries.
+- Validate independent exact Era/Forever test checkouts, preserving the entire
+  future Forever lock and package contents as well as frozen release pins.
+
 ## Unreleased - Era.22 tooltip refresh correction
 
 - Render Stats recommendations after the tooltip's own native update and resize

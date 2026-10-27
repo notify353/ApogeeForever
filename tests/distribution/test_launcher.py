@@ -21,6 +21,7 @@ import publish_distribution as publisher
 
 SOURCES=Path(os.environ.get('APOGEE_SOURCES_ROOT','C:/Dev/WoW'))
 CHILDREN=Path(os.environ.get('APOGEE_CHILD_WORKTREES',str(ROOT.parent)))
+FUTURE_CHILDREN=Path(os.environ.get("APOGEE_FUTURE_CHILD_WORKTREES",str(CHILDREN)))
 class LauncherTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -32,45 +33,46 @@ class LauncherTests(unittest.TestCase):
         for target,family,files in [('era','DEV',self.payload)]+[
             ('forever-offline',family,dual.family_files(self.future,SOURCES,family)[0]) for family in ('PROD','DEV')]:
             with self.subTest(target=target,family=family),tempfile.TemporaryDirectory() as folder:
+                children = CHILDREN if target=="era" else FUTURE_CHILDREN
                 m.put(folder,files)
                 name='ApogeeUI'+('Dev' if family=='DEV' else '')
                 master=d.MARKER+('Dev' if family=='DEV' else '')
                 env=os.environ.copy(); env.update(APOGEE_UI_ROOT=str(Path(folder)/master/'SharedUI'),APOGEE_UI_NAME=name,APOGEE_UI_ADDON=master,APOGEE_COMPONENTS_ROOT=folder)
-                subprocess.run(['lua','tests/launcher_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
+                subprocess.run(['lua','tests/launcher_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 essentials='ApogeeEssentials'+('Dev' if family=='DEV' else '')
                 env.update(APOGEE_ESSENTIALS_RUNTIME_ROOT=str(Path(folder)/essentials),
                            APOGEE_ESSENTIALS_RUNTIME_NAME=essentials, APOGEE_ESSENTIALS_TEST_ERA='1' if target=='era' else '0')
-                subprocess.run(['lua','tests/startup_refresh_spec.lua'],cwd=CHILDREN/'ApogeeEssentials',env=env,check=True)
+                subprocess.run(['lua','tests/startup_refresh_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
-                                   cwd=CHILDREN/component,env=env,check=True)
+                                   cwd=children/component,env=env,check=True)
                     subprocess.run(['lua',str(ROOT/'tests/distribution/startup_edges.lua'),folder,family,target,component],
-                                   cwd=CHILDREN/component,env=dict(env,APOGEE_KEYBINDS_TEST_SIMULATED='1'),check=True)
+                                   cwd=children/component,env=dict(env,APOGEE_KEYBINDS_TEST_SIMULATED='1'),check=True)
                 subprocess.run(['lua',str(ROOT/'tests/distribution/launcher_gate.lua'),folder,family,target,
-                                str(CHILDREN/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
+                                str(children/'ApogeeEssentials/tests/launcher_mock.lua')],check=True)
                 heals='ApogeeHeals'+('Dev' if family=='DEV' else '')
                 env.update(APOGEE_HEALS_RUNTIME_ROOT=str(Path(folder)/heals),
                            APOGEE_HEALS_RUNTIME_NAME=heals, APOGEE_HEALS_TEST_ERA='1' if target=='era' else '0')
-                subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=CHILDREN/'ApogeeHeals',env=env,check=True)
-                subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=CHILDREN/'ApogeeHeals',env=env,check=True)
+                subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
+                subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                 env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
                            APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1',
                            APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')
-                subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=CHILDREN/'ApogeeKeybinds',env=env,check=True)
+                subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if target=='forever-offline':
                     keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
                                APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1')
-                    subprocess.run(['lua','tests/explosives_spec.lua'],cwd=CHILDREN/'ApogeeKeybinds',env=env,check=True)
+                    subprocess.run(['lua','tests/explosives_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
-                    subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=CHILDREN/'ApogeeStats',check=True)
+                    subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                     for spec in ('test_stat_policy.lua', 'test_auction.lua'):
-                        subprocess.run(['lua','tests/'+spec,str(Path(folder)/stats),stats],cwd=CHILDREN/'ApogeeStats',check=True)
+                        subprocess.run(['lua','tests/'+spec,str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                 else:
                     for spec in ('test_era.lua', 'test_era_ui.lua', 'test_era_startup.lua'):
-                        subprocess.run(['lua','tests/'+spec,str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev'],cwd=CHILDREN/'ApogeeStats',check=True)
-                    subprocess.run(['lua','tests/test_era_ui.lua',str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev','preloaded'],cwd=CHILDREN/'ApogeeStats',check=True)
+                        subprocess.run(['lua','tests/'+spec,str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev'],cwd=children/'ApogeeStats',check=True)
+                    subprocess.run(['lua','tests/test_era_ui.lua',str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev','preloaded'],cwd=children/'ApogeeStats',check=True)
                 for child in self.era['children'] if target=='era' else self.future['children']:
                     n=child['name']+('Dev' if family=='DEV' else '')
                     meta,runtime=d.toc_info(files[n+'/'+n+'.toc'])

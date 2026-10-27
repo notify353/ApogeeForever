@@ -1,5 +1,26 @@
 # Era Stats candidate
 
+## Era.23 simplification — 2026-10-27
+
+Owner requested a simple Era-only role upgrade filter and explicitly selected
+current-page-only operation. Native Search, sorting and Next/Previous remain.
+The dice opens a role/playstyle filter for that page; unknown comparisons are
+omitted and counted. Clicking an upgrade turns filtering off and returns to the
+native list with the verified current row selected for manual purchase.
+
+Removed Max gold, Select best, automatic multi-page scanning, query ownership
+tracking and selection re-querying. Stats issues no auction queries or purchases.
+Era/AuctionScan.lua retains its loading path but contains only bounded page
+evaluation. Search/page/filter changes, hidden Browse, combat and world changes
+invalidate pending results. Existing tooltip fixes and shared scoring remain.
+
+Era's pin advances independently. The future Forever lock, generated package
+contents and installed beta remain unchanged. The candidate validator supports
+separate exact test checkouts via --future-child-worktrees, avoiding a forced
+Forever pin change just to validate an Era update. Tests verify no automatic
+queries, native paging/selection, listing changes, role changes, bounded missing
+data and cleanup failures. Native UI acceptance is still required.
+
 ## Era.22 tooltip correction — 2026-10-27
 
 The owner reported flicker and showed recommendation lines outside the tooltip

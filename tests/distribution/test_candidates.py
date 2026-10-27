@@ -14,6 +14,20 @@ import validate_candidates as candidates
 
 
 class CandidateTests(unittest.TestCase):
+    def test_independent_targets_require_their_own_exact_test_checkouts(self):
+        era = {'children': [{'name': 'ApogeeStats', 'commit': 'a'*40}]}
+        future = {'children': [{'name': 'ApogeeStats', 'commit': 'b'*40}]}
+        def git(root, *args):
+            if args == ('status', '--porcelain'): return ''
+            return ('b' if root.parent.name == 'future' else 'a')*40
+        with patch.object(candidates, 'git', side_effect=git):
+            with self.assertRaises(ValueError):
+                candidates.verify_candidate_sources([era, future], Path('era'))
+            pins = candidates.verify_candidate_sources([era, future], Path('era'), Path('future'))
+            self.assertEqual(pins, [{'ApogeeStats': 'a'*40}, {'ApogeeStats': 'b'*40}])
+            with self.assertRaises(ValueError):
+                candidates.verify_candidate_sources([era, future], Path('future'), Path('era'))
+
     @unittest.skipUnless(shutil.which('pwsh'), 'PowerShell required')
     def test_child_builders_refuse_installable_output(self):
         root = Path(os.environ.get('APOGEE_CHILD_WORKTREES', str(Path(__file__).resolve().parents[3])))

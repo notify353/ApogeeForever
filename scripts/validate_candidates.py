@@ -31,13 +31,22 @@ def verify_test_sources(locks, worktrees):
     return pins
 
 
+def verify_candidate_sources(locks, era_root, future_root=None):
+    d.require(len(locks) == 2, 'Expected Era and future Forever locks')
+    return [verify_test_sources([lock], root) for lock, root in
+            zip(locks, (era_root, future_root or era_root))]
+
+
 def validate(args):
     locks = [era.read_lock(), d.read_lock(d.ROOT/'distribution/future-launcher.lock.json')]
-    pins = verify_test_sources(locks, args.child_worktrees)
+    future_root = args.future_child_worktrees or args.child_worktrees
+    roots = [args.child_worktrees, future_root]
+    pins = verify_candidate_sources(locks, args.child_worktrees, future_root)
     d.require(not args.artifact_root.exists(), 'Use a new external artifact directory')
     # No inherited client exports or generated-runtime overrides may contaminate a run.
     env = {k: v for k, v in os.environ.items() if not k.startswith('APOGEE_')}
-    env.update(APOGEE_CHILD_WORKTREES=str(args.child_worktrees), APOGEE_SOURCES_ROOT=str(args.sources_root))
+    env.update(APOGEE_CHILD_WORKTREES=str(args.child_worktrees), APOGEE_FUTURE_CHILD_WORKTREES=str(future_root),
+               APOGEE_SOURCES_ROOT=str(args.sources_root))
     def run(command, cwd=d.ROOT):
         subprocess.run([str(x) for x in command], cwd=cwd, env=env, check=True)
     def python(*command): run([sys.executable, '-B', *command])
@@ -45,8 +54,11 @@ def validate(args):
     print('Era: ' + ('OFFLINE ONLY; no export or installable Era artifact' if args.offline else 'matching export verified'), flush=True)
     print('Future Forever: OFFLINE ONLY; fresh export and native acceptance still required', flush=True)
     args.artifact_root.mkdir(parents=True)
-    for name in pins:
-        root = args.child_worktrees/name
+    tested = set()
+    sources = [(name, commit, parent/name) for target, parent in zip(pins, roots) for name, commit in target.items()]
+    for name, commit, root in sources:
+        if (name, commit) in tested: continue
+        tested.add((name, commit))
         for file in git(root, 'ls-files', '*.lua').splitlines(): run(['luac', '-p', file], root)
         specs = sorted((root/'tests').glob('*_spec.lua'))
         if name == 'ApogeeStats': specs += sorted((root/'tests').glob('test_*.lua'))
@@ -72,11 +84,11 @@ def validate(args):
     dual.build(locks[1], args.sources_root, args.artifact_root/'future-forever-offline')
     if evidence: era.build(locks[0], args.sources_root, args.artifact_root/'packages', evidence)
     # Detect a checkout changed while the tests were running.
-    verify_test_sources(locks, args.child_worktrees)
+    verify_candidate_sources(locks, args.child_worktrees, future_root)
     d.require(locks == [era.read_lock(), d.read_lock(d.ROOT/'distribution/future-launcher.lock.json')],
               'Candidate locks changed during validation')
     run(['git', 'diff', '--check'])
-    receipt = {'testSources': pins, 'lockSha256': [d.sha(d.canonical(lock)) for lock in locks],
+    receipt = {'testSources': dict(zip(('era', 'futureForever'), pins)), 'lockSha256': [d.sha(d.canonical(lock)) for lock in locks],
                'eraApiEvidence': evidence, 'futureForeverOfflineOnly': True, 'nativeAccepted': False,
                'frozenRegressionRun': not args.skip_frozen_regression}
     (args.artifact_root/'candidate-validation.json').write_bytes(d.canonical(receipt))
@@ -86,6 +98,8 @@ def validate(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--child-worktrees', type=Path, required=True)
+    parser.add_argument('--future-child-worktrees', type=Path,
+                        help='Exact future Forever test checkouts when its pins differ from Era; defaults to --child-worktrees')
     parser.add_argument('--sources-root', type=Path, default=Path('C:/Dev/WoW'))
     parser.add_argument('--artifact-root', type=Path, required=True)
     parser.add_argument('--client-root', type=Path, default=Path('C:/Program Files (x86)/World of Warcraft/_classic_era_'))

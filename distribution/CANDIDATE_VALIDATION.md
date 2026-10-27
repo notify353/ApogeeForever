@@ -4,7 +4,12 @@ Run from the distribution worktree. This entry point checks **both** isolated
 locks (`era/candidate.lock.json` and `future-launcher.lock.json`), not the frozen
 release candidate. All five child test checkouts must be clean and exactly match
 their lock commits. Shared support must match its owning Essentials revision.
-The same source pins must be used by both candidates for shared children.
+Era-only work may advance its child pins independently. When pins differ, pass
+`--future-child-worktrees` with clean checkouts at the unchanged future Forever
+pins. Each target uses its own matching test sources, including generated tests;
+the default shared checkout path still rejects mismatched pins. The validation
+receipt records both target maps separately. Do not advance Forever merely to
+make Era's test-source check pass.
 
 ```powershell
 python -B scripts/validate_candidates.py `
