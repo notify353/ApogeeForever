@@ -20,6 +20,14 @@ the exact CurseForge version. No missing export or failed version lookup falls
 back to a different client. Hosted checks verify recorded authority; fresh local
 client verification occurs during preparation. Native testing is separate.
 
+The portable release runner explicitly separates three hash-pinned local-export
+contracts (Keybinds exported API, Dungeons whisper parser and Essentials native
+error handler). They execute the owner's retained Blizzard beta source, which is
+not available on GitHub runners and is never redistributed. They still run in the
+complete local candidate validation. Hosted output labels them LOCAL EXPORT ONLY,
+not passed or native-accepted. A missing or changed test stops classification for
+review. Every other child spec and all generated-package suites remain hosted.
+
 From a clean synchronized main checkout, use `scripts/prepare-release.ps1` with
 Version, Target (`classic-era` or `forever`), SourcesRoot, ClientRoot,
 ChildWorktrees, Notes and Basis. The basis records the owner's real authorization;
