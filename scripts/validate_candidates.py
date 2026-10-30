@@ -74,6 +74,8 @@ def validate(args):
         if builder.exists(): run(['pwsh', '-NoProfile', '-File', builder, '-SourceOnly'], root)
     python('tests/distribution/test_candidates.py', '-v')
     python('tests/distribution/test_live_forever.py', '-v')
+    python('tests/distribution/test_release_manifest.py', '-v')
+    python('tests/distribution/test_release_packages.py', '-v')
     command = ['tests/distribution/test_era.py', '--sources-root', args.sources_root,
                '--child-worktrees', args.child_worktrees, '-v']
     if not args.offline: command += ['--client-root', args.client_root]

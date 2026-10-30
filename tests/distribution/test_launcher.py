@@ -27,11 +27,14 @@ class LauncherTests(unittest.TestCase):
     def setUpClass(cls):
         cls.era=era.read_lock()
         cls.future=d.read_lock(ROOT/'distribution/future-launcher.lock.json')
-        cls.payload=era.family_files(cls.era,SOURCES)[0]
+        cls.payload=era.family_files(cls.era,SOURCES)[0] if os.environ.get('APOGEE_TEST_TARGET')!='forever' else None
 
     def test_generated_behavior_all_targets(self):
-        for target,family,files in [('era','DEV',self.payload)]+[
-            ('forever-offline',family,dual.family_files(self.future,SOURCES,family)[0]) for family in ('PROD','DEV')]:
+        for target,family in [(target,family) for target in ('era','forever-offline') for family in ('PROD','DEV')]:
+            selected=os.environ.get('APOGEE_TEST_TARGET')
+            if selected and target != ('era' if selected=='classic-era' else 'forever-offline'): continue
+            files=(era.family_files(self.era,SOURCES,family) if target=='era'
+                   else dual.family_files(self.future,SOURCES,family))[0]
             with self.subTest(target=target,family=family),tempfile.TemporaryDirectory() as folder:
                 children = CHILDREN if target=="era" else FUTURE_CHILDREN
                 m.put(folder,files)
@@ -70,9 +73,10 @@ class LauncherTests(unittest.TestCase):
                     for spec in ('test_stat_policy.lua', 'test_auction.lua'):
                         subprocess.run(['lua','tests/'+spec,str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                 else:
+                    stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     for spec in ('test_era.lua', 'test_era_ui.lua', 'test_era_startup.lua'):
-                        subprocess.run(['lua','tests/'+spec,str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev'],cwd=children/'ApogeeStats',check=True)
-                    subprocess.run(['lua','tests/test_era_ui.lua',str(Path(folder)/'ApogeeStatsDev'),'ApogeeStatsDev','preloaded'],cwd=children/'ApogeeStats',check=True)
+                        subprocess.run(['lua','tests/'+spec,str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
+                    subprocess.run(['lua','tests/test_era_ui.lua',str(Path(folder)/stats),stats,'preloaded'],cwd=children/'ApogeeStats',check=True)
                 for child in self.era['children'] if target=='era' else self.future['children']:
                     n=child['name']+('Dev' if family=='DEV' else '')
                     meta,runtime=d.toc_info(files[n+'/'+n+'.toc'])
@@ -100,17 +104,16 @@ class LauncherTests(unittest.TestCase):
 
     def test_generated_settings_with_real_shared_owner(self):
         for target in ('era','forever-offline'):
+            selected = os.environ.get('APOGEE_TEST_TARGET')
+            if selected and selected != ('classic-era' if target == 'era' else 'forever'): continue
             with self.subTest(target=target),tempfile.TemporaryDirectory() as folder:
-                if target=='era':
-                    m.put(Path(folder)/'DEV',self.payload)
-                else:
-                    for family in ('PROD','DEV'):
-                        m.put(Path(folder)/family,dual.family_files(self.future,SOURCES,family)[0])
+                for family in ('PROD','DEV'):
+                    payload = (era.family_files(self.era,SOURCES,family) if target=='era'
+                               else dual.family_files(self.future,SOURCES,family))[0]
+                    m.put(Path(folder)/family,payload)
                 command=['lua',str(ROOT/'tests/distribution/shared_settings.lua'),folder,'launcher']
-                if target=='era': command.append('DEV')
                 subprocess.run(command,check=True)
-                if target=='forever-offline':
-                    subprocess.run(['lua',str(ROOT/'tests/distribution/master_selection.lua'),folder],check=True)
+                subprocess.run(['lua',str(ROOT/'tests/distribution/master_selection.lua'),folder,target],check=True)
 
     def test_upgrade_from_era7_receipt_requires_closed_install(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -148,7 +151,8 @@ class LauncherTests(unittest.TestCase):
                 files=dual.family_files(lock,SOURCES,family)[0]
                 accepted['runtimeFiles'][family]={p:d.sha(b) for p,b in files.items() if p.endswith('.lua')}
             acceptance=root/'acceptance.json'; acceptance.write_text(json.dumps(accepted))
-            with patch.object(dual,'LOCK',ROOT/'distribution/future-launcher.lock.json'),patch.object(publisher,'ACCEPTANCE',acceptance):
+            selected=root/'selected.lock.json'; selected.write_bytes(d.canonical(lock))
+            with patch.object(dual,'LOCK',selected),patch.object(publisher,'ACCEPTANCE',acceptance):
                 archive=publisher.payload(SOURCES,version)
                 self.assertTrue(archive)
 

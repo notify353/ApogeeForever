@@ -6,10 +6,10 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.70634",
+    "reviewedBuild": "1.60.1.70685",
     "version": "1.60.1"
   },
-  "executableSha256": "aef47078d17f310b399d9363d820c0bd2e74d5aa5eefc8ef90370f8dc507b277",
+  "executableSha256": "401400ad48ffc1e315b40a08b8160d7a9ee088140da57c14720e464841fe37f5",
   "files": [
     {
       "owners": [
@@ -1572,7 +1572,7 @@
         "ApogeeEssentials"
       ],
       "path": "Blizzard_SettingsDefinitions_Frame/Nameplates.lua",
-      "sha256": "c39e67a51249a7fe587c97aae845671c45544dc4c114709a0432ca77995bad2f"
+      "sha256": "6a9cccb83a51b98f5ac08217df837035f91c86175ee6b663d1f6e7c31fe319b4"
     },
     {
       "owners": [
@@ -1742,7 +1742,7 @@
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-10-27",
+  "reviewedOn": "2026-10-29",
   "schema": 1,
   "sourcePins": {
     "ApogeeEssentials": "3181180047f82e3ffd97469d05a22730bcfb3cb5",

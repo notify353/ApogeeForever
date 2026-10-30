@@ -30,7 +30,7 @@ class LiveForeverTests(unittest.TestCase):
         self.reference = self.client/'BlizzardInterfaceCode/Interface/AddOns/Example/API.lua'
         self.reference.parent.mkdir(parents=True); self.reference.write_bytes(b'reviewed API')
         self.info = self.root/'.build.info'
-        self.info.write_text('Product!STRING:0|Version!STRING:0|Active!DEC:1\nwowf|1.60.1.70634|1\nwow_classic_era|1.15.9.70576|1\n')
+        self.info.write_text('Product!STRING:0|Version!STRING:0|Active!DEC:1\nwowf|1.60.1.70685|1\nwow_classic_era|1.15.9.70576|1\n')
         self.lock = d.read_lock(ROOT/'distribution/future-launcher.lock.json')
         self.lock['client'] = copy.deepcopy(live.LIVE_CLIENT)
         self.record = {'schema': 1, 'client': copy.deepcopy(live.LIVE_CLIENT),
@@ -49,7 +49,7 @@ class LiveForeverTests(unittest.TestCase):
 
     def test_live_export_and_legacy_locks_are_separate(self):
         result = self.verify()
-        self.assertEqual(result['build'], '1.60.1.70634')
+        self.assertEqual(result['build'], '1.60.1.70685')
         self.assertEqual(result['referencesVerified'], 1)
         self.assertEqual(d.read_lock(ROOT/'distribution/candidate.lock.json')['client']['reviewedBuild'], '1.60.1.70450')
         with self.assertRaises(ValueError):
@@ -84,8 +84,8 @@ class LiveForeverTests(unittest.TestCase):
                 with self.assertRaises(ValueError): self.verify()
 
     def test_wrong_duplicate_inactive_or_missing_product_rejected(self):
-        for rows in ('wow_classic_beta|1.60.1.70634|1', 'wowf|1.60.1.70450|1',
-                     'wowf|1.60.1.70634|0', 'wowf|1.60.1.70634|1\nwowf|1.60.1.70634|1', ''):
+        for rows in ('wow_classic_beta|1.60.1.70685|1', 'wowf|1.60.1.70450|1',
+                     'wowf|1.60.1.70685|0', 'wowf|1.60.1.70685|1\nwowf|1.60.1.70685|1', ''):
             with self.subTest(rows=rows):
                 self.info.write_text('Product|Version|Active\n'+rows+'\n')
                 with self.assertRaises(ValueError): self.verify()
@@ -96,7 +96,7 @@ class LiveForeverTests(unittest.TestCase):
             with self.subTest(folder=folder), self.assertRaises(ValueError):
                 live.verify_live_export(wrong, self.lock, self.evidence)
         for key,value in [('product','wow_classic_beta'), ('directory','_classic_beta_'),
-                          ('executable','WowB.exe'), ('reviewedBuild','1.60.1.70635')]:
+                          ('executable','WowB.exe'), ('reviewedBuild','1.60.1.70686')]:
             bad = copy.deepcopy(self.lock); bad['client'][key] = value
             with self.subTest(key=key), self.assertRaises(ValueError):
                 live.verify_live_export(self.client, bad, self.evidence)

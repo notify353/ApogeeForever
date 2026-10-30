@@ -36,8 +36,11 @@ def release_notes(version):
 
 
 def payload(sources_root, version):
+    import release_manifest as r
+    if r.path(version).exists(): return r.packages(version, sources_root)[1]['PROD']
     stable(version)
-    lock = copy.deepcopy(d.read_lock(dual.LOCK)); lock['version'] = version
+    lock = copy.deepcopy(d.read_lock(dual.LOCK))
+    d.require(lock['version'] == version, 'Version lacks an exact selected release')
     accepted = json.loads(ACCEPTANCE.read_text())
     d.require(accepted.get('accepted') is True, 'Native owner acceptance required')
     packages = {}
@@ -56,6 +59,8 @@ def payload(sources_root, version):
 
 
 def stage(sources_root, version, output):
+    import release_manifest as r
+    if r.path(version).exists(): return r.stage(version, sources_root, output)
     archive = payload(sources_root, version)
     notes = release_notes(version)
     output = Path(output); output.mkdir(parents=True, exist_ok=False)
@@ -94,7 +99,7 @@ def metadata(version, row, notes):
 
 
 def multipart(meta, filename, archive, boundary):
-    d.require(re.fullmatch(r'ApogeeForever-[0-9]+\.[0-9]+\.[0-9]+\.zip', filename), 'Unsafe archive name')
+    d.require(re.fullmatch(r'(?:ApogeeForever|ApogeeClassicEra)-[0-9]+\.[0-9]+\.[0-9]+\.zip', filename), 'Unsafe archive name')
     return (('--' + boundary + '\r\nContent-Disposition: form-data; name="metadata"\r\n'
              'Content-Type: application/json\r\n\r\n').encode() + json.dumps(meta).encode() +
             ('\r\n--' + boundary + '\r\nContent-Disposition: form-data; name="file"; filename="' + filename +
@@ -105,6 +110,9 @@ def multipart(meta, filename, archive, boundary):
 def upload(sources_root, output):
     output = Path(output); receipt_path = output / 'receipt.json'
     receipt = json.loads(receipt_path.read_text()); version = receipt['version']
+    if receipt.get('schema') == 2:
+        import publish_manifest
+        return publish_manifest.upload(sources_root, output)
     actions_guard(version)
     d.require(receipt.get('projectId') == PROJECT and receipt.get('filename') == 'ApogeeForever-' + stable(version) + '.zip'
               and re.fullmatch('[0-9a-f]{64}', receipt.get('sha256', '')), 'Invalid release receipt')
@@ -147,6 +155,9 @@ def upload(sources_root, output):
 def verify(output, download_url):
     output = Path(output); receipt_path = output / 'receipt.json'
     receipt = json.loads(receipt_path.read_text()); version = receipt['version']
+    if receipt.get('schema') == 2:
+        import publish_manifest
+        return publish_manifest.verify(output, download_url)
     actions_guard(version)
     d.require(receipt.get('projectId') == PROJECT and receipt.get('filename') == 'ApogeeForever-' + stable(version) + '.zip'
               and re.fullmatch('[0-9a-f]{64}', receipt.get('sha256', '')), 'Invalid release receipt')

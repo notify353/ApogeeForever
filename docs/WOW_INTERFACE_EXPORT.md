@@ -1,5 +1,15 @@
 # Forever interface authority
 
+## Current live client: 1.60.1.70685 (2026-10-29)
+
+The owner refreshed the export after the client advanced past70658 to70685.
+Executable metadata and active wowf build agree; all239 references postdate it.
+238 match the prior review. Nameplates.lua now always offers the rarity-icon
+checkbox, removing the ShowRarityIconInfoDisplayOption conditional. The retained
+older source matches the prior recorded hash; no Apogee-used API signature changed.
+Separate live evidence and future candidate metadata advance; Era and frozen beta
+remain unchanged. Current native gameplay acceptance is still not claimed.
+
 ## Current live client: 1.60.1.70634 (2026-10-27)
 
 `pwsh scripts/check-wow-api-export.ps1` now checks live product `wowf` in

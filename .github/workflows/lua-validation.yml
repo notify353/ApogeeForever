@@ -14,6 +14,7 @@ jobs:
       - run: python -B tests/distribution/test_live_forever.py
       - run: python -B tests/distribution/test_curseforge.py
       - run: python -B tests/distribution/test_publisher.py
+      - run: python -B tests/distribution/test_release_manifest.py
   aggregate:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.APOGEE_DISTRIBUTION_SOURCES_READY == 'true'
     environment: distribution-validation

@@ -1,5 +1,20 @@
 # Apogee Forever releases
 
+## Current dual-client early releases (2026-10-29)
+
+Follow [client-specific release selections](distribution/releases/README.md)
+for Era1.14.10 and Forever1.14.11. Both are normal Releases under project1608100,
+with separate archives/version metadata. Era is independently releasable.
+The owner explicitly accepted limited live Forever testing; manifests retain
+`nativeAccepted: false` and bind that decision to exact packages. This policy
+does not waive client evidence, source/package checks, upload verification or
+immediate final production-tag approval. Installed addons remain unchanged.
+
+The workflow reads each tagged version's manifest and exact source pins. Main
+must pass its selected `release-<version>` check, including authenticated version
+preflight. Existing aggregate checks continue covering the frozen release.
+The historical native-accepted flow below remains for its archived selections.
+
 GitHub Actions is the sole publisher for CurseForge project1608100 and the
 notify353/ApogeeForever repository. It publishes only the selected canonical
 Forever addon folders (currently five public children plus the marker; Tank and standalone Auction are retired; Stats is included). The same verified ZIP goes to both services.

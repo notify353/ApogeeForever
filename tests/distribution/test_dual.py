@@ -398,17 +398,18 @@ class DualTests(unittest.TestCase):
         self.assertFalse(saves['PROD'] & saves['DEV'])
 
     def test_release_requires_native_accepted_runtime(self):
+        version = self.lock['version']
         accepted = json.loads(publisher.ACCEPTANCE.read_text())
         actual = {family: {p: d.sha(b) for p, b in files.items() if p.endswith('.lua')}
                   for family, files in (('PROD', self.prod), ('DEV', self.dev))}
         if accepted.get('accepted') is not True:
             with self.assertRaisesRegex(ValueError, 'Native owner acceptance required'):
-                publisher.payload(OPTIONS.sources_root, '1.0.0')
+                publisher.payload(OPTIONS.sources_root, version)
         elif actual == accepted['runtimeFiles']:
-            self.assertTrue(publisher.payload(OPTIONS.sources_root, '1.0.0').startswith(b'PK'))
+            self.assertTrue(publisher.payload(OPTIONS.sources_root, version).startswith(b'PK'))
         else:
             with self.assertRaisesRegex(ValueError, 'Runtime changed since native acceptance'):
-                publisher.payload(OPTIONS.sources_root, '1.0.0')
+                publisher.payload(OPTIONS.sources_root, version)
 
     def test_running_client_allowed_only_for_dev_preflight(self):
         client, _ = self.fixture(self.dev)

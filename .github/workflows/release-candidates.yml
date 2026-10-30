@@ -1,0 +1,111 @@
+name: Client release validation
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Prepared version to validate (blank checks pending releases)
+        required: false
+permissions:
+  contents: read
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    outputs:
+      versions: ${{ steps.select.outputs.versions }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - id: select
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+        shell: python
+        run: |
+          import json, os, sys
+          sys.path.insert(0, 'scripts')
+          import release_manifest as r
+          requested=os.environ.get('REQUESTED_VERSION')
+          versions=[r.stable(requested)] if requested else json.load(open('distribution/releases/pending.json'))
+          for version in versions: r.load(version)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out: out.write('versions='+json.dumps(versions)+'\n')
+  release:
+    name: release-${{ matrix.version }}
+    needs: select
+    if: github.ref == 'refs/heads/main' && needs.select.outputs.versions != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.select.outputs.versions) }}
+    environment: distribution-validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          path: distribution-repo
+          persist-credentials: false
+      - name: Read selected immutable child pins
+        id: pins
+        env:
+          VERSION: ${{ matrix.version }}
+        shell: python
+        run: |
+          import os, sys
+          sys.path.insert(0, 'distribution-repo/scripts')
+          import release_manifest as r
+          lock=r.load(os.environ['VERSION'])[1]
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              for child in lock['children']: out.write(child['name']+'='+child['commit']+'\n')
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: notify353/ApogeeHeals
+          ref: ${{ steps.pins.outputs.ApogeeHeals }}
+          path: sources/ApogeeHeals
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ github.token }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: notify353/ApogeeKeybinds
+          ref: ${{ steps.pins.outputs.ApogeeKeybinds }}
+          path: sources/ApogeeKeybinds
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: notify353/ApogeeGroupAlert
+          ref: ${{ steps.pins.outputs.ApogeeGroupAlert }}
+          path: sources/ApogeeGroupAlert
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: notify353/ApogeeEssentials
+          ref: ${{ steps.pins.outputs.ApogeeEssentials }}
+          path: sources/ApogeeEssentials
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: notify353/ApogeeStats
+          ref: ${{ steps.pins.outputs.ApogeeStats }}
+          path: sources/ApogeeStats
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
+      - name: Install Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Validate exact selected client package
+        working-directory: distribution-repo
+        env:
+          VERSION: ${{ matrix.version }}
+        run: python -B scripts/validate_release.py --version "$VERSION" --sources-root "$GITHUB_WORKSPACE/sources" --child-worktrees "$GITHUB_WORKSPACE/sources" --output "$RUNNER_TEMP/release-validation"
+      - name: Resolve exact CurseForge upload version (no upload)
+        working-directory: distribution-repo
+        env:
+          VERSION: ${{ matrix.version }}
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+        run: python -B scripts/curseforge_preflight.py --version "$VERSION"

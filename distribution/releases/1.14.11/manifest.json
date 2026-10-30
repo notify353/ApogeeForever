@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "0fbd0773a486f84680eed3ec978c95e967fea9a219889dbfde323bfdd55a51f8",
+  "authorization": {
+    "basis": "Owner approved normal Release despite limited Forever live gameplay testing on 2026-10-29 and refreshed the matching client export. This is early-release risk acceptance, not native-test acceptance. Final production-tag approval remains separate.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "9e578bf2167a7bc2f70c8836345401a918c75b05a4f2495e1d1c3ff9063860bc",
+  "packages": {
+    "DEV": "6cc381b19a8a1473873f062ad2b95957f826d4a15203dd04d84d3d2e8bea22d3",
+    "PROD": "82f538ce85fda0354d5b07281eb054d2667134100479eafd63198f264e41ed3c"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "abf5213ea9526c43432cb4c0a162f101ec208d49e4e5592512e0468c0cf2ef75",
+  "target": "forever",
+  "version": "1.14.11"
+}
