@@ -252,6 +252,9 @@ or its installed beta. No publication or native acceptance is implied.
 
 ## [Unreleased]
 
+- Separate the three local Blizzard-export contracts from portable release checks;
+  retain full local coverage and reject changed contract classifications.
+
 ## [1.14.9] - 2026-10-20
 
 - Add Smart, Manual and Off buff controls across classes, with learned-spell suggestions and Paladin guidance for five-player dungeon roles. Prefer Kings for Paladin tanks, falling back to Wisdom when needed.
