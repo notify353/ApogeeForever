@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "de1e447439610287c822649ce7990cb9cd118cc22beace58f5fac14efd8c518d",
+  "authorization": {
+    "basis": "Owner approved the dual-client early Release plan on 2026-10-29, with Era first. Era.26 has owner-reported gameplay testing; full separate PROD/native and CurseForge-client acceptance are not claimed. Final production-tag approval remains separate.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 67408,
+    "name": "1.15.9"
+  },
+  "notesSha256": "8bdbdadc175f4f334b5274f83681fa81b5fadad983c3934320ef636480d68b11",
+  "packages": {
+    "DEV": "f03279faf691c0ababb1202867c8685c9d3309e9b6a571772e5f36d525ee6945",
+    "PROD": "4a2f2a32bcbc309a4ae64911bffdc63b1e81cf1c62656675edf264e6de216628"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "56dde863449bc7b89e801e81395dc8d2f0cfa1a8428fc5dee8a76a10c1fffe83",
+  "target": "classic-era",
+  "version": "1.14.10"
+}

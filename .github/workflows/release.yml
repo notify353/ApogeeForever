@@ -1,4 +1,4 @@
-name: Apogee Forever release
+name: Apogee client release
 on:
   push:
     tags: ['v*.*.*']
@@ -24,7 +24,11 @@ jobs:
         shell: python
         run: |
           import json, os
-          lock=json.load(open('distribution-repo/distribution/candidate.lock.json'))
+          import sys
+          sys.path.insert(0, 'distribution-repo/scripts')
+          import release_manifest as r, distribution as d, dual_distribution as dual
+          version=os.environ['GITHUB_REF_NAME'][1:]
+          lock=r.load(version)[1] if r.path(version).exists() else d.read_lock(dual.LOCK)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               for child in lock['children']: out.write(child['name']+'='+child['commit']+'\n')
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -72,8 +76,15 @@ jobs:
       - name: Validate and build both families
         shell: pwsh
         working-directory: distribution-repo
-        run: ./scripts/test-local.ps1 -SourcesRoot "$env:GITHUB_WORKSPACE/sources" -ArtifactRoot "$env:RUNNER_TEMP/apogee-validation"
-      - name: Stage exact accepted production package
+        run: |
+          $version = $env:GITHUB_REF_NAME.Substring(1)
+          if (Test-Path "distribution/releases/$version/manifest.json") {
+            python -B scripts/validate_release.py --version $version --sources-root "$env:GITHUB_WORKSPACE/sources" --child-worktrees "$env:GITHUB_WORKSPACE/sources" --output "$env:RUNNER_TEMP/release-validation"
+            if ($LASTEXITCODE -ne 0) { throw 'Selected release validation failed.' }
+          } else {
+            ./scripts/test-local.ps1 -SourcesRoot "$env:GITHUB_WORKSPACE/sources" -ArtifactRoot "$env:RUNNER_TEMP/apogee-validation"
+          }
+      - name: Stage exact selected production package
         working-directory: distribution-repo
         env:
           RELEASE_TAG: ${{ github.ref_name }}

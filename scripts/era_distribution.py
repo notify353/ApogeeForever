@@ -1,4 +1,4 @@
-"""Isolated, unpublished Classic Era DEV target. Never reads a Forever client export."""
+"""Classic Era family generation and checked DEV installation. Uses only Era authority."""
 import argparse
 import json
 from pathlib import Path
@@ -71,13 +71,19 @@ def verify_api(client, lock):
             'evidenceSha256': lock['apiEvidenceSha256']}
 
 
-def family_files(lock, sources_root):
+def family_files(lock, sources_root, family="DEV"):
+    d.require(family in ("PROD", "DEV"), "Unknown Era family")
+    suffix = "Dev" if family == "DEV" else ""
+    label = "Apogee Era" + (" DEV" if family == "DEV" else "")
     output, changes = {}, {}
     gate = (CONFIG / 'ClientGate.lua').read_bytes() + b'\n' + support.gate_bytes(lock, dual.GATE.read_bytes())
+    if family == 'PROD':
+        d.require(gate.count(b'Apogee Era DEV inactive:') == 1, 'Era diagnostic template changed')
+        gate = gate.replace(b'Apogee Era DEV inactive:', b'Apogee Era inactive:')
     gate += b'\nif namespace.__ApogeeFamilyAdmission and namespace.__ApogeeFamilyAdmission(name) then\n namespace.__ApogeeClient = "classic-era"\nend\n'
-    marker = d.MARKER + 'Dev'
+    marker = d.MARKER + suffix
     for child in lock['children']:
-        old, name = child['name'], child['name'] + 'Dev'
+        old, name = child['name'], child['name'] + suffix
         tree = d.source_tree(Path(sources_root) / old, child['commit'])
         source = {}
         for path, digest in child['files'].items():
@@ -92,43 +98,47 @@ def family_files(lock, sources_root):
         meta = {k: v for k, v in meta.items() if not k.startswith(('X-Curse', 'X-Wago', 'X-WoWI'))}
         meta = {k: v.replace(old, name) if k.startswith('SavedVariables') or k == 'IconTexture' else v
                 for k, v in meta.items()}
-        meta.update({'Title': dual.LABELS[old] + ' Era DEV', 'Version': lock['version'],
-                     'Group': marker, 'Category': 'Apogee Era DEV', 'X-Apogee-Client': 'classic-era',
-                     'X-Apogee-Family': 'DEV', 'X-Apogee-Family-Schema': '1'})
+        meta.update({'Title': dual.LABELS[old] + ' Era' + (' DEV' if family == 'DEV' else ''), 'Version': lock['version'],
+                     'Group': marker, 'Category': label, 'X-Apogee-Client': 'classic-era',
+                     'X-Apogee-Family': family, 'X-Apogee-Family-Schema': '1'})
         d.require(meta.get('Dependencies') == 'ApogeeUI' and meta.get('X-Apogee-UI-API') == '1', 'Missing matching UI dependency')
-        meta['Dependencies'] = support.owner(lock, 'DEV')
+        meta['Dependencies'] = support.owner(lock, family)
         if support.embedded(lock): meta['X-Apogee-Requires-Master'] = '1'
         renamed = {p: name + '.lua' if p == old + '.lua' else p for p in runtime}
         toc = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()) + '\n'
         toc += dual.GATE_PATH + '\n' + ''.join(renamed[p] + '\n' for p in runtime)
         output[name + '/' + name + '.toc'] = toc.encode()
-        output[name + '/' + dual.GATE_PATH] = gate.replace(b'@NAME@', name.encode()).replace(b'@FAMILY@', b'DEV')
+        output[name + '/' + dual.GATE_PATH] = gate.replace(b'@NAME@', name.encode()).replace(b'@FAMILY@', family.encode())
         for p, data in source.items():
             if p == child['toc']:
                 continue
             target = name + '/' + renamed.get(p, p)
             if p in runtime:
-                body, audit = dual.transform_lua(data, old)
-                output[target] = dual.prefix(name, 'DEV') + body
+                body, audit = dual.transform_lua(data, old) if family == 'DEV' else (data, [])
+                output[target] = dual.prefix(name, family) + body
                 changes[target] = {'source': old + '/' + p, 'sourceSha256': d.sha(data),
                                    'bodySha256': d.sha(body), 'identityEdits': audit}
-            else:
+            elif not (family == 'PROD' and (p.endswith('.md') or p.startswith('docs/'))
+                      and p not in ('NOTICE.md', 'THIRD_PARTY_NOTICES.md')):
                 output[target] = data
-        output[name + '/README.md'] = source['Era/README.md']
+        if family == 'DEV': output[name + '/README.md'] = source['Era/README.md']
     for p in ('LICENSE', 'Media/Textures/ApogeeLogo.png'):
-        output[marker + '/' + p] = output['ApogeeKeybindsDev/' + p]
-    meta = {'Interface': '11509', 'Title': 'Apogee Era DEV', 'Version': lock['version'],
-            'Group': marker, 'Category': 'Apogee Era DEV', 'X-Apogee-Client': 'classic-era',
-            'X-Apogee-Family': 'DEV', 'X-Apogee-Family-Schema': '1',
+        output[marker + '/' + p] = output['ApogeeKeybinds' + suffix + '/' + p]
+    meta = {'Interface': '11509', 'Title': label, 'Version': lock['version'],
+            'Group': marker, 'Category': label, 'X-Apogee-Client': 'classic-era',
+            'X-Apogee-Family': family, 'X-Apogee-Family-Schema': '1',
             'X-Apogee-Distribution-Only': '1', 'X-Apogee-Distribution-Schema': '1',
             'IconTexture': 'Interface/AddOns/' + marker + '/Media/Textures/ApogeeLogo.png'}
+    if family == 'PROD': meta['X-Curse-Project-ID'] = '1608100'
     output[marker + '/' + marker + '.toc'] = ''.join('## ' + k + ': ' + v + '\n' for k, v in meta.items()).encode()
-    support.add_files(lock, sources_root, 'DEV', output, changes, gate, dual)
+    support.add_files(lock, sources_root, family, output, changes, gate, dual)
     output[marker + '/README.md'] = (CONFIG / 'PLAYER_README.md').read_bytes()
     if support.embedded(lock):
         output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
-    roots = {d.MARKER + 'Dev', *(c['name'] + 'Dev' for c in lock['children'])}
-    if not support.embedded(lock): roots.add('ApogeeUIDev')
+    if family == 'PROD':
+        output[marker + '/README.md'] = (CONFIG / 'PUBLIC_README.md').read_bytes()
+    roots = {d.MARKER + suffix, *(c['name'] + suffix for c in lock['children'])}
+    if not support.embedded(lock): roots.add('ApogeeUI' + suffix)
     d.require({p.split('/')[0] for p in output} == roots, 'Era roots differ')
     return output, changes
 

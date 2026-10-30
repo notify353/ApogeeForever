@@ -13,13 +13,21 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Fetch failed.' }
     $head = git rev-parse HEAD
     if ($head -ne (git rev-parse origin/main)) { throw 'Main is not synchronized.' }
-    $lock = Get-Content distribution/candidate.lock.json -Raw | ConvertFrom-Json
-    if ($lock.version -ne $Version) { throw 'Version does not match the preparation commit.' }
+    $manifestPath = "distribution/releases/$Version/manifest.json"
+    if (Test-Path $manifestPath) {
+        $selection = Get-Content $manifestPath -Raw | ConvertFrom-Json
+        if ($selection.version -ne $Version) { throw 'Release selection mismatch.' }
+        $requiredChecks = @('test','aggregate',"release-$Version")
+    } else {
+        $lock = Get-Content distribution/candidate.lock.json -Raw | ConvertFrom-Json
+        if ($lock.version -ne $Version) { throw 'Version does not match the preparation commit.' }
+        $requiredChecks = @('test','aggregate','version')
+    }
     $workflow = Get-Content .github/workflows/release.yml -Raw
     if ($workflow -notmatch 'publish_distribution.py upload') { throw 'Production workflow is inactive.' }
     $checks = gh api "repos/notify353/ApogeeForever/commits/$head/check-runs?per_page=100" | ConvertFrom-Json
     if ($LASTEXITCODE -ne 0) { throw 'Cannot verify hosted checks.' }
-    foreach ($name in @('test','aggregate','version')) {
+    foreach ($name in $requiredChecks) {
         $check = @($checks.check_runs | Where-Object name -EQ $name | Sort-Object started_at -Descending | Select-Object -First 1)
         if ($check.Count -ne 1 -or $check[0].status -ne 'completed' -or $check[0].conclusion -ne 'success') { throw "Required check $name is not successful for this commit." }
     }
@@ -33,7 +41,7 @@ try {
     $stage = Join-Path $repo ('.release/tag-review-' + [guid]::NewGuid().ToString('N'))
     python -B scripts/publish_distribution.py stage --version $Version --sources-root $SourcesRoot --output $stage
     if ($LASTEXITCODE -ne 0) { throw 'Exact release validation failed.' }
-    git tag -a $tag -m "Apogee Forever $Version" $head
+    git tag -a $tag -m "Apogee $Version" $head
     if ($LASTEXITCODE -ne 0) { throw 'Tag creation failed.' }
     git push origin "refs/tags/$tag"
     if ($LASTEXITCODE -ne 0) { throw 'Tag push failed or uncertain; inspect remote before any retry. Local tag retained.' }

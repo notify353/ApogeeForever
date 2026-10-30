@@ -1,5 +1,11 @@
 # Apogee Forever
 
+Client-specific public releases for Forever and Classic Era are being prepared
+under this existing project. See [release selections](distribution/releases/README.md)
+and each version's player notes for support and testing status. The release files
+use separate client metadata; choose the file for your WoW instance. Preparation
+does not mean the new files have already been published.
+
 An isolated, unpublished [Classic Era DEV candidate](distribution/era/README.md)
 is available on the Era development branch. Its pins, API evidence and installer
 target are separate; the Forever beta baseline below remains frozen.

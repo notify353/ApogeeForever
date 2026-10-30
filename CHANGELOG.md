@@ -1,3 +1,13 @@
+## Unreleased - client-specific public release preparation
+
+- Add a canonical PROD package for Classic Era, preserving Era DEV bytes and
+  all shared gameplay sources. Add separate hashed release selections and
+  target-specific validation/publication for Era and Forever.
+- Prepare Era1.14.10 and Forever1.14.11 as normal Releases; record early-release
+  authorization separately from native testing. No local installation or reset.
+- Review fresh Forever1.60.1.70685 authority; only the native nameplate settings
+  rarity-icon option changed among the 239 references. API signatures unchanged.
+
 ## Unreleased - live Forever validation tooling
 
 - Validate the future candidate against live Forever 1.60.1.70634 (`wowf`,

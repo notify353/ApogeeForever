@@ -1,5 +1,9 @@
 -- Mixed-family admission from both actual generated package inventories.
 local root=assert(arg[1])
+if arg[2]=='era' then
+    WOW_PROJECT_ID=2; WOW_PROJECT_CLASSIC=2
+    GetBuildInfo=function() return '1.15.9','70576',nil,11509 end
+end
 local bases={'ApogeePartyHealthBars','ApogeeHeals','ApogeeKeybinds','ApogeeGroupAlert','ApogeeEssentials','ApogeeStats'}
 local originalPrint=print
 local cases={

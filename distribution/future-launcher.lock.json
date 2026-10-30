@@ -201,7 +201,7 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.70634",
+    "reviewedBuild": "1.60.1.70685",
     "version": "1.60.1"
   },
   "futurePackager": {
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "6a0342d57ffbdca83ffd6edfb06792ad5fa3446ec96f9b64301d0e074a0377db",
+  "liveApiEvidenceSha256": "0fbd0773a486f84680eed3ec978c95e967fea9a219889dbfde323bfdd55a51f8",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",

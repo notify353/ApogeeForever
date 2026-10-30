@@ -1,6 +1,6 @@
 # Live Forever authority
 
-The isolated future candidate now targets reviewed Forever **1.60.1.70634**,
+The isolated future candidate now targets reviewed Forever **1.60.1.70685**,
 Interface 16001, product `wowf`, directory `_forever_`, executable `Wow.exe`.
 The frozen v1.14.9 selection and its beta authority are unchanged.
 
@@ -45,6 +45,12 @@ next client update, request a fresh owner export and review changed source befor
 changing evidence; hashes must not be refreshed merely to silence a failure.
 
 ## Remaining release gates
+
+The 2026-10-29 owner-approved early-release policy in
+[release selections](../releases/README.md) supersedes the earlier requirement
+for complete native acceptance below for the exact prepared public package.
+Fresh authority, automated tests and final tag approval still apply. The owner
+export for70685 changes only the nameplate rarity-icon option among239 references.
 
 Native owner testing of the exact candidate is still required, including secure
 input, UI timing/taint and auction behavior. Name selection and source validation

@@ -1,5 +1,11 @@
 # Distribution repository instructions
 
+- Current owner-approved release policy (2026-10-29): client-specific normal
+  Releases may use immutable early-release manifests with truthful native-test
+  status; Era may publish independently. Follow distribution/releases/README.md.
+  This supersedes the older Forever-only/native-acceptance-only publication
+  restriction below for those exact selections. Final tag approval remains required.
+
 - Verify directory, branch, remote and dirty state before mutations. Preserve user changes, archives and backups. Use a short-lived codex branch, never a release tag.
 - Read README.md, distribution/DUAL_WORKFLOW.md and RELEASING.md. This repository owns packaging/loading safety only. Never restore legacy APHB gameplay; independent child addons own gameplay.
 - Before API-dependent work read docs/WOW_INTERFACE_EXPORT.md and run scripts/check-wow-api-export.ps1. Matching Forever16001 local export is authoritative. Stop when stale/missing; never substitute another client.

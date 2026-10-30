@@ -1,5 +1,5 @@
 # Dispatch on the same approved production tag.
-name: Verify Apogee Forever publication
+name: Verify Apogee publication
 on:
   workflow_dispatch:
     inputs:
