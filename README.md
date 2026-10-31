@@ -16,10 +16,10 @@ Current policy implementation is coordinated by ApogeeForever's
 
 Apogee has separate public packages for **World of Warcraft Forever 1.60.1** and
 **Classic Era 1.15.9**. Choose the file for your WoW instance. Era 1.14.12 and
-Forever 1.14.13 are prepared locally and await publication approval; see the
-[release review](distribution/releases/REVIEW_2026-10-31.md) and each version's
-player notes for changes and testing status. The historical beta selection
-remains frozen for reproducibility.
+Forever 1.14.13 are published on GitHub and CurseForge; see the
+[release links and verification](distribution/releases/PUBLISHED_2026-10-31.md)
+and each version's player notes for changes and testing status. The historical
+beta selection remains frozen for reproducibility.
 
 Five focused addons:
 
