@@ -1,4 +1,6 @@
-## Unreleased - A/D strafing
+## Unreleased
+
+- Apply capability-based runtime admission across Era/Forever and DEV/PROD; version and legacy-package labels no longer disable working features. - A/D strafing
 
 - Extend the pending Era/Forever Essentials candidate with A/D strafe defaults.
 - Test the actual generated Keybinds claim path alongside Essentials in both

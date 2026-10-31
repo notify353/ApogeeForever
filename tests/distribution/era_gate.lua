@@ -55,7 +55,9 @@ for _, base in ipairs({"ApogeeHeals", "ApogeeKeybinds", "ApogeeGroupAlert", "Apo
         local before = {}; for k,v in pairs(_G) do before[k]=v end
         local folder = root .. "/" .. name .. "/"
         assert(loadfile(folder .. "__Distribution/FamilyGate.lua"))(name, ns)
-        if option == "allowed" then
+        local allowed={allowed=true,['wrong-version']=true,['missing-build']=true,['secret-build']=true,
+            ['wrong-target']=true,['secret-target']=true,['metadata-error']=true,['legacy-prod']=true,['bad-lease']=true}
+        if allowed[option] then
             assert(ns.__ApogeeClient == "classic-era" and ns.__ApogeeFamilyAdmission(name))
             assert(not ns.__ApogeeFamilyAdmission(base))
             -- A replaced lease also denies already admitted chunks.

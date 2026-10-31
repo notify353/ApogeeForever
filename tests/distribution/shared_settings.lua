@@ -108,6 +108,7 @@ local function load(owner, family, denied, saved, unavailable)
             if unavailable then assert(support.failed and not support.ready,"Invalid Settings must fail startup")
             else assert(support.ready,"Valid shared Settings must initialize") end
             assert(not support.button,"Support alone has no launcher")
+            support.apiVersion=99 -- Compatible methods survive a different advertised revision.
         end
     end
     local function text(parent,value,font)

@@ -107,6 +107,7 @@ def support_descriptor(lock):
 
 def read_lock(path=DEFAULT_LOCK):
     lock = json.loads(Path(path).read_text(encoding='utf-8'))
+    require(lock.get('runtimePolicy') in (None, 'capabilities-v1'), 'Unknown runtime policy')
     require(lock['schema'] == 1 and lock['publicationAllowed'] is False, 'Prototype lock required')
     # Retain the immutable historical source lock alongside the reviewed current build.
     require(lock['projectId'] == 1608100 and lock['client'] in [{

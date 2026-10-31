@@ -10,7 +10,8 @@ local cases={
     {'both-on',true,false,false},
     {'prod-master-off',false,false,true},
     {'prod-master-off-loaded',false,true,false},
-    {'legacy-marker-only',false,false,true},
+    {'legacy-master-enabled',true,false,false},
+    {'legacy-disabled',false,false,true},
     {'legacy-prod-enabled',false,false,false},
 }
 for _,case in ipairs(cases) do
@@ -29,7 +30,7 @@ for _,case in ipairs(cases) do
     if legacy then
         metadata.ApogeePartyHealthBars['X-Apogee-Master']=nil
         metadata.ApogeePartyHealthBars['X-Apogee-Distribution-Only']='1'
-        for _,base in ipairs(bases) do metadata[base]['X-Apogee-Requires-Master']=nil end
+        for _,base in ipairs(bases) do metadata[base]['X-Apogee-Requires-Master']=nil; metadata[base].Dependencies=nil end
     end
     issecretvalue=function() return false end
     UnitGUID=function() return 'Player-Fixture' end
@@ -41,7 +42,7 @@ for _,case in ipairs(cases) do
         GetAddOnDependencies=function(n) return metadata[n].Dependencies end,
         GetAddOnEnableState=function(n)
             if n:sub(-3)=='Dev' then return 2 end
-            if n=='ApogeePartyHealthBars' then return (case[2] or legacy) and 2 or 0 end
+            if n=='ApogeePartyHealthBars' then return case[2] and 2 or 0 end
             if legacy then return case[1]=='legacy-prod-enabled' and 2 or 0 end
             return 2 -- New PROD children deliberately remain checked while master is off.
         end,

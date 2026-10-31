@@ -10,7 +10,7 @@ local originalPrint=print
 for _,base in ipairs(bases) do
     local name=base..suffix
     for _,scenario in ipairs({'allowed','api','version','family','missing','dependency',
-        'runtime-missing','runtime-api','runtime-not-ready','runtime-incomplete','disabled','master-metadata','not-loaded','child-contract'}) do
+        'runtime-missing','runtime-api','runtime-not-ready','runtime-incomplete','disabled','master-metadata','not-loaded','child-contract','metadata-error','runtime-legacy','runtime-failed','client-version'}) do
         if base~='ApogeePartyHealthBars' or not scenario:match('^runtime') and scenario~='dependency' and scenario~='not-loaded' and scenario~='child-contract' then
             local metadata,paths={},{}
             for _,b in ipairs(bases) do
@@ -36,19 +36,22 @@ for _,base in ipairs(bases) do
                 service[method]=function() end
             end
             if scenario=='runtime-api' then service.apiVersion=2 end
+            if scenario=='runtime-legacy' then service.apiVersion=nil; service.ready=nil end
+            if scenario=='runtime-failed' then service.failed=true end
             if scenario=='runtime-not-ready' then service.ready=false end
             if scenario=='runtime-incomplete' then service.RegisterComponent=nil end
             _G[serviceName]=scenario~='runtime-missing' and service or nil
             ApogeeDistributionFamilyLease=nil
             issecretvalue=function() return false end
             WOW_PROJECT_CLASSIC,WOW_PROJECT_ID=2,2
-            GetBuildInfo=function() return '1.15.9' end
+            GetBuildInfo=function() return scenario=='client-version' and '99.99.9' or '1.15.9' end
             UnitGUID=function() return 'Player-Fixture' end
             Enum={AddOnEnableState={None=0,Some=1,All=2}}
             C_AddOns={
                 GetNumAddOns=function() return #bases end,
-                GetAddOnName=function(i) return bases[i]..suffix end,
+                GetAddOnName=function(i) local n=bases[i]..suffix; return scenario=='missing' and n==support and 'UnrelatedAddon' or n end,
                 GetAddOnMetadata=function(n,k)
+                    if scenario=='metadata-error' then error('Metadata must not control runtime') end
                     assert(k~='Dependencies','Dependencies use their dedicated native API')
                     return metadata[n] and metadata[n][k]
                 end,
@@ -59,9 +62,11 @@ for _,base in ipairs(bases) do
             print=function() end
             local ns={}
             assert(loadfile(root..'/'..name..'/__Distribution/FamilyGate.lua'))(name,ns)
-            if scenario=='allowed' then
+            local allowed={allowed=true,api=true,version=true,family=true,dependency=true,['runtime-api']=true,
+                ['master-metadata']=true,['child-contract']=true,['metadata-error']=true,['runtime-legacy']=true,['client-version']=true}
+            if allowed[scenario] then
                 assert(ns.__ApogeeFamilyAdmission and ns.__ApogeeFamilyAdmission(name),name..' denied')
-                if name==support then
+                if name==support and scenario=='allowed' then
                     -- Boot the generated service through its real gate, then
                     -- prove child admission follows dependency initialization.
                     local mock=dofile(assert(arg[4]))
@@ -101,13 +106,15 @@ for _,base in ipairs(bases) do
                     for _,p in ipairs(paths[child]) do
                         if not p:match('^__Distribution/') then assert(loadfile(root..'/'..child..'/'..p))(child,denied) end
                     end
-                else
+                elseif name~=support then
                     local state=C_AddOns.GetAddOnEnableState
                     C_AddOns.GetAddOnEnableState=function(n) return n==support and 0 or 2 end
                     assert(not ns.__ApogeeFamilyAdmission(name),'disabled master admitted later chunk')
                     C_AddOns.GetAddOnEnableState=state
                     service.apiVersion=2
-                    assert(not ns.__ApogeeFamilyAdmission(name),'later chunks must revalidate support')
+                    assert(ns.__ApogeeFamilyAdmission(name),'revision labels never expire working methods')
+                    service.RegisterSettings=nil
+                    assert(not ns.__ApogeeFamilyAdmission(name),'later chunks must revalidate actual capabilities')
                 end
             else
                 assert(not ns.__ApogeeFamilyAdmission or not ns.__ApogeeFamilyAdmission(name),name..' admitted '..scenario)

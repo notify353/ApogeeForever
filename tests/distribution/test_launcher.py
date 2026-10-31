@@ -67,6 +67,7 @@ class LauncherTests(unittest.TestCase):
                            APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1',
                            APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                subprocess.run(['lua','tests/aphb_distribution_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if target=='forever-offline':
                     keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
@@ -105,6 +106,16 @@ class LauncherTests(unittest.TestCase):
         files={p:tree[p] for p in child['files']}
         files[child['toc']]=files[child['toc']].replace(b'Dependencies: ApogeeUI',b'Dependencies: ApogeeUIDev')
         with self.assertRaises(ValueError): d.child_contract(child,files)
+
+    def test_runtime_policy_is_explicit_and_validated(self):
+        for source, reader in ((self.era, era.read_lock), (self.future, d.read_lock)):
+            self.assertEqual(source['runtimePolicy'], 'capabilities-v1')
+            unknown=copy.deepcopy(source); unknown['runtimePolicy']='unknown'
+            with tempfile.TemporaryDirectory() as folder:
+                path=Path(folder)/'lock.json'; path.write_bytes(d.canonical(unknown))
+                with self.assertRaisesRegex(ValueError, 'Unknown runtime policy'): reader(path)
+            standalone=copy.deepcopy(source); standalone['supportModules'][0].pop('placement')
+            with self.assertRaisesRegex(ValueError, 'embedded master'): support.gate_bytes(standalone,b'')
 
     def test_generated_settings_with_real_shared_owner(self):
         for target in ('era','forever-offline'):
@@ -163,6 +174,7 @@ class LauncherTests(unittest.TestCase):
     def test_standalone_upgrade_and_rollback_both_targets(self):
         for target, lock in [('era',self.era), ('forever',self.future)]:
             old=copy.deepcopy(lock); old['supportModules'][0].pop('placement')
+            old.pop('runtimePolicy', None) # Model the archived standalone policy explicitly.
             build=lambda selected: era.family_files(selected,SOURCES)[0] if target=='era' else dual.family_files(selected,SOURCES,'DEV')[0]
             payload, prior=build(lock),build(old)
             self.assertIn('ApogeeUIDev/ApogeeUIDev.toc',prior)

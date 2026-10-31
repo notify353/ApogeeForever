@@ -1,3 +1,10 @@
+## Runtime availability - 2026-10-31
+
+Current Era and Forever candidates follow [capability-based runtime admission](RUNTIME_CAPABILITIES.md)
+for PROD and DEV. This supersedes version/legacy-package runtime shutoffs in
+older entries below. Exact offline pins, exports, install receipts and rollback
+requirements still apply. Installation remains separately authorized.
+
 ## Classic Era Stats - 2026-10-25
 
 The Era.20 candidate adds Stats using a versioned five-child inventory; earlier

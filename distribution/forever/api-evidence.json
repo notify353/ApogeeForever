@@ -1773,10 +1773,10 @@
   "reviewedOn": "2026-10-31",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "0039913ebb128643d53981a5ec496c243a093ca3",
-    "ApogeeGroupAlert": "fe88b39c95f2aaa4498308c7e5fa853be52ae670",
-    "ApogeeHeals": "f6f6e21f659fc57c0bdaaa92b20ce9cc15e04993",
-    "ApogeeKeybinds": "774c635b5c92d7bb2db731b2ce13011d64178456",
-    "ApogeeStats": "f95c70ec8758d593e73714c8a07792c2c82201a6"
+    "ApogeeEssentials": "7039bf1919b401191433d70ad8114ffd50ebc1cd",
+    "ApogeeGroupAlert": "ece5d6e04004e9c86c5c0a9e0f345beabfbef4b4",
+    "ApogeeHeals": "c421ae297e6cb44c35586fe8567e8467febee675",
+    "ApogeeKeybinds": "103cad33f61e9b0a2764dcece614dca1146ceecc",
+    "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
 }

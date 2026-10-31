@@ -18,7 +18,7 @@ pwsh -NoProfile -File scripts/test-live-forever.ps1 `
   -ArtifactRoot C:/Temp/apogee-live-validation-NEW
 ```
 
-This checks both matching exports, child tests, generated Era DEV and Forever
+This checks both matching exports, child tests, generated Era and Forever
 PROD/DEV, loading safety, settings/binding preservation and historical rollback.
 It never installs or publishes. The receipt records live authority separately
 from native acceptance. See [candidate validation](../CANDIDATE_VALIDATION.md).
