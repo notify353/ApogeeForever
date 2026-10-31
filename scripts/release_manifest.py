@@ -45,7 +45,9 @@ def load(version):
                   and evidence.get('product') == lock['client']['product']
                   and evidence.get('interface') == lock['client']['interface'], 'Era release authority identity mismatch')
     else:
-        forever.verify_evidence(lock, folder/'api-evidence.json')
+        # The immutable selection has its own reviewed identity. read_lock above
+        # enforces the historical allowlist; live installs still require LIVE_CLIENT.
+        forever.verify_evidence(lock, folder/'api-evidence.json', expected_client=lock['client'])
     d.require(manifest.get('curseforge') == {k: TARGETS[target][k] for k in ('name','gameVersionTypeID')}, 'Wrong upload flavor')
     approval = manifest['authorization']
     d.require(approval.get('kind') == 'owner-approved-early-release' and approval.get('nativeAccepted') is False

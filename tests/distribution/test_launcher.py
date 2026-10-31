@@ -46,6 +46,7 @@ class LauncherTests(unittest.TestCase):
                 env.update(APOGEE_ESSENTIALS_RUNTIME_ROOT=str(Path(folder)/essentials),
                            APOGEE_ESSENTIALS_RUNTIME_NAME=essentials, APOGEE_ESSENTIALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/startup_refresh_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
+                subprocess.run(['lua','tests/quest_text_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
                                    cwd=children/component,env=env,check=True)

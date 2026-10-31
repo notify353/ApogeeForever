@@ -1,3 +1,9 @@
+## Unreleased - instant quest text
+
+- Prepare Essentials instant quest text at login/reload for both Era and Forever.
+- Review fresh Forever 70707 authority and both clients' quest-text sources;
+  validate generated defaults without changing frozen/public release selections.
+
 ## Unreleased - client-specific public release preparation
 
 - Add a canonical PROD package for Classic Era, preserving Era DEV bytes and

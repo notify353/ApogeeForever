@@ -21,7 +21,7 @@ OPTIONAL_HOSTED_CHILDREN = ('ApogeeAuction', 'ApogeeStats')
 ACTIVE_CHILDREN = CHILDREN[:-1] + ('ApogeeStats',)
 LIVE_CLIENT = {
     'flavor': 'forever', 'interface': 16001, 'version': '1.60.1',
-    'reviewedBuild': '1.60.1.70685', 'curseforgeVersionTypeId': 88568,
+    'reviewedBuild': '1.60.1.70707', 'curseforgeVersionTypeId': 88568,
     'product': 'wowf', 'directory': '_forever_', 'executable': 'Wow.exe',
 }
 
@@ -112,7 +112,7 @@ def read_lock(path=DEFAULT_LOCK):
     require(lock['projectId'] == 1608100 and lock['client'] in [{
         'flavor': 'forever', 'interface': 16001, 'version': '1.60.1',
         'reviewedBuild': build, 'curseforgeVersionTypeId': 88568}
-        for build in ('1.60.1.70009', '1.60.1.70124', '1.60.1.70170', '1.60.1.70205', '1.60.1.70338', '1.60.1.70450')] + [dict(LIVE_CLIENT, reviewedBuild=build) for build in ('1.60.1.70634', LIVE_CLIENT['reviewedBuild'])],
+        for build in ('1.60.1.70009', '1.60.1.70124', '1.60.1.70170', '1.60.1.70205', '1.60.1.70338', '1.60.1.70450')] + [dict(LIVE_CLIENT, reviewedBuild=build) for build in ('1.60.1.70634', '1.60.1.70685', LIVE_CLIENT['reviewedBuild'])],
         'Unexpected client/project; no flavor fallback is permitted')
     if lock['client'].get('product') == 'wowf':
         require(re.fullmatch('[0-9a-f]{64}', lock.get('liveApiEvidenceSha256', '')), 'Missing live Forever authority pin')

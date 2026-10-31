@@ -1,5 +1,5 @@
 {
-  "apiEvidenceSha256": "de1e447439610287c822649ce7990cb9cd118cc22beace58f5fac14efd8c518d",
+  "apiEvidenceSha256": "b02b1e4898f446e8d440793949bdf4a9fa326d7a7eb064bf29a7235e5fa5b093",
   "children": [
     {
       "commit": "f6f6e21f659fc57c0bdaaa92b20ce9cc15e04993",
@@ -110,19 +110,19 @@
       "uiApi": 1
     },
     {
-      "commit": "3181180047f82e3ffd97469d05a22730bcfb3cb5",
+      "commit": "4598fb75cbfff147d3980347eaada25e375613a1",
       "files": {
-        "ApogeeEssentials.lua": "2c5d654bc973b7142a3fb269b3abc73ac7b88a79fea15660cc84662e21decc6e",
+        "ApogeeEssentials.lua": "72f4d1a766e5c3246b75ff6ab337a46c9dbdee33989184dfd60178e2bb100a54",
         "ApogeeEssentials_Era.toc": "e49787fe832990ca8713c980da760e14fddcca5481f5fb3a143f6a1d16b451c9",
         "Camera/Runtime.lua": "4b0d1fa5779ee0de6919b81789e1967b8ba818ae9111824b69e450b2fc2e7e9b",
         "Camera/Zoom.lua": "dbc434649beb411cc3471bd5a05db8750fcd866eac5ed40a065893def9ab89ba",
         "Core/CVarDefault.lua": "bad301a75b6de2ade57fe0d1a732c11d7c8538f897df446093b83cc130b45a2e",
-        "Core/Client.lua": "9e2af2568c8d44128a105aed80e11f724dc664a477a64a7b47023e524095dbc9",
+        "Core/Client.lua": "f6c9d8f2a27e5d11726e199c912ea8e738611dd1a47fddd78daddb1b34da0f40",
         "Core/LearnedList.lua": "587f067a88d533ac2af765bfb3853b5ef78af8bdd6cb8d5054960b5420059d7e",
-        "Core/LoginDefaults.lua": "94a209463a3d639290ad086a26ed8c7a604460bd672bae0ede71d5eda8e22f5f",
-        "Core/Settings.lua": "2216dffaf5d60ef579d972639aa1f144d4061ebfbd5e27bcaf99d4d95c80c858",
+        "Core/LoginDefaults.lua": "b1f78d192dca4cb24594b1d73439c29053b9d20ec7d051ac68c5f449bc8bc3aa",
+        "Core/Settings.lua": "e97085e71159760ad98f5b733f36e1f224a813e8472a08a9bf149d5f3a3e514a",
         "Damage/Runtime.lua": "c103739fcb0939725f214dcc5073f58d48160c93f8635549f1e2622fedd52bb6",
-        "Era/Adapter.lua": "e3966305e787bf27258d08ece4f22d769700c0e9f7c424191c08c67100a17089",
+        "Era/Adapter.lua": "87dda5afa422db3696f951f7980482db3166b37e121443cf49f0f43aa35af609",
         "Era/README.md": "4da234a12bdb73c5bb4f0ee8379dc13a0ce07f7c182f74ce86869799ed7b773d",
         "Errors/Runtime.lua": "81a32f4d2b0f276e1c835191f98eae43c9e585e29248099e6c709d5e5698f4f6",
         "Errors/Settings.lua": "6674aec32a865d6b9dae9e754da1c58d8c73abe8a3ca943a1db27f9b0e0fec6e",
@@ -179,7 +179,7 @@
   "supportModules": [
     {
       "apiVersion": 1,
-      "commit": "3181180047f82e3ffd97469d05a22730bcfb3cb5",
+      "commit": "4598fb75cbfff147d3980347eaada25e375613a1",
       "files": {
         "ApogeeUI.lua": "573b6e25b56b19a445ae5a458cf49a63f0c5553e3a8113a0869411c760067677",
         "ApogeeUI_Era.toc": "a59f956a424c089f5ee6ec068c683110e50c23f092e792b740df30c4b015ad1e",

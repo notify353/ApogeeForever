@@ -385,6 +385,18 @@
     {
       "path": "Blizzard_SharedXML/Classic/GameTooltipTemplate.xml",
       "sha256": "58aecf3bd670660d6db4a3daa114cfd74ba221be5b3690f78c1e907d3a7de838"
+    },
+    {
+      "path": "Blizzard_SettingsDefinitions_Frame/Classic/InterfaceOverrides.lua",
+      "sha256": "e58b2e3461a73d3d150d532cb6a383d53dc065c8ce4d1090534e757f22168dcb"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Classic/QuestFrame.lua",
+      "sha256": "0e44a7710ffc15a302a3ae061a2c6c7c534248b2b09399ba53cb1c5f786a69df"
+    },
+    {
+      "path": "Blizzard_UIPanels_Game/Vanilla/QuestFrame.lua",
+      "sha256": "93f8339156b89892c325dbc59eb06ce4db8485e185cc2bd7400d8ce7a57d9e3b"
     }
   ],
   "interface": 11509,

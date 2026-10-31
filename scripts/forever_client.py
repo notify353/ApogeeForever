@@ -8,12 +8,12 @@ ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT/'distribution/forever/api-evidence.json'
 
 
-def verify_evidence(lock, evidence_path=EVIDENCE):
+def verify_evidence(lock, evidence_path=EVIDENCE, *, expected_client=LIVE_CLIENT):
     import distribution as d
-    d.require(lock['client'] == LIVE_CLIENT, 'Unreviewed live Forever client identity')
+    d.require(lock['client'] == expected_client, 'Unreviewed live Forever client identity')
     record = json.loads(Path(evidence_path).read_bytes())
     d.require(d.sha(d.canonical(record)) == lock.get('liveApiEvidenceSha256'), 'Live Forever evidence differs from lock')
-    d.require(record.get('schema') == 1 and record.get('client') == LIVE_CLIENT, 'Wrong live Forever evidence identity')
+    d.require(record.get('schema') == 1 and record.get('client') == expected_client, 'Wrong live Forever evidence identity')
     d.require(record.get('sourcePins') == {c['name']: c['commit'] for c in lock['children']}, 'Live evidence source pins differ')
     d.require(isinstance(record.get('files'), list) and record['files'], 'Missing live API inventory')
     seen = set()

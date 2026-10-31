@@ -12,9 +12,11 @@ import release_manifest as r
 SOURCES=Path(os.environ.get('APOGEE_SOURCES_ROOT','C:/Dev/WoW'))
 
 class PackageTests(unittest.TestCase):
-    def test_era_dev_unchanged_and_prod_source_bodies_exact(self):
+    def test_historical_era_dev_unchanged_and_current_prod_source_bodies_exact(self):
         if os.environ.get('APOGEE_TEST_TARGET')=='forever': self.skipTest('Separate Era release')
-        lock=era.read_lock();dev=era.family_files(lock,SOURCES)[0];prod=era.family_files(lock,SOURCES,'PROD')[0]
+        historical=era.read_lock(r.ROOT/'1.14.10/source.lock.json')
+        dev=era.family_files(historical,SOURCES)[0]
+        lock=era.read_lock();prod=era.family_files(lock,SOURCES,'PROD')[0]
         self.assertEqual(d.sha(d.zip_bytes(dev)),'77a04ee84a7e6fd1ca9c5fed339ab1240ab67bb8a2bc145eefad64cd0c6f2c17')
         self.assertEqual({p.split('/')[0] for p in prod},{d.MARKER,*d.ACTIVE_CHILDREN})
         for child in lock['children']:
