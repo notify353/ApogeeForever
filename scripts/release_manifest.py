@@ -63,7 +63,8 @@ def files(target, lock, sources, version, family):
     result = (era.family_files(lock, sources, family) if target == 'classic-era'
               else dual.family_files(lock, sources, family))[0]
     if family == 'PROD' and target == 'forever':
-        result[d.MARKER+'/README.md'] = (d.ROOT/'distribution/forever/PUBLIC_README.md').read_bytes()
+        guide = 'PUBLIC_README_CAPABILITIES.md' if lock.get('runtimePolicy') == 'capabilities-v1' else 'PUBLIC_README.md'
+        result[d.MARKER+'/README.md'] = (d.ROOT/'distribution/forever'/guide).read_bytes()
     return result
 
 

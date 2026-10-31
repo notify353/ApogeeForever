@@ -14,17 +14,14 @@ offline development/distribution requirements, not runtime expiry rules.
 Current policy implementation is coordinated by ApogeeForever's
 `distribution/RUNTIME_CAPABILITIES.md`; historical release bytes remain frozen.
 
-Client-specific public releases for Forever and Classic Era are being prepared
-under this existing project. See [release selections](distribution/releases/README.md)
-and each version's player notes for support and testing status. The release files
-use separate client metadata; choose the file for your WoW instance. Preparation
-does not mean the new files have already been published.
+Apogee has separate public packages for **World of Warcraft Forever 1.60.1** and
+**Classic Era 1.15.9**. Choose the file for your WoW instance. Era 1.14.12 and
+Forever 1.14.13 are prepared locally and await publication approval; see the
+[release review](distribution/releases/REVIEW_2026-10-31.md) and each version's
+player notes for changes and testing status. The historical beta selection
+remains frozen for reproducibility.
 
-An isolated, unpublished [Classic Era DEV candidate](distribution/era/README.md)
-is available on the Era development branch. Its pins, API evidence and installer
-target are separate; the Forever beta baseline below remains frozen.
-
-Five focused addons for **World of Warcraft Forever 1.60.1**:
+Five focused addons:
 
 - **Heals:** party frames, click healing and buff reminders.
 - **Keybinds:** configurable keyboard and mouse actions with combat HUDs.
@@ -34,8 +31,11 @@ Five focused addons for **World of Warcraft Forever 1.60.1**:
 
 Tank and the standalone Auction addon are retired from both package families.
 
-Enable the modules you want under **Apogee Forever** in WoW's AddOns list.
-Gameplay modules retain their own settings. Stats evaluates all supported roles outdoors and uses your assigned role or instance fallback in dungeons. Its character-window Gear filter applies only while that window is open. This edition supports Forever only.
+Keep the top-level **Apogee** or **Apogee Era** addon enabled and select the
+components you want in WoW's AddOns list. Gameplay modules retain their own
+settings. Stats evaluates all supported roles outdoors and uses your assigned
+role or instance fallback in dungeons. Its character-window Gear filter applies
+only while that window is open. Era stat reading supports English tooltips.
 
 Legacy profiles are not imported, and Dungeon Guide is not included.
 

@@ -1,5 +1,10 @@
 # Apogee Forever releases
 
+Prepared 2026-10-31: Era **1.14.12** and Forever **1.14.13**. The
+[review and approval scope](distribution/releases/REVIEW_2026-10-31.md) records
+exact packages, source pins, checks and remaining operations. Neither is
+published by preparation; the final-main checks and tag approval below apply.
+
 ## Current dual-client early releases (2026-10-29)
 
 Follow [client-specific release selections](distribution/releases/README.md)

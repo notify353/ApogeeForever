@@ -1,16 +1,15 @@
-## Unreleased
+## Unreleased - prepared Era 1.14.12 and Forever 1.14.13
 
-- Apply capability-based runtime admission across Era/Forever and DEV/PROD; version and legacy-package labels no longer disable working features. - A/D strafing
-
-- Extend the pending Era/Forever Essentials candidate with A/D strafe defaults.
-- Test the actual generated Keybinds claim path alongside Essentials in both
-  startup orders; preserve instant quest text and immutable release selections.
-
-## Unreleased - instant quest text
-
-- Prepare Essentials instant quest text at login/reload for both Era and Forever.
-- Review fresh Forever 70707 authority and both clients' quest-text sources;
-  validate generated defaults without changing frozen/public release selections.
+- Enable instant quest text and A/D strafing through Essentials at login/reload,
+  preserving later session edits and existing combat/rollback safeguards.
+- Keep compatible features available across client/package version differences;
+  validate actual native capabilities, family ownership and shared UI readiness.
+- Make target actions independently available when another action is unsupported.
+- Prepare separate normal Releases with exact source/API snapshots, player notes
+  and current player guides. Preserve historical package hashes and installed DEV.
+- Source and generated checks passed. Owner-reported acceptance is scoped to Era;
+  separate Forever native and CurseForge-client acceptance remain unrecorded.
+- Integration, push, tags and publication await immediate approval.
 
 ## Unreleased - client-specific public release preparation
 

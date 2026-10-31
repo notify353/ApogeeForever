@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "a536095d8ba0c42f4a7241e38f766d257515723ab252ca604cfe19c213c8df3d",
+  "authorization": {
+    "basis": "Owner requested review, source check-in and CurseForge deployment on 2026-10-31, following user-reported acceptance in Era. The 2026-10-29 policy permits client-specific early normal Releases with limited native testing. This is local preparation only: immediate approval for integration, push and the exact production tags is still pending. No separate Forever native or CurseForge-client acceptance is claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "2492e153bd38236b890a412fb889d616df2c30c134faef690aa045015c28bd57",
+  "packages": {
+    "DEV": "7005e250540f32eec3952e72962fcb5dc9ffe546ab238e691321c924fd504bf4",
+    "PROD": "594f2032e733679ff5851d80b913ca8d2e286b1ffa705035eced091caa9f0913"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "975ef189be1e32d567180b71eb96bf94e0c8a96f3677c9d068af4704e08ca718",
+  "target": "forever",
+  "version": "1.14.13"
+}

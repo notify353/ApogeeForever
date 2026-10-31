@@ -138,7 +138,8 @@ def family_files(lock, sources_root, family="DEV"):
     if support.embedded(lock):
         output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
     if family == 'PROD':
-        output[marker + '/README.md'] = (CONFIG / 'PUBLIC_README.md').read_bytes()
+        guide = 'PUBLIC_README_CAPABILITIES.md' if lock.get('runtimePolicy') == 'capabilities-v1' else 'PUBLIC_README.md'
+        output[marker + '/README.md'] = (CONFIG / guide).read_bytes()
     roots = {d.MARKER + suffix, *(c['name'] + suffix for c in lock['children'])}
     if not support.embedded(lock): roots.add('ApogeeUI' + suffix)
     d.require({p.split('/')[0] for p in output} == roots, 'Era roots differ')

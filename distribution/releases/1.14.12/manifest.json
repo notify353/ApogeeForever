@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "b02b1e4898f446e8d440793949bdf4a9fa326d7a7eb064bf29a7235e5fa5b093",
+  "authorization": {
+    "basis": "Owner requested review, source check-in and CurseForge deployment on 2026-10-31, following user-reported acceptance in Era. The 2026-10-29 policy permits client-specific early normal Releases with limited native testing. This is local preparation only: immediate approval for integration, push and the exact production tags is still pending. No separate Forever native or CurseForge-client acceptance is claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 67408,
+    "name": "1.15.9"
+  },
+  "notesSha256": "c84a2fb6f7480c2edd7d0bc1e7d4e814717358cf7f699f39cec5cb5bc41a5243",
+  "packages": {
+    "DEV": "9638f4f25ea646f9ab241a005d3fe72d307c347856e2ede6b04cf21fc34a2227",
+    "PROD": "fcade6dbc8e227af8d3c161609fdcdb90bc9b8ae271d9b1e8962c5de97dddfb3"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "00ad4366b05558c23af5acb0bea90828231a5632a64edee501ecff29fe031e91",
+  "target": "classic-era",
+  "version": "1.14.12"
+}
