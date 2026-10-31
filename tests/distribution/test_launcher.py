@@ -47,6 +47,7 @@ class LauncherTests(unittest.TestCase):
                            APOGEE_ESSENTIALS_RUNTIME_NAME=essentials, APOGEE_ESSENTIALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/startup_refresh_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 subprocess.run(['lua','tests/quest_text_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
+                subprocess.run(['lua','tests/strafe_defaults_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
                                    cwd=children/component,env=env,check=True)
@@ -60,6 +61,8 @@ class LauncherTests(unittest.TestCase):
                 subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
+                subprocess.run(['lua',str(ROOT/'tests/distribution/strafe_coexistence.lua'),str(Path(folder)/keybinds),keybinds],
+                               cwd=children/'ApogeeEssentials',env=env,check=True)
                 env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
                            APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1',
                            APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')

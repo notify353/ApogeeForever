@@ -1,3 +1,9 @@
+## Unreleased - A/D strafing
+
+- Extend the pending Era/Forever Essentials candidate with A/D strafe defaults.
+- Test the actual generated Keybinds claim path alongside Essentials in both
+  startup orders; preserve instant quest text and immutable release selections.
+
 ## Unreleased - instant quest text
 
 - Prepare Essentials instant quest text at login/reload for both Era and Forever.
