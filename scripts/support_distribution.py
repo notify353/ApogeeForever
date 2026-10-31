@@ -52,6 +52,9 @@ def source(lock, sources_root):
     return module,files
 
 def gate_bytes(lock, base):
+    if lock.get('runtimePolicy') == 'capabilities-v1':
+        d.require(embedded(lock), 'Capability policy requires an embedded master')
+        return (d.ROOT / 'distribution/runtime/FamilyGate.lua').read_bytes() + b'\n' + (d.ROOT / 'distribution/runtime/MasterGate.lua').read_bytes()
     if not descriptor(lock): return base
     if embedded(lock):
         return (d.ROOT / 'distribution/MasterFamilyGate.lua').read_bytes() + b'\n' + (d.ROOT / 'distribution/MasterGate.lua').read_bytes()

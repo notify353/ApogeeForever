@@ -1,10 +1,10 @@
 # Live Forever authority
 
-The isolated future candidate now targets reviewed Forever **1.60.1.70685**,
+The isolated future candidate now targets reviewed Forever **1.60.1.70707**,
 Interface 16001, product `wowf`, directory `_forever_`, executable `Wow.exe`.
 The frozen v1.14.9 selection and its beta authority are unchanged.
 
-`api-evidence.json` records the executable hash and 239 unique exported source
+`api-evidence.json` records the executable hash and 243 unique exported source
 files covering distribution, all five pinned children and embedded shared UI.
 The future lock binds its canonical hash and the exact merged child revisions.
 These central checks cover the current client; the children's retained standalone
@@ -18,7 +18,7 @@ pwsh -NoProfile -File scripts/test-live-forever.ps1 `
   -ArtifactRoot C:/Temp/apogee-live-validation-NEW
 ```
 
-This checks both matching exports, child tests, generated Era DEV and Forever
+This checks both matching exports, child tests, generated Era and Forever
 PROD/DEV, loading safety, settings/binding preservation and historical rollback.
 It never installs or publishes. The receipt records live authority separately
 from native acceptance. See [candidate validation](../CANDIDATE_VALIDATION.md).
@@ -29,6 +29,23 @@ back to beta. The installation preflight recognizes the live executable, but
 validation does not invoke an installer or authorize an installation.
 
 ## Source review, 2026-10-27
+
+October 31 update: the owner refreshed the export after the 70707 update.
+All 243 references postdate Wow.exe. Three of the prior 239 hashes changed:
+SecretPredicates adds/tightens loss-of-control restrictions; Spell restricts
+IsSpellCrowdControl secret arguments to untainted callers. Neither pinned Heals
+nor Keybinds calls the affected APIs. Matching retained sources establish these
+two diffs. Menu.lua has no retained matching previous body: current-contract
+review confirms AddMenuReleasedCallback still receives the exact proxy before
+Close/removal, preserving shared launcher's dismissal handling. No broader
+old/new Menu diff or native acceptance is claimed.
+
+Four newly reviewed sources bind instantQuestText to the native Camelot option
+and establish the selected Mainline QuestFrame behavior through the TOCs.
+The Era evidence separately includes its Classic and Vanilla quest-frame paths.
+Both clients use "1" for immediate quest text. The existing public C_CVar
+get/set contract remains unchanged. The two isolated candidates pin Essentials'
+new login default; frozen beta and immutable release selections are unchanged.
 
 The owner export postdates the installed executable. Comparing retained beta
 source with matching recorded hashes identified five changed unique references:

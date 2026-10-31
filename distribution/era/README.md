@@ -1,3 +1,12 @@
+## Current capability policy - 2026-10-31
+
+The current candidate uses Era 1.15.9.70576 authority and includes all five
+components. Follow and Inspect now use their individual native requirements;
+missing talent inspection no longer hides them. Essentials applies instant
+quest text and A/D strafing at login/reload. See the current
+[runtime policy](../RUNTIME_CAPABILITIES.md) and [release selections](../releases/README.md).
+The earlier candidate assessments below describe their original limitations.
+
 ## Era.20 Stats candidate
 
 Stats now joins the five-component Era package. English tooltip reading and a

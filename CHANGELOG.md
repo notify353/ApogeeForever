@@ -1,3 +1,16 @@
+## Unreleased - prepared Era 1.14.12 and Forever 1.14.13
+
+- Enable instant quest text and A/D strafing through Essentials at login/reload,
+  preserving later session edits and existing combat/rollback safeguards.
+- Keep compatible features available across client/package version differences;
+  validate actual native capabilities, family ownership and shared UI readiness.
+- Make target actions independently available when another action is unsupported.
+- Prepare separate normal Releases with exact source/API snapshots, player notes
+  and current player guides. Preserve historical package hashes and installed DEV.
+- Source and generated checks passed. Owner-reported acceptance is scoped to Era;
+  separate Forever native and CurseForge-client acceptance remain unrecorded.
+- Integration, push, tags and publication await immediate approval.
+
 ## Unreleased - client-specific public release preparation
 
 - Add a canonical PROD package for Classic Era, preserving Era DEV bytes and

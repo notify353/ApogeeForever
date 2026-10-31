@@ -27,6 +27,7 @@ HISTORICAL_CLIENT = dict(CLIENT, reviewedBuild='1.15.9.70003')
 
 def read_lock(path=LOCK):
     lock = json.loads(Path(path).read_bytes())
+    d.require(lock.get('runtimePolicy') in (None, 'capabilities-v1'), 'Unknown runtime policy')
     d.require(lock['schema'] == 1 and lock['target'] == 'classic-era'
               and lock['family'] == 'DEV' and lock['publicationAllowed'] is False,
               'Unpublished Era DEV lock required')
@@ -76,7 +77,8 @@ def family_files(lock, sources_root, family="DEV"):
     suffix = "Dev" if family == "DEV" else ""
     label = "Apogee Era" + (" DEV" if family == "DEV" else "")
     output, changes = {}, {}
-    gate = (CONFIG / 'ClientGate.lua').read_bytes() + b'\n' + support.gate_bytes(lock, dual.GATE.read_bytes())
+    client_gate = d.ROOT / 'distribution/runtime/EraClientGate.lua' if lock.get('runtimePolicy') == 'capabilities-v1' else CONFIG / 'ClientGate.lua'
+    gate = client_gate.read_bytes() + b'\n' + support.gate_bytes(lock, dual.GATE.read_bytes())
     if family == 'PROD':
         d.require(gate.count(b'Apogee Era DEV inactive:') == 1, 'Era diagnostic template changed')
         gate = gate.replace(b'Apogee Era DEV inactive:', b'Apogee Era inactive:')
@@ -136,7 +138,8 @@ def family_files(lock, sources_root, family="DEV"):
     if support.embedded(lock):
         output[marker + '/README.md'] = (d.ROOT / 'distribution/MASTER_PLAYER_README.md').read_bytes()
     if family == 'PROD':
-        output[marker + '/README.md'] = (CONFIG / 'PUBLIC_README.md').read_bytes()
+        guide = 'PUBLIC_README_CAPABILITIES.md' if lock.get('runtimePolicy') == 'capabilities-v1' else 'PUBLIC_README.md'
+        output[marker + '/README.md'] = (CONFIG / guide).read_bytes()
     roots = {d.MARKER + suffix, *(c['name'] + suffix for c in lock['children'])}
     if not support.embedded(lock): roots.add('ApogeeUI' + suffix)
     d.require({p.split('/')[0] for p in output} == roots, 'Era roots differ')

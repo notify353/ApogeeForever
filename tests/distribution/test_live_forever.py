@@ -30,7 +30,7 @@ class LiveForeverTests(unittest.TestCase):
         self.reference = self.client/'BlizzardInterfaceCode/Interface/AddOns/Example/API.lua'
         self.reference.parent.mkdir(parents=True); self.reference.write_bytes(b'reviewed API')
         self.info = self.root/'.build.info'
-        self.info.write_text('Product!STRING:0|Version!STRING:0|Active!DEC:1\nwowf|1.60.1.70685|1\nwow_classic_era|1.15.9.70576|1\n')
+        self.info.write_text('Product!STRING:0|Version!STRING:0|Active!DEC:1\nwowf|1.60.1.70707|1\nwow_classic_era|1.15.9.70576|1\n')
         self.lock = d.read_lock(ROOT/'distribution/future-launcher.lock.json')
         self.lock['client'] = copy.deepcopy(live.LIVE_CLIENT)
         self.record = {'schema': 1, 'client': copy.deepcopy(live.LIVE_CLIENT),
@@ -49,7 +49,7 @@ class LiveForeverTests(unittest.TestCase):
 
     def test_live_export_and_legacy_locks_are_separate(self):
         result = self.verify()
-        self.assertEqual(result['build'], '1.60.1.70685')
+        self.assertEqual(result['build'], '1.60.1.70707')
         self.assertEqual(result['referencesVerified'], 1)
         self.assertEqual(d.read_lock(ROOT/'distribution/candidate.lock.json')['client']['reviewedBuild'], '1.60.1.70450')
         with self.assertRaises(ValueError):
@@ -64,6 +64,13 @@ class LiveForeverTests(unittest.TestCase):
         for path in ('Blizzard_ProjectConstants/Camelot/ProjectConstants.lua',
                      'Blizzard_Menu/Menu.lua', 'Blizzard_APIDocumentationGenerated/AuctionHouseDocumentation.lua'):
             self.assertIn(path, [r['path'] for r in record['files']])
+
+    def test_historical_release_evidence_does_not_authorize_live_validation(self):
+        folder = ROOT/'distribution/releases/1.14.11'
+        lock = d.read_lock(folder/'source.lock.json')
+        live.verify_evidence(lock, folder/'api-evidence.json', expected_client=lock['client'])
+        with self.assertRaisesRegex(ValueError, 'Unreviewed live Forever'):
+            live.verify_live_export(self.client, lock, folder/'api-evidence.json')
 
     @unittest.skipUnless(shutil.which('pwsh'), 'PowerShell required')
     def test_default_live_wrapper_propagates_missing_client_failure(self):
@@ -84,8 +91,8 @@ class LiveForeverTests(unittest.TestCase):
                 with self.assertRaises(ValueError): self.verify()
 
     def test_wrong_duplicate_inactive_or_missing_product_rejected(self):
-        for rows in ('wow_classic_beta|1.60.1.70685|1', 'wowf|1.60.1.70450|1',
-                     'wowf|1.60.1.70685|0', 'wowf|1.60.1.70685|1\nwowf|1.60.1.70685|1', ''):
+        for rows in ('wow_classic_beta|1.60.1.70707|1', 'wowf|1.60.1.70450|1',
+                     'wowf|1.60.1.70707|0', 'wowf|1.60.1.70707|1\nwowf|1.60.1.70707|1', ''):
             with self.subTest(rows=rows):
                 self.info.write_text('Product|Version|Active\n'+rows+'\n')
                 with self.assertRaises(ValueError): self.verify()

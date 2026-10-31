@@ -1,5 +1,10 @@
 # Candidate validation
 
+Current candidates explicitly select [capability-based runtime admission](RUNTIME_CAPABILITIES.md).
+Generated behavior covers Era and Forever, each in PROD and DEV, including
+legacy/mismatched/error metadata, missing actual APIs, shared-service startup,
+family ownership and the combined Essentials quest-text/A-D defaults.
+
 The merged-source candidate and unchanged release boundaries are recorded in
 [release preparation](RELEASE_PREPARATION.md). Its two locks currently share
 the five merged child revisions; use clean checkouts at those exact commits.

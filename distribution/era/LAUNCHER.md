@@ -1,5 +1,10 @@
 # Shared launcher - Era / future Forever
 
+The [2026-10-31 capability policy](../RUNTIME_CAPABILITIES.md) supersedes numeric
+API, registry-schema and package-version runtime gates described below. Current
+candidates validate the fields/methods actually used. Saved-data schema
+protection and actual family ownership remain in force.
+
 Current Era.11 architecture: [internal UI and master switch](MASTER.md).
 It supersedes the standalone UI and runtime-free marker described in the
 historical sections below; current click/drag behavior remains unchanged.

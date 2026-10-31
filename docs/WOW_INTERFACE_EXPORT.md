@@ -1,6 +1,14 @@
 # Forever interface authority
 
-## Current live client: 1.60.1.70685 (2026-10-29)
+## Current live client: 1.60.1.70707 (2026-10-31)
+
+The matching live export verifies 243 references against the current executable.
+The reviewed contract changes and quest-text sources are recorded in
+[live authority](../distribution/forever/README.md). The current Forever candidate
+and its new release selection bind this evidence; historical selections retain
+their original authority. Separate Forever native acceptance remains unrecorded.
+
+## Previous live client: 1.60.1.70685 (2026-10-29)
 
 The owner refreshed the export after the client advanced past70658 to70685.
 Executable metadata and active wowf build agree; all239 references postdate it.
@@ -10,7 +18,7 @@ older source matches the prior recorded hash; no Apogee-used API signature chang
 Separate live evidence and future candidate metadata advance; Era and frozen beta
 remain unchanged. Current native gameplay acceptance is still not claimed.
 
-## Current live client: 1.60.1.70634 (2026-10-27)
+## Previous live client: 1.60.1.70634 (2026-10-27)
 
 `pwsh scripts/check-wow-api-export.ps1` now checks live product `wowf` in
 `_forever_`, using `Wow.exe` and the isolated future candidate's exact source

@@ -45,7 +45,9 @@ def load(version):
                   and evidence.get('product') == lock['client']['product']
                   and evidence.get('interface') == lock['client']['interface'], 'Era release authority identity mismatch')
     else:
-        forever.verify_evidence(lock, folder/'api-evidence.json')
+        # The immutable selection has its own reviewed identity. read_lock above
+        # enforces the historical allowlist; live installs still require LIVE_CLIENT.
+        forever.verify_evidence(lock, folder/'api-evidence.json', expected_client=lock['client'])
     d.require(manifest.get('curseforge') == {k: TARGETS[target][k] for k in ('name','gameVersionTypeID')}, 'Wrong upload flavor')
     approval = manifest['authorization']
     d.require(approval.get('kind') == 'owner-approved-early-release' and approval.get('nativeAccepted') is False
@@ -61,7 +63,8 @@ def files(target, lock, sources, version, family):
     result = (era.family_files(lock, sources, family) if target == 'classic-era'
               else dual.family_files(lock, sources, family))[0]
     if family == 'PROD' and target == 'forever':
-        result[d.MARKER+'/README.md'] = (d.ROOT/'distribution/forever/PUBLIC_README.md').read_bytes()
+        guide = 'PUBLIC_README_CAPABILITIES.md' if lock.get('runtimePolicy') == 'capabilities-v1' else 'PUBLIC_README.md'
+        result[d.MARKER+'/README.md'] = (d.ROOT/'distribution/forever'/guide).read_bytes()
     return result
 
 
