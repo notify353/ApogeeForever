@@ -1,6 +1,15 @@
 # Forever interface authority
 
-## Current live client: 1.60.1.70707 (2026-10-31)
+## Current live client: 1.60.1.70790 (2026-11-04)
+
+The freshly exported launch client verifies 244 references and its executable.
+Ten prior references changed; the newly selected Camelot action-button override
+is included. See the [launch review](../distribution/forever/README.md).
+Existing restricted-damage handling and native whisper/menu contracts remain
+compatible. No gameplay source change was required. Native testing is explicitly
+skipped at the owner's request and remains unclaimed.
+
+## Previous live client: 1.60.1.70707 (2026-10-31)
 
 The matching live export verifies 243 references against the current executable.
 The reviewed contract changes and quest-text sources are recorded in

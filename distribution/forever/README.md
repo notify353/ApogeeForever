@@ -1,10 +1,10 @@
 # Live Forever authority
 
-The isolated future candidate now targets reviewed Forever **1.60.1.70707**,
+The isolated future candidate now targets reviewed Forever **1.60.1.70790**,
 Interface 16001, product `wowf`, directory `_forever_`, executable `Wow.exe`.
 The frozen v1.14.9 selection and its beta authority are unchanged.
 
-`api-evidence.json` records the executable hash and 243 unique exported source
+`api-evidence.json` records the executable hash and 244 unique exported source
 files covering distribution, all five pinned children and embedded shared UI.
 The future lock binds its canonical hash and the exact merged child revisions.
 These central checks cover the current client; the children's retained standalone
@@ -27,6 +27,40 @@ The live checker rejects a missing, stale or changed export, wrong executable,
 wrong/inactive product, mismatched source pins and unsafe paths. It never falls
 back to beta. The installation preflight recognizes the live executable, but
 validation does not invoke an installer or authorize an installation.
+
+## Launch source review, 2026-11-04
+
+Exported from the running 70790 client at character selection under explicit
+owner authorization. Active wowf metadata, executable version/hash and fresh
+export agree. Of 243 existing references, 233 are unchanged and ten changed.
+Nine changed files have retained beta bodies matching their exact prior hashes:
+
+- UnitDocumentation now marks UNIT_COMBAT amount as secret. Essentials already
+  checks canaccessvalue before type, comparison or arithmetic, and displays
+  unknown totals after restricted input. Existing secret-value regressions cover
+  this behavior. Damage percentages may therefore be unavailable in combat.
+- PaperDollInfo adds documentation that imbue enchants take priority; signatures
+  are unchanged. Camelot NameUtil now retains a name when surname parsing fails.
+- Chat overrides add a Battle.net sub-icon; edit-box/util changes route title
+  friends to character whispers. The actual fresh exported SendTellWithMessage
+  and ExtractTellTarget pass the existing offline character-whisper contract:
+  full spaced/hyphenated recipients, tank/heal drafts, no sending or BNet lookup.
+- CombatLogProcessor caps traversal at the native message limit. Group Finder
+  adjusts native row icon/level spacing; search/result contracts are unchanged.
+- ActionBar TOC adds Camelot/ActionButtonUtilOverrides.lua, now included as the
+  244th reference. It changes native unplaced-spell highlighting to the highest
+  rank; no pinned Apogee runtime calls that override.
+
+The prior matching Menu.lua body is unavailable. Current-contract review, rather
+than a claimed full diff, verifies root AddMenuReleasedCallback and RemoveMenu:
+the exact proxy is still passed before closing/removal, with an additional close
+reason that the existing callback safely ignores.
+
+No required gameplay adaptation was identified. All five source pins, Era and
+historical selections remain unchanged. The owner explicitly requested skipping
+in-game testing and publishing this launch compatibility release; new evidence
+and release authorization retain nativeAccepted=false. Source review and mocks
+do not establish native behavior, timing or taint acceptance.
 
 ## Source review, 2026-10-27
 

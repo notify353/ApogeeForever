@@ -1,3 +1,11 @@
+## Unreleased - Forever launch compatibility 1.14.14
+
+- Review the fresh Forever 1.60.1.70790 export and bind 244 API references.
+- Preserve compatible gameplay and restricted-damage safeguards; retain exact
+  historical release selections and the separate Era candidate.
+- Prepare a Forever-only release with explicit owner authorization to skip
+  native gameplay testing; source/package validation remains required.
+
 ## Unreleased - prepared Era 1.14.12 and Forever 1.14.13
 
 - Enable instant quest text and A/D strafing through Essentials at login/reload,
