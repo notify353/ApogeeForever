@@ -1,5 +1,11 @@
 # Apogee Forever releases
 
+Current launch selection: **Forever 1.14.14**, reviewed against build **70790**.
+Its immutable manifest and player notes are in [1.14.14](distribution/releases/1.14.14/manifest.json).
+The owner explicitly authorized publication and skipping in-game testing on
+2026-11-04. Native acceptance remains false; exact local/hosted validation,
+version preflight and public-byte verification remain required.
+
 Published 2026-10-31: Era **1.14.12** and Forever **1.14.13**. The
 [publication record](distribution/releases/PUBLISHED_2026-10-31.md) links both
 releases and successful public-byte verification. The earlier

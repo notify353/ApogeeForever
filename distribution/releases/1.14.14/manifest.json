@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "87495829aa85346365a795fd11643a7546789804165503569c68417852a015ff",
+  "authorization": {
+    "basis": "Owner explicitly requested on 2026-11-04: export current Forever API, fix required changes, skip in-game testing and publish to CurseForge; full approval to complete integration and deployment. Exact manifest binds the reviewed launch package; nativeAccepted remains false.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "291932c408d2467096db41fe9159b6c59d8cf94a5210d8f3ba7ed8c9d1cb8ff5",
+  "packages": {
+    "DEV": "8ba1a31d5fa8a9fb29123801ca1df0daee39522dd1b6fe0648b84493b483e17f",
+    "PROD": "27c792e5c4f72b66b2df17897f5dd7396abfdebf71a3060061c9906122401c1e"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "221e3773a2ce5d338c258c2e1abbeafed8bf10d386b495fe62e0b21f10ce2127",
+  "target": "forever",
+  "version": "1.14.14"
+}
