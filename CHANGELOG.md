@@ -1,3 +1,9 @@
+## Unreleased - source access diagnostics
+
+- Verify the existing hosted source credential and pinned private commits before
+  checkout, reporting authentication/access failures without exposing secrets.
+  No credential, permission, package or runtime change.
+
 ## Unreleased - Forever launch compatibility 1.14.14
 
 - Review the fresh Forever 1.60.1.70790 export and bind 244 API references.

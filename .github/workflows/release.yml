@@ -31,6 +31,15 @@ jobs:
           lock=r.load(version)[1] if r.path(version).exists() else d.read_lock(dual.LOCK)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               for child in lock['children']: out.write(child['name']+'='+child['commit']+'\n')
+      - name: Verify private source credential before checkout
+        env:
+          GH_TOKEN: ${{ secrets.DISTRIBUTION_READ_TOKEN }}
+        run: |
+          gh api user --jq 'if .login == "notify353" then "Source credential identity verified." else error("Unexpected source credential account") end'
+          gh api repos/notify353/ApogeeKeybinds/commits/${{ steps.pins.outputs.ApogeeKeybinds }} --silent
+          gh api repos/notify353/ApogeeGroupAlert/commits/${{ steps.pins.outputs.ApogeeGroupAlert }} --silent
+          gh api repos/notify353/ApogeeEssentials/commits/${{ steps.pins.outputs.ApogeeEssentials }} --silent
+          gh api repos/notify353/ApogeeStats/commits/${{ steps.pins.outputs.ApogeeStats }} --silent
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: notify353/ApogeeHeals
