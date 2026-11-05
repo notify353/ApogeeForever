@@ -1,3 +1,9 @@
+## Unreleased - composite stealth routing fix
+
+- Correct druid caster-form actions being suppressed by Cat/Prowl's stealth
+  guard; validate ordinary routing and exhaustive focus-layout guard agreement.
+- Preserve existing follow safeguards and validate both generated families.
+
 ## Unreleased - focus follow bug sweep
 
 - Fix physical re-follow being blocked after HUD dragging, unintended follow

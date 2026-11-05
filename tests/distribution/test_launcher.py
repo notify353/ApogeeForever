@@ -74,6 +74,8 @@ class LauncherTests(unittest.TestCase):
                     subprocess.run(['lua','tests/focus_follow_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if (children/'ApogeeKeybinds/tests/focus_regressions_spec.lua').is_file():
                     subprocess.run(['lua','tests/focus_regressions_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                if (children/'ApogeeKeybinds/tests/focus_layouts_spec.lua').is_file():
+                    subprocess.run(['lua','tests/focus_layouts_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if target=='forever-offline':
                     keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
