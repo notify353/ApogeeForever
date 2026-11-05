@@ -1,3 +1,12 @@
+## Unreleased - friendly focus assist
+
+- Integrate complete friendly-focus offensive targeting into the Forever DEV
+  candidate, retaining the hidden unavailable-damage row. Guard invalid/stale
+  routes, preserve editor safety and update intended-unit range presentation.
+- Run source and generated family tests; leave Era and published releases pinned.
+- Add explicit checked Forever live DEV updates with receipt, loading-graph,
+  atomic replacement and rollback safeguards. No new runtime file is required.
+
 ## Unreleased - hide unavailable incoming damage
 
 - Update the Forever DEV candidate to hide the Physical / Magic row when damage

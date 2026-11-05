@@ -439,6 +439,70 @@ class DualTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'DEV-only'):
             m.apply(client, self.prod, self.known, backup.parent / 'forbidden', atomic_dev=True)
 
+    def test_live_forever_update_is_atomic_reloadable_and_reversible(self):
+        client, backup = self.fixture(self.dev)
+        previous = {'schema': 1, 'status': 'installed', 'client': str(client), 'after': m.hashes(self.dev)}
+        updated = dict(self.dev)
+        path = 'ApogeeHealsDev/' + dual.GATE_PATH
+        updated[path] += b'\n-- reviewed next version\n'
+        toc = 'ApogeeHealsDev/ApogeeHealsDev.toc'
+        updated[toc] = updated[toc].replace(b'## Version:', b'## Version: next-')
+        result = installer.install(client, updated, self.known, backup, previous=previous,
+                                   live_update=True, client_running=True)
+        self.assertTrue(result['liveUpdate'] and result['clientRunningAtPreflight'])
+        self.assertEqual(result['activation'], {'action': 'user-reload-after-install',
+                                               'discoveryChanges': [], 'restartRequired': False})
+        self.assertEqual(m.tree(backup / 'addons-before'), self.dev)
+        self.assertEqual((client / 'Interface/AddOns' / path).read_bytes(), updated[path])
+        m.rollback(backup)
+        self.assertEqual(m.managed(client / 'Interface/AddOns', result['names']), self.dev)
+
+    def test_live_forever_rejects_discovery_metadata_and_missing_receipt_before_backup(self):
+        toc = 'ApogeeHealsDev/ApogeeHealsDev.toc'
+        runtime = 'ApogeeHealsDev/' + dual.GATE_PATH
+        variants = [dict(self.dev, **{'ApogeeHealsDev/new.lua': b'-- new file'})]
+        removed = dict(self.dev); del removed[runtime]; variants.append(removed)
+        for metadata in (b'## Dependencies: NewAddon\n', b'## SavedVariables: NewData\n',
+                         b'## Interface: 99999\n'):
+            variant = dict(self.dev); variant[toc] = metadata + variant[toc]; variants.append(variant)
+        reordered = dict(self.dev); reordered[toc] += b'Extra.lua\n'; variants.append(reordered)
+        for updated in variants:
+            with self.subTest(changed=[p for p in updated if updated[p] != self.dev.get(p)]):
+                client, backup = self.fixture(self.dev)
+                previous = {'schema': 1, 'status': 'installed', 'client': str(client), 'after': m.hashes(self.dev)}
+                with self.assertRaises(ValueError):
+                    installer.install(client, updated, self.known, backup, previous=previous, live_update=True)
+                self.assertFalse(backup.exists())
+                self.assertEqual(m.managed(client / 'Interface/AddOns', m.DEV_NAMES), self.dev)
+        client, backup = self.fixture(self.dev)
+        with self.assertRaisesRegex(ValueError, 'prior installed Forever receipt'):
+            installer.install(client, self.dev, self.known, backup, live_update=True)
+        self.assertFalse(backup.exists())
+
+    def test_live_forever_rejects_receipt_drift_and_retirement(self):
+        client, backup = self.fixture(self.dev)
+        previous = {'schema': 1, 'status': 'installed', 'client': str(client), 'after': m.hashes(self.dev)}
+        changed = dict(self.dev)
+        path = 'ApogeeHealsDev/' + dual.GATE_PATH
+        changed[path] += b'\n-- installed drift matching proposed bytes\n'
+        m.put(client / 'Interface/AddOns', {path: changed[path]})
+        with self.assertRaisesRegex(ValueError, 'differ from receipt'):
+            installer.install(client, changed, self.known, backup, previous=previous, live_update=True)
+        self.assertFalse(backup.exists())
+        preview = {'before': self.dev, 'retired': {path: previous['after'][path]}}
+        with self.assertRaisesRegex(ValueError, 'cannot retire'):
+            installer.verify_live_update(self.dev, preview, previous)
+        with self.assertRaisesRegex(ValueError, 'cannot retrofit'):
+            installer.verify_live_update(self.dev, preview, previous, initial=True)
+
+    def test_live_forever_cli_rejects_wrong_target_or_retrofit(self):
+        for flags in (['--target', 'classic-era'], ['--initial-retrofit']):
+            argv = ['install', '--client-root', 'unused', '--sources-root', 'unused',
+                    '--artifacts', 'unused', '--backup', 'unused', '--allow-running-forever-update'] + flags
+            with patch.object(sys, 'argv', argv), patch.object(m, 'real_client_preflight') as preflight:
+                with self.assertRaises(SystemExit): installer.main()
+                preflight.assert_not_called()
+
     def test_activation_distinguishes_existing_runtime_and_discovery(self):
         self.assertFalse(installer.activation({'before': {'a.lua': b'old'}, 'writes': {'a.lua': b'new'}})['restartRequired'])
         result = installer.activation({'before': {}, 'writes': {'a.lua': b'new', 'a.toc': b'metadata'}})

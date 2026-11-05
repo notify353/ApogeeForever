@@ -1777,13 +1777,13 @@
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-11-04",
+  "reviewedOn": "2026-11-05",
   "schema": 1,
   "sourcePins": {
     "ApogeeEssentials": "0ee3f1896308cb5667e29144218f8e00eb6e9bc1",
     "ApogeeGroupAlert": "ece5d6e04004e9c86c5c0a9e0f345beabfbef4b4",
     "ApogeeHeals": "c421ae297e6cb44c35586fe8567e8467febee675",
-    "ApogeeKeybinds": "103cad33f61e9b0a2764dcece614dca1146ceecc",
+    "ApogeeKeybinds": "74145b960380fae1f540a38ff87b142cfed9bf4e",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
 }

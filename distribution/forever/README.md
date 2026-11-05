@@ -1,3 +1,11 @@
+## Friendly focus assist - 2026-11-05
+
+Current candidate adds guarded native friendly-focus targeting in Keybinds and
+retains the prepared hidden-damage change. No source is installed or published by
+these pins. The same 244 API references cover secure button remapping, native
+state drivers, macro dispatch and spell classification. Native in-game acceptance
+remains pending, including focus transitions, reticles, attacks and cast outcomes.
+
 ## Incoming damage visibility - 2026-11-05
 
 The owner reports dashes throughout combat on 70790 and requested hiding the
