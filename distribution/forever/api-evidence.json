@@ -268,7 +268,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/PlayerScriptDocumentation.lua",
       "sha256": "61ae4d1471b8ac8696a2a56e335bf6484d2cb3a31b2fa81637430afb58bde9a2"
@@ -470,11 +471,11 @@
     },
     {
       "owners": [
-        "ApogeeForever",
         "ApogeeEssentials",
+        "ApogeeForever",
+        "ApogeeGroupAlert",
         "ApogeeHeals",
-        "ApogeeKeybinds",
-        "ApogeeGroupAlert"
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/UnitDocumentation.lua",
       "sha256": "93004ac1b260127741471b7861360cdf7536afcb18d4c1db73b7259faa43e61c"
@@ -1783,7 +1784,7 @@
     "ApogeeEssentials": "0ee3f1896308cb5667e29144218f8e00eb6e9bc1",
     "ApogeeGroupAlert": "ece5d6e04004e9c86c5c0a9e0f345beabfbef4b4",
     "ApogeeHeals": "c421ae297e6cb44c35586fe8567e8467febee675",
-    "ApogeeKeybinds": "74145b960380fae1f540a38ff87b142cfed9bf4e",
+    "ApogeeKeybinds": "d15be9954f71e12c6640dd27ef97bbe1ff20f9a8",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
 }

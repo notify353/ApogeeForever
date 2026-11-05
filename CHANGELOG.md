@@ -1,3 +1,11 @@
+## Unreleased - focus spell re-follow
+
+- Package input-time, out-of-combat re-follow only for friendly-focus spell routes.
+  Keep ordinary inputs unchanged, observe native follow events, allow the approved
+  single unknown-state attempt after loading, and preserve casts on follow failure.
+- Exercise the feature in both generated families; preserve runtime loading paths,
+  the existing focus targeting feature and hidden unavailable-damage row.
+
 ## Unreleased - friendly focus assist
 
 - Integrate complete friendly-focus offensive targeting into the Forever DEV

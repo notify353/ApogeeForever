@@ -1,3 +1,14 @@
+## Focus spell re-follow - 2026-11-05
+
+The candidate extends only focus-assisted spell inputs with an optional follow
+attempt before the native cast, outside combat, on the same user input. Existing
+follow/casting/range and editor guards apply. No automatic event/timer movement,
+new loader entry or saved-data migration. The owner selected one eligible input
+attempt after reload when follow status is unknown. The same244 source reference
+hashes cover the added contracts; PlayerScript/Unit ownership includes Keybinds.
+Native follow/movement/cast acceptance remains pending. Previous friendly-focus
+targeting was reported working by the owner; this does not accept the new behavior.
+
 ## Friendly focus assist - 2026-11-05
 
 Current candidate adds guarded native friendly-focus targeting in Keybinds and
