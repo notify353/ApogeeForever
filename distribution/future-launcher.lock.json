@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "c421ae297e6cb44c35586fe8567e8467febee675",
+      "commit": "f3d0592b7bb9afa15bacfdfb90f94f746ba0d09c",
       "files": {
         "ApogeeHeals.lua": "f6bd753d3bd600121a124321b197df930dbf6c87abe35504f7f44cbffc079d5b",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
@@ -12,7 +12,7 @@
         "Buffs/Preferences.lua": "d6f6a648c8782a76c8e1649d07a7bf60767381c64384944a231a9a1394d5f1c2",
         "Buffs/Runtime.lua": "56b9d9bf418c0a7621e980aa5430d2b5b954a8367e995086cfdd17fba0bf1cf5",
         "Buffs/View.lua": "45a1dd4a32892dd095107ed06c442efffd714ee876d931e6fd0d92c5abc93fbf",
-        "CHANGELOG.md": "07345018f10823aec5bd9d90b7e6aae8aa5a48a2aeb574605674b038a29a2d10",
+        "CHANGELOG.md": "3715670d0a9a2e261f4e45694ba6d93e66f95933683a7650f9aa20ef90d5a978",
         "Cleansing/Runtime.lua": "78ec7cd14a77a81b0bfebc12dfa1056c0456dfeaa61b0c0e83f12cf339a51f16",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "39f3733880751e6e05dca86c311301ed8d40fcbc1bc0ffae0f70942a1c2aa545",
@@ -24,7 +24,7 @@
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
         "PartyFrames/Preview.lua": "56ed40b09deee9633af0f6c291941e63231bdffaa98b50e61d266feaa457bce1",
         "PartyFrames/Runtime.lua": "6cc25b9bc92901ffb4ab02aa09893de7ff35ceb81232580e95dc4ad8ab29ac81",
-        "PartyFrames/View.lua": "5209ce090e17bb7369bf8470b7af441fe208e99c70c91792661fb6353d8bab90",
+        "PartyFrames/View.lua": "8b1b3b52430d3b85672d3e78eb23da8e40e35b4c24eedad71752b5d41f02f475",
         "README.md": "1fb85eff89204d1b49b90b408b70b04d732a4e1dc1b6d9ae1401ac394a1c9fdb",
         "Threat/Diagnostics.lua": "7c71432508520517e684c604f6eefd3c932ba47f264d4aa83c4171d0c2a0923e",
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "89a9ec0afad87dde92e18c883ec6319f878a44cdbeaf27f33bee539980d3b9a7",
+  "liveApiEvidenceSha256": "da70edd1f0bf60937a1d80775059b7bcd30aab409b3dc56504caabbbc98bdcc7",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -246,5 +246,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.14-dev.6"
+  "version": "1.14.14-dev.7"
 }

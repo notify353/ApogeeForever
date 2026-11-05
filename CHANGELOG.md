@@ -289,6 +289,8 @@ or its installed beta. No publication or native acceptance is implied.
 
 ## Unreleased
 
+- Package selected dead-target identity/status fixes and generated PROD/DEV regression coverage; preserve friendly-focus and re-follow improvements.
+
 - Move party Follow/Inspect/Talents to a muted left-side group that shifts
   outward around buff suggestions and expanded choices.
 
