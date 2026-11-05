@@ -1,3 +1,10 @@
+## Unreleased - focus follow bug sweep
+
+- Fix physical re-follow being blocked after HUD dragging, unintended follow
+  during weapon dragging, and follow reactivation during world transitions.
+- Run the new regression fixture against generated PROD/DEV; preserve existing
+  targeting behavior, loading structure, hidden damage row and release pins.
+
 ## Unreleased - focus spell re-follow
 
 - Package input-time, out-of-combat re-follow only for friendly-focus spell routes.
