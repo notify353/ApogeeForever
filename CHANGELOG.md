@@ -1,3 +1,8 @@
+## Unreleased - hide unavailable incoming damage
+
+- Update the Forever DEV candidate to hide the Physical / Magic row when damage
+  is empty, restricted or incomplete. Preserve valid percentages, Era and releases.
+
 ## Unreleased - source access diagnostics
 
 - Verify the existing hosted source credential and pinned private commits before

@@ -1,3 +1,11 @@
+## Incoming damage visibility - 2026-11-05
+
+The owner reports dashes throughout combat on 70790 and requested hiding the
+empty display. The current Forever candidate uses Essentials 0ee3f1896308cb5667e29144218f8e00eb6e9bc1
+to hide empty/incomplete encounters while retaining valid percentages. The
+244 API reference hashes are unchanged; only the reviewed source pin advances.
+Era and immutable releases stay unchanged. Native visibility review is pending.
+
 # Live Forever authority
 
 The isolated future candidate now targets reviewed Forever **1.60.1.70790**,
