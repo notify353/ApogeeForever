@@ -62,6 +62,10 @@ class LauncherTests(unittest.TestCase):
                 if (children/'ApogeeHeals/tests/target_state_spec.lua').is_file():
                     subprocess.run(['lua','tests/target_state_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
+                if (children/'ApogeeGroupAlert/tests/minimum_level_spec.lua').is_file():
+                    group='ApogeeGroupAlert'+('Dev' if family=='DEV' else '')
+                    group_env=dict(env,APOGEE_GROUP_RUNTIME_ROOT=str(Path(folder)/group),APOGEE_GROUP_RUNTIME_NAME=group)
+                    subprocess.run(['lua','tests/minimum_level_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                 subprocess.run(['lua',str(ROOT/'tests/distribution/strafe_coexistence.lua'),str(Path(folder)/keybinds),keybinds],
                                cwd=children/'ApogeeEssentials',env=env,check=True)
