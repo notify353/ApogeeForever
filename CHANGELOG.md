@@ -289,6 +289,8 @@ or its installed beta. No publication or native acceptance is implied.
 
 ## Unreleased
 
+- Package default-visible quest objectives with an independent Essentials combat-hiding option, upgrade/reset checks, and generated PROD/DEV coverage.
+
 - Package the dungeon panel level-10 visibility rule with generated PROD/DEV transition checks.
 
 - Package selected dead-target identity/status fixes and generated PROD/DEV regression coverage; preserve friendly-focus and re-follow improvements.

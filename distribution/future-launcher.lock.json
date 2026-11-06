@@ -132,22 +132,22 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "0ee3f1896308cb5667e29144218f8e00eb6e9bc1",
+      "commit": "d3fcb9c7f9c76538b8b5a6c38bcffeef33fe1e44",
       "files": {
-        "ApogeeEssentials.lua": "e9a9e23350544dfe23209cfc3cf4905a9cb82eef4f1392df0fb4fa5c866e514b",
+        "ApogeeEssentials.lua": "8f03edd0e9c7369b0cdcfe84a5e480c549cfeb9c0726edef8e7966be48ed0f5d",
         "ApogeeEssentials.toc": "b90d1db125e7c1650a75b84015ccc0efda91e2cfb5359615ee8e271acb204fb6",
-        "CHANGELOG.md": "9fa3c537d73afdac9f50b22fab5672f2e74fd5e7856304286a018dcdf88e3d1a",
+        "CHANGELOG.md": "09b79a0e343e6c1adf631b17734dfa3b252e571ab907b39cade240e266fad63f",
         "Camera/Runtime.lua": "4b0d1fa5779ee0de6919b81789e1967b8ba818ae9111824b69e450b2fc2e7e9b",
         "Camera/Zoom.lua": "dbc434649beb411cc3471bd5a05db8750fcd866eac5ed40a065893def9ab89ba",
         "Core/CVarDefault.lua": "bad301a75b6de2ade57fe0d1a732c11d7c8538f897df446093b83cc130b45a2e",
         "Core/Client.lua": "53f633437114d6bf19dd7379abcc9ad1dc3da7a24ff047a8b2c9ca70f246127e",
         "Core/LearnedList.lua": "587f067a88d533ac2af765bfb3853b5ef78af8bdd6cb8d5054960b5420059d7e",
         "Core/LoginDefaults.lua": "b1d864daa89628c472b1a8a5e24da345a043084e12bdc9d650318f21975ef3de",
-        "Core/Settings.lua": "8d4042b1a12f9811db05c6d1eaa3e340cf399ac228752b54eb92f34a1956f5ea",
+        "Core/Settings.lua": "0af8ed999243dacc0dfe79d1e6cb2cf4bebc559ea2ed3c07fb902ff5cce4a126",
         "Damage/Runtime.lua": "d69f457f0e9f2e7cc166eb296e5b00a5d58389b08ccb3a09b367c38af4211791",
         "Errors/Runtime.lua": "81a32f4d2b0f276e1c835191f98eae43c9e585e29248099e6c709d5e5698f4f6",
         "Errors/Settings.lua": "6674aec32a865d6b9dae9e754da1c58d8c73abe8a3ca943a1db27f9b0e0fec6e",
-        "Fade/Runtime.lua": "17705e328b262d2514edb86505786d547f84a9b2f3112440ca452e75013506b0",
+        "Fade/Runtime.lua": "b32e8e689985eea42cd3a983604bb308be9b11024d25d5bb198c01e87e90e3b5",
         "GroupChat/Runtime.lua": "661b41c630f0b889616042300a21ec9cd4e92470218506f01b8f0b49c289f976",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "LossOfControl/Runtime.lua": "b60cd0d0b5fee34deda50fec4decd3a4ad76968cc6919f88dc2f90ecff796f5c",
@@ -155,9 +155,9 @@
         "Mentions/Runtime.lua": "a8b256b7748e959d090628ff404b5dbbb153eb9c1c094569b7cc44d7466979d8",
         "NOTICE.md": "60dda1459fe759974deebcab4ab89704e3ea4b63358d980315c384895441fe33",
         "Nameplates/Runtime.lua": "c9737b0fc256ef365c78dc71a9b01622a66627001c6a8a3da88e45e12b24c589",
-        "README.md": "a1867a416d0fac9d053ff5a5ca85483db57c4f55439914a8f739e4a57c561604",
+        "README.md": "b12940745eb3f93354cb3e6ddb55dbe38bbd2b7f396390671f9f2f94c271a61f",
         "docs/ACCEPTANCE.md": "1893268daeffb01773876dd6a8cdb9ccccf11a934cf9cb5798a7e8c785d589b4",
-        "docs/API_REFERENCE.md": "d3ce176b49830b0cfdc540eb952a206041a6b19f504cda4c69288cb418bc81a9",
+        "docs/API_REFERENCE.md": "c6a5b1d2b2edb44d7867675e353786357b25d66656515cc82b7805f00597667c",
         "docs/DEEP_REVIEW_2026-09-24.md": "28ecd785cdf54930cb95f4364c142d78133ce71baeb647d34d270467545ea5b8"
       },
       "name": "ApogeeEssentials",
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "b07161e8af85d9f87fc2b452bda85097ef4da6a32dc177a09f561785aa332b0e",
+  "liveApiEvidenceSha256": "9536614696709322d92632fa9ac54dedbc2feb50cf3b03722955af0396b7c7cd",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -229,7 +229,7 @@
   "supportModules": [
     {
       "apiVersion": 1,
-      "commit": "0ee3f1896308cb5667e29144218f8e00eb6e9bc1",
+      "commit": "d3fcb9c7f9c76538b8b5a6c38bcffeef33fe1e44",
       "files": {
         "ApogeeUI.lua": "74bbeab3e1ff2f12349487b781f71d551a51b625cefd3ae4fe011cfa265be88e",
         "ApogeeUI.toc": "2f6d36c2e6e0522e671b1c35b2bfa5fd06b7f60073041afe7278a61a07caa488",
@@ -246,5 +246,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.14-dev.8"
+  "version": "1.14.14-dev.9"
 }
