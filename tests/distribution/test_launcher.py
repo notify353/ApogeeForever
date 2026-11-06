@@ -29,6 +29,18 @@ class LauncherTests(unittest.TestCase):
         cls.future=d.read_lock(ROOT/'distribution/future-launcher.lock.json')
         cls.payload=era.family_files(cls.era,SOURCES)[0] if os.environ.get('APOGEE_TEST_TARGET')!='forever' else None
 
+    def test_current_forever_review_is_quiet_in_generated_clients(self):
+        reviewed = self.future['client']['reviewedBuild'].rsplit('.', 1)[-1]
+        for family in ('PROD', 'DEV'):
+            files = dual.family_files(self.future, SOURCES, family)[0]
+            with tempfile.TemporaryDirectory() as folder:
+                m.put(folder, files)
+                for child in ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeEssentials', 'ApogeeGroupAlert'):
+                    name = child + ('Dev' if family == 'DEV' else '')
+                    with self.subTest(family=family, child=child):
+                        subprocess.run(['lua', str(ROOT/'tests/distribution/client_identity.lua'),
+                                        str(Path(folder)/name), name, reviewed, reviewed], check=True)
+
     def test_generated_behavior_all_targets(self):
         for target,family in [(target,family) for target in ('era','forever-offline') for family in ('PROD','DEV')]:
             selected=os.environ.get('APOGEE_TEST_TARGET')

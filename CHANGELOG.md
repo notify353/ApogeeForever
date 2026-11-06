@@ -289,6 +289,8 @@ or its installed beta. No publication or native acceptance is implied.
 
 ## Unreleased
 
+- Fix stale Forever70790 startup warnings across Heals, Keybinds, Essentials and Group Alert; test generated PROD/DEV warning behavior against the live reviewed build.
+
 - Package default-visible quest objectives with an independent Essentials combat-hiding option, upgrade/reset checks, and generated PROD/DEV coverage.
 
 - Package the dungeon panel level-10 visibility rule with generated PROD/DEV transition checks.
