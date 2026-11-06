@@ -1,3 +1,12 @@
+## [1.14.15] - 2026-11-06
+
+- Release the verified Forever DEV changes: friendly-focus offensive routing and
+  out-of-combat input-time re-follow; dead-target identity; level-ten dungeon UI;
+  optional default-off quest-objective combat hiding; hidden unavailable damage
+  data; and reviewed build70790 startup warnings.
+- Exact source/API/package selection and truthful incomplete native acceptance
+  are recorded in distribution/releases/1.14.15.
+
 ## Unreleased - composite stealth routing fix
 
 - Correct druid caster-form actions being suppressed by Cat/Prowl's stealth
