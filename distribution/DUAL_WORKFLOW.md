@@ -1,3 +1,15 @@
+## Checked Forever updates while running - 2026-11-05
+
+For an explicitly authorized running-client DEV update, use the central installer
+with `--allow-running-forever-update` and the latest successful `--previous-install`
+receipt. It verifies the exact package, unchanged installed receipt bytes, identical
+runtime paths and identical TOC loading order/metadata except Version. It refuses
+retirement, discovery changes and PROD retrofit before creating a backup. Existing
+atomic DEV replacement, backup verification and protected-data checks still apply.
+Run `--inspect-only` first with the same arguments. The owner uses `/reload` after
+installation; Codex never operates the game. Rollback still requires a closed
+client. Default embedded-master installation retains its closed-client guard.
+
 ## Runtime availability - 2026-10-31
 
 Current Era and Forever candidates follow [capability-based runtime admission](RUNTIME_CAPABILITIES.md)

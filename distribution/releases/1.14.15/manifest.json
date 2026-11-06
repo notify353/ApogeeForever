@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "19fa70c314ef657e41c84e28292ba6f2b8f851d9a47c4b8896a5f97c1555348c",
+  "authorization": {
+    "basis": "Owner requested CurseForge deployment on 2026-11-06 of the just-installed DEV1.14.14-dev.10 changes. This exact selection records automated and matching-client API validation; full native acceptance remains incomplete and final production-tag approval is pending.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "a50ea5a975e14b4d86c060b567d6c5619782644eb3d955402452108567e2c65e",
+  "packages": {
+    "DEV": "e3ff9e9a2b3ca03d9aa7955de945493d8079d29b1c5a89204abcc88b3422a8b3",
+    "PROD": "2fa68267fc4d8677341b89982fa1903c1afcc077f7655d2d59fdcffd20b98298"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "e4e7bdceadd0beac7ceab8956e3c3eeecccee786234a7a29343d8d722ca03402",
+  "target": "forever",
+  "version": "1.14.15"
+}

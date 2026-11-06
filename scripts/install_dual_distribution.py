@@ -70,8 +70,11 @@ def prepare(client, payload, known, initial=False, previous=None, retire_files=(
     return desired, known, names, preview, preserved_docs
 
 
-def activation(preview):
+def activation(preview, live_update=False):
     writes = preview['writes']
+    if live_update:
+        return {'action': 'user-reload-after-install' if writes else 'none',
+                'discoveryChanges': [], 'restartRequired': False}
     discovery = sorted(p for p in writes if p not in preview['before'] or p.lower().endswith('.toc'))
     support_added = any(p.startswith('ApogeeUIDev/') for p in preview.get('retired', {})) or any((p.startswith('ApogeeUIDev/') or '/SharedUI/' in p) and p not in preview['before'] for p in writes)
     return {'action': 'user-full-restart-after-install' if support_added else 'user-reload-after-install' if writes else 'none',
@@ -79,10 +82,37 @@ def activation(preview):
             'restartRequired': True if support_added else 'unverified-if-reload-does-not-discover-changes' if discovery else False}
 
 
-def install(client, payload, known, backup, initial=False, previous=None, retire_files=()):
+def verify_live_update(payload, preview, previous, initial=False):
+    """A running client may reload known DEV files, never discover a new loading graph."""
+    d.require(not initial, 'Live Forever updates cannot retrofit PROD')
+    d.require(previous is not None, 'Live updates require a prior installed Forever receipt')
+    d.require(not preview['retired'], 'Live Forever updates cannot retire files')
+    before = preview['before']
+    def runtime_paths(files):
+        return {p for p in files if p.lower().endswith(('.lua', '.xml', '.toc'))}
+    paths = runtime_paths(payload)
+    d.require(paths == runtime_paths(before) == runtime_paths(previous['after']),
+              'Live Forever updates cannot add or remove runtime files; close the client')
+    for path in paths:
+        d.require(d.sha(before[path]) == previous['after'][path],
+                  'Installed Forever bytes differ from receipt: ' + path)
+        if path.lower().endswith('.toc'):
+            old_meta, old_runtime = d.toc_info(before[path])
+            new_meta, new_runtime = d.toc_info(payload[path])
+            old_meta.pop('Version', None); new_meta.pop('Version', None)
+            d.require(old_meta == new_meta and old_runtime == new_runtime,
+                      'Live Forever updates cannot change loading metadata/order; close the client')
+
+
+def install(client, payload, known, backup, initial=False, previous=None, retire_files=(), live_update=False,
+            client_running=False):
     desired, known, names, preview, docs = prepare(client, payload, known, initial, previous, retire_files)
+    if live_update:
+        verify_live_update(payload, preview, previous, initial)
     result = m.apply(client, desired, known, backup, preview, names, atomic_dev=not initial, retired=preview['retired'])
-    result['activation'] = activation(preview)
+    result['activation'] = activation(preview, live_update)
+    result['liveUpdate'] = live_update
+    result['clientRunningAtPreflight'] = client_running
     result['preservedDocumentation'] = docs
     result['mode'] = 'initial-production-retrofit-and-dev' if initial else 'dev-only'
     result['packageFilesVerified'] = len(desired)
@@ -107,25 +137,34 @@ def main():
     parser.add_argument('--inspect-only', action='store_true')
     parser.add_argument('--allow-running-era-update', action='store_true',
                         help='Explicit Era DEV update with prior receipt and unchanged runtime paths/loading metadata')
+    parser.add_argument('--allow-running-forever-update', action='store_true',
+                        help='Explicit Forever DEV update with prior receipt and unchanged runtime paths/loading metadata')
     args = parser.parse_args()
     try:
         if args.target == 'classic-era':
+            d.require(not args.allow_running_forever_update, 'Live Forever opt-in requires --target forever')
             import era_distribution
             print(json.dumps(era_distribution.install_target(args)))
             return
         d.require(not args.allow_running_era_update, 'Live Era opt-in requires --target classic-era')
+        live_update = args.allow_running_forever_update
+        d.require(not live_update or not args.initial_retrofit, 'Live Forever updates cannot retrofit PROD')
         lock = d.read_lock(args.lock or dual.LOCK)
-        running = m.real_client_preflight(args.client_root, lock, allow_running_dev=not args.initial_retrofit and not lock.get('supportModules'))
+        running = m.real_client_preflight(args.client_root, lock,
+            allow_running_dev=live_update or (not args.initial_retrofit and not lock.get('supportModules')))
         files = payloads(lock, args.sources_root, args.artifacts, args.initial_retrofit)
         known = m.catalog(d.ROOT / 'distribution/migration-known.json')
         previous = json.loads(args.previous_install.read_text()) if args.previous_install else None
         if args.inspect_only:
             _, _, _, preview, docs = prepare(args.client_root, files, known, args.initial_retrofit, previous, args.retire_file)
+            if live_update:
+                verify_live_update(files, preview, previous, args.initial_retrofit)
             print(json.dumps({'writeCount': len(preview['writes']), 'preservedDocumentation': docs,
                               'inventory': preview['inventory'], 'retired': preview['retired'], 'clientRunning': running,
-                              'activation': activation(preview)}))
+                              'liveUpdate': live_update, 'activation': activation(preview, live_update)}))
         else:
-            result = install(args.client_root, files, known, args.backup, args.initial_retrofit, previous, args.retire_file)
+            result = install(args.client_root, files, known, args.backup, args.initial_retrofit, previous, args.retire_file,
+                             live_update=live_update, client_running=running)
             print(json.dumps({k: result[k] for k in ('status', 'mode', 'packageFilesVerified', 'preservedDocumentation', 'activation')}))
     except (ValueError, KeyError, OSError, subprocess.SubprocessError) as error:
         parser.exit(1, 'Family install stopped: ' + str(error) + '\n')

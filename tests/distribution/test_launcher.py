@@ -29,6 +29,18 @@ class LauncherTests(unittest.TestCase):
         cls.future=d.read_lock(ROOT/'distribution/future-launcher.lock.json')
         cls.payload=era.family_files(cls.era,SOURCES)[0] if os.environ.get('APOGEE_TEST_TARGET')!='forever' else None
 
+    def test_current_forever_review_is_quiet_in_generated_clients(self):
+        reviewed = self.future['client']['reviewedBuild'].rsplit('.', 1)[-1]
+        for family in ('PROD', 'DEV'):
+            files = dual.family_files(self.future, SOURCES, family)[0]
+            with tempfile.TemporaryDirectory() as folder:
+                m.put(folder, files)
+                for child in ('ApogeeHeals', 'ApogeeKeybinds', 'ApogeeEssentials', 'ApogeeGroupAlert'):
+                    name = child + ('Dev' if family == 'DEV' else '')
+                    with self.subTest(family=family, child=child):
+                        subprocess.run(['lua', str(ROOT/'tests/distribution/client_identity.lua'),
+                                        str(Path(folder)/name), name, reviewed, reviewed], check=True)
+
     def test_generated_behavior_all_targets(self):
         for target,family in [(target,family) for target in ('era','forever-offline') for family in ('PROD','DEV')]:
             selected=os.environ.get('APOGEE_TEST_TARGET')
@@ -47,6 +59,8 @@ class LauncherTests(unittest.TestCase):
                            APOGEE_ESSENTIALS_RUNTIME_NAME=essentials, APOGEE_ESSENTIALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/startup_refresh_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 subprocess.run(['lua','tests/quest_text_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
+                if (children/'ApogeeEssentials/tests/quest_objectives_spec.lua').is_file():
+                    subprocess.run(['lua','tests/quest_objectives_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 subprocess.run(['lua','tests/strafe_defaults_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
@@ -59,7 +73,13 @@ class LauncherTests(unittest.TestCase):
                 env.update(APOGEE_HEALS_RUNTIME_ROOT=str(Path(folder)/heals),
                            APOGEE_HEALS_RUNTIME_NAME=heals, APOGEE_HEALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
+                if (children/'ApogeeHeals/tests/target_state_spec.lua').is_file():
+                    subprocess.run(['lua','tests/target_state_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
+                if (children/'ApogeeGroupAlert/tests/minimum_level_spec.lua').is_file():
+                    group='ApogeeGroupAlert'+('Dev' if family=='DEV' else '')
+                    group_env=dict(env,APOGEE_GROUP_RUNTIME_ROOT=str(Path(folder)/group),APOGEE_GROUP_RUNTIME_NAME=group)
+                    subprocess.run(['lua','tests/minimum_level_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                 subprocess.run(['lua',str(ROOT/'tests/distribution/strafe_coexistence.lua'),str(Path(folder)/keybinds),keybinds],
                                cwd=children/'ApogeeEssentials',env=env,check=True)
@@ -68,6 +88,14 @@ class LauncherTests(unittest.TestCase):
                            APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 subprocess.run(['lua','tests/aphb_distribution_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                if (children/'ApogeeKeybinds/tests/focus_assist_spec.lua').is_file():
+                    subprocess.run(['lua','tests/focus_assist_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                if (children/'ApogeeKeybinds/tests/focus_follow_spec.lua').is_file():
+                    subprocess.run(['lua','tests/focus_follow_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                if (children/'ApogeeKeybinds/tests/focus_regressions_spec.lua').is_file():
+                    subprocess.run(['lua','tests/focus_regressions_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                if (children/'ApogeeKeybinds/tests/focus_layouts_spec.lua').is_file():
+                    subprocess.run(['lua','tests/focus_layouts_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if target=='forever-offline':
                     keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),

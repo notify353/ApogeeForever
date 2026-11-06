@@ -1,3 +1,47 @@
+## [1.14.15] - 2026-11-06
+
+- Release the verified Forever DEV changes: friendly-focus offensive routing and
+  out-of-combat input-time re-follow; dead-target identity; level-ten dungeon UI;
+  optional default-off quest-objective combat hiding; hidden unavailable damage
+  data; and reviewed build70790 startup warnings.
+- Exact source/API/package selection and truthful incomplete native acceptance
+  are recorded in distribution/releases/1.14.15.
+
+## Unreleased - composite stealth routing fix
+
+- Correct druid caster-form actions being suppressed by Cat/Prowl's stealth
+  guard; validate ordinary routing and exhaustive focus-layout guard agreement.
+- Preserve existing follow safeguards and validate both generated families.
+
+## Unreleased - focus follow bug sweep
+
+- Fix physical re-follow being blocked after HUD dragging, unintended follow
+  during weapon dragging, and follow reactivation during world transitions.
+- Run the new regression fixture against generated PROD/DEV; preserve existing
+  targeting behavior, loading structure, hidden damage row and release pins.
+
+## Unreleased - focus spell re-follow
+
+- Package input-time, out-of-combat re-follow only for friendly-focus spell routes.
+  Keep ordinary inputs unchanged, observe native follow events, allow the approved
+  single unknown-state attempt after loading, and preserve casts on follow failure.
+- Exercise the feature in both generated families; preserve runtime loading paths,
+  the existing focus targeting feature and hidden unavailable-damage row.
+
+## Unreleased - friendly focus assist
+
+- Integrate complete friendly-focus offensive targeting into the Forever DEV
+  candidate, retaining the hidden unavailable-damage row. Guard invalid/stale
+  routes, preserve editor safety and update intended-unit range presentation.
+- Run source and generated family tests; leave Era and published releases pinned.
+- Add explicit checked Forever live DEV updates with receipt, loading-graph,
+  atomic replacement and rollback safeguards. No new runtime file is required.
+
+## Unreleased - hide unavailable incoming damage
+
+- Update the Forever DEV candidate to hide the Physical / Magic row when damage
+  is empty, restricted or incomplete. Preserve valid percentages, Era and releases.
+
 ## Unreleased - source access diagnostics
 
 - Verify the existing hosted source credential and pinned private commits before
@@ -253,6 +297,14 @@ or its installed beta. No publication or native acceptance is implied.
 - Replace Heals Buff reminders with learned-spell Smart, Manual and Off controls across classes. Keep Paladin suggestions and tune them for five-player dungeon roles.
 
 ## Unreleased
+
+- Fix stale Forever70790 startup warnings across Heals, Keybinds, Essentials and Group Alert; test generated PROD/DEV warning behavior against the live reviewed build.
+
+- Package default-visible quest objectives with an independent Essentials combat-hiding option, upgrade/reset checks, and generated PROD/DEV coverage.
+
+- Package the dungeon panel level-10 visibility rule with generated PROD/DEV transition checks.
+
+- Package selected dead-target identity/status fixes and generated PROD/DEV regression coverage; preserve friendly-focus and re-follow improvements.
 
 - Move party Follow/Inspect/Talents to a muted left-side group that shifts
   outward around buff suggestions and expanded choices.

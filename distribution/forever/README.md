@@ -1,3 +1,30 @@
+## Focus spell re-follow - 2026-11-05
+
+The candidate extends only focus-assisted spell inputs with an optional follow
+attempt before the native cast, outside combat, on the same user input. Existing
+follow/casting/range and editor guards apply. No automatic event/timer movement,
+new loader entry or saved-data migration. The owner selected one eligible input
+attempt after reload when follow status is unknown. The same244 source reference
+hashes cover the added contracts; PlayerScript/Unit ownership includes Keybinds.
+Native follow/movement/cast acceptance remains pending. Previous friendly-focus
+targeting was reported working by the owner; this does not accept the new behavior.
+
+## Friendly focus assist - 2026-11-05
+
+Current candidate adds guarded native friendly-focus targeting in Keybinds and
+retains the prepared hidden-damage change. No source is installed or published by
+these pins. The same 244 API references cover secure button remapping, native
+state drivers, macro dispatch and spell classification. Native in-game acceptance
+remains pending, including focus transitions, reticles, attacks and cast outcomes.
+
+## Incoming damage visibility - 2026-11-05
+
+The owner reports dashes throughout combat on 70790 and requested hiding the
+empty display. The current Forever candidate uses Essentials 0ee3f1896308cb5667e29144218f8e00eb6e9bc1
+to hide empty/incomplete encounters while retaining valid percentages. The
+244 API reference hashes are unchanged; only the reviewed source pin advances.
+Era and immutable releases stay unchanged. Native visibility review is pending.
+
 # Live Forever authority
 
 The isolated future candidate now targets reviewed Forever **1.60.1.70790**,
