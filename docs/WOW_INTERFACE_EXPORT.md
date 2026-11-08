@@ -1,6 +1,16 @@
 # Forever interface authority
 
-## Current live client: 1.60.1.70790 (2026-11-04)
+## Current live client: 1.60.1.70862 (2026-11-08)
+
+The owner refreshed the export. Active wowf metadata and executable version agree;
+all244 prior references postdate the executable and retain their70790 hashes.
+Three newly recorded Heals references cover aura slots, duration-text options and
+the native priority table, bringing the inventory to247. Timer/cleanse/native
+tooltip/secure-action contracts remain compatible. See the live review record.
+The new candidate uses verified export installation; prior deferred receipts and
+immutable release authority remain historical. Native gameplay acceptance is separate.
+
+## Previous live client: 1.60.1.70790 (2026-11-04)
 
 The freshly exported launch client verifies 244 references and its executable.
 Ten prior references changed; the newly selected Camelot action-button override

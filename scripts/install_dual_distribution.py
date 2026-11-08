@@ -105,7 +105,9 @@ def verify_live_update(payload, preview, previous, initial=False):
 
 
 def install(client, payload, known, backup, initial=False, previous=None, retire_files=(), live_update=False,
-            client_running=False):
+            client_running=False, api_review_deferral=None):
+    d.require(api_review_deferral is None or (live_update and not initial and previous is not None),
+              'Deferred API review requires a receipt-backed DEV update')
     desired, known, names, preview, docs = prepare(client, payload, known, initial, previous, retire_files)
     if live_update:
         verify_live_update(payload, preview, previous, initial)
@@ -113,6 +115,8 @@ def install(client, payload, known, backup, initial=False, previous=None, retire
     result['activation'] = activation(preview, live_update)
     result['liveUpdate'] = live_update
     result['clientRunningAtPreflight'] = client_running
+    if api_review_deferral is not None:
+        result['apiReview'] = api_review_deferral
     result['preservedDocumentation'] = docs
     result['mode'] = 'initial-production-retrofit-and-dev' if initial else 'dev-only'
     result['packageFilesVerified'] = len(desired)
@@ -139,8 +143,14 @@ def main():
                         help='Explicit Era DEV update with prior receipt and unchanged runtime paths/loading metadata')
     parser.add_argument('--allow-running-forever-update', action='store_true',
                         help='Explicit Forever DEV update with prior receipt and unchanged runtime paths/loading metadata')
+    parser.add_argument('--defer-forever-api-review', action='store_true',
+                        help='Owner-authorized local DEV test without refreshing API export; requires prior receipt and checked live-update path')
     args = parser.parse_args()
     try:
+        d.require(not args.defer_forever_api_review or (args.target == 'forever'
+                  and args.allow_running_forever_update and args.previous_install is not None
+                  and not args.initial_retrofit and not args.retire_file),
+                  'Deferred API review is limited to receipt-backed Forever DEV updates without retirement')
         if args.target == 'classic-era':
             d.require(not args.allow_running_forever_update, 'Live Forever opt-in requires --target forever')
             import era_distribution
@@ -150,8 +160,11 @@ def main():
         live_update = args.allow_running_forever_update
         d.require(not live_update or not args.initial_retrofit, 'Live Forever updates cannot retrofit PROD')
         lock = d.read_lock(args.lock or dual.LOCK)
-        running = m.real_client_preflight(args.client_root, lock,
-            allow_running_dev=live_update or (not args.initial_retrofit and not lock.get('supportModules')))
+        preflight_options = {'allow_running_dev': live_update or (not args.initial_retrofit and not lock.get('supportModules'))}
+        if args.defer_forever_api_review:
+            preflight_options['defer_api_review'] = True
+        running = m.real_client_preflight(args.client_root, lock, **preflight_options)
+        deferral = m.deferred_live_dev_review(args.client_root, lock) if args.defer_forever_api_review else None
         files = payloads(lock, args.sources_root, args.artifacts, args.initial_retrofit)
         known = m.catalog(d.ROOT / 'distribution/migration-known.json')
         previous = json.loads(args.previous_install.read_text()) if args.previous_install else None
@@ -161,10 +174,11 @@ def main():
                 verify_live_update(files, preview, previous, args.initial_retrofit)
             print(json.dumps({'writeCount': len(preview['writes']), 'preservedDocumentation': docs,
                               'inventory': preview['inventory'], 'retired': preview['retired'], 'clientRunning': running,
-                              'liveUpdate': live_update, 'activation': activation(preview, live_update)}))
+                              'liveUpdate': live_update, 'activation': activation(preview, live_update),
+                              'apiReview': deferral}))
         else:
             result = install(args.client_root, files, known, args.backup, args.initial_retrofit, previous, args.retire_file,
-                             live_update=live_update, client_running=running)
+                             live_update=live_update, client_running=running, api_review_deferral=deferral)
             print(json.dumps({k: result[k] for k in ('status', 'mode', 'packageFilesVerified', 'preservedDocumentation', 'activation')}))
     except (ValueError, KeyError, OSError, subprocess.SubprocessError) as error:
         parser.exit(1, 'Family install stopped: ' + str(error) + '\n')

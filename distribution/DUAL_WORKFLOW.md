@@ -1,3 +1,16 @@
+## Explicitly deferred API review for local DEV tests - 2026-11-07
+
+Only when the owner explicitly asks to install DEV while skipping export review,
+add `--defer-forever-api-review` to the checked `--allow-running-forever-update`
+command, with the latest installed receipt. Run inspect-only first. This option
+permits the active live Forever 1.60.1 build to differ from the historical review;
+it does not advance export evidence or claim current-client/native acceptance.
+The transaction records the observed build/executable hash and deferred status.
+Package hashes, source pins, live-client identity, unchanged installed receipt,
+runtime/loading graph, atomic DEV writes, backup and protected-state checks remain.
+The option rejects PROD retrofit, retirement, missing receipt and other clients.
+It does not apply to publication, release validation or rollback.
+
 ## Checked Forever updates while running - 2026-11-05
 
 For an explicitly authorized running-client DEV update, use the central installer

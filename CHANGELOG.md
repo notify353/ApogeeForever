@@ -1,3 +1,38 @@
+## Unreleased - own HoT countdown
+
+- Correct stale unverified-build warnings in Keybinds, Essentials and Group Alert
+  for the centrally reviewed Forever70862 client; gameplay and capability checks stay unchanged.
+- Match buff-reminder countdowns to the large seconds-only debuff style and
+  show automatic expiring-buff reminders only during the final60 seconds.
+- Add pale-blue striped shield overlays showing all-caster damage protection on
+  friendly health bars, including inward placement at full health. Preserve
+  incoming healing, white HoT bars, names and native healing clicks.
+- Style debuff timers with larger centered white digits and no seconds suffix;
+  show the countdown only during the final minute, leaving longer effects unnumbered.
+- Fix missing debuff countdowns caused by checking Blizzard's private secure
+  mixins as addon globals. Check actual public container methods; correct the
+  test fixture that had masked the fallback to the old timerless renderer.
+- Review the owner's fresh70862 export: all244 prior references unchanged;
+  include three additional timer/slot references. Install DEV with current
+  API verification instead of the earlier export deferral; retain native-test limits.
+- Add compact white outlined remaining-time labels to fixed debuff icons using
+  native duration bindings; permanent effects stay unnumbered.
+- Fix cleanse bindings remaining unavailable when layout preview auto-locks on
+  combat entry or zoning enters combat; use a secure gate while preserving
+  learned actions, and retain failed-startup cleanup.
+- Replace Forever's separate cleanse artwork/debuff flow with fixed Magic,
+  Disease, Poison, Curse and Other positions showing one native aura per type,
+  native hover tooltips, matching learned-spell borders and secure cleanse clicks.
+- Prefer the newest native aura instance within each type; keep positions stable
+  during combat and preserve white HoT bars. Current-client native acceptance
+  remains pending with the owner-requested export review deferral.
+- Add separate white Druid Rejuvenation, Regrowth and Wild Growth bars in fixed
+  lanes that fit below the name inside the existing health frame.
+- Prepare white DEV own-caster Renew/Rejuvenation/Riptide duration strips on friendly Heals frames.
+- Include all three Forever Shaman Riptide ranks while retaining white artwork and own-caster filtering.
+- Allow an explicit owner-authorized local DEV API-review deferral while retaining
+  package/receipt/loading/backup protections and recording unverified client status.
+
 ## [1.14.15] - 2026-11-06
 
 - Release the verified Forever DEV changes: friendly-focus offensive routing and

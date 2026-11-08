@@ -447,9 +447,13 @@ class DualTests(unittest.TestCase):
         updated[path] += b'\n-- reviewed next version\n'
         toc = 'ApogeeHealsDev/ApogeeHealsDev.toc'
         updated[toc] = updated[toc].replace(b'## Version:', b'## Version: next-')
+        deferral = {'deferredByOwner': True, 'exportChecked': False, 'nativeAccepted': False,
+                    'installedBuild': '1.60.1.70862', 'reviewedBuild': '1.60.1.70790'}
         result = installer.install(client, updated, self.known, backup, previous=previous,
-                                   live_update=True, client_running=True)
+                                   live_update=True, client_running=True, api_review_deferral=deferral)
         self.assertTrue(result['liveUpdate'] and result['clientRunningAtPreflight'])
+        self.assertEqual(result['apiReview'], deferral)
+        self.assertEqual(json.loads((backup / 'transaction.json').read_bytes())['apiReview'], deferral)
         self.assertEqual(result['activation'], {'action': 'user-reload-after-install',
                                                'discoveryChanges': [], 'restartRequired': False})
         self.assertEqual(m.tree(backup / 'addons-before'), self.dev)
