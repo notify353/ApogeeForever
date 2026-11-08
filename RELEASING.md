@@ -1,12 +1,12 @@
 # Apogee Forever releases
 
-Current prepared selection: **Forever 1.14.16**, reviewed against build **70862**.
-Its immutable manifest and player notes are in [1.14.16](distribution/releases/1.14.16/manifest.json).
-The owner requested CurseForge deployment on 2026-11-08. This selection includes
-DEV1.14.15-dev.12 gameplay plus reviewed-build warning corrections in three modules;
-the owner confirmed DEV.12 works, while comprehensive native acceptance remains incomplete. Final-main
-hosted checks and immediate production-tag approval are required before publishing.
-The preceding Forever1.14.15 release and its immutable selection are retained.
+Current prepared selection: **Forever 1.14.17**, reviewed against build **70862**.
+Its immutable manifest and player notes are in [1.14.17](distribution/releases/1.14.17/manifest.json).
+The owner requested a final range sweep, DEV verification and CurseForge deployment
+on 2026-11-08. This selection matches DEV1.14.15-dev.13 gameplay. Source and actual
+installed DEV checks pass; native range/combat/taint acceptance remains incomplete.
+Final-main hosted checks and immediate production-tag approval are required.
+Prepared1.14.16 is superseded but preserved unchanged; it was not published.
 
 Published 2026-10-31: Era **1.14.12** and Forever **1.14.13**. The
 [publication record](distribution/releases/PUBLISHED_2026-10-31.md) links both

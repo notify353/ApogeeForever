@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Fix unavailable healing-spell range feedback with spell-specific proximity and
+  a distinct unknown fade; prepare Forever1.14.17 matching installed DEV.13.
+
 - Correct stale unverified-build warnings in Keybinds, Essentials and Group Alert
   for the centrally reviewed Forever70862 client; gameplay and capability checks stay unchanged.
 - Match buff-reminder countdowns to the large seconds-only debuff style and

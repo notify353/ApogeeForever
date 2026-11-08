@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "d2ce6e9603b34d47e1f6317106feb7587e1d4d1ebfcd9a70b2faf5bcaef7f036",
+  "authorization": {
+    "basis": "Owner requested bug sweep, verification of latest range fix in DEV, then CurseForge deployment on 2026-11-08. Installed DEV1.14.15-dev.13 matches the selected gameplay. Automated checks passed; native range and comprehensive combat/taint acceptance remain incomplete. Final production-tag approval is pending.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "660919928bfe1431565a797fc5946c0ddb12142ec202702ae2b1551089c65d6a",
+  "packages": {
+    "DEV": "b2d65eb28b95bfa9fb3101a3a2589c931e305200582afa810c73598bac4bf15c",
+    "PROD": "b6d492b6a96bb6ad200e90c9470aed1071fa0ee7c9d149cddd1cb00bc5150cb6"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "630d8dd0377981e3b11b52bfc7d27cdb52143be50f98cc0cff0b174a83c3a650",
+  "target": "forever",
+  "version": "1.14.17"
+}
