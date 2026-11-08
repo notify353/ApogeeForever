@@ -1,3 +1,9 @@
+## Unreleased - own HoT countdown
+
+- Prepare DEV own-caster Renew/Rejuvenation duration strips on friendly Heals frames.
+- Allow an explicit owner-authorized local DEV API-review deferral while retaining
+  package/receipt/loading/backup protections and recording unverified client status.
+
 ## [1.14.15] - 2026-11-06
 
 - Release the verified Forever DEV changes: friendly-focus offensive routing and

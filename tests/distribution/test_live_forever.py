@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT/'scripts'))
 import distribution as d
 import forever_client as live
 import migrate_distribution as migration
+import install_dual_distribution as installer
 
 
 class LiveForeverTests(unittest.TestCase):
@@ -137,6 +138,55 @@ class LiveForeverTests(unittest.TestCase):
             with self.assertRaises(ValueError): migration.real_client_preflight(self.client, self.lock, allow_running_dev=True)
             self.assertEqual(tasklist.call_count, count)
         self.assertFalse((self.client/'Interface').exists())
+
+    def test_explicit_dev_deferral_records_unreviewed_build_without_export_reads(self):
+        self.info.write_text('Product|Version|Active\nwowf|1.60.1.70862|1\n')
+        self.reference.unlink()
+        process = subprocess.CompletedProcess([], 0, stdout='"Wow.exe","123"\n', stderr='')
+        real_evidence = live.verify_evidence
+        with patch.object(live, 'verify_evidence', side_effect=lambda lock: real_evidence(lock, self.evidence)), \
+             patch.object(live, 'verify_live_export') as export, \
+             patch.object(migration, 'os', SimpleNamespace(name='nt')), \
+             patch.object(migration.subprocess, 'run', return_value=process):
+            self.assertTrue(migration.real_client_preflight(self.client, self.lock,
+                            allow_running_dev=True, defer_api_review=True))
+            result = migration.deferred_live_dev_review(self.client, self.lock)
+            self.assertEqual(result['installedBuild'], '1.60.1.70862')
+            self.assertEqual(result['reviewedBuild'], '1.60.1.70790')
+            self.assertTrue(result['deferredByOwner'])
+            self.assertFalse(result['exportChecked'] or result['nativeAccepted'])
+            self.assertEqual(result['installedExecutableSha256'], d.sha(self.exe.read_bytes()))
+            export.assert_not_called()
+            with self.assertRaisesRegex(ValueError, 'checked live DEV'):
+                migration.real_client_preflight(self.client, self.lock, defer_api_review=True)
+        self.assertFalse((self.client/'Interface').exists())
+
+    def test_deferred_review_still_rejects_wrong_inactive_ambiguous_or_missing_client(self):
+        real_evidence = live.verify_evidence
+        with patch.object(live, 'verify_evidence', side_effect=lambda lock: real_evidence(lock, self.evidence)):
+            for rows in ('wow_classic_beta|1.60.1.70862|1', 'wowf|1.60.1.70862|0',
+                         'wowf|1.60.1.70862|1\nwowf|1.60.1.70862|1',
+                         'wowf|1.60.2.70862|1', 'wowf||1', ''):
+                self.info.write_text('Product|Version|Active\n'+rows+'\n')
+                with self.subTest(rows=rows), self.assertRaises(ValueError):
+                    migration.deferred_live_dev_review(self.client, self.lock)
+            self.info.write_text('Product|Version|Active\nwowf|1.60.1.70862|1\n')
+            self.exe.unlink()
+            with self.assertRaisesRegex(ValueError, 'executable missing'):
+                migration.deferred_live_dev_review(self.client, self.lock)
+        with self.assertRaisesRegex(ValueError, 'live Forever DEV only'):
+            migration.deferred_live_dev_review(self.client, d.read_lock(ROOT/'distribution/candidate.lock.json'))
+
+    def test_deferred_review_cli_cannot_retrofit_retire_or_skip_receipt(self):
+        common = ['install', '--client-root', 'unused', '--sources-root', 'unused',
+                  '--artifacts', 'unused', '--backup', 'unused', '--defer-forever-api-review']
+        valid = ['--allow-running-forever-update', '--previous-install', 'unused']
+        for extra in ([], ['--allow-running-forever-update'], valid+['--initial-retrofit'],
+                      valid+['--retire-file', 'ApogeeHealsDev/old.lua'], valid+['--target', 'classic-era']):
+            with self.subTest(extra=extra), patch.object(sys, 'argv', common+extra), \
+                 patch.object(migration, 'real_client_preflight') as preflight:
+                with self.assertRaises(SystemExit): installer.main()
+                preflight.assert_not_called()
 
 
 if __name__ == '__main__': unittest.main()

@@ -1,3 +1,13 @@
+## Own HoT local DEV test; current API review deferred - 2026-11-07
+
+Candidate 1.14.15-dev.1 adds only the Heals own-caster Renew/Rejuvenation strip.
+Owner explicitly authorized DEV installation and skipping the export refresh.
+Source and generated behavior checks use the existing export as historical
+reference. Source pins advance; the reviewed70790 client, executable hash and
+244 reference hashes remain historical and unchanged. Installed70862 is not
+claimed reviewed. Use the explicit deferred-review DEV option with the latest
+receipt; native acceptance is pending. No Era/release selection changes.
+
 ## Focus spell re-follow - 2026-11-05
 
 The candidate extends only focus-assisted spell inputs with an optional follow

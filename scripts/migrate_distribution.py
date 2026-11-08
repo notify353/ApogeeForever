@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import stat
@@ -271,18 +272,44 @@ def rollback(backup):
     return journal
 
 
-def real_client_preflight(client, lock, allow_running_dev=False):
+def deferred_live_dev_review(client, lock):
+    """Record an explicit local DEV exception without claiming refreshed API authority."""
+    import forever_client
+    d.require(lock['client'] == forever_client.LIVE_CLIENT, 'API review deferral is live Forever DEV only')
+    forever_client.verify_evidence(lock)
+    client = ordinary(client)
+    d.require(client.name == '_forever_', 'API review deferral requires the live Forever directory')
+    exe = under(client, 'Wow.exe')
+    d.require(exe.is_file(), 'Live Forever executable missing')
+    lines = ordinary(client.parent / '.build.info').read_text(encoding='utf-8-sig').splitlines()
+    d.require(bool(lines), 'Missing live Forever build metadata')
+    keys = [k.split('!')[0] for k in lines[0].split('|')]
+    rows = [dict(zip(keys, line.split('|'))) for line in lines[1:] if line]
+    selected = [r for r in rows if r.get('Product') == 'wowf']
+    d.require(len(selected) == 1 and selected[0].get('Active') == '1', 'One active live Forever product required')
+    build = selected[0].get('Version', '')
+    d.require(re.fullmatch(r'1\.60\.1\.\d+', build), 'API review deferral cannot change client family/version')
+    return {'deferredByOwner': True, 'exportChecked': False, 'nativeAccepted': False,
+            'installedBuild': build, 'reviewedBuild': lock['client']['reviewedBuild'],
+            'installedExecutableSha256': d.sha(exe.read_bytes())}
+
+
+def real_client_preflight(client, lock, allow_running_dev=False, defer_api_review=False):
     import forever_client
     client = ordinary(client)
     live = lock['client'] == forever_client.LIVE_CLIENT
-    if live:
+    if defer_api_review:
+        d.require(live and allow_running_dev, 'API review deferral requires the checked live DEV update path')
+        deferred_live_dev_review(client, lock)
+    elif live:
         forever_client.verify_live_export(client, lock)
     d.require(client.name == ('_forever_' if live else '_classic_beta_'), 'Only reviewed Forever client is supported')
     lines = (client.parent / '.build.info').read_text(encoding='utf-8-sig').splitlines()
     keys = [k.split('!')[0] for k in lines[0].split('|')]
     rows = [dict(zip(keys, line.split('|'))) for line in lines[1:]]
-    d.require([r.get('Version') for r in rows if r.get('Product') == ('wowf' if live else 'wow_classic_beta')]
-              == [lock['client']['reviewedBuild']], 'Forever build changed; review required')
+    if not defer_api_review:
+        d.require([r.get('Version') for r in rows if r.get('Product') == ('wowf' if live else 'wow_classic_beta')]
+                  == [lock['client']['reviewedBuild']], 'Forever build changed; review required')
     d.require(os.name == 'nt', 'Real installation is supported on reviewed Windows host only')
     executable = 'Wow.exe' if live else 'WowB.exe'
     result = subprocess.run(['tasklist', '/FI', 'IMAGENAME eq ' + executable, '/FO', 'CSV', '/NH'],
