@@ -1,6 +1,6 @@
 ## Own HoT local DEV test; current API review deferred - 2026-11-07
 
-Candidate 1.14.15-dev.1 adds only the Heals own-caster Renew/Rejuvenation strip.
+Candidate 1.14.15-dev.2 adds the white Heals own-caster Renew/Rejuvenation strip.
 Owner explicitly authorized DEV installation and skipping the export refresh.
 Source and generated behavior checks use the existing export as historical
 reference. Source pins advance; the reviewed70790 client, executable hash and

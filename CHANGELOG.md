@@ -1,6 +1,6 @@
 ## Unreleased - own HoT countdown
 
-- Prepare DEV own-caster Renew/Rejuvenation duration strips on friendly Heals frames.
+- Prepare white DEV own-caster Renew/Rejuvenation duration strips on friendly Heals frames.
 - Allow an explicit owner-authorized local DEV API-review deferral while retaining
   package/receipt/loading/backup protections and recording unverified client status.
 
