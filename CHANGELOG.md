@@ -1,6 +1,7 @@
 ## Unreleased - own HoT countdown
 
-- Prepare white DEV own-caster Renew/Rejuvenation duration strips on friendly Heals frames.
+- Prepare white DEV own-caster Renew/Rejuvenation/Riptide duration strips on friendly Heals frames.
+- Include all three Forever Shaman Riptide ranks while retaining white artwork and own-caster filtering.
 - Allow an explicit owner-authorized local DEV API-review deferral while retaining
   package/receipt/loading/backup protections and recording unverified client status.
 
