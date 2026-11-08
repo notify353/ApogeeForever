@@ -1,5 +1,11 @@
 ## Unreleased - own HoT countdown
 
+- Replace Forever's separate cleanse artwork/debuff flow with fixed Magic,
+  Disease, Poison, Curse and Other positions showing one native aura per type,
+  native hover tooltips, matching learned-spell borders and secure cleanse clicks.
+- Prefer the newest native aura instance within each type; keep positions stable
+  during combat and preserve white HoT bars. Current-client native acceptance
+  remains pending with the owner-requested export review deferral.
 - Add separate white Druid Rejuvenation, Regrowth and Wild Growth bars in fixed
   lanes that fit below the name inside the existing health frame.
 - Prepare white DEV own-caster Renew/Rejuvenation/Riptide duration strips on friendly Heals frames.
