@@ -1,3 +1,14 @@
+## Shield overlay API review - November 8, 2026
+
+The DEV shield candidate retains current70862 authority and adds the native
+Blizzard_UnitFrame/Shared/StatusBarOverlaySegment.xml texture reference, bringing
+the inventory to248 files. Existing public calculator, status-bar, frame-alpha
+and texture-tiling documentation supports total-absorb display and fixed inward
+overflow placement. Secret values go only to native display sinks. The source
+and generated family checks cover lifecycle and optional capabilities; native
+visual/taint acceptance awaits owner testing. CurseForge release preparation is
+paused and its preliminary1.14.16 selection has not been updated or published.
+
 ## Fresh owner export and debuff timer review - 2026-11-08
 
 Live screenshot correction: DEV.8 still used the legacy timerless renderer.
