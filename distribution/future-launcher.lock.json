@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "a94890fc486b2e27be8b2758db3b012592f67aa5",
+      "commit": "e239e0cc4275d8664c26d3b0eb5007d3ce3697d1",
       "files": {
         "ApogeeHeals.lua": "6dbb3feff1b1aac4128dfd565178c79bd0ab496278bc2ecbf1638b3bc66de22e",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
@@ -12,20 +12,20 @@
         "Buffs/Preferences.lua": "d6f6a648c8782a76c8e1649d07a7bf60767381c64384944a231a9a1394d5f1c2",
         "Buffs/Runtime.lua": "56b9d9bf418c0a7621e980aa5430d2b5b954a8367e995086cfdd17fba0bf1cf5",
         "Buffs/View.lua": "45a1dd4a32892dd095107ed06c442efffd714ee876d931e6fd0d92c5abc93fbf",
-        "CHANGELOG.md": "47a6309f2654f27fdcbc43ae7d37c7b50edb838c0b2827c2e8e8db5f54ea2a85",
+        "CHANGELOG.md": "ff68c183b7ef057ed3366ea08c0e8e9f96d7369bdec4d976346f58a9d9ca75fb",
         "Cleansing/Runtime.lua": "d95a4b1de56d890cf023d2652d2ae0c4c0818912adb6e0870a878a99a86135c7",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "a03018edca66ab6c8c3bfdab1a88f0e6f25e1ff18af0a0e66e227b90f95b9efc",
         "Core/Storage.lua": "83c48d2ed9293164a497c75b8b8f7b6a4d73c884396b731d9171f80ec8153e33",
         "Core/UnitAPI.lua": "0566e79b4393aefd3d235423f2c28349d07307b956808c4599a402e841c7c73c",
         "Drinking/Runtime.lua": "fcc10557de5b6d838ffba27c03c2b38bdb763b30dbbdc28a41c845c325345713",
-        "IncomingHeals/View.lua": "7cc175ce25329c382e08595cad723ca6b01c156ea124e9cb859ccec6c8dc03d1",
+        "IncomingHeals/View.lua": "cb1a59c9121ab3edef3dffdc6ee13f704c2f71dc5bbd0204a45e994791738d79",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
         "PartyFrames/Preview.lua": "56ed40b09deee9633af0f6c291941e63231bdffaa98b50e61d266feaa457bce1",
-        "PartyFrames/Runtime.lua": "3dbac7267f850fb0147dd58a64a42a2434108b803772e15957ed263c4dbb43d3",
-        "PartyFrames/View.lua": "974a933e513ec7122c2a1c2fcaa4d388e071d8260820bc4c16ee8b0b8fcda384",
-        "README.md": "06a307e40ac4e37c21c0eb4bd763f66fdce7d06ad4f487cf19d1ad8596e2d432",
+        "PartyFrames/Runtime.lua": "14714bd50fc088e82f5cb38c6b81edcc28a0ffece5101511a7e8071e77674068",
+        "PartyFrames/View.lua": "e81f384c4990a1292be1b2ab0fae04a36a3780f45117eff315fc709ef8af99f5",
+        "README.md": "cf04e56f567926238692da5ddd3697df70efe23063cbf043ce22c3c25ae6674b",
         "Threat/Diagnostics.lua": "7c71432508520517e684c604f6eefd3c932ba47f264d4aa83c4171d0c2a0923e",
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
@@ -35,7 +35,7 @@
         "UI/Settings.lua": "87d6f7a513c4ebba1ade3f118c65ff37d44d89547959a3af49ef00dab9d086bd",
         "UI/Style.lua": "4827ccb8a8c3fb3eb7faa20868650e0101997213d3a90acbe7519e2437b9c6cc",
         "WeaponUpkeep/Runtime.lua": "d043c7fd40e0d47ae1079b0a0069243355016b126ecf0f72ff3ebca6087978e3",
-        "docs/API_REFERENCE.md": "5c673cafbbbcf940245f9820866c08ddbbc74e7d43e12e5cbda9b91f3402ca3e",
+        "docs/API_REFERENCE.md": "5801999d7b359a5f6d6a23fd2cf81bcb75058e55a01195cf7fee8efb63e5479f",
         "docs/CLASS_SUPPORT.md": "e8190e51cb7cdf7c410437af7a2ec3c6e5e605789eaccc2b6c9c16ea35dba0ff",
         "docs/wow-api-export.json": "50d145f20a1e8566cb6804f666e57c7e573999f09f45475b4e3bd75719411a69"
       },
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "222467f02e01bb437527fe9b8ad3d837ff82c5e819ff57e3072ee57443c41393",
+  "liveApiEvidenceSha256": "eafae5997c40f9b281757bee51a1a81c23c7bec541216acfa85f0cb42796db2d",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -246,5 +246,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.15-dev.10"
+  "version": "1.14.15-dev.11"
 }

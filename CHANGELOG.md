@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Add pale-blue striped shield overlays showing all-caster damage protection on
+  friendly health bars, including inward placement at full health. Preserve
+  incoming healing, white HoT bars, names and native healing clicks.
 - Style debuff timers with larger centered white digits and no seconds suffix;
   show the countdown only during the final minute, leaving longer effects unnumbered.
 - Fix missing debuff countdowns caused by checking Blizzard's private secure

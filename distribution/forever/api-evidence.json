@@ -401,9 +401,9 @@
     {
       "owners": [
         "ApogeeEssentials",
+        "ApogeeGroupAlert",
         "ApogeeHeals",
-        "ApogeeKeybinds",
-        "ApogeeGroupAlert"
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/SimpleTextureBaseAPIDocumentation.lua",
       "sha256": "e4ccf4dbc0458473f5f31f69986e7aa12171bfa7359a32f7b884b2edfd6bff00"
@@ -1787,6 +1787,13 @@
       "owners": [
         "ApogeeHeals"
       ],
+      "path": "Blizzard_UnitFrame/Shared/StatusBarOverlaySegment.xml",
+      "sha256": "1d0b3aa696340244bc3640f33eb0fe75c6ffddf24baf3341e35ec69d98a0ae27"
+    },
+    {
+      "owners": [
+        "ApogeeHeals"
+      ],
       "path": "Blizzard_UnitPopup/Camelot/UnitPopupMenus.lua",
       "sha256": "6681af8ffcdb48cbc89f703b159614976e5d69401bc18266b4a9b43757821c65"
     },
@@ -1804,7 +1811,7 @@
   "sourcePins": {
     "ApogeeEssentials": "4e8a147bd7d94a33e70b580cd203848f2286c556",
     "ApogeeGroupAlert": "8025148445c9d4b3d5ac42b7a2441d855e50000d",
-    "ApogeeHeals": "a94890fc486b2e27be8b2758db3b012592f67aa5",
+    "ApogeeHeals": "e239e0cc4275d8664c26d3b0eb5007d3ce3697d1",
     "ApogeeKeybinds": "5fe2fc88177989ea0619e3e90483dd157cb09f88",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
