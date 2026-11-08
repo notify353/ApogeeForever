@@ -6,10 +6,10 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.70790",
+    "reviewedBuild": "1.60.1.70862",
     "version": "1.60.1"
   },
-  "executableSha256": "f41c5febb41bfb426d70618b52c5b126a263a08eb8b47d425bc77e6c8e8f4771",
+  "executableSha256": "dee72d6bec420d1c9e6fa2e665b39dcea503c35d501081f79a391a85469d1ee9",
   "files": [
     {
       "owners": [
@@ -33,6 +33,13 @@
       ],
       "path": "Blizzard_APIDocumentationGenerated/AuctionHouseDocumentation.lua",
       "sha256": "d970632b8175ef98c07cd7876debdef2a29ca023a32063787f7796795cea2372"
+    },
+    {
+      "owners": [
+        "ApogeeHeals"
+      ],
+      "path": "Blizzard_APIDocumentationGenerated/AuraContainerUtilDocumentation.lua",
+      "sha256": "a87c322d2c43da359381d76fdda7f900e6980c5cf5115701d2ad70e1676f6380"
     },
     {
       "owners": [
@@ -1008,6 +1015,13 @@
     },
     {
       "owners": [
+        "ApogeeHeals"
+      ],
+      "path": "Blizzard_AuraContainer/Blizzard_AuraContainerSlots.lua",
+      "sha256": "f26bf133eaa9213ad6607dea26dd2b6507dc122c5b9083dae0820080b86a5537"
+    },
+    {
+      "owners": [
         "ApogeeEssentials"
       ],
       "path": "Blizzard_AuraContainer/Blizzard_AuraContainerSources.lua",
@@ -1675,6 +1689,13 @@
       "owners": [
         "ApogeeHeals"
       ],
+      "path": "Blizzard_SharedXMLBase/TableUtil.lua",
+      "sha256": "659d2bed4266dd176c1a6dd9989d6c65c9f90252ba146bf181e5d969bf57127a"
+    },
+    {
+      "owners": [
+        "ApogeeHeals"
+      ],
       "path": "Blizzard_SharedXMLGame/Tooltip/TooltipDataHandler.lua",
       "sha256": "a6d45718804b9b023db7ff114f516db9133e32f531b837f6d2026432955e6fbd"
     },
@@ -1778,12 +1799,12 @@
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-11-05",
+  "reviewedOn": "2026-11-08",
   "schema": 1,
   "sourcePins": {
     "ApogeeEssentials": "4e8a147bd7d94a33e70b580cd203848f2286c556",
     "ApogeeGroupAlert": "8025148445c9d4b3d5ac42b7a2441d855e50000d",
-    "ApogeeHeals": "ffdb6d5b3d4fa681965183125f77512473c4bc72",
+    "ApogeeHeals": "195ad1aa2c77240d1a30f2b4e7c46ec24757c095",
     "ApogeeKeybinds": "5fe2fc88177989ea0619e3e90483dd157cb09f88",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }

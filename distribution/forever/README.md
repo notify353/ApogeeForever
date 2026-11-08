@@ -1,4 +1,25 @@
-## Own HoT local DEV test; current API review deferred - 2026-11-07
+## Fresh owner export and debuff timer review - 2026-11-08
+
+Current authority is Forever1.60.1.70862, Interface16001. The owner's fresh export
+postdates Wow.exe and agrees with its file version and active wowf build metadata.
+All244 existing source references are byte-identical to70790. Three added Heals
+references document the duration-text options, native aura slot selection and
+priority table, for247 total. These were reviewed against fixed newest-instance
+slots and native timer text; no changed or incompatible contract was found.
+
+Native SetDurationText binds a child FontString with restricted text/color/alpha
+aspects, uses the compact remaining-time formatter, and updates the duration on
+aura replacement. The native zero-duration binding path and icon visibility own
+permanent/removed displays. Separate mouse-motion tooltip and secure release
+actions retain their prior contracts. No Lua aura/timer inspection is introduced.
+Heals recognizes70862 for its reviewed-build notice; missing APIs still reject
+initialization and future unreviewed builds still warn. Other child pins stay.
+
+This review supersedes API deferral for the new DEV candidate. Source/generated
+checks and verified export installation do not claim native in-game acceptance.
+Historical beta, Era, releases and earlier deferred receipts remain unchanged.
+
+## Own HoT local DEV test; API review deferred at that time - 2026-11-07
 
 Candidate 1.14.15-dev.2 adds the white Heals own-caster Renew/Rejuvenation strip.
 Owner explicitly authorized DEV installation and skipping the export refresh.
@@ -37,11 +58,11 @@ Era and immutable releases stay unchanged. Native visibility review is pending.
 
 # Live Forever authority
 
-The isolated future candidate now targets reviewed Forever **1.60.1.70790**,
+The isolated future candidate now targets reviewed Forever **1.60.1.70862**,
 Interface 16001, product `wowf`, directory `_forever_`, executable `Wow.exe`.
 The frozen v1.14.9 selection and its beta authority are unchanged.
 
-`api-evidence.json` records the executable hash and 244 unique exported source
+`api-evidence.json` records the executable hash and 247 unique exported source
 files covering distribution, all five pinned children and embedded shared UI.
 The future lock binds its canonical hash and the exact merged child revisions.
 These central checks cover the current client; the children's retained standalone

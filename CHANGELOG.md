@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Review the owner's fresh70862 export: all244 prior references unchanged;
+  include three additional timer/slot references. Install DEV with current
+  API verification instead of the earlier export deferral; retain native-test limits.
 - Add compact white outlined remaining-time labels to fixed debuff icons using
   native duration bindings; permanent effects stay unnumbered.
 - Fix cleanse bindings remaining unavailable when layout preview auto-locks on

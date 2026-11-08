@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "ffdb6d5b3d4fa681965183125f77512473c4bc72",
+      "commit": "195ad1aa2c77240d1a30f2b4e7c46ec24757c095",
       "files": {
         "ApogeeHeals.lua": "6dbb3feff1b1aac4128dfd565178c79bd0ab496278bc2ecbf1638b3bc66de22e",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
@@ -15,7 +15,7 @@
         "CHANGELOG.md": "47a6309f2654f27fdcbc43ae7d37c7b50edb838c0b2827c2e8e8db5f54ea2a85",
         "Cleansing/Runtime.lua": "86304f909f73cb97df4d6075cd3209554980cb5dd24bdaed2ed72ad43ab735c4",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
-        "Core/Client.lua": "02bd583ef0fe7cb9ddf025ffd64b4ed77812ba789a03a2b26e8a72296ceb47b8",
+        "Core/Client.lua": "a03018edca66ab6c8c3bfdab1a88f0e6f25e1ff18af0a0e66e227b90f95b9efc",
         "Core/Storage.lua": "83c48d2ed9293164a497c75b8b8f7b6a4d73c884396b731d9171f80ec8153e33",
         "Core/UnitAPI.lua": "0566e79b4393aefd3d235423f2c28349d07307b956808c4599a402e841c7c73c",
         "Drinking/Runtime.lua": "fcc10557de5b6d838ffba27c03c2b38bdb763b30dbbdc28a41c845c325345713",
@@ -35,7 +35,7 @@
         "UI/Settings.lua": "87d6f7a513c4ebba1ade3f118c65ff37d44d89547959a3af49ef00dab9d086bd",
         "UI/Style.lua": "4827ccb8a8c3fb3eb7faa20868650e0101997213d3a90acbe7519e2437b9c6cc",
         "WeaponUpkeep/Runtime.lua": "d043c7fd40e0d47ae1079b0a0069243355016b126ecf0f72ff3ebca6087978e3",
-        "docs/API_REFERENCE.md": "91fd3e6c68ae6a83dec6cae854519eafd986ba7ae940ff46219c585eddfc7c75",
+        "docs/API_REFERENCE.md": "9c861181c5104e1ed5d38c698304529ba83aa6994fdea66de06850841b04257c",
         "docs/CLASS_SUPPORT.md": "e8190e51cb7cdf7c410437af7a2ec3c6e5e605789eaccc2b6c9c16ea35dba0ff",
         "docs/wow-api-export.json": "50d145f20a1e8566cb6804f666e57c7e573999f09f45475b4e3bd75719411a69"
       },
@@ -201,7 +201,7 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.70790",
+    "reviewedBuild": "1.60.1.70862",
     "version": "1.60.1"
   },
   "futurePackager": {
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "618548c5b813b7a545ea1d3294282ae8792d47fcfb1d1a452039bb8cd73bf59e",
+  "liveApiEvidenceSha256": "110f2c79ba7e8b12879e665568b14288471f906e7d844dd1af384b5d45e1a68f",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -246,5 +246,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.15-dev.7"
+  "version": "1.14.15-dev.8"
 }
