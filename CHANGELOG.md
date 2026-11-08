@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Fix missing debuff countdowns caused by checking Blizzard's private secure
+  mixins as addon globals. Check actual public container methods; correct the
+  test fixture that had masked the fallback to the old timerless renderer.
 - Review the owner's fresh70862 export: all244 prior references unchanged;
   include three additional timer/slot references. Install DEV with current
   API verification instead of the earlier export deferral; retain native-test limits.

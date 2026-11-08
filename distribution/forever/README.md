@@ -1,5 +1,13 @@
 ## Fresh owner export and debuff timer review - 2026-11-08
 
+Live screenshot correction: DEV.8 still used the legacy timerless renderer.
+The addon checked secure-environment mixin definitions as global capabilities;
+the test fixture incorrectly exposed them. The new candidate checks actual
+public inbound container methods instead. TOC/XML/global-export regressions now
+match the native namespace boundary and reproduce the prior failure. A matching
+API hash and installed file audit did not establish correct runtime selection.
+Reload and owner native acceptance remain necessary for the corrected renderer.
+
 Current authority is Forever1.60.1.70862, Interface16001. The owner's fresh export
 postdates Wow.exe and agrees with its file version and active wowf build metadata.
 All244 existing source references are byte-identical to70790. Three added Heals
