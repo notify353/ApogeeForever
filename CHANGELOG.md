@@ -1,5 +1,7 @@
 ## Unreleased - own HoT countdown
 
+- Add compact white outlined remaining-time labels to fixed debuff icons using
+  native duration bindings; permanent effects stay unnumbered.
 - Fix cleanse bindings remaining unavailable when layout preview auto-locks on
   combat entry or zoning enters combat; use a secure gate while preserving
   learned actions, and retain failed-startup cleanup.

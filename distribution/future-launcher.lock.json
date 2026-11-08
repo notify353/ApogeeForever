@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "06eb96b8a9bd6cc83b0be1c1b1fd7fbff8701cf8",
+      "commit": "ffdb6d5b3d4fa681965183125f77512473c4bc72",
       "files": {
         "ApogeeHeals.lua": "6dbb3feff1b1aac4128dfd565178c79bd0ab496278bc2ecbf1638b3bc66de22e",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
@@ -13,7 +13,7 @@
         "Buffs/Runtime.lua": "56b9d9bf418c0a7621e980aa5430d2b5b954a8367e995086cfdd17fba0bf1cf5",
         "Buffs/View.lua": "45a1dd4a32892dd095107ed06c442efffd714ee876d931e6fd0d92c5abc93fbf",
         "CHANGELOG.md": "47a6309f2654f27fdcbc43ae7d37c7b50edb838c0b2827c2e8e8db5f54ea2a85",
-        "Cleansing/Runtime.lua": "df4e72d8083dccb355975a30669e5aa25358235cf0e820bcd3b9b494dadf20f3",
+        "Cleansing/Runtime.lua": "86304f909f73cb97df4d6075cd3209554980cb5dd24bdaed2ed72ad43ab735c4",
         "Core/Access.lua": "7e518d6a5a11f608ca797756f0448e88733b2346821c283812231a47c1ab821e",
         "Core/Client.lua": "02bd583ef0fe7cb9ddf025ffd64b4ed77812ba789a03a2b26e8a72296ceb47b8",
         "Core/Storage.lua": "83c48d2ed9293164a497c75b8b8f7b6a4d73c884396b731d9171f80ec8153e33",
@@ -25,7 +25,7 @@
         "PartyFrames/Preview.lua": "56ed40b09deee9633af0f6c291941e63231bdffaa98b50e61d266feaa457bce1",
         "PartyFrames/Runtime.lua": "3dbac7267f850fb0147dd58a64a42a2434108b803772e15957ed263c4dbb43d3",
         "PartyFrames/View.lua": "974a933e513ec7122c2a1c2fcaa4d388e071d8260820bc4c16ee8b0b8fcda384",
-        "README.md": "5df24f8718ca1dc011c326ba4a7727b3dd872341d9775cdaf6019ae93ab4c282",
+        "README.md": "d711f883bd4be36199add68221fde0bccc033a5588401a41bc9fba24b823b9e1",
         "Threat/Diagnostics.lua": "7c71432508520517e684c604f6eefd3c932ba47f264d4aa83c4171d0c2a0923e",
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
@@ -35,7 +35,7 @@
         "UI/Settings.lua": "87d6f7a513c4ebba1ade3f118c65ff37d44d89547959a3af49ef00dab9d086bd",
         "UI/Style.lua": "4827ccb8a8c3fb3eb7faa20868650e0101997213d3a90acbe7519e2437b9c6cc",
         "WeaponUpkeep/Runtime.lua": "d043c7fd40e0d47ae1079b0a0069243355016b126ecf0f72ff3ebca6087978e3",
-        "docs/API_REFERENCE.md": "15420355d408c29e8049b24294827e739615a90f04d0a3f6babd8b3c93fb9d82",
+        "docs/API_REFERENCE.md": "91fd3e6c68ae6a83dec6cae854519eafd986ba7ae940ff46219c585eddfc7c75",
         "docs/CLASS_SUPPORT.md": "e8190e51cb7cdf7c410437af7a2ec3c6e5e605789eaccc2b6c9c16ea35dba0ff",
         "docs/wow-api-export.json": "50d145f20a1e8566cb6804f666e57c7e573999f09f45475b4e3bd75719411a69"
       },
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "0ac1fdff8a7a2b756e387a0043a429d0818f79b0d252c6a5aa6ca900b66e0119",
+  "liveApiEvidenceSha256": "618548c5b813b7a545ea1d3294282ae8792d47fcfb1d1a452039bb8cd73bf59e",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -246,5 +246,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.15-dev.6"
+  "version": "1.14.15-dev.7"
 }
