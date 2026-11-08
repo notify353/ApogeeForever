@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Fix cleanse bindings remaining unavailable when layout preview auto-locks on
+  combat entry or zoning enters combat; use a secure gate while preserving
+  learned actions, and retain failed-startup cleanup.
 - Replace Forever's separate cleanse artwork/debuff flow with fixed Magic,
   Disease, Poison, Curse and Other positions showing one native aura per type,
   native hover tooltips, matching learned-spell borders and secure cleanse clicks.
