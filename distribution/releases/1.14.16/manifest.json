@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "b2dc93553ef1ec5cac7df0b9dae5d1d2fe0cbfeeb4b97cf95b1c592677a7e9fa",
+  "authorization": {
+    "basis": "Owner confirmed DEV.12 works and resumed CurseForge deployment on 2026-11-08. Release preserves tested gameplay and corrects stale reviewed-build warnings in three modules. Early normal release policy applies; comprehensive native acceptance remains incomplete. Final production-tag approval remains required.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "809a0f86c42b686e9ee0df4b944e7328a6a7cf1feb5fc6a7bcbbc9faa8965c66",
+  "packages": {
+    "DEV": "af328ec80e6dcad526d704f442da32e9f69f2d8e9b8c099e2601fd668366aafe",
+    "PROD": "008524e103fe49620b5a623f7aaf042c39c2b809515adacf5655749fda4c312d"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "6d9097554c07c30c7caa4d4a4e7b79324e03e43aec0045bc985b674d03a42b05",
+  "target": "forever",
+  "version": "1.14.16"
+}

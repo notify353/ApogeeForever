@@ -1,5 +1,7 @@
 ## Unreleased - own HoT countdown
 
+- Correct stale unverified-build warnings in Keybinds, Essentials and Group Alert
+  for the centrally reviewed Forever70862 client; gameplay and capability checks stay unchanged.
 - Match buff-reminder countdowns to the large seconds-only debuff style and
   show automatic expiring-buff reminders only during the final60 seconds.
 - Add pale-blue striped shield overlays showing all-caster damage protection on
