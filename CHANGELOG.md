@@ -1,5 +1,7 @@
 ## Unreleased - own HoT countdown
 
+- Match buff-reminder countdowns to the large seconds-only debuff style and
+  show automatic expiring-buff reminders only during the final60 seconds.
 - Add pale-blue striped shield overlays showing all-caster damage protection on
   friendly health bars, including inward placement at full health. Preserve
   incoming healing, white HoT bars, names and native healing clicks.
