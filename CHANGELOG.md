@@ -1,5 +1,7 @@
 ## Unreleased - own HoT countdown
 
+- Style debuff timers with larger centered white digits and no seconds suffix;
+  show the countdown only during the final minute, leaving longer effects unnumbered.
 - Fix missing debuff countdowns caused by checking Blizzard's private secure
   mixins as addon globals. Check actual public container methods; correct the
   test fixture that had masked the fallback to the old timerless renderer.
