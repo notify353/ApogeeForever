@@ -1,5 +1,7 @@
 ## Unreleased - own HoT countdown
 
+- Add separate white Druid Rejuvenation, Regrowth and Wild Growth bars in fixed
+  lanes that fit below the name inside the existing health frame.
 - Prepare white DEV own-caster Renew/Rejuvenation/Riptide duration strips on friendly Heals frames.
 - Include all three Forever Shaman Riptide ranks while retaining white artwork and own-caster filtering.
 - Allow an explicit owner-authorized local DEV API-review deferral while retaining
