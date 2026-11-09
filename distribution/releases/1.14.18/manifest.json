@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "0c6c5d582cda5a0b463541c36785c5ebc1e8179401ea2402995198d4bc93f051",
+  "authorization": {
+    "basis": "On 2026-11-08 the owner explicitly requested: deploy to curseforge. you have my full approval. This authorizes publication of the current DEV.5 resurrection changes, including required pushes, integration and final tag. Regular resurrection/range was accepted in game; Druid combat/native taint acceptance remains pending and is not claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "a7e3bf8c7274cc60cb66c5c3a14a37eeffd45d39eda57d56305508f01f4bdc02",
+  "packages": {
+    "DEV": "4ebe0c7ccadc182c70155caed1f820c2b46408a631433797e19b5b8c217ec98f",
+    "PROD": "660d87c17b6facc188f0d4eccdb2cd92c81962f550b61150d1f55079b46761f0"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "3b9c0000d39c2e8c5dad16ed37e0e2122531d720cbf2fc99cf6b5a78dabc1591",
+  "target": "forever",
+  "version": "1.14.18"
+}

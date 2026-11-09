@@ -1,3 +1,21 @@
+## [1.14.18] - 2026-11-08
+
+- Add all five Druid Revive and Rebirth ranks to DEV resurrection actions.
+  Rebirth has a fixed secure button that remains available for combat deaths;
+  both spells retain grey feedback on confirmed out-of-range checks.
+
+- Dim/desaturate DEV resurrection icons on confirmed spell-range failures while
+  preserving visible, working fixed-recipient clicks. No line-of-sight inference.
+
+- Fix DEV resurrection detection using the owner's confirmed Forever spell
+  classification: learned resurrection can report IsSpellHelpful=false.
+
+- Keep DEV resurrection actions visible for released recipients regardless of
+  unit range and bypass the target support frame's living-only parent gate.
+
+- Prepare DEV resurrection buttons beside dead player rows, using the highest
+  learned Priest, Paladin or Shaman rank and strict out-of-combat recipient clicks.
+
 ## Unreleased - own HoT countdown
 
 - Fix unavailable healing-spell range feedback with spell-specific proximity and
