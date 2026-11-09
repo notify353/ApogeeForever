@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Fix DEV resurrection detection using the owner's confirmed Forever spell
+  classification: learned resurrection can report IsSpellHelpful=false.
+
 - Keep DEV resurrection actions visible for released recipients regardless of
   unit range and bypass the target support frame's living-only parent gate.
 
