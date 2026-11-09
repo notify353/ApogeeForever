@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Keep DEV resurrection actions visible for released recipients regardless of
+  unit range and bypass the target support frame's living-only parent gate.
+
 - Prepare DEV resurrection buttons beside dead player rows, using the highest
   learned Priest, Paladin or Shaman rank and strict out-of-combat recipient clicks.
 
