@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Dim/desaturate DEV resurrection icons on confirmed spell-range failures while
+  preserving visible, working fixed-recipient clicks. No line-of-sight inference.
+
 - Fix DEV resurrection detection using the owner's confirmed Forever spell
   classification: learned resurrection can report IsSpellHelpful=false.
 
