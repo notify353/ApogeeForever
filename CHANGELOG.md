@@ -1,5 +1,8 @@
 ## Unreleased - own HoT countdown
 
+- Prepare DEV resurrection buttons beside dead player rows, using the highest
+  learned Priest, Paladin or Shaman rank and strict out-of-combat recipient clicks.
+
 - Fix unavailable healing-spell range feedback with spell-specific proximity and
   a distinct unknown fade; prepare Forever1.14.17 matching installed DEV.13.
 
