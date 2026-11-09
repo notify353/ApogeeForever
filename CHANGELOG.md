@@ -1,5 +1,9 @@
 ## Unreleased - own HoT countdown
 
+- Add all five Druid Revive and Rebirth ranks to DEV resurrection actions.
+  Rebirth has a fixed secure button that remains available for combat deaths;
+  both spells retain grey feedback on confirmed out-of-range checks.
+
 - Dim/desaturate DEV resurrection icons on confirmed spell-range failures while
   preserving visible, working fixed-recipient clicks. No line-of-sight inference.
 
