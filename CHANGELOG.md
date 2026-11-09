@@ -1,4 +1,4 @@
-## Unreleased - own HoT countdown
+## [1.14.18] - 2026-11-08
 
 - Add all five Druid Revive and Rebirth ranks to DEV resurrection actions.
   Rebirth has a fixed secure button that remains available for combat deaths;
@@ -15,6 +15,8 @@
 
 - Prepare DEV resurrection buttons beside dead player rows, using the highest
   learned Priest, Paladin or Shaman rank and strict out-of-combat recipient clicks.
+
+## Unreleased - own HoT countdown
 
 - Fix unavailable healing-spell range feedback with spell-specific proximity and
   a distinct unknown fade; prepare Forever1.14.17 matching installed DEV.13.
