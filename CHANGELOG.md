@@ -1,3 +1,9 @@
+## Unreleased - Focus sound and Forever70938
+
+- Prepare reload-safe Essentials focus muting in the checked DEV candidate.
+- Verify fresh70938 exports and preserve historical release/build selections.
+- Exercise focus sound lifecycle against generated PROD/DEV families.
+
 ## [1.14.18] - 2026-11-08
 
 - Add all five Druid Revive and Rebirth ranks to DEV resurrection actions.

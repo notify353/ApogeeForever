@@ -6,10 +6,10 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.70862",
+    "reviewedBuild": "1.60.1.70938",
     "version": "1.60.1"
   },
-  "executableSha256": "dee72d6bec420d1c9e6fa2e665b39dcea503c35d501081f79a391a85469d1ee9",
+  "executableSha256": "7d6d40d3b7dc326ff936ece92e52f86742d7895d8e4701545e4412bf2a653b0f",
   "files": [
     {
       "owners": [
@@ -264,7 +264,7 @@
         "ApogeeHeals"
       ],
       "path": "Blizzard_APIDocumentationGenerated/PartyInfoDocumentation.lua",
-      "sha256": "8bcc5fed8ddc03c06163da0bcd5a70fcc31afbdc53d21dbd3e9300ce7e3f89ef"
+      "sha256": "1ed5e6bc0c3cee8a26ba07895befd334d568277e51a79928963d44310117f440"
     },
     {
       "owners": [
@@ -1806,13 +1806,13 @@
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-11-08",
+  "reviewedOn": "2026-11-15",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "15879f3db157fbdc78f4df6e9806f2af56e2e0c1",
-    "ApogeeGroupAlert": "984313133644926ccd580fea4e38eebd8a8cb851",
-    "ApogeeHeals": "ec5eac0501f9a717ec43cff9555be134c6eebda1",
-    "ApogeeKeybinds": "2021ac32800079663cca80e0c8c546adc1d10fcc",
+    "ApogeeEssentials": "a43f104e562c241876e992a959364a5205cad059",
+    "ApogeeGroupAlert": "ddb2c9cb549c07647d2bc104eea362ab66a67618",
+    "ApogeeHeals": "5a6c177622d8645d9c7b116a51933b4e3d376884",
+    "ApogeeKeybinds": "66f6c4e91cb0938da8106ae78f05c90830fe1166",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
 }
