@@ -6,10 +6,10 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.70938",
+    "reviewedBuild": "1.60.1.70959",
     "version": "1.60.1"
   },
-  "executableSha256": "7d6d40d3b7dc326ff936ece92e52f86742d7895d8e4701545e4412bf2a653b0f",
+  "executableSha256": "ede37488f36405bd3c2ea5256e2491d7280849c99c1977713354db52f4f22b13",
   "files": [
     {
       "owners": [
@@ -283,7 +283,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/RaidMarkersDocumentation.lua",
       "sha256": "f3375f723c1a2ba3a02872db3cfec4408f85b383fa192953179925adfc9fd464"
@@ -556,7 +557,7 @@
         "ApogeeForever"
       ],
       "path": "Blizzard_AddOnList/AddonList.lua",
-      "sha256": "3f5a958ccf33b071c629a233f9bcf79e11c447bc982182504f5f02cf45b4a376"
+      "sha256": "a83bdfb7ae8c916d3fc5a9ffa0f66704be13f5537658c62101498fcf3a0cc906"
     },
     {
       "owners": [
@@ -1123,6 +1124,13 @@
       ],
       "path": "Blizzard_ClickBindingUI/Blizzard_ClickBindingUI.xml",
       "sha256": "befc6d2b0c9654a2ae1742b89ec9c51350d626deb462fd800a98b015758659da"
+    },
+    {
+      "owners": [
+        "ApogeeKeybinds"
+      ],
+      "path": "Blizzard_CombatLogBase/CombatLogUtil.lua",
+      "sha256": "04b22c4ce9f2900923336c4fb89e8a72d10b7767fdfe4efb2d498e21f9a77999"
     },
     {
       "owners": [
@@ -1799,20 +1807,21 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_UnitPopupShared/UnitPopupSharedButtonMixins.lua",
       "sha256": "c8fd3964b6806b97f12b9354106c9bbb7c78830c3ea02d13bd88ec52ff9d3557"
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-11-15",
+  "reviewedOn": "2026-11-17",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "a43f104e562c241876e992a959364a5205cad059",
-    "ApogeeGroupAlert": "ddb2c9cb549c07647d2bc104eea362ab66a67618",
-    "ApogeeHeals": "5a6c177622d8645d9c7b116a51933b4e3d376884",
-    "ApogeeKeybinds": "66f6c4e91cb0938da8106ae78f05c90830fe1166",
+    "ApogeeEssentials": "eb64014546f230d99bcb3b0a412636ebf0b87de3",
+    "ApogeeGroupAlert": "8f9a76419558dcc2922253723878d693c1f4b93f",
+    "ApogeeHeals": "c6295da41819e499f65a39bfa4fb91cf1da04377",
+    "ApogeeKeybinds": "8f4c2fd83233ecb1fd57e680475e0a56291a2885",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
 }

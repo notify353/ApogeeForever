@@ -1,3 +1,8 @@
+## Unreleased - 2026-11-17
+
+- Prepare opt-in Skull/Cross/Moon middle-mouse defaults with manual overrides.
+- Review fresh Forever70959 authority and preserve the installed focus-sound update.
+
 ## Unreleased - Focus sound and Forever70938
 
 - Prepare reload-safe Essentials focus muting in the checked DEV candidate.

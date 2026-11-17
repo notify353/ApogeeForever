@@ -21,7 +21,7 @@ OPTIONAL_HOSTED_CHILDREN = ('ApogeeAuction', 'ApogeeStats')
 ACTIVE_CHILDREN = CHILDREN[:-1] + ('ApogeeStats',)
 LIVE_CLIENT = {
     'flavor': 'forever', 'interface': 16001, 'version': '1.60.1',
-    'reviewedBuild': '1.60.1.70938', 'curseforgeVersionTypeId': 88568,
+    'reviewedBuild': '1.60.1.70959', 'curseforgeVersionTypeId': 88568,
     'product': 'wowf', 'directory': '_forever_', 'executable': 'Wow.exe',
 }
 
