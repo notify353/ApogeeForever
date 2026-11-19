@@ -1,3 +1,7 @@
+## Unreleased - Group Alert whisper window
+
+- Prepare Forever DEV1.14.19-dev.3 with a compact session-only incoming whisper window, class and public Who location, Reply and Invite. Reduce repeated search wording/roster work. Add generated-family coverage and matching API evidence. New runtime modules require the closed-client DEV installer; no installation, publication or native acceptance included.
+
 ## Unreleased - Group Alert playstyle filter
 
 - Prepare Forever DEV1.14.19-dev.2 with Dungeon wording / Filters tabs and per-character playstyle selections. Preserve accepted class exclusions; unknown playstyles and solo/chat remain unaffected. No installation or publication included.
