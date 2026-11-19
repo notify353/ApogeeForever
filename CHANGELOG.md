@@ -1,3 +1,7 @@
+## Unreleased - Group Alert playstyle filter
+
+- Prepare Forever DEV1.14.19-dev.2 with Dungeon wording / Filters tabs and per-character playstyle selections. Preserve accepted class exclusions; unknown playstyles and solo/chat remain unaffected. No installation or publication included.
+
 ## Unreleased - Group Alert class exclusions
 
 - Prepare Forever DEV1.14.19-dev.1 with per-character group class exclusions in Dungeons settings. Solo/chat alerts remain independent. Generated-family regression coverage added; no installation or publication.

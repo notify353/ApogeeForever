@@ -1,3 +1,12 @@
+## Group Alert playstyles - 2026-11-19
+
+DEV1.14.19-dev.2 adds playstyle selections and settings tabs over the accepted
+class-exclusion source. Matching70959 nullable generalPlaystyle and enum contracts
+are reused; the native localized-label mapping is explicitly recorded. Source and
+generated PROD/DEV checks plus a checked installation preview are required before
+immediate owner installation approval. Native acceptance for this feature is pending.
+Era, frozen selections, published versions and historical evidence remain unchanged.
+
 ## Group Alert class exclusions - 2026-11-19
 
 Current DEV1.14.19-dev.1 adds only Group Alert class exclusions over published1.14.19 gameplay. Central live70959 evidence now includes the localized class-name table and native Settings canvas geometry (251 references). Existing sanitized member-class contracts are reused. Historical selections and Era pins are unchanged. Source/generated validation and checked installation preview precede immediate owner installation approval; native acceptance remains pending.
