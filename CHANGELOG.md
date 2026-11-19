@@ -1,3 +1,25 @@
+## [1.14.19] - 2026-11-19
+
+- Add opt-in, stance-independent Skull/Cross/Moon middle-mouse defaults, shown only while editing.
+- Include focus sound muting/restoration and the reviewed Forever client updates.
+- Preserve all existing resurrection, combat Rebirth and healing-range improvements.
+
+## Unreleased - 2026-11-18
+
+- Prepare editor-only Skull/Cross/Moon artwork; marker shortcuts remain active
+  during normal play and combat. Manual overrides keep normal visibility.
+
+## Unreleased - 2026-11-17
+
+- Prepare opt-in Skull/Cross/Moon middle-mouse defaults with manual overrides.
+- Review fresh Forever70959 authority and preserve the installed focus-sound update.
+
+## Unreleased - Focus sound and Forever70938
+
+- Prepare reload-safe Essentials focus muting in the checked DEV candidate.
+- Verify fresh70938 exports and preserve historical release/build selections.
+- Exercise focus sound lifecycle against generated PROD/DEV families.
+
 ## [1.14.18] - 2026-11-08
 
 - Add all five Druid Revive and Rebirth ranks to DEV resurrection actions.

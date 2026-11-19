@@ -62,6 +62,8 @@ class LauncherTests(unittest.TestCase):
                 if (children/'ApogeeEssentials/tests/quest_objectives_spec.lua').is_file():
                     subprocess.run(['lua','tests/quest_objectives_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 subprocess.run(['lua','tests/strafe_defaults_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
+                if (children/'ApogeeEssentials/tests/focus_sound_spec.lua').is_file():
+                    subprocess.run(['lua','tests/focus_sound_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 for component in ('ApogeeHeals','ApogeeKeybinds'):
                     subprocess.run(['lua',str(ROOT/'tests/distribution/position_reset.lua'),folder,family,target,component],
                                    cwd=children/component,env=env,check=True)
@@ -101,6 +103,8 @@ class LauncherTests(unittest.TestCase):
                     env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
                                APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1')
                     subprocess.run(['lua','tests/explosives_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                    if (children/'ApogeeKeybinds/tests/marker_defaults_spec.lua').is_file():
+                        subprocess.run(['lua','tests/marker_defaults_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                     for spec in ('test_stat_policy.lua', 'test_auction.lua'):

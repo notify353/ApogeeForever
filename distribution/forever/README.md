@@ -1,3 +1,27 @@
+## Marker defaults and current authority - 2026-11-17
+
+Reviewed live Forever1.60.1.70959 against the refreshed export. All248 prior
+references are fresh;247 match70938. AddonList changes only the character-name
+label to NameUtil.FormatUnitNameForDisplay; GUID enable selection is unchanged.
+Added marker presentation reference evidence; existing SecureTemplates raidtarget
+and RaidMarkers contracts support native user-input toggles without addon Lua
+marker inspection. Current candidate pins marker defaults and reviewed-build
+notices; historical locks and release manifests remain immutable. Native
+acceptance remains pending.
+
+## Focus sound and client review - 2026-11-15
+
+Owner refreshed live Forever1.60.1.70938 exports. All248 references are fresh;
+247 are byte-identical to70862. The only change, PartyInfoDocumentation, adds
+isCrossShard to PARTY_INVITE_REQUEST. Retained beta source matches the prior
+hash and establishes the exact diff; no selected child consumes that event.
+Reviewed UnitExists(focus), synchronous PLAYER_FOCUS_CHANGED, PLAYER_LOGOUT,
+PLAYER_ENTERING_WORLD, C_CVar GetCVar/SetCVar and Audio.lua master-sound binding.
+The public master CVar supports ordinary string0/1, with nullable reads and
+boolean write success. No secure frame/action or volume/channel change is needed.
+Historical releases, beta and Era evidence remain immutable. Native acceptance
+remains pending; current build authority is an offline requirement only.
+
 ## Shield overlay API review - November 8, 2026
 
 The DEV shield candidate retains current70862 authority and adds the native

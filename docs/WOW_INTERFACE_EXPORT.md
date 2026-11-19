@@ -1,3 +1,14 @@
+## Marker defaults and current authority - 2026-11-17
+
+Reviewed live Forever1.60.1.70959 against the refreshed export. All248 prior
+references are fresh;247 match70938. AddonList changes only the character-name
+label to NameUtil.FormatUnitNameForDisplay; GUID enable selection is unchanged.
+Added marker presentation reference evidence; existing SecureTemplates raidtarget
+and RaidMarkers contracts support native user-input toggles without addon Lua
+marker inspection. Current candidate pins marker defaults and reviewed-build
+notices; historical locks and release manifests remain immutable. Native
+acceptance remains pending.
+
 # Forever interface authority
 
 ## Current live client: 1.60.1.70862 (2026-11-08)
