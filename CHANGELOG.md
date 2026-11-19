@@ -1,3 +1,8 @@
+## Unreleased - 2026-11-18
+
+- Prepare editor-only Skull/Cross/Moon artwork; marker shortcuts remain active
+  during normal play and combat. Manual overrides keep normal visibility.
+
 ## Unreleased - 2026-11-17
 
 - Prepare opt-in Skull/Cross/Moon middle-mouse defaults with manual overrides.
