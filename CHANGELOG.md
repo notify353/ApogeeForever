@@ -1,3 +1,7 @@
+## Unreleased - Group Alert whisper bug sweep
+
+- Prepare Forever DEV1.14.19-dev.5 with press-time whisper recipient checks, stale tooltip cleanup, readable class-label fallback and refreshed cached chat eligibility on changed dungeon ranges. Existing load graph unchanged; source/generated regression coverage added. No installation, publication or native acceptance included.
+
 ## Unreleased - Group Alert whisper window
 
 - Prepare Forever DEV1.14.19-dev.3 with a compact session-only incoming whisper window, class and public Who location, Reply and Invite. Reduce repeated search wording/roster work. Add generated-family coverage and matching API evidence. New runtime modules require the closed-client DEV installer; no installation, publication or native acceptance included.
