@@ -1818,10 +1818,10 @@
   "reviewedOn": "2026-11-17",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "eb64014546f230d99bcb3b0a412636ebf0b87de3",
-    "ApogeeGroupAlert": "8f9a76419558dcc2922253723878d693c1f4b93f",
-    "ApogeeHeals": "c6295da41819e499f65a39bfa4fb91cf1da04377",
-    "ApogeeKeybinds": "18b641ba55a7e61535ce80ee4bf76b753e33083b",
+    "ApogeeEssentials": "5545ffb3fa42b0c1d9cb73ff5d8c202b6b3d3ff7",
+    "ApogeeGroupAlert": "db453f283028405ef62c2696b8f55fb89c56e144",
+    "ApogeeHeals": "10ceae1a33cbec43f14373c8271aeb8fa460b622",
+    "ApogeeKeybinds": "ceb0e03d2c516a8b078d28e9fe2e31fa3cee46c3",
     "ApogeeStats": "6d7c59adbd8da01947e1563cf656b8624757a898"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "ecc290e96183c082da58adf5dfbea233ac0b7e5303c3a046029dc04443477834",
+  "authorization": {
+    "basis": "Owner requested CurseForge deployment of all accumulated changes on 2026-11-19. Exact source trees match the verified installed DEV update; automated validation is recorded separately and complete native acceptance is not claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "a87c615bb0e59b25adca131f1e86a372007bb1db61db27662c8ebb0fbfc64672",
+  "packages": {
+    "DEV": "2c71c16fa9f6a4b19a4969cb6aad7404beb714b2d45450f34979fac3bc2719fe",
+    "PROD": "eb03a35e93e3fe51d3a7cc8858ed6c440ed9201570d3045e03761deb7f391027"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "4c76e3c752faff366823fb04c6d89f755f7ae7301e6f7f43b0a6e413f56c845c",
+  "target": "forever",
+  "version": "1.14.19"
+}

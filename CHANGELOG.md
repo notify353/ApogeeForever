@@ -1,3 +1,9 @@
+## [1.14.19] - 2026-11-19
+
+- Add opt-in, stance-independent Skull/Cross/Moon middle-mouse defaults, shown only while editing.
+- Include focus sound muting/restoration and the reviewed Forever client updates.
+- Preserve all existing resurrection, combat Rebirth and healing-range improvements.
+
 ## Unreleased - 2026-11-18
 
 - Prepare editor-only Skull/Cross/Moon artwork; marker shortcuts remain active

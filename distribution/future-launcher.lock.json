@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "commit": "c6295da41819e499f65a39bfa4fb91cf1da04377",
+      "commit": "10ceae1a33cbec43f14373c8271aeb8fa460b622",
       "files": {
         "ApogeeHeals.lua": "6dbb3feff1b1aac4128dfd565178c79bd0ab496278bc2ecbf1638b3bc66de22e",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
@@ -49,7 +49,7 @@
       "version": "0.1.0-dev"
     },
     {
-      "commit": "18b641ba55a7e61535ce80ee4bf76b753e33083b",
+      "commit": "ceb0e03d2c516a8b078d28e9fe2e31fa3cee46c3",
       "files": {
         "Actions/Compile.lua": "f710e654fe7a5095404271ea663d70ccc27abd9ed5ef73d0b07d3547df6950dc",
         "Actions/Defaults.lua": "05244e0243a450243bd5e8908be2fea7f08fd99140c7308cb1be99beb2cb4d69",
@@ -97,7 +97,7 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "8f9a76419558dcc2922253723878d693c1f4b93f",
+      "commit": "db453f283028405ef62c2696b8f55fb89c56e144",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "68d507d927c0b7ffa7101848e50def8c9142a2a914c0d62afd03744cc87950ed",
@@ -132,7 +132,7 @@
       "version": "0.2.0-beta.1"
     },
     {
-      "commit": "eb64014546f230d99bcb3b0a412636ebf0b87de3",
+      "commit": "5545ffb3fa42b0c1d9cb73ff5d8c202b6b3d3ff7",
       "files": {
         "ApogeeEssentials.lua": "8f03edd0e9c7369b0cdcfe84a5e480c549cfeb9c0726edef8e7966be48ed0f5d",
         "ApogeeEssentials.toc": "b90d1db125e7c1650a75b84015ccc0efda91e2cfb5359615ee8e271acb204fb6",
@@ -214,7 +214,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "db95beb539a240e04e8944125138756ddbcf9779ea9475c7f01499ba3a4a2d22",
+  "liveApiEvidenceSha256": "ecc290e96183c082da58adf5dfbea233ac0b7e5303c3a046029dc04443477834",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -229,7 +229,7 @@
   "supportModules": [
     {
       "apiVersion": 1,
-      "commit": "eb64014546f230d99bcb3b0a412636ebf0b87de3",
+      "commit": "5545ffb3fa42b0c1d9cb73ff5d8c202b6b3d3ff7",
       "files": {
         "ApogeeUI.lua": "74bbeab3e1ff2f12349487b781f71d551a51b625cefd3ae4fe011cfa265be88e",
         "ApogeeUI.toc": "2f6d36c2e6e0522e671b1c35b2bfa5fd06b7f60073041afe7278a61a07caa488",
