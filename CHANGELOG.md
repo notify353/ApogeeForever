@@ -1,3 +1,9 @@
+## Unreleased - Priest Dispel Magic correction
+
+- Prepare Forever DEV1.14.19-dev.4 with restored priest Magic debuff borders and
+  cleanse clicks when Dispel Magic is classified as not helpful. Preserve the
+  installed playstyle/class filters; no installation or publication included.
+
 ## Unreleased - Group Alert playstyle filter
 
 - Prepare Forever DEV1.14.19-dev.2 with Dungeon wording / Filters tabs and per-character playstyle selections. Preserve accepted class exclusions; unknown playstyles and solo/chat remain unaffected. No installation or publication included.

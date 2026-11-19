@@ -1,3 +1,14 @@
+## Priest Dispel Magic correction - 2026-11-19
+
+DEV1.14.19-dev.4 advances only the Heals pin over installed DEV.2. Learned priest
+Dispel Magic no longer requires helpful classification; known/player-book/active
+checks, friendly recipients, exact ranks and ordinary binding filters remain.
+The owner supplied the live known/helpful mismatch; native post-fix acceptance
+remains pending. The253 reviewed70959 API references are unchanged. Regression
+coverage includes the reported values in generated PROD/DEV. Era and frozen
+selections are unchanged. Concurrent uninstalled Whispers DEV.3 is not included.
+Validate and preview before immediate owner approval for DEV installation.
+
 ## Group Alert playstyles - 2026-11-19
 
 DEV1.14.19-dev.2 adds playstyle selections and settings tabs over the accepted

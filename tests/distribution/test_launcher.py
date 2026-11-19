@@ -75,6 +75,8 @@ class LauncherTests(unittest.TestCase):
                 env.update(APOGEE_HEALS_RUNTIME_ROOT=str(Path(folder)/heals),
                            APOGEE_HEALS_RUNTIME_NAME=heals, APOGEE_HEALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
+                if target != 'era':
+                    subprocess.run(['lua','tests/fixed_debuffs_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 if (children/'ApogeeHeals/tests/target_state_spec.lua').is_file():
                     subprocess.run(['lua','tests/target_state_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
