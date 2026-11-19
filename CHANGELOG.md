@@ -1,3 +1,7 @@
+## Unreleased - Group Alert class exclusions
+
+- Prepare Forever DEV1.14.19-dev.1 with per-character group class exclusions in Dungeons settings. Solo/chat alerts remain independent. Generated-family regression coverage added; no installation or publication.
+
 ## [1.14.19] - 2026-11-19
 
 - Add opt-in, stance-independent Skull/Cross/Moon middle-mouse defaults, shown only while editing.

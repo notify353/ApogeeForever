@@ -1,3 +1,7 @@
+## Group Alert class exclusions - 2026-11-19
+
+Current DEV1.14.19-dev.1 adds only Group Alert class exclusions over published1.14.19 gameplay. Central live70959 evidence now includes the localized class-name table and native Settings canvas geometry (251 references). Existing sanitized member-class contracts are reused. Historical selections and Era pins are unchanged. Source/generated validation and checked installation preview precede immediate owner installation approval; native acceptance remains pending.
+
 ## Marker defaults and current authority - 2026-11-17
 
 Reviewed live Forever1.60.1.70959 against the refreshed export. All248 prior

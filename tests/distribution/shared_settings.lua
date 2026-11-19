@@ -131,12 +131,13 @@ local function load(owner, family, denied, saved, unavailable)
     local start=#frames
     if owner[1]=="ApogeeGroupAlert" then
         assert(loadfile(root.."/"..family.."/"..name.."/Core/UI.lua"))(name,A)
+        assert(loadfile(root.."/"..family.."/"..name.."/Groups/Model.lua"))(name,A)
     end
     assert(loadfile(root.."/"..family.."/"..name.."/"..owner[2]))(name,A)
     if denied then assert(#frames==start); return end
     if owner[1]=="ApogeeHeals" then A.Settings.Create()
     elseif owner[1]=="ApogeeKeybinds" then A.Settings.Build()
-    elseif owner[1]=="ApogeeGroupAlert" then A.testView=A.SettingsView.New({}, {})
+    elseif owner[1]=="ApogeeGroupAlert" then A.testView=A.SettingsView.New({}, {excludedClasses={}})
     elseif owner[1]=="ApogeeEssentials" then A.BuildSettings()
     else
         local event=frames[start+1]
@@ -163,17 +164,27 @@ local function load(owner, family, denied, saved, unavailable)
                 local label=assert(find(child.frame,function(c) return c.kind=="FontString" and c.text=="Evaluate gear for" end))
                 assert(label.font=="GameFontHighlightSmall")
             elseif owner[1]=="ApogeeGroupAlert" then
+                local hasClassFilters=type(A.Groups.ClassTokens)=="table"
                 assert(rawget(child.frame,"OnDefault")==nil, "Dungeons intentionally has no native reset")
                 for _,label in ipairs({"Unmapped","Ignored","Associate","Unassociate","Ignore","Unignore"}) do
                     assert(not find(child.frame,function(c) return c.text==label end), "Removed editor control: "..label)
                 end
                 for _,button in ipairs(child.frame.children) do
-                    if button.kind=="Button" then assert(button.text=="Defaults", "Only dungeon Defaults is allowed") end
+                    if button.kind=="Button" then
+                        assert(button.text=="Defaults" or (hasClassFilters and button.text=="Clear exclusions"),
+                            "Only wording Defaults and class Clear exclusions are allowed")
+                    end
                 end
                 assert(find(child.frame,function(c) return c.kind=="Button" and c.text=="Defaults" end))
+                if hasClassFilters then
+                    assert(find(child.frame,function(c) return c.kind=="Button" and c.text=="Clear exclusions" end))
+                    local checks=0
+                    for _,c in ipairs(child.frame.children) do if c.kind=="CheckButton" then checks=checks+1 end end
+                    assert(checks==9,"Nine class exclusions are confined to Dungeons settings")
+                end
                 local headings=0
                 for _,label in ipairs(child.frame.children) do if label.kind=="FontString" and label.font=="GameFontNormal" then headings=headings+1 end end
-                assert(headings==2,"Dungeons column headings use native gold font")
+                assert(headings==(hasClassFilters and 3 or 2),"Dungeons headings use native gold font")
                 local row=A.UI.ListButton(widget(),0,0,200)
                 row:Present("Example",true,false,"Shared")
                 local selected=assert(find(row,function(c) return c.kind=="FontString" and c.text=="Example" end))
