@@ -1,3 +1,7 @@
+## Unreleased - Whisper foreground
+
+- Prepare DEV1.14.19-dev.13 with the whisper window on the dialog layer, above normal and high-layer panels. Preserve installed DEV.12 class groups and fade. Chat-displayed Who refresh is a separate reported issue under investigation; this candidate does not claim to fix it. No installation or publication included.
+
 ## Unreleased - Whisper class sections
 
 - Prepare DEV1.14.19-dev.12 with small localized class headings, newest sections/messages first and an Unknown class section. Include the prepared two-minute idle fade; preserve installed priest/Who/Vanguard changes. No installation or publication included.
