@@ -1,3 +1,7 @@
+## Unreleased - Whisper class sections
+
+- Prepare DEV1.14.19-dev.12 with small localized class headings, newest sections/messages first and an Unknown class section. Include the prepared two-minute idle fade; preserve installed priest/Who/Vanguard changes. No installation or publication included.
+
 ## Unreleased - Whisper idle fade
 
 - Prepare DEV1.14.19-dev.11 with hidden startup, automatic show on eligible whispers and a final-second fade ending after two idle minutes. Retain the message log and installed priest/Who/Vanguard fixes. Excluded messages, Who updates and settings changes never extend the timer. No installation or publication included.

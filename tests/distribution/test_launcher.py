@@ -98,6 +98,8 @@ class LauncherTests(unittest.TestCase):
                         subprocess.run(['lua','tests/whisper_who_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                     if (children/'ApogeeGroupAlert/tests/whisper_autohide_spec.lua').is_file():
                         subprocess.run(['lua','tests/whisper_autohide_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
+                    if (children/'ApogeeGroupAlert/tests/whisper_groups_spec.lua').is_file():
+                        subprocess.run(['lua','tests/whisper_groups_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                 subprocess.run(['lua',str(ROOT/'tests/distribution/strafe_coexistence.lua'),str(Path(folder)/keybinds),keybinds],
                                cwd=children/'ApogeeEssentials',env=env,check=True)

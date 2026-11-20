@@ -97,13 +97,13 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "aba7166b3e958a4c817dc98654cdc96b2d8791da",
+      "commit": "15f6ae503db577a6e504a7d9aa986f031a3e5100",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "68d507d927c0b7ffa7101848e50def8c9142a2a914c0d62afd03744cc87950ed",
         "ApogeeGroupAlert.lua": "7ba0ac33af718faa6df4f0141da269a5412c68a98e02d3eed04b76de32ae3017",
         "ApogeeGroupAlert.toc": "1f2b933c8084cf231dc6b96eaf7e3d097ded46d58c1a3cd10c29b31e2eb20536",
-        "CHANGELOG.md": "2f346ac52bccf2fbbe81635fac880cf63e9dd77eb2e867834874765d370ac0c3",
+        "CHANGELOG.md": "5dd5ef6cbf8e590d0a75f1a843b8e59adbf2d555792d397431378b5c1dcd1b9e",
         "Core/Client.lua": "56f29e1a1167c71fe36f062b92f574fb25dc7420cf7cb1238622e1ab7d0d3baa",
         "Core/Text.lua": "acc322a7745f82d37ba71aadc1fb488b7fcaedd0410841d9b70146c6dc0b5e0a",
         "Core/UI.lua": "d6355171febf43dd267a11bd19cd583f35d1c010010062dea9f01d29a22a4f9c",
@@ -117,12 +117,12 @@
         "Matching/Dungeons.lua": "4044085ffff1745cc7e8fe088568e54525f79cbfb3d61ec45d7b86905d5d1a34",
         "Matching/Levels.lua": "ecb7c70a1c1a0e028eab9283093c172c71c5677e7b74168c84e94de95902feaa",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
-        "README.md": "7b7ef10bc13f3e1bcbdd96e4f2784d9d6cdebb45f40e6a7d759554cc9ecef44b",
+        "README.md": "e36e0652816ba8b0452ceb82578a3556900b44f0abdaa702b64c9195e46157e7",
         "Settings/View.lua": "23e09a60f5b974c99e5e36a2cfc741a51c8c7fa2e8ab3e7c4863c5cf21ee85b6",
         "THIRD_PARTY_NOTICES.md": "6c999d3ef098a2ee82642abce8e16d30e82f48495f58529fb56617f0a06486e6",
         "Whispers/Client.lua": "79e26293cb87c21d75607f4fb53363b55c6cbe6990064539674c67b128052b34",
-        "Whispers/Model.lua": "0e28c6135d8a51dc35e3b5a6b7061d2ebe7d7b9ffe472a3babb2753618369ae0",
-        "Whispers/View.lua": "25c147a6f4394eb2e56f04be1a6515e10802a93167d6a78ef88db9c34b3bcaaa"
+        "Whispers/Model.lua": "da657ca0510be09379342534380a9a3faa3834c589b11b788a0a61d86d9f0d4d",
+        "Whispers/View.lua": "39847eddf0babeed0c7f7868cbe935c454c32d970ac0db1bf8c006a29ca1aa78"
       },
       "name": "ApogeeGroupAlert",
       "repository": "https://github.com/notify353/ApogeeGroupAlert.git",
@@ -217,7 +217,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "357f50b33f621f41ee7e76a412f2649ef48c165f6de468126e2deb545454aa22",
+  "liveApiEvidenceSha256": "a77072c5d882909bc8f4de3cde294c081e245262a77c2b908c19c4a48e18c105",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -249,5 +249,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.19-dev.11"
+  "version": "1.14.19-dev.12"
 }
