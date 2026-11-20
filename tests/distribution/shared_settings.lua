@@ -137,7 +137,7 @@ local function load(owner, family, denied, saved, unavailable)
     if denied then assert(#frames==start); return end
     if owner[1]=="ApogeeHeals" then A.Settings.Create()
     elseif owner[1]=="ApogeeKeybinds" then A.Settings.Build()
-    elseif owner[1]=="ApogeeGroupAlert" then A.testView=A.SettingsView.New({}, {excludedClasses={},selectedPlaystyles={}})
+    elseif owner[1]=="ApogeeGroupAlert" then A.testView=A.SettingsView.New({}, {excludedClasses={},selectedPlaystyles={}}, noop)
     elseif owner[1]=="ApogeeEssentials" then A.BuildSettings()
     else
         local event=frames[start+1]
@@ -172,7 +172,7 @@ local function load(owner, family, denied, saved, unavailable)
                 end
                 for _,button in ipairs(child.frame.children) do
                     if button.kind=="Button" then
-                        assert(button.text=="Defaults" or (hasClassFilters and button.text=="Clear exclusions")
+                        assert(button.text=="Defaults" or button.text=="Whispers" or (hasClassFilters and button.text=="Clear exclusions")
                             or (hasPlaystyles and (button.text=="Dungeon wording" or button.text=="Filters")),
                             "Only scoped settings controls are allowed")
                     end

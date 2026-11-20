@@ -1,3 +1,12 @@
+## Approved priest fix reconciled with installed updates - 2026-11-19
+
+Before installation, verified the newer installed Vanguard DEV.6 receipt and
+145 managed files. DEV1.14.19-dev.8 now carries the same priest fix while
+preserving the installed whisper window and Vanguard defaults. Only Heals
+advances over that installed selection;257 matching live70959 references remain
+unchanged. Re-run coordinated validation and checked seven-write preview before
+the already approved DEV installation. DEV.4 artifacts remain historical.
+
 ## Priest Dispel Magic correction - 2026-11-19
 
 DEV1.14.19-dev.4 advances only the Heals pin over installed DEV.2. Learned priest

@@ -88,6 +88,8 @@ class LauncherTests(unittest.TestCase):
                         subprocess.run(['lua','tests/class_settings_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                     if (children/'ApogeeGroupAlert/tests/playstyle_settings_spec.lua').is_file():
                         subprocess.run(['lua','tests/playstyle_settings_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
+                    if (children/'ApogeeGroupAlert/tests/whispers_spec.lua').is_file():
+                        subprocess.run(['lua','tests/whispers_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                 subprocess.run(['lua',str(ROOT/'tests/distribution/strafe_coexistence.lua'),str(Path(folder)/keybinds),keybinds],
                                cwd=children/'ApogeeEssentials',env=env,check=True)
@@ -111,6 +113,8 @@ class LauncherTests(unittest.TestCase):
                     subprocess.run(['lua','tests/explosives_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     if (children/'ApogeeKeybinds/tests/marker_defaults_spec.lua').is_file():
                         subprocess.run(['lua','tests/marker_defaults_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                    if (children/'ApogeeKeybinds/tests/vanguard_default_spec.lua').is_file():
+                        subprocess.run(['lua','tests/vanguard_default_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                     for spec in ('test_stat_policy.lua', 'test_auction.lua'):

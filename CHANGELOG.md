@@ -1,8 +1,19 @@
 ## Unreleased - Priest Dispel Magic correction
 
-- Prepare Forever DEV1.14.19-dev.4 with restored priest Magic debuff borders and
+- Prepare Forever DEV1.14.19-dev.8 with restored priest Magic debuff borders and
   cleanse clicks when Dispel Magic is classified as not helpful. Preserve the
-  installed playstyle/class filters; no installation or publication included.
+  installed whisper window and Vanguard update; no installation or publication included.
+
+## Unreleased - Vanguard default key (2026-11-19)
+
+- Prepare DEV 1.14.19-dev.6 with learned Vanguard selecting Charge for the
+  automatic Defensive Stance 1 key. Preserve other installed child selections.
+- Exercise the Vanguard regression against generated PROD and DEV runtimes.
+  Native casting acceptance remains pending; installation requires approval.
+
+## Unreleased - Group Alert whisper window
+
+- Prepare Forever DEV1.14.19-dev.3 with a compact session-only incoming whisper window, class and public Who location, Reply and Invite. Reduce repeated search wording/roster work. Add generated-family coverage and matching API evidence. New runtime modules require the closed-client DEV installer; no installation, publication or native acceptance included.
 
 ## Unreleased - Group Alert playstyle filter
 
