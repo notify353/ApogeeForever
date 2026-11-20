@@ -1,3 +1,12 @@
+## Latest installed Who update retained - 2026-11-19
+
+The approved installation preflight detected a concurrent Who/level/class-filter
+DEV.7 install and stopped before writes. DEV.8 now retains installed Group Alert
+efbe547 and Keybinds54da9a3, adding only Heals7d7bc23. All145 installed files were
+checked against the newest whisper-who receipt;257 live references remain fresh.
+Validation-r3 and the final receipt-aware preview supersede the earlier DEV.8
+reconciliation artifacts. Native priest acceptance still requires owner testing.
+
 ## Approved priest fix reconciled with installed updates - 2026-11-19
 
 Before installation, verified the newer installed Vanguard DEV.6 receipt and

@@ -2,14 +2,19 @@
 
 - Prepare Forever DEV1.14.19-dev.8 with restored priest Magic debuff borders and
   cleanse clicks when Dispel Magic is classified as not helpful. Preserve the
-  installed whisper window and Vanguard update; no installation or publication included.
+  installed Who/level/class filters and Vanguard update; no installation or publication included.
 
-## Unreleased - Vanguard default key (2026-11-19)
+## Unreleased - Whisper Who button
 
-- Prepare DEV 1.14.19-dev.6 with learned Vanguard selecting Charge for the
-  automatic Defensive Stance 1 key. Preserve other installed child selections.
-- Exercise the Vanguard regression against generated PROD and DEV runtimes.
-  Native casting acceptance remains pending; installation requires approval.
+- Prepare Forever DEV1.14.19-dev.7 with a Who button below Reply/Invite and known player levels in whisper rows. Matching public manual-Who results refresh level, class and location. Preserve the newly installed Vanguard fix alongside class exclusions and pending whisper bug fixes. No installation or publication included.
+
+## Unreleased - Whisper class exclusions
+
+- Prepare Forever DEV1.14.19-dev.6 with shared Dungeons class exclusions applied to incoming whispers, retaining the pending DEV.5 bug fixes. Unresolved classes and native chat/recruitment alerts remain visible. Cached restoration, late class updates and scroll/click safety are covered in source/generated tests. No installation or publication included.
+
+## Unreleased - Group Alert whisper bug sweep
+
+- Prepare Forever DEV1.14.19-dev.5 with press-time whisper recipient checks, stale tooltip cleanup, readable class-label fallback and refreshed cached chat eligibility on changed dungeon ranges. Existing load graph unchanged; source/generated regression coverage added. No installation, publication or native acceptance included.
 
 ## Unreleased - Group Alert whisper window
 
