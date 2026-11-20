@@ -1,7 +1,7 @@
 {
-  "apiEvidenceSha256": "ed2d634288159f96c0c1360ee60429ff66f85d31cf86cc21088c6d0f8eaa423e",
+  "apiEvidenceSha256": "4fe2259a1d6d79ef91570224fe9f9be983e8d3d2762c602491c3716cbc3c711a",
   "authorization": {
-    "basis": "Owner requested preparation of all three Apogee updates for Git integration and CurseForge deployment on 2026-11-19, and reported all three features tested and working. The combined DEV installation is independently verified separately; complete native acceptance is not claimed. Preparation follows the existing early-release policy. Immediate approval for push/main integration and the final production tag remains pending.",
+    "basis": "Owner confirmed on 2026-11-19 after the combined DEV1.14.19-dev.15 installation: \"everything is working after reload, lets get all these changes merged and ready for curseforge deploy\". This authorizes integration and release preparation, not a production tag or upload. All selected release DEV runtime bytes match that installation. Owner-reported DEV acceptance is recorded separately; formal full native coverage, separate PROD and CurseForge-client testing are not claimed. The established early-release manifest schema retains nativeAccepted:false. Final production-tag approval is required after exact-main hosted checks.",
     "kind": "owner-approved-early-release",
     "nativeAccepted": false
   },
@@ -9,15 +9,15 @@
     "gameVersionTypeID": 88568,
     "name": "1.60.1"
   },
-  "notesSha256": "b9fbeef9257daeb4b1de5b8dacafc2746ea7b91659f3016e2fe780eafdb5aed3",
+  "notesSha256": "c338f2fd92ed34a20ef07dd4efc555d9d7849ba77e58c1a2710d9797fe1e4d01",
   "packages": {
-    "DEV": "dda8ea9aa80f9985f6eace95c7df68185cfb17005270614e06bcd6375370a58c",
-    "PROD": "ca3408c06ba5814f66e787f1c787d62a2882c38a0c5a3ce6d47a6de8617f99f5"
+    "DEV": "b8cfe965d4f9a1ead5b0f731c1670420d78de7462334d022eabb1dec29a616fd",
+    "PROD": "dcc65da10645d2d2fb83e57c1ce0a76c96851f0b819131bc579b062e2a60fee5"
   },
   "projectId": 1608100,
   "releaseType": "release",
   "schema": 1,
-  "sourceLockSha256": "d755e20fcbda604adc9e39b0715a32db99e1d5ffde173b5fe3abfbeb557fa3d6",
+  "sourceLockSha256": "031b89a7c95fc9406f1dca62e7df6660e6716df98621e67ab5b76dc92e418364",
   "target": "forever",
   "version": "1.14.20"
 }

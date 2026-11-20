@@ -1,14 +1,10 @@
 # Prepared selection - 2026-11-19
 
-Forever **1.14.20** combines the priest Dispel Magic fix, Vanguard Charge default,
-Dungeons class/playstyle filters and whisper Who/level/class filtering. The immutable
-selection is [1.14.20](distribution/releases/1.14.20/manifest.json). Owner reports
-all three feature areas tested and working; the report precedes completion of the
-combined DEV installation, so complete native acceptance remains unclaimed.
-Push/main integration and final production tag approval remain pending. Require
-exact-final-main test, aggregate and release-1.14.20 checks before publication.
+Forever **1.14.20** selects the complete owner-tested DEV.15 gameplay, including healing recovery, priest Dispel Magic, Vanguard Charge, Dungeons filters and whisper grouping/fade/Who fixes. See [selection](distribution/releases/1.14.20/manifest.json) and [owner DEV acceptance](distribution/releases/1.14.20/dev-acceptance.json).
 
-The earlier prepared/published selections below remain historical evidence.
+The owner requests integration and readiness for CurseForge deployment. Final production-tag approval remains separate. Require successful test, aggregate and release-1.14.20 checks on exact final main before publication. Separate PROD and CurseForge-client testing are not claimed.
+
+Earlier preparation notes below remain historical.
 
 # Apogee Forever releases
 
