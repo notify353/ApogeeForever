@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "7c99c08bd03091edf2ff0bace2844b90e715b650c582616488c4be366e57ae83",
+  "authorization": {
+    "basis": "Owner requested CurseForge deployment on 2026-11-20 after reloading DEV 1.14.20-dev.2 and confirming the Gear selector is gone and bag clicks no longer cause errors. Current Forever71037 export subsequently reviewed: all258 references unchanged. Four other components only add71037 to reviewed-build notices. These notices, full native, separate PROD and CurseForge-client testing are not claimed. Final production-tag approval remains required after exact-main hosted checks.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "6da2c2240d21d2fdfb161d9e66ab5a9aaba6ef8eae1c70e9f21baed6bd6549a0",
+  "packages": {
+    "DEV": "3bf077129ff2dc9901c9e5ef17e6449ef3eefc083764e4516313b614f8b480fc",
+    "PROD": "84a047dff5aa70198123c908482e627e49a325871523470f85b1462825c5572c"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "d0a4538b39c44ed8d97961d2b03e262f5ca00f081a098bfbf1e5e5ab503ed0dd",
+  "target": "forever",
+  "version": "1.14.21"
+}

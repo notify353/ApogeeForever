@@ -31,7 +31,7 @@ class LiveForeverTests(unittest.TestCase):
         self.reference = self.client/'BlizzardInterfaceCode/Interface/AddOns/Example/API.lua'
         self.reference.parent.mkdir(parents=True); self.reference.write_bytes(b'reviewed API')
         self.info = self.root/'.build.info'
-        self.info.write_text('Product!STRING:0|Version!STRING:0|Active!DEC:1\nwowf|1.60.1.70959|1\nwow_classic_era|1.15.9.70576|1\n')
+        self.info.write_text('Product!STRING:0|Version!STRING:0|Active!DEC:1\nwowf|1.60.1.71037|1\nwow_classic_era|1.15.9.70576|1\n')
         self.lock = d.read_lock(ROOT/'distribution/future-launcher.lock.json')
         self.lock['client'] = copy.deepcopy(live.LIVE_CLIENT)
         self.record = {'schema': 1, 'client': copy.deepcopy(live.LIVE_CLIENT),
@@ -50,7 +50,7 @@ class LiveForeverTests(unittest.TestCase):
 
     def test_live_export_and_legacy_locks_are_separate(self):
         result = self.verify()
-        self.assertEqual(result['build'], '1.60.1.70959')
+        self.assertEqual(result['build'], '1.60.1.71037')
         self.assertEqual(result['referencesVerified'], 1)
         self.assertEqual(d.read_lock(ROOT/'distribution/candidate.lock.json')['client']['reviewedBuild'], '1.60.1.70450')
         with self.assertRaises(ValueError):
@@ -92,8 +92,8 @@ class LiveForeverTests(unittest.TestCase):
                 with self.assertRaises(ValueError): self.verify()
 
     def test_wrong_duplicate_inactive_or_missing_product_rejected(self):
-        for rows in ('wow_classic_beta|1.60.1.70959|1', 'wowf|1.60.1.70450|1',
-                     'wowf|1.60.1.70959|0', 'wowf|1.60.1.70959|1\nwowf|1.60.1.70959|1', ''):
+        for rows in ('wow_classic_beta|1.60.1.71037|1', 'wowf|1.60.1.70450|1',
+                     'wowf|1.60.1.71037|0', 'wowf|1.60.1.71037|1\nwowf|1.60.1.71037|1', ''):
             with self.subTest(rows=rows):
                 self.info.write_text('Product|Version|Active\n'+rows+'\n')
                 with self.assertRaises(ValueError): self.verify()
@@ -152,7 +152,7 @@ class LiveForeverTests(unittest.TestCase):
                             allow_running_dev=True, defer_api_review=True))
             result = migration.deferred_live_dev_review(self.client, self.lock)
             self.assertEqual(result['installedBuild'], '1.60.1.70900')
-            self.assertEqual(result['reviewedBuild'], '1.60.1.70959')
+            self.assertEqual(result['reviewedBuild'], '1.60.1.71037')
             self.assertTrue(result['deferredByOwner'])
             self.assertFalse(result['exportChecked'] or result['nativeAccepted'])
             self.assertEqual(result['installedExecutableSha256'], d.sha(self.exe.read_bytes()))

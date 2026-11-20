@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+## [1.14.21] - 2026-11-20
+
+- Improve bag-item tooltip stability and avoid repeated errors and redundant refreshes.
+- Always show all-role upgrades in bags and the character window; remove the Gear selector.
+- Keep AH filters and dungeon loot roles independent; move the session loot fallback to Stats settings.
+- Contain tooltip, auction and settings failures while retaining working guidance.
+- Recognize the reviewed Forever71037 client without stale-review warnings.
+
+## Earlier DEV preparation
+
 - Prepare Forever DEV 1.14.20-dev.2: always show all-role bag/character upgrades,
   remove Gear selector state/hooks, keep AH role filters and dungeon loot rules,
   and move the session loot fallback to Stats settings. Remove cross-window

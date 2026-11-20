@@ -1,3 +1,13 @@
+## Reviewed Forever71037 export — 2026-11-20
+
+Owner refreshed the current live export. Active wowf metadata and Wow.exe agree
+on1.60.1.71037/interface16001. All258 reviewed API/source references postdate the
+executable and remain byte-identical to70959. No API contract changes were found.
+Update current release authority and reviewed-build notices only. Preserve frozen
+70959 selections and every historical release. Native acceptance remains limited
+to the owner's reported DEV.2 Gear removal and error-free bag clicks; warning-only
+changes in other components are not new native gameplay acceptance.
+
 ## Stats scope and loot-settings review — 2026-11-20
 
 Forever 70959/16001 verifies all 258 existing references. Reviewed native
