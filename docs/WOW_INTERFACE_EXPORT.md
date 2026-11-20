@@ -1,3 +1,15 @@
+## Stats callback recovery review — 2026-11-20
+
+Live Forever 70959/16001 still verifies all 258 recorded references. Reviewed
+ItemDocumentation GET_ITEM_INFO_RECEIVED and ITEM_DATA_LOAD_RESULT: both carry
+itemID and non-null boolean success and may fire synchronously. Stats ignores
+unrelated/failed results, batches relevant updates on its own frame, and ignores
+completion reentry during rebuilding. Existing tooltip clear/hide, font restore,
+and RebuildFromTooltipInfo methods are retained with failure cleanup. Auction
+provider restoration remains conditional on ownership. No new API is introduced;
+the current evidence source pin advances to the checked Stats fix. Historical
+release evidence is unchanged. Native bag-click acceptance remains pending.
+
 ## Marker defaults and current authority - 2026-11-17
 
 Reviewed live Forever1.60.1.70959 against the refreshed export. All248 prior
