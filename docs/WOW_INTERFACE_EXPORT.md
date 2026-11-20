@@ -1,3 +1,15 @@
+## Stats scope and loot-settings review — 2026-11-20
+
+Forever 70959/16001 verifies all 258 existing references. Reviewed native
+MenuUtil.CreateContextMenu and the Settings canvas-subcategory implementation
+guide against the export. Stats uses the existing ApogeeUI RegisterSettings
+contract to expose only the session loot fallback, independently of tooltip
+startup. The character selector and visibility hooks are removed. Ordinary
+comparison defaults to all roles; explicit AH scopes and LOOT scope own their
+policies. No new native API or loading-graph change. Source pin advances to
+ef79cfecf55c6aa9dc0629b47b0ba2866054dd5e; historical evidence stays frozen.
+Native visual/timing/taint acceptance remains pending.
+
 ## Stats callback recovery review — 2026-11-20
 
 Live Forever 70959/16001 still verifies all 258 recorded references. Reviewed
