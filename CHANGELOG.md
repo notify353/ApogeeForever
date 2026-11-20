@@ -1,5 +1,25 @@
 ## [Unreleased]
 
+## [1.14.21] - 2026-11-20
+
+- Improve bag-item tooltip stability and avoid repeated errors and redundant refreshes.
+- Always show all-role upgrades in bags and the character window; remove the Gear selector.
+- Keep AH filters and dungeon loot roles independent; move the session loot fallback to Stats settings.
+- Contain tooltip, auction and settings failures while retaining working guidance.
+- Recognize the reviewed Forever71037 client without stale-review warnings.
+
+## Earlier DEV preparation
+
+- Prepare Forever DEV 1.14.20-dev.2: always show all-role bag/character upgrades,
+  remove Gear selector state/hooks, keep AH role filters and dungeon loot rules,
+  and move the session loot fallback to Stats settings. Remove cross-window
+  refreshes and isolate optional settings failures. Native acceptance pending.
+
+- Prepare Forever DEV 1.14.20-dev.1 with coalesced item-tooltip refreshes,
+  exception-safe tooltip cleanup, and contained auction callback failures.
+- Preserve other child pins, generated loading identities, and frozen releases.
+  Native bag-click acceptance remains pending; no publication is implied.
+
 ## [1.14.20] - 2026-11-19
 
 - Improve healing-click reliability when spell information is temporarily unavailable, and recovery across combat and loading transitions.

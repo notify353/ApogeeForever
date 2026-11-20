@@ -1,3 +1,14 @@
+# Prepared selection - 2026-11-20
+
+Forever **1.14.21** includes the Stats runtime tested in DEV1.14.20-dev.2 plus
+reviewed-build notice updates for71037. The owner confirmed Gear removal and
+error-free bag clicks after reload, then requested CurseForge deployment.
+See [selection](distribution/releases/1.14.21/manifest.json) and
+[scoped acceptance and exact runtime differences](distribution/releases/1.14.21/dev-acceptance.json).
+Require test, aggregate and release-1.14.21 checks on exact final main, then
+immediate production-tag approval. Separate PROD/CurseForge-client acceptance
+and comprehensive native coverage remain unclaimed. Earlier notes are historical.
+
 # Prepared selection - 2026-11-19
 
 Forever **1.14.20** selects the complete owner-tested DEV.15 gameplay, including healing recovery, priest Dispel Magic, Vanguard Charge, Dungeons filters and whisper grouping/fade/Who fixes. See [selection](distribution/releases/1.14.20/manifest.json) and [owner DEV acceptance](distribution/releases/1.14.20/dev-acceptance.json).

@@ -1,3 +1,37 @@
+## Reviewed Forever71037 export — 2026-11-20
+
+Owner refreshed the current live export. Active wowf metadata and Wow.exe agree
+on1.60.1.71037/interface16001. All258 reviewed API/source references postdate the
+executable and remain byte-identical to70959. No API contract changes were found.
+Update current release authority and reviewed-build notices only. Preserve frozen
+70959 selections and every historical release. Native acceptance remains limited
+to the owner's reported DEV.2 Gear removal and error-free bag clicks; warning-only
+changes in other components are not new native gameplay acceptance.
+
+## Stats scope and loot-settings review — 2026-11-20
+
+Forever 70959/16001 verifies all 258 existing references. Reviewed native
+MenuUtil.CreateContextMenu and the Settings canvas-subcategory implementation
+guide against the export. Stats uses the existing ApogeeUI RegisterSettings
+contract to expose only the session loot fallback, independently of tooltip
+startup. The character selector and visibility hooks are removed. Ordinary
+comparison defaults to all roles; explicit AH scopes and LOOT scope own their
+policies. No new native API or loading-graph change. Source pin advances to
+ef79cfecf55c6aa9dc0629b47b0ba2866054dd5e; historical evidence stays frozen.
+Native visual/timing/taint acceptance remains pending.
+
+## Stats callback recovery review — 2026-11-20
+
+Live Forever 70959/16001 still verifies all 258 recorded references. Reviewed
+ItemDocumentation GET_ITEM_INFO_RECEIVED and ITEM_DATA_LOAD_RESULT: both carry
+itemID and non-null boolean success and may fire synchronously. Stats ignores
+unrelated/failed results, batches relevant updates on its own frame, and ignores
+completion reentry during rebuilding. Existing tooltip clear/hide, font restore,
+and RebuildFromTooltipInfo methods are retained with failure cleanup. Auction
+provider restoration remains conditional on ownership. No new API is introduced;
+the current evidence source pin advances to the checked Stats fix. Historical
+release evidence is unchanged. Native bag-click acceptance remains pending.
+
 ## Marker defaults and current authority - 2026-11-17
 
 Reviewed live Forever1.60.1.70959 against the refreshed export. All248 prior
