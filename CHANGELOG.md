@@ -1,3 +1,7 @@
+## Unreleased - Whisper Who chat results
+
+- Prepare DEV1.14.19-dev.14 with localized chat-printed Who replies refreshing whisper level/class/location, exact player-link matching and existing class filters/idle fade. Include the prepared foreground layering correction. Native queries remain manual. No installation or publication included.
+
 ## Unreleased - Whisper foreground
 
 - Prepare DEV1.14.19-dev.13 with the whisper window on the dialog layer, above normal and high-layer panels. Preserve installed DEV.12 class groups and fade. Chat-displayed Who refresh is a separate reported issue under investigation; this candidate does not claim to fix it. No installation or publication included.
