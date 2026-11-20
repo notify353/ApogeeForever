@@ -1,3 +1,7 @@
+## Unreleased - Combined testing update
+
+- Combine healing-click recovery and lifecycle polish with whisper foreground layering and chat Who refresh in Forever DEV1.14.19-dev.15. Preserve installed class headings, two-minute fade, priest Dispel Magic and Vanguard defaults. Include source and generated-family regressions; native testing remains pending.
+
 ## Unreleased - Whisper Who chat results
 
 - Prepare DEV1.14.19-dev.14 with localized chat-printed Who replies refreshing whisper level/class/location, exact player-link matching and existing class filters/idle fade. Include the prepared foreground layering correction. Native queries remain manual. No installation or publication included.
