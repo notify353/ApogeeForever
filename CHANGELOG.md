@@ -1,3 +1,10 @@
+## Unreleased - Vanguard default key (2026-11-19)
+
+- Prepare DEV 1.14.19-dev.6 with learned Vanguard selecting Charge for the
+  automatic Defensive Stance 1 key. Preserve other installed child selections.
+- Exercise the Vanguard regression against generated PROD and DEV runtimes.
+  Native casting acceptance remains pending; installation requires approval.
+
 ## Unreleased - Group Alert whisper window
 
 - Prepare Forever DEV1.14.19-dev.3 with a compact session-only incoming whisper window, class and public Who location, Reply and Invite. Reduce repeated search wording/roster work. Add generated-family coverage and matching API evidence. New runtime modules require the closed-client DEV installer; no installation, publication or native acceptance included.
