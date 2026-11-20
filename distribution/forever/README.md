@@ -1,3 +1,45 @@
+## Latest installed Who update retained - 2026-11-19
+
+The approved installation preflight detected a concurrent Who/level/class-filter
+DEV.7 install and stopped before writes. DEV.8 now retains installed Group Alert
+efbe547 and Keybinds54da9a3, adding only Heals7d7bc23. All145 installed files were
+checked against the newest whisper-who receipt;257 live references remain fresh.
+Validation-r3 and the final receipt-aware preview supersede the earlier DEV.8
+reconciliation artifacts. Native priest acceptance still requires owner testing.
+
+## Approved priest fix reconciled with installed updates - 2026-11-19
+
+Before installation, verified the newer installed Vanguard DEV.6 receipt and
+145 managed files. DEV1.14.19-dev.8 now carries the same priest fix while
+preserving the installed whisper window and Vanguard defaults. Only Heals
+advances over that installed selection;257 matching live70959 references remain
+unchanged. Re-run coordinated validation and checked seven-write preview before
+the already approved DEV installation. DEV.4 artifacts remain historical.
+
+## Priest Dispel Magic correction - 2026-11-19
+
+DEV1.14.19-dev.4 advances only the Heals pin over installed DEV.2. Learned priest
+Dispel Magic no longer requires helpful classification; known/player-book/active
+checks, friendly recipients, exact ranks and ordinary binding filters remain.
+The owner supplied the live known/helpful mismatch; native post-fix acceptance
+remains pending. The253 reviewed70959 API references are unchanged. Regression
+coverage includes the reported values in generated PROD/DEV. Era and frozen
+selections are unchanged. Concurrent uninstalled Whispers DEV.3 is not included.
+Validate and preview before immediate owner approval for DEV installation.
+
+## Group Alert playstyles - 2026-11-19
+
+DEV1.14.19-dev.2 adds playstyle selections and settings tabs over the accepted
+class-exclusion source. Matching70959 nullable generalPlaystyle and enum contracts
+are reused; the native localized-label mapping is explicitly recorded. Source and
+generated PROD/DEV checks plus a checked installation preview are required before
+immediate owner installation approval. Native acceptance for this feature is pending.
+Era, frozen selections, published versions and historical evidence remain unchanged.
+
+## Group Alert class exclusions - 2026-11-19
+
+Current DEV1.14.19-dev.1 adds only Group Alert class exclusions over published1.14.19 gameplay. Central live70959 evidence now includes the localized class-name table and native Settings canvas geometry (251 references). Existing sanitized member-class contracts are reused. Historical selections and Era pins are unchanged. Source/generated validation and checked installation preview precede immediate owner installation approval; native acceptance remains pending.
+
 ## Marker defaults and current authority - 2026-11-17
 
 Reviewed live Forever1.60.1.70959 against the refreshed export. All248 prior

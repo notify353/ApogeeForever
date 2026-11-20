@@ -1,3 +1,11 @@
+# Prepared selection - 2026-11-19
+
+Forever **1.14.20** selects the complete owner-tested DEV.15 gameplay, including healing recovery, priest Dispel Magic, Vanguard Charge, Dungeons filters and whisper grouping/fade/Who fixes. See [selection](distribution/releases/1.14.20/manifest.json) and [owner DEV acceptance](distribution/releases/1.14.20/dev-acceptance.json).
+
+The owner requests integration and readiness for CurseForge deployment. Final production-tag approval remains separate. Require successful test, aggregate and release-1.14.20 checks on exact final main before publication. Separate PROD and CurseForge-client testing are not claimed.
+
+Earlier preparation notes below remain historical.
+
 # Apogee Forever releases
 
 Current prepared selection: **Forever 1.14.18**, reviewed against build **70862**.
