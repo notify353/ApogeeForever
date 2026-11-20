@@ -1,3 +1,7 @@
+## Unreleased - Whisper class exclusions
+
+- Prepare Forever DEV1.14.19-dev.6 with shared Dungeons class exclusions applied to incoming whispers, retaining the pending DEV.5 bug fixes. Unresolved classes and native chat/recruitment alerts remain visible. Cached restoration, late class updates and scroll/click safety are covered in source/generated tests. No installation or publication included.
+
 ## Unreleased - Group Alert whisper bug sweep
 
 - Prepare Forever DEV1.14.19-dev.5 with press-time whisper recipient checks, stale tooltip cleanup, readable class-label fallback and refreshed cached chat eligibility on changed dungeon ranges. Existing load graph unchanged; source/generated regression coverage added. No installation, publication or native acceptance included.
