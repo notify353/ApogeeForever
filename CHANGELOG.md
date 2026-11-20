@@ -1,3 +1,7 @@
+## Unreleased - Whisper idle fade
+
+- Prepare DEV1.14.19-dev.11 with hidden startup, automatic show on eligible whispers and a final-second fade ending after two idle minutes. Retain the message log and installed priest/Who/Vanguard fixes. Excluded messages, Who updates and settings changes never extend the timer. No installation or publication included.
+
 ## Unreleased - Priest Dispel Magic correction
 
 - Prepare Forever DEV1.14.19-dev.8 with restored priest Magic debuff borders and
