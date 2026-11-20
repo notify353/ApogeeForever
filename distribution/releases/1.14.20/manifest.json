@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "ed2d634288159f96c0c1360ee60429ff66f85d31cf86cc21088c6d0f8eaa423e",
+  "authorization": {
+    "basis": "Owner requested preparation of all three Apogee updates for Git integration and CurseForge deployment on 2026-11-19, and reported all three features tested and working. The combined DEV installation is independently verified separately; complete native acceptance is not claimed. Preparation follows the existing early-release policy. Immediate approval for push/main integration and the final production tag remains pending.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "b9fbeef9257daeb4b1de5b8dacafc2746ea7b91659f3016e2fe780eafdb5aed3",
+  "packages": {
+    "DEV": "dda8ea9aa80f9985f6eace95c7df68185cfb17005270614e06bcd6375370a58c",
+    "PROD": "ca3408c06ba5814f66e787f1c787d62a2882c38a0c5a3ce6d47a6de8617f99f5"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "d755e20fcbda604adc9e39b0715a32db99e1d5ffde173b5fe3abfbeb557fa3d6",
+  "target": "forever",
+  "version": "1.14.20"
+}

@@ -1,3 +1,15 @@
+# Prepared selection - 2026-11-19
+
+Forever **1.14.20** combines the priest Dispel Magic fix, Vanguard Charge default,
+Dungeons class/playstyle filters and whisper Who/level/class filtering. The immutable
+selection is [1.14.20](distribution/releases/1.14.20/manifest.json). Owner reports
+all three feature areas tested and working; the report precedes completion of the
+combined DEV installation, so complete native acceptance remains unclaimed.
+Push/main integration and final production tag approval remain pending. Require
+exact-final-main test, aggregate and release-1.14.20 checks before publication.
+
+The earlier prepared/published selections below remain historical evidence.
+
 # Apogee Forever releases
 
 Current prepared selection: **Forever 1.14.18**, reviewed against build **70862**.

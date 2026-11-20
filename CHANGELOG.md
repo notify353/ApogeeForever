@@ -1,32 +1,16 @@
-## Unreleased - Priest Dispel Magic correction
+## [Unreleased]
 
-- Prepare Forever DEV1.14.19-dev.8 with restored priest Magic debuff borders and
-  cleanse clicks when Dispel Magic is classified as not helpful. Preserve the
-  installed Who/level/class filters and Vanguard update; no installation or publication included.
+## [1.14.20] - 2026-11-19
 
-## Unreleased - Whisper Who button
+- Restore priest Magic debuff highlighting and cleanse clicks when learned Dispel Magic is classified as not helpful. Both ranks remain supported.
+- With Vanguard learned, automatic Warrior key 1 casts Charge in Defensive Stance without switching stance. Manual assignments retain priority.
+- Add class exclusions and playstyle filters for official multiplayer group listings in Dungeons settings.
+- Add a compact, movable incoming-whisper window with Reply, Invite, and Who actions. Messages remain session-only.
+- Apply class exclusions to the whisper window. Unknown classes remain visible, and clearing exclusions restores retained messages.
+- Who prepares an editable lookup; press Enter to search. Matching results update the player's known level, class, and location.
+- Fix stale whisper recipients, tooltip cleanup, and cached listing eligibility, and reduce repeated listing-update work.
 
-- Prepare Forever DEV1.14.19-dev.7 with a Who button below Reply/Invite and known player levels in whisper rows. Matching public manual-Who results refresh level, class and location. Preserve the newly installed Vanguard fix alongside class exclusions and pending whisper bug fixes. No installation or publication included.
-
-## Unreleased - Whisper class exclusions
-
-- Prepare Forever DEV1.14.19-dev.6 with shared Dungeons class exclusions applied to incoming whispers, retaining the pending DEV.5 bug fixes. Unresolved classes and native chat/recruitment alerts remain visible. Cached restoration, late class updates and scroll/click safety are covered in source/generated tests. No installation or publication included.
-
-## Unreleased - Group Alert whisper bug sweep
-
-- Prepare Forever DEV1.14.19-dev.5 with press-time whisper recipient checks, stale tooltip cleanup, readable class-label fallback and refreshed cached chat eligibility on changed dungeon ranges. Existing load graph unchanged; source/generated regression coverage added. No installation, publication or native acceptance included.
-
-## Unreleased - Group Alert whisper window
-
-- Prepare Forever DEV1.14.19-dev.3 with a compact session-only incoming whisper window, class and public Who location, Reply and Invite. Reduce repeated search wording/roster work. Add generated-family coverage and matching API evidence. New runtime modules require the closed-client DEV installer; no installation, publication or native acceptance included.
-
-## Unreleased - Group Alert playstyle filter
-
-- Prepare Forever DEV1.14.19-dev.2 with Dungeon wording / Filters tabs and per-character playstyle selections. Preserve accepted class exclusions; unknown playstyles and solo/chat remain unaffected. No installation or publication included.
-
-## Unreleased - Group Alert class exclusions
-
-- Prepare Forever DEV1.14.19-dev.1 with per-character group class exclusions in Dungeons settings. Solo/chat alerts remain independent. Generated-family regression coverage added; no installation or publication.
+For World of Warcraft Forever 1.60.1. Existing settings and manual key assignments are preserved. Native WoW chat remains unchanged.
 
 ## [1.14.19] - 2026-11-19
 
