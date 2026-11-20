@@ -1,3 +1,7 @@
+## Unreleased - Whisper Who button
+
+- Prepare Forever DEV1.14.19-dev.7 with a Who button below Reply/Invite and known player levels in whisper rows. Matching public manual-Who results refresh level, class and location. Preserve the newly installed Vanguard fix alongside class exclusions and pending whisper bug fixes. No installation or publication included.
+
 ## Unreleased - Whisper class exclusions
 
 - Prepare Forever DEV1.14.19-dev.6 with shared Dungeons class exclusions applied to incoming whispers, retaining the pending DEV.5 bug fixes. Unresolved classes and native chat/recruitment alerts remain visible. Cached restoration, late class updates and scroll/click safety are covered in source/generated tests. No installation or publication included.
