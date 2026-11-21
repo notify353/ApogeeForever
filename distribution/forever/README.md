@@ -1,3 +1,24 @@
+## Whisper visual polish prepared - 2026-11-21
+
+Owner confirms DEV.4 pin works and requests alignment/proportion polish.
+DEV1.14.21-dev.5 advances only GroupAlert to50d171f: shared row centers,
+content-sized location column, lighter controls, matched action font, consistent
+insets and aligned header/class rules. Long names retain responsive readable space.
+All260 matching live71037 API references remain unchanged. Native visual acceptance
+is pending; no automatic Who, query/state changes or additional event timers.
+Validate exact source/generated candidates, then compare installed DEV.4 through
+the central inspect-only path. Immediate installation approval remains required.
+
+Coordinated source/generated validation passed with live Forever260/Era99 checks.
+Focused frozen-suite reuse is backed by unchanged tooling/frozen/Era/migration
+inputs and the successful inline-validation receipt. Evidence is in the retained
+whisper task's polish-validation/ and polish-validation.log. Official inspect-only
+and independent comparison verify125 installed DEV.4 files and plan seven writes
+(View.lua plus six Version-only TOCs), preserving20 documentation files without
+retirement or discovery changes. Reload is sufficient after approval/install.
+DEV ZIP SHA256:10db56b4ea1ede90185d251f532aeac8fbe4bd0398db0d41231ce9e63f4ff378.
+DEV.5 is not installed; native visual acceptance remains pending.
+
 ## Whisper location pin prepared - 2026-11-21
 
 DEV1.14.21-dev.4 advances only GroupAlert to1ce1bcd.

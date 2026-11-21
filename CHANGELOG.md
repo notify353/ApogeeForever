@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prepare DEV1.14.21-dev.5: polish Whisper row/header alignment, fit the location column to readable text, soften controls and normalize action font/padding. Preserve the working pin lookup and bounded grouped UI.
+
 - Prepare DEV1.14.21-dev.4: replace the Whisper Who action with an icon-only unknown-location button and a readable known-location/refresh control. Preserve manual lookup, narrow-window access, safe click recipients and idle behavior.
 
 - Prepare DEV1.14.21-dev.3: fix clipped whisper locations with a column that grows with the window and normal-sized row text. Preserve the inline layout, actions and narrow-window hiding.

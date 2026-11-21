@@ -1901,7 +1901,7 @@
   "schema": 1,
   "sourcePins": {
     "ApogeeEssentials": "e6a24650f8d6badc38624039c25ed85c8b17e64d",
-    "ApogeeGroupAlert": "1ce1bcddaa15b1004b500c570344fafe9aadbba9",
+    "ApogeeGroupAlert": "50d171f55aec61280f678e3f21d391a4cfa4623f",
     "ApogeeHeals": "9b66b94323a4956b18a450cd06e87e71719ebfcd",
     "ApogeeKeybinds": "b3bf8f77350ce6488b9fe6e58727e2a2cde6c768",
     "ApogeeStats": "ef79cfecf55c6aa9dc0629b47b0ba2866054dd5e"
