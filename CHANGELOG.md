@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prepare DEV 1.14.21-dev.1 with compact whisper rows, inline actions, expandable text and sender levels from native GUID metadata on arrival. Retain manual Who queries, class groups/filters, session privacy and idle fade.
+
 ## [1.14.21] - 2026-11-20
 
 - Improve bag-item tooltip stability and avoid repeated errors and redundant refreshes.

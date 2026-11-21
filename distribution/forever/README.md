@@ -1,3 +1,24 @@
+## Compact whispers and GUID levels prepared - 2026-11-21
+
+DEV 1.14.21-dev.1 selects GroupAlert b246fca for the approved Compact layout
+and immediate sender levels. The live 71037/16001 export includes the optional
+eighth GetPlayerInfoByGUID return that the old adapter discarded. Existing
+PlayerScriptDocumentation/FontString/Frame/Button/Texture references cover the
+changes; sourcePins/evidence digest advance without changing reference bytes.
+Generated PROD/DEV checks now include compact layout and arrival-level regressions.
+Other child pins, Era and historical release selections remain unchanged.
+No installation or publication is implied; native acceptance is pending.
+
+Full candidate validation passed with live Forever 71037 (258 references),
+Era authority (99 references), exact child checks, generated PROD/DEV regressions
+and frozen migration/rollback checks. Machine-local evidence:
+C:/Dev/WoW/local-task-archives/apogee-whisper-compact-20261121/validation/.
+Receipt-aware inspect-only and independent ZIP comparison agree on nine DEV
+writes: three GroupAlert Whispers Lua files and six Version-only TOCs. All 125
+installed receipt files match; 20 documentation files are preserved, no loading
+or discovery changes and no retirement. Client is running; owner reload follows
+an approved installation. Not installed; explicit approval remains pending.
+
 ## Reviewed Forever71037 export — 2026-11-20
 
 Owner refreshed the current live export. Active wowf metadata and Wow.exe agree
