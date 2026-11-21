@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prepare DEV1.14.21-dev.4: replace the Whisper Who action with an icon-only unknown-location button and a readable known-location/refresh control. Preserve manual lookup, narrow-window access, safe click recipients and idle behavior.
+
 - Prepare DEV1.14.21-dev.3: fix clipped whisper locations with a column that grows with the window and normal-sized row text. Preserve the inline layout, actions and narrow-window hiding.
 
 - Prepare DEV 1.14.21-dev.2 with one latest whisper per player, compact class groups and aligned single-line player/message/actions. Hide location when narrow and add corner resizing with saved dimensions and a bounded reusable viewport.

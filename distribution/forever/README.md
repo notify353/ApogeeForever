@@ -1,3 +1,24 @@
+## Whisper location pin prepared - 2026-11-21
+
+DEV1.14.21-dev.4 advances only GroupAlert to1ce1bcd.
+The location pin replaces Who; known locations include readable name/refresh,
+unknown locations have hover-only lookup help. Narrow windows retain the pin.
+Native pin/refresh asset references are added to the matching live71037 evidence;
+all other child pins and frozen releases remain unchanged. Manual query submission,
+session-only metadata, guards and timer behavior remain. Native acceptance pending.
+Run coordinated candidate checks and receipt-aware inspect-only comparison against
+installed DEV.3 before requesting immediate installation approval.
+
+Focused coordinated validation passed: exact source checks, generated PROD/DEV,
+live Forever260/Era99 authority and source archives. Frozen regression reuse is
+backed by inline-validation/ and unchanged tooling/frozen/Era/migration inputs.
+Evidence: pin-validation/candidate-validation.json and pin-validation.log in the
+retained whisper task archive. Official inspect-only plus independent comparison
+verified125 installed DEV.3 files and plans seven writes: View.lua and six
+Version-only TOCs. Twenty docs preserved; no retirement/discovery change.
+DEV ZIP SHA256:16096f67833a1fcd07cf7190ef90a8fb97a9c075bb732f9952033dbc93417d23.
+DEV.4 is not installed; immediate owner approval and native reload testing remain.
+
 ## Whisper location readability prepared - 2026-11-21
 
 DEV1.14.21-dev.3 advances only GroupAlert to0cce419. Owner's DEV.2 screenshot
