@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prepare DEV1.14.21-dev.3: fix clipped whisper locations with a column that grows with the window and normal-sized row text. Preserve the inline layout, actions and narrow-window hiding.
+
 - Prepare DEV 1.14.21-dev.2 with one latest whisper per player, compact class groups and aligned single-line player/message/actions. Hide location when narrow and add corner resizing with saved dimensions and a bounded reusable viewport.
 
 - Prepare DEV 1.14.21-dev.1 with compact whisper rows, inline actions, expandable text and sender levels from native GUID metadata on arrival. Retain manual Who queries, class groups/filters, session privacy and idle fade.

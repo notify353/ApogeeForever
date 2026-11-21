@@ -1,3 +1,25 @@
+## Whisper location readability prepared - 2026-11-21
+
+DEV1.14.21-dev.3 advances only GroupAlert to0cce419. Owner's DEV.2 screenshot
+showed a clipped location despite unused space. The fixed76-pixel column now
+grows with window width (180 at default720, capped240); normal inherited row
+font improves legibility. Message/actions retain separate aligned hit areas;
+locations still hide below580. New source/generated regression reproduces the
+old failure using Raven Hill Cemetery, then checks readable sizing and bounds
+at580/720/1000 pixels. All258 live API references remain unchanged.
+
+Focused coordinated validation reuses the successful unchanged frozen regression
+evidence from inline-validation/ under the documented --skip-frozen-regression
+workflow. New exact-source, live authority and generated checks/artifacts are in
+location-validation/. No installation or native acceptance is implied.
+
+Focused validation passed, including live Forever258/Era99 and generated
+PROD/DEV checks. Official inspect-only and independent comparison match all125
+installed DEV.2 files and plan seven writes: Whispers/View.lua plus six
+Version-only TOCs. Twenty docs preserved; no discovery change, reload sufficient.
+DEV ZIP SHA256:e9966294aebc93934702c23211c482f9031130ff6dff080409994335af3c7c64.
+Immediate owner installation approval remains pending.
+
 ## Inline grouped whispers prepared - 2026-11-21
 
 DEV1.14.21-dev.2 advances only GroupAlert to bda5d7a for the owner-approved

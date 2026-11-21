@@ -1887,7 +1887,7 @@
   "schema": 1,
   "sourcePins": {
     "ApogeeEssentials": "e6a24650f8d6badc38624039c25ed85c8b17e64d",
-    "ApogeeGroupAlert": "bda5d7a04c60a49dc2ce07d6564ac5ce3ca3080c",
+    "ApogeeGroupAlert": "0cce419146aaffdcc1e46d608924d662034e3672",
     "ApogeeHeals": "9b66b94323a4956b18a450cd06e87e71719ebfcd",
     "ApogeeKeybinds": "b3bf8f77350ce6488b9fe6e58727e2a2cde6c768",
     "ApogeeStats": "ef79cfecf55c6aa9dc0629b47b0ba2866054dd5e"
