@@ -1,3 +1,25 @@
+## Inline grouped whispers prepared - 2026-11-21
+
+DEV1.14.21-dev.2 advances only GroupAlert to bda5d7a for the owner-approved
+single-line layout, latest incoming message per exact sender, tighter spacing,
+narrow-window location hiding and corner resizing. Twenty pooled rows permit
+more visible players in taller windows; size is the only new saved preference.
+Existing generated compact/Who/group/filter/fade/click regressions cover the new
+layout and resized viewport in both PROD and DEV. Live71037/16001 reference bytes
+remain unchanged; only the reviewed GroupAlert source pin and evidence digest
+advance. Era/frozen selections remain unchanged. Native appearance/drag/taint
+acceptance and immediate installation approval remain separate.
+
+Full central validation passed, including all258 live Forever references, Era99,
+exact source tests, generated PROD/DEV regressions and frozen migration/rollback
+checks. Machine-local evidence: apogee-whisper-compact-20261121/inline-validation/.
+Checked inspect-only and independent ZIP comparison passed against installed
+DEV.1:125 managed files unchanged, nine planned writes (three GroupAlert runtime
+files plus six Version-only TOCs),20 documentation files preserved. No discovery
+change; user reload is sufficient after approval. DEV ZIP SHA256:
+3107427600485bb50b0f6dc83fa2209919908e0c96516e38ca3b6a8ae77e959e.
+Not installed or published; native acceptance remains pending.
+
 ## Compact whispers and GUID levels prepared - 2026-11-21
 
 DEV 1.14.21-dev.1 selects GroupAlert b246fca for the approved Compact layout

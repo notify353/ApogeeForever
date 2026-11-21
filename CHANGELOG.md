@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prepare DEV 1.14.21-dev.2 with one latest whisper per player, compact class groups and aligned single-line player/message/actions. Hide location when narrow and add corner resizing with saved dimensions and a bounded reusable viewport.
+
 - Prepare DEV 1.14.21-dev.1 with compact whisper rows, inline actions, expandable text and sender levels from native GUID metadata on arrival. Retain manual Who queries, class groups/filters, session privacy and idle fade.
 
 ## [1.14.21] - 2026-11-20
