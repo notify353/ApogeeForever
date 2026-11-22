@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prepare DEV1.14.21-dev.6: accept learned Forever Penance ranks in healing mouse bindings with fixed friendly recipients. Preserve accepted Whisper DEV.5 and all other child pins. Add generated PROD/DEV Penance admission and secure-recipient regressions.
+
 - Prepare DEV1.14.21-dev.5: polish Whisper row/header alignment, fit the location column to readable text, soften controls and normalize action font/padding. Preserve the working pin lookup and bounded grouped UI.
 
 - Prepare DEV1.14.21-dev.4: replace the Whisper Who action with an icon-only unknown-location button and a readable known-location/refresh control. Preserve manual lookup, narrow-window access, safe click recipients and idle behavior.

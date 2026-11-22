@@ -1,3 +1,27 @@
+## Penance healing binding fix prepared - 2026-11-22
+
+DEV1.14.21-dev.6 advances only Heals toce2cb08. The healing editor admits
+the four learned castable Forever Penance ranks despite harmful/not-helpful flags.
+All native learning, readability, active-spell, combat and fixed-friendly-recipient
+checks remain; ordinary harmful spells and triggered Penance bolts remain rejected.
+Other child pins, including accepted Whisper UI DEV.5, are unchanged. All260 API
+references match live71037. Public spell records identify candidates only.
+The new regression runs against source and generated PROD/DEV; full coordinated
+candidate validation and installed DEV.5 inspect-only comparison are required.
+Native assignment/channel acceptance and immediate install approval are pending.
+
+Validation passed: all70 Heals suites with the matching export, full coordinated
+source/generated PROD/DEV checks and frozen regressions, live Forever260/Era99
+references. The Penance regression passes in source and both generated families.
+Root unittest discovery finds no tests in this repository layout; the documented
+coordinated runner executes the actual distribution suites. Evidence: validation/
+and validation.log in local-task-archives/apogee-penance-20261122.
+Official inspect-only and independent comparison verified125 installed DEV.5
+files. Seven writes planned: Heals Bindings/Runtime.lua plus six Version-only TOCs;
+20 documentation files preserved, no retirement/discovery changes, reload sufficient.
+DEV ZIP SHA256:205efdcfe61d7b14afb408df839866f6bdb529c35d27678368cf69094b6a6a1f.
+Nothing installed; immediate owner approval and native Penance testing remain.
+
 ## Whisper visual polish prepared - 2026-11-21
 
 Owner confirms DEV.4 pin works and requests alignment/proportion polish.
