@@ -1,3 +1,13 @@
+## Accepted DEV.6 selected for Forever1.14.22 - 2026-11-22
+
+The owner reloaded and confirmed Penance works in healing keybinds; the polished
+Whisper UI was already accepted in DEV.5. Installed DEV1.14.21-dev.6 selects
+Healsce2cb08 and GroupAlert50d171f. Forever1.14.22 preserves all tested Lua/XML
+runtime bytes in its generated DEV family and records separate PROD hashes.
+See ../releases/1.14.22/dev-acceptance.json for exact runtime comparison and
+the limited owner-reported acceptance scope. No comprehensive native/taint or
+PROD/CurseForge-client testing is claimed. Earlier preparation notes are historical.
+
 ## Penance healing binding fix prepared - 2026-11-22
 
 DEV1.14.21-dev.6 advances only Heals toce2cb08. The healing editor admits

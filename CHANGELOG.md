@@ -1,5 +1,14 @@
 ## [Unreleased]
 
+## [1.14.22] - 2026-11-22
+
+- Show the latest whisper per player in compact, aligned rows grouped by class.
+- Add corner resizing, readable locations and a manual location pin replacing Who.
+- Read available native sender levels and preserve guarded Reply/Invite actions.
+- Accept learned Forever Penance in healing bindings with fixed friendly recipients.
+
+## Earlier DEV preparation for 1.14.22
+
 - Prepare DEV1.14.21-dev.6: accept learned Forever Penance ranks in healing mouse bindings with fixed friendly recipients. Preserve accepted Whisper DEV.5 and all other child pins. Add generated PROD/DEV Penance admission and secure-recipient regressions.
 
 - Prepare DEV1.14.21-dev.5: polish Whisper row/header alignment, fit the location column to readable text, soften controls and normalize action font/padding. Preserve the working pin lookup and bounded grouped UI.

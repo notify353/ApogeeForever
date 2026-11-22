@@ -1,3 +1,15 @@
+# Prepared selection - 2026-11-22
+
+Forever **1.14.22** includes the compact, class-grouped and resizable Whisper UI,
+manual location pin, native sender levels and the Penance healing-binding fix.
+The owner accepted Whisper DEV.5 and Penance DEV.6 after reload, then requested
+CurseForge deployment of all changes. See the [immutable selection](distribution/releases/1.14.22/manifest.json)
+and [scoped DEV acceptance](distribution/releases/1.14.22/dev-acceptance.json).
+All generated DEV Lua/XML runtime files match installed DEV1.14.21-dev.6.
+Require test, aggregate and release-1.14.22 checks on exact final main, then
+immediate production-tag approval. Comprehensive native/taint, separate PROD
+and CurseForge-client acceptance remain unclaimed. Earlier notes are historical.
+
 # Prepared selection - 2026-11-20
 
 Forever **1.14.21** includes the Stats runtime tested in DEV1.14.20-dev.2 plus
