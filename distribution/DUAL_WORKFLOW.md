@@ -1,3 +1,14 @@
+## Compact whispers candidate - 2026-11-21
+
+DEV 1.14.21-dev.1 uses the reviewed GroupAlert Compact layout and reads the
+optional native GUID level on arrival. Only GroupAlert source advances; current
+live Forever 71037 references remain unchanged. Validate through
+CANDIDATE_VALIDATION.md with exact Era and future child worktrees, then use the
+central receipt-aware inspect-only DEV installer. Current workspace policy
+requires immediate owner approval before installation. Preserve the latest
+installed receipt, CurseForge-managed PROD, private saves and all rollback data.
+Native UI scale, level availability and click acceptance remain pending.
+
 ## Explicitly deferred API review for local DEV tests - 2026-11-07
 
 Only when the owner explicitly asks to install DEV while skipping export review,

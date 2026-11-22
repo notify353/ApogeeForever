@@ -78,6 +78,8 @@ class LauncherTests(unittest.TestCase):
                 if target != 'era':
                     subprocess.run(['lua','tests/fixed_debuffs_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                     subprocess.run(['lua','tests/binding_recovery_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
+                    if (children/'ApogeeHeals/tests/penance_spec.lua').is_file():
+                        subprocess.run(['lua','tests/penance_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 if (children/'ApogeeHeals/tests/target_state_spec.lua').is_file():
                     subprocess.run(['lua','tests/target_state_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
@@ -103,6 +105,9 @@ class LauncherTests(unittest.TestCase):
                         subprocess.run(['lua','tests/whisper_groups_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
                     if (children/'ApogeeGroupAlert/tests/whisper_who_chat_spec.lua').is_file():
                         subprocess.run(['lua','tests/whisper_who_chat_spec.lua'],cwd=children/'ApogeeGroupAlert',env=group_env,check=True)
+                    for spec in ('whisper_compact_spec.lua', 'whisper_level_spec.lua'):
+                        if (children/'ApogeeGroupAlert/tests'/spec).is_file():
+                            subprocess.run(['lua', 'tests/'+spec], cwd=children/'ApogeeGroupAlert', env=group_env, check=True)
                 keybinds='ApogeeKeybinds'+('Dev' if family=='DEV' else '')
                 subprocess.run(['lua',str(ROOT/'tests/distribution/strafe_coexistence.lua'),str(Path(folder)/keybinds),keybinds],
                                cwd=children/'ApogeeEssentials',env=env,check=True)

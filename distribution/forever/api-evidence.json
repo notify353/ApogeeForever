@@ -1311,6 +1311,13 @@
       "owners": [
         "ApogeeGroupAlert"
       ],
+      "path": "Blizzard_GroupFinder_VanillaStyle/Classic/Blizzard_LFGVanilla_Browse.xml",
+      "sha256": "9caa479e63c06a69b600590ec4a1ab0de361107a3a701d0ea061d4905cc3a628"
+    },
+    {
+      "owners": [
+        "ApogeeGroupAlert"
+      ],
       "path": "Blizzard_GroupFinder_VanillaStyle/Mainline/LFGVanilla_Constants.lua",
       "sha256": "6026d9d6bf90445ac96a0c62d608957c49c8ee0a26a0633930a495f0ab77979e"
     },
@@ -1880,15 +1887,22 @@
       ],
       "path": "Blizzard_UnitPopupShared/UnitPopupSharedButtonMixins.lua",
       "sha256": "c8fd3964b6806b97f12b9354106c9bbb7c78830c3ea02d13bd88ec52ff9d3557"
+    },
+    {
+      "owners": [
+        "ApogeeGroupAlert"
+      ],
+      "path": "Blizzard_WorldMap/Blizzard_WorldMapTemplates.xml",
+      "sha256": "4db5cb0528baa233da1d0f037d007ef8e46fb3381b3c416931130f5900d965c1"
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-11-20",
+  "reviewedOn": "2026-11-22",
   "schema": 1,
   "sourcePins": {
     "ApogeeEssentials": "e6a24650f8d6badc38624039c25ed85c8b17e64d",
-    "ApogeeGroupAlert": "c0979a24d3dc79f7b28838e9cdf5a7a542385f52",
-    "ApogeeHeals": "9b66b94323a4956b18a450cd06e87e71719ebfcd",
+    "ApogeeGroupAlert": "50d171f55aec61280f678e3f21d391a4cfa4623f",
+    "ApogeeHeals": "ce2cb08a800d2b1b5377429f6b0ad8181b7b30a1",
     "ApogeeKeybinds": "b3bf8f77350ce6488b9fe6e58727e2a2cde6c768",
     "ApogeeStats": "ef79cfecf55c6aa9dc0629b47b0ba2866054dd5e"
   }

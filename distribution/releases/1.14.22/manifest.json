@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "8bc88dacec12ca249c88287c027b06a283859347ea0a601d77705a1f21b322ed",
+  "authorization": {
+    "basis": "Owner requested CurseForge deployment of all changes on 2026-11-22 after confirming the polished Whisper UI in DEV.5 and Penance healing keybinds in DEV.6 work after reload. This release selects those exact gameplay revisions. Comprehensive native acceptance and separate PROD or CurseForge-client testing are not claimed. Final production tag follows successful exact-main checks and immediate approval.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "58a45f44337bf4e17589ce2a36f14c7eb313ffbad3200973497f4fa2c728f601",
+  "packages": {
+    "DEV": "8ea634792af8d4d1d674d18eed39571621e57bf4c003ba1e062269ff39e0f683",
+    "PROD": "b8a9f837fe06e193f46c490f1fad09d324adbe9712dbf4118bc3dbe397e5078e"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "2ee7d9b4cd39f4f32830e8a36eeed9f8158646486d9a2a29dba44252132c6e94",
+  "target": "forever",
+  "version": "1.14.22"
+}

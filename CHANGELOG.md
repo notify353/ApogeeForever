@@ -1,5 +1,26 @@
 ## [Unreleased]
 
+## [1.14.22] - 2026-11-22
+
+- Show the latest whisper per player in compact, aligned rows grouped by class.
+- Add corner resizing, readable locations and a manual location pin replacing Who.
+- Read available native sender levels and preserve guarded Reply/Invite actions.
+- Accept learned Forever Penance in healing bindings with fixed friendly recipients.
+
+## Earlier DEV preparation for 1.14.22
+
+- Prepare DEV1.14.21-dev.6: accept learned Forever Penance ranks in healing mouse bindings with fixed friendly recipients. Preserve accepted Whisper DEV.5 and all other child pins. Add generated PROD/DEV Penance admission and secure-recipient regressions.
+
+- Prepare DEV1.14.21-dev.5: polish Whisper row/header alignment, fit the location column to readable text, soften controls and normalize action font/padding. Preserve the working pin lookup and bounded grouped UI.
+
+- Prepare DEV1.14.21-dev.4: replace the Whisper Who action with an icon-only unknown-location button and a readable known-location/refresh control. Preserve manual lookup, narrow-window access, safe click recipients and idle behavior.
+
+- Prepare DEV1.14.21-dev.3: fix clipped whisper locations with a column that grows with the window and normal-sized row text. Preserve the inline layout, actions and narrow-window hiding.
+
+- Prepare DEV 1.14.21-dev.2 with one latest whisper per player, compact class groups and aligned single-line player/message/actions. Hide location when narrow and add corner resizing with saved dimensions and a bounded reusable viewport.
+
+- Prepare DEV 1.14.21-dev.1 with compact whisper rows, inline actions, expandable text and sender levels from native GUID metadata on arrival. Retain manual Who queries, class groups/filters, session privacy and idle fade.
+
 ## [1.14.21] - 2026-11-20
 
 - Improve bag-item tooltip stability and avoid repeated errors and redundant refreshes.

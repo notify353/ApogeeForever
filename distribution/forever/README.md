@@ -1,3 +1,144 @@
+## Accepted DEV.6 selected for Forever1.14.22 - 2026-11-22
+
+The owner reloaded and confirmed Penance works in healing keybinds; the polished
+Whisper UI was already accepted in DEV.5. Installed DEV1.14.21-dev.6 selects
+Healsce2cb08 and GroupAlert50d171f. Forever1.14.22 preserves all tested Lua/XML
+runtime bytes in its generated DEV family and records separate PROD hashes.
+See ../releases/1.14.22/dev-acceptance.json for exact runtime comparison and
+the limited owner-reported acceptance scope. No comprehensive native/taint or
+PROD/CurseForge-client testing is claimed. Earlier preparation notes are historical.
+
+## Penance healing binding fix prepared - 2026-11-22
+
+DEV1.14.21-dev.6 advances only Heals toce2cb08. The healing editor admits
+the four learned castable Forever Penance ranks despite harmful/not-helpful flags.
+All native learning, readability, active-spell, combat and fixed-friendly-recipient
+checks remain; ordinary harmful spells and triggered Penance bolts remain rejected.
+Other child pins, including accepted Whisper UI DEV.5, are unchanged. All260 API
+references match live71037. Public spell records identify candidates only.
+The new regression runs against source and generated PROD/DEV; full coordinated
+candidate validation and installed DEV.5 inspect-only comparison are required.
+Native assignment/channel acceptance and immediate install approval are pending.
+
+Validation passed: all70 Heals suites with the matching export, full coordinated
+source/generated PROD/DEV checks and frozen regressions, live Forever260/Era99
+references. The Penance regression passes in source and both generated families.
+Root unittest discovery finds no tests in this repository layout; the documented
+coordinated runner executes the actual distribution suites. Evidence: validation/
+and validation.log in local-task-archives/apogee-penance-20261122.
+Official inspect-only and independent comparison verified125 installed DEV.5
+files. Seven writes planned: Heals Bindings/Runtime.lua plus six Version-only TOCs;
+20 documentation files preserved, no retirement/discovery changes, reload sufficient.
+DEV ZIP SHA256:205efdcfe61d7b14afb408df839866f6bdb529c35d27678368cf69094b6a6a1f.
+Nothing installed; immediate owner approval and native Penance testing remain.
+
+## Whisper visual polish prepared - 2026-11-21
+
+Owner confirms DEV.4 pin works and requests alignment/proportion polish.
+DEV1.14.21-dev.5 advances only GroupAlert to50d171f: shared row centers,
+content-sized location column, lighter controls, matched action font, consistent
+insets and aligned header/class rules. Long names retain responsive readable space.
+All260 matching live71037 API references remain unchanged. Native visual acceptance
+is pending; no automatic Who, query/state changes or additional event timers.
+Validate exact source/generated candidates, then compare installed DEV.4 through
+the central inspect-only path. Immediate installation approval remains required.
+
+Coordinated source/generated validation passed with live Forever260/Era99 checks.
+Focused frozen-suite reuse is backed by unchanged tooling/frozen/Era/migration
+inputs and the successful inline-validation receipt. Evidence is in the retained
+whisper task's polish-validation/ and polish-validation.log. Official inspect-only
+and independent comparison verify125 installed DEV.4 files and plan seven writes
+(View.lua plus six Version-only TOCs), preserving20 documentation files without
+retirement or discovery changes. Reload is sufficient after approval/install.
+DEV ZIP SHA256:10db56b4ea1ede90185d251f532aeac8fbe4bd0398db0d41231ce9e63f4ff378.
+DEV.5 is not installed; native visual acceptance remains pending.
+
+## Whisper location pin prepared - 2026-11-21
+
+DEV1.14.21-dev.4 advances only GroupAlert to1ce1bcd.
+The location pin replaces Who; known locations include readable name/refresh,
+unknown locations have hover-only lookup help. Narrow windows retain the pin.
+Native pin/refresh asset references are added to the matching live71037 evidence;
+all other child pins and frozen releases remain unchanged. Manual query submission,
+session-only metadata, guards and timer behavior remain. Native acceptance pending.
+Run coordinated candidate checks and receipt-aware inspect-only comparison against
+installed DEV.3 before requesting immediate installation approval.
+
+Focused coordinated validation passed: exact source checks, generated PROD/DEV,
+live Forever260/Era99 authority and source archives. Frozen regression reuse is
+backed by inline-validation/ and unchanged tooling/frozen/Era/migration inputs.
+Evidence: pin-validation/candidate-validation.json and pin-validation.log in the
+retained whisper task archive. Official inspect-only plus independent comparison
+verified125 installed DEV.3 files and plans seven writes: View.lua and six
+Version-only TOCs. Twenty docs preserved; no retirement/discovery change.
+DEV ZIP SHA256:16096f67833a1fcd07cf7190ef90a8fb97a9c075bb732f9952033dbc93417d23.
+DEV.4 is not installed; immediate owner approval and native reload testing remain.
+
+## Whisper location readability prepared - 2026-11-21
+
+DEV1.14.21-dev.3 advances only GroupAlert to0cce419. Owner's DEV.2 screenshot
+showed a clipped location despite unused space. The fixed76-pixel column now
+grows with window width (180 at default720, capped240); normal inherited row
+font improves legibility. Message/actions retain separate aligned hit areas;
+locations still hide below580. New source/generated regression reproduces the
+old failure using Raven Hill Cemetery, then checks readable sizing and bounds
+at580/720/1000 pixels. All258 live API references remain unchanged.
+
+Focused coordinated validation reuses the successful unchanged frozen regression
+evidence from inline-validation/ under the documented --skip-frozen-regression
+workflow. New exact-source, live authority and generated checks/artifacts are in
+location-validation/. No installation or native acceptance is implied.
+
+Focused validation passed, including live Forever258/Era99 and generated
+PROD/DEV checks. Official inspect-only and independent comparison match all125
+installed DEV.2 files and plan seven writes: Whispers/View.lua plus six
+Version-only TOCs. Twenty docs preserved; no discovery change, reload sufficient.
+DEV ZIP SHA256:e9966294aebc93934702c23211c482f9031130ff6dff080409994335af3c7c64.
+Immediate owner installation approval remains pending.
+
+## Inline grouped whispers prepared - 2026-11-21
+
+DEV1.14.21-dev.2 advances only GroupAlert to bda5d7a for the owner-approved
+single-line layout, latest incoming message per exact sender, tighter spacing,
+narrow-window location hiding and corner resizing. Twenty pooled rows permit
+more visible players in taller windows; size is the only new saved preference.
+Existing generated compact/Who/group/filter/fade/click regressions cover the new
+layout and resized viewport in both PROD and DEV. Live71037/16001 reference bytes
+remain unchanged; only the reviewed GroupAlert source pin and evidence digest
+advance. Era/frozen selections remain unchanged. Native appearance/drag/taint
+acceptance and immediate installation approval remain separate.
+
+Full central validation passed, including all258 live Forever references, Era99,
+exact source tests, generated PROD/DEV regressions and frozen migration/rollback
+checks. Machine-local evidence: apogee-whisper-compact-20261121/inline-validation/.
+Checked inspect-only and independent ZIP comparison passed against installed
+DEV.1:125 managed files unchanged, nine planned writes (three GroupAlert runtime
+files plus six Version-only TOCs),20 documentation files preserved. No discovery
+change; user reload is sufficient after approval. DEV ZIP SHA256:
+3107427600485bb50b0f6dc83fa2209919908e0c96516e38ca3b6a8ae77e959e.
+Not installed or published; native acceptance remains pending.
+
+## Compact whispers and GUID levels prepared - 2026-11-21
+
+DEV 1.14.21-dev.1 selects GroupAlert b246fca for the approved Compact layout
+and immediate sender levels. The live 71037/16001 export includes the optional
+eighth GetPlayerInfoByGUID return that the old adapter discarded. Existing
+PlayerScriptDocumentation/FontString/Frame/Button/Texture references cover the
+changes; sourcePins/evidence digest advance without changing reference bytes.
+Generated PROD/DEV checks now include compact layout and arrival-level regressions.
+Other child pins, Era and historical release selections remain unchanged.
+No installation or publication is implied; native acceptance is pending.
+
+Full candidate validation passed with live Forever 71037 (258 references),
+Era authority (99 references), exact child checks, generated PROD/DEV regressions
+and frozen migration/rollback checks. Machine-local evidence:
+C:/Dev/WoW/local-task-archives/apogee-whisper-compact-20261121/validation/.
+Receipt-aware inspect-only and independent ZIP comparison agree on nine DEV
+writes: three GroupAlert Whispers Lua files and six Version-only TOCs. All 125
+installed receipt files match; 20 documentation files are preserved, no loading
+or discovery changes and no retirement. Client is running; owner reload follows
+an approved installation. Not installed; explicit approval remains pending.
+
 ## Reviewed Forever71037 export — 2026-11-20
 
 Owner refreshed the current live export. Active wowf metadata and Wow.exe agree
