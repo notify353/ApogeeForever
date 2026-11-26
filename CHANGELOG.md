@@ -1,3 +1,8 @@
+## Unreleased - Warrior Intercept default - 2026-11-26
+
+- DEV 1.14.22-dev.5 makes Warrior key 3 select Berserker Stance from Battle or
+  Defensive Stance, then Intercept in Berserker. Custom assignments take priority.
+
 ## Unreleased - release queue maintenance - 2026-11-26
 
 - Retire already-published1.14.22 from the pending validation queue when advancing
