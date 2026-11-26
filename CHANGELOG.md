@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+- Prepare DEV1.14.22-dev.1 with Battle Shout's native remaining-seconds display
+  and amber warning below60 seconds. Retain saved reminder opt-outs and HUD rules.
+- Review fresh Forever71139 authority and update reviewed-build notices; all260
+  prior API references are unchanged. Historical releases and Era remain frozen.
+
 ## [1.14.22] - 2026-11-22
 
 - Show the latest whisper per player in compact, aligned rows grouped by class.

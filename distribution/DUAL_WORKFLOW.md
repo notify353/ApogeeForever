@@ -1,3 +1,19 @@
+## Battle Shout countdown candidate - 2026-11-25
+
+DEV1.14.22-dev.1 adds a native Battle Shout seconds display to Keybinds self-buff
+reminder slots. The timer is white at60 seconds or more and amber below60; native
+helpful/player aura filtering handles ranks, refresh and removal through combat.
+Addon Lua never reads restricted timer/identity/display state. Existing reminder
+opt-outs and HUD visibility remain. No new runtime path or loading-order change.
+
+The refreshed Forever71139 export verifies all260 prior references unchanged;
+two duration color-binding references bring current evidence to262. The four
+client notices recognize this reviewed build. Stats, shared UI bytes, Era and
+all historical release selections remain unchanged. Validate exact pins via
+CANDIDATE_VALIDATION.md, then inspect against the latest DEV receipt. Workspace
+instructions require immediate owner approval before installation. No publication
+or native countdown acceptance is implied by offline validation.
+
 ## Compact whispers candidate - 2026-11-21
 
 DEV 1.14.21-dev.1 uses the reviewed GroupAlert Compact layout and reads the

@@ -6,10 +6,10 @@
     "flavor": "forever",
     "interface": 16001,
     "product": "wowf",
-    "reviewedBuild": "1.60.1.71037",
+    "reviewedBuild": "1.60.1.71139",
     "version": "1.60.1"
   },
-  "executableSha256": "05ab223083d4fd5ff48c2d359cff512afc31e7b1bf6b3eb6f1559b2d69c9e386",
+  "executableSha256": "54ff657c1d27d05f0fc55cb426c9ade06041504e62fc5d2985f83aecacf4b046",
   "files": [
     {
       "owners": [
@@ -36,7 +36,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/AuraContainerUtilDocumentation.lua",
       "sha256": "a87c322d2c43da359381d76fdda7f900e6980c5cf5115701d2ad70e1676f6380"
@@ -108,7 +109,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/CurveUtilDocumentation.lua",
       "sha256": "cc9f435e7a6609301a6b315c49ddcfc7fe494cce698101d9edf9b41fa384fd5f"
@@ -122,10 +124,18 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/DurationTextBindingObjectAPIDocumentation.lua",
       "sha256": "8494c4190860ea529885006016e9e61d41689551f362aa913b7054453e062f18"
+    },
+    {
+      "owners": [
+        "ApogeeKeybinds"
+      ],
+      "path": "Blizzard_APIDocumentationGenerated/DurationTextBindingSharedDocumentation.lua",
+      "sha256": "328bc4135f319f6a49e09f62da29404e38a8462212797cd76ca1ef71159aded6"
     },
     {
       "owners": [
@@ -240,10 +250,18 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/LuaColorCurveObjectAPIDocumentation.lua",
       "sha256": "092c4bde4eb27079bdf7f5498f2a30bea21d11fe32ce17ae726b7ddba406e150"
+    },
+    {
+      "owners": [
+        "ApogeeKeybinds"
+      ],
+      "path": "Blizzard_APIDocumentationGenerated/LuaCurveObjectConstantsDocumentation.lua",
+      "sha256": "89616cb878bc05735e86ba2ea8b5534516d9538c8b8791c0b84e5618586e8e2b"
     },
     {
       "owners": [
@@ -464,7 +482,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_APIDocumentationGenerated/StringUtilDocumentation.lua",
       "sha256": "912b03af096957e6ff7e0887e68f72c8e4acaa4d0f99be07256153c0fd1f51e6"
@@ -1018,7 +1037,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_AuraContainer/Blizzard_AuraContainer.lua",
       "sha256": "589db49d4eb92864c2c665eaed5be03a444d70b30f8d265c4f55e6b8bd7f7f71"
@@ -1067,14 +1087,16 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_AuraContainer/Blizzard_AuraContainerUtil.lua",
       "sha256": "9729c5e08e0358be4af16794a535309850f97bee8b1919cf2a5925e3bb582072"
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_AuraContainer/Blizzard_CustomAuraButton.lua",
       "sha256": "659f1b58a97604b62a1b5a5128f27667f879d9cb8597a10e2225d6d70a0d7e0a"
@@ -1088,14 +1110,16 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_AuraContainer/Blizzard_CustomAuraContainer.lua",
       "sha256": "c03b3afdfcb5da57856d7b1b779a0eb389a4b73a5fa02f0991fce3b12cc6d7b7"
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeKeybinds"
       ],
       "path": "Blizzard_AuraContainer/Blizzard_CustomAuraContainer.xml",
       "sha256": "95aeb3d44c0d233a8064bb3b3e0fab364bc8db85c5afb78f37b2691113ccf1e8"
@@ -1897,13 +1921,13 @@
     }
   ],
   "nativeAccepted": false,
-  "reviewedOn": "2026-11-22",
+  "reviewedOn": "2026-11-25",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "e6a24650f8d6badc38624039c25ed85c8b17e64d",
-    "ApogeeGroupAlert": "50d171f55aec61280f678e3f21d391a4cfa4623f",
-    "ApogeeHeals": "ce2cb08a800d2b1b5377429f6b0ad8181b7b30a1",
-    "ApogeeKeybinds": "b3bf8f77350ce6488b9fe6e58727e2a2cde6c768",
+    "ApogeeEssentials": "45acfd54d784d4b8a28b0df0abb44c26ebcd421b",
+    "ApogeeGroupAlert": "29872cec9e95db0a2f7a9724319fff1c1fb11281",
+    "ApogeeHeals": "ce0626f14c54b122cecd2697b7df5949b13ff85d",
+    "ApogeeKeybinds": "51af54ea1694534136a88cf874dd5ebd2ba21cd2",
     "ApogeeStats": "ef79cfecf55c6aa9dc0629b47b0ba2866054dd5e"
   }
 }
