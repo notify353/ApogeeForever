@@ -1,3 +1,8 @@
+## Unreleased - release queue maintenance - 2026-11-26
+
+- Retire already-published1.14.22 from the pending validation queue when advancing
+  the development candidate. Preserve the published release and immutable selection.
+
 ## Unreleased - 2026-11-26
 
 - DEV1.14.22-dev.4 enlarges self-buff countdown numbers and removes the s suffix.
