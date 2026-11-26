@@ -1,3 +1,12 @@
+## Larger numeric countdowns - 2026-11-26
+
+Owner accepted DEV.3 appearance and requested larger countdown numbers without
+an s suffix. DEV1.14.22-dev.4 advances only Keybinds: shared formatter %.0f,
+font12 (was10), text height14 (was12). Aura/glow/grey-icon behavior is unchanged.
+Current Forever71139/262-reference export remains verified. Use the current
+apogee-self-buff-20261125 receipt and a fresh backup for installation preview.
+Workspace instructions require immediate owner approval before installation.
+
 ## All self-buff countdowns - 2026-11-25
 
 Owner accepted DEV.2's reminder fix and requested countdown/grey active icons

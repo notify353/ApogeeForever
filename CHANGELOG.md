@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-26
+
+- DEV1.14.22-dev.4 enlarges self-buff countdown numbers and removes the s suffix.
+
 ## Unreleased - 2026-11-25
 
 - DEV1.14.22-dev.3 extends native countdowns to all Keybinds self-buff reminders
