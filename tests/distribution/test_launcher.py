@@ -137,6 +137,8 @@ class LauncherTests(unittest.TestCase):
                         subprocess.run(['lua','tests/shout_countdown_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     if (children/'ApogeeKeybinds/tests/shout_reminder_integration_spec.lua').is_file():
                         subprocess.run(['lua','tests/shout_reminder_integration_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                    if (children/'ApogeeKeybinds/tests/self_buff_countdown_spec.lua').is_file():
+                        subprocess.run(['lua','tests/self_buff_countdown_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                     for spec in ('test_stat_policy.lua', 'test_auction.lua'):

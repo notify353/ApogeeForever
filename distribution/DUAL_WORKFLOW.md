@@ -1,3 +1,17 @@
+## All self-buff countdowns - 2026-11-25
+
+Owner accepted DEV.2's reminder fix and requested countdown/grey active icons
+for every self-buff reminder. DEV1.14.22-dev.3 advances only Keybinds. Reminder
+mode selects native display families per slot across layouts; timed buffs keep
+the under60s warning, permanent buffs show grey icons without a timer. Native
+icon/visibility rendering preserves combat secrecy and the DEV.2 failure guard.
+User castability and existing automatic/default reminder choices are unchanged.
+Live Forever71139/262-reference authority remains current. Source/exported native
+contracts and generated PROD/DEV integration must pass before install preview.
+Use the latest apogee-shout-glow-20261125 receipt and a new backup directory;
+workspace rules require immediate install approval. New native appearance and
+taint acceptance remain pending; prior DEV.2 acceptance is scoped to that build.
+
 ## Battle Shout reminder isolation - 2026-11-25
 
 DEV1.14.22-dev.2 advances only Keybinds for countdown failure isolation.
