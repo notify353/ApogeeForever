@@ -12,7 +12,11 @@ import validate_change as v
 
 class SelectionTests(unittest.TestCase):
     def setUp(self):
-        self.child = {p: b'helpers\nlocal warrior={}\ncompile defaults\n' for p in v.POLICY}
+        policy = (b'helpers\nlocal warrior={}\nlocal defensiveWarrior={}\n'
+                  b'    local spellId=defaults and defaults[slotId]\n'
+                  b'    if state=="spell2458" then spellId=20252 end\n'
+                  b'    local spell=spellId and K.API.Family(spellId)\ncompile defaults\n')
+        self.child = {p: policy for p in v.POLICY}
         self.child.update({'tests/' + s: b'assert(true)\n' for s in v.SPECS + v.SOURCE_ONLY})
         self.child['Actions/Secure.lua'] = b'secure dispatcher\n'
         self.child['tests/mock.lua'] = b'harness\n'
@@ -53,7 +57,7 @@ class SelectionTests(unittest.TestCase):
         return v.select(self.dist, dist, self.child, child, self.receipt)
 
     def test_default_change_selects_focused_source_and_dev_without_other_families(self):
-        edited = b'helpers\nlocal warrior={key3=2458}\ncompile defaults\n'
+        edited = self.child[v.POLICY[0]].replace(b'local warrior={}', b'local warrior={key3=2458}')
         plan = self.choose(edits={p: edited for p in v.POLICY})
         self.assertEqual(plan['profile'], 'keybinds-defaults')
         self.assertEqual(len(plan['sourceSuites']), 5)
@@ -95,6 +99,21 @@ class SelectionTests(unittest.TestCase):
     def test_export_change_requires_full_even_when_hash_is_rebound(self):
         with self.assertRaisesRegex(ValueError, 'authority changed'):
             self.choose(api_edit=lambda x: x['files'][0].update(sha256='new'))
+
+    def test_mapping_file_cannot_hide_new_calls_or_shared_compiler_changes(self):
+        original = self.child[v.POLICY[0]]
+        for old, new in [(b'spellId=20252', b'spellId=NewAPI()'),
+                         (b'spellId=20252', b'state=20252'),
+                         (b'compile defaults', b'changed compiler'),
+                         (b'spellId=20252', b'while true do end'),
+                         (b'spellId=20252', b'spellId=K.API.LearnedSpell(999)')]:
+            with self.subTest(new=new), self.assertRaises(ValueError):
+                self.choose(edits={p: original.replace(old, new) for p in v.POLICY})
+
+    def test_existing_vanguard_query_and_new_stance_mapping_are_supported(self):
+        original = self.child[v.POLICY[0]]
+        choices = b'spellId=K.API.LearnedSpell(1310317) and 100 or 2457'
+        self.choose(edits={p: original.replace(b'spellId=20252', choices) for p in v.POLICY})
 
     def test_distribution_tooling_era_and_release_changes_require_full(self):
         for path in ('scripts/distribution.py', 'scripts/install_dual_distribution.py',

@@ -44,7 +44,8 @@ class RepositoryTests(unittest.TestCase):
         for name in ('Actions','Bootstrap','Core','DungeonGuide','Integrations','Media','PartyFrames',
                      'Profiles','Reminders','Runtime','Settings','assets'):
             self.assertFalse((ROOT / name).exists(), name)
-        self.assertEqual([p.name for p in (ROOT / 'tests').iterdir()], ['distribution'])
+        self.assertEqual({p.name for p in (ROOT / 'tests').iterdir()},
+                         {'distribution', 'test_validation_selection.py'})
 
     def test_absent_installation_is_portable_and_require_installed_still_fails(self):
         command = ['pwsh', '-NoProfile', '-File', str(ROOT / 'scripts/check-wow-api-export.ps1'),

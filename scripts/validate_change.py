@@ -35,6 +35,32 @@ def pins(lock):
     return {c['name']: c['commit'] for c in lock['children']}
 
 
+def mapping_contract(data):
+    """Only numeric mapping tables and side-effect-free stance choices are small."""
+    text = data.decode('utf-8').replace('\r\n', '\n')
+    pattern = r'local (?:warrior|defensiveWarrior)=\{(?:[A-Za-z_][A-Za-z0-9_]*=\d+,?)*\}'
+    tables = re.findall(pattern, text)
+    require(len(tables) == 2, 'default mapping tables changed structure')
+    normalized = re.sub(pattern, 'DEFAULT_TABLE', text)
+    start = '    local spellId=defaults and defaults[slotId]\n'
+    end = '    local spell=spellId and K.API.Family(spellId)'
+    require(normalized.count(start) == 1 and normalized.count(end) == 1, 'default mapping boundaries changed')
+    prefix, body = normalized.split(start)
+    choices, suffix = body.split(end)
+    choices = re.sub(r'--[^\n]*', '', choices)
+    choices = choices.replace('K.API.LearnedSpell(1310317)', 'vanguard')
+    choices = choices.replace('defensiveWarrior[slotId]', 'mappedDefault')
+    choices = re.sub(r'"[A-Za-z0-9_]+"', 'literal', choices)
+    require(not re.search(r'[^A-Za-z0-9_\s=~]', choices), 'new calls or expressions in default selection')
+    allowed = {'if', 'then', 'elseif', 'else', 'end', 'and', 'or', 'not', 'nil',
+               'class', 'state', 'slotId', 'spellId', 'vanguard', 'mappedDefault', 'literal'}
+    require(set(re.findall(r'[A-Za-z_][A-Za-z0-9_]*', choices)) <= allowed,
+            'new helpers or statements in default selection')
+    require(all(name == 'spellId' for name in re.findall(r'\b([A-Za-z_]\w*)\s*=(?!=)', choices)),
+            'default selection changes state instead of selecting a spell')
+    return prefix, suffix
+
+
 def select(dist_before, dist_after, child_before, child_after, receipt):
     """Pure policy; compare complete trees, not a caller-supplied changed-file list."""
     require(receipt.get('profile') == 'full' and receipt.get('frozenRegressionRun') is True,
@@ -71,11 +97,8 @@ def select(dist_before, dist_after, child_before, child_after, receipt):
     for path in paths:
         require(path in child_after, 'source or test deletion: ' + path)
         if path in POLICY:
-            marker = b'local warrior='
-            require(marker in child_before.get(path, b'') and marker in child_after[path],
-                    'default policy boundary changed')
-            require(child_before[path].split(marker, 1)[0] == child_after[path].split(marker, 1)[0],
-                    'shared default presentation/storage helpers changed')
+            require(mapping_contract(child_before[path]) == mapping_contract(child_after[path]),
+                    'default helpers, opt-in/marker dispatch or action compilation changed')
         elif re.fullmatch(r'tests/[A-Za-z0-9_]+_spec\.lua', path):
             extra_specs.append(path.split('/')[-1])
         else:

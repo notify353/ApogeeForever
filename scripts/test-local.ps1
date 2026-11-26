@@ -10,6 +10,8 @@ try {
     & ./scripts/check-wow-api-export.ps1 -Client Beta
     python -B tests/distribution/test_repository.py
     if ($LASTEXITCODE -ne 0) { throw 'Distribution repository validation failed.' }
+    python -B -m unittest discover -s tests -v
+    if ($LASTEXITCODE -ne 0) { throw 'Validation selection checks failed.' }
     python -B tests/distribution/test_curseforge.py
     if ($LASTEXITCODE -ne 0) { throw 'CurseForge preflight validation failed.' }
     python -B tests/distribution/test_publisher.py

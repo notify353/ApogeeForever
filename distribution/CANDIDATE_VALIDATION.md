@@ -44,6 +44,11 @@ client/API change requires the full path below. Missing/deleted tests, dirty sou
 or mismatched baseline evidence also stop the small path. Historical beta authority
 is never substituted for current live authority.
 
+Within Defaults.lua, the focused profile permits numeric mapping tables and
+side-effect-free stance choices. Existing Vanguard knowledge is the only allowed
+call in that selection block. New API calls, mutations, opt-in/marker dispatch or
+changes to the shared compilation tail require full validation even in that file.
+
 Success writes `focused-validation.json` (explicitly not full/release evidence)
 and the checked packages under `future-forever-validated/`. Use the central installer
 with the exact lock/artifacts and latest installation receipt. Inspect first, obtain
