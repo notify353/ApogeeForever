@@ -1,3 +1,8 @@
+## Unreleased - 2026-11-25
+
+- DEV1.14.22-dev.2 isolates optional Battle Shout countdown failures from the
+  green reminder and HUD refresh. Add combined generated PROD/DEV regression.
+
 ## [Unreleased]
 
 - Prepare DEV1.14.22-dev.1 with Battle Shout's native remaining-seconds display

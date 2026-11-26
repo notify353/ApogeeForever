@@ -1,3 +1,12 @@
+## Battle Shout reminder isolation - 2026-11-25
+
+DEV1.14.22-dev.2 advances only Keybinds for countdown failure isolation.
+A fault-injection regression fails on dev.1 and passes on the new source;
+this establishes the failure path, not the cause of the owner's live symptom.
+Use the dev.1 shout-countdown installation receipt for the next DEV inspection.
+The refreshed71139/262-reference authority is unchanged. Validate the new pin
+and generated reminder/countdown integration before immediate install approval.
+
 ## Battle Shout countdown candidate - 2026-11-25
 
 DEV1.14.22-dev.1 adds a native Battle Shout seconds display to Keybinds self-buff
