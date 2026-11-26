@@ -1,4 +1,23 @@
+## Unreleased - 2026-11-26
+
+- DEV1.14.22-dev.4 enlarges self-buff countdown numbers and removes the s suffix.
+
+## Unreleased - 2026-11-25
+
+- DEV1.14.22-dev.3 extends native countdowns to all Keybinds self-buff reminders
+  and greys active buff icons. Preserve the tested green-reminder isolation.
+
+## Unreleased - 2026-11-25
+
+- DEV1.14.22-dev.2 isolates optional Battle Shout countdown failures from the
+  green reminder and HUD refresh. Add combined generated PROD/DEV regression.
+
 ## [Unreleased]
+
+- Prepare DEV1.14.22-dev.1 with Battle Shout's native remaining-seconds display
+  and amber warning below60 seconds. Retain saved reminder opt-outs and HUD rules.
+- Review fresh Forever71139 authority and update reviewed-build notices; all260
+  prior API references are unchanged. Historical releases and Era remain frozen.
 
 ## [1.14.22] - 2026-11-22
 

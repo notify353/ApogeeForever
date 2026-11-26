@@ -1,3 +1,15 @@
+## Reviewed Forever71139 export - 2026-11-25
+
+Active wowf metadata and Wow.exe agree on1.60.1.71139/interface16001. All260
+prior references postdate the executable and remain byte-identical to71037.
+The current inventory adds DurationTextBindingSharedDocumentation and
+DurationTextBindingObjectAPIDocumentation for the Battle Shout countdown.
+Reviewed native AuraContainer helpful/player spell-ID filtering and duration
+text/color handoff; these secure native displays own restricted aura state.
+Only current live evidence/candidate and build-warning acknowledgments advance.
+Historical manifests, locks, exports and Era stay unchanged. Native acceptance
+of the new countdown remains pending.
+
 ## Reviewed Forever71037 export — 2026-11-20
 
 Owner refreshed the current live export. Active wowf metadata and Wow.exe agree

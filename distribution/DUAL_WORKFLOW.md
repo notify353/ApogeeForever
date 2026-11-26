@@ -1,3 +1,51 @@
+## Larger numeric countdowns - 2026-11-26
+
+Owner accepted DEV.3 appearance and requested larger countdown numbers without
+an s suffix. DEV1.14.22-dev.4 advances only Keybinds: shared formatter %.0f,
+font12 (was10), text height14 (was12). Aura/glow/grey-icon behavior is unchanged.
+Current Forever71139/262-reference export remains verified. Use the current
+apogee-self-buff-20261125 receipt and a fresh backup for installation preview.
+Workspace instructions require immediate owner approval before installation.
+
+## All self-buff countdowns - 2026-11-25
+
+Owner accepted DEV.2's reminder fix and requested countdown/grey active icons
+for every self-buff reminder. DEV1.14.22-dev.3 advances only Keybinds. Reminder
+mode selects native display families per slot across layouts; timed buffs keep
+the under60s warning, permanent buffs show grey icons without a timer. Native
+icon/visibility rendering preserves combat secrecy and the DEV.2 failure guard.
+User castability and existing automatic/default reminder choices are unchanged.
+Live Forever71139/262-reference authority remains current. Source/exported native
+contracts and generated PROD/DEV integration must pass before install preview.
+Use the latest apogee-shout-glow-20261125 receipt and a new backup directory;
+workspace rules require immediate install approval. New native appearance and
+taint acceptance remain pending; prior DEV.2 acceptance is scoped to that build.
+
+## Battle Shout reminder isolation - 2026-11-25
+
+DEV1.14.22-dev.2 advances only Keybinds for countdown failure isolation.
+A fault-injection regression fails on dev.1 and passes on the new source;
+this establishes the failure path, not the cause of the owner's live symptom.
+Use the dev.1 shout-countdown installation receipt for the next DEV inspection.
+The refreshed71139/262-reference authority is unchanged. Validate the new pin
+and generated reminder/countdown integration before immediate install approval.
+
+## Battle Shout countdown candidate - 2026-11-25
+
+DEV1.14.22-dev.1 adds a native Battle Shout seconds display to Keybinds self-buff
+reminder slots. The timer is white at60 seconds or more and amber below60; native
+helpful/player aura filtering handles ranks, refresh and removal through combat.
+Addon Lua never reads restricted timer/identity/display state. Existing reminder
+opt-outs and HUD visibility remain. No new runtime path or loading-order change.
+
+The refreshed Forever71139 export verifies all260 prior references unchanged;
+two duration color-binding references bring current evidence to262. The four
+client notices recognize this reviewed build. Stats, shared UI bytes, Era and
+all historical release selections remain unchanged. Validate exact pins via
+CANDIDATE_VALIDATION.md, then inspect against the latest DEV receipt. Workspace
+instructions require immediate owner approval before installation. No publication
+or native countdown acceptance is implied by offline validation.
+
 ## Compact whispers candidate - 2026-11-21
 
 DEV 1.14.21-dev.1 uses the reviewed GroupAlert Compact layout and reads the
