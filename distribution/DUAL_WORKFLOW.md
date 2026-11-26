@@ -1,3 +1,18 @@
+## Warrior Intercept default - 2026-11-26
+
+Current test scheduling: use [candidate validation](CANDIDATE_VALIDATION.md) to
+select a checked focused run for small defaults or a full run for shared/unmapped
+changes. Do not run duplicate standalone child suites first. Installer approval,
+preview, exact package checks, rollback and installed-byte verification are unchanged.
+Test/tooling-only changes with identical gameplay do not require installation.
+
+DEV 1.14.22-dev.5 advances only Keybinds: default key 3 selects Berserker Stance
+from Battle/Defensive, then Intercept in Berserker, independently of Vanguard.
+Validate source and generated families with the current Forever 71139 export.
+Use the countdown-text-20261126 installation receipt and a fresh backup directory.
+Workspace instructions require immediate owner approval before installation.
+Native stance-switch/cast acceptance remains pending.
+
 ## Larger numeric countdowns - 2026-11-26
 
 Owner accepted DEV.3 appearance and requested larger countdown numbers without

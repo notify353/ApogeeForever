@@ -38,6 +38,8 @@ def verify_candidate_sources(locks, era_root, future_root=None):
 
 
 def validate(args):
+    distribution_commit = git(d.ROOT, 'rev-parse', 'HEAD')
+    distribution_clean = not git(d.ROOT, 'status', '--porcelain')
     locks = [era.read_lock(), d.read_lock(d.ROOT/'distribution/future-launcher.lock.json')]
     future_root = args.future_child_worktrees or args.child_worktrees
     roots = [args.child_worktrees, future_root]
@@ -73,6 +75,7 @@ def validate(args):
         builder = root/'scripts/build-package.ps1'
         if builder.exists(): run(['pwsh', '-NoProfile', '-File', builder, '-SourceOnly'], root)
     python('tests/distribution/test_candidates.py', '-v')
+    python('-m', 'unittest', 'discover', '-s', 'tests', '-v')
     python('tests/distribution/test_live_forever.py', '-v')
     python('tests/distribution/test_release_manifest.py', '-v')
     python('tests/distribution/test_release_packages.py', '-v')
@@ -101,6 +104,10 @@ def validate(args):
                'eraApiEvidence': evidence, 'futureForeverApiEvidence': forever_evidence,
                'futureForeverOfflineOnly': forever_evidence is None, 'nativeAccepted': False,
                'frozenRegressionRun': not args.skip_frozen_regression}
+    # Only a clean, unchanged committed distribution can anchor later focused runs.
+    receipt['profile'] = 'full' if not args.skip_frozen_regression else 'full-without-frozen'
+    if distribution_clean and not git(d.ROOT, 'status', '--porcelain') and git(d.ROOT, 'rev-parse', 'HEAD') == distribution_commit:
+        receipt['distributionCommit'] = distribution_commit
     (args.artifact_root/'candidate-validation.json').write_bytes(d.canonical(receipt))
     print(json.dumps(receipt, indent=2))
 

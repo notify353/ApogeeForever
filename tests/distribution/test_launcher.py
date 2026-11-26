@@ -133,6 +133,10 @@ class LauncherTests(unittest.TestCase):
                         subprocess.run(['lua','tests/marker_defaults_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     if (children/'ApogeeKeybinds/tests/vanguard_default_spec.lua').is_file():
                         subprocess.run(['lua','tests/vanguard_default_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                    if (children/'ApogeeKeybinds/tests/intercept_default_spec.lua').is_file():
+                        subprocess.run(['lua','tests/intercept_default_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
+                    if (children/'ApogeeKeybinds/tests/warrior_defaults_spec.lua').is_file():
+                        subprocess.run(['lua','tests/warrior_defaults_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     if (children/'ApogeeKeybinds/tests/shout_countdown_spec.lua').is_file():
                         subprocess.run(['lua','tests/shout_countdown_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                     if (children/'ApogeeKeybinds/tests/shout_reminder_integration_spec.lua').is_file():
