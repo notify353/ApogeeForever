@@ -49,7 +49,7 @@
       "version": "0.1.0-dev"
     },
     {
-      "commit": "7e84fb6160692eee1523d82c1f6fc938be510dba",
+      "commit": "814d68f1c4db34ad9285fddac4c2ef3a5633fb8f",
       "files": {
         "Actions/Compile.lua": "f710e654fe7a5095404271ea663d70ccc27abd9ed5ef73d0b07d3547df6950dc",
         "Actions/Defaults.lua": "02235cd40d0fba3d101bb8e22ba76d462840982b2e33505865673708884cd52c",
@@ -67,7 +67,7 @@
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
         "NOTICE.md": "f1672e42817d7a61ec552508b4fa2dc9bf6066e97c9e2e9af73f7a4b32020f68",
-        "README.md": "9369d1ff4e4689d49b02d23465654b537c1b01488f9ea3edcb5a191aa502692e",
+        "README.md": "e6311fe3bce61efeab2baa1ea3dcd8ad027c2c4a246a7d2c9a64289ff7e5c8e8",
         "Rules/Explosives.lua": "3cf838c86176fc3c8a8b4014d7a8c0cddcaf6ccd268f9b83f7d36b1a35ff5988",
         "Rules/Melee.lua": "bd64811292681fc58d8575f81906878ba7a630ee464a6220edda026999f31e39",
         "Rules/Registry.lua": "e9a4da69db965be76c0eea45f8eacb8b13102c4621c32831a72de572318854cf",
@@ -85,7 +85,7 @@
         "docs/ARCHITECTURE.md": "f83dea79a82075b164e762ad826cb83773b7a94e518737efe15ba6a0d11b8fa3",
         "docs/BETA_TESTING.md": "2b0c99c10a57ccc156a5d38238ff09293b0ac8308eac1abcaa6ee4838ca02e5a",
         "docs/CLOSEOUT.md": "788d6da887cb0ccb3ac51491971d65ad26a05ece1d507bbbb79ba81c1d029cd6",
-        "docs/SHARED_SOURCE.md": "c12b23403ff064e3b27632bfa762f0f7542ec0161b0a5943491170ee4f4d1b69"
+        "docs/SHARED_SOURCE.md": "4fe24ef72152505e85b7a367644ca05dbda44a6b45ad9cd575a43f4cfeb12dc1"
       },
       "name": "ApogeeKeybinds",
       "repository": "https://github.com/notify353/ApogeeKeybinds.git",
@@ -217,7 +217,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "be5b2576e97660bb52c5a34d8717fe4e95f91ad9b4c85cb4de5296b4773360f6",
+  "liveApiEvidenceSha256": "a59892f99af40c1d4f1d9fb3f1b0784e11f6ea8fe99a57fda7d2b6662cbd9b2f",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",

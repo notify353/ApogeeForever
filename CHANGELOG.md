@@ -1,3 +1,11 @@
+## Unreleased - scoped test workflow - 2026-11-26
+
+- Add a baseline-backed focused validator for small Keybinds default changes.
+  Reuse unchanged client/package coverage, retain source/generated DEV and package
+  integrity checks, and require full validation for shared or unmapped changes.
+- Consolidate seven repetitive Warrior-default suites into one mapping contract.
+  Gameplay and installed DEV bytes are unchanged.
+
 ## Unreleased - Warrior Intercept default - 2026-11-26
 
 - DEV 1.14.22-dev.5 makes Warrior key 3 select Berserker Stance from Battle or

@@ -1,5 +1,62 @@
 # Candidate validation
 
+## Routine small changes
+
+Use `scripts/validate_change.py` first for a narrow Forever Keybinds default
+mapping change. The initial reviewed profile is `keybinds-defaults`; other gameplay
+areas currently escalate to full validation. Do not guess a small profile or add
+an ad hoc exhaustive input matrix. Extend the selector and its refusal tests when
+another focused profile is justified.
+
+The baseline must be a successful **full** `candidate-validation.json` from this
+workflow version, including frozen regressions, live Forever evidence and
+`distributionCommit`. A dirty distribution run or a focused receipt cannot serve
+as that baseline. Keep the receipt outside Git. Selection compares the full pinned
+source trees and distribution history, not just the changed file count.
+
+```powershell
+python -B scripts/validate_change.py --baseline C:/path/full/candidate-validation.json `
+  --child C:/path/ApogeeKeybinds --plan
+python -B scripts/validate_change.py --baseline C:/path/full/candidate-validation.json `
+  --child C:/path/ApogeeKeybinds --sources-root C:/Dev/WoW `
+  --client-root 'C:/Program Files (x86)/World of Warcraft/_forever_' `
+  --artifact-root C:/path/new-focused-validation
+```
+
+Commit reviewed source/pin updates before running it. `--plan` is read-only and
+prints the selected suites. Unsupported changes stop with a full-validation reason
+before running tests or building packages. No automatic long full run is started.
+
+This path runs five source suites (shared Warrior defaults, Vanguard, Intercept,
+markers and the default toggle) and four generated DEV suites. New/changed regression
+specs are included and deduplicated. The toggle's actual Settings control is covered
+in source; unchanged shared Settings integration is inherited from the full baseline.
+The seven repetitive per-spell Warrior suites are consolidated into one table.
+The runner checks all child Lua syntax, current export freshness, exact pins,
+generated-copy equality, both generated package contents and concurrent changes.
+It requires no Era/unchanged-child test checkouts and creates no child source ZIP.
+Unchanged Era, other children, generated PROD behavior and frozen migration suites
+reuse the full baseline. This is validation reuse, not new native acceptance.
+
+Any shared compiler/secure routing, default presentation helper, harness, loader,
+package inventory, another child/support module, installer, transform, release or
+client/API change requires the full path below. Missing/deleted tests, dirty source
+or mismatched baseline evidence also stop the small path. Historical beta authority
+is never substituted for current live authority.
+
+Success writes `focused-validation.json` (explicitly not full/release evidence)
+and the checked packages under `future-forever-validated/`. Use the central installer
+with the exact lock/artifacts and latest installation receipt. Inspect first, obtain
+the required immediate installation approval, preserve the rollback backup and verify
+installed bytes. These installation checks are unchanged. Test-only/tooling changes
+with identical runtime do not need reinstallation.
+
+Do not run standalone child full checks before either central path. Repeat a check
+only after relevant changes, a failure, or a specific unresolved concern. Report
+suite/behavior coverage; don't headline simulated key-press counts as test counts.
+
+## Full validation
+
 Current candidates explicitly select [capability-based runtime admission](RUNTIME_CAPABILITIES.md).
 Generated behavior covers Era and Forever, each in PROD and DEV, including
 legacy/mismatched/error metadata, missing actual APIs, shared-service startup,
