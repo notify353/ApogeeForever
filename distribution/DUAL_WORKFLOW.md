@@ -1,3 +1,15 @@
+## Compact inline loot candidate - 2026-11-26
+
+Owner selected the Soft highlight mockup and explicitly requested implementation
+and installation. DEV1.14.22-dev.24 advances only Stats: You first, first names,
+native roll-choice icons, a neutral winner highlight and quality-bordered item
+icons with hover-only names/results. Optional saved rosters preserve all choices;
+old history remains readable. Page scrolling and run lifecycle stay in place.
+Validate exact source/generated families with current Forever71139/273-reference
+authority, then inspect/install through the central checked open-client DEV path.
+Chain from apogee-loot-native-quality-20261126 with a fresh apogee-loot-inline-20261126
+backup. Native acceptance is pending; no game operation or PROD installation.
+
 ## Warrior Intercept default - 2026-11-26
 
 Current test scheduling: use [candidate validation](CANDIDATE_VALIDATION.md) to

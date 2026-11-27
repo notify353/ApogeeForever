@@ -1,3 +1,12 @@
+## Inline loot identity and choice icons - 2026-11-26
+
+Reviewed current71139 LootHistory EncounterLootDropRollInfo isSelf/playerGUID and
+Mainline/LootHistory.lua native lootroll-icon choice atlases. Review UnitGUID's
+nullable/restricted result and guard the optional player lookup. Add Stats ownership
+to existing UnitDocumentation and SimpleTextureBase SetAtlas references;273 files
+remain unchanged. Preview uses its isolated GUID, no native identity substitution.
+Source/generated regression and native appearance acceptance remain separate.
+
 ## Native loot quality formats - 2026-11-26
 
 Reviewed current ColorManager.lua named |cnIQ tokens and override-aware RGB

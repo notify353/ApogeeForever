@@ -1,3 +1,9 @@
+## Unreleased - compact inline loot
+
+- Use You first, class-colored first names and native roll icons; softly highlight
+  the confirmed winner. Keep item details on hover and quality borders visible.
+  Retain full player choices in new saved results. Prepare DEV1.14.22-dev.24.
+
 ## Unreleased - native loot quality resolution
 
 - Fix neutral names/borders on named-quality links, support item metadata fallback and delayed data for older wins, and use native-format preview fixtures. Prepare DEV1.14.22-dev.23.
