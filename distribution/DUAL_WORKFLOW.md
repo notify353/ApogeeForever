@@ -1,3 +1,14 @@
+## Full-party loot rows candidate - 2026-11-26
+
+Owner approved fixing sparse rows and installation. DEV1.14.22-dev.25 advances only
+Stats Model/Runtime/View: capture full group identities per new drop, retain pending
+snapshots and merge partial/late choice data without duplicate wins. Unknown choices
+show ?; no assumed Pass and no current-group backfill onto historical drops. Use
+full coordinated validation with current Forever71139/273-reference authority.
+Then inspect/install checked DEV, chained from apogee-loot-inline-20261126 with
+a fresh apogee-loot-roster-20261126 rollback directory, under standing open-client
+authorization. Native acceptance awaits reload/new loot; no PROD or game operation.
+
 ## Compact inline loot candidate - 2026-11-26
 
 Owner selected the Soft highlight mockup and explicitly requested implementation

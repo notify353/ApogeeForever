@@ -1,3 +1,9 @@
+## Unreleased - full-party loot rows
+
+- Capture full group identities per new drop, preserve missing members and pending
+  snapshots, and accept late choices after completion. Mark unreported choices ?
+  without guessing Pass or adding today's group to old loot. Prepare DEV1.14.22-dev.25.
+
 ## Unreleased - compact inline loot
 
 - Use You first, class-colored first names and native roll icons; softly highlight

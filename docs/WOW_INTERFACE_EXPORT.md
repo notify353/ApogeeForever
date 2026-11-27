@@ -1,3 +1,11 @@
+## Full-party loot snapshot review - 2026-11-26
+
+Reverified Forever71139/16001 export273 references. Reviewed existing Stats-owned
+UnitDocumentation UnitGUID/UnitName/UnitClass nullable/restricted results. Enumerate
+player/party/raid unit tokens, guard optional calls and all returned identity data,
+and check GUID stability after name/class reads. No new authority files. Capture
+identity only; native loot states remain the sole evidence of a Pass or roll choice.
+
 ## Inline loot identity and choice icons - 2026-11-26
 
 Reviewed current71139 LootHistory EncounterLootDropRollInfo isSelf/playerGUID and
