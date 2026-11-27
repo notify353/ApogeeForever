@@ -1,3 +1,8 @@
+## Unreleased - loot UI final sweep
+
+- Bound long party-name summaries, clear stale winner/class tooltips and retain accurate disclosure hints.
+- Prepare DEV1.14.22-dev.13; only Stats advances, using the unchanged reviewed native contracts.
+
 ## Unreleased - loot player classes
 
 - Add native class colors to Need/Passed names, winners and history, with class text on hover.
