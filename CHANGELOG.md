@@ -1,3 +1,9 @@
+## Unreleased - named loot passes
+
+- Show NEED and PASSED names together, retain both on results, and expand crowded lists.
+- Update mixed-choice and crowded preview fixtures; prepare DEV1.14.22-dev.9.
+- Existing native API contracts, saved schema, other children and Era remain unchanged.
+
 ## Unreleased — step-through loot UI test
 
 - Add Stats' Test loot UI button and five isolated manual preview stages using the real panel/model.
