@@ -1,3 +1,7 @@
+## Unreleased - loot icon quality borders
+
+- Add thin native quality-colored icon outlines with a neutral fallback. Preserve the clean page scroller and icon artwork. Prepare DEV1.14.22-dev.22.
+
 ## Unreleased - page-style loot scrolling
 
 - Replace card paging with a native clipped page and draggable right scrollbar; keep header/footer fixed and expanded choices inline. Prepare DEV1.14.22-dev.21.
