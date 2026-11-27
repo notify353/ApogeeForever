@@ -1,3 +1,13 @@
+## Auction-only sweep authority - 2026-11-27
+
+Reverified matching71139/16001 export281 references. Reviewed existing native
+TooltipDataHandler:GetProcessingTooltipInfo returning the current processingInfo,
+and the previously reviewed GetOwner/GetParent hierarchy contracts. Reject unrelated
+tooltip frames before accessing their readers; unreadable processing or owner data
+fails quiet without latching the guidance renderer. No new API/reference, runtime
+metadata gate, loading inventory or protected-action change. Era-only helpers move
+into the existing adapter; shared auction score priorities remain unchanged.
+
 ## Auction-only Stats tooltip scope - 2026-11-27
 
 Verified matching Forever71139/16001 authority. Reviewed native AuctionHouseUtil
