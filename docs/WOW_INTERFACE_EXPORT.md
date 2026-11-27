@@ -1,3 +1,11 @@
+## Loot frame styling - 2026-11-26
+
+Reviewed GetFont/SetFont and text shadow methods in the matching71139 existing
+Stats-owned SimpleFontString API reference. Reuse the pinned Heals font/palette
+conventions locally; no runtime dependency or new native API reference. Quality
+rails read existing validated item hyperlink colors. Native visual acceptance
+remains separate from offline layout review.
+
 ## Loot player class presentation - 2026-11-26
 
 Verified current Forever71139 authority and reviewed playerClass tokens in

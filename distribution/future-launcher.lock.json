@@ -173,25 +173,25 @@
       "version": "0.1.0"
     },
     {
-      "commit": "17deb1e47c564e0fc7e16adad6b67275078cb987",
+      "commit": "44391c343b9aaefef1c663b9332edf3b68f8637e",
       "files": {
         "ApogeeStats.lua": "79c603c09c45e027e20978b4beb6451c8751384b6cd25de4d72196bd1ce070ea",
         "ApogeeStats.toc": "0b579d5359905f5c4bb081d3ae8fa893b55cb4ca6d7ab8de04e73228d6fe4585",
         "Auction/Browse.lua": "0fd528578e85373a53771eca592d1e7f03f516e7932584ca813a244caf844e62",
         "Auction/Queue.lua": "81a325a76eaba1e20cec50f1c268d23affb373bdd5e736af5100a8873de7c7be",
-        "CHANGELOG.md": "7ddf9d4cb9d9c508db43cb58229e454c448473994e0bf1ebf11b03125d4d7fb8",
+        "CHANGELOG.md": "2ec244275c65059a78c7f922892a902689e48667e3532005df688c74067f495d",
         "Core/Items.lua": "6337b03b872653c0d75c977870eb5f7b9a8eb73664224e09d31cbe23aa723979",
         "Core/Rules.lua": "f400f1f60970359a96b0d3ec323cff393d1812dffe7c315e9ca328f6efa3f61a",
         "Era/README.md": "61a5ce53d974568cf7fa5330c6ce7e2a6a0b5649d96fb677111fa43c6df2919f",
         "LICENSE": "db8f2e7eaca2d2ff00e6ef2eaf351a1a066dfdd76c830c9b4db4c55d3fc15b4b",
         "Loot/Model.lua": "1a9bd15ac5b60b6191bb5a946a6ccb845d036e06290ef4375b77c890a1bd29ac",
-        "Loot/Preview.lua": "89a68ea9c5bb94bfb6922fe0899f2e688c9a6cb406b8bbb8bfa91b4957c43706",
+        "Loot/Preview.lua": "5e57d947b044c80af56e9710d78b1aea77a5bf000838bb9f9e54bc93c1bc1419",
         "Loot/Runtime.lua": "b2348b6edfcbaf5dd241204b5649300a09bef31b6de28aa0890a9556f1c77b1e",
-        "Loot/View.lua": "1ce1a01b3c558022ffbe57e4d6bcef06e813fdb28bfb2751140fadcbe65c7e3d",
+        "Loot/View.lua": "b7eafb5b2f8339dc5d00c4f3a37d43391a25be0b26e401fff73b38c22294f50d",
         "Media/Textures/ApogeeLogo.png": "6b901741b85c06da51cf281bc437ff86c44ab65428951403ed047298d23fa10e",
         "README.md": "17ab5a2284bab236da99869da26b46ecfacadaf463db67722b26e0bf943bc917",
         "docs/CLASS_ROLE_REFERENCE.md": "1490c9ccc5da3ac4884cd7d0ddc041fc355500ec1d9aae6146f5884632bd280d",
-        "docs/LOOT_API.md": "410b0ad01f88d0bdde6c3c0db6bffb2eec7d4c1fcea102ccb68af93d297e0893",
+        "docs/LOOT_API.md": "fa41c46071e81dbea7ed23a493d18d19007e04c34df609b7b4409dd6395b2469",
         "docs/NATIVE_ACCEPTANCE.md": "313a7dc3cfda0af3a4b3bf833133326460128fcbcc39f975fcb16b749e3e6659"
       },
       "name": "ApogeeStats",
@@ -224,7 +224,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "b57e7b0eab824f35fbc281b2062d80e2982145d2b0e5a6edb15bce86650ac2cf",
+  "liveApiEvidenceSha256": "0b24429da039462739efc027f87d90f0760a9f18b4a34fc3f9c902898df87d47",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -256,5 +256,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.22-dev.14"
+  "version": "1.14.22-dev.15"
 }

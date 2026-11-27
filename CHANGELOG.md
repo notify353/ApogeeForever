@@ -1,3 +1,7 @@
+## Unreleased - loot frame styling
+
+- Match player/party frame typography, shadow and dark flat palette; add slim item-quality rails and quiet controls. Prepare DEV1.14.22-dev.15.
+
 ## Unreleased - loot preview badge
 
 - Remove DEV from the loot panel; keep TEST only in preview. Prepare DEV1.14.22-dev.14.
