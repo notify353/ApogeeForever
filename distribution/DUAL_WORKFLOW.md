@@ -1,3 +1,12 @@
+## Auction-only Stats candidate - 2026-11-27
+
+DEV37 advances only Forever Stats advice scope and its current API evidence.
+Keep Loot tracking/history/preview, auction filtering/ranking and all Era/frozen
+selections. Full central validation precedes checked DEV preview/install under
+standing authorization, chained from apogee-group-final-20261127 with a fresh
+apogee-auction-only-20261127 rollback directory. No PROD, private saves, enabled
+preferences, game operation, push or publication. Native acceptance is pending.
+
 ## Group Finder final UI sweep candidate - 2026-11-27
 
 Owner accepted DEV35 and requested sweep/fix/install. DEV36 advances GroupAlert
