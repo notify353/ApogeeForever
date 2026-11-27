@@ -1,3 +1,7 @@
+## Unreleased - loot preview badge
+
+- Remove DEV from the loot panel; keep TEST only in preview. Prepare DEV1.14.22-dev.14.
+
 ## Unreleased - loot UI final sweep
 
 - Bound long party-name summaries, clear stale winner/class tooltips and retain accurate disclosure hints.
