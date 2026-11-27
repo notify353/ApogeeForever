@@ -1,3 +1,11 @@
+## Group Finder UI sweep candidate - 2026-11-27
+
+Owner accepts DEV31 styling and requests sweep/fix/install. DEV32 advances only
+GroupAlert UI/Alerts View for backdrop fade ownership and checkbox label parenting.
+Current71139 authority, no new reference files. Full central validation followed
+by checked inspect/install chained from apogee-group-modern-20261127 with fresh
+apogee-group-sweep-20261127 backup. No PROD, game operation or private-save access.
+
 ## Modern Group Finder candidate - 2026-11-27
 
 Owner approved the full custom Group Finder restyle and install, retaining features.

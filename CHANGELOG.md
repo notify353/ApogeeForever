@@ -1,3 +1,8 @@
+## Unreleased - Group Finder UI sweep
+
+- Prepare DEV1.14.22-dev.32 fixing lingering feed backgrounds during auto-hide/fade
+  and checkbox labels that failed to dim with disabled controls. Keep Modern styling.
+
 ## Unreleased - Modern Group Finder
 
 - Prepare DEV1.14.22-dev.31 with matching flat controls and neutral Modern styling

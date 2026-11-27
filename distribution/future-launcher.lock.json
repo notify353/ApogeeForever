@@ -97,16 +97,16 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "2e0a5739e9111dbde7b3252106b6ce421a80a8b8",
+      "commit": "7b68ac206dac71af2df026cc525dbd018df9caf2",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
-        "Alerts/View.lua": "ea8dd46160ffa4ba2ac91e7cecbfa00eeb24808cae9e16267daf9b09415feac2",
+        "Alerts/View.lua": "c1c355a75b5444394ec368678de0aabf49247ac8057d9304f55d892a211112f4",
         "ApogeeGroupAlert.lua": "f32368ac63a6090babe5237ef9ddae74f35584084dfc2d8209f864fda3022b30",
         "ApogeeGroupAlert.toc": "1f2b933c8084cf231dc6b96eaf7e3d097ded46d58c1a3cd10c29b31e2eb20536",
-        "CHANGELOG.md": "8811b8ee2933ef09c4dfbe4ca1a0f750d47f29c10933617eeaf40edbb2260191",
+        "CHANGELOG.md": "53538244bd4511f488986b67d3d8671284fc83f4dcd461623e8617b13b534993",
         "Core/Client.lua": "2ec54471d2926aa7376d43eee2615db5252a9d649b57ccc65dbb8bf0234f2507",
         "Core/Text.lua": "acc322a7745f82d37ba71aadc1fb488b7fcaedd0410841d9b70146c6dc0b5e0a",
-        "Core/UI.lua": "9ec6d82723cad8a02d5c870502bda595c648f0c964f48c36be594cefbd2994af",
+        "Core/UI.lua": "29bfd839a09ecdec779209ae77244a4aae0a9ef06c6187fb743376e1e3e3baaa",
         "Discovery/Dictionary.lua": "06c76ccd423e05ae3313139b8cfed25d2b8469e07b517b9d11d488ab02452d05",
         "Discovery/Model.lua": "77d373fdb4c94805ee99d767db2d4c52376b4f06cc5dc34ded6ed2e6a27aea23",
         "Groups/InlineRoster.lua": "c300b29b68712b143f8465837f7ac605289faa568ade026e00f5954cefc3d1e4",
@@ -224,7 +224,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "85c86c2db1aeef8ad6c3f67a39100e30e29038e4f2401059532956828317b888",
+  "liveApiEvidenceSha256": "cdf62c6d132c3f05a1c33d9737beb400c8952ada1163acee17cced2b22d1fcd4",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -256,5 +256,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.22-dev.31"
+  "version": "1.14.22-dev.32"
 }
