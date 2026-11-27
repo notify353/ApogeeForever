@@ -1,3 +1,8 @@
+## Unreleased — loot recovery and browsing polish
+
+- Pin Stats fixes for partial/empty loot snapshots, stable expanded rows and winner headings, history reading position, and isolated presentation cleanup.
+- DEV1.14.22-dev.7 supersedes the uninstalled DEV.6 candidate; no new native API, other-child pin or Era changes.
+
 ## Unreleased — Forever loot panel
 
 - Add the reviewed Stats loot panel, per-player run history and separate per-character DEV/PROD storage.
