@@ -1,3 +1,9 @@
+## Unreleased - loot player classes
+
+- Add native class colors to Need/Passed names, winners and history, with class text on hover.
+- Prepare DEV1.14.22-dev.12; new wins retain optional class metadata, old records remain valid.
+- Record the matching native class-color source; other child pins and Era stay unchanged.
+
 ## Unreleased - readable crowded loot
 
 - Pin one-line raid choice summaries and paged Need/Passed player columns.

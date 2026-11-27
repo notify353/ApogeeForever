@@ -67,7 +67,8 @@
     },
     {
       "owners": [
-        "ApogeeHeals"
+        "ApogeeHeals",
+        "ApogeeStats"
       ],
       "path": "Blizzard_APIDocumentationGenerated/ClassColorDocumentation.lua",
       "sha256": "3cfeaf9430b38cf97f2895941d4b133524e1c1652aa968a4a1ef3040c5cb852b"
@@ -1296,7 +1297,8 @@
     },
     {
       "owners": [
-        "ApogeeGroupAlert"
+        "ApogeeGroupAlert",
+        "ApogeeStats"
       ],
       "path": "Blizzard_FrameXMLBase/Constants.lua",
       "sha256": "b83980a3fa76fe7198391b61cd47516ed66bb8592f0470aa03e782544e5f2bb4"
@@ -1814,6 +1816,13 @@
     },
     {
       "owners": [
+        "ApogeeStats"
+      ],
+      "path": "Blizzard_SharedXML/ClassColors.lua",
+      "sha256": "f75c9cd566d1ef707fb6cd3d0e40c722b1cb822614a168cb7e63c1c6eda32a2c"
+    },
+    {
+      "owners": [
         "ApogeeGroupAlert"
       ],
       "path": "Blizzard_SharedXML/Dump.lua",
@@ -1976,6 +1985,6 @@
     "ApogeeGroupAlert": "29872cec9e95db0a2f7a9724319fff1c1fb11281",
     "ApogeeHeals": "ce0626f14c54b122cecd2697b7df5949b13ff85d",
     "ApogeeKeybinds": "814d68f1c4db34ad9285fddac4c2ef3a5633fb8f",
-    "ApogeeStats": "748a37dfbdbfbd05d256fbd11daf22f290607268"
+    "ApogeeStats": "416e79b7b6d0205290d48f78f850822498544385"
   }
 }

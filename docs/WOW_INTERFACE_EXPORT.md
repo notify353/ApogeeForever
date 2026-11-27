@@ -1,3 +1,13 @@
+## Loot player class presentation - 2026-11-26
+
+Verified current Forever71139 authority and reviewed playerClass tokens in
+LootHistoryDocumentation/Mainline LootHistory, SharedXML/ClassColors.lua native
+colorStr setup and FrameXMLBase/Constants.lua localized class names. Record the
+fresh ClassColors source and Stats ownership of existing class-color/constants
+references. Optional class/color values are validated; old wins remain valid.
+No unit inspection or roster guessing. Hover regions reuse current frame and
+tooltip contracts. Native fonts/hover acceptance remains separate.
+
 ## Crowded loot font measurement - 2026-11-26
 
 Reviewed GetUnboundedStringWidthForText in the matching71139 native font-string
