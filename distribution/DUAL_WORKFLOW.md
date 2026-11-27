@@ -1,3 +1,119 @@
+## Group Finder final UI sweep candidate - 2026-11-27
+
+Owner accepted DEV35 and requested sweep/fix/install. DEV36 advances GroupAlert
+tooltip cleanup and disabled-View help, using existing71139 native hook/button
+authority. Full central checks then inspect/install chained from apogee-group-colors-
+20261127 with fresh apogee-group-final-20261127 rollback, under standing authorization.
+No game operation, private saves, PROD writes, push or publication.
+
+## Group Finder role colors candidate - 2026-11-27
+
+Owner requests earlier Tank/Heal colors under standing install authorization.
+DEV35 changes only GroupAlert Core/UI fill painting using existing71139 authority.
+Full central checks, then inspect/install chained from apogee-group-spacing-20261127
+with fresh apogee-group-colors-20261127 rollback. No game operation, private saves,
+PROD writes or publication.
+
+## Group Finder spacing candidate - 2026-11-27
+
+Owner requests consistent paired header spacing and install. DEV34 changes only
+GroupAlert Groups/View layout using existing71139 font measurement authority.
+Full central checks followed by inspect/install chained from apogee-group-controls-
+20261127 with fresh apogee-group-spacing-20261127 rollback. Standing DEV authorization
+applies, including an open client; no game operation, private saves or PROD writes.
+
+## Group Finder controls candidate - 2026-11-27
+
+Owner requests clickable checkbox labels, subtle pressed feedback and install.
+DEV33 advances only GroupAlert UI/views with current71139 authority and no new
+reference files. Full central validation, then checked inspect/install chained
+from apogee-group-sweep-20261127 with fresh apogee-group-controls-20261127 backup.
+Standing DEV install authorization applies; no PROD, private saves or game operation.
+
+## Group Finder UI sweep candidate - 2026-11-27
+
+Owner accepts DEV31 styling and requests sweep/fix/install. DEV32 advances only
+GroupAlert UI/Alerts View for backdrop fade ownership and checkbox label parenting.
+Current71139 authority, no new reference files. Full central validation followed
+by checked inspect/install chained from apogee-group-modern-20261127 with fresh
+apogee-group-sweep-20261127 backup. No PROD, game operation or private-save access.
+
+## Modern Group Finder candidate - 2026-11-27
+
+Owner approved the full custom Group Finder restyle and install, retaining features.
+DEV31 advances only GroupAlert presentation helpers/views and tests. Review current
+native checkbox/scrollbar templates and texture APIs; full central validation.
+Checked inspect/install chains from apogee-loot-modern-polish-20261127 using fresh
+apogee-group-modern-20261127 backup. No PROD, private saves or game operation.
+
+## Modern loot polish candidate - 2026-11-27
+
+Owner approved the spacing/highlight pass and installation. DEV30 advances only
+Stats View; preserve features and five-player alignment. Full central checks,
+then checked inspect/install chained from apogee-loot-modern-20261127 using fresh
+apogee-loot-modern-polish-20261127 backup. Current71139 authority, no new API files.
+No PROD writes, game operation, private saves or enable-preference changes.
+
+## Modern loot styling candidate - 2026-11-27
+
+Owner explicitly requested styling-only match to Forever Leveling BiS Modern and
+installation. DEV29 advances only Stats View, with no geometry/runtime behavior or
+asset/loading changes. Match palette locally; no dependency on the reference addon.
+Review current71139 SetVertexColor and add Stats ownership of existing reference.
+Run full central checks, inspect/install DEV chained from apogee-loot-slim-sweep-
+20261127 with fresh apogee-loot-modern-20261127 backup. No PROD or game operation.
+
+## Slim bar sweep candidate - 2026-11-27
+
+Owner accepted DEV27 appearance and requested bug sweep/fix/install. DEV28 advances
+Stats View/Runtime/Preview for safe resize termination, no-op clicks, screen fitting
+and preview/reset cleanup. Add reviewed display/scale event authority for71139.
+Full central validation, then checked DEV install chained from apogee-loot-slim-bar-
+20261127 using fresh apogee-loot-slim-sweep-20261127 backup. Explicit install approval
+is already given. No game operation, private saves, PROD writes or publication.
+
+## Slim bar loot candidate - 2026-11-27
+
+Owner selected Slim bar and requested implementation/install. DEV1.14.22-dev.27
+advances Stats View/Model/Preview for compact controls and persisted vertical
+viewing height. Current Forever71139 export remains required; add native reset-atlas
+reference and Stats ownership of cursor/geometry references. Run full central
+validation, then inspect/install DEV under explicit authorization, chained from
+apogee-loot-party-fit-20261126 with fresh apogee-loot-slim-bar-20261127 rollback.
+No PROD writes or game operation. Native resized appearance awaits owner reload.
+
+## Five-player loot fit candidate - 2026-11-26
+
+DEV1.14.22-dev.26 advances only Stats View: compact spacing and single-line party
+allocation, with native nonwrapping names and full hover identity. Retain the
+existing panel/font size, class colors, winner highlight and raid scrolling.
+Validate centrally against current71139 authority, then inspect/install under
+standing DEV authorization, chained from apogee-loot-roster-20261126 with fresh
+apogee-loot-party-fit-20261126 rollback. Native appearance awaits owner reload.
+
+## Full-party loot rows candidate - 2026-11-26
+
+Owner approved fixing sparse rows and installation. DEV1.14.22-dev.25 advances only
+Stats Model/Runtime/View: capture full group identities per new drop, retain pending
+snapshots and merge partial/late choice data without duplicate wins. Unknown choices
+show ?; no assumed Pass and no current-group backfill onto historical drops. Use
+full coordinated validation with current Forever71139/273-reference authority.
+Then inspect/install checked DEV, chained from apogee-loot-inline-20261126 with
+a fresh apogee-loot-roster-20261126 rollback directory, under standing open-client
+authorization. Native acceptance awaits reload/new loot; no PROD or game operation.
+
+## Compact inline loot candidate - 2026-11-26
+
+Owner selected the Soft highlight mockup and explicitly requested implementation
+and installation. DEV1.14.22-dev.24 advances only Stats: You first, first names,
+native roll-choice icons, a neutral winner highlight and quality-bordered item
+icons with hover-only names/results. Optional saved rosters preserve all choices;
+old history remains readable. Page scrolling and run lifecycle stay in place.
+Validate exact source/generated families with current Forever71139/273-reference
+authority, then inspect/install through the central checked open-client DEV path.
+Chain from apogee-loot-native-quality-20261126 with a fresh apogee-loot-inline-20261126
+backup. Native acceptance is pending; no game operation or PROD installation.
+
 ## Warrior Intercept default - 2026-11-26
 
 Current test scheduling: use [candidate validation](CANDIDATE_VALIDATION.md) to

@@ -11,7 +11,7 @@ local owners = {
 local function noop() end
 local frames, categories, roots, serial
 local function widget(parent, kind, font)
-    local object = {scripts={},children={},parent=parent,kind=kind,font=font}
+    local object = {scripts={},children={},parent=parent,kind=kind,font=font,enabled=true}
     if parent then parent.children[#parent.children+1]=object end
     return setmetatable(object, {__index=function(self, key)
         if key == "SetScript" then return function(_, event, callback) self.scripts[event]=callback end end
@@ -20,13 +20,22 @@ local function widget(parent, kind, font)
         if key == "SetText" then return function(_,text) self.text=text end end
         if key == "SetTextColor" or key == "SetColorTexture" then return function(_,...) self.color={...} end end
         if key == "SetNormalFontObject" then return function(_,font) self.normalFont=font end end
+        if key == "SetFontString" then return function(_,font) self.fontString=font end end
+        if key == "GetFontString" then return function() return self.fontString end end
         if key == "SetHighlightFontObject" then return function(_,font) self.highlightFont=font end end
         if key == "SetSize" then return function(_,w,h) self.width=w;self.height=h end end
+        if key == "SetWidth" then return function(_,w) self.width=w end end
         if key == "SetShown" then return function(_,shown) self.shown=shown end end
         if key == "SetChecked" then return function(_,checked) self.checked=checked end end
         if key == "GetChecked" then return function() return self.checked end end
-        if key == "SetEnabled" then return function(_,enabled) self.enabled=enabled end end
-        if key == "GetWidth" or key == "GetHeight" then return function() return 600 end end
+        if key == "SetEnabled" then return function(_,enabled)
+            local changed=self.enabled~=enabled; self.enabled=enabled
+            local callback=self.scripts[enabled and "OnEnable" or "OnDisable"]
+            if changed and callback then callback(self) end
+        end end
+        if key == "IsEnabled" then return function() return self.enabled end end
+        if key == "GetWidth" then return function() return rawget(self,"width") or 600 end end
+        if key == "GetHeight" then return function() return rawget(self,"height") or 600 end end
         return noop
     end})
 end
@@ -49,7 +58,19 @@ local function reset()
     ApogeeAuctionDB=nil; ApogeeAuctionDevDB=nil
     frames, categories, roots, serial = {}, {}, {}, 0
     StaticPopupDialogs={}; GameTooltip=widget()
-    CreateFrame=function(kind,_,parent,template) local frame=widget(parent,kind);frame.template=template; frames[#frames+1]=frame; return frame end
+    CreateFrame=function(kind,_,parent,template)
+        local frame=widget(parent,kind);frame.template=template; frames[#frames+1]=frame
+        if template=="MinimalCheckboxArtTemplate" then
+            for _,key in ipairs({"NormalTexture","PushedTexture","HighlightTexture","CheckedTexture","DisabledCheckedTexture"}) do frame[key]=widget(frame,"Texture") end
+        elseif template=="UIPanelScrollFrameTemplate" then
+            local bar=widget(frame,"Slider"); frame.ScrollBar=bar; bar.ThumbTexture=widget(bar,"Texture")
+            for _,key in ipairs({"ScrollUpButton","ScrollDownButton"}) do
+                local arrow=widget(bar,"Button"); bar[key]=arrow; arrow:SetSize(18,16)
+                for _,state in ipairs({"Normal","Pushed","Disabled"}) do arrow[state]=widget(arrow,"Texture") end
+            end
+        end
+        return frame
+    end
     InCombatLockdown=function() return false end
     GetServerTime=function() return 100 end
     SettingsPanel={GetLayout=function(_,c) return {GetFrame=function() return c.frame end} end}
@@ -190,14 +211,17 @@ local function load(owner, family, denied, saved, unavailable)
                 end
                 local headings=0
                 find(child.frame,function(label) if label.kind=="FontString" and label.font=="GameFontNormal" then headings=headings+1 end; return false end)
-                assert(headings==(hasPlaystyles and 4 or hasClassFilters and 3 or 2),"Dungeons headings use native gold font")
+                assert(headings==(hasPlaystyles and 4 or hasClassFilters and 3 or 2),"Dungeons headings retain native font families")
                 local row=A.UI.ListButton(widget(),0,0,200)
                 row:Present("Example",true,false,"Shared")
                 local selected=assert(find(row,function(c) return c.kind=="FontString" and c.text=="Example" end))
-                color(selected,1,0.82,0)
+                local modern=type(A.UI.Style)=="table"
+                if modern then color(selected,.90,.92,.94) else color(selected,1,0.82,0) end
                 color(assert(find(row,function(c) return c.kind=="FontString" and c.text=="Shared" end)),0.8,0.8,0.8)
-                color(assert(find(row,function(c) return c.kind=="Texture" and c.width==3 end)),1,0.82,0)
-                row:Present("Example",false,false);color(selected,1,1,1)
+                local rail=assert(find(row,function(c) return c.kind=="Texture" and c.width==(modern and 2 or 3) end))
+                if modern then color(rail,.23,.25,.3) else color(rail,1,0.82,0) end
+                row:Present("Example",false,false)
+                if modern then color(selected,.90,.92,.94) else color(selected,1,1,1) end
             end
             if A.Settings then assert(A.Settings.category==child) end
             if A.testView then assert(A.testView.category==child) end

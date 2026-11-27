@@ -1,3 +1,104 @@
+## Slim bar sweep authority - 2026-11-27
+
+Review matching71139 UIManager UI_SCALE_CHANGED, Video DISPLAY_SIZE_CHANGED,
+existing Input IsMouseButtonDown and region GetHeight. Display/scale events only
+stop active gestures and rerender owned panels; cursor and screen values remain
+guarded, and no version gate or history polling is added. Two new reference files.
+
+## Slim loot controls and resize review - 2026-11-27
+
+Reviewed current71139 Input GetCursorPosition, Frame GetEffectiveScale, region
+GetCenter/GetHeight and TextureBase SetDesaturated. Reuse native InputUtil scale
+conversion and ModelSceneControlFrame common-icon-undo. Guard public coordinates
+before arithmetic; modify only owned frames and stop resizing on combat/hide.
+Add the reset-atlas source reference, with Stats ownership of existing input and
+region contracts. No client-version runtime gate or new loading paths.
+
+## Full-party loot snapshot review - 2026-11-26
+
+Reverified Forever71139/16001 export273 references. Reviewed existing Stats-owned
+UnitDocumentation UnitGUID/UnitName/UnitClass nullable/restricted results. Enumerate
+player/party/raid unit tokens, guard optional calls and all returned identity data,
+and check GUID stability after name/class reads. No new authority files. Capture
+identity only; native loot states remain the sole evidence of a Pass or roll choice.
+
+## Inline loot identity and choice icons - 2026-11-26
+
+Reviewed current71139 LootHistory EncounterLootDropRollInfo isSelf/playerGUID and
+Mainline/LootHistory.lua native lootroll-icon choice atlases. Review UnitGUID's
+nullable/restricted result and guard the optional player lookup. Add Stats ownership
+to existing UnitDocumentation and SimpleTextureBase SetAtlas references;273 files
+remain unchanged. Preview uses its isolated GUID, no native identity substitution.
+Source/generated regression and native appearance acceptance remain separate.
+
+## Native loot quality formats - 2026-11-26
+
+Reviewed current ColorManager.lua named |cnIQ tokens and override-aware RGB
+palette, plus existing ItemDocumentation GetItemInfo/GetItemQualityColor.
+Add the fresh ColorManager reference for Stats. Validate public data, keep
+optional lookup failure neutral, and rerender late item data without loot scans.
+Native appearance acceptance remains pending after the reported hex-only gap.
+
+## Loot page scrolling - 2026-11-26
+
+Reviewed matching 71139 SimpleScrollFrame and SimpleSlider API documentation
+and HybridScrollFrame.lua value-change/offset wiring. Three fresh references
+owned by Stats cover clipped child scrolling and native thumb behavior. Only
+addon-owned frames and public calculated geometry; native acceptance pending.
+
+## Loot frame styling - 2026-11-26
+
+Reviewed GetFont/SetFont and text shadow methods in the matching71139 existing
+Stats-owned SimpleFontString API reference. Reuse the pinned Heals font/palette
+conventions locally; no runtime dependency or new native API reference. Quality
+rails read existing validated item hyperlink colors. Native visual acceptance
+remains separate from offline layout review.
+
+## Loot player class presentation - 2026-11-26
+
+Verified current Forever71139 authority and reviewed playerClass tokens in
+LootHistoryDocumentation/Mainline LootHistory, SharedXML/ClassColors.lua native
+colorStr setup and FrameXMLBase/Constants.lua localized class names. Record the
+fresh ClassColors source and Stats ownership of existing class-color/constants
+references. Optional class/color values are validated; old wins remain valid.
+No unit inspection or roster guessing. Hover regions reuse current frame and
+tooltip contracts. Native fonts/hover acceptance remains separate.
+
+## Crowded loot font measurement - 2026-11-26
+
+Reviewed GetUnboundedStringWidthForText in the matching71139 native font-string
+documentation. Existing Stats-owned reference suffices; optional method checks,
+guarded calls and public finite width validation preserve runtime availability.
+No new API files, saved schemas or loot event contracts. Native fonts/layout
+remain separate from offline synthetic geometry and behavior checks.
+
+## Compact loot UI review - 2026-11-26
+
+Verified current Forever71139/268-reference authority. Reviewed native button
+SetFontString for plain Stats controls; add Stats ownership of the existing
+SimpleButtonAPIDocumentation reference. Existing frame/font/texture APIs suffice.
+History grouping is display-only; saved records and native loot contracts stay
+unchanged. Native visual acceptance is separate from offline geometry checks.
+
+## Loot test preview review — 2026-11-26
+
+Verified current Forever71139 authority before work. Reviewed native
+Blizzard_SharedXML/Shared/Tabs/RightSideTab.lua SetOwner/SetText/AddLine sample
+presentation; record its fresh hash for Stats. Preview data and clock are purely
+local; no native loot APIs are replaced or native events emitted. Existing button,
+frame, combat-event and cleanup contracts are reused. Native acceptance is pending.
+
+## Loot panel review — 2026-11-26
+
+Matching Forever71139/16001 authority verified before work. Reviewed native
+LootHistory structured encounter/drop updates, confirmed winner and all-pass
+fields, roll-state enums, the FrameXML family selection and Camelot override.
+The panel uses public validated records only; no chat parsing or roll actions.
+Native InputUtil tooltip ownership and Interpolator timer cancellation support
+cleanup. Add these references and Stats ownership of existing item/frame/font/
+timer contracts to current live evidence only. Historical selections and Era
+remain unchanged. Native loot timing/layout/reload acceptance remains pending.
+
 ## Reviewed Forever71139 export - 2026-11-25
 
 Active wowf metadata and Wow.exe agree on1.60.1.71139/interface16001. All260

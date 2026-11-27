@@ -1,3 +1,157 @@
+## Unreleased - Group Finder final UI sweep
+
+- Prepare DEV1.14.22-dev.36 fixing stale help after settings row rebuilds/hiding
+  and adding disabled-View explanations without changing accepted styling.
+
+## Unreleased - Restore Group Finder role colors
+
+- Prepare DEV1.14.22-dev.35 restoring muted blue Tank and green Heal button fills
+  while retaining the Modern style and existing interactions.
+
+## Unreleased - Group Finder header spacing
+
+- Prepare DEV1.14.22-dev.34 with text-measured Group Finder header spacing,
+  equal pair/group gaps and balanced outer padding. Existing features retained.
+
+## Unreleased - Group Finder control polish
+
+- Prepare DEV1.14.22-dev.33 with clickable checkbox labels and subtle native
+  pressed feedback; retain existing Group Finder layout and action guards.
+
+## Unreleased - Group Finder UI sweep
+
+- Prepare DEV1.14.22-dev.32 fixing lingering feed backgrounds during auto-hide/fade
+  and checkbox labels that failed to dim with disabled controls. Keep Modern styling.
+
+## Unreleased - Modern Group Finder
+
+- Prepare DEV1.14.22-dev.31 with matching flat controls and neutral Modern styling
+  across Group Finder results, dungeon/filter settings and whispers. No feature change.
+
+## Unreleased - Modern loot spacing polish
+
+- Prepare DEV1.14.22-dev.30 with balanced loot icon/header spacing, quieter rows
+  and winner edges, and content-fitting height that retains the saved capacity.
+
+## Unreleased - Modern loot palette
+
+- Prepare DEV1.14.22-dev.29 matching the requested flat Modern visual language:
+  cool charcoal, thin slate outlines, subtle rows and controls. Preserve the Slim
+  bar layout, class/quality colors and every existing loot feature.
+
+## Unreleased - Slim bar bug fixes
+
+- Prepare DEV1.14.22-dev.28 for no-op grip clicks, missed-release cleanup, smaller
+  screen fitting, and preview restart/position-reset cancellation. Preserve the
+  accepted Slim bar styling. Review native display and UI-scale event contracts.
+
+## Unreleased - Slim bar loot panel
+
+- Prepare DEV1.14.22-dev.27: title-free header with reset/close controls, no win-count
+  footer, and a bottom resize grip with saved viewing height. Preserve confirmation,
+  TEST preview, party rows and scroll anchors. Add reviewed native reset-atlas source.
+
+## Unreleased - single-line party loot
+
+- Prepare DEV1.14.22-dev.26 with compact player spacing and bounded long-name
+  allocation: up to five players stay on one line at the existing panel/font size.
+  Full names remain on hover; larger rosters continue to wrap and scroll.
+
+## Unreleased - full-party loot rows
+
+- Capture full group identities per new drop, preserve missing members and pending
+  snapshots, and accept late choices after completion. Mark unreported choices ?
+  without guessing Pass or adding today's group to old loot. Prepare DEV1.14.22-dev.25.
+
+## Unreleased - compact inline loot
+
+- Use You first, class-colored first names and native roll icons; softly highlight
+  the confirmed winner. Keep item details on hover and quality borders visible.
+  Retain full player choices in new saved results. Prepare DEV1.14.22-dev.24.
+
+## Unreleased - native loot quality resolution
+
+- Fix neutral names/borders on named-quality links, support item metadata fallback and delayed data for older wins, and use native-format preview fixtures. Prepare DEV1.14.22-dev.23.
+
+## Unreleased - loot icon quality borders
+
+- Add thin native quality-colored icon outlines with a neutral fallback. Preserve the clean page scroller and icon artwork. Prepare DEV1.14.22-dev.22.
+
+## Unreleased - page-style loot scrolling
+
+- Replace card paging with a native clipped page and draggable right scrollbar; keep header/footer fixed and expanded choices inline. Prepare DEV1.14.22-dev.21.
+
+## Unreleased - one scrolling loot list
+
+- Combine current rolls, completed results and older saved wins into one list with a quiet run total; preserve reading position on new drops. Include native item-quality colors. Prepare DEV1.14.22-dev.20.
+
+## Unreleased - loot quality colors
+
+- Preserve native quality colors on loot names and history items; keep class colors and understated panel styling. Prepare DEV1.14.22-dev.19.
+
+## Unreleased - retained loot cards
+
+- Keep completed results and choices visible across reloads; remove expiry timers, preserve results through native history clearing, and allow preview alongside retained results. Prepare DEV1.14.22-dev.18.
+
+## Unreleased - newest loot first
+
+- Sort loot by newest initial detection; preserve position through choice/result updates and expanded-item reading. Prepare DEV1.14.22-dev.17.
+
+## Unreleased - restrained loot palette
+
+- Use one charcoal surface and subtle separators; remove decorative quality rails and winner fills. Keep class colors with muted choice labels. Prepare DEV1.14.22-dev.16.
+
+## Unreleased - loot frame styling
+
+- Match player/party frame typography, shadow and dark flat palette; add slim item-quality rails and quiet controls. Prepare DEV1.14.22-dev.15.
+
+## Unreleased - loot preview badge
+
+- Remove DEV from the loot panel; keep TEST only in preview. Prepare DEV1.14.22-dev.14.
+
+## Unreleased - loot UI final sweep
+
+- Bound long party-name summaries, clear stale winner/class tooltips and retain accurate disclosure hints.
+- Prepare DEV1.14.22-dev.13; only Stats advances, using the unchanged reviewed native contracts.
+
+## Unreleased - loot player classes
+
+- Add native class colors to Need/Passed names, winners and history, with class text on hover.
+- Prepare DEV1.14.22-dev.12; new wins retain optional class metadata, old records remain valid.
+- Record the matching native class-color source; other child pins and Era stay unchanged.
+
+## Unreleased - readable crowded loot
+
+- Pin one-line raid choice summaries and paged Need/Passed player columns.
+- Prepare DEV1.14.22-dev.11 using guarded native text measurement; other child pins and Era unchanged.
+
+## Unreleased - compact loot UI polish
+
+- Pin compact choice/name columns, muted waiting states, subtle controls and grouped repeat wins.
+- Prepare DEV1.14.22-dev.10 with reviewed native button font binding; other source pins and Era stay unchanged.
+
+## Unreleased - named loot passes
+
+- Show NEED and PASSED names together, retain both on results, and expand crowded lists.
+- Update mixed-choice and crowded preview fixtures; prepare DEV1.14.22-dev.9.
+- Existing native API contracts, saved schema, other children and Era remain unchanged.
+
+## Unreleased — step-through loot UI test
+
+- Add Stats' Test loot UI button and five isolated manual preview stages using the real panel/model.
+- Record matching native sample-tooltip source and prepare DEV1.14.22-dev.8; other children, Era and historical selections remain unchanged.
+
+## Unreleased — loot recovery and browsing polish
+
+- Pin Stats fixes for partial/empty loot snapshots, stable expanded rows and winner headings, history reading position, and isolated presentation cleanup.
+- DEV1.14.22-dev.7 supersedes the uninstalled DEV.6 candidate; no new native API, other-child pin or Era changes.
+
+## Unreleased — Forever loot panel
+
+- Add the reviewed Stats loot panel, per-player run history and separate per-character DEV/PROD storage.
+- Validate the same loot behavior against source and both generated Forever families.
+- Preserve Era selections and immutable releases; native acceptance remains pending.
+
 ## Unreleased - scoped test workflow - 2026-11-26
 
 - Add a baseline-backed focused validator for small Keybinds default changes.
