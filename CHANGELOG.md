@@ -1,3 +1,7 @@
+## Unreleased - loot quality colors
+
+- Preserve native quality colors on loot names and history items; keep class colors and understated panel styling. Prepare DEV1.14.22-dev.19.
+
 ## Unreleased - retained loot cards
 
 - Keep completed results and choices visible across reloads; remove expiry timers, preserve results through native history clearing, and allow preview alongside retained results. Prepare DEV1.14.22-dev.18.
