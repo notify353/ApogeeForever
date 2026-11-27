@@ -1,3 +1,10 @@
+## Slim bar sweep authority - 2026-11-27
+
+Review matching71139 UIManager UI_SCALE_CHANGED, Video DISPLAY_SIZE_CHANGED,
+existing Input IsMouseButtonDown and region GetHeight. Display/scale events only
+stop active gestures and rerender owned panels; cursor and screen values remain
+guarded, and no version gate or history polling is added. Two new reference files.
+
 ## Slim loot controls and resize review - 2026-11-27
 
 Reviewed current71139 Input GetCursorPosition, Frame GetEffectiveScale, region

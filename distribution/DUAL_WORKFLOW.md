@@ -1,3 +1,12 @@
+## Slim bar sweep candidate - 2026-11-27
+
+Owner accepted DEV27 appearance and requested bug sweep/fix/install. DEV28 advances
+Stats View/Runtime/Preview for safe resize termination, no-op clicks, screen fitting
+and preview/reset cleanup. Add reviewed display/scale event authority for71139.
+Full central validation, then checked DEV install chained from apogee-loot-slim-bar-
+20261127 using fresh apogee-loot-slim-sweep-20261127 backup. Explicit install approval
+is already given. No game operation, private saves, PROD writes or publication.
+
 ## Slim bar loot candidate - 2026-11-27
 
 Owner selected Slim bar and requested implementation/install. DEV1.14.22-dev.27

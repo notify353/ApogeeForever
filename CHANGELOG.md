@@ -1,3 +1,9 @@
+## Unreleased - Slim bar bug fixes
+
+- Prepare DEV1.14.22-dev.28 for no-op grip clicks, missed-release cleanup, smaller
+  screen fitting, and preview restart/position-reset cancellation. Preserve the
+  accepted Slim bar styling. Review native display and UI-scale event contracts.
+
 ## Unreleased - Slim bar loot panel
 
 - Prepare DEV1.14.22-dev.27: title-free header with reset/close controls, no win-count
