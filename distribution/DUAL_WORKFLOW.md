@@ -1,3 +1,11 @@
+## Modern Group Finder candidate - 2026-11-27
+
+Owner approved the full custom Group Finder restyle and install, retaining features.
+DEV31 advances only GroupAlert presentation helpers/views and tests. Review current
+native checkbox/scrollbar templates and texture APIs; full central validation.
+Checked inspect/install chains from apogee-loot-modern-polish-20261127 using fresh
+apogee-group-modern-20261127 backup. No PROD, private saves or game operation.
+
 ## Modern loot polish candidate - 2026-11-27
 
 Owner approved the spacing/highlight pass and installation. DEV30 advances only

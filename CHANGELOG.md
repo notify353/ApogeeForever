@@ -1,3 +1,8 @@
+## Unreleased - Modern Group Finder
+
+- Prepare DEV1.14.22-dev.31 with matching flat controls and neutral Modern styling
+  across Group Finder results, dungeon/filter settings and whispers. No feature change.
+
 ## Unreleased - Modern loot spacing polish
 
 - Prepare DEV1.14.22-dev.30 with balanced loot icon/header spacing, quieter rows
