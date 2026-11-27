@@ -1,3 +1,7 @@
+## Unreleased - native loot quality resolution
+
+- Fix neutral names/borders on named-quality links, support item metadata fallback and delayed data for older wins, and use native-format preview fixtures. Prepare DEV1.14.22-dev.23.
+
 ## Unreleased - loot icon quality borders
 
 - Add thin native quality-colored icon outlines with a neutral fallback. Preserve the clean page scroller and icon artwork. Prepare DEV1.14.22-dev.22.

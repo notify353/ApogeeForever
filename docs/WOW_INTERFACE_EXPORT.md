@@ -1,3 +1,11 @@
+## Native loot quality formats - 2026-11-26
+
+Reviewed current ColorManager.lua named |cnIQ tokens and override-aware RGB
+palette, plus existing ItemDocumentation GetItemInfo/GetItemQualityColor.
+Add the fresh ColorManager reference for Stats. Validate public data, keep
+optional lookup failure neutral, and rerender late item data without loot scans.
+Native appearance acceptance remains pending after the reported hex-only gap.
+
 ## Loot page scrolling - 2026-11-26
 
 Reviewed matching 71139 SimpleScrollFrame and SimpleSlider API documentation
