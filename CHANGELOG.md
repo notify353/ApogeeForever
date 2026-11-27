@@ -1,3 +1,7 @@
+## Unreleased - newest loot first
+
+- Sort loot by newest initial detection; preserve position through choice/result updates and expanded-item reading. Prepare DEV1.14.22-dev.17.
+
 ## Unreleased - restrained loot palette
 
 - Use one charcoal surface and subtle separators; remove decorative quality rails and winner fills. Keep class colors with muted choice labels. Prepare DEV1.14.22-dev.16.
