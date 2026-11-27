@@ -1,3 +1,7 @@
+## Unreleased - one scrolling loot list
+
+- Combine current rolls, completed results and older saved wins into one list with a quiet run total; preserve reading position on new drops. Include native item-quality colors. Prepare DEV1.14.22-dev.20.
+
 ## Unreleased - loot quality colors
 
 - Preserve native quality colors on loot names and history items; keep class colors and understated panel styling. Prepare DEV1.14.22-dev.19.
