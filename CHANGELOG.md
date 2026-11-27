@@ -1,3 +1,8 @@
+## Unreleased - readable crowded loot
+
+- Pin one-line raid choice summaries and paged Need/Passed player columns.
+- Prepare DEV1.14.22-dev.11 using guarded native text measurement; other child pins and Era unchanged.
+
 ## Unreleased - compact loot UI polish
 
 - Pin compact choice/name columns, muted waiting states, subtle controls and grouped repeat wins.

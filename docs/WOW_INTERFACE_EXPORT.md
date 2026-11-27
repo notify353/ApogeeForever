@@ -1,3 +1,11 @@
+## Crowded loot font measurement - 2026-11-26
+
+Reviewed GetUnboundedStringWidthForText in the matching71139 native font-string
+documentation. Existing Stats-owned reference suffices; optional method checks,
+guarded calls and public finite width validation preserve runtime availability.
+No new API files, saved schemas or loot event contracts. Native fonts/layout
+remain separate from offline synthetic geometry and behavior checks.
+
 ## Compact loot UI review - 2026-11-26
 
 Verified current Forever71139/268-reference authority. Reviewed native button
