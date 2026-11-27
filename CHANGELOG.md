@@ -1,3 +1,8 @@
+## Unreleased - compact loot UI polish
+
+- Pin compact choice/name columns, muted waiting states, subtle controls and grouped repeat wins.
+- Prepare DEV1.14.22-dev.10 with reviewed native button font binding; other source pins and Era stay unchanged.
+
 ## Unreleased - named loot passes
 
 - Show NEED and PASSED names together, retain both on results, and expand crowded lists.

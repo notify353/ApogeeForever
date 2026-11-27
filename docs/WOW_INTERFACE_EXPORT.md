@@ -1,3 +1,11 @@
+## Compact loot UI review - 2026-11-26
+
+Verified current Forever71139/268-reference authority. Reviewed native button
+SetFontString for plain Stats controls; add Stats ownership of the existing
+SimpleButtonAPIDocumentation reference. Existing frame/font/texture APIs suffice.
+History grouping is display-only; saved records and native loot contracts stay
+unchanged. Native visual acceptance is separate from offline geometry checks.
+
 ## Loot test preview review — 2026-11-26
 
 Verified current Forever71139 authority before work. Reviewed native
