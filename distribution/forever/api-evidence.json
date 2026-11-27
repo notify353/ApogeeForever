@@ -1834,6 +1834,13 @@
     },
     {
       "owners": [
+        "ApogeeStats"
+      ],
+      "path": "Blizzard_SharedXML/Shared/Tabs/RightSideTab.lua",
+      "sha256": "294778f3fb57fd1ea88a2c5d6363cb54d92724e82aeacc0ec746d5731a974df7"
+    },
+    {
+      "owners": [
         "ApogeeHeals"
       ],
       "path": "Blizzard_SharedXMLBase/TableUtil.lua",
@@ -1968,6 +1975,6 @@
     "ApogeeGroupAlert": "29872cec9e95db0a2f7a9724319fff1c1fb11281",
     "ApogeeHeals": "ce0626f14c54b122cecd2697b7df5949b13ff85d",
     "ApogeeKeybinds": "814d68f1c4db34ad9285fddac4c2ef3a5633fb8f",
-    "ApogeeStats": "934af5952d6f24ac3e08712b662cf98e7c1c7e6e"
+    "ApogeeStats": "18d588abaad0fcd8d66665e2c7fc9a4c74f951d6"
   }
 }

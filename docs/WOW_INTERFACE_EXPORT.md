@@ -1,3 +1,11 @@
+## Loot test preview review — 2026-11-26
+
+Verified current Forever71139 authority before work. Reviewed native
+Blizzard_SharedXML/Shared/Tabs/RightSideTab.lua SetOwner/SetText/AddLine sample
+presentation; record its fresh hash for Stats. Preview data and clock are purely
+local; no native loot APIs are replaced or native events emitted. Existing button,
+frame, combat-event and cleanup contracts are reused. Native acceptance is pending.
+
 ## Loot panel review — 2026-11-26
 
 Matching Forever71139/16001 authority verified before work. Reviewed native

@@ -1,3 +1,8 @@
+## Unreleased — step-through loot UI test
+
+- Add Stats' Test loot UI button and five isolated manual preview stages using the real panel/model.
+- Record matching native sample-tooltip source and prepare DEV1.14.22-dev.8; other children, Era and historical selections remain unchanged.
+
 ## Unreleased — loot recovery and browsing polish
 
 - Pin Stats fixes for partial/empty loot snapshots, stable expanded rows and winner headings, history reading position, and isolated presentation cleanup.
