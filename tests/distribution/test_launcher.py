@@ -147,6 +147,9 @@ class LauncherTests(unittest.TestCase):
                     subprocess.run(['lua','tests/test_tooltip.lua',str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
                     for spec in ('test_stat_policy.lua', 'test_auction.lua'):
                         subprocess.run(['lua','tests/'+spec,str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
+                    if (children/'ApogeeStats/tests/test_loot.lua').is_file():
+                        subprocess.run(['lua','tests/test_loot.lua',str(Path(folder)/stats),stats],cwd=children/'ApogeeStats',check=True)
+                        self.assertEqual(d.toc_info(files[stats+'/'+stats+'.toc'])[0]['SavedVariablesPerCharacter'], stats+'LootDB')
                 else:
                     stats='ApogeeStats'+('Dev' if family=='DEV' else '')
                     for spec in ('test_era.lua', 'test_era_ui.lua', 'test_era_startup.lua'):

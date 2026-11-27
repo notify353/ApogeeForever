@@ -1,3 +1,14 @@
+## Loot panel review — 2026-11-26
+
+Matching Forever71139/16001 authority verified before work. Reviewed native
+LootHistory structured encounter/drop updates, confirmed winner and all-pass
+fields, roll-state enums, the FrameXML family selection and Camelot override.
+The panel uses public validated records only; no chat parsing or roll actions.
+Native InputUtil tooltip ownership and Interpolator timer cancellation support
+cleanup. Add these references and Stats ownership of existing item/frame/font/
+timer contracts to current live evidence only. Historical selections and Era
+remain unchanged. Native loot timing/layout/reload acceptance remains pending.
+
 ## Reviewed Forever71139 export - 2026-11-25
 
 Active wowf metadata and Wow.exe agree on1.60.1.71139/interface16001. All260

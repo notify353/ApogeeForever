@@ -1,3 +1,9 @@
+## Unreleased — Forever loot panel
+
+- Add the reviewed Stats loot panel, per-player run history and separate per-character DEV/PROD storage.
+- Validate the same loot behavior against source and both generated Forever families.
+- Preserve Era selections and immutable releases; native acceptance remains pending.
+
 ## Unreleased - scoped test workflow - 2026-11-26
 
 - Add a baseline-backed focused validator for small Keybinds default changes.
