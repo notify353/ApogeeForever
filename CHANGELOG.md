@@ -1,3 +1,7 @@
+## Unreleased - retained loot cards
+
+- Keep completed results and choices visible across reloads; remove expiry timers, preserve results through native history clearing, and allow preview alongside retained results. Prepare DEV1.14.22-dev.18.
+
 ## Unreleased - newest loot first
 
 - Sort loot by newest initial detection; preserve position through choice/result updates and expanded-item reading. Prepare DEV1.14.22-dev.17.
