@@ -1,3 +1,8 @@
+## Unreleased - Restore Group Finder role colors
+
+- Prepare DEV1.14.22-dev.35 restoring muted blue Tank and green Heal button fills
+  while retaining the Modern style and existing interactions.
+
 ## Unreleased - Group Finder header spacing
 
 - Prepare DEV1.14.22-dev.34 with text-measured Group Finder header spacing,

@@ -97,16 +97,16 @@
       "version": "0.1.0-forever-beta.22"
     },
     {
-      "commit": "e8c2b1ceac886f76ccebb1506d17dfb9cfa93f4c",
+      "commit": "1531ccb5e9d93c3d8ed2953e35dc2455ade6ee46",
       "files": {
         "Alerts/Model.lua": "67252fcd01083bf17b988189098b621c9eafaf1a11ab9c867a6a3c34b98d9754",
         "Alerts/View.lua": "c1c355a75b5444394ec368678de0aabf49247ac8057d9304f55d892a211112f4",
         "ApogeeGroupAlert.lua": "f32368ac63a6090babe5237ef9ddae74f35584084dfc2d8209f864fda3022b30",
         "ApogeeGroupAlert.toc": "1f2b933c8084cf231dc6b96eaf7e3d097ded46d58c1a3cd10c29b31e2eb20536",
-        "CHANGELOG.md": "6b177c6e493030ce511f7d5b4ec8162339a11c8a228c68e58e6266f6034ca456",
+        "CHANGELOG.md": "cead4bd2fcda9eeb79850306ab15b23f4ccf81837d1ab97efc0d1683590537ee",
         "Core/Client.lua": "2ec54471d2926aa7376d43eee2615db5252a9d649b57ccc65dbb8bf0234f2507",
         "Core/Text.lua": "acc322a7745f82d37ba71aadc1fb488b7fcaedd0410841d9b70146c6dc0b5e0a",
-        "Core/UI.lua": "0f8f984d7910c68f70f49535ad91ff4917a64fff5988e3699f7a1c42dc3d0504",
+        "Core/UI.lua": "ebb594ce4234e79bdaa4114583ac49b97262e3f47319fb99bada9dbf0ac660c1",
         "Discovery/Dictionary.lua": "06c76ccd423e05ae3313139b8cfed25d2b8469e07b517b9d11d488ab02452d05",
         "Discovery/Model.lua": "77d373fdb4c94805ee99d767db2d4c52376b4f06cc5dc34ded6ed2e6a27aea23",
         "Groups/InlineRoster.lua": "c300b29b68712b143f8465837f7ac605289faa568ade026e00f5954cefc3d1e4",
@@ -224,7 +224,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "d734d037431553b1c5ce1737897c4fda877fbecd1e9aba43dfb289870decc0c3",
+  "liveApiEvidenceSha256": "f5f2f2eedca962daaa2faca956ba9fc0d72752b21775e40bf92391a123cd51e4",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
@@ -256,5 +256,5 @@
       "toc": "ApogeeUI.toc"
     }
   ],
-  "version": "1.14.22-dev.34"
+  "version": "1.14.22-dev.35"
 }
