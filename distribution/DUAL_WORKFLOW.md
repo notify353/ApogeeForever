@@ -1,3 +1,12 @@
+## Modern loot styling candidate - 2026-11-27
+
+Owner explicitly requested styling-only match to Forever Leveling BiS Modern and
+installation. DEV29 advances only Stats View, with no geometry/runtime behavior or
+asset/loading changes. Match palette locally; no dependency on the reference addon.
+Review current71139 SetVertexColor and add Stats ownership of existing reference.
+Run full central checks, inspect/install DEV chained from apogee-loot-slim-sweep-
+20261127 with fresh apogee-loot-modern-20261127 backup. No PROD or game operation.
+
 ## Slim bar sweep candidate - 2026-11-27
 
 Owner accepted DEV27 appearance and requested bug sweep/fix/install. DEV28 advances

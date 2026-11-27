@@ -1,3 +1,9 @@
+## Unreleased - Modern loot palette
+
+- Prepare DEV1.14.22-dev.29 matching the requested flat Modern visual language:
+  cool charcoal, thin slate outlines, subtle rows and controls. Preserve the Slim
+  bar layout, class/quality colors and every existing loot feature.
+
 ## Unreleased - Slim bar bug fixes
 
 - Prepare DEV1.14.22-dev.28 for no-op grip clicks, missed-release cleanup, smaller
