@@ -1,3 +1,7 @@
+## Unreleased - restrained loot palette
+
+- Use one charcoal surface and subtle separators; remove decorative quality rails and winner fills. Keep class colors with muted choice labels. Prepare DEV1.14.22-dev.16.
+
 ## Unreleased - loot frame styling
 
 - Match player/party frame typography, shadow and dark flat palette; add slim item-quality rails and quiet controls. Prepare DEV1.14.22-dev.15.
