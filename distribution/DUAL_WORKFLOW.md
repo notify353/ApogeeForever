@@ -1,3 +1,12 @@
+## Five-player loot fit candidate - 2026-11-26
+
+DEV1.14.22-dev.26 advances only Stats View: compact spacing and single-line party
+allocation, with native nonwrapping names and full hover identity. Retain the
+existing panel/font size, class colors, winner highlight and raid scrolling.
+Validate centrally against current71139 authority, then inspect/install under
+standing DEV authorization, chained from apogee-loot-roster-20261126 with fresh
+apogee-loot-party-fit-20261126 rollback. Native appearance awaits owner reload.
+
 ## Full-party loot rows candidate - 2026-11-26
 
 Owner approved fixing sparse rows and installation. DEV1.14.22-dev.25 advances only

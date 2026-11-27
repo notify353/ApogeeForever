@@ -1,3 +1,9 @@
+## Unreleased - single-line party loot
+
+- Prepare DEV1.14.22-dev.26 with compact player spacing and bounded long-name
+  allocation: up to five players stay on one line at the existing panel/font size.
+  Full names remain on hover; larger rosters continue to wrap and scroll.
+
 ## Unreleased - full-party loot rows
 
 - Capture full group identities per new drop, preserve missing members and pending
