@@ -1,3 +1,11 @@
+## Group Finder spacing candidate - 2026-11-27
+
+Owner requests consistent paired header spacing and install. DEV34 changes only
+GroupAlert Groups/View layout using existing71139 font measurement authority.
+Full central checks followed by inspect/install chained from apogee-group-controls-
+20261127 with fresh apogee-group-spacing-20261127 rollback. Standing DEV authorization
+applies, including an open client; no game operation, private saves or PROD writes.
+
 ## Group Finder controls candidate - 2026-11-27
 
 Owner requests clickable checkbox labels, subtle pressed feedback and install.

@@ -1,3 +1,8 @@
+## Unreleased - Group Finder header spacing
+
+- Prepare DEV1.14.22-dev.34 with text-measured Group Finder header spacing,
+  equal pair/group gaps and balanced outer padding. Existing features retained.
+
 ## Unreleased - Group Finder control polish
 
 - Prepare DEV1.14.22-dev.33 with clickable checkbox labels and subtle native
