@@ -1,3 +1,11 @@
+## Group Finder final UI sweep candidate - 2026-11-27
+
+Owner accepted DEV35 and requested sweep/fix/install. DEV36 advances GroupAlert
+tooltip cleanup and disabled-View help, using existing71139 native hook/button
+authority. Full central checks then inspect/install chained from apogee-group-colors-
+20261127 with fresh apogee-group-final-20261127 rollback, under standing authorization.
+No game operation, private saves, PROD writes, push or publication.
+
 ## Group Finder role colors candidate - 2026-11-27
 
 Owner requests earlier Tank/Heal colors under standing install authorization.

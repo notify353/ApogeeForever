@@ -1,3 +1,8 @@
+## Unreleased - Group Finder final UI sweep
+
+- Prepare DEV1.14.22-dev.36 fixing stale help after settings row rebuilds/hiding
+  and adding disabled-View explanations without changing accepted styling.
+
 ## Unreleased - Restore Group Finder role colors
 
 - Prepare DEV1.14.22-dev.35 restoring muted blue Tank and green Heal button fills
