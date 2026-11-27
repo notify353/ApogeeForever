@@ -1,3 +1,8 @@
+## Unreleased - Group Finder control polish
+
+- Prepare DEV1.14.22-dev.33 with clickable checkbox labels and subtle native
+  pressed feedback; retain existing Group Finder layout and action guards.
+
 ## Unreleased - Group Finder UI sweep
 
 - Prepare DEV1.14.22-dev.32 fixing lingering feed backgrounds during auto-hide/fade

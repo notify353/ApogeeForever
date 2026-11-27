@@ -1,3 +1,11 @@
+## Group Finder controls candidate - 2026-11-27
+
+Owner requests clickable checkbox labels, subtle pressed feedback and install.
+DEV33 advances only GroupAlert UI/views with current71139 authority and no new
+reference files. Full central validation, then checked inspect/install chained
+from apogee-group-sweep-20261127 with fresh apogee-group-controls-20261127 backup.
+Standing DEV install authorization applies; no PROD, private saves or game operation.
+
 ## Group Finder UI sweep candidate - 2026-11-27
 
 Owner accepts DEV31 styling and requests sweep/fix/install. DEV32 advances only
