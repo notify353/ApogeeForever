@@ -1,3 +1,12 @@
+## Slim loot controls and resize review - 2026-11-27
+
+Reviewed current71139 Input GetCursorPosition, Frame GetEffectiveScale, region
+GetCenter/GetHeight and TextureBase SetDesaturated. Reuse native InputUtil scale
+conversion and ModelSceneControlFrame common-icon-undo. Guard public coordinates
+before arithmetic; modify only owned frames and stop resizing on combat/hide.
+Add the reset-atlas source reference, with Stats ownership of existing input and
+region contracts. No client-version runtime gate or new loading paths.
+
 ## Full-party loot snapshot review - 2026-11-26
 
 Reverified Forever71139/16001 export273 references. Reviewed existing Stats-owned

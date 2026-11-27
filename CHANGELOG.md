@@ -1,3 +1,9 @@
+## Unreleased - Slim bar loot panel
+
+- Prepare DEV1.14.22-dev.27: title-free header with reset/close controls, no win-count
+  footer, and a bottom resize grip with saved viewing height. Preserve confirmation,
+  TEST preview, party rows and scroll anchors. Add reviewed native reset-atlas source.
+
 ## Unreleased - single-line party loot
 
 - Prepare DEV1.14.22-dev.26 with compact player spacing and bounded long-name

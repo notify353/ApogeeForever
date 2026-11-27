@@ -1,3 +1,13 @@
+## Slim bar loot candidate - 2026-11-27
+
+Owner selected Slim bar and requested implementation/install. DEV1.14.22-dev.27
+advances Stats View/Model/Preview for compact controls and persisted vertical
+viewing height. Current Forever71139 export remains required; add native reset-atlas
+reference and Stats ownership of cursor/geometry references. Run full central
+validation, then inspect/install DEV under explicit authorization, chained from
+apogee-loot-party-fit-20261126 with fresh apogee-loot-slim-bar-20261127 rollback.
+No PROD writes or game operation. Native resized appearance awaits owner reload.
+
 ## Five-player loot fit candidate - 2026-11-26
 
 DEV1.14.22-dev.26 advances only Stats View: compact spacing and single-line party
