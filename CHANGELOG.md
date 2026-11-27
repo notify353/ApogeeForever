@@ -1,3 +1,8 @@
+## Unreleased - Modern loot spacing polish
+
+- Prepare DEV1.14.22-dev.30 with balanced loot icon/header spacing, quieter rows
+  and winner edges, and content-fitting height that retains the saved capacity.
+
 ## Unreleased - Modern loot palette
 
 - Prepare DEV1.14.22-dev.29 matching the requested flat Modern visual language:

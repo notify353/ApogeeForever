@@ -1,3 +1,11 @@
+## Modern loot polish candidate - 2026-11-27
+
+Owner approved the spacing/highlight pass and installation. DEV30 advances only
+Stats View; preserve features and five-player alignment. Full central checks,
+then checked inspect/install chained from apogee-loot-modern-20261127 using fresh
+apogee-loot-modern-polish-20261127 backup. Current71139 authority, no new API files.
+No PROD writes, game operation, private saves or enable-preference changes.
+
 ## Modern loot styling candidate - 2026-11-27
 
 Owner explicitly requested styling-only match to Forever Leveling BiS Modern and
