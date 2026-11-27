@@ -1,3 +1,7 @@
+## Unreleased - page-style loot scrolling
+
+- Replace card paging with a native clipped page and draggable right scrollbar; keep header/footer fixed and expanded choices inline. Prepare DEV1.14.22-dev.21.
+
 ## Unreleased - one scrolling loot list
 
 - Combine current rolls, completed results and older saved wins into one list with a quiet run total; preserve reading position on new drops. Include native item-quality colors. Prepare DEV1.14.22-dev.20.

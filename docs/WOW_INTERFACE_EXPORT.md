@@ -1,3 +1,10 @@
+## Loot page scrolling - 2026-11-26
+
+Reviewed matching 71139 SimpleScrollFrame and SimpleSlider API documentation
+and HybridScrollFrame.lua value-change/offset wiring. Three fresh references
+owned by Stats cover clipped child scrolling and native thumb behavior. Only
+addon-owned frames and public calculated geometry; native acceptance pending.
+
 ## Loot frame styling - 2026-11-26
 
 Reviewed GetFont/SetFont and text shadow methods in the matching71139 existing
