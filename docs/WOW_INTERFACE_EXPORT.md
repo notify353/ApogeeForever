@@ -1,3 +1,13 @@
+## Party indicators and fixed Freedom - 2026-11-27
+
+Verified live Forever71139/16001 with281 existing references. Current native
+aura containers have no root/snare mechanic candidate filter; harmful friendly
+spell-ID filtering is restricted. Owner selected a fixed learned1044 Freedom
+button with normal spell tooltip and exact-row secure release action, no
+automatic movement detection or aura highlight. Existing Spell/SpellBook,
+SecureTemplates and frame/tooltip references cover the change. Only Heals
+source pin/evidence digest advance; historical beta/Era/release pins unchanged.
+
 ## Auction-only sweep authority - 2026-11-27
 
 Reverified matching71139/16001 export281 references. Reviewed existing native
