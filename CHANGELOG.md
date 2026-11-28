@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 yellow debuff progress
+
+- Prepare DEV1.14.23-dev.5: use opaque bright yellow for priest own-debuff progress against green health and white HoTs. Preserve reverse fill, native timers, filters and full bar thickness. No new API or data contract.
+
 ## Unreleased - 2026-11-27 debuff direction
 
 - Prepare DEV1.14.23-dev.4: reverse only the priest own-debuff progress fill so it drains left to right from a fixed right edge. Keep HoT direction, native remaining-time timers, full bar thickness and taller health rows.
