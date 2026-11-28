@@ -1,3 +1,8 @@
+## Unreleased - 2026-11-28 release queue maintenance
+
+- Remove published and byte-verified1.14.25 from the pending release-validation
+  queue; preserve its immutable selection and the installed DEV candidate.
+
 ## [1.14.25] - 2026-11-28
 
 - Improve combat native-object access checks and interrupted fade recovery.
