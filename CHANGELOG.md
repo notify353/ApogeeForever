@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 remove Other slot
+
+- Prepare DEV1.14.23-dev.6: remove the native far-right Other debuff icon and its reserved width. Keep Magic, Disease, Poison, Curse and Movement/Freedom, plus the yellow in-health debuff countdown. Existing cleansing, tooltips and secure actions are unchanged.
+
 ## Unreleased - 2026-11-27 yellow debuff progress
 
 - Prepare DEV1.14.23-dev.5: use opaque bright yellow for priest own-debuff progress against green health and white HoTs. Preserve reverse fill, native timers, filters and full bar thickness. No new API or data contract.

@@ -1,3 +1,12 @@
+## Remove native Other slot - 2026-11-27
+
+Current71139/16001 verifies281 references. Heals creates four native fixed
+category slots and reserves five positions including the unchanged Freedom
+action. Remove the Other aura slot and sixth-position width. Native category
+filter/timer/tooltip and secure action contracts are unchanged. Yellow in-health
+own-debuff progress remains separate. No new API or data contract. Era/legacy
+fallback and frozen selections remain unchanged; native layout acceptance pending.
+
 ## Debuff progress direction - 2026-11-27
 
 Verified71139/16001,281 existing references. Heals applies public static
