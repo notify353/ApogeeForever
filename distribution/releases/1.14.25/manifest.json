@@ -9,7 +9,7 @@
     "gameVersionTypeID": 88568,
     "name": "1.60.1"
   },
-  "notesSha256": "063f18ee800088838c3dd3287964a9b1f2d39f0261296790df72bd9ac903635a",
+  "notesSha256": "4cdd97f3ec83df1aa3a7b5df235b9d3d3fb8bb401819a7ad0e31474c1120ee86",
   "packages": {
     "DEV": "e2032a219d567acd5fe6c69ace5aff8b14920891ada306a07435290c186c1b18",
     "PROD": "5b24674b8ce6f926dd7779c9b2d2036a1e5556eeb16389807bad132cdd1090ec"
