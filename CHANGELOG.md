@@ -1,3 +1,11 @@
+## Unreleased - 2026-11-27 buff range sweep
+
+- Prepare DEV1.14.24-dev.2: choose catalog recommendations from the final visible buff list after range/timer filtering, preserving accepted range behavior and strict recipients.
+
+## Unreleased - 2026-11-27 buff range
+
+- Prepare DEV1.14.24-dev.1: apply guarded spell-specific distance to buff reminders and manual choices when native range is unavailable. Preserve direct native results, self buffs, resurrection behavior, Era and historical release selections.
+
 ## [1.14.24] - 2026-11-27
 
 - Prepare the owner-requested Forever release of taller party bars, full-thickness HoT lanes, yellow reverse-fill priest debuff progress, food/drink placement and fixed Freedom action.
