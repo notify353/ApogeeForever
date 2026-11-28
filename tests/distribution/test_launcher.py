@@ -119,6 +119,8 @@ class LauncherTests(unittest.TestCase):
                 env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
                            APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1',
                            APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')
+                if target != 'era' and (children/'ApogeeKeybinds/tests/world_lifecycle_spec.lua').is_file():
+                    subprocess.run(['lua','tests/world_lifecycle_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 subprocess.run(['lua','tests/aphb_distribution_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if (children/'ApogeeKeybinds/tests/focus_assist_spec.lua').is_file():

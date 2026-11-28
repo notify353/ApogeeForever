@@ -2087,10 +2087,10 @@
   "reviewedOn": "2026-11-27",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "b207e074b81c5f52b6ad69b0729d3dc36d914ae9",
+    "ApogeeEssentials": "2ab8273264857bc17164147ce8ed19a0b51fd3ed",
     "ApogeeGroupAlert": "4cae52864353ce14cd3648031732e03dc949e26e",
-    "ApogeeHeals": "173466cafd7dcac634becde119cc2c52a2363554",
-    "ApogeeKeybinds": "814d68f1c4db34ad9285fddac4c2ef3a5633fb8f",
+    "ApogeeHeals": "101941cd7b32a583d205603d414a0ab9bf86303d",
+    "ApogeeKeybinds": "48c4fe4c104f5f5e5f773361e5c4f940a61a2d8b",
     "ApogeeStats": "931521af8b6c0d91ba5a5069359917297e821e72"
   }
 }

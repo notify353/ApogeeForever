@@ -1,3 +1,14 @@
+## Combat lifecycle sweep candidate - 2026-11-27
+
+DEV1.14.24-dev.4 advances Heals, Keybinds and Essentials for reproduced stale
+world-exit callbacks and access-recovery gaps. Keep fixed secure actions, existing
+combat guards and current283-reference Forever71139 authority. Full central
+source/generated/Era/frozen validation precedes checked preview/inspect/install,
+chained from apogee-combat-safety-20261127 with fresh rollback directory
+apogee-combat-safety-sweep-20261127. Explicit request and standing local DEV
+approval cover an open client; no game operation, private saves, enable changes,
+PROD writes, push, integration or publication. Native warning acceptance pending.
+
 ## Dungeon combat safety candidate - 2026-11-27
 
 DEV1.14.24-dev.3 advances reviewed Heals and Essentials sources for native object

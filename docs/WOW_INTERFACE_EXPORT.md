@@ -1,3 +1,14 @@
+## Combat lifecycle sweep - 2026-11-27
+
+Current live Forever71139/16001 authority still verifies283 references. Existing
+native AuraContainer SetEnabled registers/unregisters unit events and refreshes
+auras; stale callbacks must not reactivate it after world exit. Existing Timer,
+world/combat event, object-access and alpha contracts cover the changes. Keep
+current runtime capability fallback and deferred protected mutations. No new API
+reference, saved-data schema or runtime inventory. Source/generated tests check
+world/combat order, permission recovery and cleanup failure; native warning
+reproduction and comprehensive taint acceptance remain unclaimed.
+
 ## Dungeon combat access review - 2026-11-27
 
 Matching live Forever71139/16001 verifies283 references. Add the fresh
