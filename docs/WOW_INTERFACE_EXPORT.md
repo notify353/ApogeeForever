@@ -1,3 +1,14 @@
+## Priest own-debuff duration strip - 2026-11-27
+
+Reverified live Forever71139/16001 with281 references. Existing native
+HARMFUL|PLAYER filtering and excludeDispelTypes admit own untyped harmful auras;
+SetDurationBar uses the same opaque duration sink as the existing HoT strips.
+No spell-ID filter, guessed duration, aura read or new API reference. One native
+selected effect appears above Renew; Weakened Soul identity and shield readiness
+are not guaranteed. Other priests' effects are outside this own-caster filter.
+Owner explicitly requests installation for live testing. Only the Heals source
+pin and evidence digest advance; historical beta/Era/release pins stay unchanged.
+
 ## Party indicators and fixed Freedom - 2026-11-27
 
 Verified live Forever71139/16001 with281 existing references. Current native

@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 priest debuff strip
+
+- Prepare DEV1.14.23-dev.2 for owner testing: add a native own-debuff progress strip above priest Renew in the existing white-bar style. The broad untyped filter permits Weakened Soul but does not guarantee its identity or shield readiness. Preserve the Other icon, other classes and Era selection.
+
 ## Unreleased - 2026-11-27 party indicators
 
 - Forever DEV: move food/drink left of party bars; add a fixed learned paladin Blessing of Freedom action between Curse and Other. Preserve existing cleanse types/timers and shift left-side buffs to avoid overlap.
