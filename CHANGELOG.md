@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 release queue maintenance
+
+- Remove successfully published and byte-verified1.14.24 from the pending release-validation queue. Preserve its immutable release selection and the current DEV candidate.
+
 ## Unreleased - 2026-11-27 buff range sweep
 
 - Prepare DEV1.14.24-dev.2: choose catalog recommendations from the final visible buff list after range/timer filtering, preserving accepted range behavior and strict recipients.
