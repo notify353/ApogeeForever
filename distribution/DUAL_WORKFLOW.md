@@ -1,3 +1,24 @@
+## Auction-only sweep candidate - 2026-11-27
+
+DEV38 fixes unrelated tooltip readers disabling AH advice and removes obsolete
+Forever loot-role helpers by moving them into the Era adapter. Source Era behavior
+remains covered; installed Era/frozen pins stay unchanged. Full central validation
+precedes checked live-update preview/install, chained from apogee-auction-only-
+20261127 with fresh apogee-auction-only-sweep-20261127 backup. Retain TOC metadata,
+standing open-client authorization, installed-byte checks and rollback. No PROD,
+private saves, game operation, enabled preferences, push or publication.
+
+## Auction-only Stats candidate - 2026-11-27
+
+DEV37 advances only Forever Stats advice scope and its current API evidence.
+Keep Loot tracking/history/preview, auction filtering/ranking and all Era/frozen
+selections. Full central validation precedes checked DEV preview/install under
+standing authorization, chained from apogee-group-final-20261127 with a fresh
+apogee-auction-only-20261127 rollback directory. Owner explicitly requests installation with WoW open. Retain existing TOC Notes
+so the central live-update metadata guard remains intact; settings/docs carry
+the new description. No PROD, private saves, enabled preferences, game operation,
+push or publication. Native acceptance is pending.
+
 ## Group Finder final UI sweep candidate - 2026-11-27
 
 Owner accepted DEV35 and requested sweep/fix/install. DEV36 advances GroupAlert

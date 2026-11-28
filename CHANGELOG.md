@@ -1,3 +1,15 @@
+## Unreleased - Auction tooltip cleanup
+
+- Prepare DEV1.14.22-dev.38 isolating Forever AH advice from unrelated tooltip
+  readers and unreadable ownership data. Move unused loot-role helpers into Era.
+  Retain existing auction scoring, Loot tracking and Era package selection.
+
+## Unreleased - Auction-house-only Forever upgrades
+
+- Prepare DEV1.14.22-dev.37 restricting Stats advice to native auction listings.
+  Keep auction filtering/ranking and Loot history/preview; remove the Forever
+  instance loot-role setting. Classic Era retains its existing behavior.
+
 ## Unreleased - Group Finder final UI sweep
 
 - Prepare DEV1.14.22-dev.36 fixing stale help after settings row rebuilds/hiding
