@@ -1,3 +1,13 @@
+## Taller health rows and full-thickness progress - 2026-11-27
+
+Reverified71139/16001 with281 references. Heals changes geometry only: health20,
+each native progress lane1.5, gaps0.5 logical units. Three lanes fit below the
+centered names/role art; existing shared dimensions update related overlays,
+preview, rows and clamping. No API/filter/duration, secure action, loading or
+saved-data changes. Only the Forever Heals pin/evidence digest advance; Era and
+historical releases stay fixed. Owner reports the prior priest display works;
+the taller layout awaits native visual acceptance.
+
 ## Priest own-debuff duration strip - 2026-11-27
 
 Reverified live Forever71139/16001 with281 references. Existing native

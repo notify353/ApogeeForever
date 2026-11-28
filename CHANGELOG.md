@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 taller health rows
+
+- Prepare DEV1.14.23-dev.3: increase health height to fit three progress lanes at the original single-bar thickness. Preserve power height, width, font/icon sizes and tracking behavior. Owner reports the preceding priest debuff strip works; this resize awaits visual acceptance.
+
 ## Unreleased - 2026-11-27 priest debuff strip
 
 - Prepare DEV1.14.23-dev.2 for owner testing: add a native own-debuff progress strip above priest Renew in the existing white-bar style. The broad untyped filter permits Weakened Soul but does not guarantee its identity or shield readiness. Preserve the Other icon, other classes and Era selection.
