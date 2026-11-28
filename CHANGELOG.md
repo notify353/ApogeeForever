@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 party-bar bug sweep
+
+- Prepare DEV1.14.23-dev.7: keep Freedom tooltips open during routine combat health/aura refreshes; clear them at combat entry, loading and target changes. Suppress preview/loading hover, share fixed-recipient release-click setup and derive right-side geometry from the dispel order. Preserve progress bars and the removed Other slot.
+
 ## Unreleased - 2026-11-27 remove Other slot
 
 - Prepare DEV1.14.23-dev.6: remove the native far-right Other debuff icon and its reserved width. Keep Magic, Disease, Poison, Curse and Movement/Freedom, plus the yellow in-health debuff countdown. Existing cleansing, tooltips and secure actions are unchanged.
