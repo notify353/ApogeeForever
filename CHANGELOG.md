@@ -1,3 +1,9 @@
+## Unreleased - 2026-11-27 dungeon combat safety
+
+- Prepare DEV1.14.24-dev.3: prevent fade hover/root and threat bootstrap calls on native objects that deny access, and preserve deferred UI alpha restoration.
+- Avoid repeated target-of-target aura rebuilds during health/power/cast bursts; keep immediate health, fixed secure actions and alias recovery.
+- Add source/generated PROD/DEV regressions and current native object-access authority. The owner's exact blocked-action source and native acceptance remain unconfirmed; Era and published selections stay unchanged.
+
 ## Unreleased - 2026-11-27 release queue maintenance
 
 - Remove successfully published and byte-verified1.14.24 from the pending release-validation queue. Preserve its immutable release selection and the current DEV candidate.

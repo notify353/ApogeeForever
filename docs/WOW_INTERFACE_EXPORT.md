@@ -1,3 +1,16 @@
+## Dungeon combat access review - 2026-11-27
+
+Matching live Forever71139/16001 verifies283 references. Add the fresh
+SimpleFrameScriptObject API (Heals/Essentials) and native DebugTools
+TextureInfoGenerator example (Essentials). CanBeAccessedInContext can deny a
+non-forbidden object; its ObjectSecurity result and GetParent hierarchy may be
+restricted. Validate public object/table/access results before native reads or
+alpha writes; unavailable access never authorizes a call. Older clients retain
+the actual IsForbidden capability fallback without a build/version gate.
+Existing CustomAuraContainer contracts cover bounded alias reconciliation.
+Offline denied-call regressions do not identify the owner's exact warning or
+establish native combat/taint acceptance. Historical authority remains frozen.
+
 ## Remove native Other slot - 2026-11-27
 
 Current71139/16001 verifies281 references. Heals creates four native fixed
