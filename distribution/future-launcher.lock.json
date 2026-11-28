@@ -1,16 +1,16 @@
 {
   "children": [
     {
-      "commit": "50a870b6e9c32e7fdcb77f02141c28b1d4755854",
+      "commit": "ce7a05802d36266bbf5cf4243e37d5a6a46e7016",
       "files": {
         "ApogeeHeals.lua": "6dbb3feff1b1aac4128dfd565178c79bd0ab496278bc2ecbf1638b3bc66de22e",
         "ApogeeHeals.toc": "7eb9d981ce4f5b6b9151d38e860eb2f1cb2a1ce8b57521f04d393f8e67ab2893",
         "Bindings/Defaults.lua": "0fd0a16ea638f938d8f30695f0c1ddcc2ea72bb2eb513fa102cac2286eb489f1",
-        "Bindings/Runtime.lua": "72f80a0a03c26d2192c77d29c58d947154d8c7d9936093ccf0474693dc775255",
-        "Buffs/Catalog.lua": "aa886e2569ba5af7af80edaeea0ebf6fe0e0d6b8d47a81c0a2cf608eb5517fc8",
-        "Buffs/Defaults.lua": "d3627fedde6d40f3391e4367383ebbe8b9a14af23e2934f25bffd7a57467cf41",
+        "Bindings/Runtime.lua": "dd246fb22fa4d8b00098b5ca71da86286e76cee9a4b76fdb84f7f27a9d9effe2",
+        "Buffs/Catalog.lua": "9f5f0759d63b002f8d011f89d6976f455694d62bab72c7f80a537b6ed7a73b45",
+        "Buffs/Defaults.lua": "2c99185de55892eacfc43b854f4b53e4485887df991b8a7deb468072e161507d",
         "Buffs/Preferences.lua": "d6f6a648c8782a76c8e1649d07a7bf60767381c64384944a231a9a1394d5f1c2",
-        "Buffs/Runtime.lua": "9ec5bec565fd66b1d4c4924475cefaf0edc2268bbb2877e5d6119538674cd029",
+        "Buffs/Runtime.lua": "b20b6a6a02e26e0232f8484a5ff30aa5f8130c054e6f3fc4e4a38163d509b129",
         "Buffs/View.lua": "bcfa234ff9df5735930ede87abd310e99bcc7d31c9060f6417a763aebb7fed67",
         "CHANGELOG.md": "b2246c8cca19222da4070d546393821509acca6ee3d0920e45c208a37c497cd5",
         "Cleansing/Runtime.lua": "13c5c8136ccc3b3c8640edff9ee70dc135f0a435f7114906dea128dee7cb17f7",
@@ -25,7 +25,7 @@
         "PartyFrames/Preview.lua": "56ed40b09deee9633af0f6c291941e63231bdffaa98b50e61d266feaa457bce1",
         "PartyFrames/Runtime.lua": "6d1ec6cde6df321a47bf6c2d78d5e299e2ac5847442b4bdda378e59c2a5b4a57",
         "PartyFrames/View.lua": "ee9b55301334c8286ebf5b06c1bd40c8b56325b28792fc848078533ee4e91c1c",
-        "README.md": "72a57ce2103d0e4b33393018ad55ceb83975ac1603f6f4eb95f1f649daf8d72b",
+        "README.md": "bc05761a50aba8c685415050e5a3663d8e9f8101dde54e7706019dc00687ceb6",
         "Threat/Diagnostics.lua": "7c71432508520517e684c604f6eefd3c932ba47f264d4aa83c4171d0c2a0923e",
         "Threat/Model.lua": "629c5313befc4d5e1e43e397a9ec1df4d0469c02e2cf710ea23411be61ada85a",
         "Threat/Runtime.lua": "82c5969f1e99e3b6690830d435f1df5568ceda1db10e2aaadb1d4a49473761dd",
@@ -224,7 +224,7 @@
     "commit": "eac66429006c4f1c3a99a168c5a64a9d5cc7cd18",
     "releaseCommit": "07612af0b5d9a0a2951df8b2a500cb5c37d5d125"
   },
-  "liveApiEvidenceSha256": "c1fdaaf806f67c9319f1796742b5d336299e33ff70ccc13223d7f02dd10e96c7",
+  "liveApiEvidenceSha256": "afa85dcdc3694c25a59c0d3c20719a084b068784d9d788767a414fda85628ca0",
   "projectId": 1608100,
   "publicChildren": [
     "ApogeeHeals",
