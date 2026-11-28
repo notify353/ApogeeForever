@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 debuff direction
+
+- Prepare DEV1.14.23-dev.4: reverse only the priest own-debuff progress fill so it drains left to right from a fixed right edge. Keep HoT direction, native remaining-time timers, full bar thickness and taller health rows.
+
 ## Unreleased - 2026-11-27 taller health rows
 
 - Prepare DEV1.14.23-dev.3: increase health height to fit three progress lanes at the original single-bar thickness. Preserve power height, width, font/icon sizes and tracking behavior. Owner reports the preceding priest debuff strip works; this resize awaits visual acceptance.
