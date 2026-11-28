@@ -1,5 +1,9 @@
 # Prepared selection - 2026-11-27
 
+Forever **1.14.24** selects the party-bar improvements installed as DEV1.14.23-dev.7. The owner explicitly requested check-in, merge and CurseForge deployment. All release DEV Lua/XML runtime files match that installed package. The initial priest strip was reported working; subsequent refinements have automated validation, with nativeAccepted:false. See [immutable selection](distribution/releases/1.14.24/manifest.json). Require successful test, aggregate and release-1.14.24 checks on exact final main before the authorized production tag.
+
+# Prepared selection - 2026-11-27
+
 Forever **1.14.23** selects the accepted DEV1.14.22-dev.38 gameplay: auction-house-only upgrades, Loot history/presentation, Group Finder polish, self-buff countdowns and Warrior Intercept. The owner requested CurseForge deployment after confirming the reload looks good. See [immutable selection](distribution/releases/1.14.23/manifest.json) and [scoped DEV acceptance](distribution/releases/1.14.23/dev-acceptance.json). All generated DEV Lua/XML runtime files match the accepted archive. Require test, aggregate and release-1.14.23 on exact final main before the authorized production tag. Comprehensive native/taint and separate PROD/CurseForge-client acceptance remain unclaimed.
 
 # Prepared selection - 2026-11-22

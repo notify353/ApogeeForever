@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "38f7ffe06cb5bac5fd640881cc1a8c228e5f5fa5120124d842eda6853ceb0e75",
+  "authorization": {
+    "basis": "Owner explicitly requested \"merge check in and deploy to curseforge\" on 2026-11-27 for the party-bar work installed as DEV1.14.23-dev.7. This authorizes source integration, the production tag and publication after required checks. The original priest own-debuff strip was reported working; later visual refinements and tooltip cleanup have automated validation only. No comprehensive native/taint or separate PROD/CurseForge-client acceptance is claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "eec7f20f90343c37b5ff8a85da9890db7e93ed4db24a0a046b0d3f0b45705f68",
+  "packages": {
+    "DEV": "4d03b506aac6572c465a34637880d44da10fe91367e7c5e3fa1a1a2726e9a6f9",
+    "PROD": "034f103eb2d81d089860231713c8ae882fefbaf8411711fdb835f320dfbf189a"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "d3d83ab7c40a7e569a885ab2191bbc90d7a897a12490f934efed36b95fb65969",
+  "target": "forever",
+  "version": "1.14.24"
+}
