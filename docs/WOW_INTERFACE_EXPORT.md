@@ -1,3 +1,12 @@
+## Debuff progress direction - 2026-11-27
+
+Verified71139/16001,281 existing references. Heals applies public static
+SetReverseFill(true) only to its own-debuff duration strip before native
+registration. HoTs explicitly use false. Native ApplyDurationBar retains
+RemainingTime without overriding fill direction. No new API reference, secret
+read, runtime mutation or data contract; only the Heals pin/evidence advances.
+Native direction acceptance awaits owner reload.
+
 ## Taller health rows and full-thickness progress - 2026-11-27
 
 Reverified71139/16001 with281 references. Heals changes geometry only: health20,
