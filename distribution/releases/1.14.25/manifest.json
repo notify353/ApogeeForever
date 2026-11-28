@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "653289759a340551b896c248993c3a5aa1ebb57a36db9775ccae7e7f639fd5e7",
+  "authorization": {
+    "basis": "Owner explicitly requested \"merge checking and deploy to curseforge\" for both combat-safety passes installed as DEV1.14.24-dev.4. This authorizes check-in, source integration, the required production tag and CurseForge/GitHub publication after required validation. The included buff-range behavior has earlier scoped owner acceptance; the new combat fixes have automated validation and verified DEV installation only. No retest of the original blocked-action warning, comprehensive native/taint coverage, or separate PROD/CurseForge-client acceptance is claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "4cdd97f3ec83df1aa3a7b5df235b9d3d3fb8bb401819a7ad0e31474c1120ee86",
+  "packages": {
+    "DEV": "e2032a219d567acd5fe6c69ace5aff8b14920891ada306a07435290c186c1b18",
+    "PROD": "5b24674b8ce6f926dd7779c9b2d2036a1e5556eeb16389807bad132cdd1090ec"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "96ce71aab21799d950e17fd4bd5c3692730cb16872e900f521e4e7d4bf121a77",
+  "target": "forever",
+  "version": "1.14.25"
+}

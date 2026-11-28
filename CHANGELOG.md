@@ -1,3 +1,24 @@
+## [1.14.25] - 2026-11-28
+
+- Improve combat native-object access checks and interrupted fade recovery.
+- Reduce repeated target aura work and suspend stale loading/cleanup callbacks.
+- Preserve secure bindings while restoring self-buff displays after loading.
+- Include the merged buff-range filtering and usable-buff recommendation fixes.
+- Publish the exact reviewed DEV gameplay selection; native blocked-action acceptance remains pending.
+
+## Unreleased - 2026-11-27 combat lifecycle sweep
+
+- Prepare DEV1.14.24-dev.4: defer stale Keybinds rebuilds/native aura activation while leaving the world; preserve secure bindings and resume safely after entry/combat.
+- Recover faded UI roots and interrupted transitions when native access returns during combat, without denied calls or repeated completed writes.
+- Stop stale Heals range callbacks while suspended even if native aura teardown fails; keep errors observable and resume on world entry.
+- Extend source/generated regressions; original native blocked-action cause remains unconfirmed.
+
+## Unreleased - 2026-11-27 dungeon combat safety
+
+- Prepare DEV1.14.24-dev.3: prevent fade hover/root and threat bootstrap calls on native objects that deny access, and preserve deferred UI alpha restoration.
+- Avoid repeated target-of-target aura rebuilds during health/power/cast bursts; keep immediate health, fixed secure actions and alias recovery.
+- Add source/generated PROD/DEV regressions and current native object-access authority. The owner's exact blocked-action source and native acceptance remain unconfirmed; Era and published selections stay unchanged.
+
 ## Unreleased - 2026-11-27 release queue maintenance
 
 - Remove successfully published and byte-verified1.14.24 from the pending release-validation queue. Preserve its immutable release selection and the current DEV candidate.

@@ -1,3 +1,27 @@
+## Combat lifecycle sweep - 2026-11-27
+
+Current live Forever71139/16001 authority still verifies283 references. Existing
+native AuraContainer SetEnabled registers/unregisters unit events and refreshes
+auras; stale callbacks must not reactivate it after world exit. Existing Timer,
+world/combat event, object-access and alpha contracts cover the changes. Keep
+current runtime capability fallback and deferred protected mutations. No new API
+reference, saved-data schema or runtime inventory. Source/generated tests check
+world/combat order, permission recovery and cleanup failure; native warning
+reproduction and comprehensive taint acceptance remain unclaimed.
+
+## Dungeon combat access review - 2026-11-27
+
+Matching live Forever71139/16001 verifies283 references. Add the fresh
+SimpleFrameScriptObject API (Heals/Essentials) and native DebugTools
+TextureInfoGenerator example (Essentials). CanBeAccessedInContext can deny a
+non-forbidden object; its ObjectSecurity result and GetParent hierarchy may be
+restricted. Validate public object/table/access results before native reads or
+alpha writes; unavailable access never authorizes a call. Older clients retain
+the actual IsForbidden capability fallback without a build/version gate.
+Existing CustomAuraContainer contracts cover bounded alias reconciliation.
+Offline denied-call regressions do not identify the owner's exact warning or
+establish native combat/taint acceptance. Historical authority remains frozen.
+
 ## Remove native Other slot - 2026-11-27
 
 Current71139/16001 verifies281 references. Heals creates four native fixed

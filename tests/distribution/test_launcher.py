@@ -61,6 +61,8 @@ class LauncherTests(unittest.TestCase):
                 subprocess.run(['lua','tests/quest_text_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 if (children/'ApogeeEssentials/tests/quest_objectives_spec.lua').is_file():
                     subprocess.run(['lua','tests/quest_objectives_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
+                if target != 'era' and (children/'ApogeeEssentials/tests/fade_access_spec.lua').is_file():
+                    subprocess.run(['lua','tests/fade_access_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 subprocess.run(['lua','tests/strafe_defaults_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
                 if (children/'ApogeeEssentials/tests/focus_sound_spec.lua').is_file():
                     subprocess.run(['lua','tests/focus_sound_spec.lua'],cwd=children/'ApogeeEssentials',env=env,check=True)
@@ -76,6 +78,9 @@ class LauncherTests(unittest.TestCase):
                            APOGEE_HEALS_RUNTIME_NAME=heals, APOGEE_HEALS_TEST_ERA='1' if target=='era' else '0')
                 subprocess.run(['lua','tests/healing_defaults_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                 if target != 'era':
+                    for spec in ('combat_event_burst_spec.lua', 'threat_discovery_access_spec.lua'):
+                        if (children/'ApogeeHeals/tests'/spec).is_file():
+                            subprocess.run(['lua','tests/'+spec],cwd=children/'ApogeeHeals',env=env,check=True)
                     subprocess.run(['lua','tests/fixed_debuffs_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                     subprocess.run(['lua','tests/binding_recovery_spec.lua'],cwd=children/'ApogeeHeals',env=env,check=True)
                     if (children/'ApogeeHeals/tests/penance_spec.lua').is_file():
@@ -114,6 +119,8 @@ class LauncherTests(unittest.TestCase):
                 env.update(APOGEE_KEYBINDS_RUNTIME_ROOT=str(Path(folder)/keybinds),
                            APOGEE_KEYBINDS_RUNTIME_NAME=keybinds, APOGEE_KEYBINDS_TEST_SIMULATED='1',
                            APOGEE_KEYBINDS_TEST_ERA='1' if target=='era' else '0')
+                if target != 'era' and (children/'ApogeeKeybinds/tests/world_lifecycle_spec.lua').is_file():
+                    subprocess.run(['lua','tests/world_lifecycle_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 subprocess.run(['lua','tests/startup_failure_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 subprocess.run(['lua','tests/aphb_distribution_spec.lua'],cwd=children/'ApogeeKeybinds',env=env,check=True)
                 if (children/'ApogeeKeybinds/tests/focus_assist_spec.lua').is_file():

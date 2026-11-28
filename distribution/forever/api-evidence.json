@@ -413,6 +413,15 @@
     },
     {
       "owners": [
+        "ApogeeEssentials",
+        "ApogeeHeals"
+      ],
+      "path": "Blizzard_APIDocumentationGenerated/SimpleFrameScriptObjectAPIDocumentation.lua",
+      "sha256": "09c85f7ee160d6f4d39765ba92a93ccd112d9e578b48d6f99b79f65e2ec42b1d"
+    },
+    {
+      "owners": [
+        "ApogeeEssentials",
         "ApogeeStats"
       ],
       "path": "Blizzard_APIDocumentationGenerated/SimpleObjectAPIDocumentation.lua",
@@ -1278,6 +1287,13 @@
     },
     {
       "owners": [
+        "ApogeeEssentials"
+      ],
+      "path": "Blizzard_DebugTools/Blizzard_TextureInfoGenerator.lua",
+      "sha256": "b70ee82824220df0c6d18b493fbe725282aeed194388ec15b93188552fc815b1"
+    },
+    {
+      "owners": [
         "ApogeeForever",
         "ApogeeEssentials"
       ],
@@ -2071,10 +2087,10 @@
   "reviewedOn": "2026-11-27",
   "schema": 1,
   "sourcePins": {
-    "ApogeeEssentials": "45acfd54d784d4b8a28b0df0abb44c26ebcd421b",
+    "ApogeeEssentials": "2ab8273264857bc17164147ce8ed19a0b51fd3ed",
     "ApogeeGroupAlert": "4cae52864353ce14cd3648031732e03dc949e26e",
-    "ApogeeHeals": "3d4366aa24a3b35087201d1433c2d076f50da420",
-    "ApogeeKeybinds": "814d68f1c4db34ad9285fddac4c2ef3a5633fb8f",
+    "ApogeeHeals": "101941cd7b32a583d205603d414a0ab9bf86303d",
+    "ApogeeKeybinds": "4c8b9dcdab6103cbab06193cad0b8bdce3fc18da",
     "ApogeeStats": "931521af8b6c0d91ba5a5069359917297e821e72"
   }
 }

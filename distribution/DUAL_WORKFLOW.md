@@ -1,3 +1,34 @@
+## Combat safety release selection - 2026-11-28
+
+Owner explicitly requests check-in, merge and CurseForge deployment. Immutable
+Forever1.14.25 retains exact validated DEV1.14.24-dev.4 source pins after child
+merge commits; no gameplay-byte repin is necessary. Validate the selected release,
+require exact final-main hosted checks, then use the approved production publisher
+and public-byte verification. Keep nativeAccepted:false and existing DEV install.
+Do not operate the game, inspect saves or locally overwrite CurseForge PROD.
+
+## Combat lifecycle sweep candidate - 2026-11-27
+
+DEV1.14.24-dev.4 advances Heals, Keybinds and Essentials for reproduced stale
+world-exit callbacks and access-recovery gaps. Keep fixed secure actions, existing
+combat guards and current283-reference Forever71139 authority. Full central
+source/generated/Era/frozen validation precedes checked preview/inspect/install,
+chained from apogee-combat-safety-20261127 with fresh rollback directory
+apogee-combat-safety-sweep-20261127. Explicit request and standing local DEV
+approval cover an open client; no game operation, private saves, enable changes,
+PROD writes, push, integration or publication. Native warning acceptance pending.
+
+## Dungeon combat safety candidate - 2026-11-27
+
+DEV1.14.24-dev.3 advances reviewed Heals and Essentials sources for native object
+access checks and reduced target aura rebuilds. Full central source/generated,
+Era/frozen and installation validation is required. Chain checked DEV preview
+and install from apogee-buff-range-sweep-20261127 with fresh rollback directory
+apogee-combat-safety-20261127 under standing local DEV authorization, including
+an open client. Preserve runtime inventory/TOC metadata except Version, private
+saves, enabled state and CurseForge-managed PROD. No game operation, push, main
+integration or publication. Native blocked-action reproduction remains pending.
+
 ## Auction-only sweep candidate - 2026-11-27
 
 DEV38 fixes unrelated tooltip readers disabling AH advice and removes obsolete
