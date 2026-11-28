@@ -1,3 +1,7 @@
+# Prepared selection - 2026-11-28
+
+Forever **1.14.25** selects the combat-safety and buff-range fixes installed as DEV1.14.24-dev.4. The owner explicitly requests check-in, merge and CurseForge deployment, including the required production tag after exact final-main checks. The reviewed child commits are retained as ancestors through merge commits; their validated bytes remain selected. Automated source/generated validation and DEV installed-byte verification passed. The original blocked-action warning has not yet been retested; nativeAccepted:false remains accurate. See [immutable selection](distribution/releases/1.14.25/manifest.json). Require successful test, aggregate and release-1.14.25 checks on exact final main before publication.
+
 # Prepared selection - 2026-11-27
 
 Forever **1.14.24** selects the party-bar improvements installed as DEV1.14.23-dev.7. The owner explicitly requested check-in, merge and CurseForge deployment. All release DEV Lua/XML runtime files match that installed package. The initial priest strip was reported working; subsequent refinements have automated validation, with nativeAccepted:false. See [immutable selection](distribution/releases/1.14.24/manifest.json). Require successful test, aggregate and release-1.14.24 checks on exact final main before the authorized production tag.

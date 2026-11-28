@@ -1,3 +1,11 @@
+## [1.14.25] - 2026-11-28
+
+- Improve combat native-object access checks and interrupted fade recovery.
+- Reduce repeated target aura work and suspend stale loading/cleanup callbacks.
+- Preserve secure bindings while restoring self-buff displays after loading.
+- Include the merged buff-range filtering and usable-buff recommendation fixes.
+- Publish the exact reviewed DEV gameplay selection; native blocked-action acceptance remains pending.
+
 ## Unreleased - 2026-11-27 combat lifecycle sweep
 
 - Prepare DEV1.14.24-dev.4: defer stale Keybinds rebuilds/native aura activation while leaving the world; preserve secure bindings and resume safely after entry/combat.

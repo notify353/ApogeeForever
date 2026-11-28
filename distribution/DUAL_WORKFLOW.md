@@ -1,3 +1,12 @@
+## Combat safety release selection - 2026-11-28
+
+Owner explicitly requests check-in, merge and CurseForge deployment. Immutable
+Forever1.14.25 retains exact validated DEV1.14.24-dev.4 source pins after child
+merge commits; no gameplay-byte repin is necessary. Validate the selected release,
+require exact final-main hosted checks, then use the approved production publisher
+and public-byte verification. Keep nativeAccepted:false and existing DEV install.
+Do not operate the game, inspect saves or locally overwrite CurseForge PROD.
+
 ## Combat lifecycle sweep candidate - 2026-11-27
 
 DEV1.14.24-dev.4 advances Heals, Keybinds and Essentials for reproduced stale
