@@ -1,3 +1,7 @@
+## Unreleased - 2026-11-27 party indicators
+
+- Forever DEV: move food/drink left of party bars; add a fixed learned paladin Blessing of Freedom action between Curse and Other. Preserve existing cleanse types/timers and shift left-side buffs to avoid overlap.
+
 ## [1.14.23] - 2026-11-27
 
 - Prepare the accepted DEV38 revisions for the owner-requested Forever release.
