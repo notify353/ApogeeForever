@@ -1,0 +1,23 @@
+{
+  "apiEvidenceSha256": "9f55d70e2cf98ba514e4875e8e470e59bb1fb66ec324d90fb3844480c495cb85",
+  "authorization": {
+    "basis": "Owner requested deploy to curseforge on 2026-11-27 after confirming Reloaded and everything looks good for DEV1.14.22-dev.38 and authorizing check-in, merge and GitHub backup. This selects those exact accepted gameplay revisions. The request authorizes release preparation, integration, the production tag and publication after required checks. Comprehensive native/taint coverage and separate PROD or CurseForge-client acceptance are not claimed.",
+    "kind": "owner-approved-early-release",
+    "nativeAccepted": false
+  },
+  "curseforge": {
+    "gameVersionTypeID": 88568,
+    "name": "1.60.1"
+  },
+  "notesSha256": "108ba78ad6937c052bc45b287048445b983539b80ed872263f3758838f1c3cdd",
+  "packages": {
+    "DEV": "0a21239dc874ddf9e945285d77a05206ed89d97de91cba66c751ea4dbe77940e",
+    "PROD": "d47b495a2d113422b409136330286c25999adc13d3949625f62b31ee5896e256"
+  },
+  "projectId": 1608100,
+  "releaseType": "release",
+  "schema": 1,
+  "sourceLockSha256": "24314d8e2b248cd7c386c6e086572fd9f135b239d5f6071d5cf437de6cc45b2c",
+  "target": "forever",
+  "version": "1.14.23"
+}

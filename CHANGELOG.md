@@ -1,3 +1,9 @@
+## [1.14.23] - 2026-11-27
+
+- Prepare the accepted DEV38 revisions for the owner-requested Forever release.
+- Bind exact child pins, matching71139 authority, package hashes and scoped owner acceptance.
+- Player notes cover auction-only upgrades, Loot and Group Finder UI, self-buff countdowns and Intercept.
+
 ## Unreleased - Auction tooltip cleanup
 
 - Prepare DEV1.14.22-dev.38 isolating Forever AH advice from unrelated tooltip
